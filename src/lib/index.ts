@@ -9,7 +9,7 @@ import InputRadio from './input-radio.svelte';
 import InputSelect from './input-select.svelte';
 import InputText from './input-text.svelte';
 
-export default {
+export {
 	Alert,
 	Button,
 	Dialog,

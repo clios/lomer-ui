@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from 'lomer-ui';
+	import { Button } from '../../dist/index.js';
 </script>
 
 <Button />
