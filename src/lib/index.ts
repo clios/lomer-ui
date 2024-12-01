@@ -8,6 +8,7 @@ import InputCheck from './input-check.svelte';
 import InputRadio from './input-radio.svelte';
 import InputSelect from './input-select.svelte';
 import InputText from './input-text.svelte';
+import Link from './link.svelte';
 
 export {
 	Alert,
@@ -19,5 +20,6 @@ export {
 	InputCheck,
 	InputRadio,
 	InputSelect,
-	InputText
+	InputText,
+	Link
 };

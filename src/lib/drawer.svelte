@@ -1,5 +1,6 @@
 <script lang="ts">
 	import clsx from 'clsx';
+	import Button from './button.svelte';
 	import { fade, slide } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
 
@@ -27,7 +28,7 @@
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
 		class={clsx(
-			'fixed bottom-0 left-0 right-0 top-0 z-50 flex justify-end transition-all', // base
+			'fixed bottom-0 left-0 right-0 top-0 z-10 flex justify-end transition-all', // base
 			noBackdrop ? 'backdrop-blur-none' : 'backdrop-blur-sm', // blur
 			noBackdrop ? 'bg-zinc-200/0' : 'bg-zinc-200/80', // light
 			noBackdrop ? 'dark:bg-zinc-950/0' : 'dark:bg-zinc-950/80', // dark
@@ -45,8 +46,10 @@
 			class={clsx(
 				'pointer-events-auto',
 				'shadow-md dark:shadow-none',
-				'z-100 relative border-l bg-zinc-50  transition-all dark:border-zinc-800 dark:bg-zinc-900',
+				'z-100 relative border-l transition-all dark:border-zinc-800',
 				'w-full sm:w-[600px]', // responsiveness
+				'bg-white/80 dark:bg-zinc-950/50',
+				noBackdrop && 'bg-white/95 backdrop-blur-sm dark:bg-zinc-950/90',
 				emphasize ? 'translate-x-16' : '',
 				className
 			)}
@@ -55,28 +58,17 @@
 		>
 			<!-- HEADER -->
 			<div
-				class="flex items-center justify-between border-b bg-zinc-50 pr-2 dark:border-zinc-800 dark:bg-zinc-900 sm:pl-4 sm:pr-4"
+				class="flex items-center justify-between border-b border-dashed border-zinc-950 bg-zinc-50/50 px-4 pb-2 pr-2 dark:border-zinc-50 dark:bg-zinc-950/50 sm:pl-4 sm:pr-4"
 				in:fade={{ delay: 400 }}
 				out:fade={{ duration: 200 }}
 			>
 				<p class="px-4 py-4 text-2xl font-semibold text-zinc-950 dark:text-zinc-50">{title}</p>
-				<button
-					class={clsx(
-						'rounded-full p-1',
-						'flex items-center gap-1 outline-offset-2', // base
-						'focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-cyan-500', // focus
-						'disabled:bg-zinc-500 disabled:hover:cursor-not-allowed disabled:hover:outline-none disabled:focus:outline-none disabled:active:scale-100',
-						'transition hover:outline focus:outline-2 focus:ring-offset-1 active:scale-[0.9]', // animations
-						'outline-cyan-500', // light
-						'dark:outline-cyan-500' // dark
-					)}
-					on:click={() => (isOpen = false)}
-				>
+				<Button variant="ghost" size="icon" edge="circle" on:click={() => (isOpen = false)}>
 					<Icon icon="line-md:close-circle-filled" width={24} />
-				</button>
+				</Button>
 			</div>
 			<div
-				class="h-[calc(100vh-4rem)] overflow-auto"
+				class="h-[calc(100vh-4rem)] overflow-auto bg-zinc-50/50 dark:bg-zinc-950/50"
 				in:fade={{ delay: 400 }}
 				out:fade={{ duration: 200 }}
 			>

@@ -2,21 +2,13 @@
 	import clsx from 'clsx';
 	import { fade, scale } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
+	import Button from './button.svelte';
 
 	export let title: string;
 	export let isOpen: boolean;
 	export { className as class };
 
 	let className = '';
-	let emphasize = false;
-
-	function emphasizeContent() {
-		if (emphasize === true) return;
-		emphasize = true;
-		setTimeout(() => {
-			emphasize = false;
-		}, 200);
-	}
 </script>
 
 {#if isOpen}
@@ -34,50 +26,37 @@
 		)}
 		in:fade={{ duration: 200 }}
 		out:fade={{ duration: 200 }}
-		on:click|self={emphasizeContent}
 	>
 		<!-- DIALOG CONTENT -->
 		<div
 			in:scale={{ duration: 200, delay: 200, start: 0.9 }}
 			out:scale={{ duration: 200, start: 0.9 }}
 			class={clsx(
-				'z-100 relative w-screen border border-zinc-950 shadow-md transition-all dark:border-zinc-50 dark:shadow-none sm:w-[500px]',
-				emphasize ? 'scale-90' : ''
+				'relative z-10 w-screen rounded border border-zinc-950 shadow-md transition-all dark:border-zinc-50 dark:shadow-none sm:w-[500px]'
 			)}
 		>
 			<!-- HEADER -->
-			<div class="flex items-center justify-between bg-zinc-950 px-2 dark:bg-zinc-50">
-				<p class="font-semibold text-zinc-50 dark:text-zinc-950">
+			<div
+				class="flex items-center justify-between rounded-t bg-white/80 pr-4 pt-4 dark:bg-zinc-950/50"
+			>
+				<p
+					class="border-b border-dashed border-zinc-950 px-4 pb-2 text-xl font-semibold dark:border-zinc-50"
+				>
 					{title}
 				</p>
 
-				<button
-					class={clsx(
-						'relative -right-2 rounded-full p-1',
-						'flex items-center gap-1 outline-offset-2', // base
-						'focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-cyan-500', // focus
-						'disabled:bg-zinc-500 disabled:hover:cursor-not-allowed disabled:hover:outline-none disabled:focus:outline-none disabled:active:scale-100',
-						'transition hover:outline focus:outline-2 focus:ring-offset-1 active:scale-[0.9]', // animations
-						'outline-cyan-500', // light
-						'dark:outline-cyan-500' // dark
-					)}
+				<Button
+					class="relative -top-2"
+					variant="ghost"
+					size="icon"
+					edge="circle"
 					on:click={() => (isOpen = false)}
 				>
-					<Icon
-						class="text-zinc-50 dark:text-zinc-950"
-						icon="line-md:close-circle-filled"
-						width={24}
-					/>
-				</button>
+					<Icon icon="line-md:close-circle-filled" width={24} />
+				</Button>
 			</div>
 			<!-- BODY -->
-			<div
-				class={clsx(
-					'overflow-auto bg-zinc-50 p-4 dark:bg-zinc-900',
-					'', // height
-					className
-				)}
-			>
+			<div class={clsx('overflow-auto rounded-b bg-white/80 p-4 dark:bg-zinc-950/50', className)}>
 				<slot />
 			</div>
 		</div>

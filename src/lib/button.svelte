@@ -3,10 +3,10 @@
 	import clsx from 'clsx';
 
 	export let type: 'submit' | 'reset' | 'button' = 'button';
-	export let variant: 'default' | 'ghost' | 'danger' | 'inverted' = 'default';
-	export let shape: 'default' | 'circle' | 'square' | 'none' = 'default';
-	export let hidden = false;
-	export let disabled = false;
+	export let variant: 'primary' | 'secondary' | 'outline' | 'destructive' | 'ghost' = 'primary';
+	export let size: 'text' | 'icon' | 'fit' = 'text';
+	export let edge: 'rounded' | 'circle' | 'sharp' = 'rounded';
+	export let isDisabled = false;
 	export let isLoading = false;
 	export { className as class };
 
@@ -15,28 +15,93 @@
 
 <button
 	class={clsx(
-		'flex items-center gap-1 border outline-offset-2', // base
-		'hover:outline-1 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-cyan-500', // focus
-		'disabled:border-zinc-200 disabled:bg-zinc-200 disabled:text-zinc-400 disabled:hover:cursor-not-allowed disabled:hover:outline-none disabled:focus:outline-none disabled:active:scale-100 disabled:dark:border-zinc-900 disabled:dark:bg-zinc-900 disabled:dark:text-zinc-600',
-		'transition-colors hover:outline focus:outline-2 focus:ring-offset-1 active:bg-cyan-500/20', // animations
-		'outline-cyan-500', // light
-		'dark:outline-cyan-500', // dark
-		variant === 'default' &&
-			'border-cyan-500 bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950',
-		variant === 'ghost' && 'border-transparent',
-		variant === 'danger' && 'border-red-500 bg-red-800 text-red-50',
-		variant === 'inverted' &&
-			'border-cyan-200 bg-white text-zinc-950 dark:border-cyan-950 dark:bg-zinc-950 dark:text-zinc-50',
-		shape === 'default' && 'rounded-md px-3 py-1',
-		shape === 'circle' && 'rounded-full px-2 py-2',
-		shape === 'square' && 'rounded-md p-1',
-		shape === 'none' && 'rounded p-0',
-		hidden && 'hidden',
+		'flex items-center gap-1 outline-offset-2', // base
+
+		// Variant: Primary
+		variant === 'primary' && 'bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950', // color
+		variant === 'primary' && 'border border-cyan-500', // color
+		variant === 'primary' && 'active:outline-2 active:outline-offset-0', // color
+		variant === 'primary' && 'outline-cyan-500 hover:outline hover:outline-1', // hover
+		variant === 'primary' && 'focus:outline focus:outline-1 focus:outline-offset-2', // focus
+		variant === 'primary' && 'focus:outline-cyan-500 focus:ring-offset-1', // focus
+		variant === 'primary' && 'disabled:focus:outline-none', // focus
+		variant === 'primary' && 'disabled:border-zinc-200 disabled:bg-zinc-200', // disabled
+		variant === 'primary' && ' disabled:text-zinc-400 disabled:hover:cursor-not-allowed', // disabled
+		variant === 'primary' && 'disabled:hover:outline-none disabled:active:scale-100', // disabled
+		variant === 'primary' && 'disabled:dark:border-zinc-900 disabled:dark:bg-zinc-900 ', // disabled
+		variant === 'primary' && 'disabled:dark:text-zinc-600', // disabled
+
+		// Variant: Secondary
+		variant === 'secondary' && 'bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50', // color
+		variant === 'secondary' && 'border border-zinc-200 dark:border-zinc-800', // color
+		variant === 'secondary' && 'active:outline-2 active:outline-offset-0', // color
+		variant === 'secondary' && 'outline-cyan-500 hover:outline hover:outline-1', // hover
+		variant === 'secondary' && 'focus:outline focus:outline-1 focus:outline-offset-2', // focus
+		variant === 'secondary' && 'focus:outline-cyan-500 focus:ring-offset-1', // focus
+		variant === 'secondary' && 'disabled:focus:outline-none', // focus
+		variant === 'secondary' && 'disabled:border-zinc-200 disabled:bg-zinc-200', // disabled
+		variant === 'secondary' && ' disabled:text-zinc-400 disabled:hover:cursor-not-allowed', // disabled
+		variant === 'secondary' && 'disabled:hover:outline-none disabled:active:scale-100', // disabled
+		variant === 'secondary' && 'disabled:dark:border-zinc-900 disabled:dark:bg-zinc-900 ', // disabled
+		variant === 'secondary' && 'disabled:dark:text-zinc-600', // disabled
+
+		// Variant: Outline
+		variant === 'outline' && 'bg-zinc-50/0 text-zinc-950 dark:bg-zinc-950/0 dark:text-zinc-50', // color
+		variant === 'outline' && 'border border-zinc-950 dark:border-cyan-50', // color
+		variant === 'outline' && 'active:outline-2 active:outline-offset-0', // color
+		variant === 'outline' && 'outline-cyan-500 hover:outline hover:outline-1', // hover
+		variant === 'outline' && 'focus:outline focus:outline-1 focus:outline-offset-2', // focus
+		variant === 'outline' && 'focus:outline-cyan-500 focus:ring-offset-1', // focus
+		variant === 'outline' && 'disabled:focus:outline-none', // focus
+		variant === 'outline' && 'disabled:border-zinc-200 disabled:bg-zinc-200', // disabled
+		variant === 'outline' && ' disabled:text-zinc-400 disabled:hover:cursor-not-allowed', // disabled
+		variant === 'outline' && 'disabled:hover:outline-none disabled:active:scale-100', // disabled
+		variant === 'outline' && 'disabled:dark:border-zinc-900 disabled:dark:bg-zinc-900 ', // disabled
+		variant === 'outline' && 'disabled:dark:text-zinc-600', // disabled
+
+		// Variant: Ghost
+		variant === 'ghost' && 'bg-zinc-50/0 text-zinc-950 dark:bg-zinc-950/0 dark:text-zinc-50', // color
+		variant === 'ghost' && 'border border-zinc-50/0 dark:border-zinc-50/0', // color
+		variant === 'ghost' && 'active:outline-2 active:outline-offset-0', // color
+		variant === 'ghost' && 'outline-cyan-500 hover:outline hover:outline-1', // hover
+		variant === 'ghost' && 'focus:outline focus:outline-1 focus:outline-offset-2', // focus
+		variant === 'ghost' && 'focus:outline-cyan-500 focus:ring-offset-1', // focus
+		variant === 'ghost' && 'disabled:focus:outline-none', // focus
+		variant === 'ghost' && 'disabled:border-zinc-200 disabled:bg-zinc-200', // disabled
+		variant === 'ghost' && ' disabled:text-zinc-400 disabled:hover:cursor-not-allowed', // disabled
+		variant === 'ghost' && 'disabled:hover:outline-none disabled:active:scale-100', // disabled
+		variant === 'ghost' && 'disabled:dark:border-zinc-900 disabled:dark:bg-zinc-900 ', // disabled
+		variant === 'ghost' && 'disabled:dark:text-zinc-600', // disabled
+
+		// Variant: Destructive
+		variant === 'destructive' && 'bg-red-500 text-zinc-50 dark:bg-red-900 dark:text-zinc-50', // color
+		variant === 'destructive' && 'border border-red-500 dark:border-red-900', // color
+		variant === 'destructive' && 'active:outline-2 active:outline-offset-0', // color
+		variant === 'destructive' && 'outline-red-500 hover:outline hover:outline-1', // hover
+		variant === 'destructive' && 'focus:outline focus:outline-1 focus:outline-offset-2', // focus
+		variant === 'destructive' && 'focus:outline-red-500 focus:ring-offset-1', // focus
+		variant === 'destructive' && 'disabled:focus:outline-none', // focus
+		variant === 'destructive' && 'disabled:border-zinc-200 disabled:bg-zinc-200', // disabled
+		variant === 'destructive' && ' disabled:text-zinc-400 disabled:hover:cursor-not-allowed', // disabled
+		variant === 'destructive' && 'disabled:hover:outline-none disabled:active:scale-100', // disabled
+		variant === 'destructive' && 'disabled:dark:border-zinc-900 disabled:dark:bg-zinc-900 ', // disabled
+		variant === 'destructive' && 'disabled:dark:text-zinc-600', // disabled
+
+		// Sizes
+		size === 'text' && 'px-3 py-1',
+		size === 'icon' && 'p-1',
+		size === 'fit' && 'px-2 text-sm leading-6',
+
+		// Edges
+		edge === 'rounded' && 'rounded',
+		edge === 'circle' && 'rounded-full',
+		edge === 'sharp' && 'rounded-none',
+
 		className
 	)}
 	{...$$restProps}
 	{type}
-	{disabled}
+	disabled={isLoading || isDisabled}
 	on:click
 >
 	{#if isLoading}
