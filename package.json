@@ -1,6 +1,9 @@
 {
 	"name": "lomer-ui",
 	"version": "0.0.6",
+	"bin": {
+		"lomer-ui": "./bin/cli.js"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -57,6 +60,7 @@
 	"dependencies": {
 		"clsx": "^2.1.1",
 		"highlight.js": "^11.10.0",
+		"lomer-ui": "^0.0.6",
 		"mode-watcher": "^0.5.0"
 	}
 }
