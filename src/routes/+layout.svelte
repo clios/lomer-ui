@@ -19,13 +19,13 @@
 	>
 		<div class="container mx-auto flex items-center justify-between px-4">
 			<div class="relative flex items-center">
-				<div class="mr-4">
-					<img class="size-8" src="/favicon.png" alt="lomer" />
+				<div class="relative mr-4">
+					<img class="relative size-8 min-w-8" src="/favicon.png" alt="lomer" />
 					<div class="absolute top-0 size-8 rotate-45 outline outline-1 -outline-offset-2"></div>
 				</div>
-				<p class="mr-8 font-mono">lomer-ui</p>
+				<Link href="/" class="mr-4 font-mono text-xl">lomer-ui</Link>
 				<div class="flex gap-4">
-					<Link href="/">Docs</Link>
+					<Link href="/docs/installation">Docs</Link>
 					<Link href="/components/alert">Components</Link>
 					<Link href="/form">Form</Link>
 				</div>
@@ -37,12 +37,8 @@
 		<aside
 			class="fixed top-0 flex h-screen w-64 flex-col gap-2 overflow-y-auto border-r dark:border-zinc-700"
 		>
-			<div
-				class="mt-8 flex items-center gap-4 pl-4 font-mono text-lg font-semibold dark:border-zinc-700"
-			></div>
-
-			<p class="mt-12 pl-4 font-semibold">Getting Started</p>
-			<Link href="/" class="pl-8" variant="list-item">Introduction</Link>
+			<p class="mt-24 pl-4 font-semibold">Getting Started</p>
+			<Link href="/docs/message" class="pl-8" variant="list-item">Message</Link>
 			<Link href="/installation" class="pl-8" variant="list-item">Installation</Link>
 			<Link href="/dark-mode" class="pl-8" variant="list-item">Dark Mode</Link>
 

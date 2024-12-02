@@ -2,7 +2,7 @@
 	import Icon from '@iconify/svelte';
 	import clsx from 'clsx';
 
-	export let variant: 'default' | 'list-item' = 'default';
+	export let variant: 'default' | 'underline' | 'list-item' = 'default';
 	export let href: string;
 	export { className as class };
 
@@ -13,8 +13,7 @@
 	class={clsx(
 		'flex items-center gap-1 outline-offset-2', // base
 
-		// Variant: Link
-		variant === 'default' && 'underline', // base
+		// Variant: Default
 		variant === 'default' && 'bg-zinc-50/0 text-zinc-950 dark:bg-zinc-950/0 dark:text-zinc-50', // color
 		variant === 'default' && 'border border-zinc-50/0 dark:border-zinc-50/0', // color
 		variant === 'default' && 'active:outline-2 active:outline-offset-0', // color
@@ -27,6 +26,21 @@
 		variant === 'default' && 'disabled:hover:outline-none disabled:active:scale-100', // disabled
 		variant === 'default' && 'disabled:dark:border-zinc-900 disabled:dark:bg-zinc-900 ', // disabled
 		variant === 'default' && 'disabled:dark:text-zinc-600', // disabled
+
+		// Variant: Underline
+		variant === 'underline' && 'underline', // base
+		variant === 'underline' && 'bg-zinc-50/0 text-zinc-950 dark:bg-zinc-950/0 dark:text-zinc-50', // color
+		variant === 'underline' && 'border border-zinc-50/0 dark:border-zinc-50/0', // color
+		variant === 'underline' && 'active:outline-2 active:outline-offset-0', // color
+		variant === 'underline' && 'hover:animate-pulse hover:text-cyan-500 dark:hover:text-cyan-500', // hover
+		variant === 'underline' && 'focus:animate-pulse  focus:outline-none', // focus
+		variant === 'underline' && 'focus:text-cyan-500 focus:dark:text-cyan-500', // focus
+		variant === 'underline' && 'disabled:focus:outline-none', // disabled
+		variant === 'underline' && 'disabled:border-zinc-200 disabled:bg-zinc-200', // disabled
+		variant === 'underline' && ' disabled:text-zinc-400 disabled:hover:cursor-not-allowed', // disabled
+		variant === 'underline' && 'disabled:hover:outline-none disabled:active:scale-100', // disabled
+		variant === 'underline' && 'disabled:dark:border-zinc-900 disabled:dark:bg-zinc-900 ', // disabled
+		variant === 'underline' && 'disabled:dark:text-zinc-600', // disabled
 
 		// Variant: Link
 		variant === 'list-item' && 'group relative flex items-center', // color
