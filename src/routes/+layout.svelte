@@ -39,7 +39,7 @@
 		>
 			<p class="mt-24 pl-4 font-semibold">Getting Started</p>
 			<Link href="/docs/message" class="pl-8" variant="list-item">Message</Link>
-			<Link href="/installation" class="pl-8" variant="list-item">Installation</Link>
+			<Link href="/docs/installation" class="pl-8" variant="list-item">Installation</Link>
 			<Link href="/dark-mode" class="pl-8" variant="list-item">Dark Mode</Link>
 
 			<p class="mt-4 pl-4 font-semibold">Components</p>
