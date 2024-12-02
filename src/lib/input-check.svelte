@@ -38,16 +38,16 @@
 		>
 			{#if value}
 				<svg
-					class="absolute -top-[5px] left-[3px]"
-					width="31"
-					height="24"
+					class="relative left-1 top-1"
+					width="14"
+					height="14"
 					viewBox="0 0 31 24"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<path
 						in:draw={{ duration: 300, easing: circInOut }}
-						stroke-width="2"
+						stroke-width="5"
 						d="M1 16L8 23L30.5 0.5"
 						stroke="#14B8A6"
 					/>
@@ -63,13 +63,13 @@
 				>
 					<path
 						in:draw={{ duration: 150, easing: circInOut }}
-						stroke-width="2"
+						stroke-width="4"
 						d="M0.5 1L23.5 24"
 						stroke="#EF4444"
 					/>
 					<path
 						in:draw={{ delay: 150, duration: 150, easing: circInOut }}
-						stroke-width="2"
+						stroke-width="4"
 						d="M23.5 1L0.5 24"
 						stroke="#EF4444"
 					/>
