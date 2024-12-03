@@ -4,6 +4,7 @@
 	import ButtonToggleTheme from './button__toggle-theme.svelte';
 	import Link from '$lib/link.svelte';
 	import { afterNavigate } from '$app/navigation';
+	import Icon from '@iconify/svelte';
 
 	let elPage: HTMLDivElement;
 
@@ -53,6 +54,12 @@
 			<Link href="/components/input-select" class="pl-8" variant="list-item">Input Select</Link>
 			<Link href="/components/input-text" class="pl-8" variant="list-item">Input Text</Link>
 			<Link href="/components/link" class="pl-8" variant="list-item">Link</Link>
+
+			<div class="absolute bottom-0 right-0 pb-8 pr-8">
+				<Link href="https://github.com/clios" target="_blank" class="font-mono italic">
+					- clios
+				</Link>
+			</div>
 		</aside>
 		<div class="relative ml-64 px-4 pb-4">
 			<div bind:this={elPage} id="page" class="pt-4"></div>
