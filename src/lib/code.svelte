@@ -32,20 +32,20 @@
 	});
 </script>
 
-<div class="relative flex flex-col justify-center overflow-auto pt-6">
+<div class="relative flex flex-col justify-center">
 	<!-- Copy Button -->
-	<div class="absolute right-4 top-6">
-		<Button size="icon" on:click={copyToClipboard}>
+	<div class="absolute right-2 top-2">
+		<Button size="icon" variant="ghost" on:click={copyToClipboard}>
 			{#if copyMessage}
-				<Icon class="text-teal-500" icon="line-md:clipboard-check" width={24} height={24} />
+				<Icon class="text-teal-500" icon="mdi:check" width={24} height={24} />
 			{:else}
-				<Icon icon="line-md:clipboard-arrow" width={24} height={24} />
+				<Icon class="text-zinc-50" icon="mdi:clipboard-outline" width={24} height={24} />
 			{/if}
 		</Button>
 	</div>
 
 	<!-- Highlighted Code -->
-	<pre bind:this={pre}>
-      <code class={language}>{code}</code>
-    </pre>
+	<pre
+		class="overflow-hidden rounded-md border border-zinc-300 dark:border-zinc-700"
+		bind:this={pre}><code class={language}>{code}</code></pre>
 </div>

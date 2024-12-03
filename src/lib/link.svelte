@@ -62,13 +62,13 @@
 	{...$$restProps}
 	{href}
 >
-	<div class="relative flex items-center">
+	<span class="relative flex items-center">
 		<Icon
 			class="absolute -left-5 hidden group-hover:block group-focus:block"
 			icon="carbon:caret-right"
 			width="24"
 			height="24"
 		/>
-	</div>
+	</span>
 	<slot />
 </a>

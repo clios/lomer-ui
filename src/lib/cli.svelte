@@ -1,13 +1,12 @@
 <script>
 	// @ts-nocheck
 	import { onMount } from 'svelte';
-	import hljs from 'highlight.js';
 	import Icon from '@iconify/svelte';
 	import Button from './button.svelte';
 	import clsx from 'clsx';
 
-	export let code = ''; // The code to highlight
-	export let language = ''; // Optional: specify the language
+	export let code = '';
+
 	let pre;
 
 	// Copy code to clipboard
@@ -23,28 +22,25 @@
 	}
 
 	let copyMessage = '';
-
-	onMount(() => {
-		if (language) {
-			hljs.highlightElement(pre.querySelector('code'));
-		} else {
-			hljs.highlightBlock(pre);
-		}
-	});
 </script>
 
 <div class="relative flex flex-col justify-center">
 	<!-- Copy Button -->
-	<div class="absolute right-2">
+	<div class="absolute right-1">
 		<Button size="icon" variant="ghost" on:click={copyToClipboard}>
 			{#if copyMessage}
 				<Icon class="text-teal-500" icon="mdi:check" width={24} height={24} />
 			{:else}
-				<Icon class="text-zinc-50" icon="mdi:clipboard-outline" width={24} height={24} />
+				<Icon icon="mdi:clipboard-outline" width={24} height={24} />
 			{/if}
 		</Button>
 	</div>
 
 	<!-- Highlighted Code -->
-	<pre class="overflow-hidden rounded-md" bind:this={pre}><code class={language}>{code}</code></pre>
+	<pre
+		class={clsx(
+			'border border-zinc-300 dark:border-zinc-700',
+			'overflow-hidden rounded-md bg-zinc-200 px-4 py-2 dark:bg-zinc-800'
+		)}
+		bind:this={pre}><p>{code}</p></pre>
 </div>

@@ -7,7 +7,7 @@ import path from 'path';
 const [, , command, component] = process.argv;
 
 // Define source and destination paths
-const SRC_DIR = path.resolve('./src/lib');
+const SRC_DIR = path.resolve('./node_modules/lomer-ui/dist');
 const DEST_DIR = path.resolve('./src/lib/components/ui');
 
 // Add component
@@ -21,7 +21,7 @@ async function addComponent(componentName) {
 
 		// Copy the file
 		await fs.copyFile(srcPath, destPath);
-		console.log(`✅ Component "${componentName}" added successfully to "${DEST_DIR}"`);
+		console.log(`✅ Component "${componentName}" added successfully`);
 	} catch (err) {
 		console.error(`❌ Error: ${err.message}`);
 	}
@@ -43,9 +43,9 @@ async function runCommand(command, args) {
 
 async function initProject() {
 	try {
-		console.log('🛠️ Initializing project...');
+		console.log('Initializing lomer-ui...');
 		await runCommand('npm', ['install', 'lomer-ui', 'clsx', 'mode-watcher', '@iconify/svelte']);
-		console.log('✅ Project initialized successfully!');
+		console.log('✅ Success');
 	} catch (error) {
 		console.error(`❌ Error initializing project: ${error.message}`);
 	}
@@ -53,12 +53,10 @@ async function initProject() {
 
 if (command === 'init') {
 	initProject();
+} else if (command === 'add') {
+	if (component) {
+		addComponent(component);
+	}
 } else {
-	console.error('❌ Invalid command. Usage: npx lomer-ui@latest init');
+	console.error('❌ Invalid command.');
 }
-
-// if (command === 'add' && component) {
-// 	addComponent(component);
-// } else {
-// 	console.error('❌ Invalid command. Usage: lomer-ui add <component>');
-// }

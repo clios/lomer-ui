@@ -15,6 +15,7 @@
 	import CardNotifications from './card__notifications.svelte';
 	import CardCreateAnAccount from './card__create-an-account.svelte';
 	import CardPaymentMethod from './card__payment-method.svelte';
+	import { goto } from '$app/navigation';
 
 	let isDialogOpen = false;
 	let isDrawerOpen = false;
@@ -32,7 +33,20 @@
 <Screen class="p-8" lineColor="#71717A10">
 	<p class="font-semibold">Beta Version</p>
 	<p class="font-mono text-6xl">lo<span class="font-serif">m</span>er-ui</p>
-	<p class="text-2xl font-semibold">Install as package or build your component.</p>
+	<p class="text-2xl font-semibold">Another build your component library.</p>
+	<p class="text-2xl font-semibold">Repair it. Refine it. Keep it. Dead simple.</p>
+	<p class="text-cyan-500">
+		Inspired by <a class="underline" href="https://ui.shadcn.com/" target="_blank">shadcn/ui</a>
+	</p>
+
+	<div class="my-8 flex gap-4">
+		<Button on:click={() => goto('/docs/installation')}>Get Started</Button>
+		<Button variant="secondary">
+			<Icon icon="mdi:github" width={24} height={24} />
+			GitHub</Button
+		>
+	</div>
+
 	<p class="mt-16 flex items-center text-4xl font-semibold">
 		<Icon icon="devicon:svelte" />
 		<span>SvelteKit + </span>
@@ -40,8 +54,7 @@
 		<span>Tailwind CSS</span>
 	</p>
 
-	<p class="mb-2 mt-16 text-xl">Examples</p>
-	<div class="flex gap-4">
+	<div class="mt-4 flex gap-4">
 		<CardNotifications />
 		<CardCreateAnAccount />
 		<CardPaymentMethod />

@@ -33,12 +33,13 @@
 			<ButtonToggleTheme />
 		</div>
 	</div>
-	<div class="container relative mx-auto mt-[3.8rem] h-[calc(100vh-4rem)] w-full overflow-y-auto">
+	<div
+		class="container relative mx-auto mt-[3.5rem] h-[calc(100vh-3.5rem)] w-full overflow-y-auto border-r dark:border-zinc-700"
+	>
 		<aside
-			class="fixed top-0 flex h-screen w-64 flex-col gap-2 overflow-y-auto border-r dark:border-zinc-700"
+			class="fixed top-0 flex h-screen w-64 flex-col gap-2 overflow-y-auto border-x pl-4 dark:border-zinc-700"
 		>
-			<p class="mt-24 pl-4 font-semibold">Getting Started</p>
-			<Link href="/docs/message" class="pl-8" variant="list-item">Message</Link>
+			<p class="mt-20 pl-4 font-semibold">Getting Started</p>
 			<Link href="/docs/installation" class="pl-8" variant="list-item">Installation</Link>
 			<Link href="/dark-mode" class="pl-8" variant="list-item">Dark Mode</Link>
 

@@ -1,33 +1,76 @@
 <script>
 	import Cli from '$lib/cli.svelte';
-	import Link from '$lib/link.svelte';
+	import Code from '$lib/code.svelte';
+	import { scrollToId } from '$lib/helper.ts';
 	import Icon from '@iconify/svelte';
 </script>
 
-<p class="font-mono text-3xl">Installation</p>
-<p>Choose your setup</p>
+<div class="sticky top-0">
+	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-sm">
+		<p class="mb-1 text-left text-xl font-semibold">On this page</p>
+		<button on:click={() => scrollToId('0')} class="text-left font-semibold"
+			>Setup your project</button
+		>
+		<button on:click={() => scrollToId('1')} class="ml-2 text-left">Create SvelteKit App</button>
+		<button on:click={() => scrollToId('2')} class="ml-2 text-left">Add Tailwind CSS</button>
+		<button on:click={() => scrollToId('3')} class="ml-2 text-left">Initialize lomer-ui</button>
+		<button on:click={() => scrollToId('4')} class="ml-2 text-left">Configure Tailwind CSS</button>
+		<button on:click={() => scrollToId('5')} class="ml-2 text-left">Start Building</button>
+	</aside>
+</div>
 
-<p class="mb-1 mt-8 text-2xl">For quick and easy set up.</p>
-<Cli code="npm install lomer-ui" language="shell" />
+<div class="pr-80">
+	<div class="flex items-center">
+		<p class="text-zinc-500">Docs</p>
+		<Icon class="text-zinc-500" icon="lsicon:right-filled" width={24} height={24} />
+		<p>Installation</p>
+	</div>
+	<p class="my-2 font-mono text-3xl">Installation</p>
+	<p class="text-zinc-500">
+		Guide to use <span class="font-mono">lomer-ui</span> in SvelteKit.
+	</p>
 
-<p class="mt-8 text-2xl">For building your own component.</p>
-<p class="mt-4 text-xl">1. Create SvelteKit App</p>
-<p>Use the SvelteKit CLI to create a new project.</p>
-<Cli code="npx sv create my-app" language="shell" />
+	<p id="0" class="mb-4 mt-8 text-2xl">Setup your project</p>
+	<p id="1" class="mb-1 text-xl"><span class="font-mono">1.</span> Create SvelteKit App</p>
+	<div class="ml-2 border-l pb-8 pl-6 dark:border-zinc-700">
+		<Cli code="npx sv create my-app" />
+	</div>
 
-<p class="mt-4 text-xl">2. Navigate to my-app folder</p>
-<Cli code="cd ./my-app" language="shell" />
+	<p id="2" class="mb-1 text-xl"><span class="font-mono">2.</span> Add Tailwind CSS</p>
+	<div class="ml-2 border-l pb-8 pl-6 dark:border-zinc-700">
+		<Cli code="npx sv add tailwindcss" />
+	</div>
 
-<p class="mt-4 text-xl">3. Add Tailwind CSS</p>
-<p>Use the Svelte CLI to add Tailwind CSS to your project.</p>
-<Cli code="npx sv add tailwindcss" language="shell" />
+	<p id="3" class="mb-1 text-xl"><span class="font-mono">3.</span> Initialize lomer-ui</p>
+	<div class="ml-2 border-l pb-8 pl-6 dark:border-zinc-700">
+		<Cli code="npx lomer-ui init" />
+	</div>
 
-<p class="mt-4 text-xl">4. Initialize lomer-ui</p>
-<Cli code="npx lomer-ui init" language="shell" />
+	<p id="4" class="mb-1 text-xl"><span class="font-mono">4.</span> Configure tailwind.config.ts</p>
+	<div class="ml-2 border-l pb-8 pl-6 dark:border-zinc-700">
+		<Code
+			code={`import type { Config } from 'tailwindcss';` +
+				`\n\nexport default {` +
+				`\n\tcontent: ['./src/**/*.{html,js,svelte,ts}'],` +
+				`\n\ttheme: { extend: {} },` +
+				`\n\tplugins: [],` +
+				`\n\tsafelist: ['dark'],` +
+				`\n\tdarkMode: ['class']` +
+				`\n} satisfies Config;`}
+			language="javascript"
+		/>
+	</div>
 
-<!-- <Link href="https://svelte.dev/docs/kit/creating-a-project" target="_blank" class="mt-4 text-xl">
-	Create SvelteKit App <Icon icon="mdi:open-in-new" />
-</Link>
-<Link href="https://tailwindcss.com/docs/guides/sveltekit" target="_blank" class="mt-4 text-xl">
-	Install Tailwind CSS with SvelteKit
-</Link> -->
+	<p id="5" class="text-xl"><span class="font-mono">5.</span> Start building your component</p>
+	<div class="ml-2 pb-8 pl-6">
+		<p>Run this command to add button component.</p>
+		<div class="">
+			<Cli code="lomer-ui add button" />
+		</div>
+		<p class="mt-2">Import and use it.</p>
+		<div class="flex flex-col gap-2">
+			<Code code={`import Button from '$lib/components/ui/button.svelte'`} language="javascript" />
+			<Code code={`<Button>Button</Button>`} language="xml" />
+		</div>
+	</div>
+</div>
