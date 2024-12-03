@@ -27,7 +27,6 @@
 				<div class="flex gap-4">
 					<Link href="/docs/installation">Docs</Link>
 					<Link href="/components/alert">Components</Link>
-					<Link href="/form">Form</Link>
 				</div>
 			</div>
 			<ButtonToggleTheme />
@@ -41,7 +40,7 @@
 		>
 			<p class="mt-20 pl-4 font-semibold">Getting Started</p>
 			<Link href="/docs/installation" class="pl-8" variant="list-item">Installation</Link>
-			<Link href="/dark-mode" class="pl-8" variant="list-item">Dark Mode</Link>
+			<Link href="/docs/dark-mode" class="pl-8" variant="list-item">Dark Mode</Link>
 
 			<p class="mt-4 pl-4 font-semibold">Components</p>
 			<Link href="/components/alert" class="pl-8" variant="list-item">Alert</Link>

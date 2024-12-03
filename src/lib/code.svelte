@@ -4,9 +4,13 @@
 	import hljs from 'highlight.js';
 	import Icon from '@iconify/svelte';
 	import Button from './button.svelte';
+	import clsx from 'clsx';
 
 	export let code = ''; // The code to highlight
 	export let language = ''; // Optional: specify the language
+	export { className as class };
+
+	let className = '';
 	let pre;
 
 	// Copy code to clipboard
@@ -32,7 +36,7 @@
 	});
 </script>
 
-<div class="relative flex flex-col justify-center">
+<div class={clsx('relative flex flex-col justify-center', className)}>
 	<!-- Copy Button -->
 	<div class="absolute right-2 top-2">
 		<Button size="icon" variant="ghost" on:click={copyToClipboard}>

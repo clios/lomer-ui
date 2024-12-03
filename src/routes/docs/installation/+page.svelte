@@ -2,7 +2,6 @@
 	import Cli from '$lib/cli.svelte';
 	import Code from '$lib/code.svelte';
 	import { scrollToId } from '$lib/helper.ts';
-	import Icon from '@iconify/svelte';
 </script>
 
 <div class="sticky top-0">
@@ -15,17 +14,13 @@
 		<button on:click={() => scrollToId('2')} class="ml-2 text-left">Add Tailwind CSS</button>
 		<button on:click={() => scrollToId('3')} class="ml-2 text-left">Initialize lomer-ui</button>
 		<button on:click={() => scrollToId('4')} class="ml-2 text-left">Configure Tailwind CSS</button>
-		<button on:click={() => scrollToId('5')} class="ml-2 text-left">Start Building</button>
+		<button on:click={() => scrollToId('5')} class="ml-2 text-left">That's it!</button>
 	</aside>
 </div>
 
 <div class="pr-80">
-	<div class="flex items-center">
-		<p class="text-zinc-500">Docs</p>
-		<Icon class="text-zinc-500" icon="lsicon:right-filled" width={24} height={24} />
-		<p>Installation</p>
-	</div>
-	<p class="my-2 font-mono text-3xl">Installation</p>
+	<p class="text-zinc-500">Docs</p>
+	<p class="font-mono text-3xl">Installation</p>
 	<p class="text-zinc-500">
 		Guide to use <span class="font-mono">lomer-ui</span> in SvelteKit.
 	</p>
@@ -61,7 +56,7 @@
 		/>
 	</div>
 
-	<p id="5" class="text-xl"><span class="font-mono">5.</span> Start building your component</p>
+	<p id="5" class="text-xl"><span class="font-mono">5.</span> That's it!</p>
 	<div class="ml-2 pb-8 pl-6">
 		<p>Run this command to add button component.</p>
 		<div class="">
