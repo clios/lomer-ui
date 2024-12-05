@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Input from '$lib/input.svelte';
-	import Code from '$lib/components/site/code.svelte';
+	import Code from '$site//code.svelte';
 	import Screen from '$lib/screen.svelte';
 
 	let value = 'lomer-ui';

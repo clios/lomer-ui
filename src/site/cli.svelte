@@ -2,7 +2,7 @@
 	// @ts-nocheck
 	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
-	import Button from '../../button.svelte';
+	import Button from '$lib/button.svelte';
 	import clsx from 'clsx';
 
 	export let code = '';

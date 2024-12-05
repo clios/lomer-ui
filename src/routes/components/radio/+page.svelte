@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { InputRadio } from '$lib/index.js';
-	import Code from '$lib/components/site/code.svelte';
+	import Code from '$site//code.svelte';
 	import Screen from '$lib/screen.svelte';
 	import Icon from '@iconify/svelte';
 

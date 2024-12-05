@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Link from '$lib/link.svelte';
-	import Code from '$lib/components/site/code.svelte';
+	import Code from '$site//code.svelte';
 	import Screen from '$lib/screen.svelte';
 </script>
 

@@ -1,8 +1,8 @@
 <script>
-	import Cli from '$lib/components/site/cli.svelte';
-	import Code from '$lib/components/site/code.svelte';
-	import PageHeader from '$lib/components/site/page-header.svelte';
-	import { scrollToId } from '$lib/helper.ts';
+	import Cli from '$site//cli.svelte';
+	import Code from '$site//code.svelte';
+	import PageHeader from '$site//page-header.svelte';
+	import { scrollToId } from '$site/helper.ts';
 </script>
 
 <div class="sticky top-4">

@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import hljs from 'highlight.js';
 	import Icon from '@iconify/svelte';
-	import Button from '../../button.svelte';
+	import Button from '$lib/button.svelte';
 	import clsx from 'clsx';
 
 	export let code = ''; // The code to highlight

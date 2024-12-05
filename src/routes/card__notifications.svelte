@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { InputCheck, Button } from '$lib/index.js';
+	import { Check, Button } from '$lib/index.js';
 	import Icon from '@iconify/svelte';
 </script>
 
@@ -12,10 +12,10 @@
 		<Icon icon="mdi:bell-ring-outline" width={30} height={30} />
 	</div>
 
-	<InputCheck class="rounded border p-4 dark:border-zinc-700">
+	<Check class="rounded border p-4 dark:border-zinc-700">
 		<p class="font-semibold">Push Notifications</p>
 		<div class="text-zinc-500">Send notifications to device.</div>
-	</InputCheck>
+	</Check>
 
 	<div class="my-4 flex items-start">
 		<Icon class="text-cyan-500" icon="icon-park-outline:dot" height="24" />

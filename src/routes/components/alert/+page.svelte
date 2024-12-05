@@ -1,17 +1,17 @@
 <script lang="ts">
-	import Code from '$lib/components/site/code.svelte';
+	import Code from '$site//code.svelte';
 	import Screen from '$lib/screen.svelte';
 	import Alert from '$lib/alert.svelte';
-	import { scrollToId } from '$lib/helper.ts';
-	import Cli from '$lib/components/site/cli.svelte';
-	import PageHeader from '$lib/components/site/page-header.svelte';
-	import Title from '$lib/components/site/title.svelte';
-	import SubTitle from '$lib/components/site/sub-title.svelte';
+	import { scrollToId } from '$site/helper.ts';
+	import Cli from '$site//cli.svelte';
+	import PageHeader from '$site/page-header.svelte';
+	import Title from '$site//title.svelte';
+	import SubTitle from '$site//sub-title.svelte';
 	import Link from '$lib/link.svelte';
 	import Button from '$lib/button.svelte';
 	import Icon from '@iconify/svelte';
-	import Prop from '$lib/components/site/prop.svelte';
-	import Val from '$lib/components/site/val.svelte';
+	import Prop from '$site//prop.svelte';
+	import Val from '$site//val.svelte';
 
 	let isClosableOpen = true;
 	let isOpen = true;

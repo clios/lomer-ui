@@ -1,13 +1,13 @@
 <script lang="ts">
 	import Button from '$lib/button.svelte';
-	import Cli from '$lib/components/site/cli.svelte';
-	import Code from '$lib/components/site/code.svelte';
-	import PageHeader from '$lib/components/site/page-header.svelte';
-	import Prop from '$lib/components/site/prop.svelte';
-	import SubTitle from '$lib/components/site/sub-title.svelte';
-	import Title from '$lib/components/site/title.svelte';
-	import Val from '$lib/components/site/val.svelte';
-	import { scrollToId } from '$lib/helper.js';
+	import Cli from '$site//cli.svelte';
+	import Code from '$site//code.svelte';
+	import PageHeader from '$site//page-header.svelte';
+	import Prop from '$site//prop.svelte';
+	import SubTitle from '$site//sub-title.svelte';
+	import Title from '$site//title.svelte';
+	import Val from '$site//val.svelte';
+	import { scrollToId } from '$site/helper.ts';
 	import Link from '$lib/link.svelte';
 	import Screen from '$lib/screen.svelte';
 	import Icon from '@iconify/svelte';

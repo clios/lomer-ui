@@ -47,7 +47,7 @@ async function copyFolder(src, dest) {
 async function initProject() {
 	try {
 		console.log('ℹ️ Initializing lomer-ui...');
-		await runCommand('npm', ['install', 'lomer-ui', 'clsx', 'mode-watcher', '@iconify/svelte']);
+		await runCommand('npm', ['install', 'clsx', 'mode-watcher', '@iconify/svelte']);
 		console.log('✅ Success');
 	} catch (error) {
 		console.error(`❌ Error initializing project: ${error.message}`);

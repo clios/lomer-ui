@@ -1,16 +1,16 @@
 <script lang="ts">
-	import Code from '$lib/components/site/code.svelte';
+	import Code from '$site//code.svelte';
 	import Screen from '$lib/screen.svelte';
 	import Field from '$lib/field.svelte';
-	import { scrollToId } from '$lib/helper.ts';
-	import PageHeader from '$lib/components/site/page-header.svelte';
+	import { scrollToId } from '$site/helper.ts';
+	import PageHeader from '$site//page-header.svelte';
 	import Input from '$lib/input.svelte';
-	import Title from '$lib/components/site/title.svelte';
-	import Cli from '$lib/components/site/cli.svelte';
+	import Title from '$site//title.svelte';
+	import Cli from '$site//cli.svelte';
 	import Button from '$lib/button.svelte';
 	import Icon from '@iconify/svelte';
-	import Prop from '$lib/components/site/prop.svelte';
-	import SubTitle from '$lib/components/site/sub-title.svelte';
+	import Prop from '$site//prop.svelte';
+	import SubTitle from '$site//sub-title.svelte';
 
 	let value = '';
 </script>
