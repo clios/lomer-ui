@@ -28,12 +28,14 @@
 		<div
 			class={clsx(
 				'absolute left-0 top-0 size-[24px] rounded  outline-cyan-500 ',
-				'bg-zinc-50 dark:bg-zinc-950', // color
+				value ? 'bg-zinc-50' : 'bg-zinc-50', // color
+				value ? 'dark:bg-zinc-50' : 'dark:bg-zinc-950', // color
 				'border dark:border-zinc-700', // border
 				'shadow-sm dark:shadow-none', // shadow
 				'group-focus:outline group-focus:outline-1 group-focus:outline-offset-2',
 				'group-hover:outline group-hover:outline-1 group-hover:outline-offset-2',
-				'group-disabled:border-zinc-500 group-disabled:outline-none'
+				'group-disabled:border-zinc-500 group-disabled:outline-none',
+				'group-disabled:border-none group-disabled:bg-zinc-50/0'
 			)}
 		>
 			{#if value}

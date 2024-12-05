@@ -10,7 +10,7 @@
 	let className = '';
 </script>
 
-<div class={clsx('grid', className)}>
+<div class={clsx('flex flex-col', className)}>
 	{#if label}
 		<p class="mb-[2px] flex justify-between text-left font-semibold">
 			{label}
@@ -22,11 +22,12 @@
 		<p
 			in:fade={{ delay: 200, duration: 200 }}
 			out:slide={{ axis: 'x', duration: 1000 }}
-			class="overflow-hidden text-nowrap text-left text-sm"
+			class="overflow-hidden text-nowrap text-left text-sm text-zinc-500"
 		>
 			{helper}
 		</p>
 	{/if}
+
 	{#if issue}
 		<p
 			in:fade={{ delay: 200, duration: 200 }}

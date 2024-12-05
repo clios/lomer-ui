@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Field from '$lib/field.svelte';
 	import { Button } from '$lib/index.js';
-	import InputText from '$lib/input-text.svelte';
+	import Input from '$lib/input.svelte';
 	import Icon from '@iconify/svelte';
 </script>
 
@@ -25,11 +25,11 @@
 	</div>
 
 	<Field class="my-4" label="Email">
-		<InputText placeholder="lomer@example.com" />
+		<Input placeholder="lomer@example.com" />
 	</Field>
 
 	<Field class="my-4" label="Password">
-		<InputText type="password" />
+		<Input type="password" />
 	</Field>
 
 	<Button class="mt-6 w-full justify-center">Create account</Button>

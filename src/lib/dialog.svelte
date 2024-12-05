@@ -2,7 +2,6 @@
 	import clsx from 'clsx';
 	import { fade, scale } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
-	import Button from './button.svelte';
 
 	export let title: string;
 	export let isOpen: boolean;
@@ -32,31 +31,33 @@
 			in:scale={{ duration: 200, delay: 200, start: 0.9 }}
 			out:scale={{ duration: 200, start: 0.9 }}
 			class={clsx(
-				'relative z-10 w-screen rounded border border-zinc-950 shadow-md transition-all dark:border-zinc-50 dark:shadow-none sm:w-[500px]'
+				'relative z-10 w-screen rounded border border-zinc-200 shadow-md transition-all dark:border-zinc-800 dark:shadow-none sm:w-[500px]'
 			)}
 		>
 			<!-- HEADER -->
-			<div
-				class="flex items-center justify-between rounded-t bg-white/80 pr-4 pt-4 dark:bg-zinc-950/50"
-			>
-				<p
-					class="border-b border-dashed border-zinc-950 px-4 pb-2 text-xl font-semibold dark:border-zinc-50"
-				>
+			<div class="flex items-center justify-between rounded-t bg-white pr-4 pt-4 dark:bg-zinc-950">
+				<p class="px-4 text-xl font-semibold">
 					{title}
 				</p>
 
-				<Button
-					class="relative -top-2"
-					variant="ghost"
-					size="icon"
-					edge="circle"
+				<button
+					class={clsx(
+						'absolute right-4 top-4 rounded-full',
+						'bg-zinc-50/0 text-zinc-950 dark:bg-zinc-950/0 dark:text-zinc-50', // color
+						'border border-zinc-50/0 dark:border-zinc-50/0', // color
+						'active:outline-2 active:outline-offset-0', // color
+						'outline-cyan-500 hover:outline hover:outline-1', // hover
+						'focus:outline focus:outline-1 focus:outline-offset-2', // focus
+						'focus:outline-cyan-500 focus:ring-offset-1', // focus
+						'disabled:focus:outline-none' // focus
+					)}
 					on:click={() => (isOpen = false)}
 				>
-					<Icon icon="line-md:close-circle-filled" width={24} />
-				</Button>
+					<Icon icon="line-md:close-circle-filled" width={24} height={24} />
+				</button>
 			</div>
 			<!-- BODY -->
-			<div class={clsx('overflow-auto rounded-b bg-white/80 p-4 dark:bg-zinc-950/50', className)}>
+			<div class={clsx('overflow-auto rounded-b bg-white px-4 pb-4 dark:bg-zinc-950', className)}>
 				<slot />
 			</div>
 		</div>

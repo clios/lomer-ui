@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import hljs from 'highlight.js';
 	import Icon from '@iconify/svelte';
-	import Button from './button.svelte';
+	import Button from '../../button.svelte';
 	import clsx from 'clsx';
 
 	export let code = ''; // The code to highlight
@@ -18,7 +18,7 @@
 		try {
 			await navigator.clipboard.writeText(code);
 			copyMessage = 'Copied!';
-			setTimeout(() => (copyMessage = ''), 2000); // Reset message after 2 seconds
+			setTimeout(() => (copyMessage = ''), 1000);
 		} catch (err) {
 			console.error('Failed to copy code:', err);
 			copyMessage = 'Failed to copy!';
@@ -41,9 +41,9 @@
 	<div class="absolute right-2 top-2">
 		<Button size="icon" variant="ghost" on:click={copyToClipboard}>
 			{#if copyMessage}
-				<Icon class="text-teal-500" icon="mdi:check" width={24} height={24} />
+				<Icon class="text-teal-500" icon="mdi:check" />
 			{:else}
-				<Icon class="text-zinc-50" icon="mdi:clipboard-outline" width={24} height={24} />
+				<Icon class="text-zinc-50" icon="mdi:clipboard-outline" />
 			{/if}
 		</Button>
 	</div>

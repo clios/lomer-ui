@@ -7,10 +7,10 @@
 	import Dialog from '$lib/dialog.svelte';
 	import Drawer from '$lib/drawer.svelte';
 	import Field from '$lib/field.svelte';
-	import InputCheck from '$lib/input-check.svelte';
+	import Check from '$lib/check.svelte';
 	import InputRadio from '$lib/input-radio.svelte';
 	import InputSelect from '$lib/input-select.svelte';
-	import InputText from '$lib/input-text.svelte';
+	import Input from '$lib/input.svelte';
 	import Link from '$lib/link.svelte';
 	import CardNotifications from './card__notifications.svelte';
 	import CardCreateAnAccount from './card__create-an-account.svelte';
@@ -34,10 +34,7 @@
 	<p class="font-semibold">Beta Version</p>
 	<p class="font-mono text-6xl">lo<span class="font-serif">m</span>er-ui</p>
 	<p class="text-2xl font-semibold">Another build your component library.</p>
-	<p class="text-2xl font-semibold">Repair it. Refine it. Keep it. Dead simple.</p>
-	<p class="text-cyan-500">
-		Inspired by <a class="underline" href="https://ui.shadcn.com/" target="_blank">shadcn/ui</a>
-	</p>
+	<p class="text-2xl font-semibold">Fix it. Tune it. Keep it. Dead simple.</p>
 
 	<div class="my-8 flex gap-4">
 		<Button on:click={() => goto('/docs/installation')}>Get Started</Button>
@@ -114,10 +111,10 @@
 			</div>
 		</Drawer>
 		<Field label="Label" helper="Helper" issue="Issue">Content</Field>
-		<InputCheck>
+		<Check>
 			<p class="font-semibold">I Accept</p>
 			<div>You accept our terms without reading.</div>
-		</InputCheck>
+		</Check>
 		<div>
 			<InputRadio bind:groupValue={value} groupName="clan" value="dragon">Dragon</InputRadio>
 			<InputRadio bind:groupValue={value} groupName="clan" value="serpent">Serpent</InputRadio>
@@ -130,7 +127,7 @@
 			<option value="wolf">Wolf</option>
 			<option value="lotus">Lotus</option>
 		</InputSelect>
-		<InputText value="lomer-ui"></InputText>
+		<Input value="lomer-ui"></Input>
 		<Link href="#">Link</Link>
 		<div>
 			<Link href="#" variant="list-item">List Item 1</Link>

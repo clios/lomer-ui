@@ -2,7 +2,7 @@
 
 Another build your component library.
 
-Repair it. Refine it. Keep it. Dead simple.
+Fix it. Tune it. Keep it. Dead simple.
 
 **Free and Open Source**.
 

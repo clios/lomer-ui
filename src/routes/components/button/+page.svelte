@@ -1,197 +1,221 @@
 <script lang="ts">
 	import Button from '$lib/button.svelte';
-	import Code from '$lib/code.svelte';
+	import Cli from '$lib/components/site/cli.svelte';
+	import Code from '$lib/components/site/code.svelte';
+	import PageHeader from '$lib/components/site/page-header.svelte';
+	import Prop from '$lib/components/site/prop.svelte';
+	import SubTitle from '$lib/components/site/sub-title.svelte';
+	import Title from '$lib/components/site/title.svelte';
+	import Val from '$lib/components/site/val.svelte';
 	import { scrollToId } from '$lib/helper.js';
+	import Link from '$lib/link.svelte';
 	import Screen from '$lib/screen.svelte';
 	import Icon from '@iconify/svelte';
 </script>
 
-<h1 class="font-mono text-4xl font-bold">Button</h1>
-<p>A component that looks like a button.</p>
-<div class="flex flex-wrap gap-1 py-4">
-	<Button size="fit" on:click={() => scrollToId('primary')}>Primary</Button>
-	<Button size="fit" on:click={() => scrollToId('secondary')}>Secondary</Button>
-	<Button size="fit" on:click={() => scrollToId('outline')}>Outline</Button>
-	<Button size="fit" on:click={() => scrollToId('ghost')}>Ghost</Button>
-	<Button size="fit" on:click={() => scrollToId('destructive')}>Destructive</Button>
-	<Button size="fit" on:click={() => scrollToId('fit')}>Fit</Button>
-	<Button size="fit" on:click={() => scrollToId('with-icon')}>With Icon</Button>
-	<Button size="fit" on:click={() => scrollToId('icon')}>Icon</Button>
-	<Button size="fit" on:click={() => scrollToId('circle')}>Circle</Button>
-	<Button size="fit" on:click={() => scrollToId('sharp')}>Sharp</Button>
-	<Button size="fit" on:click={() => scrollToId('loading')}>Loading</Button>
-	<Button size="fit" on:click={() => scrollToId('disabled')}>Disabled</Button>
+<div class="sticky top-4">
+	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-sm">
+		<p class="mb-1 text-left text-xl font-semibold">On this page</p>
+		<button on:click={() => scrollToId('1')} class="text-left font-semibold">Installation</button>
+		<button on:click={() => scrollToId('2')} class="text-left font-semibold">Usage</button>
+		<button on:click={() => scrollToId('3')} class="text-left font-semibold">Examples</button>
+		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left">Primary</button>
+		<button on:click={() => scrollToId('3.2')} class="ml-4 text-left">Secondary</button>
+		<button on:click={() => scrollToId('3.3')} class="ml-4 text-left">Destructive</button>
+		<button on:click={() => scrollToId('3.4')} class="ml-4 text-left">Ghost</button>
+		<button on:click={() => scrollToId('3.5')} class="ml-4 text-left">Outline</button>
+		<button on:click={() => scrollToId('3.6')} class="ml-4 text-left">With Icon</button>
+		<button on:click={() => scrollToId('3.7')} class="ml-4 text-left">Icon</button>
+		<button on:click={() => scrollToId('3.8')} class="ml-4 text-left">Sharp edge</button>
+		<button on:click={() => scrollToId('3.9')} class="ml-4 text-left">Full round edge</button>
+		<button on:click={() => scrollToId('3.10')} class="ml-4 text-left">Loading</button>
+		<button on:click={() => scrollToId('3.11')} class="ml-4 text-left">Disabled</button>
+	</aside>
 </div>
-<Code code={`import { Button } from 'lomer-ui'`} language="javascript" />
 
-<p class="pb-1 text-xl font-semibold">Examples</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button>Button</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code code={`<Button>Button</Button>`} language="xml" />
-		</div>
-	</div>
-</Screen>
+<div class="flex flex-col gap-2 pr-80">
+	<PageHeader title="Button" sub="Components">
+		<p>Click it and make actions happen.</p>
+	</PageHeader>
 
-<p class="mb-1 pt-8 font-semibold" id="secondary">Secondary</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button variant="secondary">Button</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code code={`<Button variant="secondary">Button</Button>`} language="xml" />
-		</div>
-	</div>
-</Screen>
+	<Screen class="flex flex-wrap justify-center gap-4 p-8">
+		<Button>Primary</Button>
+		<Button variant="secondary">Secondary</Button>
+		<Button variant="destructive">Destructive</Button>
+		<Button variant="ghost">Ghost</Button>
+		<Button variant="outline">Outline</Button>
+		<Button>
+			<Icon icon="mdi:power" width={24} height={24} /> Power
+		</Button>
+		<Button size="icon">
+			<Icon icon="mdi:power" width={24} height={24} />
+		</Button>
+		<Button edge="sharp">Sharp</Button>
+		<Button edge="circle">Full round</Button>
+		<Button isLoading>Loading</Button>
+		<Button isDisabled>Disabled</Button>
+	</Screen>
 
-<p class="mb-1 pt-8 font-semibold" id="outline">Outline</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button variant="outline">Button</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code code={`<Button variant="outline">Button</Button>`} language="xml" />
-		</div>
-	</div>
-</Screen>
+	<Title id="1">Installation</Title>
+	<Cli code={`lomer-ui add button`} />
+	<Button
+		variant="secondary"
+		size="fit"
+		on:click={() =>
+			window.open(`https://github.com/clios/lomer-ui/blob/main/src/lib/button.svelte`, '_blank')}
+		class="w-min whitespace-nowrap">Component Code <Icon icon="mdi:code" /></Button
+	>
 
-<p class="mb-1 pt-8 font-semibold" id="ghost">Ghost</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button variant="ghost">Button</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code code={`<Button variant="ghost">Button</Button>`} language="xml" />
-		</div>
-	</div>
-</Screen>
+	<Title id="2">Usage</Title>
+	<Code code={`import Button from '$lib/components/ui/button.svelte'`} language="javascript" />
+	<Code code={`<Button>Button</Button>`} language="xml" />
 
-<p class="mb-1 pt-8 font-semibold" id="destructive">Desctructive</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button variant="destructive">Button</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code code={`<Button variant="destructive">Button</Button>`} language="xml" />
-		</div>
-	</div>
-</Screen>
+	<Title id="3">Examples</Title>
+	<SubTitle id="3.1">Primary</SubTitle>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button>Button</Button>
+	</Screen>
+	<Code code={`<Button>Button</Button>`} language="xml" />
 
-<p class="mb-1 pt-8 font-semibold" id="fit">Fit</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button size="fit">Button</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code code={`<Button size="fit">Button</Button>`} language="xml" />
-		</div>
-	</div>
-</Screen>
+	<SubTitle id="3.2">Secondary</SubTitle>
+	<p>
+		Add <Prop>variant</Prop> property with
+		<Val>secondary</Val> value.
+	</p>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button variant="secondary">Button</Button>
+	</Screen>
+	<Code code={`<Button variant="secondary">Button</Button>`} language="xml" />
 
-<p class="mb-1 pt-8 font-semibold" id="with-icon">With Icon</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button>
-				<Icon icon="mdi:power" width={24} height={24} /> Shutdown
-			</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code
-				code={`<Button>` +
-					`\n\t<Icon icon="mdi:power" width={24} height={24} /> Shutdown` +
-					`\n</Button>`}
-				language="xml"
-			/>
-		</div>
-	</div>
-</Screen>
+	<SubTitle id="3.3">Destructive</SubTitle>
+	<p>
+		Add <Prop>variant</Prop> property with
+		<Val>destructive</Val> value.
+	</p>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button variant="destructive">Button</Button>
+	</Screen>
+	<Code code={`<Button variant="destructive">Button</Button>`} language="xml" />
 
-<p class="mb-1 pt-8 font-semibold" id="icon">Icon</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button size="icon">
-				<Icon icon="mdi:power" width={24} height={24} />
-			</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code
-				code={`<Button size="icon">` +
-					`\n\t<Icon icon="mdi:power" width={24} height={24} />` +
-					`\n</Button>`}
-				language="xml"
-			/>
-		</div>
-	</div>
-</Screen>
+	<SubTitle id="3.4">Ghost</SubTitle>
+	<p>
+		Add <Prop>variant</Prop> property with
+		<Val>ghost</Val> value.
+	</p>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button variant="ghost">Button</Button>
+	</Screen>
+	<Code code={`<Button variant="ghost">Button</Button>`} language="xml" />
 
-<p class="mb-1 pt-8 font-semibold" id="circle">Circle</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button size="icon" edge="circle">
-				<Icon icon="mdi:power" width={24} height={24} />
-			</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code
-				code={`<Button size="icon" edge="circle">` +
-					`\n\t<Icon icon="mdi:power" width={24} height={24} />` +
-					`\n</Button>`}
-				language="xml"
-			/>
-		</div>
-	</div>
-</Screen>
+	<SubTitle id="3.5">Outline</SubTitle>
+	<p>
+		Add <Prop>variant</Prop> property with
+		<Val>outline</Val> value.
+	</p>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button variant="outline">Button</Button>
+	</Screen>
+	<Code code={`<Button variant="outline">Button</Button>`} language="xml" />
 
-<p class="mb-1 pt-8 font-semibold" id="sharp">Sharp</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button size="icon" edge="sharp">
-				<Icon icon="mdi:power" width={24} height={24} />
-			</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code
-				code={`<Button size="icon" edge="sharp">` +
-					`\n\t<Icon icon="mdi:power" width={24} height={24} />` +
-					`\n</Button>`}
-				language="xml"
-			/>
-		</div>
-	</div>
-</Screen>
+	<SubTitle id="3.6">With Icon</SubTitle>
+	<p>
+		Insert Icon component inside button, use icons from <Link
+			class="underline"
+			target="_blank"
+			href="https://icon-sets.iconify.design/"
+			>Iconify
+		</Link>
+	</p>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button>
+			<Icon icon="mdi:power" width={24} height={24} /> Power
+		</Button>
+	</Screen>
+	<Code code={`import Icon from '@iconify/svelte'`} language="javascript" />
+	<Code
+		code={`<Button>` + `\n\t<Icon icon="mdi:power" width={24} height={24} /> Power` + `\n</Button>`}
+		language="xml"
+	/>
 
-<p class="mb-1 pt-8 font-semibold" id="loading">Loading</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button isLoading>Button</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code code={`<Button isLoading>Button</Button>`} language="xml" />
-		</div>
-	</div>
-</Screen>
+	<SubTitle id="3.7">Icon</SubTitle>
+	<p>
+		Insert Icon component inside button, use icons from <Link
+			class="underline"
+			target="_blank"
+			href="https://icon-sets.iconify.design/"
+			>Iconify
+		</Link>. Add <Prop>size</Prop> property with <Val>icon</Val> value.
+	</p>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button size="icon">
+			<Icon icon="mdi:power" width={24} height={24} />
+		</Button>
+	</Screen>
+	<Code code={`import Icon from '@iconify/svelte'`} language="javascript" />
+	<Code
+		code={`<Button size="icon">` +
+			`\n\t<Icon icon="mdi:power" width={24} height={24} />` +
+			`\n</Button>`}
+		language="xml"
+	/>
 
-<p class="mb-1 pt-8 font-semibold" id="disabled">Disabled</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Button isDisabled>Button</Button>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code code={`<Button isDisabled>Button</Button>`} language="xml" />
-		</div>
-	</div>
-</Screen>
+	<SubTitle id="3.8">Sharp edge</SubTitle>
+	<p>
+		Add <Prop>edge</Prop> property with
+		<Val>sharp</Val> value.
+	</p>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button edge="sharp">Button</Button>
+	</Screen>
+	<Code code={`<Button edge="sharp">Button</Button>`} language="xml" />
+
+	<SubTitle id="3.9">Full round edge</SubTitle>
+	<p>
+		Add <Prop>edge</Prop> property with
+		<Val>circle</Val> value.
+	</p>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button edge="circle">Button</Button>
+	</Screen>
+	<Code code={`<Button edge="circle">Button</Button>`} language="xml" />
+
+	<SubTitle id="3.10">Loading</SubTitle>
+	<p>
+		Add <Prop>isLoading</Prop> property.
+	</p>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button isLoading>Button</Button>
+	</Screen>
+	<Code code={`<Button isLoading>Button</Button>`} language="xml" />
+
+	<SubTitle id="3.11">Disabled</SubTitle>
+	<p>
+		Add <Prop>isDisabled</Prop> property.
+	</p>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button isDisabled>Button</Button>
+	</Screen>
+	<Code code={`<Button isDisabled>Button</Button>`} language="xml" />
+</div>

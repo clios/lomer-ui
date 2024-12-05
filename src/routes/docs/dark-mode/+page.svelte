@@ -1,6 +1,6 @@
 <script>
-	import Cli from '$lib/cli.svelte';
-	import Code from '$lib/code.svelte';
+	import Cli from '$lib/components/site/cli.svelte';
+	import Code from '$lib/components/site/code.svelte';
 	import { scrollToId } from '$lib/helper.ts';
 	import { Link } from '$lib/index.ts';
 	import Screen from '$lib/screen.svelte';

@@ -15,7 +15,7 @@
 
 <button
 	class={clsx(
-		'flex items-center gap-1 outline-offset-2', // base
+		'relative flex items-center gap-1 outline-offset-2', // base
 
 		// Variant: Primary
 		variant === 'primary' && 'bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950', // color
@@ -105,10 +105,11 @@
 	on:click
 >
 	{#if isLoading}
-		<div>
+		<div class="absolute right-1/2 translate-x-1/2">
 			<Icon class="text-cyan-500" icon="line-md:loading-twotone-loop" width="24" height="24" />
 		</div>
-	{:else}
-		<slot />
 	{/if}
+	<div class={clsx(isLoading && 'opacity-15', 'flex items-center gap-1')}>
+		<slot />
+	</div>
 </button>

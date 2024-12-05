@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Field from '$lib/field.svelte';
-	import { InputCheck, Button } from '$lib/index.js';
+	import { Button } from '$lib/index.js';
 	import InputRadio from '$lib/input-radio.svelte';
 	import InputSelect from '$lib/input-select.svelte';
-	import InputText from '$lib/input-text.svelte';
+	import Input from '$lib/input.svelte';
 	import Icon from '@iconify/svelte';
 
 	let value = '';
@@ -57,10 +57,10 @@
 
 	<div class="my-4 flex flex-col gap-2">
 		<Field label="Name">
-			<InputText placeholder="First Last" />
+			<Input placeholder="First Last" />
 		</Field>
 		<Field label="Card Number">
-			<InputText />
+			<Input />
 		</Field>
 	</div>
 
@@ -78,7 +78,7 @@
 			</InputSelect>
 		</Field>
 		<Field class="w-full" label="CVC">
-			<InputText class="w-full" placeholder="CVC" />
+			<Input class="w-full" placeholder="CVC" />
 		</Field>
 	</div>
 

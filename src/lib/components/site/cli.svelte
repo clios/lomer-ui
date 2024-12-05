@@ -2,7 +2,7 @@
 	// @ts-nocheck
 	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
-	import Button from './button.svelte';
+	import Button from '../../button.svelte';
 	import clsx from 'clsx';
 
 	export let code = '';
@@ -26,12 +26,12 @@
 
 <div class="relative flex flex-col justify-center">
 	<!-- Copy Button -->
-	<div class="absolute right-1">
+	<div class="absolute right-2">
 		<Button size="icon" variant="ghost" on:click={copyToClipboard}>
 			{#if copyMessage}
-				<Icon class="text-teal-500" icon="mdi:check" width={24} height={24} />
+				<Icon class="text-teal-500" icon="mdi:check" />
 			{:else}
-				<Icon icon="mdi:clipboard-outline" width={24} height={24} />
+				<Icon icon="mdi:clipboard-outline" />
 			{/if}
 		</Button>
 	</div>

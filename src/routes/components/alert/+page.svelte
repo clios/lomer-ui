@@ -1,92 +1,134 @@
 <script lang="ts">
-	import Code from '$lib/code.svelte';
+	import Code from '$lib/components/site/code.svelte';
 	import Screen from '$lib/screen.svelte';
 	import Alert from '$lib/alert.svelte';
+	import { scrollToId } from '$lib/helper.ts';
+	import Cli from '$lib/components/site/cli.svelte';
+	import PageHeader from '$lib/components/site/page-header.svelte';
+	import Title from '$lib/components/site/title.svelte';
+	import SubTitle from '$lib/components/site/sub-title.svelte';
+	import Link from '$lib/link.svelte';
 	import Button from '$lib/button.svelte';
+	import Icon from '@iconify/svelte';
+	import Prop from '$lib/components/site/prop.svelte';
+	import Val from '$lib/components/site/val.svelte';
 
+	let isClosableOpen = true;
 	let isOpen = true;
 </script>
 
-<h1 class="font-mono text-3xl font-bold">Alert</h1>
-<p>A component that looks like an alert.</p>
-<Code code={`import { Alert } from 'lomer-ui'`} language="javascript" />
+<div class="sticky top-4">
+	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-sm">
+		<p class="mb-1 text-left text-xl font-semibold">On this page</p>
+		<button on:click={() => scrollToId('1')} class="text-left font-semibold">Installation</button>
+		<button on:click={() => scrollToId('2')} class="text-left font-semibold">Usage</button>
+		<button on:click={() => scrollToId('3')} class="text-left font-semibold">Examples</button>
+		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left">Default</button>
+		<button on:click={() => scrollToId('3.2')} class="ml-4 text-left">Custom icon</button>
+		<button on:click={() => scrollToId('3.3')} class="ml-4 text-left">Destructive</button>
+		<button on:click={() => scrollToId('3.4')} class="ml-4 text-left">Open state</button>
+		<button on:click={() => scrollToId('3.5')} class="ml-4 text-left">Closable</button>
+	</aside>
+</div>
 
-<p class="border-b pb-1 text-2xl font-semibold">Example</p>
-<Screen>
-	<div class="grid grid-cols-[1fr_1fr] gap-4 pt-8 lg:grid-cols-2 lg:pt-0">
-		<div class="flex items-center px-8">
-			<Alert title="Notice">Your bill is due tomorrow.</Alert>
-		</div>
-		<div class="grid items-center">
-			<Code code={`<Alert title="Notice">Your bill is due tomorrow.</Alert>`} language="xml" />
-		</div>
-	</div>
-</Screen>
+<div class="flex flex-col gap-2 pr-80">
+	<PageHeader title="Alert" sub="Components">
+		<p>Grabs attention and delivers important information.</p>
+	</PageHeader>
 
-<p class="mb-1 pt-8 font-semibold">Custom Icon</p>
-<Screen>
-	<div class="grid grid-cols-[1fr_1fr] gap-4 pt-8 lg:grid-cols-2 lg:pt-0">
-		<div class="flex items-center px-8">
-			<Alert title="Notice" icon="mdi:error-outline">Your bill is due tomorrow.</Alert>
-		</div>
-		<div class="grid items-center">
-			<Code
-				code={`<Alert` +
-					`\n\ttitle="Notice"` +
-					`\n\ticon="mdi:error-outline"` +
-					`\n>` +
-					`\n\tYour bill is due tomorrow.` +
-					`\n</Alert>`}
-				language="xml"
-			/>
-		</div>
-	</div>
-</Screen>
+	<Screen class="p-8">
+		<Alert title="Notice">Your bill is due tomorrow.</Alert>
+	</Screen>
 
-<p class="mb-1 pt-8 font-semibold">Destructive</p>
-<Screen>
-	<div class="grid grid-cols-[1fr_1fr] gap-4 pt-8 lg:grid-cols-2 lg:pt-0">
-		<div class="flex items-center px-8">
-			<Alert title="Important" variant="destructive">Your bill is due today</Alert>
-		</div>
-		<div class="grid items-center">
-			<Code
-				code={`<Alert title="Important" variant="destructive" >` +
-					`\n\tYour bill is due today` +
-					`\n</Alert>`}
-				language="xml"
-			/>
-		</div>
-	</div>
-</Screen>
+	<Title id="1">Installation</Title>
+	<Cli code={`lomer-ui add alert`} />
+	<Button
+		variant="secondary"
+		size="fit"
+		on:click={() =>
+			window.open(`https://github.com/clios/lomer-ui/blob/main/src/lib/alert.svelte`, '_blank')}
+		class="w-min whitespace-nowrap">Component Code <Icon icon="mdi:code" /></Button
+	>
 
-<p class="mb-1 pt-8 font-semibold">Closable</p>
-<Screen>
-	<div class="grid grid-cols-[1fr_1fr] gap-4 pt-8 lg:grid-cols-2 lg:pt-0">
-		<div class="flex flex-col items-center justify-center gap-4 px-8">
-			<Button on:click={() => (isOpen = true)}>Open alert</Button>
-			<Alert title="Notice" bind:isOpen isClosable>Your bill is due tomorrow.</Alert>
+	<Title id="2">Usage</Title>
+	<Code code={`import Alert from '$lib/components/ui/alert.svelte'`} language="javascript" />
+	<Code code={`<Alert title="Notice">Your bill is due tomorrow.</Alert>`} language="xml" />
+
+	<Title id="3">Examples</Title>
+	<SubTitle id="3.1">Default</SubTitle>
+	<Screen class="rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500">
+		<Alert title="Notice">Your bill is due tomorrow.</Alert>
+	</Screen>
+	<Code code={`<Alert title="Notice">Your bill is due tomorrow.</Alert>`} language="xml" />
+
+	<SubTitle id="3.2" class="mt-4">Custom icon</SubTitle>
+	<p>
+		Add <Prop>icon</Prop> property, use icons from <Link
+			class="underline"
+			target="_blank"
+			href="https://icon-sets.iconify.design/"
+			>Iconify
+		</Link>
+	</p>
+	<Screen class="rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500">
+		<Alert title="Notice" icon="mdi:error-outline">Your bill is due tomorrow.</Alert>
+	</Screen>
+	<Code
+		code={`<Alert title="Notice" icon="mdi:error-outline">Your bill is due tomorrow.</Alert>`}
+		language="xml"
+	/>
+
+	<SubTitle id="3.3" class="mt-4">Destructive</SubTitle>
+	<p>
+		Add <Prop>variant</Prop> property with
+		<Val>destructive</Val> value.
+	</p>
+	<Screen class="rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500">
+		<Alert title="Notice" variant="destructive">Your bill is due tomorrow.</Alert>
+	</Screen>
+	<Code
+		code={`<Alert title="Notice" variant="destructive">` +
+			`\n\tYour bill is due tomorrow.` +
+			`\n</Alert>`}
+		language="xml"
+	/>
+
+	<SubTitle id="3.4" class="mt-4">Open state</SubTitle>
+	<p>
+		Bind <Prop>isOpen</Prop> property to reflect alert's open state.
+	</p>
+	<Screen class="rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500">
+		<div class="mb-4 flex items-center gap-4">
+			<Button on:click={() => (isOpen = !isOpen)}>Toggle alert</Button>
+			<p>isOpen = {isOpen}</p>
 		</div>
-		<div class="grid items-center">
-			<Code
-				code={`import { Alert, Button } from 'lomer-ui'` +
-					`\n\nlet isOpen = true` +
-					`\n\nfunction openAlert() {` +
-					`\n\tisOpen = true` +
-					`\n}`}
-				language="typescript"
-			/>
-			<Code
-				code={`<Button on:click={openAlert}>Open alert</Button>` +
-					`\n\n<Alert ` +
-					`\n\ttitle="Notice" ` +
-					`\n\tbind:isOpen` +
-					`\n\tisClosable` +
-					`\n>` +
-					`\n\tYour bill is due tomorrow.` +
-					`\n</Alert>`}
-				language="xml"
-			/>
-		</div>
-	</div>
-</Screen>
+		<Alert bind:isOpen title="Notice">Your bill is due tomorrow.</Alert>
+	</Screen>
+	<Code code={`let isOpen = true`} language="javascript" />
+	<Code
+		code={`<div class="mb-4 flex items-center gap-4">` +
+			`\n\t<Button on:click={() => (isOpen = !isOpen)}>Toggle alert</Button>` +
+			`\n\t<p>isOpen = {isOpen}</p>` +
+			`\n</div>` +
+			`\n<Alert bind:isOpen title="Notice">Your bill is due tomorrow.</Alert>`}
+		language="xml"
+	/>
+
+	<SubTitle id="3.5" class="mt-4">Closable</SubTitle>
+	<p>
+		Add <Prop>isClosable</Prop> property.
+	</p>
+	<Screen class="rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500">
+		{#if isClosableOpen}
+			<Alert bind:isOpen={isClosableOpen} title="Notice" isClosable
+				>Your bill is due tomorrow.</Alert
+			>
+		{:else}
+			<Button on:click={() => (isClosableOpen = true)}>Open alert</Button>
+		{/if}
+	</Screen>
+	<Code
+		code={`<Alert title="Notice" isClosable>` + `\n\tYour bill is due tomorrow.` + `\n</Alert>`}
+		language="xml"
+	/>
+</div>

@@ -14,7 +14,7 @@
 </script>
 
 <ModeWatcher defaultMode="system" />
-<div id="page" class="relative h-screen overflow-y-hidden">
+<div id="page" class="relative h-screen overflow-y-hidden dark:bg-zinc-950">
 	<div
 		class="fixed top-0 z-10 flex h-14 w-full items-center border-b bg-white/80 py-2 backdrop-blur-sm dark:border-zinc-700 dark:bg-zinc-800/0 dark:backdrop-blur-lg"
 	>
@@ -44,20 +44,24 @@
 			<Link href="/docs/dark-mode" class="pl-8" variant="list-item">Dark Mode</Link>
 
 			<p class="mt-4 pl-4 font-semibold">Components</p>
+			<Link href="/components/accordion" class="pl-8" variant="list-item">Accordion</Link>
 			<Link href="/components/alert" class="pl-8" variant="list-item">Alert</Link>
 			<Link href="/components/button" class="pl-8" variant="list-item">Button</Link>
+			<Link href="/components/card-picker" class="pl-8" variant="list-item">Card Picker</Link>
+			<Link href="/components/check" class="pl-8" variant="list-item">Check</Link>
 			<Link href="/components/dialog" class="pl-8" variant="list-item">Dialog</Link>
 			<Link href="/components/drawer" class="pl-8" variant="list-item">Drawer</Link>
 			<Link href="/components/field" class="pl-8" variant="list-item">Field</Link>
-			<Link href="/components/input-check" class="pl-8" variant="list-item">Input Check</Link>
-			<Link href="/components/input-radio" class="pl-8" variant="list-item">Input Radio</Link>
-			<Link href="/components/input-select" class="pl-8" variant="list-item">Input Select</Link>
-			<Link href="/components/input-text" class="pl-8" variant="list-item">Input Text</Link>
+			<Link href="/components/input" class="pl-8" variant="list-item">Input</Link>
 			<Link href="/components/link" class="pl-8" variant="list-item">Link</Link>
+			<Link href="/components/radio" class="pl-8" variant="list-item">Radio</Link>
+			<Link href="/components/select" class="pl-8" variant="list-item">Select</Link>
+			<Link href="/components/switch" class="pl-8" variant="list-item">Switch</Link>
+			<Link href="/components/textarea" class="pl-8" variant="list-item">Textarea</Link>
 
 			<div class="absolute bottom-0 right-0 pb-8 pr-8">
 				<Link href="https://github.com/clios" target="_blank" class="font-mono italic">
-					- clios
+					- Lomer
 				</Link>
 			</div>
 		</aside>

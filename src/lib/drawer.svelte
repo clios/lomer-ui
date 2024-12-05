@@ -1,6 +1,5 @@
 <script lang="ts">
 	import clsx from 'clsx';
-	import Button from './button.svelte';
 	import { fade, slide } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
 
@@ -47,8 +46,7 @@
 				'pointer-events-auto',
 				'shadow-md dark:shadow-none',
 				'z-100 relative border-l transition-all dark:border-zinc-800',
-				'w-full sm:w-[600px]', // responsiveness
-				'bg-white/80 dark:bg-zinc-950/50',
+				'bg-white dark:bg-zinc-950',
 				noBackdrop && 'bg-white/95 backdrop-blur-sm dark:bg-zinc-950/90',
 				emphasize ? 'translate-x-16' : '',
 				className
@@ -58,17 +56,29 @@
 		>
 			<!-- HEADER -->
 			<div
-				class="flex items-center justify-between border-b border-dashed border-zinc-950 bg-zinc-50/50 px-4 pb-2 pr-2 dark:border-zinc-50 dark:bg-zinc-950/50 sm:pl-4 sm:pr-4"
+				class="flex items-center justify-between bg-white px-4 pr-2 dark:bg-zinc-950 sm:pl-4 sm:pr-4"
 				in:fade={{ delay: 400 }}
 				out:fade={{ duration: 200 }}
 			>
-				<p class="px-4 py-4 text-2xl font-semibold text-zinc-950 dark:text-zinc-50">{title}</p>
-				<Button variant="ghost" size="icon" edge="circle" on:click={() => (isOpen = false)}>
-					<Icon icon="line-md:close-circle-filled" width={24} />
-				</Button>
+				<p class="px-4 pt-4 text-2xl font-semibold text-zinc-950 dark:text-zinc-50">{title}</p>
+				<button
+					class={clsx(
+						'absolute right-4 top-4 rounded-full',
+						'bg-zinc-50/0 text-zinc-950 dark:bg-zinc-950/0 dark:text-zinc-50', // color
+						'border border-zinc-50/0 dark:border-zinc-50/0', // color
+						'active:outline-2 active:outline-offset-0', // color
+						'outline-cyan-500 hover:outline hover:outline-1', // hover
+						'focus:outline focus:outline-1 focus:outline-offset-2', // focus
+						'focus:outline-cyan-500 focus:ring-offset-1', // focus
+						'disabled:focus:outline-none' // focus
+					)}
+					on:click={() => (isOpen = false)}
+				>
+					<Icon icon="line-md:close-circle-filled" width={24} height={24} />
+				</button>
 			</div>
 			<div
-				class="h-[calc(100vh-4rem)] overflow-auto bg-zinc-50/50 dark:bg-zinc-950/50"
+				class="h-[calc(100vh-4rem)] overflow-auto bg-white dark:bg-zinc-950"
 				in:fade={{ delay: 400 }}
 				out:fade={{ duration: 200 }}
 			>
