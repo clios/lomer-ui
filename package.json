@@ -1,6 +1,6 @@
 {
 	"name": "lomer-ui",
-	"version": "0.0.12",
+	"version": "0.0.13",
 	"bin": {
 		"lomer-ui": "./bin/cli.js"
 	},
