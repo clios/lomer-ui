@@ -3,11 +3,12 @@
 import { spawn } from 'child_process';
 import path from 'path';
 import fs from 'fs/promises';
+import fetch from 'node-fetch';
 
 const [, , command, component] = process.argv;
 
-// Define source and destination paths
-const SRC_DIR = path.resolve('./node_modules/lomer-ui/dist');
+// Define the GitHub raw URL for components
+const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib';
 const DEST_DIR = path.resolve('./src/lib/components/ui');
 
 async function runCommand(command, args) {
@@ -24,23 +25,36 @@ async function runCommand(command, args) {
 	});
 }
 
-async function copyFolder(src, dest) {
+async function fetchFile(fileUrl, destPath) {
 	try {
-		await fs.mkdir(dest, { recursive: true });
-		const entries = await fs.readdir(src, { withFileTypes: true });
+		const response = await fetch(fileUrl); // Fetch using node-fetch
 
-		for (let entry of entries) {
-			const srcPath = path.join(src, entry.name);
-			const destPath = path.join(dest, entry.name);
-
-			if (entry.isDirectory()) {
-				await copyFolder(srcPath, destPath);
-			} else {
-				await fs.copyFile(srcPath, destPath);
-			}
+		if (!response.ok) {
+			throw new Error(`Failed to fetch file: ${response.status} ${response.statusText}`);
 		}
+
+		const fileContent = await response.text(); // Get the file content
+		await fs.writeFile(destPath, fileContent); // Write the content to the destination file
+		console.log(`✅ File downloaded to: ${destPath}`);
 	} catch (error) {
-		throw new Error(`Failed to copy folder: ${error.message}`);
+		console.error(`❌ Error downloading file: ${error.message}`);
+		throw error; // Rethrow to handle in the calling function
+	}
+}
+
+async function addComponent(componentName) {
+	const fileUrl = `${GITHUB_BASE_URL}/${componentName}.svelte`;
+	const destPath = path.join(DEST_DIR, `${componentName}.svelte`);
+
+	try {
+		// Ensure the destination folder exists
+		await fs.mkdir(DEST_DIR, { recursive: true });
+
+		// Fetch the file using curl
+		await fetchFile(fileUrl, destPath);
+		console.log(`✅ Component "${componentName}" added successfully.`);
+	} catch (err) {
+		console.error(`❌ Error adding component "${componentName}": ${err.message}`);
 	}
 }
 
@@ -54,28 +68,15 @@ async function initProject() {
 	}
 }
 
-async function addComponent(componentName) {
-	const srcPath = path.join(SRC_DIR, componentName);
-	const destPath = path.join(DEST_DIR, componentName);
-
-	try {
-		await fs.access(srcPath); // Validate if the source exists
-		await copyFolder(srcPath, destPath);
-		console.log(`✅ Component "${componentName}" added successfully.`);
-	} catch (err) {
-		console.error(`❌ Error adding component "${componentName}": ${err.message}`);
-	}
-}
-
 function showHelp() {
 	console.log(`
 Usage:
-  myscript init                 Initialize the project with lomer-ui
-  myscript add <component>      Add a specific component
+  lomer-ui init                 Initialize the project with lomer-ui
+  lomer-ui add <component>      Add a specific component
 
 Examples:
-  myscript init
-  myscript add Button
+  lomer-ui init
+  lomer-ui add Button
 `);
 }
 
