@@ -35,7 +35,9 @@
 			)}
 		>
 			<!-- HEADER -->
-			<div class="flex items-center justify-between rounded-t bg-white pr-4 pt-4 dark:bg-zinc-950">
+			<div
+				class="flex items-center justify-between rounded-t bg-white pr-4 pt-4 dark:bg-zinc-950"
+			>
 				<p class="px-4 text-xl font-semibold">
 					{title}
 				</p>
@@ -57,7 +59,12 @@
 				</button>
 			</div>
 			<!-- BODY -->
-			<div class={clsx('overflow-auto rounded-b bg-white px-4 pb-4 dark:bg-zinc-950', className)}>
+			<div
+				class={clsx(
+					'overflow-auto rounded-b bg-white px-4 pb-4 dark:bg-zinc-950',
+					className
+				)}
+			>
 				<slot />
 			</div>
 		</div>

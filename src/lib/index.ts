@@ -10,4 +10,16 @@ import InputSelect from './input-select.svelte';
 import Input from './input.svelte';
 import Link from './link.svelte';
 
-export { Alert, Button, Dialog, Drawer, Field, Form, Check, InputRadio, InputSelect, Input, Link };
+export {
+	Alert,
+	Button,
+	Dialog,
+	Drawer,
+	Field,
+	Form,
+	Check,
+	InputRadio,
+	InputSelect,
+	Input,
+	Link
+};

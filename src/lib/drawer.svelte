@@ -60,7 +60,11 @@
 				in:fade={{ delay: 400 }}
 				out:fade={{ duration: 200 }}
 			>
-				<p class="px-4 pt-4 text-2xl font-semibold text-zinc-950 dark:text-zinc-50">{title}</p>
+				<p
+					class="px-4 pt-4 text-2xl font-semibold text-zinc-950 dark:text-zinc-50"
+				>
+					{title}
+				</p>
 				<button
 					class={clsx(
 						'absolute right-4 top-4 rounded-full',

@@ -3,7 +3,9 @@
 	import Icon from '@iconify/svelte';
 </script>
 
-<div class="w-96 rounded-md border bg-white p-4 dark:border-zinc-700 dark:bg-zinc-950">
+<div
+	class="w-96 rounded-md border bg-white p-4 dark:border-zinc-700 dark:bg-zinc-950"
+>
 	<div class="flex justify-between">
 		<div>
 			<p class="text-xl font-semibold">Notifications</p>

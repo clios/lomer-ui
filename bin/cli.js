@@ -8,7 +8,8 @@ import fetch from 'node-fetch';
 const [, , command, component] = process.argv;
 
 // Define the GitHub raw URL for components
-const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib';
+const GITHUB_BASE_URL =
+	'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib';
 const DEST_DIR = path.resolve('./src/lib/components/ui');
 
 async function runCommand(command, args) {
@@ -30,7 +31,9 @@ async function fetchFile(fileUrl, destPath) {
 		const response = await fetch(fileUrl); // Fetch using node-fetch
 
 		if (!response.ok) {
-			throw new Error(`Failed to fetch file: ${response.status} ${response.statusText}`);
+			throw new Error(
+				`Failed to fetch file: ${response.status} ${response.statusText}`
+			);
 		}
 
 		const fileContent = await response.text(); // Get the file content
@@ -54,15 +57,37 @@ async function addComponent(componentName) {
 		await fetchFile(fileUrl, destPath);
 		console.log(`✅ Component "${componentName}" added successfully.`);
 	} catch (err) {
-		console.error(`❌ Error adding component "${componentName}": ${err.message}`);
+		console.error(
+			`❌ Error adding component "${componentName}": ${err.message}`
+		);
 	}
 }
 
 async function initProject() {
+	const utilsFileUrl = `${GITHUB_BASE_URL}/utils.ts`;
+	const utilsDestPath = path.join(DEST_DIR, 'utils.ts');
+
 	try {
-		console.log('ℹ️ Initializing lomer-ui...');
-		await runCommand('npm', ['install', 'clsx', 'mode-watcher', '@iconify/svelte']);
-		console.log('✅ Success');
+		console.log('Initializing lomer-ui...');
+
+		// Step 1: Install required dependencies
+		await runCommand('npm', [
+			'install',
+			'tailwind-merge',
+			'clsx',
+			'mode-watcher'
+		]);
+		console.log('✅ Dependencies installed successfully.');
+
+		// Step 2: Ensure the destination directory exists
+		await fs.mkdir(DEST_DIR, { recursive: true });
+
+		// Step 3: Copy the `utils.ts` file
+		console.log(`ℹ️ Fetching 'utils.ts' from ${utilsFileUrl}`);
+		await fetchFile(utilsFileUrl, utilsDestPath);
+		console.log(`✅ 'utils.ts' added to ${utilsDestPath}`);
+
+		console.log('✅ lomer-ui initialization complete.');
 	} catch (error) {
 		console.error(`❌ Error initializing project: ${error.message}`);
 	}

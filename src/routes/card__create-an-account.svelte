@@ -5,7 +5,9 @@
 	import Icon from '@iconify/svelte';
 </script>
 
-<div class="h-min w-96 rounded-md border bg-white p-4 dark:border-zinc-700 dark:bg-zinc-950">
+<div
+	class="h-min w-96 rounded-md border bg-white p-4 dark:border-zinc-700 dark:bg-zinc-950"
+>
 	<p class="text-2xl font-semibold">Create an account</p>
 	<p class="mb-4 text-zinc-500">Sign up with</p>
 
@@ -18,7 +20,9 @@
 		</Button>
 	</div>
 
-	<div class="relative my-4 flex items-center justify-center gap-2 text-zinc-500">
+	<div
+		class="relative my-4 flex items-center justify-center gap-2 text-zinc-500"
+	>
 		<div class=" w-full border-b dark:border-zinc-700"></div>
 		<p class="whitespace-nowrap">or create account by</p>
 		<div class=" w-full border-b dark:border-zinc-700"></div>

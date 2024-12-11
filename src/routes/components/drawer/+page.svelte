@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Code from '$site//code.svelte';
-	import Screen from '$lib/screen.svelte';
+	import Screen from '$site/screen.svelte';
 	import Drawer from '$lib/drawer.svelte';
 	import Button from '$lib/button.svelte';
 	import { scrollToId } from '$site/helper.ts';
@@ -20,15 +20,23 @@
 <div class="sticky top-4">
 	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-sm">
 		<p class="mb-1 text-left text-xl font-semibold">On this page</p>
-		<button on:click={() => scrollToId('1')} class="text-left font-semibold">Installation</button>
-		<button on:click={() => scrollToId('2')} class="text-left font-semibold">Usage</button>
-		<button on:click={() => scrollToId('3')} class="text-left font-semibold">Example</button>
-		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left">Default</button>
+		<button on:click={() => scrollToId('1')} class="text-left font-semibold"
+			>Installation</button
+		>
+		<button on:click={() => scrollToId('2')} class="text-left font-semibold"
+			>Usage</button
+		>
+		<button on:click={() => scrollToId('3')} class="text-left font-semibold"
+			>Example</button
+		>
+		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left"
+			>Default</button
+		>
 	</aside>
 </div>
 
 <div class="flex flex-col gap-2 pr-80">
-	<PageHeader title="Drawer" sub="Components">
+	<PageHeader title="Drawer" sub="Component">
 		<p>Slide-out panel for navigation or content.</p>
 	</PageHeader>
 
@@ -48,7 +56,9 @@
 			<div
 				class="flex items-center justify-between bg-white px-4 pr-2 dark:bg-zinc-950 sm:pl-4 sm:pr-4"
 			>
-				<p class="px-4 pt-4 text-2xl font-semibold text-zinc-950 dark:text-zinc-50">
+				<p
+					class="px-4 pt-4 text-2xl font-semibold text-zinc-950 dark:text-zinc-50"
+				>
 					Notifications
 				</p>
 				<button
@@ -78,21 +88,33 @@
 					</Check>
 
 					<div class="my-4 flex items-start">
-						<Icon class="text-cyan-500" icon="icon-park-outline:dot" height="24" />
+						<Icon
+							class="text-cyan-500"
+							icon="icon-park-outline:dot"
+							height="24"
+						/>
 						<div>
 							<p class="font-semibold">Your call has been confirmed.</p>
 							<div class="text-zinc-500">1 hour ago</div>
 						</div>
 					</div>
 					<div class="my-4 flex items-start">
-						<Icon class="text-cyan-500" icon="icon-park-outline:dot" height="24" />
+						<Icon
+							class="text-cyan-500"
+							icon="icon-park-outline:dot"
+							height="24"
+						/>
 						<div>
 							<p class="font-semibold">You have a new message!</p>
 							<div class="text-zinc-500">1 hour ago</div>
 						</div>
 					</div>
 					<div class="my-4 flex items-start">
-						<Icon class="text-cyan-500" icon="icon-park-outline:dot" height="24" />
+						<Icon
+							class="text-cyan-500"
+							icon="icon-park-outline:dot"
+							height="24"
+						/>
 						<div>
 							<p class="font-semibold">Your subscription is expiring soon!</p>
 							<div class="text-zinc-500">2 hours ago</div>
@@ -100,7 +122,8 @@
 					</div>
 
 					<Button class="w-full justify-center">
-						<Icon icon="material-symbols:check" width={24} height={24} /> Mark all as read
+						<Icon icon="material-symbols:check" width={24} height={24} /> Mark all
+						as read
 					</Button>
 				</div>
 			</div>
@@ -108,18 +131,25 @@
 	</Screen>
 
 	<Title id="1">Installation</Title>
-	<Cli code={`lomer-ui add drawer`} />
+	<Cli code={`npx lomer-ui add drawer`} />
 	<Button
 		variant="secondary"
-		size="fit"
+		size="small"
 		on:click={() =>
-			window.open(`https://github.com/clios/lomer-ui/blob/main/src/lib/drawer.svelte`, '_blank')}
-		class="w-min whitespace-nowrap">Component Code <Icon icon="mdi:code" /></Button
+			window.open(
+				`https://github.com/clios/lomer-ui/blob/main/src/lib/drawer.svelte`,
+				'_blank'
+			)}
+		class="w-min whitespace-nowrap"
+		>Component Code <Icon icon="mdi:code" /></Button
 	>
 
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>isOpen</Prop> property to reflect drawer's open state.</p>
-	<p>Specify width in <Prop>class</Prop> property, by default it will cover the entire screen</p>
+	<p>
+		Specify width in <Prop>class</Prop> property, by default it will cover the entire
+		screen
+	</p>
 	<Code
 		code={`import Drawer from '$lib/components/ui/drawer.svelte'` +
 			`\nlet isOpen = false` +
@@ -140,7 +170,11 @@
 		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
 	>
 		<Button on:click={() => (isDefaultDrawerOpen = true)}>Open Drawer</Button>
-		<Drawer class="w-[400px]" title="Notifications" bind:isOpen={isDefaultDrawerOpen}>
+		<Drawer
+			class="w-[400px]"
+			title="Notifications"
+			bind:isOpen={isDefaultDrawerOpen}
+		>
 			<div class="px-8">
 				<p class="mb-4 text-zinc-500">You have 3 unread messages.</p>
 
@@ -150,21 +184,33 @@
 				</Check>
 
 				<div class="my-4 flex items-start">
-					<Icon class="text-cyan-500" icon="icon-park-outline:dot" height="24" />
+					<Icon
+						class="text-cyan-500"
+						icon="icon-park-outline:dot"
+						height="24"
+					/>
 					<div>
 						<p class="font-semibold">Your call has been confirmed.</p>
 						<div class="text-zinc-500">1 hour ago</div>
 					</div>
 				</div>
 				<div class="my-4 flex items-start">
-					<Icon class="text-cyan-500" icon="icon-park-outline:dot" height="24" />
+					<Icon
+						class="text-cyan-500"
+						icon="icon-park-outline:dot"
+						height="24"
+					/>
 					<div>
 						<p class="font-semibold">You have a new message!</p>
 						<div class="text-zinc-500">1 hour ago</div>
 					</div>
 				</div>
 				<div class="my-4 flex items-start">
-					<Icon class="text-cyan-500" icon="icon-park-outline:dot" height="24" />
+					<Icon
+						class="text-cyan-500"
+						icon="icon-park-outline:dot"
+						height="24"
+					/>
 					<div>
 						<p class="font-semibold">Your subscription is expiring soon!</p>
 						<div class="text-zinc-500">2 hours ago</div>
@@ -172,7 +218,8 @@
 				</div>
 
 				<Button class="w-full justify-center">
-					<Icon icon="material-symbols:check" width={24} height={24} /> Mark all as read
+					<Icon icon="material-symbols:check" width={24} height={24} /> Mark all
+					as read
 				</Button>
 			</div>
 		</Drawer>

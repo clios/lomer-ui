@@ -1,7 +1,7 @@
 <script lang="ts">
 	import InputSelect from '$lib/input-select.svelte';
 	import Code from '$site//code.svelte';
-	import Screen from '$lib/screen.svelte';
+	import Screen from '$site/screen.svelte';
 
 	let value = '';
 </script>
@@ -49,7 +49,10 @@
 			</InputSelect>
 		</div>
 		<div class="ml-8 grid items-center">
-			<Code code={`<InputSelect disabled>` + `\n\t...` + `\n</InputSelect>`} language="xml" />
+			<Code
+				code={`<InputSelect disabled>` + `\n\t...` + `\n</InputSelect>`}
+				language="xml"
+			/>
 		</div>
 	</div>
 </Screen>

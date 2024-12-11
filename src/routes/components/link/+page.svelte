@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Link from '$lib/link.svelte';
 	import Code from '$site//code.svelte';
-	import Screen from '$lib/screen.svelte';
+	import Screen from '$site/screen.svelte';
 </script>
 
 <h1 class="font-mono text-3xl font-bold">Link</h1>

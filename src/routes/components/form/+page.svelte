@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Form from '$lib/form.svelte';
 	import Code from '$site//code.svelte';
-	import Screen from '$lib/screen.svelte';
+	import Screen from '$site/screen.svelte';
 	import Alert from '$lib/alert.svelte';
 </script>
 

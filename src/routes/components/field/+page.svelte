@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Code from '$site//code.svelte';
-	import Screen from '$lib/screen.svelte';
+	import Screen from '$site/screen.svelte';
 	import Field from '$lib/field.svelte';
 	import { scrollToId } from '$site/helper.ts';
 	import PageHeader from '$site//page-header.svelte';
@@ -18,15 +18,23 @@
 <div class="sticky top-4">
 	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-sm">
 		<p class="mb-1 text-left text-xl font-semibold">On this page</p>
-		<button on:click={() => scrollToId('1')} class="text-left font-semibold">Installation</button>
-		<button on:click={() => scrollToId('2')} class="text-left font-semibold">Usage</button>
-		<button on:click={() => scrollToId('3')} class="text-left font-semibold">Example</button>
-		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left">Default</button>
+		<button on:click={() => scrollToId('1')} class="text-left font-semibold"
+			>Installation</button
+		>
+		<button on:click={() => scrollToId('2')} class="text-left font-semibold"
+			>Usage</button
+		>
+		<button on:click={() => scrollToId('3')} class="text-left font-semibold"
+			>Example</button
+		>
+		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left"
+			>Default</button
+		>
 	</aside>
 </div>
 
 <div class="flex flex-col gap-2 pr-80">
-	<PageHeader title="Field" sub="Components">
+	<PageHeader title="Field" sub="Component">
 		<p>Displays and/or collects data seamlessly.</p>
 	</PageHeader>
 
@@ -37,18 +45,25 @@
 	</Screen>
 
 	<Title id="1">Installation</Title>
-	<Cli code={`lomer-ui add field`} />
+	<Cli code={`npx lomer-ui add field`} />
 	<Button
 		variant="secondary"
-		size="fit"
+		size="small"
 		on:click={() =>
-			window.open(`https://github.com/clios/lomer-ui/blob/main/src/lib/field.svelte`, '_blank')}
-		class="w-min whitespace-nowrap">Component Code <Icon icon="mdi:code" /></Button
+			window.open(
+				`https://github.com/clios/lomer-ui/blob/main/src/lib/field.svelte`,
+				'_blank'
+			)}
+		class="w-min whitespace-nowrap"
+		>Component Code <Icon icon="mdi:code" /></Button
 	>
 
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>value</Prop> property to reflect field's value.</p>
-	<Code code={`import Field from '$lib/components/ui/field.svelte'`} language="javascript" />
+	<Code
+		code={`import Field from '$lib/components/ui/field.svelte'`}
+		language="javascript"
+	/>
 	<Code
 		code={`<Field label="Label here" helper="Helper here" issue="Issue here">` +
 			`\n\tContent here...` +

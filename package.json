@@ -61,6 +61,7 @@
 		"clsx": "^2.1.1",
 		"highlight.js": "^11.10.0",
 		"mode-watcher": "^0.5.0",
-		"node-fetch": "^3.3.2"
+		"node-fetch": "^3.3.2",
+		"tailwind-merge": "^2.5.5"
 	}
 }

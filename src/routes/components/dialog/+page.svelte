@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Code from '$site//code.svelte';
-	import Screen from '$lib/screen.svelte';
+	import Screen from '$site/screen.svelte';
 	import Button from '$lib/button.svelte';
 	import { scrollToId } from '$site/helper.ts';
 	import PageHeader from '$site//page-header.svelte';
@@ -21,15 +21,23 @@
 <div class="sticky top-4">
 	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-sm">
 		<p class="mb-1 text-left text-xl font-semibold">On this page</p>
-		<button on:click={() => scrollToId('1')} class="text-left font-semibold">Installation</button>
-		<button on:click={() => scrollToId('2')} class="text-left font-semibold">Usage</button>
-		<button on:click={() => scrollToId('3')} class="text-left font-semibold">Example</button>
-		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left">Default</button>
+		<button on:click={() => scrollToId('1')} class="text-left font-semibold"
+			>Installation</button
+		>
+		<button on:click={() => scrollToId('2')} class="text-left font-semibold"
+			>Usage</button
+		>
+		<button on:click={() => scrollToId('3')} class="text-left font-semibold"
+			>Example</button
+		>
+		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left"
+			>Default</button
+		>
 	</aside>
 </div>
 
 <div class="flex flex-col gap-2 pr-80">
-	<PageHeader title="Dialog" sub="Components">
+	<PageHeader title="Dialog" sub="Component">
 		<p>Displays a focused interface for user interaction.</p>
 	</PageHeader>
 
@@ -41,7 +49,9 @@
 			)}
 		>
 			<!-- HEADER -->
-			<div class="flex items-center justify-between rounded-t bg-white pr-4 pt-4 dark:bg-zinc-950">
+			<div
+				class="flex items-center justify-between rounded-t bg-white pr-4 pt-4 dark:bg-zinc-950"
+			>
 				<p class="px-4 text-xl font-semibold">Wait wait wait</p>
 
 				<button
@@ -61,7 +71,11 @@
 				</button>
 			</div>
 			<!-- BODY -->
-			<div class={clsx('overflow-auto rounded-b bg-white px-4 pb-4 dark:bg-zinc-950')}>
+			<div
+				class={clsx(
+					'overflow-auto rounded-b bg-white px-4 pb-4 dark:bg-zinc-950'
+				)}
+			>
 				<p>Let me say something. Let me say something!</p>
 				<div class="mt-8 flex justify-end gap-4">
 					<Button variant="ghost">Throw him anyway</Button>
@@ -72,13 +86,17 @@
 	</Screen>
 
 	<Title id="1">Installation</Title>
-	<Cli code={`lomer-ui add dialog`} />
+	<Cli code={`npx lomer-ui add dialog`} />
 	<Button
 		variant="secondary"
-		size="fit"
+		size="small"
 		on:click={() =>
-			window.open(`https://github.com/clios/lomer-ui/blob/main/src/lib/dialog.svelte`, '_blank')}
-		class="w-min whitespace-nowrap">Component Code <Icon icon="mdi:code" /></Button
+			window.open(
+				`https://github.com/clios/lomer-ui/blob/main/src/lib/dialog.svelte`,
+				'_blank'
+			)}
+		class="w-min whitespace-nowrap"
+		>Component Code <Icon icon="mdi:code" /></Button
 	>
 
 	<Title id="2">Usage</Title>

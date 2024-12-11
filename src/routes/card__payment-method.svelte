@@ -9,7 +9,9 @@
 	let value = '';
 </script>
 
-<div class="w-96 rounded-md border bg-white p-4 dark:border-zinc-700 dark:bg-zinc-950">
+<div
+	class="w-96 rounded-md border bg-white p-4 dark:border-zinc-700 dark:bg-zinc-950"
+>
 	<div>
 		<p class="text-xl font-semibold">Payment Method</p>
 		<p class="mb-4 text-zinc-500">Add a new payment method to your account.</p>

@@ -9,34 +9,67 @@
 	import Val from '$site//val.svelte';
 	import { scrollToId } from '$site/helper.ts';
 	import Link from '$lib/link.svelte';
-	import Screen from '$lib/screen.svelte';
+	import Screen from '$site/screen.svelte';
 	import Icon from '@iconify/svelte';
 </script>
 
 <div class="sticky top-4">
 	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-sm">
 		<p class="mb-1 text-left text-xl font-semibold">On this page</p>
-		<button on:click={() => scrollToId('1')} class="text-left font-semibold">Installation</button>
-		<button on:click={() => scrollToId('2')} class="text-left font-semibold">Usage</button>
-		<button on:click={() => scrollToId('3')} class="text-left font-semibold">Examples</button>
-		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left">Primary</button>
-		<button on:click={() => scrollToId('3.2')} class="ml-4 text-left">Secondary</button>
-		<button on:click={() => scrollToId('3.3')} class="ml-4 text-left">Destructive</button>
-		<button on:click={() => scrollToId('3.4')} class="ml-4 text-left">Ghost</button>
-		<button on:click={() => scrollToId('3.5')} class="ml-4 text-left">Outline</button>
-		<button on:click={() => scrollToId('3.6')} class="ml-4 text-left">With Icon</button>
-		<button on:click={() => scrollToId('3.7')} class="ml-4 text-left">Icon</button>
-		<button on:click={() => scrollToId('3.8')} class="ml-4 text-left">Sharp edge</button>
-		<button on:click={() => scrollToId('3.9')} class="ml-4 text-left">Full round edge</button>
-		<button on:click={() => scrollToId('3.10')} class="ml-4 text-left">Loading</button>
-		<button on:click={() => scrollToId('3.11')} class="ml-4 text-left">Disabled</button>
+		<button on:click={() => scrollToId('1')} class="text-left font-semibold"
+			>Installation</button
+		>
+		<button on:click={() => scrollToId('2')} class="text-left font-semibold"
+			>Usage</button
+		>
+		<button on:click={() => scrollToId('3')} class="text-left font-semibold"
+			>Examples</button
+		>
+		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left"
+			>Primary</button
+		>
+		<button on:click={() => scrollToId('3.2')} class="ml-4 text-left"
+			>Secondary</button
+		>
+		<button on:click={() => scrollToId('3.3')} class="ml-4 text-left"
+			>Destructive</button
+		>
+		<button on:click={() => scrollToId('3.4')} class="ml-4 text-left"
+			>Ghost</button
+		>
+		<button on:click={() => scrollToId('3.5')} class="ml-4 text-left"
+			>Outline</button
+		>
+		<button on:click={() => scrollToId('3.6')} class="ml-4 text-left"
+			>With Icon</button
+		>
+		<button on:click={() => scrollToId('3.7')} class="ml-4 text-left"
+			>Icon</button
+		>
+		<button on:click={() => scrollToId('3.8')} class="ml-4 text-left"
+			>Sharp edge</button
+		>
+		<button on:click={() => scrollToId('3.9')} class="ml-4 text-left"
+			>Full round edge</button
+		>
+		<button on:click={() => scrollToId('3.10')} class="ml-4 text-left"
+			>Loading</button
+		>
+		<button on:click={() => scrollToId('3.11')} class="ml-4 text-left"
+			>Disabled</button
+		>
+		<button on:click={() => scrollToId('3.12')} class="ml-4 text-left"
+			>Small</button
+		>
 	</aside>
 </div>
 
 <div class="flex flex-col gap-2 pr-80">
-	<PageHeader title="Button" sub="Components">
-		<p>Click it and make actions happen.</p>
-	</PageHeader>
+	<PageHeader
+		title="Button"
+		sub="Component"
+		info="Click it and make actions happen."
+	/>
 
 	<Screen class="flex flex-wrap justify-center gap-4 p-8">
 		<Button>Primary</Button>
@@ -54,20 +87,28 @@
 		<Button edge="circle">Full round</Button>
 		<Button isLoading>Loading</Button>
 		<Button isDisabled>Disabled</Button>
+		<Button size="small">Small</Button>
 	</Screen>
 
 	<Title id="1">Installation</Title>
-	<Cli code={`lomer-ui add button`} />
+	<Cli code={`npx lomer-ui add button`} />
 	<Button
 		variant="secondary"
-		size="fit"
+		size="small"
 		on:click={() =>
-			window.open(`https://github.com/clios/lomer-ui/blob/main/src/lib/button.svelte`, '_blank')}
-		class="w-min whitespace-nowrap">Component Code <Icon icon="mdi:code" /></Button
+			window.open(
+				`https://github.com/clios/lomer-ui/blob/main/src/lib/button.svelte`,
+				'_blank'
+			)}
+		class="w-min whitespace-nowrap"
+		>Component Code <Icon icon="mdi:code" /></Button
 	>
 
 	<Title id="2">Usage</Title>
-	<Code code={`import Button from '$lib/components/ui/button.svelte'`} language="javascript" />
+	<Code
+		code={`import Button from '$lib/components/ui/button.svelte'`}
+		language="javascript"
+	/>
 	<Code code={`<Button>Button</Button>`} language="xml" />
 
 	<Title id="3">Examples</Title>
@@ -145,7 +186,9 @@
 	</Screen>
 	<Code code={`import Icon from '@iconify/svelte'`} language="javascript" />
 	<Code
-		code={`<Button>` + `\n\t<Icon icon="mdi:power" width={24} height={24} /> Power` + `\n</Button>`}
+		code={`<Button>` +
+			`\n\t<Icon icon="mdi:power" width={24} height={24} /> Power` +
+			`\n</Button>`}
 		language="xml"
 	/>
 
@@ -218,4 +261,16 @@
 		<Button isDisabled>Button</Button>
 	</Screen>
 	<Code code={`<Button isDisabled>Button</Button>`} language="xml" />
+
+	<SubTitle id="3.12">Small</SubTitle>
+	<p>
+		Add <Prop>size</Prop> property with
+		<Val>small</Val> value.
+	</p>
+	<Screen
+		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
+	>
+		<Button size="small">Small</Button>
+	</Screen>
+	<Code code={`<Button size="small">Small</Button>`} language="xml" />
 </div>

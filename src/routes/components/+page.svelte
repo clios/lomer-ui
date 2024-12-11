@@ -3,6 +3,6 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		goto('/components/alert');
+		goto('/components/accordion');
 	});
 </script>

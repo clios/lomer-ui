@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { InputRadio } from '$lib/index.js';
 	import Code from '$site//code.svelte';
-	import Screen from '$lib/screen.svelte';
+	import Screen from '$site/screen.svelte';
 	import Icon from '@iconify/svelte';
 
 	let value = 'dragon';
@@ -16,10 +16,18 @@
 <Screen>
 	<div class="grid pt-8 lg:pt-0">
 		<div class="mt-8 grid w-full place-content-center gap-2">
-			<InputRadio bind:value name="clan" radioValue="dragon" id="dragon">Dragon</InputRadio>
-			<InputRadio bind:value name="clan" radioValue="serpent" id="serpent">Serpent</InputRadio>
-			<InputRadio bind:value name="clan" radioValue="wolf" id="wolf">Wolf</InputRadio>
-			<InputRadio bind:value name="clan" radioValue="lotus" id="lotus">Lotus</InputRadio>
+			<InputRadio bind:value name="clan" radioValue="dragon" id="dragon"
+				>Dragon</InputRadio
+			>
+			<InputRadio bind:value name="clan" radioValue="serpent" id="serpent"
+				>Serpent</InputRadio
+			>
+			<InputRadio bind:value name="clan" radioValue="wolf" id="wolf"
+				>Wolf</InputRadio
+			>
+			<InputRadio bind:value name="clan" radioValue="lotus" id="lotus"
+				>Lotus</InputRadio
+			>
 			<p>Value: {value}</p>
 		</div>
 		<div class="ml-8 grid items-center">

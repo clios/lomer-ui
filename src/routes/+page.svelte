@@ -1,7 +1,7 @@
 <script>
 	import Alert from '$lib/alert.svelte';
 	import Button from '$lib/button.svelte';
-	import Screen from '$lib/screen.svelte';
+	import Screen from '$site/screen.svelte';
 	import Icon from '@iconify/svelte';
 
 	import Dialog from '$lib/dialog.svelte';
@@ -76,7 +76,7 @@
 		<Button class="h-min" variant="outline">Outline</Button>
 		<Button class="h-min" variant="ghost">Ghost</Button>
 		<Button class="h-min" variant="destructive">Destructive</Button>
-		<Button class="h-min" size="fit">Button</Button>
+		<Button class="h-min" size="small">Button</Button>
 		<Button class="h-min">
 			<Icon icon="mdi:power" width={24} height={24} /> Shutdown
 		</Button>

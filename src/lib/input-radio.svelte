@@ -82,7 +82,8 @@
 			variant === 'card-picker' &&
 				'hover:cursor-pointer hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500', // hover
 			variant === 'card-picker' && 'rounded border  dark:border-zinc-700 ',
-			variant === 'card-picker' && 'peer-checked:border-teal-500 peer-checked:dark:border-teal-500',
+			variant === 'card-picker' &&
+				'peer-checked:border-teal-500 peer-checked:dark:border-teal-500',
 			variant === 'card-picker' && 'border dark:border-zinc-700', // border
 			variant === 'card-picker' && 'shadow-sm dark:shadow-none' // shadow
 		)}

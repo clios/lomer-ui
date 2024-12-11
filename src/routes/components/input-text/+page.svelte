@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Input from '$lib/input.svelte';
 	import Code from '$site//code.svelte';
-	import Screen from '$lib/screen.svelte';
+	import Screen from '$site/screen.svelte';
 
 	let value = 'lomer-ui';
 </script>
@@ -19,7 +19,8 @@
 		</div>
 		<div class="grid items-center">
 			<Code
-				code={`<InputCheck bind:value>Check me!</InputCheck>` + `\n<p>Value: {value}</p>`}
+				code={`<InputCheck bind:value>Check me!</InputCheck>` +
+					`\n<p>Value: {value}</p>`}
 				language="xml"
 			/>
 		</div>
@@ -33,7 +34,10 @@
 			<Input disabled />
 		</div>
 		<div class="grid items-center">
-			<Code code={`<InputCheck disabled>Check me!</InputCheck>`} language="xml" />
+			<Code
+				code={`<InputCheck disabled>Check me!</InputCheck>`}
+				language="xml"
+			/>
 		</div>
 	</div>
 </Screen>
