@@ -28,7 +28,7 @@
 		'disabled:border-zinc-700 disabled:dark:border-zinc-700', // border
 		'disabled:bg-zinc-700 disabled:dark:bg-zinc-700', // background
 		'disabled:text-zinc-400 disabled:dark:text-zinc-400', // text
-		'disabled:outline-none', // visual
+		'disabled:cursor-not-allowed disabled:outline-none', // visual
 
 		// VARIANTS: SECONDARY
 		variant === 'secondary' && [
