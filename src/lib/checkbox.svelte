@@ -29,18 +29,23 @@
 	type="button"
 	disabled={isDisabled}
 	class={cn(
+		// BASE
 		'group', // group
 		'relative flex', // layout and positioning
 		'text-left', // text
 		'rounded pl-8', // box model
 		'disabled:cursor-not-allowed', // disabled
-		'focus:outline-none' // focusing
+		'focus:outline-none', // focusing
+
+		// STYLE
+		className
 	)}
 	{onclick}
 >
 	<!-- BOX -->
 	<div
 		class={cn(
+			// BASE
 			'absolute left-0 top-0', // layout and positioning
 			'size-[24px] rounded border dark:border-zinc-700', // box model
 			'shadow-sm dark:shadow-none', // shadow
