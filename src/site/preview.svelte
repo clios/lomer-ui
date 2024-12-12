@@ -12,7 +12,7 @@
 	>
 		Preview
 	</p>
-	<div class={clsx('p-8', className)}>
+	<div class={clsx('flex justify-center p-8', className)}>
 		<slot />
 	</div>
 </div>
