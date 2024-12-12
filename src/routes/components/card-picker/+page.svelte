@@ -29,7 +29,7 @@
 
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
-	<Cli code={`npx lomer-ui add button`} />
+	<Cli code={`npx lomer-ui add card-picker`} />
 	<ComponentCodeButton
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/card-picker.svelte"
 	/>

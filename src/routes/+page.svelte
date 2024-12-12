@@ -7,7 +7,7 @@
 	import Dialog from '$lib/dialog.svelte';
 	import Drawer from '$lib/drawer.svelte';
 	import Field from '$lib/field.svelte';
-	import Check from '$lib/check.svelte';
+	import Checkbox from '$lib/checkbox.svelte';
 	import InputRadio from '$lib/input-radio.svelte';
 	import InputSelect from '$lib/input-select.svelte';
 	import Input from '$lib/input.svelte';
@@ -37,7 +37,7 @@
 	<p class="text-2xl font-semibold">Fix it. Tune it. Keep it. Dead simple.</p>
 
 	<div class="my-8 flex gap-4">
-		<Button on:click={() => goto('/docs/installation')}>Get Started</Button>
+		<Button onclick={() => goto('/docs/installation')}>Get Started</Button>
 		<Button variant="secondary">
 			<Icon icon="mdi:github" width={24} height={24} />
 			GitHub</Button

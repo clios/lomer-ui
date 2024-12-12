@@ -75,8 +75,8 @@
 			<Link href="/components/card-picker" class="pl-8" variant="list-item"
 				>Card Picker</Link
 			>
-			<Link href="/components/check" class="pl-8" variant="list-item"
-				>Check</Link
+			<Link href="/components/checkbox" class="pl-8" variant="list-item"
+				>Checkbox</Link
 			>
 			<Link href="/components/dialog" class="pl-8" variant="list-item"
 				>Dialog</Link

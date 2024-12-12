@@ -7,7 +7,7 @@
 	import PageHeader from '$site//page-header.svelte';
 	import clsx from 'clsx';
 	import Icon from '@iconify/svelte';
-	import Check from '$lib/check.svelte';
+	import Check from '$lib/checkbox.svelte';
 	import Title from '$site//title.svelte';
 	import Cli from '$site//cli.svelte';
 	import Prop from '$site//prop.svelte';
@@ -36,9 +36,11 @@
 </div>
 
 <div class="flex flex-col gap-2 pr-80">
-	<PageHeader title="Drawer" sub="Component">
-		<p>Slide-out panel for navigation or content.</p>
-	</PageHeader>
+	<PageHeader
+		title="Drawer"
+		sub="Component"
+		info="Slide-out panel for navigation or content."
+	/>
 
 	<Screen class="flex justify-end pl-8 ">
 		<!-- DIALOG CONTENT -->
@@ -135,7 +137,7 @@
 	<Button
 		variant="secondary"
 		size="small"
-		on:click={() =>
+		onclick={() =>
 			window.open(
 				`https://github.com/clios/lomer-ui/blob/main/src/lib/drawer.svelte`,
 				'_blank'
@@ -169,7 +171,7 @@
 	<Screen
 		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
 	>
-		<Button on:click={() => (isDefaultDrawerOpen = true)}>Open Drawer</Button>
+		<Button onclick={() => (isDefaultDrawerOpen = true)}>Open Drawer</Button>
 		<Drawer
 			class="w-[400px]"
 			title="Notifications"
