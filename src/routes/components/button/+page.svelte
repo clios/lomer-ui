@@ -7,62 +7,32 @@
 	import SubTitle from '$site//sub-title.svelte';
 	import Title from '$site//title.svelte';
 	import Val from '$site//val.svelte';
-	import { scrollToId } from '$site/helper.ts';
 	import Link from '$lib/link.svelte';
-	import Screen from '$site/screen.svelte';
 	import Icon from '@iconify/svelte';
+	import HeroSection from './hero-section.svelte';
+	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import Preview from '$site/preview.svelte';
+	import OnThisPage from '$site/on-this-page.svelte';
+	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
+	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
 </script>
 
-<div class="sticky top-4">
-	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-sm">
-		<p class="mb-1 text-left text-xl font-semibold">On this page</p>
-		<button on:click={() => scrollToId('1')} class="text-left font-semibold"
-			>Installation</button
-		>
-		<button on:click={() => scrollToId('2')} class="text-left font-semibold"
-			>Usage</button
-		>
-		<button on:click={() => scrollToId('3')} class="text-left font-semibold"
-			>Examples</button
-		>
-		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left"
-			>Primary</button
-		>
-		<button on:click={() => scrollToId('3.2')} class="ml-4 text-left"
-			>Secondary</button
-		>
-		<button on:click={() => scrollToId('3.3')} class="ml-4 text-left"
-			>Destructive</button
-		>
-		<button on:click={() => scrollToId('3.4')} class="ml-4 text-left"
-			>Ghost</button
-		>
-		<button on:click={() => scrollToId('3.5')} class="ml-4 text-left"
-			>Outline</button
-		>
-		<button on:click={() => scrollToId('3.6')} class="ml-4 text-left"
-			>With Icon</button
-		>
-		<button on:click={() => scrollToId('3.7')} class="ml-4 text-left"
-			>Icon</button
-		>
-		<button on:click={() => scrollToId('3.8')} class="ml-4 text-left"
-			>Sharp edge</button
-		>
-		<button on:click={() => scrollToId('3.9')} class="ml-4 text-left"
-			>Full round edge</button
-		>
-		<button on:click={() => scrollToId('3.10')} class="ml-4 text-left"
-			>Loading</button
-		>
-		<button on:click={() => scrollToId('3.11')} class="ml-4 text-left"
-			>Disabled</button
-		>
-		<button on:click={() => scrollToId('3.12')} class="ml-4 text-left"
-			>Small</button
-		>
-	</aside>
-</div>
+<OnThisPage>
+	<OnThisPageBtn id="1" title="Installation" />
+	<OnThisPageBtn id="2" title="Usage" />
+	<OnThisPageBtn id="3" title="Examples" />
+	<OnThisPageSubBtn id="3.1" title="Secondary" />
+	<OnThisPageSubBtn id="3.2" title="Destructive" />
+	<OnThisPageSubBtn id="3.3" title="Ghost" />
+	<OnThisPageSubBtn id="3.4" title="Outline" />
+	<OnThisPageSubBtn id="3.5" title="With icon" />
+	<OnThisPageSubBtn id="3.6" title="Icon only" />
+	<OnThisPageSubBtn id="3.7" title="Sharp edge" />
+	<OnThisPageSubBtn id="3.8" title="Full round edge" />
+	<OnThisPageSubBtn id="3.9" title="Loading" />
+	<OnThisPageSubBtn id="3.10" title="Disabled" />
+	<OnThisPageSubBtn id="3.11" title="Small" />
+</OnThisPage>
 
 <div class="flex flex-col gap-2 pr-80">
 	<PageHeader
@@ -70,207 +40,149 @@
 		sub="Component"
 		info="Click it and make actions happen."
 	/>
+	<HeroSection />
 
-	<Screen class="flex flex-wrap justify-center gap-4 p-8">
-		<Button>Primary</Button>
-		<Button variant="secondary">Secondary</Button>
-		<Button variant="destructive">Destructive</Button>
-		<Button variant="ghost">Ghost</Button>
-		<Button variant="outline">Outline</Button>
-		<Button>
-			<Icon icon="mdi:power" width={24} height={24} /> Power
-		</Button>
-		<Button size="icon">
-			<Icon icon="mdi:power" width={24} height={24} />
-		</Button>
-		<Button edge="sharp">Sharp</Button>
-		<Button edge="circle">Full round</Button>
-		<Button isLoading>Loading</Button>
-		<Button isDisabled>Disabled</Button>
-		<Button size="small">Small</Button>
-	</Screen>
-
+	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add button`} />
-	<Button
-		variant="secondary"
-		size="small"
-		on:click={() =>
-			window.open(
-				`https://github.com/clios/lomer-ui/blob/main/src/lib/button.svelte`,
-				'_blank'
-			)}
-		class="w-min whitespace-nowrap"
-		>Component Code <Icon icon="mdi:code" /></Button
-	>
+	<ComponentCodeButton
+		link="https://github.com/clios/lomer-ui/blob/main/src/lib/button.svelte"
+	/>
 
+	<!-- USAGE -->
 	<Title id="2">Usage</Title>
 	<Code
 		code={`import Button from '$lib/components/ui/button.svelte'`}
 		language="javascript"
 	/>
-	<Code code={`<Button>Button</Button>`} language="xml" />
+	<Code code={`<Button>Primary</Button>`} language="xml" />
+	<Preview>
+		<Button>Primary</Button>
+	</Preview>
 
+	<!-- EXAMPLES -->
 	<Title id="3">Examples</Title>
-	<SubTitle id="3.1">Primary</SubTitle>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button>Button</Button>
-	</Screen>
-	<Code code={`<Button>Button</Button>`} language="xml" />
 
-	<SubTitle id="3.2">Secondary</SubTitle>
-	<p>
-		Add <Prop>variant</Prop> property with
-		<Val>secondary</Val> value.
-	</p>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button variant="secondary">Button</Button>
-	</Screen>
+	<!-- SECONDARY -->
+	<SubTitle id="3.1">Secondary</SubTitle>
+	<p>Add <Prop>variant</Prop> property with <Val>secondary</Val> value.</p>
 	<Code code={`<Button variant="secondary">Button</Button>`} language="xml" />
+	<Preview><Button variant="secondary">Button</Button></Preview>
 
-	<SubTitle id="3.3">Destructive</SubTitle>
-	<p>
-		Add <Prop>variant</Prop> property with
-		<Val>destructive</Val> value.
-	</p>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button variant="destructive">Button</Button>
-	</Screen>
-	<Code code={`<Button variant="destructive">Button</Button>`} language="xml" />
+	<!-- DESTRUCTIVE -->
+	<SubTitle id="3.2">Destructive</SubTitle>
+	<p>Add <Prop>variant</Prop> property with <Val>destructive</Val> value.</p>
+	<Code
+		code={`<Button variant="destructive">Destructive</Button>`}
+		language="xml"
+	/>
+	<Preview><Button variant="destructive">Destructive</Button></Preview>
 
-	<SubTitle id="3.4">Ghost</SubTitle>
-	<p>
-		Add <Prop>variant</Prop> property with
-		<Val>ghost</Val> value.
-	</p>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button variant="ghost">Button</Button>
-	</Screen>
-	<Code code={`<Button variant="ghost">Button</Button>`} language="xml" />
+	<!-- GHOST -->
+	<SubTitle id="3.3">Ghost</SubTitle>
+	<p>Add <Prop>variant</Prop> property with <Val>ghost</Val> value.</p>
+	<Code code={`<Button variant="ghost">Ghost</Button>`} language="xml" />
+	<Preview><Button variant="ghost">Ghost</Button></Preview>
 
-	<SubTitle id="3.5">Outline</SubTitle>
-	<p>
-		Add <Prop>variant</Prop> property with
-		<Val>outline</Val> value.
-	</p>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button variant="outline">Button</Button>
-	</Screen>
-	<Code code={`<Button variant="outline">Button</Button>`} language="xml" />
+	<!-- OUTLINE -->
+	<SubTitle id="3.4">Outline</SubTitle>
+	<p>Add <Prop>variant</Prop> property with <Val>outline</Val> value.</p>
+	<Code code={`<Button variant="outline">Outline</Button>`} language="xml" />
+	<Preview><Button variant="outline">Outline</Button></Preview>
 
-	<SubTitle id="3.6">With Icon</SubTitle>
-	<p>
-		Insert Icon component inside button, use icons from <Link
-			class="underline"
-			target="_blank"
-			href="https://icon-sets.iconify.design/"
-			>Iconify
-		</Link>
-	</p>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button>
-			<Icon icon="mdi:power" width={24} height={24} /> Power
-		</Button>
-	</Screen>
-	<Code code={`import Icon from '@iconify/svelte'`} language="javascript" />
+	<!-- WITH ICON -->
+	<SubTitle id="3.5">With Icon</SubTitle>
+	<p>Insert any icon component or svg inside button.</p>
 	<Code
 		code={`<Button>` +
-			`\n\t<Icon icon="mdi:power" width={24} height={24} /> Power` +
+			`\n\t<svg` +
+			`\n\t\txmlns="http://www.w3.org/2000/svg"` +
+			`\n\t\twidth="24"` +
+			`\n\t\theight="24"` +
+			`\n\t\tviewBox="0 0 24 24"` +
+			`\n\t>` +
+			`\n\t\t<path` +
+			`\n\t\t\tfill="currentColor"` +
+			`\n\t\t\td="m16.56 5.44l-1.45 1.45A5.97 5.97 0 0 1 18 12a6 6 0 0 1-6 6a6 6 0 0 1-6-6c0-2.17 1.16-4.06 2.88-5.12L7.44 5.44A7.96 7.96 0 0 0 4 12a8 8 0 0 0 8 8a8 8 0 0 0 8-8c0-2.72-1.36-5.12-3.44-6.56M13 3h-2v10h2"` +
+			`\n\t\t/>` +
+			`\n\t</svg>` +
+			`\n\tWith icon` +
 			`\n</Button>`}
 		language="xml"
 	/>
+	<Preview>
+		<Button>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+			>
+				<path
+					fill="currentColor"
+					d="m16.56 5.44l-1.45 1.45A5.97 5.97 0 0 1 18 12a6 6 0 0 1-6 6a6 6 0 0 1-6-6c0-2.17 1.16-4.06 2.88-5.12L7.44 5.44A7.96 7.96 0 0 0 4 12a8 8 0 0 0 8 8a8 8 0 0 0 8-8c0-2.72-1.36-5.12-3.44-6.56M13 3h-2v10h2"
+				/>
+			</svg>
+			With icon
+		</Button>
+	</Preview>
 
-	<SubTitle id="3.7">Icon</SubTitle>
+	<!-- ICON ONLY -->
+	<SubTitle id="3.6">Icon only</SubTitle>
 	<p>
-		Insert Icon component inside button, use icons from <Link
+		Let's try icon component from <Link
 			class="underline"
 			target="_blank"
 			href="https://icon-sets.iconify.design/"
 			>Iconify
-		</Link>. Add <Prop>size</Prop> property with <Val>icon</Val> value.
+		</Link>.
 	</p>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button size="icon">
-			<Icon icon="mdi:power" width={24} height={24} />
-		</Button>
-	</Screen>
-	<Code code={`import Icon from '@iconify/svelte'`} language="javascript" />
+	<p>
+		Insert any icon or svg inside button, then add <Prop>size</Prop> property with
+		<Val>icon</Val> value.
+	</p>
 	<Code
 		code={`<Button size="icon">` +
 			`\n\t<Icon icon="mdi:power" width={24} height={24} />` +
 			`\n</Button>`}
 		language="xml"
 	/>
+	<Preview>
+		<Button size="icon">
+			<Icon icon="mdi:power" width={24} height={24} />
+		</Button>
+	</Preview>
 
-	<SubTitle id="3.8">Sharp edge</SubTitle>
-	<p>
-		Add <Prop>edge</Prop> property with
-		<Val>sharp</Val> value.
-	</p>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button edge="sharp">Button</Button>
-	</Screen>
-	<Code code={`<Button edge="sharp">Button</Button>`} language="xml" />
+	<!-- SHARP EDGE -->
+	<SubTitle id="3.7">Sharp edge</SubTitle>
+	<p>Add <Prop>edge</Prop> property with <Val>sharp</Val> value.</p>
+	<Code code={`<Button edge="sharp">Sharp edge</Button>`} language="xml" />
+	<Preview><Button edge="sharp">Sharp edge</Button></Preview>
 
-	<SubTitle id="3.9">Full round edge</SubTitle>
-	<p>
-		Add <Prop>edge</Prop> property with
-		<Val>circle</Val> value.
-	</p>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button edge="circle">Button</Button>
-	</Screen>
-	<Code code={`<Button edge="circle">Button</Button>`} language="xml" />
+	<!-- FULL ROUND EDGE -->
+	<SubTitle id="3.8">Full round edge</SubTitle>
+	<p>Add <Prop>edge</Prop> property with <Val>circle</Val> value.</p>
+	<Code
+		code={`<Button edge="circle">Full round edge</Button>`}
+		language="xml"
+	/>
+	<Preview><Button edge="circle">Full round edge</Button></Preview>
 
-	<SubTitle id="3.10">Loading</SubTitle>
-	<p>
-		Add <Prop>isLoading</Prop> property.
-	</p>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button isLoading>Button</Button>
-	</Screen>
-	<Code code={`<Button isLoading>Button</Button>`} language="xml" />
+	<!-- LOADING -->
+	<SubTitle id="3.9">Loading</SubTitle>
+	<p>Add <Prop>isLoading</Prop> property.</p>
+	<Code code={`<Button isLoading>Loading</Button>`} language="xml" />
+	<Preview><Button isLoading>Loading</Button></Preview>
 
-	<SubTitle id="3.11">Disabled</SubTitle>
-	<p>
-		Add <Prop>isDisabled</Prop> property.
-	</p>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button isDisabled>Button</Button>
-	</Screen>
-	<Code code={`<Button isDisabled>Button</Button>`} language="xml" />
+	<!-- DISABLED -->
+	<SubTitle id="3.10">Disabled</SubTitle>
+	<p>Add <Prop>isDisabled</Prop> property.</p>
+	<Code code={`<Button isDisabled>Disabled</Button>`} language="xml" />
+	<Preview><Button isDisabled>Disabled</Button></Preview>
 
-	<SubTitle id="3.12">Small</SubTitle>
-	<p>
-		Add <Prop>size</Prop> property with
-		<Val>small</Val> value.
-	</p>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button size="small">Small</Button>
-	</Screen>
+	<!-- SMALL -->
+	<SubTitle id="3.11">Small</SubTitle>
+	<p>Add <Prop>size</Prop> property with <Val>small</Val> value.</p>
 	<Code code={`<Button size="small">Small</Button>`} language="xml" />
+	<Preview><Button size="small">Small</Button></Preview>
 </div>
