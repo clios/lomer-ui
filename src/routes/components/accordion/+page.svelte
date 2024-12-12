@@ -13,7 +13,7 @@
 	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
 
-	let value = '';
+	let value = $state('');
 </script>
 
 <OnThisPage>
@@ -76,7 +76,7 @@
 		Simply bind the <Prop>value</Prop> property, and add unique
 		<Prop>name</Prop> to your accordion.
 	</p>
-	<Code code={`let value = ''`} language="javascript" />
+	<Code code={`let value = $state('')`} language="javascript" />
 	<Code
 		code={`<Accordion title="Title 1" name="accordion-one" bind:value>Content</Accordion>` +
 			`\n<Accordion title="Title 2" name="accordion-two" bind:value>Content</Accordion>` +
