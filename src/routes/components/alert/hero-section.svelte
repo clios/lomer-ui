@@ -17,6 +17,6 @@
 			</div>
 		</Alert>
 	{:else}
-		<Button on:click={() => (isOpen = true)}>Open alert</Button>
+		<Button onclick={() => (isOpen = true)}>Open alert</Button>
 	{/if}
 </Screen>

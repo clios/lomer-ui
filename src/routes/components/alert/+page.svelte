@@ -81,7 +81,7 @@
 				Your bill is due tomorrow.
 			</Alert>
 		{:else}
-			<Button on:click={() => (isClosableOpen = true)}>Open alert</Button>
+			<Button onclick={() => (isClosableOpen = true)}>Open alert</Button>
 		{/if}
 	</Preview>
 
