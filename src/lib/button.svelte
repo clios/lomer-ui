@@ -24,12 +24,6 @@
 		'hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500', // hovering
 		'active:outline-2 active:outline-offset-0', // active
 
-		// DISABLED
-		'disabled:border-zinc-700 disabled:dark:border-zinc-700', // border
-		'disabled:bg-zinc-700 disabled:dark:bg-zinc-700', // background
-		'disabled:text-zinc-400 disabled:dark:text-zinc-400', // text
-		'disabled:cursor-not-allowed disabled:outline-none', // visual
-
 		// VARIANTS: SECONDARY
 		variant === 'secondary' && [
 			'text-zinc-950 dark:text-zinc-50', // text
@@ -70,6 +64,15 @@
 		edge === 'circle' && 'rounded-full',
 		edge === 'sharp' && 'rounded-none',
 
+		// DISABLED
+		'disabled:border-zinc-700 disabled:dark:border-zinc-700', // border
+		'disabled:bg-zinc-700 disabled:dark:bg-zinc-700', // background
+		'disabled:text-zinc-400 disabled:dark:text-zinc-400', // text
+		'disabled:cursor-not-allowed disabled:outline-none', // visual
+
+		// LOADING
+		isLoading && 'disabled:text-zinc-500/0 disabled:dark:text-zinc-500/0',
+
 		className
 	)}
 	{type}
@@ -101,7 +104,5 @@
 			</path>
 		</svg>
 	{/if}
-	<div class={cn(isLoading && 'opacity-0', 'flex items-center gap-1')}>
-		<slot />
-	</div>
+	<slot />
 </button>
