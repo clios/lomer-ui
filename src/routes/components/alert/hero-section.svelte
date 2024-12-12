@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Alert from '$lib/alert.svelte';
 	import Button from '$lib/button.svelte';
-	import Screen from '$site/screen.svelte';
 	import Icon from '@iconify/svelte';
+	import Screen from '$site/screen.svelte';
 
 	let isOpen = true;
 </script>

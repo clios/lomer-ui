@@ -1,11 +1,21 @@
 <script lang="ts">
 	import { cn } from './utils.ts';
 
-	export let isOpen: boolean = true;
-	export let variant: 'default' | 'destructive' = 'default';
-	export let isClosable: boolean = false;
-	export let className: string = '';
-	export { className as class };
+	interface Props {
+		children: any;
+		class?: string;
+		isClosable?: boolean;
+		isOpen?: boolean;
+		variant?: 'default' | 'destructive';
+	}
+
+	let {
+		children,
+		class: className,
+		isClosable = false,
+		isOpen = $bindable(true),
+		variant = 'default'
+	}: Props = $props();
 </script>
 
 {#if isOpen}
@@ -18,7 +28,7 @@
 			'bg-white dark:bg-zinc-950', // background
 
 			// VARIANTS
-			variant === 'default' && 'border-zinc-950  dark:border-zinc-50', // box model
+			variant === 'default' && 'border-zinc-950 dark:border-zinc-50', // box model
 			variant === 'destructive' && 'border-red-500', // box model
 
 			// CLOSABLE
@@ -30,7 +40,7 @@
 	>
 		{#if isClosable}
 			<!-- svelte-ignore a11y_consider_explicit_label -->
-			<button on:click={() => (isOpen = false)} class="absolute right-4 top-4">
+			<button onclick={() => (isOpen = false)} class="absolute right-4 top-4">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="24"
@@ -92,6 +102,6 @@
 			</button>
 		{/if}
 
-		<slot />
+		{@render children?.()}
 	</div>
 {/if}
