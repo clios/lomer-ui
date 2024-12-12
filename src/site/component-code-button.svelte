@@ -10,7 +10,7 @@
 	<Button
 		variant="outline"
 		size="small"
-		on:click={() => window.open(link, '_blank')}
+		onclick={() => window.open(link, '_blank')}
 		class="w-min whitespace-nowrap"
 		>Component Code <Icon icon="mdi:code" /></Button
 	>
