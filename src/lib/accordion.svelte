@@ -2,19 +2,33 @@
 	import { slide } from 'svelte/transition';
 	import { cn } from './utils.ts';
 
-	export let isOpen = false;
-	export let value: string | null = null;
-	export let name = '';
-	export let title = '';
-	export let className = '';
-	export { className as class };
+	interface Props {
+		children: any;
+		class?: string;
+		isOpen?: boolean;
+		name?: string;
+		title: string;
+		value?: string;
+	}
+
+	let {
+		children,
+		class: className,
+		isOpen = false,
+		name,
+		title,
+		value = $bindable()
+	}: Props = $props();
 
 	function toggleAccordion() {
 		isOpen = !isOpen;
 		value = name;
 	}
 
-	$: isOpen = value === name;
+	$effect(() => {
+		if (!value && !name) return;
+		isOpen = value === name;
+	});
 </script>
 
 <!-- CONTAINER -->
@@ -29,7 +43,7 @@
 			'focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-cyan-500', // focusing
 			'hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500' // hovering
 		)}
-		on:click={toggleAccordion}
+		onclick={toggleAccordion}
 	>
 		<!-- TITLE -->
 		<p class={cn('font-semibold', isOpen && 'underline')}>{title}</p>
@@ -53,7 +67,7 @@
 			class="overflow-hidden border-t p-4 dark:border-zinc-700"
 			transition:slide={{ duration: 150 }}
 		>
-			<slot />
+			{@render children?.()}
 		</div>
 	{/if}
 </div>

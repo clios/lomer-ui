@@ -1,20 +1,17 @@
 <script lang="ts">
-	import PageHeader from '$site/page-header.svelte';
-	import Screen from '$site/screen.svelte';
 	import Accordion from '$lib/accordion.svelte';
-	import Title from '$site/title.svelte';
 	import Cli from '$site/cli.svelte';
-	import Button from '$lib/button.svelte';
-	import Icon from '@iconify/svelte';
 	import Code from '$site/code.svelte';
-	import SubTitle from '$site/sub-title.svelte';
-	import Prop from '$site/prop.svelte';
+	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import PageHeader from '$site/page-header.svelte';
 	import Preview from '$site/preview.svelte';
-	import HeroSection from './hero-section.svelte';
+	import Prop from '$site/prop.svelte';
+	import SubTitle from '$site/sub-title.svelte';
+	import Title from '$site/title.svelte';
 
 	let value = '';
 </script>
@@ -49,7 +46,7 @@
 		language="javascript"
 	/>
 	<Code code={`<Accordion title="Title">Content</Accordion>`} language="xml" />
-	<Preview>
+	<Preview class="flex-col">
 		<Accordion title="Title">Content</Accordion>
 	</Preview>
 
@@ -66,9 +63,11 @@
 		language="xml"
 	/>
 	<Preview>
-		<Accordion title="Title 1">Content</Accordion>
-		<Accordion title="Title 2">Content</Accordion>
-		<Accordion title="Title 3">Content</Accordion>
+		<div class="w-full">
+			<Accordion title="Title 1">Content</Accordion>
+			<Accordion title="Title 2">Content</Accordion>
+			<Accordion title="Title 3">Content</Accordion>
+		</div>
 	</Preview>
 
 	<!-- ONLY ONE STAYS OPEN -->
@@ -85,14 +84,16 @@
 		language="xml"
 	/>
 	<Preview>
-		<Accordion title="Title 1" name="accordion-one" bind:value>
-			Content
-		</Accordion>
-		<Accordion title="Title 2" name="accordion-two" bind:value>
-			Content
-		</Accordion>
-		<Accordion title="Title 3" name="accordion-three" bind:value>
-			Content
-		</Accordion>
+		<div class="w-full">
+			<Accordion title="Title 1" name="accordion-one" bind:value>
+				Content
+			</Accordion>
+			<Accordion title="Title 2" name="accordion-two" bind:value>
+				Content
+			</Accordion>
+			<Accordion title="Title 3" name="accordion-three" bind:value>
+				Content
+			</Accordion>
+		</div>
 	</Preview>
 </div>
