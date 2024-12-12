@@ -1,39 +1,54 @@
 <script lang="ts">
-	import clsx from 'clsx';
+	import { cn } from './utils.ts';
 
-	export let name: string;
-	export let value: (string | boolean) | null = '';
-	export let variant: 'default' = 'default';
-	export let radioValue: string | boolean | null;
-	export let disabled = false;
+	interface Props {
+		children?: any;
+		class?: string;
+		groupValue: string;
+		isSelected?: boolean;
+		itemValue: string;
+	}
 
-	export { className as class };
+	let {
+		children,
+		class: className,
+		groupValue = $bindable(),
+		isSelected = false,
+		itemValue,
+		...props
+	}: Props = $props();
 
-	let className = '';
+	function selectCard() {
+		groupValue = itemValue;
+	}
+
+	$effect(() => {
+		isSelected = itemValue === groupValue;
+	});
 </script>
 
-<div class={clsx(variant === 'default' && 'relative')}>
-	<input
-		class={clsx(variant === 'default' && 'peer hidden appearance-none')}
-		id={name + '-' + radioValue}
-		{name}
-		type="radio"
-		value={radioValue}
-		{disabled}
-		bind:group={value}
-	/>
+<button
+	class={cn(
+		// BASE
+		'bg-white dark:bg-zinc-950', // background
+		'p-2', // box model
+		'rounded border dark:border-zinc-700', // border
+		'shadow dark:shadow-none', // visual
 
-	<label
-		class={clsx(
-			'flex rounded p-2 hover:cursor-pointer', // base
-			'hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500', // hover
-			'border dark:border-zinc-700', // border
-			'shadow-sm dark:shadow-none', // shadow
-			'peer-checked:outline peer-checked:hover:outline-2 peer-checked:hover:outline-offset-0', // checked
-			className
-		)}
-		for={name + '-' + radioValue}
-	>
-		<slot />
-	</label>
-</div>
+		// SELECTED
+		isSelected
+			? 'outline' // outline
+			: [
+					'active:outline-2 active:outline-offset-0', // active
+					'focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-cyan-500', // focusing
+					'hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500' // hovering
+				],
+
+		// STYLING
+		className
+	)}
+	{...props}
+	onclick={selectCard}
+>
+	{@render children?.()}
+</button>
