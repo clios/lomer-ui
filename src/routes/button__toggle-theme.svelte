@@ -4,7 +4,7 @@
 	import { toggleMode, mode } from 'mode-watcher';
 </script>
 
-<Button variant="ghost" edge="sharp" size="icon" on:click={toggleMode}>
+<Button variant="ghost" edge="sharp" size="icon" onclick={toggleMode}>
 	{#if $mode === 'light'}
 		<Icon
 			icon="line-md:moon-to-sunny-outline-loop-transition"
