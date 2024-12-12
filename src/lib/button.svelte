@@ -1,16 +1,32 @@
 <script lang="ts">
+	import type { HTMLButtonAttributes } from 'svelte/elements';
+	import type { Snippet } from 'svelte';
 	import { cn } from './utils.ts';
 
 	type Variant = 'primary' | 'secondary' | 'outline' | 'destructive' | 'ghost';
 
-	export let variant: Variant = 'primary';
-	export let type: 'submit' | 'reset' | 'button' = 'button';
-	export let size: 'text' | 'icon' | 'small' = 'text';
-	export let edge: 'rounded' | 'circle' | 'sharp' = 'rounded';
-	export let isDisabled = false;
-	export let isLoading = false;
-	export { className as class };
-	let className = '';
+	type Props = {
+		children?: Snippet;
+		class?: string;
+		edge?: 'rounded' | 'circle' | 'sharp';
+		isDisabled?: boolean;
+		isLoading?: boolean;
+		size?: 'text' | 'icon' | 'small';
+		type?: 'submit' | 'reset' | 'button';
+		variant?: Variant;
+	} & HTMLButtonAttributes;
+
+	let {
+		children,
+		class: className,
+		edge = 'rounded',
+		isDisabled = false,
+		isLoading = false,
+		size = 'text',
+		type = 'button',
+		variant = 'primary',
+		...props
+	}: Props = $props();
 </script>
 
 <button
@@ -76,9 +92,8 @@
 		className
 	)}
 	{type}
-	{...$$restProps}
+	{...props}
 	disabled={isLoading || isDisabled}
-	on:click
 >
 	{#if isLoading}
 		<svg
@@ -104,5 +119,5 @@
 			</path>
 		</svg>
 	{/if}
-	<slot />
+	{@render children?.()}
 </button>

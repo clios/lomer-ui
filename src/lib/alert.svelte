@@ -1,13 +1,14 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { cn } from './utils.ts';
 
-	interface Props {
-		children: any;
+	type Props = {
+		children?: Snippet;
 		class?: string;
 		isClosable?: boolean;
 		isOpen?: boolean;
 		variant?: 'default' | 'destructive';
-	}
+	};
 
 	let {
 		children,

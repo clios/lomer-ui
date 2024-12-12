@@ -1,13 +1,15 @@
 <script lang="ts">
+	import type { HTMLButtonAttributes } from 'svelte/elements';
+	import type { Snippet } from 'svelte';
 	import { cn } from './utils.ts';
 
-	interface Props {
-		children?: any;
+	type Props = {
+		children?: Snippet;
 		class?: string;
 		groupValue: string;
 		isSelected?: boolean;
 		itemValue: string;
-	}
+	} & HTMLButtonAttributes;
 
 	let {
 		children,
@@ -18,7 +20,7 @@
 		...props
 	}: Props = $props();
 
-	function selectCard() {
+	function onclick() {
 		groupValue = itemValue;
 	}
 
@@ -47,8 +49,8 @@
 		// STYLING
 		className
 	)}
+	{onclick}
 	{...props}
-	onclick={selectCard}
 >
 	{@render children?.()}
 </button>

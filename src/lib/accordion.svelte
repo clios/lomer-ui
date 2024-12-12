@@ -1,15 +1,16 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import { cn } from './utils.ts';
+	import type { Snippet } from 'svelte';
 
-	interface Props {
-		children: any;
+	type Props = {
+		children?: Snippet;
 		class?: string;
 		isOpen?: boolean;
 		name?: string;
 		title: string;
 		value?: string;
-	}
+	};
 
 	let {
 		children,
