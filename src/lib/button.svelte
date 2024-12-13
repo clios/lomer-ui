@@ -43,7 +43,7 @@
 		// VARIANTS: SECONDARY
 		variant === 'secondary' && [
 			'text-zinc-950 dark:text-zinc-50', // text
-			'bg-zinc-50 dark:bg-zinc-950', // background
+			'bg-zinc-50 dark:bg-zinc-900', // background
 			'border-zinc-200 dark:border-zinc-800' // border
 		],
 
