@@ -3,90 +3,119 @@
 	import Code from '$site//code.svelte';
 	import PageHeader from '$site//page-header.svelte';
 	import { scrollToId } from '$site/helper.ts';
+	import OnThisPage from '$site/on-this-page.svelte';
+	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
+	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import Title from '$site/title.svelte';
+	import SubTitle from '$site/sub-title.svelte';
+	import StepperPanel from '$site/stepper-panel.svelte';
+	import Button from '$lib/button.svelte';
+	import Icon from '@iconify/svelte';
+	import Link from '$lib/link.svelte';
+	import Prop from '$site/prop.svelte';
+	import File from '$site/file.svelte';
+	import Preview from '$site/preview.svelte';
 </script>
 
-<div class="sticky top-4">
-	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-sm">
-		<p class="mb-1 text-left text-xl font-semibold">On this page</p>
-		<button on:click={() => scrollToId('1')} class="text-left font-semibold"
-			>Setup your project</button
-		>
-		<button on:click={() => scrollToId('1.1')} class="ml-4 text-left"
-			>Create SvelteKit App</button
-		>
-		<button on:click={() => scrollToId('1.2')} class="ml-4 text-left"
-			>Add Tailwind CSS</button
-		>
-		<button on:click={() => scrollToId('1.3')} class="ml-4 text-left"
-			>Initialize lomer-ui</button
-		>
-		<button on:click={() => scrollToId('1.4')} class="ml-4 text-left"
-			>Configure tailwind</button
-		>
-		<button on:click={() => scrollToId('1.5')} class="ml-4 text-left"
-			>That's it!</button
-		>
-	</aside>
-</div>
+<OnThisPage>
+	<OnThisPageBtn id="1" title="Setup your project" />
+	<OnThisPageSubBtn id="1.1" title="Initialize lomer-ui" />
+	<OnThisPageSubBtn id="1.2" title="Configure Tailwind CSS" />
+	<OnThisPageSubBtn id="1.3" title="That's it!" />
+</OnThisPage>
 
 <div class="flex flex-col gap-4 pr-80">
-	<PageHeader title="Installation" sub="Docs">
-		<p>
-			Guide to use <span class="font-mono">lomer-ui</span> in SvelteKit.
-		</p>
-	</PageHeader>
+	<PageHeader
+		title="Installation"
+		sub="Docs"
+		info="Guide to use lomer-ui in SvelteKit."
+	/>
 
-	<p id="1" class="mb-4 mt-8 text-2xl">Setup your project</p>
-	<p id="1.1" class="mb-1 text-xl">
-		<span class="font-mono">1.</span> Create SvelteKit App
-	</p>
-	<div class="ml-2 border-l pb-8 pl-6 dark:border-zinc-700">
-		<Cli code="npx sv create my-app" />
-	</div>
+	<Title id="1">Setup your project</Title>
 
-	<p id="1.2" class="mb-1 text-xl">
-		<span class="font-mono">2.</span> Add Tailwind CSS
-	</p>
-	<div class="ml-2 border-l pb-8 pl-6 dark:border-zinc-700">
-		<Cli code="npx sv add tailwindcss" />
-	</div>
-
-	<p id="1.3" class="mb-1 text-xl">
-		<span class="font-mono">3.</span> Initialize lomer-ui
-	</p>
-	<div class="ml-2 border-l pb-8 pl-6 dark:border-zinc-700">
+	<SubTitle id="1.1">
+		<span class="font-mono">1.</span> Initialize lomer-ui
+	</SubTitle>
+	<StepperPanel>
 		<Cli code="npx lomer-ui init" />
-	</div>
+		<p>
+			This command creates a new
+			<Link
+				class="underline"
+				target="_blank"
+				href="https://svelte.dev/docs/kit/introduction"
+				>SvelteKit
+			</Link> project if needed, installs
+			<Link class="underline" target="_blank" href="https://tailwindcss.com/">
+				Tailwind CSS
+			</Link> if not present, and adds <Link
+				class="underline"
+				target="_blank"
+				href="https://github.com/dcastil/tailwind-merge"
+			>
+				tailwind-merge
+			</Link> and <Link
+				class="underline"
+				target="_blank"
+				href="https://mode-watcher.svecosystem.com/"
+			>
+				mode-watcher
+			</Link>.
+		</p>
+	</StepperPanel>
 
-	<p id="1.4" class="mb-1 text-xl">
-		<span class="font-mono">4.</span> Configure tailwind.config.ts
-	</p>
-	<div class="ml-2 border-l pb-8 pl-6 dark:border-zinc-700">
+	<SubTitle id="1.2">
+		<span class="font-mono">2.</span> Configure Tailwind CSS
+	</SubTitle>
+	<StepperPanel>
+		<p>
+			Add <Prop>safelist</Prop> and <Prop>darkMode</Prop> in <File
+				>tailwind.config.ts</File
+			>.
+		</p>
 		<Code
 			code={`import type { Config } from 'tailwindcss';` +
 				`\n\nexport default {` +
-				`\n\tcontent: ['./src/**/*.{html,js,svelte,ts}'],` +
-				`\n\ttheme: { extend: {} },` +
-				`\n\tplugins: [],` +
+				`\n\t...` +
 				`\n\tsafelist: ['dark'],` +
 				`\n\tdarkMode: ['class']` +
 				`\n} satisfies Config;`}
 			language="javascript"
 		/>
-	</div>
+		<p>
+			See more in
+			<Link
+				class="underline"
+				target="_blank"
+				href="https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually"
+			>
+				Tailwind CSS Dark Mode
+			</Link> for more details.
+		</p>
+	</StepperPanel>
 
-	<p id="1.5" class="text-xl"><span class="font-mono">5.</span> That's it!</p>
+	<SubTitle id="1.3">
+		<span class="font-mono">3.</span> That's it!
+	</SubTitle>
 
-	<p>Run this command to add button component.</p>
-	<div class="">
+	<StepperPanel final>
+		<p>
+			You can now add <Link
+				class="underline"
+				target="_blank"
+				href="/components/accordion"
+			>
+				components
+			</Link>, like this button.
+		</p>
 		<Cli code="npx lomer-ui add button" />
-	</div>
-	<p class="mt-2">Import and use it.</p>
-	<div class="flex flex-col gap-2">
 		<Code
 			code={`import Button from '$lib/components/ui/button.svelte'`}
 			language="javascript"
 		/>
 		<Code code={`<Button>Button</Button>`} language="xml" />
-	</div>
+		<Preview>
+			<Button>Button</Button>
+		</Preview>
+	</StepperPanel>
 </div>
