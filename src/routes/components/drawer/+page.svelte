@@ -1,39 +1,35 @@
 <script lang="ts">
-	import Code from '$site//code.svelte';
-	import Screen from '$site/screen.svelte';
-	import Drawer from '$lib/drawer.svelte';
 	import Button from '$lib/button.svelte';
-	import { scrollToId } from '$site/helper.ts';
-	import PageHeader from '$site//page-header.svelte';
-	import clsx from 'clsx';
-	import Icon from '@iconify/svelte';
-	import Check from '$lib/checkbox.svelte';
-	import Title from '$site//title.svelte';
 	import Cli from '$site//cli.svelte';
+	import Code from '$site//code.svelte';
+	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import Drawer from '$lib/drawer.svelte';
+	import HeroSection from './hero-section.svelte';
+	import OnThisPage from '$site/on-this-page.svelte';
+	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
+	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageHeader from '$site//page-header.svelte';
+	import Preview from '$site/preview.svelte';
 	import Prop from '$site//prop.svelte';
 	import SubTitle from '$site//sub-title.svelte';
+	import Title from '$site//title.svelte';
+	import Val from '$site/val.svelte';
 
-	let isOpen = false;
-	let isDefaultDrawerOpen = false;
+	let isOpen = $state(false);
+	let isLeftOpen = $state(false);
+	let isRightOpen = $state(false);
+	let isTopOpen = $state(false);
+	let isBottomOpen = $state(false);
+	let isFixedFooterOpen = $state(false);
 </script>
 
-<div class="sticky top-4">
-	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-sm">
-		<p class="mb-1 text-left text-xl font-semibold">On this page</p>
-		<button on:click={() => scrollToId('1')} class="text-left font-semibold"
-			>Installation</button
-		>
-		<button on:click={() => scrollToId('2')} class="text-left font-semibold"
-			>Usage</button
-		>
-		<button on:click={() => scrollToId('3')} class="text-left font-semibold"
-			>Example</button
-		>
-		<button on:click={() => scrollToId('3.1')} class="ml-4 text-left"
-			>Default</button
-		>
-	</aside>
-</div>
+<OnThisPage>
+	<OnThisPageBtn id="1" title="Installation" />
+	<OnThisPageBtn id="2" title="Usage" />
+	<OnThisPageBtn id="3" title="Examples" />
+	<OnThisPageSubBtn id="3.1" title="Positioning" />
+	<OnThisPageSubBtn id="3.2" title="Fixed footer" />
+</OnThisPage>
 
 <div class="flex flex-col gap-2 pr-80">
 	<PageHeader
@@ -41,235 +37,124 @@
 		sub="Component"
 		info="Slide-out panel for navigation or content."
 	/>
+	<HeroSection />
 
-	<Screen class="flex justify-end pl-8 ">
-		<!-- DIALOG CONTENT -->
-		<div
-			class={clsx(
-				'pointer-events-auto',
-				'shadow-md dark:shadow-none',
-				'z-100 relative border-l transition-all dark:border-zinc-800',
-				'w-full sm:w-[400px]', // responsiveness
-				'bg-white/80 dark:bg-zinc-950/50',
-				'bg-white/95 backdrop-blur-sm dark:bg-zinc-950/90'
-			)}
-		>
-			<!-- HEADER -->
-			<div
-				class="flex items-center justify-between bg-white px-4 pr-2 dark:bg-zinc-950 sm:pl-4 sm:pr-4"
-			>
-				<p
-					class="px-4 pt-4 text-2xl font-semibold text-zinc-950 dark:text-zinc-50"
-				>
-					Notifications
-				</p>
-				<button
-					class={clsx(
-						'absolute right-4 top-4 rounded-full',
-						'bg-zinc-50/0 text-zinc-950 dark:bg-zinc-950/0 dark:text-zinc-50', // color
-						'border border-zinc-50/0 dark:border-zinc-50/0', // color
-						'active:outline-2 active:outline-offset-0', // color
-						'outline-cyan-500 hover:outline hover:outline-1', // hover
-						'focus:outline focus:outline-1 focus:outline-offset-2', // focus
-						'focus:outline-cyan-500 focus:ring-offset-1', // focus
-						'disabled:focus:outline-none' // focus
-					)}
-					on:click={() => (isOpen = false)}
-				>
-					<Icon icon="line-md:close-circle-filled" width={24} height={24} />
-				</button>
-			</div>
-			<div class="h-[500px] overflow-auto bg-white dark:bg-zinc-950">
-				<!-- SLOT -->
-				<div class="px-8">
-					<p class="mb-4 text-zinc-500">You have 3 unread messages.</p>
-
-					<Check class="rounded border p-4 dark:border-zinc-700">
-						<p class="font-semibold">Push Notifications</p>
-						<div class="text-zinc-500">Send notifications to device.</div>
-					</Check>
-
-					<div class="my-4 flex items-start">
-						<Icon
-							class="text-cyan-500"
-							icon="icon-park-outline:dot"
-							height="24"
-						/>
-						<div>
-							<p class="font-semibold">Your call has been confirmed.</p>
-							<div class="text-zinc-500">1 hour ago</div>
-						</div>
-					</div>
-					<div class="my-4 flex items-start">
-						<Icon
-							class="text-cyan-500"
-							icon="icon-park-outline:dot"
-							height="24"
-						/>
-						<div>
-							<p class="font-semibold">You have a new message!</p>
-							<div class="text-zinc-500">1 hour ago</div>
-						</div>
-					</div>
-					<div class="my-4 flex items-start">
-						<Icon
-							class="text-cyan-500"
-							icon="icon-park-outline:dot"
-							height="24"
-						/>
-						<div>
-							<p class="font-semibold">Your subscription is expiring soon!</p>
-							<div class="text-zinc-500">2 hours ago</div>
-						</div>
-					</div>
-
-					<Button class="w-full justify-center">
-						<Icon icon="material-symbols:check" width={24} height={24} /> Mark all
-						as read
-					</Button>
-				</div>
-			</div>
-		</div>
-	</Screen>
-
+	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add drawer`} />
-	<Button
-		variant="secondary"
-		size="small"
-		onclick={() =>
-			window.open(
-				`https://github.com/clios/lomer-ui/blob/main/src/lib/drawer.svelte`,
-				'_blank'
-			)}
-		class="w-min whitespace-nowrap"
-		>Component Code <Icon icon="mdi:code" /></Button
-	>
+	<ComponentCodeButton
+		link="https://github.com/clios/lomer-ui/blob/main/src/lib/drawer.svelte"
+	/>
 
+	<!-- USAGE -->
 	<Title id="2">Usage</Title>
+	<p>Specify width and height using tailwind.</p>
 	<p>Bind <Prop>isOpen</Prop> property to reflect drawer's open state.</p>
-	<p>
-		Specify width in <Prop>class</Prop> property, by default it will cover the entire
-		screen
-	</p>
 	<Code
 		code={`import Drawer from '$lib/components/ui/drawer.svelte'` +
-			`\nlet isOpen = false` +
+			`\nlet isOpen = $state(false)` +
 			`\nconst openDrawer = () => (isOpen = true)`}
 		language="javascript"
 	/>
 	<Code
-		code={`<Button on:click={openDrawer}>Open drawer</Button>` +
+		code={`<Button onclick={openDrawer}>Open drawer</Button>` +
 			`\n<Drawer class="w-[400px]" title="Title here" bind:isOpen>` +
 			`\n\tContent here...` +
 			`\n</Drawer>`}
 		language="xml"
 	/>
-
-	<Title id="3">Examples</Title>
-	<SubTitle id="3.1">Default</SubTitle>
-	<Screen
-		class="flex justify-center rounded-md p-8 shadow dark:border dark:border-dotted dark:border-zinc-500"
-	>
-		<Button onclick={() => (isDefaultDrawerOpen = true)}>Open Drawer</Button>
-		<Drawer
-			class="w-[400px]"
-			title="Notifications"
-			bind:isOpen={isDefaultDrawerOpen}
-		>
-			<div class="px-8">
-				<p class="mb-4 text-zinc-500">You have 3 unread messages.</p>
-
-				<Check class="rounded border p-4 dark:border-zinc-700">
-					<p class="font-semibold">Push Notifications</p>
-					<div class="text-zinc-500">Send notifications to device.</div>
-				</Check>
-
-				<div class="my-4 flex items-start">
-					<Icon
-						class="text-cyan-500"
-						icon="icon-park-outline:dot"
-						height="24"
-					/>
-					<div>
-						<p class="font-semibold">Your call has been confirmed.</p>
-						<div class="text-zinc-500">1 hour ago</div>
-					</div>
-				</div>
-				<div class="my-4 flex items-start">
-					<Icon
-						class="text-cyan-500"
-						icon="icon-park-outline:dot"
-						height="24"
-					/>
-					<div>
-						<p class="font-semibold">You have a new message!</p>
-						<div class="text-zinc-500">1 hour ago</div>
-					</div>
-				</div>
-				<div class="my-4 flex items-start">
-					<Icon
-						class="text-cyan-500"
-						icon="icon-park-outline:dot"
-						height="24"
-					/>
-					<div>
-						<p class="font-semibold">Your subscription is expiring soon!</p>
-						<div class="text-zinc-500">2 hours ago</div>
-					</div>
-				</div>
-
-				<Button class="w-full justify-center">
-					<Icon icon="material-symbols:check" width={24} height={24} /> Mark all
-					as read
-				</Button>
-			</div>
+	<Preview>
+		<Button onclick={() => (isOpen = true)}>Open drawer</Button>
+		<Drawer class="w-[400px]" title="Title here" bind:isOpen>
+			Content here...
 		</Drawer>
-	</Screen>
+	</Preview>
+
+	<!-- EXAMPLES -->
+	<Title id="3">Examples</Title>
+
+	<!-- POSITIONING -->
+	<SubTitle id="3.1">Positioning</SubTitle>
+	<p>
+		Add <Prop>position</Prop> property with <Val
+			>left | right | top | bottom</Val
+		> value.
+	</p>
+	<Code code={`<Drawer position="left">...</Drawer>`} language="xml" />
+	<Preview class="gap-4">
+		<Button onclick={() => (isLeftOpen = true)}>Left</Button>
+		<Drawer
+			class="w-56 p-6"
+			title="Left Drawer"
+			position="left"
+			bind:isOpen={isLeftOpen}
+		>
+			{#each Array(50) as _}
+				<p>Content</p>
+			{/each}
+			<p>End of content</p>
+		</Drawer>
+
+		<Button onclick={() => (isRightOpen = true)}>Right</Button>
+		<Drawer
+			class="w-56 p-6"
+			title="Right Drawer"
+			position="right"
+			bind:isOpen={isRightOpen}
+		>
+			{#each Array(50) as _}
+				<p>Content</p>
+			{/each}
+			<p>End of content</p>
+		</Drawer>
+
+		<Button onclick={() => (isTopOpen = true)}>Top</Button>
+		<Drawer
+			class="h-56 p-6"
+			title="Top Drawer"
+			position="top"
+			bind:isOpen={isTopOpen}
+		>
+			{#each Array(50) as _}
+				<p>Content</p>
+			{/each}
+			<p>End of content</p>
+		</Drawer>
+
+		<Button onclick={() => (isBottomOpen = true)}>Bottom</Button>
+		<Drawer
+			class="h-56 p-6"
+			title="Bottom Drawer"
+			position="bottom"
+			bind:isOpen={isBottomOpen}
+		>
+			{#each Array(50) as _}
+				<p>Content</p>
+			{/each}
+			<p>End of content</p>
+		</Drawer>
+	</Preview>
+
+	<!-- FIXED FOOTER -->
+	<SubTitle id="3.2">Fixed footer</SubTitle>
+	<p>Add <Val>"sitcky bottom-0"</Val> style to element you want.</p>
 	<Code
-		code={`import Drawer from '$lib/components/ui/drawer.svelte'` +
-			`\nimport Check from '$lib/components/ui/check.svelte'` +
-			`\nimport Button from '$lib/components/ui/button.svelte'` +
-			`\nimport Icon from '@iconify/svelte'` +
-			`\nlet isOpen = false` +
-			`\nconst openDrawer = () => (isOpen = true)`}
-		language="javascript"
-	/>
-	<Code
-		code={`<Button on:click={openDrawer}>Open Drawer</Button>` +
-			`\n<Drawer class="w-[400px]" title="Notifications" bind:isOpen>` +
-			`\n\t<div class="px-8">` +
-			`\n\t\t<p class="mb-4 text-zinc-500">You have 3 unread messages.</p>` +
-			`\n\t\t<Check class="rounded border p-4 dark:border-zinc-700">` +
-			`\n\t\t\t<p class="font-semibold">Push Notifications</p>` +
-			`\n\t\t\t<div class="text-zinc-500">Send notifications to device.</div>` +
-			`\n\t\t</Check>` +
-			`\n\t\t<div class="my-4 flex items-start">` +
-			`\n\t\t\t<Icon class="text-cyan-500" icon="icon-park-outline:dot" height="24" />` +
-			`\n\t\t\t<div>` +
-			`\n\t\t\t\t<p class="font-semibold">Your call has been confirmed.</p>` +
-			`\n\t\t\t\t<div class="text-zinc-500">1 hour ago</div>` +
-			`\n\t\t\t</div>` +
-			`\n\t\t</div>` +
-			`\n\t\t<div class="my-4 flex items-start">` +
-			`\n\t\t\t<Icon class="text-cyan-500" icon="icon-park-outline:dot" height="24" />` +
-			`\n\t\t\t<div>` +
-			`\n\t\t\t\t<p class="font-semibold">You have a new message!</p>` +
-			`\n\t\t\t\t<div class="text-zinc-500">1 hour ago</div>` +
-			`\n\t\t\t</div>` +
-			`\n\t\t</div>` +
-			`\n\t\t<div class="my-4 flex items-start">` +
-			`\n\t\t\t<Icon class="text-cyan-500" icon="icon-park-outline:dot" height="24" />` +
-			`\n\t\t\t<div>` +
-			`\n\t\t\t\t<p class="font-semibold">Your subscription is expiring soon!</p>` +
-			`\n\t\t\t\t<div class="text-zinc-500">2 hours ago</div>` +
-			`\n\t\t\t</div>` +
-			`\n\t\t</div>` +
-			`\n\t\t<Button class="w-full justify-center">` +
-			`\n\t\t\t<Icon icon="material-symbols:check" width={24} height={24} /> Mark all as read` +
-			`\n\t\t</Button>` +
-			`\n\t</div>` +
-			`\n</Drawer>`}
+		code={`<Drawer>\n\t...\n\t<div class="sticky bottom-0">Footer</div>\n</Drawer>`}
 		language="xml"
 	/>
+	<Preview>
+		<Button onclick={() => (isFixedFooterOpen = true)}>Fixed footer</Button>
+		<Drawer
+			class="w-56 p-6"
+			title="Fixed Footer"
+			bind:isOpen={isFixedFooterOpen}
+		>
+			{#each Array(50) as _}
+				<p>Content</p>
+			{/each}
+			<p>End of content</p>
+
+			<div class="sticky bottom-0 w-full">Fixed footer</div>
+		</Drawer>
+	</Preview>
 </div>

@@ -1,92 +1,173 @@
 <script lang="ts">
-	import clsx from 'clsx';
+	import type { Snippet } from 'svelte';
+	import { cn } from './utils.ts';
 	import { fade, slide } from 'svelte/transition';
-	import Icon from '@iconify/svelte';
 
-	export let title: string;
-	export let isOpen: boolean;
-	export let noBackdrop: boolean = false;
-	export { className as class };
+	type Props = {
+		children?: Snippet;
+		class?: string;
+		isOpen: boolean;
+		title: string;
+		position?: 'left' | 'right' | 'top' | 'bottom';
+	};
 
-	let className = '';
-
-	let emphasize = false;
-
-	function emphasizeContent() {
-		if (emphasize === true) return;
-		emphasize = true;
-		setTimeout(() => {
-			emphasize = false;
-		}, 200);
-	}
+	let {
+		children,
+		class: className,
+		isOpen = $bindable(false),
+		title = '',
+		position = 'right'
+	}: Props = $props();
 </script>
 
 {#if isOpen}
 	<!-- BACKDROP -->
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
-		class={clsx(
-			'fixed bottom-0 left-0 right-0 top-0 z-10 flex justify-end transition-all', // base
-			noBackdrop ? 'backdrop-blur-none' : 'backdrop-blur-sm', // blur
-			noBackdrop ? 'bg-zinc-200/0' : 'bg-zinc-200/80', // light
-			noBackdrop ? 'dark:bg-zinc-950/0' : 'dark:bg-zinc-950/80', // dark
-			noBackdrop && 'pointer-events-none', // dark
-			!noBackdrop && 'bg-[radial-gradient(#D4D4D8_1px,transparent_1px)]',
-			!noBackdrop && 'dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]',
-			!noBackdrop && '[background-size:16px_16px]'
+		class={cn(
+			// BASE
+			'fixed bottom-0 left-0 right-0 top-0 z-50', // position
+
+			// BACKGROUND
+			'backdrop-blur-sm', // blue
+			'bg-zinc-200/80 dark:bg-zinc-950/80', // color
+			'bg-[radial-gradient(#D4D4D8_1px,transparent_1px)]', // light dots
+			'dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]', // dark dots
+			'[background-size:16px_16px]' // dot size
 		)}
-		in:fade={{ duration: 200, delay: 200 }}
-		out:fade={{ duration: 200, delay: 0 }}
-		on:click|self={emphasizeContent}
+		in:fade={{ duration: 150 }}
+		out:fade={{ duration: 150 }}
 	>
-		<!-- DIALOG CONTENT -->
+		<!-- DRAWER CONTAINER -->
 		<div
-			class={clsx(
-				'pointer-events-auto',
-				'shadow-md dark:shadow-none',
-				'z-100 relative border-l transition-all dark:border-zinc-800',
-				'bg-white dark:bg-zinc-950',
-				noBackdrop && 'bg-white/95 backdrop-blur-sm dark:bg-zinc-950/90',
-				emphasize ? 'translate-x-16' : '',
-				className
+			transition:slide={{
+				axis: ['left', 'right'].includes(position) ? 'x' : 'y',
+				duration: 150,
+				delay: 150
+			}}
+			class={cn(
+				// BASE
+				'absolute z-10', // layout and positioning
+				'dark:border-zinc-700', // box model
+				'bg-white dark:bg-zinc-950', // background
+				'shadow-md dark:shadow-none', // shadow
+				'transition-all', // animation
+
+				// POSITION: LEFT
+				position === 'left' && 'left-0 h-screen border-r', // border
+
+				// POSITION: RIGHT
+				position === 'right' && 'right-0 h-screen border-l', // border
+
+				// POSITION: TOP
+				position === 'top' && 'top-0 w-screen border-b', // border
+
+				// POSITION: BOTTOM
+				position === 'bottom' && 'bottom-0 w-screen border-t' // border
 			)}
-			in:slide={{ axis: 'x', duration: 200, delay: 200 }}
-			out:slide={{ axis: 'x', duration: 200, delay: 200 }}
 		>
+			<!-- CLOSE BUTTON -->
+			<!-- svelte-ignore a11y_consider_explicit_label -->
+			<button
+				class={cn(
+					'absolute right-4 top-4', // layout and positioning
+					'text-zinc-950 dark:text-zinc-50', // text
+					'rounded-full', // border
+					'bg-zinc-50/0 dark:bg-zinc-950/0', // background
+					'active:outline-2 active:outline-offset-0', // color
+					'hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500 hover:ring-offset-1', // hovering
+					'focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-cyan-500 focus:ring-offset-1' // focusing
+				)}
+				onclick={() => (isOpen = false)}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+				>
+					<mask id="lineMdCloseCircleFilled0">
+						<g
+							fill="none"
+							stroke="#fff"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+						>
+							<path
+								fill="#fff"
+								fill-opacity="0"
+								stroke-dasharray="64"
+								stroke-dashoffset="64"
+								d="M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9Z"
+							>
+								<animate
+									fill="freeze"
+									attributeName="fill-opacity"
+									begin="0.6s"
+									dur="0.5s"
+									values="0;1"
+								/>
+								<animate
+									fill="freeze"
+									attributeName="stroke-dashoffset"
+									dur="0.6s"
+									values="64;0"
+								/>
+							</path>
+							<path
+								stroke="#000"
+								stroke-dasharray="8"
+								stroke-dashoffset="8"
+								d="M12 12l4 4M12 12l-4 -4M12 12l-4 4M12 12l4 -4"
+							>
+								<animate
+									fill="freeze"
+									attributeName="stroke-dashoffset"
+									begin="1.1s"
+									dur="0.2s"
+									values="8;0"
+								/>
+							</path>
+						</g>
+					</mask>
+					<rect
+						width="24"
+						height="24"
+						fill="currentColor"
+						mask="url(#lineMdCloseCircleFilled0)"
+					/>
+				</svg>
+			</button>
+
 			<!-- HEADER -->
-			<div
-				class="flex items-center justify-between bg-white px-4 pr-2 dark:bg-zinc-950 sm:pl-4 sm:pr-4"
-				in:fade={{ delay: 400 }}
-				out:fade={{ duration: 200 }}
+			<p
+				in:fade={{ delay: 200 }}
+				out:fade={{ duration: 150 }}
+				class="p-6 text-xl font-semibold leading-3 shadow-sm dark:border-b dark:border-zinc-700 dark:shadow-none"
 			>
-				<p
-					class="px-4 pt-4 text-2xl font-semibold text-zinc-950 dark:text-zinc-50"
-				>
-					{title}
-				</p>
-				<button
-					class={clsx(
-						'absolute right-4 top-4 rounded-full',
-						'bg-zinc-50/0 text-zinc-950 dark:bg-zinc-950/0 dark:text-zinc-50', // color
-						'border border-zinc-50/0 dark:border-zinc-50/0', // color
-						'active:outline-2 active:outline-offset-0', // color
-						'outline-cyan-500 hover:outline hover:outline-1', // hover
-						'focus:outline focus:outline-1 focus:outline-offset-2', // focus
-						'focus:outline-cyan-500 focus:ring-offset-1', // focus
-						'disabled:focus:outline-none' // focus
-					)}
-					on:click={() => (isOpen = false)}
-				>
-					<Icon icon="line-md:close-circle-filled" width={24} height={24} />
-				</button>
-			</div>
+				{title}
+			</p>
+
+			<!-- BODY -->
 			<div
-				class="h-[calc(100vh-4rem)] overflow-auto bg-white dark:bg-zinc-950"
-				in:fade={{ delay: 400 }}
-				out:fade={{ duration: 200 }}
+				in:fade={{ delay: 200 }}
+				out:fade={{ duration: 150 }}
+				class={cn(
+					// BASE
+					'relative',
+
+					// POSITION: LEFT & RIGHT
+					['left', 'right'].includes(position) &&
+						'h-[calc(100vh-3.8rem)] overflow-y-auto p-6',
+
+					// POSITION: TOP & BOTTOM
+					['top', 'bottom'].includes(position) && 'overflow-y-auto p-6',
+
+					// STYLING
+					className
+				)}
 			>
-				<slot />
+				{@render children?.()}
 			</div>
 		</div>
 	</div>
