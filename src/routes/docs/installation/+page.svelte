@@ -28,7 +28,7 @@
 	<PageHeader
 		title="Installation"
 		sub="Docs"
-		info="Guide to use lomer-ui in SvelteKit."
+		info="Just follow these simple steps."
 	/>
 
 	<Title id="1">Setup your project</Title>
@@ -69,7 +69,7 @@
 	</SubTitle>
 	<StepperPanel>
 		<p>
-			Add <Prop>safelist</Prop> and <Prop>darkMode</Prop> in <File
+			Add <Prop>safelist</Prop> and <Prop>darkMode</Prop> to <File
 				>tailwind.config.ts</File
 			>.
 		</p>
@@ -83,14 +83,13 @@
 			language="javascript"
 		/>
 		<p>
-			See more in
-			<Link
+			See <Link
 				class="underline"
 				target="_blank"
 				href="https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually"
 			>
 				Tailwind CSS Dark Mode
-			</Link> for more details.
+			</Link> for details.
 		</p>
 	</StepperPanel>
 
