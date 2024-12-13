@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Field from '$lib/field.svelte';
-	import { Button } from '$lib/index.js';
-	import Input from '$lib/input.svelte';
 	import Icon from '@iconify/svelte';
+	import Input from '$lib/input.svelte';
+	import { Button } from '$lib/index.js';
 </script>
 
 <div

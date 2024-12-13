@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Check, Button } from '$lib/index.js';
+	import Button from '$lib/button.svelte';
+	import Checkbox from '$lib/checkbox.svelte';
 	import Icon from '@iconify/svelte';
 </script>
 
@@ -14,10 +15,12 @@
 		<Icon icon="mdi:bell-ring-outline" width={30} height={30} />
 	</div>
 
-	<Check class="rounded border p-4 dark:border-zinc-700">
-		<p class="font-semibold">Push Notifications</p>
-		<div class="text-zinc-500">Send notifications to device.</div>
-	</Check>
+	<div class="rounded border p-4 dark:border-zinc-700">
+		<Checkbox>
+			<p class="font-semibold">Push Notifications</p>
+			<div class="text-zinc-500">Send notifications to device.</div>
+		</Checkbox>
+	</div>
 
 	<div class="my-4 flex items-start">
 		<Icon class="text-cyan-500" icon="icon-park-outline:dot" height="24" />
