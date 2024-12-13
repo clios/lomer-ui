@@ -9,7 +9,8 @@ export async function initProject() {
 		await checkOrCreateSvelteKitApp();
 		await checkOrInstallTailwindCSS();
 
-		await runCommand('npm', ['install', 'tailwind-merge', 'mode-watcher']);
+		await runCommand('npm', ['install', 'tailwind-merge', '--save-dev']);
+		await runCommand('npm', ['install', 'mode-watcher']);
 		console.log('✅ Dependencies installed successfully.');
 
 		console.log('✅ lomer-ui initialization complete.');
