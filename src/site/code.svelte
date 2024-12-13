@@ -39,7 +39,7 @@
 <div class={clsx('relative flex flex-col justify-center', className)}>
 	<!-- Copy Button -->
 	<div class="absolute right-2 top-2">
-		<Button size="icon" variant="ghost" on:click={copyToClipboard}>
+		<Button size="icon" variant="ghost" onclick={copyToClipboard}>
 			{#if copyMessage}
 				<Icon class="text-teal-500" icon="mdi:check" />
 			{:else}
