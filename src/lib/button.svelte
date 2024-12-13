@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import type { Snippet } from 'svelte';
-	import { cn } from './utils.ts';
+	import { twMerge } from 'tailwind-merge';
 
 	type Variant = 'primary' | 'secondary' | 'outline' | 'destructive' | 'ghost';
 
@@ -30,7 +30,7 @@
 </script>
 
 <button
-	class={cn(
+	class={twMerge(
 		// BASE
 		'relative flex items-center gap-1', // layout and positioning
 		'rounded border border-cyan-500 px-3 py-1', // box model
