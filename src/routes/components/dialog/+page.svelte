@@ -52,9 +52,9 @@
 		language="xml"
 	/>
 	<Preview>
-		<Button onclick={() => (isOpen = true)}
-			><Icon icon="mdi:power" width={24} height={24} /> Sign out</Button
-		>
+		<Button onclick={() => (isOpen = true)}>
+			<Icon icon="mdi:power" width={24} height={24} /> Sign out
+		</Button>
 		<Dialog bind:isOpen title="Sign Out">
 			<p>Any unsaved changes you made wil be lost.</p>
 			<div class="mt-8 flex justify-end gap-4">
