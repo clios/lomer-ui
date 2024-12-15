@@ -38,7 +38,7 @@
 	<button
 		class={cn(
 			'group', // group
-			'w-full py-2', // box model
+			'w-full py-2 pr-2', // box model
 			'flex items-center justify-between', // layout and positioning
 			'focus:underline', // focusing
 			'hover:underline' // hovering
