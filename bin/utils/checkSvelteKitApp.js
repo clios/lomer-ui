@@ -13,7 +13,7 @@ export async function checkSvelteKitApp() {
 	);
 
 	if (exists.every(Boolean)) {
-		console.log(`✅ SvelteKit detected.`);
+		console.log(`SvelteKit detected.`);
 		return;
 	}
 

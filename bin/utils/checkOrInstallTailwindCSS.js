@@ -9,7 +9,7 @@ export async function checkOrInstallTailwindCSS() {
 			packageJson.dependencies?.tailwindcss ||
 			packageJson.devDependencies?.tailwindcss
 		) {
-			console.log(`✅ Tailwind CSS detected.`);
+			console.log(`Tailwind CSS detected.`);
 			return;
 		}
 

@@ -2,6 +2,7 @@
 
 import { showHelp } from './helpers/showHelp.js';
 import { addComponent } from './commands/addComponent.js';
+import { addMultipleComponents } from './commands/addMultipleComponents.js';
 
 const [, , command, component] = process.argv;
 
@@ -11,7 +12,7 @@ if (!command || command === '--help') {
 	if (component) {
 		addComponent(component);
 	} else {
-		console.error('❌ Please specify a component to add.');
+		addMultipleComponents();
 	}
 } else {
 	console.error('❌ Invalid command.');
