@@ -55,6 +55,9 @@
 			class="fixed top-0 flex h-screen w-64 flex-col gap-2 overflow-y-auto border-x pl-4 dark:border-zinc-700"
 		>
 			<p class="mt-20 pl-4 font-semibold">Getting Started</p>
+			<Link href="/docs/introduction" class="pl-8" variant="list-item"
+				>Introduction</Link
+			>
 			<Link href="/docs/installation" class="pl-8" variant="list-item"
 				>Installation</Link
 			>

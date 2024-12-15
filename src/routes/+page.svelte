@@ -11,7 +11,7 @@
 <Screen class="p-8" lineColor="#71717A10">
 	<p class="font-semibold">Beta Version</p>
 	<p class="font-mono text-6xl">lo<span class="font-serif">m</span>er-ui</p>
-	<p class="text-2xl font-semibold">Another build your component library.</p>
+	<p class="text-2xl font-semibold">Just copy and build your own component.</p>
 	<p class="text-2xl font-semibold">Fix it. Tune it. Keep it. Dead simple.</p>
 
 	<div class="my-8 flex gap-4">
