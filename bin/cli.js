@@ -3,6 +3,7 @@
 import { showHelp } from './helpers/showHelp.js';
 import { addComponent } from './commands/addComponent.js';
 import { addMultipleComponents } from './commands/addMultipleComponents.js';
+import { scanAndUpdateComponents } from './commands/scanAndUpdateComponents.js';
 
 const [, , command, component] = process.argv;
 
@@ -14,6 +15,8 @@ if (!command || command === '--help') {
 	} else {
 		addMultipleComponents();
 	}
+} else if (command === 'update') {
+	scanAndUpdateComponents();
 } else {
 	console.error('❌ Invalid command.');
 	showHelp();
