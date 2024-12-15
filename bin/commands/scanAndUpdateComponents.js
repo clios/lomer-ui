@@ -28,7 +28,7 @@ export async function scanAndUpdateComponents() {
 		const response = await prompts({
 			type: 'confirm',
 			name: 'value',
-			message: `Found ${components.length} components. Do you want to update them?`,
+			message: `Found ${components.length} components. Do you want to update them? \n This will replace your component with my component.`,
 			initial: false
 		});
 
