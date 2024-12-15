@@ -13,7 +13,6 @@ export async function fetchFile(fileUrl, destPath) {
 
 		const fileContent = await response.text();
 		await fs.writeFile(destPath, fileContent);
-		console.log(`✅ File downloaded to: ${destPath}`);
 	} catch (error) {
 		console.error(`❌ Error downloading file: ${error.message}`);
 		throw error;

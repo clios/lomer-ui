@@ -9,13 +9,13 @@ export async function checkOrInstallTailwindCSS() {
 			packageJson.dependencies?.tailwindcss ||
 			packageJson.devDependencies?.tailwindcss
 		) {
-			console.log('✅ TailwindCSS is already installed.');
+			console.log(`✅ Tailwind CSS detected.`);
 			return;
 		}
 
 		console.log('❌ TailwindCSS not detected. Installing...');
 		await runCommand('npx', ['sv', 'add', 'tailwindcss']);
-		console.log('✅ TailwindCSS installed and initialized successfully.');
+		console.log('✅ TailwindCSS installed successfully.');
 	} catch (error) {
 		console.error(
 			`❌ Error checking or installing TailwindCSS: ${error.message}`

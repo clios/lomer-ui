@@ -1,15 +1,12 @@
 #!/usr/bin/env node
 
 import { showHelp } from './helpers/showHelp.js';
-import { initProject } from './commands/initProject.js';
 import { addComponent } from './commands/addComponent.js';
 
 const [, , command, component] = process.argv;
 
 if (!command || command === '--help') {
 	showHelp();
-} else if (command === 'init') {
-	initProject();
 } else if (command === 'add') {
 	if (component) {
 		addComponent(component);
