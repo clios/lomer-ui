@@ -33,21 +33,20 @@
 </script>
 
 <!-- CONTAINER -->
-<div class={cn('border dark:border-zinc-700', className)}>
+<div class={cn('border-b dark:border-zinc-700', className)}>
 	<!-- HEADER AS TOGGLE BUTTON -->
 	<button
 		class={cn(
 			'group', // group
-			'w-full px-4 py-2', // box model
+			'w-full py-2', // box model
 			'flex items-center justify-between', // layout and positioning
-			'bg-white dark:bg-zinc-950', // background
-			'focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-cyan-500', // focusing
-			'hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500' // hovering
+			'focus:underline', // focusing
+			'hover:underline' // hovering
 		)}
 		onclick={toggleAccordion}
 	>
 		<!-- TITLE -->
-		<p class={cn('font-semibold', isOpen && 'underline')}>{title}</p>
+		<p class={cn('font-semibold')}>{title}</p>
 
 		<!-- ICON -->
 		<svg
@@ -64,10 +63,7 @@
 
 	<!-- CONDITIONAL CONTENT -->
 	{#if isOpen && (!value || value === name)}
-		<div
-			class="overflow-hidden border-t p-4 dark:border-zinc-700"
-			transition:slide={{ duration: 150 }}
-		>
+		<div class="pb-4" transition:slide={{ duration: 150 }}>
 			{@render children?.()}
 		</div>
 	{/if}
