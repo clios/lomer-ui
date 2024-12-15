@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import inquirer from 'inquirer';
+import prompts from 'prompts';
 import { checkOrInstallTailwindCSS } from '../utils/checkOrInstallTailwindCSS.js';
 import { checkOrInstallTailwindMerge } from '../utils/checkOrInstallTailwindMerge.js';
 import { checkSvelteKitApp } from '../utils/checkSvelteKitApp.js';
@@ -9,23 +9,22 @@ import { fetchFile } from '../utils/fetchFile.js';
 const GITHUB_BASE_URL =
 	'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib';
 const DEST_DIR = path.resolve('./src/lib/components/ui');
-
-// Predefined list of components
 const COMPONENTS = ['accordion', 'alert', 'button', 'card-picker', 'dialog'];
 
 export async function addMultipleComponents() {
 	try {
-		// Prompt the user to select multiple components
-		const { selectedComponents } = await inquirer.prompt([
-			{
-				type: 'checkbox',
-				name: 'selectedComponents',
-				message: 'Select components to add:',
-				choices: COMPONENTS
-			}
-		]);
+		const { selectedComponents } = await prompts({
+			type: 'multiselect',
+			name: 'selectedComponents',
+			message: 'Select components to add:',
+			choices: COMPONENTS.map((component) => ({
+				title: component,
+				value: component
+			})),
+			hint: 'Use space to select, enter to confirm'
+		});
 
-		if (selectedComponents.length === 0) {
+		if (!selectedComponents || selectedComponents.length === 0) {
 			console.log('❌ No components selected.');
 			return;
 		}
@@ -44,14 +43,12 @@ export async function addMultipleComponents() {
 				// Check if the component already exists
 				try {
 					await fs.access(destPath);
-					const { overwrite } = await inquirer.prompt([
-						{
-							type: 'confirm',
-							name: 'overwrite',
-							message: `The component "${componentName}" already exists. Do you want to replace it?`,
-							default: false
-						}
-					]);
+					const { overwrite } = await prompts({
+						type: 'confirm',
+						name: 'overwrite',
+						message: `The component "${componentName}" already exists. Do you want to replace it?`,
+						initial: false
+					});
 
 					if (!overwrite) {
 						console.log(`❌ Component "${componentName}" was not replaced.`);

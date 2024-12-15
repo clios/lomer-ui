@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import readline from 'readline';
+import prompts from 'prompts';
 import { checkOrInstallTailwindCSS } from '../utils/checkOrInstallTailwindCSS.js';
 import { checkOrInstallTailwindMerge } from '../utils/checkOrInstallTailwindMerge.js';
 import { checkSvelteKitApp } from '../utils/checkSvelteKitApp.js';
@@ -11,17 +11,13 @@ const GITHUB_BASE_URL =
 const DEST_DIR = path.resolve('./src/lib/components/ui');
 
 async function promptUser(question) {
-	const rl = readline.createInterface({
-		input: process.stdin,
-		output: process.stdout
+	const response = await prompts({
+		type: 'confirm',
+		name: 'replace',
+		message: question,
+		initial: false
 	});
-
-	return new Promise((resolve) => {
-		rl.question(question, (answer) => {
-			rl.close();
-			resolve(answer.trim().toLowerCase());
-		});
-	});
+	return response.replace;
 }
 
 export async function addComponent(componentName) {
@@ -35,10 +31,10 @@ export async function addComponent(componentName) {
 		try {
 			await fs.access(destPath);
 			const userResponse = await promptUser(
-				`The component "${componentName}" already exists. Do you want to replace it? (y/n): `
+				`The component "${componentName}" already exists. Do you want to replace it?`
 			);
 
-			if (userResponse !== 'y') {
+			if (!userResponse) {
 				console.log(`❌ Component "${componentName}" was not replaced.`);
 				return;
 			}
