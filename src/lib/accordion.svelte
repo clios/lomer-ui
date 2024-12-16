@@ -67,7 +67,7 @@
 	<!-- CONDITIONAL CONTENT -->
 	<!-- If value and name is truthy, it will compare them before opening -->
 	{#if isOpen && (!value || value === name)}
-		<div class="pb-4" transition:slide={{ duration: 150 }}>
+		<div class="px-2 pb-4" transition:slide={{ duration: 150 }}>
 			{@render children?.()}
 		</div>
 	{/if}
