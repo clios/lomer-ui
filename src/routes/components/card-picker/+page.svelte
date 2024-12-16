@@ -37,38 +37,38 @@
 	<Title id="2">Usage</Title>
 	<Code code={`let groupValue = $state('');`} language="javascript" />
 	<Code
-		code={`<CardPicker bind:groupValue itemValue="dragon">` +
+		code={`<CardPicker bind:groupValue cardValue="dragon">` +
 			`\n\t<Icon icon="game-icons:spiked-dragon-head" width={100} height={100} />` +
 			`\n\t<p>Dragon</p>` +
 			`\n</CardPicker>` +
-			`\n<CardPicker bind:groupValue itemValue="serpent">` +
+			`\n<CardPicker bind:groupValue cardValue="serpent">` +
 			`\n\t<Icon icon="game-icons:snake-tongue" width={100} height={100} />` +
 			`\n\t<p>Serpent</p>` +
 			`\n</CardPicker>` +
-			`\n<CardPicker bind:groupValue itemValue="wolf">` +
+			`\n<CardPicker bind:groupValue cardValue="wolf">` +
 			`\n\t<Icon icon="game-icons:wolf-head" width={100} height={100} />` +
 			`\n\t<p>Wolf</p>` +
 			`\n</CardPicker>` +
-			`\n<CardPicker bind:groupValue itemValue="lotus">` +
+			`\n<CardPicker bind:groupValue cardValue="lotus">` +
 			`\n\t<Icon icon="game-icons:lotus" width={100} height={100} />` +
 			`\n\t<p>Lotus</p>` +
 			`\n</CardPicker>`}
 		language="xml"
 	/>
 	<Preview class="gap-8">
-		<CardPicker bind:groupValue itemValue="dragon">
+		<CardPicker bind:groupValue cardValue="dragon">
 			<Icon icon="game-icons:spiked-dragon-head" width={100} height={100} />
 			<p>Dragon</p>
 		</CardPicker>
-		<CardPicker bind:groupValue itemValue="serpent">
+		<CardPicker bind:groupValue cardValue="serpent">
 			<Icon icon="game-icons:snake-tongue" width={100} height={100} />
 			<p>Serpent</p>
 		</CardPicker>
-		<CardPicker bind:groupValue itemValue="wolf">
+		<CardPicker bind:groupValue cardValue="wolf">
 			<Icon icon="game-icons:wolf-head" width={100} height={100} />
 			<p>Wolf</p>
 		</CardPicker>
-		<CardPicker bind:groupValue itemValue="lotus">
+		<CardPicker bind:groupValue cardValue="lotus">
 			<Icon icon="game-icons:lotus" width={100} height={100} />
 			<p>Lotus</p>
 		</CardPicker>

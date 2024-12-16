@@ -47,8 +47,8 @@
 	</p>
 	<p>
 		I'm building lomer-ui with simplicity and clarity in mind, focusing on clean
-		and easy-to-read code, all while including helpful (but not verbose)
-		comments.
+		and easy-to-read code, all while including helpful <em>(but not verbose)</em
+		> comments.
 	</p>
 	<p>Thank you for taking the time to check out this project.</p>
 	<p>Clios, lomer-ui dev.</p>

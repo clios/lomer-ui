@@ -2,7 +2,7 @@
 	import Field from '$lib/field.svelte';
 	import Icon from '@iconify/svelte';
 	import Input from '$lib/input.svelte';
-	import { Button } from '$lib/index.js';
+	import Button from '$lib/button.svelte';
 </script>
 
 <div

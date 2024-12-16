@@ -1,14 +1,17 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import type { Snippet } from 'svelte';
-	import { cn } from './utils.ts';
+	import { twMerge } from 'tailwind-merge';
+	import { draw } from 'svelte/transition';
+	import { circInOut } from 'svelte/easing';
 
 	type Props = {
 		children?: Snippet;
 		class?: string;
 		groupValue: string;
 		isSelected?: boolean;
-		itemValue: string;
+		hasCheckMark?: boolean;
+		cardValue: string;
 	} & HTMLButtonAttributes;
 
 	let {
@@ -16,30 +19,31 @@
 		class: className,
 		groupValue = $bindable(),
 		isSelected = false,
-		itemValue,
+		hasCheckMark = false,
+		cardValue,
 		...props
 	}: Props = $props();
 
 	function onclick() {
-		groupValue = itemValue;
+		groupValue = cardValue;
 	}
 
 	$effect(() => {
-		isSelected = itemValue === groupValue;
+		isSelected = cardValue === groupValue;
 	});
 </script>
 
 <button
-	class={cn(
+	class={twMerge(
 		// BASE
+		'relative p-2', // positioning and padding
 		'bg-white dark:bg-zinc-950', // background
-		'p-2', // box model
 		'rounded border dark:border-zinc-700', // border
 		'shadow dark:shadow-none', // visual
 
 		// SELECTED
 		isSelected
-			? 'outline' // outline
+			? 'outline outline-1' // outline
 			: [
 					'active:outline-2 active:outline-offset-0', // active
 					'focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-cyan-500', // focusing
@@ -52,5 +56,24 @@
 	{onclick}
 	{...props}
 >
+	{#if isSelected && hasCheckMark}
+		<!-- CHECK MARK -->
+		<svg
+			class="absolute right-1 top-1"
+			width="14"
+			height="14"
+			viewBox="0 0 31 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				in:draw={{ duration: 300, easing: circInOut }}
+				stroke-width="5"
+				d="M1 16L8 23L30.5 0.5"
+				stroke="#14B8A6"
+			/>
+		</svg>
+	{/if}
+
 	{@render children?.()}
 </button>

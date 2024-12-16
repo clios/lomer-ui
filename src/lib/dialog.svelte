@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { cn } from './utils.ts';
 	import { fade, scale } from 'svelte/transition';
+	import { twMerge } from 'tailwind-merge';
 
 	type Props = {
 		children?: Snippet;
@@ -21,7 +21,7 @@
 {#if isOpen}
 	<!-- BACKDROP -->
 	<div
-		class={cn(
+		class={twMerge(
 			// BASE
 			'grid place-content-center', // layout
 			'fixed bottom-0 left-0 right-0 top-0 z-50', // position
@@ -40,7 +40,7 @@
 		<div
 			in:scale={{ duration: 200, delay: 200, start: 0.9 }}
 			out:scale={{ duration: 200, start: 0.9 }}
-			class={cn(
+			class={twMerge(
 				// BASE
 				'relative z-10', // layout and positioning
 				'w-screen sm:w-[500px] ', // width
@@ -56,7 +56,7 @@
 			<!-- CLOSE BUTTON -->
 			<!-- svelte-ignore a11y_consider_explicit_label -->
 			<button
-				class={cn(
+				class={twMerge(
 					'absolute right-4 top-4', // layout and positioning
 					'text-zinc-950 dark:text-zinc-50', // text
 					'rounded-full', // border

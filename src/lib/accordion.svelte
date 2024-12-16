@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { slide } from 'svelte/transition';
-	import { cn } from './utils.ts';
 	import type { Snippet } from 'svelte';
+	import { slide } from 'svelte/transition';
+	import { twMerge } from 'tailwind-merge';
 
 	type Props = {
 		children?: Snippet;
@@ -35,10 +35,10 @@
 </script>
 
 <!-- CONTAINER -->
-<div {id} class={cn('border-b dark:border-zinc-700', className)}>
+<div {id} class={twMerge('border-b dark:border-zinc-700', className)}>
 	<!-- HEADER AS TOGGLE BUTTON -->
 	<button
-		class={cn(
+		class={twMerge(
 			'group', // group
 			'w-full px-2 py-4', // box model
 			'flex items-center justify-between', // layout and positioning
@@ -48,11 +48,11 @@
 		onclick={toggleAccordion}
 	>
 		<!-- TITLE -->
-		<p class={cn('font-semibold')}>{title}</p>
+		<p class={twMerge('font-semibold')}>{title}</p>
 
 		<!-- ICON -->
 		<svg
-			class={cn(
+			class={twMerge(
 				'fill-zinc-950 dark:fill-zinc-50', // fill
 				'transition-transform group-hover:fill-cyan-500 group-focus:fill-cyan-500', // animation
 				isOpen && 'rotate-180' // interacting
@@ -65,6 +65,7 @@
 	</button>
 
 	<!-- CONDITIONAL CONTENT -->
+	<!-- If value and name is truthy, it will compare them before opening -->
 	{#if isOpen && (!value || value === name)}
 		<div class="pb-4" transition:slide={{ duration: 150 }}>
 			{@render children?.()}

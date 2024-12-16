@@ -3,7 +3,7 @@
 	import Code from '$site//code.svelte';
 	import Screen from '$site/screen.svelte';
 
-	let value = 'lomer-ui';
+	let value = $state('lomer-ui');
 </script>
 
 <h1 class="font-mono text-3xl font-bold">Input Text</h1>

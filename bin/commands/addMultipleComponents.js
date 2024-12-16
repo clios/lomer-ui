@@ -9,7 +9,21 @@ import { fetchFile } from '../utils/fetchFile.js';
 const GITHUB_BASE_URL =
 	'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib';
 const DEST_DIR = path.resolve('./src/lib/components/ui');
-const COMPONENTS = ['accordion', 'alert', 'button', 'card-picker', 'dialog'];
+const COMPONENTS = [
+	'accordion',
+	'alert',
+	'button',
+	'card-picker',
+	'dialog',
+	'drawer',
+	'field',
+	'input',
+	'link',
+	'radio',
+	'select',
+	'switch',
+	'textarea'
+];
 
 export async function addMultipleComponents() {
 	try {

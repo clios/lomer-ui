@@ -24,15 +24,15 @@
 <Screen>
 	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
 		<div class="grid w-full place-content-center">
-			<Link href="#" variant="list-item">List Item 1</Link>
-			<Link href="#" variant="list-item">List Item 2</Link>
-			<Link href="#" variant="list-item">List Item 3</Link>
+			<Link class="no-underline" href="#" caret>List Item 1</Link>
+			<Link class="no-underline" href="#" caret>List Item 2</Link>
+			<Link class="no-underline" href="#" caret>List Item 3</Link>
 		</div>
 		<div class="grid items-center lg:col-span-2">
 			<Code
-				code={`<Link href="#" variant="list-item">List Item 1</Link>` +
-					`\n<Link href="#" variant="list-item">List Item 2</Link>` +
-					`\n<Link href="#" variant="list-item">List Item 3</Link>`}
+				code={`<Link href="#" caret>List Item 1</Link>` +
+					`\n<Link href="#" caret>List Item 2</Link>` +
+					`\n<Link href="#" caret>List Item 3</Link>`}
 				language="xml"
 			/>
 		</div>

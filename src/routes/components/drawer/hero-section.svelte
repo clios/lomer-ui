@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/button.svelte';
 	import Screen from '$site/screen.svelte';
-	import { cn } from '$lib/utils.ts';
+	import { twMerge } from 'tailwind-merge';
 	import { fade, slide } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
 	import Checkbox from '$lib/checkbox.svelte';
@@ -28,7 +28,7 @@
 		{#if isOpen}
 			<!-- BACKDROP -->
 			<div
-				class={cn(
+				class={twMerge(
 					// BASE
 					'absolute bottom-0 left-0 right-0 top-0 z-50', // position
 
@@ -46,7 +46,7 @@
 				<div
 					in:slide={{ axis: 'x', duration: 150, delay: 150 }}
 					out:slide={{ axis: 'x', duration: 150, delay: 150 }}
-					class={cn(
+					class={twMerge(
 						// BASE
 						'absolute right-0 z-10', // layout and positioning
 						'h-screen dark:border-zinc-700', // box model
@@ -61,7 +61,7 @@
 					<!-- CLOSE BUTTON -->
 					<!-- svelte-ignore a11y_consider_explicit_label -->
 					<button
-						class={cn(
+						class={twMerge(
 							'absolute right-4 top-4', // layout and positioning
 							'text-zinc-950 dark:text-zinc-50', // text
 							'rounded-full', // border
@@ -145,9 +145,9 @@
 					<div
 						in:fade={{ delay: 150 }}
 						out:fade={{ duration: 150 }}
-						class={cn('h-[calc(100vh-3.8rem)] overflow-y-auto')}
+						class={twMerge('h-[calc(100vh-3.8rem)] overflow-y-auto')}
 					>
-						<div class="w-[320px] p-6">
+						<div class="w-[350px] p-6">
 							<p class="mb-4 text-zinc-500">You have 3 unread messages.</p>
 
 							<div class="rounded border p-4 dark:border-zinc-700">

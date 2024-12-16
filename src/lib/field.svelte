@@ -1,22 +1,27 @@
 <script lang="ts">
-	import clsx from 'clsx';
+	import { twMerge } from 'tailwind-merge';
 	import { fade, slide } from 'svelte/transition';
+	import type { Snippet } from 'svelte';
 
-	export let label = '';
-	export let helper = '';
-	export let issue = '';
-	export { className as class };
+	type Props = {
+		children?: Snippet;
+		class?: string;
+		helper?: string;
+		issue?: string;
+		label?: string;
+	};
 
-	let className = '';
+	let { children, class: className, helper, issue, label }: Props = $props();
 </script>
 
-<div class={clsx('flex flex-col', className)}>
+<div class={twMerge('flex flex-col', className)}>
 	{#if label}
 		<p class="mb-[2px] flex justify-between text-left font-semibold">
 			{label}
 		</p>
 	{/if}
-	<slot />
+
+	{@render children?.()}
 
 	{#if helper}
 		<p

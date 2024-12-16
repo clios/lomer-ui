@@ -1,70 +1,49 @@
 <script lang="ts">
-	import Icon from '@iconify/svelte';
-	import clsx from 'clsx';
+	import type { HTMLAnchorAttributes } from 'svelte/elements';
+	import type { Snippet } from 'svelte';
+	import { twMerge } from 'tailwind-merge';
 
-	export let variant: 'default' | 'list-item' = 'default';
-	export let href: string;
-	export { className as class };
+	type Props = {
+		caret?: boolean;
+		children?: Snippet;
+		class?: string;
+	} & HTMLAnchorAttributes;
 
-	let className = '';
+	let { caret = false, children, class: className, ...props }: Props = $props();
 </script>
 
 <a
-	class={clsx(
-		'outline-offset-2', // base
+	class={twMerge(
+		// BASE
+		'group', // group
+		'relative', // positioning
+		'underline', // text
+		'focus:text-cyan-500 focus:outline-none', // focusing
+		'hover:text-cyan-500', // hovering
+		'active:outline-2 active:outline-offset-0', // active
 
-		// Variant: Default
-		variant === 'default' &&
-			'bg-zinc-50/0 text-zinc-950 dark:bg-zinc-950/0 dark:text-zinc-50', // color
-		variant === 'default' && 'border border-zinc-50/0 dark:border-zinc-50/0', // color
-		variant === 'default' && 'active:outline-2 active:outline-offset-0', // color
-		variant === 'default' &&
-			'hover:animate-pulse hover:text-cyan-500 dark:hover:text-cyan-500', // hover
-		variant === 'default' && 'focus:animate-pulse  focus:outline-none', // focus
-		variant === 'default' && 'focus:text-cyan-500 focus:dark:text-cyan-500', // focus
-		variant === 'default' && 'disabled:focus:outline-none', // disabled
-		variant === 'default' && 'disabled:border-zinc-200 disabled:bg-zinc-200', // disabled
-		variant === 'default' &&
-			' disabled:text-zinc-400 disabled:hover:cursor-not-allowed', // disabled
-		variant === 'default' &&
-			'disabled:hover:outline-none disabled:active:scale-100', // disabled
-		variant === 'default' &&
-			'disabled:dark:border-zinc-900 disabled:dark:bg-zinc-900 ', // disabled
-		variant === 'default' && 'disabled:dark:text-zinc-600', // disabled
-
-		// Variant: Link
-		variant === 'list-item' && 'group relative flex items-center', // color
-		variant === 'list-item' &&
-			'bg-zinc-50/0 text-zinc-950 dark:bg-zinc-950/0 dark:text-zinc-50', // color
-		variant === 'list-item' && 'border border-zinc-50/0 dark:border-zinc-50/0', // color
-		variant === 'list-item' && 'active:outline-2 active:outline-offset-0', // color
-		variant === 'list-item' && 'hover:text-cyan-500', // color
-		variant === 'list-item' && 'focus:animate-pulse  focus:outline-none', // focus
-		variant === 'list-item' && 'focus:text-cyan-500 focus:dark:text-cyan-500', // focus
-		variant === 'list-item' && 'disabled:focus:outline-none', // disabled
-		variant === 'list-item' && 'disabled:border-zinc-200 disabled:bg-zinc-200', // disabled
-		variant === 'list-item' &&
-			' disabled:text-zinc-400 disabled:hover:cursor-not-allowed', // disabled
-		variant === 'list-item' &&
-			'disabled:hover:outline-none disabled:active:scale-100', // disabled
-		variant === 'list-item' &&
-			'disabled:dark:border-zinc-900 disabled:dark:bg-zinc-900 ', // disabled
-		variant === 'list-item' && 'disabled:dark:text-zinc-600', // disabled
+		// DISABLED
+		'disabled:border-zinc-700 disabled:dark:border-zinc-700', // border
+		'disabled:bg-zinc-700 disabled:dark:bg-zinc-700', // background
+		'disabled:text-zinc-400 disabled:dark:text-zinc-400', // text
+		'disabled:cursor-not-allowed disabled:outline-none', // visual
 
 		className
 	)}
-	{...$$restProps}
-	{href}
+	{...props}
 >
-	{#if variant === 'list-item'}
-		<span class="relative flex items-center">
-			<Icon
-				class="absolute -left-5 hidden group-hover:block group-focus:block"
-				icon="carbon:caret-right"
-				width="24"
-				height="24"
-			/>
-		</span>
-	{/if}
-	<slot />
+	<span class="relative">
+		{#if caret}
+			<!-- CARET ICON -->
+			<svg
+				class="absolute -left-6 hidden group-hover:block group-focus:block"
+				xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="18"
+				viewBox="0 0 24 24"
+				><path fill="currentColor" d="m12 8l10 8l-10 8z" /></svg
+			>
+		{/if}
+		{@render children?.()}
+	</span>
 </a>

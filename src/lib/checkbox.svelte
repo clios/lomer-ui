@@ -1,8 +1,8 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { circInOut } from 'svelte/easing';
 	import { draw } from 'svelte/transition';
-	import { cn } from './utils.ts';
-	import type { Snippet } from 'svelte';
+	import { twMerge } from 'tailwind-merge';
 
 	type Props = {
 		children?: Snippet;
@@ -28,7 +28,7 @@
 <button
 	type="button"
 	disabled={isDisabled}
-	class={cn(
+	class={twMerge(
 		// BASE
 		'group', // group
 		'relative flex', // layout and positioning
@@ -44,7 +44,7 @@
 >
 	<!-- BOX -->
 	<div
-		class={cn(
+		class={twMerge(
 			// BASE
 			'absolute left-0 top-0', // layout and positioning
 			'size-[24px] rounded border dark:border-zinc-700', // box model

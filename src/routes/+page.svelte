@@ -9,7 +9,6 @@
 </script>
 
 <Screen class="p-8" lineColor="#71717A10">
-	<p class="font-mono">Beta Version</p>
 	<p class="mb-2 text-6xl">lomer-ui</p>
 	<p class="mb-1 text-xl">
 		A dead-simple CLI tool to instantly kickstart your own components.
@@ -31,9 +30,8 @@
 	</div>
 
 	<p class="mt-16 flex items-center text-4xl font-semibold">
-		<Icon icon="devicon:svelte" />
-		<span>Svelte + </span>
-		<Icon class="ml-4 mr-2" icon="devicon:tailwindcss" />
+		<span>Svelte</span>
+		<Icon class="mx-4" icon="mdi:plus" />
 		<span>Tailwind CSS</span>
 	</p>
 

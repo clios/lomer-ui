@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { cn } from './utils.ts';
+	import { twMerge } from 'tailwind-merge';
 
 	type Props = {
 		children?: Snippet;
@@ -21,7 +21,7 @@
 
 {#if isOpen}
 	<div
-		class={cn(
+		class={twMerge(
 			// BASE
 			'relative', // positioning
 			'w-full rounded-md border p-4', // box model
