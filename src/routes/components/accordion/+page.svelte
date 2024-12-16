@@ -24,7 +24,7 @@
 	<OnThisPageSubBtn id="3.2" title="Only one stays open" />
 </OnThisPage>
 
-<div class="flex flex-col gap-2 pr-80">
+<div class="flex flex-col gap-2 xl:pr-80">
 	<PageHeader
 		title="Accordion"
 		sub="Component"

@@ -27,7 +27,7 @@
 	/>
 </OnThisPage>
 
-<div class="flex flex-col gap-4 pr-80">
+<div class="flex flex-col gap-4 xl:pr-80">
 	<PageHeader
 		title="Introduction"
 		sub="Docs"

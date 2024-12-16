@@ -17,10 +17,9 @@
 	<OnThisPageBtn id="1" title="Setup your project" />
 	<OnThisPageSubBtn id="1.1" title="Initialize lomer-ui" />
 	<OnThisPageSubBtn id="1.2" title="That's it!" />
-	<OnThisPageBtn id="2" title="Tips" />
 </OnThisPage>
 
-<div class="flex flex-col gap-4 pr-80">
+<div class="flex flex-col gap-4 xl:pr-80">
 	<PageHeader
 		title="Installation"
 		sub="Docs"
