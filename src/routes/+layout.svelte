@@ -31,18 +31,15 @@
 						></div>
 					</div>
 					<div>
-						<Link href="/" class="font-mono text-xl leading-3"
-							>lo<span class="font-serif">m</span>er-ui</Link
-						>
+						<Link href="/" class="font-mono text-xl leading-3">lomer-ui</Link>
 						<p class="text-[11px] leading-[11px] tracking-wider">
 							Beta Version
 						</p>
 					</div>
 				</div>
 				<div class="flex gap-8">
-					<Link href="/docs/installation">Docs</Link>
+					<Link href="/docs/introduction">Docs</Link>
 					<Link href="/components/alert">Components</Link>
-					<Link href="/form-builder">Form Builder</Link>
 				</div>
 			</div>
 			<ButtonToggleTheme />
@@ -64,6 +61,7 @@
 			<Link href="/docs/dark-mode" class="pl-8" variant="list-item"
 				>Dark Mode</Link
 			>
+			<Link href="/docs/cli" class="pl-8" variant="list-item">CLI</Link>
 
 			<p class="mt-4 pl-4 font-semibold">Components</p>
 			<Link href="/components/accordion" class="pl-8" variant="list-item"
@@ -113,7 +111,7 @@
 					target="_blank"
 					class="font-mono italic"
 				>
-					- Lomer
+					- clios
 				</Link>
 			</div>
 		</aside>

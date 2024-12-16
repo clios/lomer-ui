@@ -6,6 +6,7 @@
 	type Props = {
 		children?: Snippet;
 		class?: string;
+		id?: string;
 		isOpen?: boolean;
 		name?: string;
 		title: string;
@@ -15,6 +16,7 @@
 	let {
 		children,
 		class: className,
+		id,
 		isOpen = false,
 		name,
 		title,
@@ -33,14 +35,14 @@
 </script>
 
 <!-- CONTAINER -->
-<div class={cn('border-b dark:border-zinc-700', className)}>
+<div {id} class={cn('border-b dark:border-zinc-700', className)}>
 	<!-- HEADER AS TOGGLE BUTTON -->
 	<button
 		class={cn(
 			'group', // group
-			'w-full py-2 pr-2', // box model
+			'w-full px-2 py-4', // box model
 			'flex items-center justify-between', // layout and positioning
-			'focus:underline', // focusing
+			'focus:underline focus:outline-none', // focusing
 			'hover:underline' // hovering
 		)}
 		onclick={toggleAccordion}
@@ -51,7 +53,8 @@
 		<!-- ICON -->
 		<svg
 			class={cn(
-				'fill-zinc-950 transition-transform dark:fill-zinc-50',
+				'fill-zinc-950 dark:fill-zinc-50', // fill
+				'transition-transform group-hover:fill-cyan-500 group-focus:fill-cyan-500', // animation
 				isOpen && 'rotate-180' // interacting
 			)}
 			width="14"

@@ -1,19 +1,30 @@
 <script>
 	import Accordion from '$lib/accordion.svelte';
-	import Alert from '$lib/alert.svelte';
 	import Cli from '$site/cli.svelte';
+	import Icon from '@iconify/svelte';
+	import Link from '$lib/link.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
 	import PageHeader from '$site/page-header.svelte';
-	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
-	import Icon from '@iconify/svelte';
 </script>
 
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Core Concept" />
 	<OnThisPageBtn id="2" title="FAQ" />
+	<OnThisPageSubBtn id="2.1" title="Is it free and open source?" />
+	<OnThisPageSubBtn id="2.2" title="Is it available as package?" />
+	<OnThisPageSubBtn id="2.3" title="Can I use this with other frameworks?" />
+	<OnThisPageSubBtn id="2.4" title="How can I update my components?" />
+	<OnThisPageSubBtn
+		id="2.5"
+		title="Was it built on top of any existing UI library?"
+	/>
+	<OnThisPageSubBtn
+		id="2.6"
+		title="Is lomer-ui easy for beginners to understand?"
+	/>
 </OnThisPage>
 
 <div class="flex flex-col gap-4 pr-80">
@@ -23,11 +34,24 @@
 		info="Use clear, simple components without a UI library."
 	/>
 
-	<p class="italic">
-		"I'm building lomer-ui with simplicity and clarity in mind, <br /> focusing
-		on clean and easy-to-read code, <br /> all while including helpful (but not verbose)
-		comments."
+	<p>
+		I'm excited to share that lomer-ui is an indie passion project created to
+		help you kickstart your own component development.
 	</p>
+	<p>
+		This project will never be released as a package, as it is not meant to be.
+	</p>
+	<p>
+		The idea behind this project is to help you quickly start building your own
+		components and to act as a reference.
+	</p>
+	<p>
+		I'm building lomer-ui with simplicity and clarity in mind, focusing on clean
+		and easy-to-read code, all while including helpful (but not verbose)
+		comments.
+	</p>
+	<p>Thank you for taking the time to check out this project.</p>
+	<p>Clios, lomer-ui dev.</p>
 
 	<Title id="1">Core Concept</Title>
 	<div>
@@ -61,37 +85,55 @@
 
 	<Title id="2">FAQ</Title>
 	<div>
-		<Accordion title="Is it available as package?">
+		<Accordion id="2.1" title="Is it free and open source?">
+			<p>Yes, it is! There’s no need to mention me.</p>
+			<p>I’d love to hear about any awesome projects you create with this!</p>
+		</Accordion>
+		<Accordion id="2.2" title="Is it available as package?">
 			<p>
-				No, and it never will be. This is just a reference for building my own
+				No, and it will never be. This is just a reference for building our own
 				components.
 			</p>
-			<p>I’m tired of copy-pasting my components in different projects.</p>
 			<p>
-				I created this website to serve as a centralized reference for my
-				snippets.
+				You can copy and paste components or use lomer-ui <Link href="/docs/cli"
+					>CLI</Link
+				>.
 			</p>
 		</Accordion>
-		<Accordion title="How can I update my components?">
+		<Accordion id="2.3" title="Can I use this with other frameworks?">
+			<p>
+				Most of the component is written in basic JavaScript and Tailwind
+				classes.
+			</p>
+			<p>
+				So, as a reference, yes! However, the CLI is not compatible with other
+				frameworks.
+			</p>
+		</Accordion>
+		<Accordion id="2.4" title="How can I update my components?">
+			<p>You might not want to update your components.</p>
+			<p>This project is just meant to help you start building your own .</p>
 			<p class="mb-2">
-				If you like my design and don't want to modify it, simply run:
+				However, if you like my base design and don’t want to modify it, simply
+				run:
 			</p>
 			<Cli code="npx lomer-ui update" />
 			<p class="mt-2">
-				It will scan all your components and update them automatically.
+				This command will scan all your components and update them
+				automatically.
 			</p>
 			<p class="text-yellow-600 dark:text-yellow-500">
-				Note: It will ask you if you want to replace your existing components,
-				so please be cautious.
+				Note: This command will replace your existing components, so please be
+				cautious.
 			</p>
 		</Accordion>
-		<Accordion title="Was it built on top of any existing UI library?">
-			<p>
-				No, lomer-ui is not built on any existing UI library, keeping the code
-				minimal.
-			</p>
+		<Accordion id="2.5" title="Was it built on top of any existing UI library?">
+			<p>No, lomer-ui is not built on any existing UI library.</p>
+			<p>We just want to start building our own components right?</p>
+			<p>Why add another UI library just to learn someone else's code?</p>
+			<p>Start building your components directly.</p>
 		</Accordion>
-		<Accordion title="Is lomer-ui easy for beginners to understand?">
+		<Accordion id="2.6" title="Is lomer-ui easy for beginners to understand?">
 			<p>I hope so! That’s what I’m aiming for.</p>
 		</Accordion>
 	</div>

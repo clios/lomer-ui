@@ -9,14 +9,22 @@
 </script>
 
 <Screen class="p-8" lineColor="#71717A10">
-	<p class="font-semibold">Beta Version</p>
-	<p class="font-mono text-6xl">lo<span class="font-serif">m</span>er-ui</p>
-	<p class="text-2xl font-semibold">Just copy and build your own component.</p>
-	<p class="text-2xl font-semibold">Fix it. Tune it. Keep it. Dead simple.</p>
+	<p class="font-mono">Beta Version</p>
+	<p class="mb-2 text-6xl">lomer-ui</p>
+	<p class="mb-1 text-xl">
+		A dead-simple CLI tool to instantly kickstart your own components.
+	</p>
+	<p class="text-xl">
+		No underlying UI libraries required, just clean and standalone code ready
+		for use.
+	</p>
 
-	<div class="my-8 flex gap-4">
+	<div class="mb-8 mt-10 flex gap-4">
 		<Button onclick={() => goto('/docs/installation')}>Get Started</Button>
-		<Button variant="secondary">
+		<Button
+			variant="secondary"
+			onclick={() => window.open('https://github.com/clios/lomer-ui', '_blank')}
+		>
 			<Icon icon="mdi:github" width={24} height={24} />
 			GitHub</Button
 		>
@@ -24,7 +32,7 @@
 
 	<p class="mt-16 flex items-center text-4xl font-semibold">
 		<Icon icon="devicon:svelte" />
-		<span>SvelteKit + </span>
+		<span>Svelte + </span>
 		<Icon class="ml-4 mr-2" icon="devicon:tailwindcss" />
 		<span>Tailwind CSS</span>
 	</p>

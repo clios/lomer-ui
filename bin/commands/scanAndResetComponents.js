@@ -10,7 +10,7 @@ const COMPONENTS_DIR = path.resolve('./src/lib/components/ui');
 const GITHUB_BASE_URL =
 	'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib';
 
-export async function scanAndUpdateComponents() {
+export async function scanAndResetComponents() {
 	try {
 		// Check if the components directory exists
 		await fs.access(COMPONENTS_DIR).catch(() => {
@@ -20,7 +20,7 @@ export async function scanAndUpdateComponents() {
 		// Read the list of installed components
 		const components = await fs.readdir(COMPONENTS_DIR);
 		if (components.length === 0) {
-			console.log('No components installed to update.');
+			console.log('No components installed to reset.');
 			return;
 		}
 
@@ -28,12 +28,12 @@ export async function scanAndUpdateComponents() {
 		const response = await prompts({
 			type: 'confirm',
 			name: 'value',
-			message: `Found ${components.length} components. Do you want to update them? \n This will replace your component with my component.`,
+			message: `Found ${components.length} components. Do you want to reset them? \n This will replace your component with the latest component.`,
 			initial: false
 		});
 
 		if (!response.value) {
-			console.log('Update cancelled.');
+			console.log('Reset cancelled.');
 			return;
 		}
 
@@ -42,7 +42,7 @@ export async function scanAndUpdateComponents() {
 		await checkOrInstallTailwindCSS();
 		await checkOrInstallTailwindMerge();
 
-		// Update each component
+		// Reset each component
 		for (const component of components) {
 			const componentName = path.basename(component, '.svelte');
 			const fileUrl = `${GITHUB_BASE_URL}/${componentName}.svelte`;
@@ -50,9 +50,9 @@ export async function scanAndUpdateComponents() {
 
 			try {
 				await fetchFile(fileUrl, destPath);
-				console.log(`✅ Updated "${componentName}" successfully.`);
+				console.log(`✅ "${componentName}" reset successfully.`);
 			} catch (err) {
-				console.error(`❌ Failed to update "${componentName}": ${err.message}`);
+				console.error(`❌ Failed to reset "${componentName}": ${err.message}`);
 			}
 		}
 	} catch (err) {

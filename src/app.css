@@ -3,8 +3,14 @@
 @import 'tailwindcss/utilities';
 @import 'highlight.js/styles/felipec.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
 
 ::selection {
 	background-color: #06b6d4 !important;
 	color: #ffffff !important;
+}
+
+body {
+	font-family: 'Fira Code', Courier, monospace;
+	font-family: 'Oxygen', Courier, sans-serif;
 }
