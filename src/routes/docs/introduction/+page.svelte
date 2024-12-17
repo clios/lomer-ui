@@ -1,6 +1,5 @@
 <script>
 	import Accordion from '$lib/accordion.svelte';
-	import Cli from '$site/cli.svelte';
 	import Icon from '@iconify/svelte';
 	import Link from '$lib/link.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
@@ -16,7 +15,7 @@
 	<OnThisPageSubBtn id="2.1" title="Is it free and open source?" />
 	<OnThisPageSubBtn id="2.2" title="Is it available as package?" />
 	<OnThisPageSubBtn id="2.3" title="Can I use this with other frameworks?" />
-	<OnThisPageSubBtn id="2.4" title="How can I update my components?" />
+	<OnThisPageSubBtn id="2.4" title="Can I update my components?" />
 	<OnThisPageSubBtn
 		id="2.5"
 		title="Was it built on top of any existing UI library?"
@@ -106,29 +105,15 @@
 				classes.
 			</p>
 			<p>
-				So, as a reference, yes! However, the CLI is not compatible with other
-				frameworks.
+				So, as a reference, yes! However, the CLI is ONLY compatible with
+				Svelte.
 			</p>
 		</Accordion>
-		<Accordion id="2.4" title="How can I update my components?">
-			<p>You might not want to update your components.</p>
-			<p>This project is just meant to help you start building your own .</p>
-			<p class="mb-2">
-				However, if you like my base design and don’t want to modify it, simply
-				run:
-			</p>
-			<Cli code="npx lomer-ui update" />
-			<p class="mt-2">
-				This command will scan all your components and update them
-				automatically.
-			</p>
-			<p class="text-yellow-600 dark:text-yellow-500">
-				Note: This command will replace your existing components, so please be
-				cautious.
-			</p>
+		<Accordion id="2.4" title="Can I update my components?">
+			<p>Yes, the code is yours to modify as you see fit.</p>
 		</Accordion>
 		<Accordion id="2.5" title="Was it built on top of any existing UI library?">
-			<p>No, lomer-ui is not built on any existing UI library.</p>
+			<p>No, lomer-ui is NOT built on any existing UI library.</p>
 			<p>We just want to start building our own components right?</p>
 			<p>Why add another UI library just to learn someone else's code?</p>
 			<p>Start building your components directly.</p>

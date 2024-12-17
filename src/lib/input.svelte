@@ -9,7 +9,7 @@
 
 <input
 	class={twMerge(
-		'px-2 py-1', // padding
+		'mt-[.1rem] px-2 py-1', // margin and padding
 		'bg-white dark:bg-zinc-950', // background
 		'rounded-md border dark:border-zinc-700', // border
 		'shadow-sm dark:shadow-none', // shadow

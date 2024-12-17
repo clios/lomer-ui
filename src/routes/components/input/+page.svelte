@@ -1,43 +1,54 @@
 <script lang="ts">
 	import Input from '$lib/input.svelte';
 	import Code from '$site//code.svelte';
+	import Cli from '$site/cli.svelte';
+	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import OnThisPage from '$site/on-this-page.svelte';
+	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
+	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageHeader from '$site/page-header.svelte';
+	import Preview from '$site/preview.svelte';
+	import Prop from '$site/prop.svelte';
 	import Screen from '$site/screen.svelte';
+	import Title from '$site/title.svelte';
+	import HeroSection from './hero-section.svelte';
 
-	let value = $state('lomer-ui');
+	let value = $state('');
 </script>
 
-<h1 class="font-mono text-3xl font-bold">Input Text</h1>
-<p>A component that looks like an input text.</p>
-<Code code={`import { Input } from 'lomer-ui'`} language="javascript" />
+<OnThisPage>
+	<OnThisPageBtn id="1" title="Installation" />
+	<OnThisPageBtn id="2" title="Usage" />
+	<OnThisPageBtn id="3" title="Examples" />
+	<OnThisPageSubBtn id="3.1" title="Value" />
+	<OnThisPageSubBtn id="3.2" title="Icon" />
+	<OnThisPageSubBtn id="3.3" title="Disabled" />
+	<OnThisPageSubBtn id="3.4" title="Loading" />
+</OnThisPage>
 
-<p class="pb-1 text-xl font-semibold">Examples</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-2 lg:pt-0">
-		<div class="grid w-full place-content-center gap-2">
-			<Input bind:value />
-			<p>Value: {value}</p>
-		</div>
-		<div class="grid items-center">
-			<Code
-				code={`<InputCheck bind:value>Check me!</InputCheck>` +
-					`\n<p>Value: {value}</p>`}
-				language="xml"
-			/>
-		</div>
-	</div>
-</Screen>
+<div class="flex flex-col gap-2 xl:pr-80">
+	<PageHeader
+		title="Input"
+		sub="Component"
+		info="A clear and simple way to collect user data."
+	/>
+	<HeroSection />
 
-<p class="mb-1 pt-8 font-semibold">Disabled</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-2 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Input disabled />
-		</div>
-		<div class="grid items-center">
-			<Code
-				code={`<InputCheck disabled>Check me!</InputCheck>`}
-				language="xml"
-			/>
-		</div>
-	</div>
-</Screen>
+	<!-- INSTALLATION -->
+	<Title id="1">Installation</Title>
+	<Cli code={`npx lomer-ui add input`} />
+	<ComponentCodeButton
+		link="https://github.com/clios/lomer-ui/blob/main/src/lib/input.svelte"
+	/>
+
+	<!-- USAGE -->
+	<Title id="2">Usage</Title>
+	<p>Bind <Prop>value</Prop> property to reflect input's value.</p>
+	<Code
+		code={`import Input from '$lib/components/ui/input.svelte'` +
+			`\nlet value = $state('')`}
+		language="javascript"
+	/>
+	<Code code={`<Input bind:value />`} language="xml" />
+	<Preview><Input bind:value /></Preview>
+</div>

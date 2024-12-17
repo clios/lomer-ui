@@ -36,7 +36,7 @@
 		// BASE
 		'group', // group
 		'relative', // positioning
-		'pl-8 text-left', // text and padding
+		'mt-[.3rem] pl-8 text-left', // text, padding, and margin
 		'focus:text-cyan-500 focus:outline-none', // focusing
 		'hover:text-cyan-500', // focusing
 

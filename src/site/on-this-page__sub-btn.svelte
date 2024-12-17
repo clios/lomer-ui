@@ -7,7 +7,7 @@
 
 <button
 	on:click={() => scrollToId(id)}
-	class="pl-4 text-left hover:text-cyan-500"
+	class="pl-4 text-left text-zinc-500 hover:text-cyan-500 dark:text-zinc-400"
 >
 	{title}
 </button>

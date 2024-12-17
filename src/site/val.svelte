@@ -1,3 +1,5 @@
-<span class="font-mono font-semibold text-green-500 dark:text-lime-500">
+<span
+	class="font-mono text-lg font-semibold text-lime-600 dark:font-normal dark:text-lime-400"
+>
 	<slot />
 </span>

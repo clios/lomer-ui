@@ -1,9 +1,10 @@
 <script lang="ts">
 	import '../app.css';
-	import { ModeWatcher } from 'mode-watcher';
-	import ButtonToggleTheme from './button__toggle-theme.svelte';
+	import CardToggleTheme from '$site/card__toggle-theme.svelte';
 	import Link from '$lib/link.svelte';
+	import { ModeWatcher } from 'mode-watcher';
 	import { afterNavigate } from '$app/navigation';
+	import { twMerge } from 'tailwind-merge';
 
 	let elPage: HTMLDivElement;
 
@@ -13,42 +14,29 @@
 </script>
 
 <ModeWatcher defaultMode="system" />
-<div id="page" class="relative h-screen overflow-y-hidden">
-	<div
-		class="fixed top-0 z-10 flex h-14 w-full items-center border-b bg-white/80 py-2 backdrop-blur-sm dark:border-zinc-700 dark:bg-zinc-800/0 dark:backdrop-blur-lg"
-	>
-		<div class="container mx-auto flex items-center justify-between px-4">
-			<div class="relative flex items-center">
-				<div class="flex w-64 items-center">
-					<div class="relative mr-4">
-						<img
-							class="relative size-8 min-w-8"
-							src="/favicon.png"
-							alt="lomer"
-						/>
-						<div
-							class="absolute top-0 size-8 rotate-45 outline outline-1 -outline-offset-2"
-						></div>
-					</div>
-					<Link href="/" class="font-mono text-xl leading-3 no-underline"
-						>lomer-ui</Link
-					>
-				</div>
-				<div class="flex gap-8">
-					<Link href="/docs/introduction" class="no-underline">Docs</Link>
-					<Link href="/components/alert" class="no-underline">Components</Link>
-				</div>
-			</div>
-			<ButtonToggleTheme />
-		</div>
-	</div>
-	<div
-		class="relative mt-[3.5rem] h-[calc(100vh-3.5rem)] w-full overflow-y-auto border-r lg:container lg:mx-auto dark:border-zinc-700"
-	>
+<div class="relative h-screen overflow-y-auto">
+	<div class="w-ful container relative mx-auto">
 		<aside
-			class="fixed top-0 flex h-screen w-64 flex-col gap-2 overflow-y-auto border-x pl-4 dark:border-zinc-700"
+			class={twMerge(
+				'fixed top-0 hidden flex-col gap-2 overflow-y-auto overflow-x-hidden lg:flex', // positioning and layout
+				'h-screen w-64 border-r pl-4 dark:border-zinc-700' // box model
+			)}
 		>
-			<p class="mt-20 pl-4 font-semibold">Getting Started</p>
+			<div class="ml-4 mt-8 flex items-center">
+				<div class="relative mr-4">
+					<img class="relative size-6 min-w-6" src="/favicon.png" alt="lomer" />
+					<div
+						class="absolute top-0 size-6 rotate-45 outline outline-1 -outline-offset-2"
+					></div>
+				</div>
+				<Link href="/" class="font-mono text-xl leading-3 no-underline"
+					>lomer-ui</Link
+				>
+			</div>
+
+			<CardToggleTheme />
+
+			<p class="mt-4 pl-4 font-semibold">Getting Started</p>
 			<Link href="/docs/introduction" class="pl-8 no-underline" caret
 				>Introduction</Link
 			>
@@ -108,7 +96,7 @@
 				</Link>
 			</div>
 		</aside>
-		<div class="relative ml-64 px-4 pb-4">
+		<div class="relative px-4 pb-4 lg:ml-64">
 			<div bind:this={elPage} id="page" class="pt-4"></div>
 			<slot />
 		</div>

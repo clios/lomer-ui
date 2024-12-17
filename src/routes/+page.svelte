@@ -9,13 +9,14 @@
 </script>
 
 <Screen class="p-8" lineColor="#71717A10">
+	<p class="text-sm">Auto-craft base components.</p>
 	<p class="mb-2 text-6xl">lomer-ui</p>
 	<p class="mb-1 text-xl">
-		A dead-simple CLI tool to instantly kickstart your own components.
+		A dead-simple CLI tool to instantly kickstart your own Svelte components.
 	</p>
 	<p class="text-xl">
-		No underlying UI libraries required, just clean and standalone code ready
-		for use.
+		No underlying UI libraries required &mdash; just clean, standalone code
+		ready for use, powered by Tailwind CSS.
 	</p>
 
 	<div class="mb-8 mt-10 flex gap-4">

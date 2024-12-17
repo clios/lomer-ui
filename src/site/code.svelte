@@ -7,7 +7,7 @@
 	import clsx from 'clsx';
 
 	export let code = ''; // The code to highlight
-	export let language = ''; // Optional: specify the language
+	export let language = 'xml'; // Optional: specify the language
 	export { className as class };
 
 	let className = '';

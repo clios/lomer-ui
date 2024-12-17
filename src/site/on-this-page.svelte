@@ -1,6 +1,19 @@
-<div class="sticky top-4 hidden xl:block">
+<script>
+	import Button from '$lib/button.svelte';
+</script>
+
+<div class="sticky top-8 hidden xl:block">
 	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-left text-sm">
-		<p class="mb-1 text-xl font-semibold">On this page</p>
+		<p class="mb-1 font-semibold">On this page</p>
 		<slot />
+
+		<div class="mt-8 rounded border p-4">
+			<p class="text-xl font-semibold">Support lomer-ui</p>
+			<p class="my-2">
+				Become a sponsor and help me enhance the development experience for
+				Svelte users!
+			</p>
+			<Button class="mt-4">Become a Sponsor</Button>
+		</div>
 	</aside>
 </div>

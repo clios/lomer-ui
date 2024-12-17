@@ -4,19 +4,25 @@
 	import Code from '$site/code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
 	import HeroSection from './hero-section.svelte';
-	import Icon from '@iconify/svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import PageHeader from '$site/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Title from '$site/title.svelte';
+	import Prop from '$site/prop.svelte';
+	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import SubTitle from '$site/sub-title.svelte';
 
-	let groupValue: string = $state('');
+	let value = $state('');
 </script>
 
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />
+	<OnThisPageBtn id="3" title="Examples" />
+	<OnThisPageSubBtn id="3.1" title="Loading" />
+	<OnThisPageSubBtn id="3.2" title="Disabled" />
+	<OnThisPageSubBtn id="3.2" title="Read only" />
 </OnThisPage>
 
 <div class="flex flex-col gap-2 xl:pr-80">
@@ -35,42 +41,58 @@
 	/>
 
 	<Title id="2">Usage</Title>
-	<Code code={`let groupValue = $state('');`} language="javascript" />
+	<p>Bind <Prop>value</Prop> property to reflect card-picker's value.</p>
+	<Code code={`let value = $state('');`} language="javascript" />
 	<Code
-		code={`<CardPicker bind:groupValue cardValue="dragon">` +
-			`\n\t<Icon icon="game-icons:spiked-dragon-head" width={100} height={100} />` +
-			`\n\t<p>Dragon</p>` +
+		code={`<CardPicker bind:value cardValue="card 1">` +
+			`\n\t<p>Card 1</p>` +
 			`\n</CardPicker>` +
-			`\n<CardPicker bind:groupValue cardValue="serpent">` +
-			`\n\t<Icon icon="game-icons:snake-tongue" width={100} height={100} />` +
-			`\n\t<p>Serpent</p>` +
-			`\n</CardPicker>` +
-			`\n<CardPicker bind:groupValue cardValue="wolf">` +
-			`\n\t<Icon icon="game-icons:wolf-head" width={100} height={100} />` +
-			`\n\t<p>Wolf</p>` +
-			`\n</CardPicker>` +
-			`\n<CardPicker bind:groupValue cardValue="lotus">` +
-			`\n\t<Icon icon="game-icons:lotus" width={100} height={100} />` +
-			`\n\t<p>Lotus</p>` +
+			`\n<CardPicker bind:value cardValue="card 2">` +
+			`\n\t<p>Card 2</p>` +
 			`\n</CardPicker>`}
-		language="xml"
 	/>
-	<Preview class="gap-8">
-		<CardPicker bind:groupValue cardValue="dragon">
-			<Icon icon="game-icons:spiked-dragon-head" width={100} height={100} />
-			<p>Dragon</p>
+	<Preview class="flex-col items-center gap-4">
+		<div class="flex gap-4">
+			<CardPicker bind:value cardValue="card 1">
+				<p>Card 1</p>
+			</CardPicker>
+			<CardPicker bind:value cardValue="card 2">
+				<p>Card 2</p>
+			</CardPicker>
+		</div>
+		<p>Value: {value || 'N/A'}</p>
+	</Preview>
+
+	<!-- EXAMPLES -->
+	<Title id="3">Examples</Title>
+
+	<!-- LOADING -->
+	<SubTitle id="3.1">Loading</SubTitle>
+	<p>Add <Prop>isLoading</Prop> property.</p>
+	<Code
+		code={`<CardPicker isLoading>` + `\n\t<p>Card 1</p>` + `\n</CardPicker>`}
+	/>
+	<Preview>
+		<CardPicker isLoading>
+			<p>Card 1</p>
 		</CardPicker>
-		<CardPicker bind:groupValue cardValue="serpent">
-			<Icon icon="game-icons:snake-tongue" width={100} height={100} />
-			<p>Serpent</p>
+	</Preview>
+
+	<!-- DISABLED -->
+	<SubTitle id="3.2">Disabled</SubTitle>
+	<p>Add <Prop>isDisabled</Prop> property.</p>
+	<Preview>
+		<CardPicker cardValue="card 1" isDisabled>
+			<p>Card 1</p>
 		</CardPicker>
-		<CardPicker bind:groupValue cardValue="wolf">
-			<Icon icon="game-icons:wolf-head" width={100} height={100} />
-			<p>Wolf</p>
-		</CardPicker>
-		<CardPicker bind:groupValue cardValue="lotus">
-			<Icon icon="game-icons:lotus" width={100} height={100} />
-			<p>Lotus</p>
+	</Preview>
+
+	<!-- READ ONLY -->
+	<SubTitle id="3.2">Read only</SubTitle>
+	<p>Add <Prop>isReadyOnly</Prop> property.</p>
+	<Preview>
+		<CardPicker cardValue="card 1" isReadOnly>
+			<p>Card 1</p>
 		</CardPicker>
 	</Preview>
 </div>

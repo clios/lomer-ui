@@ -24,7 +24,7 @@
 	<!-- SELECT -->
 	<select
 		class={twMerge(
-			'w-full min-w-max py-1 pl-2 pr-20', // width and padding
+			'mt-[.1rem] w-full min-w-max py-1 pl-2 pr-20', // width, padding, and margin
 			'rounded-md border dark:border-zinc-700', // border
 			'bg-white dark:bg-zinc-950', // background
 			'shadow-sm dark:shadow-none', // shadow
@@ -42,7 +42,7 @@
 	<!-- PLACEHOLDER -->
 	{#if placeholder && !value}
 		<p
-			class="pointer-events-none absolute left-2 top-1 select-none text-zinc-500"
+			class="pointer-events-none absolute left-2 top-[.4rem] select-none text-zinc-500"
 		>
 			{placeholder}
 		</p>

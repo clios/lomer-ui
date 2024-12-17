@@ -17,7 +17,7 @@
 	import Preview from '$site/preview.svelte';
 	import Checkbox from '$lib/checkbox.svelte';
 
-	let value = false;
+	let value = $state(false);
 </script>
 
 <OnThisPage>
@@ -44,11 +44,11 @@
 	<p>Bind <Prop>value</Prop> property to reflect check's value.</p>
 	<Code
 		code={`import Checkbox from '$lib/components/ui/checkbox.svelte'` +
-			`\nlet value = false`}
+			`\nlet value = $state(false)`}
 		language="javascript"
 	/>
 	<Code code={`<Checkbox label="Hit me!" bind:value />`} language="xml" />
-	<Preview><Checkbox label="Hit me!" bind:value /></Preview>
+	<Preview><Checkbox bind:value>Hit me!</Checkbox></Preview>
 
 	<!-- EXAMPLES -->
 	<Title id="3">Examples</Title>
@@ -75,6 +75,6 @@
 
 	<SubTitle id="3.2">Disabled</SubTitle>
 	<p>Add <Prop>isDisabled</Prop> property.</p>
-	<Code code={`<Checkbox label="Disabled" isDisabled />`} language="xml" />
-	<Preview><Checkbox label="Disabled" isDisabled /></Preview>
+	<Code code={`<Checkbox isDisabled>Disabled</Checkbox>`} language="xml" />
+	<Preview><Checkbox isDisabled>Disabled</Checkbox></Preview>
 </div>

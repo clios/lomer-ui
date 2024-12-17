@@ -49,7 +49,7 @@
 	</StepperPanel>
 
 	<SubTitle id="3.2">lomer-ui reset</SubTitle>
-	<StepperPanel>
+	<StepperPanel final>
 		<p>To reset all existing components, use:</p>
 		<Cli code="npx lomer-ui reset" />
 		<Alert class="flex gap-2">

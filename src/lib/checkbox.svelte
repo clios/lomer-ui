@@ -8,7 +8,6 @@
 		children?: Snippet;
 		class?: string;
 		isDisabled?: boolean;
-		label?: string;
 		value?: boolean;
 	};
 
@@ -16,7 +15,6 @@
 		children,
 		class: className,
 		isDisabled = false,
-		label,
 		value = $bindable(false)
 	}: Props = $props();
 
@@ -33,7 +31,7 @@
 		'group', // group
 		'relative flex', // layout and positioning
 		'text-left', // text
-		'rounded pl-8', // box model
+		'mt-[.4rem] rounded pl-8', // box model
 		'disabled:cursor-not-allowed', // disabled
 		'focus:outline-none', // focusing
 
@@ -71,7 +69,7 @@
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<path
-					in:draw={{ duration: 300, easing: circInOut }}
+					in:draw={{ duration: 150, easing: circInOut }}
 					stroke-width="5"
 					d="M1 16L8 23L30.5 0.5"
 					stroke="#14B8A6"
@@ -102,8 +100,9 @@
 			</svg>
 		{/if}
 	</div>
-	<div class="ml-1">
-		{#if label}<p class="group-disabled:text-zinc-500">{label}</p>{/if}
-		{@render children?.()}
-	</div>
+	{#if children}
+		<div class="">
+			{@render children?.()}
+		</div>
+	{/if}
 </button>
