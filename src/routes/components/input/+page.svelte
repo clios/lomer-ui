@@ -9,6 +9,7 @@
 	import PageHeader from '$site/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
+	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
 	import HeroSection from './hero-section.svelte';
 
@@ -19,10 +20,9 @@
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />
 	<OnThisPageBtn id="3" title="Examples" />
-	<OnThisPageSubBtn id="3.1" title="Value" />
-	<OnThisPageSubBtn id="3.2" title="Icon" />
-	<OnThisPageSubBtn id="3.3" title="Disabled" />
-	<OnThisPageSubBtn id="3.4" title="Loading" />
+	<OnThisPageSubBtn id="3.1" title="Loading" />
+	<OnThisPageSubBtn id="3.2" title="Disabled" />
+	<OnThisPageSubBtn id="3.3" title="Read only" />
 </OnThisPage>
 
 <div class="flex flex-col gap-2 xl:pr-80">
@@ -49,5 +49,37 @@
 		language="javascript"
 	/>
 	<Code code={`<Input bind:value />`} language="xml" />
-	<Preview><Input bind:value /></Preview>
+	<Preview>
+		<div class="flex flex-col items-center gap-4">
+			<Input bind:value />
+			<p>Value: {value || 'N/A'}</p>
+		</div>
+	</Preview>
+
+	<!-- EXAMPLES -->
+	<Title id="3">Examples</Title>
+
+	<!-- LOADING -->
+	<SubTitle id="3.1">Loading</SubTitle>
+	<p>Add <Prop>isLoading</Prop> property.</p>
+	<Code code={`<Input isLoading value="lomer-ui" />`} />
+	<Preview>
+		<Input isLoading value="lomer-ui" />
+	</Preview>
+
+	<!-- DISABLED -->
+	<SubTitle id="3.2">Disabled</SubTitle>
+	<p>Add <Prop>isDisabled</Prop> property.</p>
+	<Code code={`<Input isDisabled value="lomer-ui" />`} />
+	<Preview>
+		<Input isDisabled value="lomer-ui" />
+	</Preview>
+
+	<!-- READ ONLY -->
+	<SubTitle id="3.3">Read only</SubTitle>
+	<p>Add <Prop>isReadOnly</Prop> property.</p>
+	<Code code={`<Input isReadOnly value="lomer-ui" />`} />
+	<Preview>
+		<Input isReadOnly value="lomer-ui" />
+	</Preview>
 </div>
