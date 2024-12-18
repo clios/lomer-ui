@@ -68,6 +68,7 @@
 			<!-- CLOSE BUTTON -->
 			<!-- svelte-ignore a11y_consider_explicit_label -->
 			<button
+				type="button"
 				class={twMerge(
 					'absolute right-4 top-4', // layout and positioning
 					'text-zinc-950 dark:text-zinc-50', // text

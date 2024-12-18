@@ -23,7 +23,7 @@
 	import Title from '$site//title.svelte';
 	import Val from '$site/val.svelte';
 
-	let groupValue = $state('');
+	let radioValue = $state('');
 	let cardPickerValue = $state('');
 </script>
 
@@ -216,19 +216,19 @@
 	<Code
 		code={`<Field label="Choose your clan">` +
 			`\n\t<div class="flex gap-2">` +
-			`\n\t\t<CardPicker bind:groupValue cardValue="dragon">` +
+			`\n\t\t<CardPicker bind:value cardValue="dragon">` +
 			`\n\t\t\t<Icon icon="game-icons:spiked-dragon-head" width={100} height={100} />` +
 			`\n\t\t\t<p>Dragon</p>` +
 			`\n\t\t</CardPicker>` +
-			`\n\t\t<CardPicker bind:groupValue cardValue="serpent">` +
+			`\n\t\t<CardPicker bind:value cardValue="serpent">` +
 			`\n\t\t\t<Icon icon="game-icons:snake-tongue" width={100} height={100} />` +
 			`\n\t\t\t<p>Serpent</p>` +
 			`\n\t\t</CardPicker>` +
-			`\n\t\t<CardPicker bind:groupValue cardValue="wolf">` +
+			`\n\t\t<CardPicker bind:value cardValue="wolf">` +
 			`\n\t\t\t<Icon icon="game-icons:wolf-head" width={100} height={100} />` +
 			`\n\t\t\t<p>Wolf</p>` +
 			`\n\t\t</CardPicker>` +
-			`\n\t\t<CardPicker bind:groupValue cardValue="lotus">` +
+			`\n\t\t<CardPicker bind:value cardValue="lotus">` +
 			`\n\t\t\t<Icon icon="game-icons:lotus" width={100} height={100} />` +
 			`\n\t\t\t<p>Lotus</p>` +
 			`\n\t\t</CardPicker>` +
@@ -296,40 +296,41 @@
 	<SubTitle id="3.10">With radio</SubTitle>
 	<Code
 		code={`<Field label="Choose your plan">` +
-			`\n\t<Radio bind:groupValue name="plan" radioValue="free">Free</Radio>` +
-			`\n\t<Radio bind:groupValue name="plan" radioValue="pro">Pro</Radio>` +
+			`\n\t<Radio bind:value name="plan" radioValue="free">Free</Radio>` +
+			`\n\t<Radio bind:value name="plan" radioValue="pro">Pro</Radio>` +
 			`\n</Field>`}
 	/>
 	<Preview>
 		<Field label="Choose your plan">
-			<Radio bind:groupValue name="plan" radioValue="free">Free</Radio>
-			<Radio bind:groupValue name="plan" radioValue="pro">Pro</Radio>
+			<Radio bind:value={radioValue} name="plan" radioValue="free">Free</Radio>
+			<Radio bind:value={radioValue} name="plan" radioValue="pro">Pro</Radio>
 		</Field>
 	</Preview>
 	<p>Using <Prop>orientation</Prop><Val>="horizontal"</Val></p>
 	<Preview>
 		<Field label="Choose your plan:" orientation="horizontal">
-			<Radio bind:groupValue name="plan" radioValue="free">Free</Radio>
-			<Radio bind:groupValue name="plan" radioValue="pro">Pro</Radio>
+			<Radio bind:value={radioValue} name="plan" radioValue="free">Free</Radio>
+			<Radio bind:value={radioValue} name="plan" radioValue="pro">Pro</Radio>
 		</Field>
 	</Preview>
 	<p>
 		Using <Prop>orientation</Prop><Val>="horizontal"</Val> with
-		<span class="font-mono text-green-500">flex items-center gap-8</span> classes.
+		<Val>flex items-center gap-8</Val> classes.
 	</p>
 	<Code
 		code={`<Field label="Choose your plan:" orientation="horizontal">` +
 			`\n\t<div class="flex items-center gap-8">` +
-			`\n\t\t<Radio bind:groupValue name="plan" radioValue="free">Free</Radio>` +
-			`\n\t\t<Radio bind:groupValue name="plan" radioValue="pro">Pro</Radio>` +
+			`\n\t\t<Radio bind:value name="plan" radioValue="free">Free</Radio>` +
+			`\n\t\t<Radio bind:value name="plan" radioValue="pro">Pro</Radio>` +
 			`\n\t</div>` +
 			`\n</Field>`}
 	/>
 	<Preview>
 		<Field label="Choose your plan:" orientation="horizontal">
 			<div class="flex items-center gap-8">
-				<Radio bind:groupValue name="plan" radioValue="free">Free</Radio>
-				<Radio bind:groupValue name="plan" radioValue="pro">Pro</Radio>
+				<Radio bind:value={radioValue} name="plan" radioValue="free">Free</Radio
+				>
+				<Radio bind:value={radioValue} name="plan" radioValue="pro">Pro</Radio>
 			</div>
 		</Field>
 	</Preview>

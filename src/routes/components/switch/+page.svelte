@@ -2,19 +2,20 @@
 	import Button from '$lib/button.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
-	import PageHeader from '$site//page-header.svelte';
-	import Prop from '$site//prop.svelte';
-	import SubTitle from '$site//sub-title.svelte';
-	import Title from '$site//title.svelte';
-	import { scrollToId } from '$site/helper.ts';
+	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import HeroSection from './hero-section.svelte';
+	import Icon from '@iconify/svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import Screen from '$site/screen.svelte';
-	import Icon from '@iconify/svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import PageHeader from '$site//page-header.svelte';
 	import Preview from '$site/preview.svelte';
+	import Prop from '$site//prop.svelte';
+	import Screen from '$site/screen.svelte';
+	import SubTitle from '$site//sub-title.svelte';
 	import Switch from '$lib/switch.svelte';
+	import Title from '$site//title.svelte';
+	import { scrollToId } from '$site/helper.ts';
 
 	let value = false;
 </script>
@@ -23,8 +24,10 @@
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />
 	<OnThisPageBtn id="3" title="Examples" />
-	<OnThisPageSubBtn id="3.1" title="Custom content" />
-	<OnThisPageSubBtn id="3.2" title="Disabled" />
+	<OnThisPageSubBtn id="3.1" title="Content" />
+	<OnThisPageSubBtn id="3.2" title="Loading" />
+	<OnThisPageSubBtn id="3.3" title="Disabled" />
+	<OnThisPageSubBtn id="3.4" title="Read only" />
 </OnThisPage>
 
 <div class="flex flex-col gap-2 xl:pr-80">
@@ -33,6 +36,7 @@
 		sub="Component"
 		info="Turn me on like a light switch."
 	/>
+	<HeroSection />
 
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
@@ -43,22 +47,26 @@
 
 	<!-- USAGE -->
 	<Title id="2">Usage</Title>
-	<p>Bind <Prop>value</Prop> property to reflect check's value.</p>
+	<p>Bruh this is just a fancy checkbox.</p>
+	<p>Bind <Prop>value</Prop> property to reflect switch's value.</p>
 	<Code
 		code={`import Switch from '$lib/components/ui/switch.svelte'` +
-			`\nlet value = false`}
+			`\nlet value = $state(false)`}
 		language="javascript"
 	/>
-	<Code code={`<Switch label="Hit me!" bind:value />`} language="xml" />
-	<Preview class="flex gap-4">
-		<Switch bind:value />
+	<Code
+		code={`<Switch bind:value>Turn me on!</Switch>` + `\n<p>Value: {value}</p>`}
+	/>
+	<Preview class="flex-col items-center gap-4">
+		<Switch bind:value>Turn me on!</Switch>
+		<p>Value: {value}</p>
 	</Preview>
 
 	<!-- EXAMPLES -->
 	<Title id="3">Examples</Title>
 
-	<!-- CUSTOM CONTENT -->
-	<SubTitle id="3.1">Custom content</SubTitle>
+	<!-- CONTENT -->
+	<SubTitle id="3.1">Content</SubTitle>
 	<Code
 		code={`<Switch>` +
 			`\n\t<p class="font-semibold">Terms & Conditions</p>` +
@@ -68,9 +76,39 @@
 			`\n</Switch>`}
 		language="xml"
 	/>
-	<Preview></Preview>
+	<Preview>
+		<Switch>
+			<p class="font-semibold">Terms & Conditions</p>
+			<p class="text-zinc-600 dark:text-zinc-400">
+				I Agree even without reading the terms and conditions.
+			</p>
+		</Switch>
+	</Preview>
 
+	<!-- LOADING -->
+	<SubTitle id="3.2">Loading</SubTitle>
+	<p>Add <Prop>isLoading</Prop> property.</p>
+	<Code code={`<Switch isLoading>` + `\n\t...` + `\n</Switch>`} />
+	<Preview class="gap-8">
+		<Switch isLoading>Turn me on!</Switch>
+		<Switch value={true} isLoading>Turn me on!</Switch>
+	</Preview>
+
+	<!-- DISABLED -->
 	<SubTitle id="3.2">Disabled</SubTitle>
 	<p>Add <Prop>isDisabled</Prop> property.</p>
-	<Code code={`<Switch label="Disabled" isDisabled />`} language="xml" />
+	<Code code={`<Switch isDisabled>` + `\n\t...` + `\n</Switch>`} />
+	<Preview class="gap-8">
+		<Switch isDisabled>Turn me on!</Switch>
+		<Switch value={true} isDisabled>Turn me on!</Switch>
+	</Preview>
+
+	<!-- READ ONLY -->
+	<SubTitle id="3.2">Read only</SubTitle>
+	<p>Add <Prop>isReadOnly</Prop> property.</p>
+	<Code code={`<Switch isReadOnly>` + `\n\t...` + `\n</Switch>`} />
+	<Preview class="gap-8">
+		<Switch isReadOnly>Turn me on!</Switch>
+		<Switch value={true} isReadOnly>Turn me on!</Switch>
+	</Preview>
 </div>

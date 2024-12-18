@@ -49,12 +49,15 @@
 		language="javascript"
 	/>
 	<Code
-		code={`<CardPicker bind:value cardValue="card 1">` +
-			`\n\t<p>Card 1</p>` +
-			`\n</CardPicker>` +
-			`\n<CardPicker bind:value cardValue="card 2">` +
-			`\n\t<p>Card 2</p>` +
-			`\n</CardPicker>`}
+		code={`<div class="flex gap-4">` +
+			`\n\t<CardPicker bind:value cardValue="card 1">` +
+			`\n\t\t<p>Card 1</p>` +
+			`\n\t</CardPicker>` +
+			`\n\t<CardPicker bind:value cardValue="card 2">` +
+			`\n\t\t<p>Card 2</p>` +
+			`\n\t</CardPicker>` +
+			`\n</div>` +
+			`\n<p>Value: {value || 'N/A'}</p>`}
 	/>
 	<Preview class="flex-col items-center gap-4">
 		<div class="flex gap-4">

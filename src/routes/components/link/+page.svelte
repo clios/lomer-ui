@@ -1,40 +1,99 @@
 <script lang="ts">
+	import Accordion from '$lib/accordion.svelte';
 	import Link from '$lib/link.svelte';
 	import Code from '$site//code.svelte';
+	import Cli from '$site/cli.svelte';
+	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import OnThisPage from '$site/on-this-page.svelte';
+	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
+	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageHeader from '$site/page-header.svelte';
+	import Preview from '$site/preview.svelte';
+	import Prop from '$site/prop.svelte';
 	import Screen from '$site/screen.svelte';
+	import SubTitle from '$site/sub-title.svelte';
+	import Title from '$site/title.svelte';
+	import Val from '$site/val.svelte';
+	import HeroSection from './hero-section.svelte';
 </script>
 
-<h1 class="font-mono text-3xl font-bold">Link</h1>
-<p>A component that looks like a link.</p>
-<Code code={`import { Link } from 'lomer-ui'`} language="javascript" />
+<OnThisPage>
+	<OnThisPageBtn id="1" title="Installation" />
+	<OnThisPageBtn id="2" title="Usage" />
+	<OnThisPageBtn id="3" title="Examples" />
+	<OnThisPageSubBtn id="3.1" title="No underline" />
+	<OnThisPageSubBtn id="3.2" title="Caret" />
+	<OnThisPageSubBtn id="3.3" title="Multiple" />
+	<OnThisPageSubBtn id="3.4" title="Loading" />
+</OnThisPage>
 
-<p class="pb-1 text-xl font-semibold">Examples</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Link href="#">Link</Link>
-		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code code={`<Link href="#">Link</Link>`} language="xml" />
-		</div>
-	</div>
-</Screen>
+<div class="flex flex-col gap-2 xl:pr-80">
+	<PageHeader
+		title="Link"
+		sub="Component"
+		info="Connects users to new destinations."
+	/>
+	<HeroSection />
 
-<p class="mb-1 pt-8 font-semibold">List Item</p>
-<Screen>
-	<div class="grid pt-8 lg:grid-cols-3 lg:pt-0">
-		<div class="grid w-full place-content-center">
-			<Link class="no-underline" href="#" caret>List Item 1</Link>
-			<Link class="no-underline" href="#" caret>List Item 2</Link>
-			<Link class="no-underline" href="#" caret>List Item 3</Link>
+	<!-- INSTALLATION -->
+	<Title id="1">Installation</Title>
+	<Cli code={`npx lomer-ui add link`} />
+	<ComponentCodeButton
+		link="https://github.com/clios/lomer-ui/blob/main/src/lib/link.svelte"
+	/>
+
+	<!-- USAGE -->
+	<Title id="2">Usage</Title>
+	<Code
+		code={`import Link from '$lib/components/ui/link.svelte'`}
+		language="javascript"
+	/>
+	<Code code={`<Link href="/">lomer-ui</Link>`} />
+	<Preview class="justify-center">
+		<Link href="#">lomer-ui</Link>
+	</Preview>
+
+	<!-- EXAMPLES -->
+	<Title id="3">Examples</Title>
+
+	<!-- NO UNDERLINE -->
+	<SubTitle id="3.1">No underline</SubTitle>
+	<p>Add <Val>no-underline</Val> class.</p>
+	<Code code={`<Link class="no-underline" href="#">lomer-ui</Link>`} />
+	<Preview>
+		<Link class="no-underline" href="#">lomer-ui</Link>
+	</Preview>
+
+	<!-- CARET -->
+	<SubTitle id="3.2">Caret</SubTitle>
+	<p>Add <Prop>caret</Prop> property.</p>
+	<Code code={`<Link href="#" caret>lomer-ui</Link>`} />
+	<Preview>
+		<Link href="#" caret>lomer-ui</Link>
+	</Preview>
+
+	<!-- MULTIPLE -->
+	<SubTitle id="3.3">Multiple</SubTitle>
+	<Code
+		code={`<div class="flex flex-col gap-2">` +
+			`\n\t<Link href="#" class="no-underline" caret>lomer-ui</Link>` +
+			`\n\t<Link href="#" class="no-underline" caret>lomer-ui</Link>` +
+			`\n\t<Link href="#" class="no-underline" caret>lomer-ui</Link>` +
+			`\n</div>`}
+	/>
+	<Preview>
+		<div class="flex flex-col gap-2">
+			<Link href="#" class="no-underline" caret>lomer-ui</Link>
+			<Link href="#" class="no-underline" caret>lomer-ui</Link>
+			<Link href="#" class="no-underline" caret>lomer-ui</Link>
 		</div>
-		<div class="grid items-center lg:col-span-2">
-			<Code
-				code={`<Link href="#" caret>List Item 1</Link>` +
-					`\n<Link href="#" caret>List Item 2</Link>` +
-					`\n<Link href="#" caret>List Item 3</Link>`}
-				language="xml"
-			/>
-		</div>
-	</div>
-</Screen>
+	</Preview>
+
+	<!-- LOADING -->
+	<SubTitle id="3.4">Loading</SubTitle>
+	<p>Add <Prop>isLoading</Prop> property.</p>
+	<Code code={`<Link href="#" isLoading>lomer-ui</Link>`} />
+	<Preview>
+		<Link href="#" isLoading>lomer-ui</Link>
+	</Preview>
+</div>

@@ -41,7 +41,11 @@
 	>
 		{#if isClosable}
 			<!-- svelte-ignore a11y_consider_explicit_label -->
-			<button onclick={() => (isOpen = false)} class="absolute right-4 top-4">
+			<button
+				type="button"
+				onclick={() => (isOpen = false)}
+				class="absolute right-4 top-4"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="24"

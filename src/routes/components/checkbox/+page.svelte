@@ -43,13 +43,15 @@
 
 	<!-- USAGE -->
 	<Title id="2">Usage</Title>
-	<p>Bind <Prop>value</Prop> property to reflect check's value.</p>
+	<p>Bind <Prop>value</Prop> property to reflect checkbox's value.</p>
 	<Code
 		code={`import Checkbox from '$lib/components/ui/checkbox.svelte'` +
 			`\nlet value = $state(false)`}
 		language="javascript"
 	/>
-	<Code code={`<Checkbox label="Hit me!" bind:value />`} language="xml" />
+	<Code
+		code={`<Checkbox bind:value>Hit me!</Checkbox>` + `\n<p>Value: {value}</p>`}
+	/>
 	<Preview class="flex-col items-center gap-4">
 		<Checkbox bind:value>Hit me!</Checkbox>
 		<p>Value: {value}</p>

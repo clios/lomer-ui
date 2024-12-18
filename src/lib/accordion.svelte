@@ -38,6 +38,7 @@
 <div {id} class={twMerge('border-b dark:border-zinc-700', className)}>
 	<!-- HEADER AS TOGGLE BUTTON -->
 	<button
+		type="button"
 		class={twMerge(
 			'group', // group
 			'w-full px-2 py-4', // box model

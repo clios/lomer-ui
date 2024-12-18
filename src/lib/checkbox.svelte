@@ -142,7 +142,7 @@
 		{/if}
 	</div>
 	{#if children}
-		<div class="">
+		<div>
 			{@render children?.()}
 		</div>
 	{/if}

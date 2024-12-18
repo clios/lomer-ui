@@ -15,7 +15,7 @@
 </script>
 
 <ModeWatcher defaultMode="system" />
-<div class="relative h-screen overflow-y-auto">
+<div class="relative h-screen overflow-y-auto dark:bg-zinc-950">
 	<div class="w-ful container relative mx-auto">
 		<aside
 			class={twMerge(

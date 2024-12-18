@@ -1,28 +1,94 @@
 <script lang="ts">
 	import Radio from '$lib/radio.svelte';
 	import Code from '$site//code.svelte';
-	import Screen from '$site/screen.svelte';
+	import Cli from '$site/cli.svelte';
+	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import OnThisPage from '$site/on-this-page.svelte';
+	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
+	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageHeader from '$site/page-header.svelte';
+	import Preview from '$site/preview.svelte';
+	import Prop from '$site/prop.svelte';
+	import SubTitle from '$site/sub-title.svelte';
+	import Title from '$site/title.svelte';
+	import HeroSection from './hero-section.svelte';
 
-	let groupValue = $state('dragon');
+	let value = $state('free');
 </script>
 
-<h1 class="font-mono text-3xl font-bold">Input Radio</h1>
-<p>A component that looks like an input radio.</p>
-<Code code={`import { Radio } from 'lomer-ui'`} language="javascript" />
+<OnThisPage>
+	<OnThisPageBtn id="1" title="Installation" />
+	<OnThisPageBtn id="2" title="Usage" />
+	<OnThisPageBtn id="3" title="Examples" />
+	<OnThisPageSubBtn id="3.1" title="Loading" />
+	<OnThisPageSubBtn id="3.2" title="Disabled" />
+	<OnThisPageSubBtn id="3.3" title="Read only" />
+</OnThisPage>
 
-<p class="pb-1 text-xl font-semibold">Examples</p>
-<Screen>
-	<div class="mt-8 grid w-full place-content-center gap-2">
-		<Radio bind:groupValue name="clan" radioValue="dragon" id="dragon"
-			>Dragon</Radio
-		>
-		<Radio bind:groupValue name="clan" radioValue="serpent" id="serpent"
-			>Serpent</Radio
-		>
-		<Radio bind:groupValue name="clan" radioValue="wolf" id="wolf">Wolf</Radio>
-		<Radio bind:groupValue name="clan" radioValue="lotus" id="lotus"
-			>Lotus</Radio
-		>
-		<p>Value: {groupValue}</p>
-	</div>
-</Screen>
+<div class="flex flex-col gap-2 xl:pr-80">
+	<PageHeader
+		title="Radio"
+		sub="Component"
+		info="Choose one option from a group with a click!"
+	/>
+	<HeroSection />
+
+	<!-- INSTALLATION -->
+	<Title id="1">Installation</Title>
+	<Cli code={`npx lomer-ui add radio`} />
+	<ComponentCodeButton
+		link="https://github.com/clios/lomer-ui/blob/main/src/lib/radio.svelte"
+	/>
+
+	<!-- USAGE -->
+	<Title id="2">Usage</Title>
+	<p>Bind <Prop>value</Prop> property to reflect radio's value.</p>
+	<Code
+		code={`import Radio from '$lib/components/ui/radio.svelte'` +
+			`\nlet value = $state('');`}
+		language="javascript"
+	/>
+	<Code
+		code={`<div class="flex flex-col">` +
+			`\n\t<Radio bind:value radioValue="free">Free</Radio>` +
+			`\n\t<Radio bind:value radioValue="pro">Pro</Radio>` +
+			`\n\t<Radio bind:value radioValue="enterprise">Enterprise</Radio>` +
+			`\n</div>` +
+			`\n<p>Value: {value || 'N/A'}</p>`}
+	/>
+	<Preview class="flex-col items-center gap-4">
+		<div class="flex flex-col">
+			<Radio bind:value radioValue="free">Free</Radio>
+			<Radio bind:value radioValue="pro">Pro</Radio>
+			<Radio bind:value radioValue="enterprise">Enterprise</Radio>
+		</div>
+		<p>Value: {value || 'N/A'}</p>
+	</Preview>
+
+	<!-- EXAMPLES -->
+	<Title id="3">Examples</Title>
+
+	<!-- LOADING -->
+	<SubTitle id="3.1">Loading</SubTitle>
+	<p>Add <Prop>isLoading</Prop> property.</p>
+	<Code code={`<Radio isLoading>` + `\n\tRadio` + `\n</Radio>`} />
+	<Preview>
+		<Radio isLoading>Radio</Radio>
+	</Preview>
+
+	<!-- DISABLED -->
+	<SubTitle id="3.2">Disabled</SubTitle>
+	<p>Add <Prop>isDisabled</Prop> property.</p>
+	<Code code={`<Radio isDisabled>` + `\n\tRadio` + `\n</Radio>`} />
+	<Preview>
+		<Radio isDisabled>Radio</Radio>
+	</Preview>
+
+	<!-- READ ONLY -->
+	<SubTitle id="3.3">Read only</SubTitle>
+	<p>Add <Prop>isReadyOnly</Prop> property.</p>
+	<Code code={`<Radio isReadOnly>` + `\n\tRadio` + `\n</Radio>`} />
+	<Preview>
+		<Radio isReadOnly>Radio</Radio>
+	</Preview>
+</div>

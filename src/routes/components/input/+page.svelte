@@ -48,7 +48,12 @@
 			`\nlet value = $state('')`}
 		language="javascript"
 	/>
-	<Code code={`<Input bind:value />`} language="xml" />
+	<Code
+		code={`<div class="flex flex-col items-center gap-4">` +
+			`\n\t<Input bind:value />` +
+			`\n\t<p>Value: {value || 'N/A'}</p>` +
+			`\n</div>`}
+	/>
 	<Preview>
 		<div class="flex flex-col items-center gap-4">
 			<Input bind:value />

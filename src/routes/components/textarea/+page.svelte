@@ -1,77 +1,91 @@
 <script lang="ts">
-	import Button from '$lib/button.svelte';
-	import Cli from '$site//cli.svelte';
+	import Input from '$lib/input.svelte';
+	import Textarea from '$lib/textarea.svelte';
 	import Code from '$site//code.svelte';
-	import PageHeader from '$site//page-header.svelte';
-	import Prop from '$site//prop.svelte';
-	import SubTitle from '$site//sub-title.svelte';
-	import Title from '$site//title.svelte';
-	import { scrollToId } from '$site/helper.ts';
+	import Cli from '$site/cli.svelte';
+	import ComponentCodeButton from '$site/component-code-button.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import Screen from '$site/screen.svelte';
-	import Icon from '@iconify/svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import PageHeader from '$site/page-header.svelte';
 	import Preview from '$site/preview.svelte';
-	import Switch from '$lib/switch.svelte';
-	import Textarea from '$lib/textarea.svelte';
+	import Prop from '$site/prop.svelte';
+	import SubTitle from '$site/sub-title.svelte';
+	import Title from '$site/title.svelte';
+	import HeroSection from './hero-section.svelte';
 
-	let value = false;
+	let value = $state('');
 </script>
 
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />
 	<OnThisPageBtn id="3" title="Examples" />
-	<OnThisPageSubBtn id="3.1" title="Custom content" />
+	<OnThisPageSubBtn id="3.1" title="Loading" />
 	<OnThisPageSubBtn id="3.2" title="Disabled" />
+	<OnThisPageSubBtn id="3.3" title="Read only" />
 </OnThisPage>
 
 <div class="flex flex-col gap-2 xl:pr-80">
 	<PageHeader
 		title="Textarea"
 		sub="Component"
-		info="Turn me on like a light switch."
+		info="Capture multi-line text with ease."
 	/>
+	<HeroSection />
 
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
-	<Cli code={`npx lomer-ui add switch`} />
+	<Cli code={`npx lomer-ui add textarea`} />
 	<ComponentCodeButton
-		link="https://github.com/clios/lomer-ui/blob/main/src/lib/switch.svelte"
+		link="https://github.com/clios/lomer-ui/blob/main/src/lib/textarea.svelte"
 	/>
 
 	<!-- USAGE -->
 	<Title id="2">Usage</Title>
-	<p>Bind <Prop>value</Prop> property to reflect check's value.</p>
+	<p>Bind <Prop>value</Prop> property to reflect textarea's value.</p>
 	<Code
-		code={`import Switch from '$lib/components/ui/switch.svelte'` +
-			`\nlet value = false`}
+		code={`import Textarea from '$lib/components/ui/textarea.svelte'` +
+			`\nlet value = $state('')`}
 		language="javascript"
 	/>
-	<Code code={`<Switch label="Hit me!" bind:value />`} language="xml" />
-	<Preview class="flex gap-4">
-		<Textarea></Textarea>
+	<Code
+		code={`<div class="flex flex-col items-center gap-4">` +
+			`\n\t<Textarea bind:value />` +
+			`\n\t<p>Value: {value || 'N/A'}</p>` +
+			`\n</div>`}
+	/>
+	<Preview>
+		<div class="flex flex-col items-center gap-4">
+			<Textarea bind:value />
+			<p>Value: {value || 'N/A'}</p>
+		</div>
 	</Preview>
 
 	<!-- EXAMPLES -->
 	<Title id="3">Examples</Title>
 
-	<!-- CUSTOM CONTENT -->
-	<SubTitle id="3.1">Custom content</SubTitle>
-	<Code
-		code={`<Switch>` +
-			`\n\t<p class="font-semibold">Terms & Conditions</p>` +
-			`\n\t<p class="text-zinc-600 dark:text-zinc-400">` +
-			`\n\t\tI Agree even without reading the terms and conditions.` +
-			`\n\t</p>` +
-			`\n</Switch>`}
-		language="xml"
-	/>
-	<Preview></Preview>
+	<!-- LOADING -->
+	<SubTitle id="3.1">Loading</SubTitle>
+	<p>Add <Prop>isLoading</Prop> property.</p>
+	<Code code={`<Textarea isLoading value="lomer-ui" />`} />
+	<Preview>
+		<Textarea isLoading value="lomer-ui" />
+	</Preview>
 
+	<!-- DISABLED -->
 	<SubTitle id="3.2">Disabled</SubTitle>
 	<p>Add <Prop>isDisabled</Prop> property.</p>
-	<Code code={`<Switch label="Disabled" isDisabled />`} language="xml" />
+	<Code code={`<Textarea isDisabled value="lomer-ui" />`} />
+	<Preview>
+		<Textarea isDisabled value="lomer-ui" />
+	</Preview>
+
+	<!-- READ ONLY -->
+	<SubTitle id="3.3">Read only</SubTitle>
+	<p>Add <Prop>isReadOnly</Prop> property.</p>
+	<Code code={`<Textarea isReadOnly value="lomer-ui" />`} />
+	<Preview>
+		<Textarea isReadOnly value="lomer-ui" />
+	</Preview>
 </div>

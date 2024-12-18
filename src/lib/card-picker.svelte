@@ -42,6 +42,7 @@
 </script>
 
 <button
+	type="button"
 	class={twMerge(
 		// BASE
 		'relative p-2', // positioning and padding
