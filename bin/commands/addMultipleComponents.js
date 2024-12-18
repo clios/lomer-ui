@@ -14,6 +14,7 @@ const COMPONENTS = [
 	'alert',
 	'button',
 	'card-picker',
+	'checkbox',
 	'dialog',
 	'drawer',
 	'field',
