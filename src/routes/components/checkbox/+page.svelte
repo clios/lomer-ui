@@ -24,8 +24,10 @@
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />
 	<OnThisPageBtn id="3" title="Examples" />
-	<OnThisPageSubBtn id="3.1" title="Custom content" />
-	<OnThisPageSubBtn id="3.2" title="Disabled" />
+	<OnThisPageSubBtn id="3.1" title="Content" />
+	<OnThisPageSubBtn id="3.2" title="Loading" />
+	<OnThisPageSubBtn id="3.3" title="Disabled" />
+	<OnThisPageSubBtn id="3.4" title="Read only" />
 </OnThisPage>
 
 <div class="flex flex-col gap-2 xl:pr-80">
@@ -48,13 +50,16 @@
 		language="javascript"
 	/>
 	<Code code={`<Checkbox label="Hit me!" bind:value />`} language="xml" />
-	<Preview><Checkbox bind:value>Hit me!</Checkbox></Preview>
+	<Preview class="flex-col items-center gap-4">
+		<Checkbox bind:value>Hit me!</Checkbox>
+		<p>Value: {value}</p>
+	</Preview>
 
 	<!-- EXAMPLES -->
 	<Title id="3">Examples</Title>
 
-	<!-- CUSTOM CONTENT -->
-	<SubTitle id="3.1">Custom content</SubTitle>
+	<!-- CONTENT -->
+	<SubTitle id="3.1">Content</SubTitle>
 	<Code
 		code={`<Checkbox>` +
 			`\n\t<p class="font-semibold">Terms & Conditions</p>` +
@@ -73,8 +78,54 @@
 		</Checkbox>
 	</Preview>
 
+	<!-- LOADING -->
+	<SubTitle id="3.2">Loading</SubTitle>
+	<p>Add <Prop>isLoading</Prop> property.</p>
+	<Code code={`<Checkbox isLoading>` + `\n\t...` + `\n</Checkbox>`} />
+	<Preview>
+		<Checkbox isLoading>
+			<p class="font-semibold">Terms & Conditions</p>
+			<p class="text-zinc-600 dark:text-zinc-400">
+				I Agree even without reading the terms and conditions.
+			</p>
+		</Checkbox>
+	</Preview>
+
+	<!-- DISABLED -->
 	<SubTitle id="3.2">Disabled</SubTitle>
 	<p>Add <Prop>isDisabled</Prop> property.</p>
-	<Code code={`<Checkbox isDisabled>Disabled</Checkbox>`} language="xml" />
-	<Preview><Checkbox isDisabled>Disabled</Checkbox></Preview>
+	<Code code={`<Checkbox isDisabled>` + `\n\t...` + `\n</Checkbox>`} />
+	<Preview>
+		<Checkbox isDisabled>
+			<p class="font-semibold">Terms & Conditions</p>
+			<p class="text-zinc-600 dark:text-zinc-400">
+				I Agree even without reading the terms and conditions.
+			</p>
+		</Checkbox>
+		<Checkbox value={true} isDisabled>
+			<p class="font-semibold">Terms & Conditions</p>
+			<p class="text-zinc-600 dark:text-zinc-400">
+				I Agree even without reading the terms and conditions.
+			</p>
+		</Checkbox>
+	</Preview>
+
+	<!-- READ ONLY -->
+	<SubTitle id="3.2">Read only</SubTitle>
+	<p>Add <Prop>isReadOnly</Prop> property.</p>
+	<Code code={`<Checkbox isReadOnly>` + `\n\t...` + `\n</Checkbox>`} />
+	<Preview>
+		<Checkbox isReadOnly>
+			<p class="font-semibold">Terms & Conditions</p>
+			<p class="text-zinc-600 dark:text-zinc-400">
+				I Agree even without reading the terms and conditions.
+			</p>
+		</Checkbox>
+		<Checkbox value={true} isReadOnly>
+			<p class="font-semibold">Terms & Conditions</p>
+			<p class="text-zinc-600 dark:text-zinc-400">
+				I Agree even without reading the terms and conditions.
+			</p>
+		</Checkbox>
+	</Preview>
 </div>

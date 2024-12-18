@@ -8,6 +8,8 @@
 		children?: Snippet;
 		class?: string;
 		isDisabled?: boolean;
+		isLoading?: boolean;
+		isReadOnly?: boolean;
 		value?: boolean;
 	};
 
@@ -15,17 +17,19 @@
 		children,
 		class: className,
 		isDisabled = false,
+		isLoading = false,
+		isReadOnly = false,
 		value = $bindable(false)
 	}: Props = $props();
 
 	function onclick() {
+		if (isReadOnly) return;
 		value = !value;
 	}
 </script>
 
 <button
 	type="button"
-	disabled={isDisabled}
 	class={twMerge(
 		// BASE
 		'group', // group
@@ -35,9 +39,19 @@
 		'disabled:cursor-not-allowed', // disabled
 		'focus:outline-none', // focusing
 
+		// LOADING
+		isLoading && 'disabled:text-zinc-500 disabled:dark:text-zinc-500',
+
+		// READ ONLY
+		isReadOnly && [
+			'pointer-events-none cursor-default select-none hover:outline-0 focus:outline-0 active:outline-0'
+		],
+
 		// STYLE
 		className
 	)}
+	tabindex={isReadOnly ? -1 : 0}
+	disabled={isLoading || isDisabled}
 	{onclick}
 >
 	<!-- BOX -->
@@ -47,21 +61,48 @@
 			'absolute left-0 top-0', // layout and positioning
 			'size-[24px] rounded border dark:border-zinc-700', // box model
 			'shadow-sm dark:shadow-none', // shadow
-			'bg-zinc-50 dark:bg-zinc-950', // background
 
 			// GROUP
 			'group-focus:outline group-focus:outline-1 group-focus:outline-offset-2 group-focus:outline-cyan-500', // focusing
 			'group-hover:outline group-hover:outline-1 group-hover:outline-offset-2 group-hover:outline-cyan-500', // hovering
-			'group-disabled:border-zinc-700/0 group-disabled:bg-zinc-500/50 group-disabled:outline-none', // disabled
+			'group-disabled:border-zinc-700/0 group-disabled:outline-none', // disabled
 
-			// VALUE
-			value ? 'bg-zinc-50 dark:bg-zinc-50' : 'dark:bg-zinc-950'
+			// READ ONLY
+			isReadOnly && [
+				'pointer-events-none cursor-default select-none hover:outline-0 active:outline-0 group-focus:outline-0'
+			]
 		)}
 	>
-		{#if value}
+		{#if isLoading}
+			<svg
+				class="relative text-cyan-600 dark:text-cyan-500"
+				width="22"
+				height="22"
+				viewBox="0 0 24 24"
+			>
+				<path
+					fill="currentColor"
+					d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8A8 8 0 0 1 12 20Z"
+					opacity="0.5"
+				/>
+				<path
+					fill="currentColor"
+					d="M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z"
+				>
+					<animateTransform
+						attributeName="transform"
+						dur="1s"
+						from="0 12 12"
+						repeatCount="indefinite"
+						to="360 12 12"
+						type="rotate"
+					/>
+				</path>
+			</svg>
+		{:else if value}
 			<!-- CHECK MARK -->
 			<svg
-				class="relative left-1 top-1"
+				class="relative left-1 top-1 text-teal-500 group-disabled:text-zinc-500"
 				width="14"
 				height="14"
 				viewBox="0 0 31 24"
@@ -72,13 +113,13 @@
 					in:draw={{ duration: 150, easing: circInOut }}
 					stroke-width="5"
 					d="M1 16L8 23L30.5 0.5"
-					stroke="#14B8A6"
+					stroke="currentColor"
 				/>
 			</svg>
 		{:else}
 			<!-- X MARK -->
 			<svg
-				class="absolute left-1 top-1"
+				class="absolute left-1 top-1 text-red-500 group-disabled:text-zinc-500"
 				width="14"
 				height="14"
 				viewBox="0 0 24 25"
@@ -89,13 +130,13 @@
 					in:draw={{ duration: 150, easing: circInOut }}
 					stroke-width="4"
 					d="M0.5 1L23.5 24"
-					stroke="#EF4444"
+					stroke="currentColor"
 				/>
 				<path
 					in:draw={{ delay: 150, duration: 150, easing: circInOut }}
 					stroke-width="4"
 					d="M23.5 1L0.5 24"
-					stroke="#EF4444"
+					stroke="currentColor"
 				/>
 			</svg>
 		{/if}

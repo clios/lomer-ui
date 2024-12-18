@@ -9,7 +9,6 @@
 	import PageHeader from '$site/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
-	import Screen from '$site/screen.svelte';
 	import Title from '$site/title.svelte';
 	import HeroSection from './hero-section.svelte';
 

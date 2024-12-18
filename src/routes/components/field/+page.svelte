@@ -1,30 +1,30 @@
 <script lang="ts">
+	import Button from '$lib/button.svelte';
+	import CardPicker from '$lib/card-picker.svelte';
+	import Checkbox from '$lib/checkbox.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
 	import Field from '$lib/field.svelte';
 	import HeroSection from './hero-section.svelte';
+	import Icon from '@iconify/svelte';
 	import Input from '$lib/input.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
 	import PageHeader from '$site//page-header.svelte';
 	import Preview from '$site/preview.svelte';
-	import SubTitle from '$site/sub-title.svelte';
-	import Title from '$site//title.svelte';
-	import Select from '$lib/select.svelte';
-	import Radio from '$lib/radio.svelte';
-	import Button from '$lib/button.svelte';
-	import Icon from '@iconify/svelte';
-	import CardPicker from '$lib/card-picker.svelte';
-	import Checkbox from '$lib/checkbox.svelte';
-	import Textarea from '$lib/textarea.svelte';
-	import Switch from '$lib/switch.svelte';
 	import Prop from '$site/prop.svelte';
+	import Radio from '$lib/radio.svelte';
+	import Select from '$lib/select.svelte';
+	import SubTitle from '$site/sub-title.svelte';
+	import Switch from '$lib/switch.svelte';
+	import Textarea from '$lib/textarea.svelte';
+	import Title from '$site//title.svelte';
 	import Val from '$site/val.svelte';
 
 	let groupValue = $state('');
-	let groupValueCard = $state('');
+	let cardPickerValue = $state('');
 </script>
 
 <OnThisPage>
@@ -238,20 +238,20 @@
 	<Preview>
 		<Field label="Choose your clan">
 			<div class="flex gap-2">
-				<CardPicker bind:groupValue cardValue="dragon">
-					<Icon icon="game-icons:spiked-dragon-head" width={100} height={100} />
+				<CardPicker bind:value={cardPickerValue} cardValue="dragon">
+					<Icon icon="game-icons:spiked-dragon-head" width={80} height={80} />
 					<p>Dragon</p>
 				</CardPicker>
-				<CardPicker bind:groupValue cardValue="serpent">
-					<Icon icon="game-icons:snake-tongue" width={100} height={100} />
+				<CardPicker bind:value={cardPickerValue} cardValue="serpent">
+					<Icon icon="game-icons:snake-tongue" width={80} height={80} />
 					<p>Serpent</p>
 				</CardPicker>
-				<CardPicker bind:groupValue cardValue="wolf">
-					<Icon icon="game-icons:wolf-head" width={100} height={100} />
+				<CardPicker bind:value={cardPickerValue} cardValue="wolf">
+					<Icon icon="game-icons:wolf-head" width={80} height={80} />
 					<p>Wolf</p>
 				</CardPicker>
-				<CardPicker bind:groupValue cardValue="lotus">
-					<Icon icon="game-icons:lotus" width={100} height={100} />
+				<CardPicker bind:value={cardPickerValue} cardValue="lotus">
+					<Icon icon="game-icons:lotus" width={80} height={80} />
 					<p>Lotus</p>
 				</CardPicker>
 			</div>

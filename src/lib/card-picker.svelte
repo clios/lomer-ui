@@ -6,27 +6,27 @@
 	import { circInOut } from 'svelte/easing';
 
 	type Props = {
+		cardValue?: string;
 		children?: Snippet;
 		class?: string;
-		value?: string;
+		indicator?: boolean;
 		isDisabled?: boolean;
 		isLoading?: boolean;
 		isReadOnly?: boolean;
 		isSelected?: boolean;
-		hasCheckMark?: boolean;
-		cardValue?: string;
+		value?: string;
 	} & HTMLButtonAttributes;
 
 	let {
+		cardValue,
 		children,
 		class: className,
-		value = $bindable(),
+		indicator = false,
 		isDisabled = false,
 		isLoading = false,
 		isReadOnly = false,
 		isSelected = false,
-		hasCheckMark = false,
-		cardValue,
+		value = $bindable(),
 		...props
 	}: Props = $props();
 
@@ -69,20 +69,21 @@
 
 		// READ ONLY
 		isReadOnly && [
-			'pointer-events-none cursor-default hover:outline-0 focus:outline-0 active:outline-0'
+			'pointer-events-none cursor-default select-none hover:outline-0 focus:outline-0 active:outline-0'
 		],
 
 		// STYLING
 		className
 	)}
+	tabindex={isReadOnly ? -1 : 0}
 	disabled={isLoading || isDisabled}
 	{onclick}
 	{...props}
 >
-	{#if isSelected && hasCheckMark}
+	{#if isSelected && indicator}
 		<!-- CHECK MARK -->
 		<svg
-			class="absolute right-1 top-1"
+			class="absolute -top-5 right-1/2 translate-x-1/2"
 			width="14"
 			height="14"
 			viewBox="0 0 31 24"

@@ -6,7 +6,7 @@
 	import Input from '$lib/input.svelte';
 	import Icon from '@iconify/svelte';
 
-	let groupValue = '';
+	let value = '';
 </script>
 
 <div
@@ -20,7 +20,7 @@
 	<div class="flex w-full gap-4">
 		<CardPicker
 			class="w-full"
-			bind:groupValue
+			bind:value
 			name="clan-picker"
 			cardValue="dragon"
 			id="dragon-card"
@@ -32,7 +32,7 @@
 		</CardPicker>
 		<CardPicker
 			class="w-full"
-			bind:groupValue
+			bind:value
 			name="clan-picker"
 			cardValue="serpent"
 			id="serpent-card"
@@ -43,7 +43,7 @@
 		>
 		<CardPicker
 			class="w-full"
-			bind:groupValue
+			bind:value
 			name="clan-picker"
 			cardValue="wolf"
 			id="wolf-card"

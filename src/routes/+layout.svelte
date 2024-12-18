@@ -5,6 +5,7 @@
 	import { ModeWatcher } from 'mode-watcher';
 	import { afterNavigate } from '$app/navigation';
 	import { twMerge } from 'tailwind-merge';
+	import SidebarLink from './sidebar-link.svelte';
 
 	let elPage: HTMLDivElement;
 
@@ -37,54 +38,26 @@
 			<CardToggleTheme />
 
 			<p class="mt-4 pl-4 font-semibold">Getting Started</p>
-			<Link href="/docs/introduction" class="pl-8 no-underline" caret
-				>Introduction</Link
-			>
-			<Link href="/docs/installation" class="pl-8 no-underline" caret
-				>Installation</Link
-			>
-			<Link href="/docs/dark-mode" class="pl-8 no-underline" caret
-				>Dark Mode</Link
-			>
-			<Link href="/docs/cli" class="pl-8 no-underline" caret>CLI</Link>
+			<SidebarLink href="/docs/introduction" label="Introduction" />
+			<SidebarLink href="/docs/installation" label="Installation" />
+			<SidebarLink href="/docs/dark-mode" label="Dark Mode" />
+			<SidebarLink href="/docs/cli" label="CLI" />
 
 			<p class="mt-4 pl-4 font-semibold">Components</p>
-			<Link href="/components/accordion" class="pl-8 no-underline" caret
-				>Accordion</Link
-			>
-			<Link href="/components/alert" class="pl-8 no-underline" caret>Alert</Link
-			>
-			<Link href="/components/button" class="pl-8 no-underline" caret
-				>Button</Link
-			>
-			<Link href="/components/card-picker" class="pl-8 no-underline" caret
-				>Card Picker</Link
-			>
-			<Link href="/components/checkbox" class="pl-8 no-underline" caret
-				>Checkbox</Link
-			>
-			<Link href="/components/dialog" class="pl-8 no-underline" caret
-				>Dialog</Link
-			>
-			<Link href="/components/drawer" class="pl-8 no-underline" caret
-				>Drawer</Link
-			>
-			<Link href="/components/field" class="pl-8 no-underline" caret>Field</Link
-			>
-			<Link href="/components/input" class="pl-8 no-underline" caret>Input</Link
-			>
-			<Link href="/components/link" class="pl-8 no-underline" caret>Link</Link>
-			<Link href="/components/radio" class="pl-8 no-underline" caret>Radio</Link
-			>
-			<Link href="/components/select" class="pl-8 no-underline" caret
-				>Select</Link
-			>
-			<Link href="/components/switch" class="pl-8 no-underline" caret
-				>Switch</Link
-			>
-			<Link href="/components/textarea" class="pl-8 no-underline" caret
-				>Textarea</Link
-			>
+			<SidebarLink href="/components/accordion" label="Accordion" />
+			<SidebarLink href="/components/alert" label="Alert" />
+			<SidebarLink href="/components/button" label="Button" />
+			<SidebarLink href="/components/card-picker" label="Card Picker" />
+			<SidebarLink href="/components/checkbox" label="Checkbox" />
+			<SidebarLink href="/components/dialog" label="Dialog" />
+			<SidebarLink href="/components/drawer" label="Drawer" />
+			<SidebarLink href="/components/field" label="Field" />
+			<SidebarLink href="/components/input" label="Input" />
+			<SidebarLink href="/components/link" label="Link" />
+			<SidebarLink href="/components/radio" label="Radio" />
+			<SidebarLink href="/components/select" label="Select" />
+			<SidebarLink href="/components/switch" label="Switch" />
+			<SidebarLink href="/components/textarea" label="Textarea" />
 
 			<div class="absolute bottom-0 right-0 pb-8 pr-8">
 				<Link
