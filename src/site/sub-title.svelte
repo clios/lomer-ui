@@ -1,5 +1,5 @@
 <script lang="ts">
-	import clsx from 'clsx';
+	import { twMerge } from 'tailwind-merge';
 
 	export let id;
 	export { className as class };
@@ -7,6 +7,6 @@
 	let className = '';
 </script>
 
-<p {id} class={clsx('pt-4 text-xl font-semibold', className)}>
+<p {id} class={twMerge('pt-4 text-xl font-semibold', className)}>
 	<slot />
 </p>

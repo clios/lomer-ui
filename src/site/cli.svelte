@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
 	import Button from '$lib/button.svelte';
-	import clsx from 'clsx';
+	import { twMerge } from 'tailwind-merge';
 
 	export let code = '';
 
@@ -38,7 +38,7 @@
 
 	<!-- Highlighted Code -->
 	<pre
-		class={clsx(
+		class={twMerge(
 			'border border-zinc-300 dark:border-zinc-700',
 			'overflow-hidden rounded-md bg-zinc-200 px-4 py-2 dark:bg-zinc-800'
 		)}

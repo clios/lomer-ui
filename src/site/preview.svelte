@@ -1,5 +1,5 @@
 <script lang="ts">
-	import clsx from 'clsx';
+	import { twMerge } from 'tailwind-merge';
 	export { className as class };
 	let className = '';
 </script>
@@ -12,7 +12,7 @@
 	>
 		Preview
 	</p>
-	<div class={clsx('flex justify-center p-8', className)}>
+	<div class={twMerge('flex justify-center p-8', className)}>
 		<slot />
 	</div>
 </div>

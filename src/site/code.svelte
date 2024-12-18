@@ -4,7 +4,7 @@
 	import hljs from 'highlight.js';
 	import Icon from '@iconify/svelte';
 	import Button from '$lib/button.svelte';
-	import clsx from 'clsx';
+	import { twMerge } from 'tailwind-merge';
 
 	export let code = ''; // The code to highlight
 	export let language = 'xml'; // Optional: specify the language
@@ -36,7 +36,7 @@
 	});
 </script>
 
-<div class={clsx('relative flex flex-col justify-center', className)}>
+<div class={twMerge('relative flex flex-col justify-center', className)}>
 	<!-- Copy Button -->
 	<div class="absolute right-2 top-2">
 		<Button size="icon" variant="ghost" onclick={copyToClipboard}>
