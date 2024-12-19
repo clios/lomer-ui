@@ -41,7 +41,7 @@
 
 	<Title id="3">Commands</Title>
 	<SubTitle id="3.1">lomer-ui add</SubTitle>
-	<StepperPanel>
+	<StepperPanel final>
 		<p>To quickly select and add multiple components, use:</p>
 		<Cli code="npx lomer-ui add" />
 		<p>To add a specific component, use:</p>

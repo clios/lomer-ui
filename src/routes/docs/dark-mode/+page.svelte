@@ -21,10 +21,9 @@
 
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Usage" />
-	<OnThisPageSubBtn id="1.1" title="Configure Tailwind CSS" />
-	<OnThisPageSubBtn id="1.2" title="Install mode-watcher" />
-	<OnThisPageSubBtn id="1.3" title="Add ModeWatcher component" />
-	<OnThisPageSubBtn id="1.4" title="That's it!" />
+	<OnThisPageSubBtn id="1.1" title="Install mode-watcher" />
+	<OnThisPageSubBtn id="1.2" title="Add ModeWatcher component" />
+	<OnThisPageSubBtn id="1.3" title="That's it!" />
 </OnThisPage>
 
 <div class="flex flex-col gap-2 xl:pr-80">
@@ -35,35 +34,9 @@
 	/>
 
 	<Title id="1">Usage</Title>
-	<SubTitle id="1.1">
-		<span class="font-mono">1.</span> Configure Tailwind CSS
-	</SubTitle>
-	<StepperPanel>
-		<p>
-			Add <Prop>darkMode</Prop> property with <Val>selector</Val> value to <File
-				>tailwind.config.ts</File
-			>.
-		</p>
-		<Code
-			code={`export default {` +
-				`\n\t...` +
-				`\n\tdarkMode: 'selector'` +
-				`\n} satisfies Config;`}
-			language="javascript"
-		/>
-		<p>
-			See <Link
-				class="underline"
-				target="_blank"
-				href="https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually"
-			>
-				Tailwind CSS Dark Mode
-			</Link> for details.
-		</p>
-	</StepperPanel>
 
-	<SubTitle id="1.2">
-		<span class="font-mono">2.</span> Install mode-watcher
+	<SubTitle id="1.1">
+		<span class="font-mono">1.</span> Install mode-watcher
 	</SubTitle>
 	<StepperPanel>
 		<Cli code="npm install mode-watcher" />
@@ -78,8 +51,8 @@
 		</p>
 	</StepperPanel>
 
-	<SubTitle id="1.3">
-		<span class="font-mono">3.</span> Add ModeWatcher component
+	<SubTitle id="1.2">
+		<span class="font-mono">2.</span> Add ModeWatcher component
 	</SubTitle>
 	<StepperPanel>
 		<p>
@@ -94,8 +67,8 @@
 		<Code code={`<ModeWatcher />\n<slot />`} language="xml" />
 	</StepperPanel>
 
-	<SubTitle id="1.4">
-		<span class="font-mono">4.</span> That's it!
+	<SubTitle id="1.3">
+		<span class="font-mono">3.</span> That's it!
 	</SubTitle>
 	<StepperPanel final>
 		<p>Use the toggleMode function and $mode to toggle:</p>

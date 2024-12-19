@@ -18,6 +18,7 @@
 	import Select from '$lib/select.svelte';
 	import Switch from '$lib/switch.svelte';
 	import Textarea from '$lib/textarea.svelte';
+	import Screen from '$site/screen.svelte';
 
 	let cardValue = $state('');
 	let checkboxValue = $state(false);
@@ -37,29 +38,46 @@
 		<p class="font-mono">v{version}</p>
 	</div>
 
-	<div class="mt-32">
-		<p class="mt-2 text-center text-xl">Keeping It Simple, Sleek.</p>
-		<p class="mb-2 text-center text-6xl">lomer-ui</p>
-		<p class="mt-2 text-center text-lg">
-			Not built on any UI Library <br /> &mdash; this is the UI Library.
-		</p>
+	<div class="mt-16 grid grid-cols-3">
+		<Screen class="p-8 dark:border-zinc-700"></Screen>
+		<Screen class="border-x p-8 dark:border-zinc-700"></Screen>
+		<Screen class="p-8"></Screen>
+		<Screen class="border-y p-8 dark:border-zinc-700"></Screen>
+		<div class="border p-8 dark:border-zinc-700">
+			<p class="text-center text-xl">Keeping It Simple, Sleek.</p>
+			<p class="mb-2 text-center text-6xl">lomer-ui</p>
+			<p class="mt-2 text-center text-lg">
+				Not built on any UI Library <br /> &mdash; this is the UI Library.
+			</p>
+
+			<div class="mt-8 flex justify-center gap-4">
+				<Button onclick={() => goto('/docs/installation')}>Get Started</Button>
+				<Button
+					variant="secondary"
+					onclick={() =>
+						window.open('https://github.com/clios/lomer-ui', '_blank')}
+				>
+					<Icon icon="mdi:github" width={24} height={24} />
+					GitHub</Button
+				>
+			</div>
+		</div>
+		<Screen class="border-y p-8 dark:border-zinc-700"></Screen>
+		<Screen class="p-8"></Screen>
+		<Screen class="border-x p-8 dark:border-zinc-700"></Screen>
+		<Screen class="p-8"></Screen>
 	</div>
 
-	<div class="my-8 flex justify-center gap-4">
-		<Button onclick={() => goto('/docs/installation')}>Get Started</Button>
-		<Button
-			variant="secondary"
-			onclick={() => window.open('https://github.com/clios/lomer-ui', '_blank')}
+	<div class="mt-16 flex justify-center">
+		<div
+			class="mb-8 flex w-[800px] flex-col justify-center border-b border-zinc-500 pb-1"
 		>
-			<Icon icon="mdi:github" width={24} height={24} />
-			GitHub</Button
-		>
+			<p class="text-center text-2xl">Choose Your Setup</p>
+		</div>
 	</div>
 
-	<div class="my-32 flex flex-col items-center gap-2">
-		<p class="mt-8 text-center text-xl">
-			Build your own components with the CLI,
-		</p>
+	<div class="mb-32 flex flex-col items-center gap-2">
+		<p class="text-center text-xl">Build your components with the CLI,</p>
 		<div class="w-80">
 			<Cli code="npx lomer-ui add [component]" />
 		</div>
@@ -73,9 +91,9 @@
 
 	<div class="flex justify-center">
 		<div
-			class="mb-16 flex w-[800px] flex-col justify-center border-b border-zinc-500 pb-4"
+			class="mb-8 flex w-[800px] flex-col justify-center border-b border-zinc-500 pb-1"
 		>
-			<p class=" text-center text-xl">Check it out and see for yourself.</p>
+			<p class="text-center text-2xl">View Your Components</p>
 		</div>
 	</div>
 

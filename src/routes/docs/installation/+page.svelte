@@ -11,32 +11,81 @@
 	import StepperPanel from '$site/stepper-panel.svelte';
 	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
+	import Prop from '$site/prop.svelte';
+	import Val from '$site/val.svelte';
+	import File from '$site/file.svelte';
 </script>
 
 <OnThisPage>
-	<OnThisPageBtn id="1" title="Setup your project" />
-	<OnThisPageSubBtn id="1.1" title="Initialize lomer-ui" />
-	<OnThisPageSubBtn id="1.2" title="That's it!" />
+	<OnThisPageBtn id="1" title="Using the CLI Tool" />
+	<OnThisPageSubBtn id="1.1" title="Congifure Tailwind CSS" />
+	<OnThisPageSubBtn id="1.2" title="Add components" />
+	<OnThisPageBtn id="2" title="Installing the Package" />
+	<OnThisPageSubBtn id="2.1" title="Congifure Tailwind CSS" />
+	<OnThisPageSubBtn id="2.2" title="Install lomer-ui" />
 </OnThisPage>
 
 <div class="flex flex-col gap-4 xl:pr-80">
 	<PageHeader
 		title="Installation"
 		sub="Docs"
-		info="Just follow these simple steps."
+		info="Getting started with lomer-ui is simple!"
 	/>
 
-	<Title id="1">Setup your project</Title>
+	<p class="mt-8 text-xl text-zinc-500 dark:text-zinc-400">
+		Which Option Should You <span
+			class="font-semibold text-zinc-950 underline dark:text-white">Choose</span
+		>?
+	</p>
+	<p class="text-xl text-zinc-500 dark:text-zinc-400">
+		- Use the <span class="font-semibold text-zinc-950 dark:text-white"
+			>CLI</span
+		>
+		if you want to
+		<span class="font-semibold text-zinc-950 dark:text-white"
+			>customize the code</span
+		> and have more control over your components.
+	</p>
+	<p class="text-xl text-zinc-500 dark:text-zinc-400">
+		- Install the <span class="font-semibold text-zinc-950 dark:text-white"
+			>package</span
+		>
+		if you prefer a straightforward,
+		<span class="font-semibold text-zinc-950 dark:text-white">ready-to-use</span
+		> solution.
+	</p>
+
+	<Title id="1">Using the CLI Tool</Title>
 
 	<SubTitle id="1.1">
-		<span class="font-mono">1.</span> Initialize lomer-ui
+		<span class="font-mono">1.</span> Configure Tailwind CSS
 	</SubTitle>
 	<StepperPanel>
-		<p>Just kidding, no setup required.</p>
+		<p>
+			Add <Prop>darkMode</Prop> property with <Val>selector</Val> value to <File
+				>tailwind.config.ts</File
+			>.
+		</p>
+		<Code
+			code={`export default {` +
+				`\n\tdarkMode: 'selector'` +
+				`\n\t...` +
+				`\n} satisfies Config;`}
+			language="javascript"
+		/>
+		<p>
+			See <Link
+				class="underline"
+				target="_blank"
+				href="https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually"
+			>
+				Tailwind CSS Dark Mode
+			</Link> for details.
+		</p>
 	</StepperPanel>
 
 	<SubTitle id="1.2">
-		<span class="font-mono">2.</span> That's it!
+		<span class="font-mono">2.</span> Add components
 	</SubTitle>
 	<StepperPanel final>
 		<p>
@@ -51,6 +100,65 @@
 			code={`import Button from '$lib/components/ui/button.svelte'`}
 			language="javascript"
 		/>
+		<Code code={`<Button>Button</Button>`} language="xml" />
+		<Preview>
+			<Button>Button</Button>
+		</Preview>
+	</StepperPanel>
+
+	<Title id="2">Installing the Package</Title>
+	<SubTitle id="2.1">
+		<span class="font-mono">1.</span> Configure Tailwind CSS
+	</SubTitle>
+	<StepperPanel>
+		<p>
+			Add <Prop>darkMode</Prop> property with <Val>selector</Val> value to <File
+				>tailwind.config.ts</File
+			>.
+		</p>
+		<p>
+			To ensure Tailwind CSS recognizes the utility classes used in lomer-ui,
+			add the library to the <Prop>content</Prop> section.
+		</p>
+		<Code
+			code={`export default {` +
+				`\n\tdarkMode: 'selector'` +
+				`\n\tcontent: [` +
+				`\n\t\t'./node_modules/lomer-ui/**/*.{html,js,svelte,ts}'` +
+				`\n\t\t...` +
+				`\n\t]` +
+				`\n\t...` +
+				`\n} satisfies Config;`}
+			language="javascript"
+		/>
+		<p>
+			See <Link
+				class="underline"
+				target="_blank"
+				href="https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually"
+			>
+				Tailwind CSS Dark Mode
+			</Link> for more details.
+		</p>
+		<p>
+			See <Link
+				class="underline"
+				target="_blank"
+				href="https://tailwindcss.com/docs/content-configuration"
+			>
+				Tailwind CSS Content Configuration
+			</Link> for more details.
+		</p>
+	</StepperPanel>
+
+	<SubTitle id="2.2">
+		<span class="font-mono">2.</span> Install lomer-ui
+	</SubTitle>
+	<StepperPanel final>
+		<p>Run this command:</p>
+		<Cli code="npm install lomer-ui" />
+		<p class="mt-2">Import the components in your project.</p>
+		<Code code={`import { Button } from 'lomer-ui'`} language="javascript" />
 		<Code code={`<Button>Button</Button>`} language="xml" />
 		<Preview>
 			<Button>Button</Button>

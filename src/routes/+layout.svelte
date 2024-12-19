@@ -69,7 +69,7 @@
 					target="_blank"
 					class="font-mono italic no-underline"
 				>
-					- clios
+					- Clios
 				</Link>
 			</div>
 		</aside>

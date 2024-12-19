@@ -61,7 +61,7 @@
 	/>
 	{#if isLoading}
 		<svg
-			class="absolute right-2 top-2 text-cyan-600 dark:text-cyan-500"
+			class="pointer-events-none absolute right-2 top-2 text-cyan-600 dark:text-cyan-500"
 			width="22"
 			height="22"
 			viewBox="0 0 24 24"
@@ -87,7 +87,7 @@
 		</svg>
 	{:else if isDisabled}
 		<svg
-			class="absolute right-2 top-2 text-zinc-500"
+			class="pointer-events-none absolute right-2 top-2 text-zinc-500"
 			width="22"
 			height="22"
 			viewBox="0 0 24 24"
