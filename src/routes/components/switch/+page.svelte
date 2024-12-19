@@ -95,7 +95,7 @@
 	</Preview>
 
 	<!-- DISABLED -->
-	<SubTitle id="3.2">Disabled</SubTitle>
+	<SubTitle id="3.3">Disabled</SubTitle>
 	<p>Add <Prop>isDisabled</Prop> property.</p>
 	<Code code={`<Switch isDisabled>` + `\n\t...` + `\n</Switch>`} />
 	<Preview class="gap-8">
@@ -104,7 +104,7 @@
 	</Preview>
 
 	<!-- READ ONLY -->
-	<SubTitle id="3.2">Read only</SubTitle>
+	<SubTitle id="3.4">Read only</SubTitle>
 	<p>Add <Prop>isReadOnly</Prop> property.</p>
 	<Code code={`<Switch isReadOnly>` + `\n\t...` + `\n</Switch>`} />
 	<Preview class="gap-8">

@@ -66,7 +66,7 @@
 		'disabled:cursor-not-allowed disabled:outline-none', // visual
 
 		// LOADING
-		isLoading && 'disabled:text-zinc-500/0 disabled:dark:text-zinc-500/0',
+		isLoading && 'disabled:text-zinc-950/20 disabled:dark:text-zinc-50/20',
 
 		// READ ONLY
 		isReadOnly && [

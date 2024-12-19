@@ -6,6 +6,7 @@
 	import { afterNavigate } from '$app/navigation';
 	import { twMerge } from 'tailwind-merge';
 	import SidebarLink from './sidebar-link.svelte';
+	import { version } from '../../package.json';
 
 	let elPage: HTMLDivElement;
 
@@ -25,14 +26,17 @@
 		>
 			<div class="ml-4 mt-8 flex items-center">
 				<div class="relative mr-4">
-					<img class="relative size-6 min-w-6" src="/favicon.png" alt="lomer" />
+					<img class="relative size-7 min-w-7" src="/favicon.png" alt="lomer" />
 					<div
-						class="absolute top-0 size-6 rotate-45 outline outline-1 -outline-offset-2"
+						class="absolute top-0 size-7 rotate-45 outline outline-1 -outline-offset-2"
 					></div>
 				</div>
-				<Link href="/" class="font-mono text-xl leading-3 no-underline"
-					>lomer-ui</Link
-				>
+				<div>
+					<Link href="/" class="font-mono text-xl leading-3 no-underline">
+						lomer-ui
+					</Link>
+					<p class="font-mono text-sm">v{version}</p>
+				</div>
 			</div>
 
 			<CardToggleTheme />

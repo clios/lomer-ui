@@ -55,7 +55,7 @@
 		<svg
 			class={twMerge(
 				'fill-zinc-950 dark:fill-zinc-50', // fill
-				'transition-transform group-hover:fill-cyan-500 group-focus:fill-cyan-500', // animation
+				'transition-transform', // animation
 				isOpen && 'rotate-180' // interacting
 			)}
 			width="14"

@@ -37,7 +37,7 @@
 			'disabled:cursor-default disabled:outline-0 disabled:hover:cursor-not-allowed', // disabled
 
 			// LOADING
-			isLoading && 'pr-8 disabled:text-zinc-500 disabled:dark:text-zinc-500',
+			isLoading && 'disabled:text-zinc-500 disabled:dark:text-zinc-500',
 
 			// DISABLED
 			'disabled:border-zinc-700 disabled:dark:border-zinc-700', // border
@@ -84,6 +84,19 @@
 					type="rotate"
 				/>
 			</path>
+		</svg>
+	{:else if isDisabled}
+		<svg
+			class="absolute right-2 top-2 text-zinc-500"
+			width="22"
+			height="22"
+			viewBox="0 0 24 24"
+		>
+			<path
+				fill="currentColor"
+				fill-rule="evenodd"
+				d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m-4.906-3.68L18.32 7.094A8 8 0 0 1 7.094 18.32M5.68 16.906A8 8 0 0 1 16.906 5.68z"
+			/>
 		</svg>
 	{/if}
 </div>

@@ -45,7 +45,7 @@
 		language="javascript"
 	/>
 	<Code
-		code={`<Button on:click={openDialog}>Open dialog</Button>` +
+		code={`<Button onclick={openDialog}>Open dialog</Button>` +
 			`\n<Dialog title="Title here" bind:isOpen>` +
 			`\n\tContent here...` +
 			`\n</Dialog>`}

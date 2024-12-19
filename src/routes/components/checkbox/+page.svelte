@@ -94,7 +94,7 @@
 	</Preview>
 
 	<!-- DISABLED -->
-	<SubTitle id="3.2">Disabled</SubTitle>
+	<SubTitle id="3.3">Disabled</SubTitle>
 	<p>Add <Prop>isDisabled</Prop> property.</p>
 	<Code code={`<Checkbox isDisabled>` + `\n\t...` + `\n</Checkbox>`} />
 	<Preview>
@@ -113,7 +113,7 @@
 	</Preview>
 
 	<!-- READ ONLY -->
-	<SubTitle id="3.2">Read only</SubTitle>
+	<SubTitle id="3.4">Read only</SubTitle>
 	<p>Add <Prop>isReadOnly</Prop> property.</p>
 	<Code code={`<Checkbox isReadOnly>` + `\n\t...` + `\n</Checkbox>`} />
 	<Preview>

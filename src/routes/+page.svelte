@@ -1,25 +1,51 @@
 <script>
+	import Accordion from '$lib/accordion.svelte';
+	import Alert from '$lib/alert.svelte';
 	import Button from '$lib/button.svelte';
-	import CardCreateAnAccount from './card__create-an-account.svelte';
-	import CardNotifications from './card__notifications.svelte';
-	import CardPaymentMethod from './card__payment-method.svelte';
+	import Cli from '$site/cli.svelte';
 	import Icon from '@iconify/svelte';
-	import Screen from '$site/screen.svelte';
+	import PreviewComponent from './preview-component.svelte';
 	import { goto } from '$app/navigation';
+	import { version } from '../../package.json';
+	import CardPicker from '$lib/card-picker.svelte';
+	import Checkbox from '$lib/checkbox.svelte';
+	import Dialog from '$lib/dialog.svelte';
+	import Drawer from '$lib/drawer.svelte';
+	import Field from '$lib/field.svelte';
+	import Input from '$lib/input.svelte';
+	import Link from '$lib/link.svelte';
+	import { Radio } from '$lib/index.js';
+	import Select from '$lib/select.svelte';
+	import Switch from '$lib/switch.svelte';
+	import Textarea from '$lib/textarea.svelte';
+
+	let cardValue = $state('');
+	let checkboxValue = $state(false);
+	let isDialogOpen = $state(false);
+	const openDialog = () => (isDialogOpen = true);
+	let isDrawerOpen = $state(false);
+	const openDrawer = () => (isDrawerOpen = true);
+	let radioValue = $state('');
+	let selectValue = $state('');
 </script>
 
-<Screen class="p-8" lineColor="#71717A10">
-	<p class="text-sm">Auto-craft base components.</p>
-	<p class="mb-2 text-6xl">lomer-ui</p>
-	<p class="mb-1 text-xl">
-		A dead-simple CLI tool to instantly kickstart your own Svelte components.
-	</p>
-	<p class="text-xl">
-		No underlying UI libraries required &mdash; just clean, standalone code
-		ready for use, powered by Tailwind CSS.
-	</p>
+<div class="p-8">
+	<div class="flex justify-between">
+		<p class="flex items-center gap-3">
+			Svelte 5 <span class="text-sm text-zinc-500"> & </span> Tailwind CSS
+		</p>
+		<p class="font-mono">v{version}</p>
+	</div>
 
-	<div class="mb-8 mt-10 flex gap-4">
+	<div class="mt-32">
+		<p class="mt-2 text-center text-xl">Keeping It Simple, Sleek.</p>
+		<p class="mb-2 text-center text-6xl">lomer-ui</p>
+		<p class="mt-2 text-center text-lg">
+			Not built on any UI Library <br /> &mdash; this is the UI Library.
+		</p>
+	</div>
+
+	<div class="my-8 flex justify-center gap-4">
 		<Button onclick={() => goto('/docs/installation')}>Get Started</Button>
 		<Button
 			variant="secondary"
@@ -30,15 +56,172 @@
 		>
 	</div>
 
-	<p class="mt-16 flex items-center text-4xl font-semibold">
-		<span>Svelte</span>
-		<Icon class="mx-4" icon="mdi:plus" />
-		<span>Tailwind CSS</span>
-	</p>
-
-	<div class="mt-4 flex gap-4">
-		<CardNotifications />
-		<CardCreateAnAccount />
-		<CardPaymentMethod />
+	<div class="my-32 flex flex-col items-center gap-2">
+		<p class="mt-8 text-center text-xl">
+			Build your own components with the CLI,
+		</p>
+		<div class="w-80">
+			<Cli code="npx lomer-ui add [component]" />
+		</div>
+		<p class="mt-4 text-center text-xl">
+			<span class="text-zinc-500">Or</span> use the package to get started.
+		</p>
+		<div class="w-80">
+			<Cli code="npm install lomer-ui" />
+		</div>
 	</div>
-</Screen>
+
+	<div class="flex justify-center">
+		<div
+			class="mb-16 flex w-[800px] flex-col justify-center border-b border-zinc-500 pb-4"
+		>
+			<p class=" text-center text-xl">Check it out and see for yourself.</p>
+		</div>
+	</div>
+
+	<div class="grid grid-cols-3 gap-4">
+		<PreviewComponent title="Accordion" href="/components/accordion">
+			<div class="w-96">
+				<Accordion title="Open Source?">Yes!</Accordion>
+			</div>
+		</PreviewComponent>
+
+		<PreviewComponent title="Alert" href="/components/alert">
+			<div class="w-96">
+				<Alert class="flex gap-2">
+					<Icon icon="mdi:terminal-line" width={24} />
+					<div>
+						<p class="font-semibold">Do it.</p>
+						<p>Just do it!</p>
+					</div>
+				</Alert>
+			</div>
+		</PreviewComponent>
+
+		<PreviewComponent title="Button" href="/components/button">
+			<div class="flex w-96 justify-center gap-4">
+				<Button>Primary</Button>
+				<Button variant="secondary">Secondary</Button>
+				<Button isLoading>Button</Button>
+			</div>
+		</PreviewComponent>
+
+		<PreviewComponent title="Card Picker" href="/components/card-picker">
+			<div class="flex w-96 justify-center gap-4">
+				<CardPicker bind:value={cardValue} cardValue="card 1">
+					<Icon icon="game-icons:spiked-dragon-head" width={80} height={80} />
+					<p>Dragon</p>
+				</CardPicker>
+				<CardPicker bind:value={cardValue} cardValue="card 2">
+					<Icon icon="game-icons:snake-tongue" width={80} height={80} />
+					<p>Serpent</p>
+				</CardPicker>
+				<CardPicker isLoading>
+					<Icon icon="game-icons:wolf-head" width={80} height={80} />
+					<p>Wolf</p>
+				</CardPicker>
+			</div>
+		</PreviewComponent>
+
+		<PreviewComponent title="Checkbox" href="/components/checkbox">
+			<div class="flex flex-col gap-4">
+				<Checkbox bind:value={checkboxValue}>Hit me!</Checkbox>
+				<Checkbox isLoading>Hit me!</Checkbox>
+			</div>
+		</PreviewComponent>
+
+		<PreviewComponent title="Dialog" href="/components/dialog">
+			<Button onclick={openDialog}>Open dialog</Button>
+			<Dialog title="How is it?" bind:isOpen={isDialogOpen}>
+				<p class="mt-2">Don't hesitate to reach me out.</p>
+				<p class="italic">clios1208@gmail.com</p>
+			</Dialog>
+		</PreviewComponent>
+
+		<PreviewComponent title="Drawer" href="/components/drawer">
+			<Button onclick={openDrawer}>Open drawer</Button>
+			<Drawer
+				class="w-[400px]"
+				title="How does it feel?"
+				bind:isOpen={isDrawerOpen}
+			>
+				<p class="mt-2">Feel free to reach me out.</p>
+				<p class="italic">clios1208@gmail.com</p>
+			</Drawer>
+		</PreviewComponent>
+
+		<PreviewComponent title="Field" href="/components/field">
+			<Field label="Username" issue="Already in used." required>
+				<Input value="NoobMaster69" />
+			</Field>
+		</PreviewComponent>
+
+		<PreviewComponent title="Input" href="/components/input">
+			<div class="flex flex-col gap-4">
+				<Input value="NoobMaster69" />
+				<Input value="NoobMaster69" isLoading />
+				<Input value="NoobMaster69" isDisabled />
+			</div>
+		</PreviewComponent>
+
+		<PreviewComponent title="Link" href="/components/link">
+			<div class="flex flex-col gap-2">
+				<Link href="#">lomer-ui</Link>
+				<Link href="#" class="no-underline">lomer-ui</Link>
+				<Link href="#" class="no-underline" caret>lomer-ui</Link>
+			</div>
+		</PreviewComponent>
+
+		<PreviewComponent title="Radio" href="/components/radio">
+			<div class="flex flex-col">
+				<Radio bind:value={radioValue} radioValue="free">Free</Radio>
+				<Radio bind:value={radioValue} radioValue="pro">Pro</Radio>
+				<Radio bind:value={radioValue} radioValue="premium" isLoading>
+					Premium
+				</Radio>
+				<Radio bind:value={radioValue} radioValue="enterprise" isDisabled>
+					Enterprise
+				</Radio>
+			</div>
+		</PreviewComponent>
+
+		<PreviewComponent title="Select" href="/components/select">
+			<div class="flex flex-col gap-2">
+				<div class="flex flex-col items-center gap-4">
+					<Select bind:value={selectValue} placeholder="Select a game">
+						<optgroup label="PC">
+							<option value="dota 2">Dota 2</option>
+							<option value="manor lords">Manor Lords</option>
+						</optgroup>
+						<optgroup label="Mobile">
+							<option value="world of tanks blitz">World of Tanks Blitz</option>
+							<option value="wuthering waves">Wuthering Waves</option>
+						</optgroup>
+					</Select>
+					<Select value="dota 2" isLoading>
+						<option value="dota 2">Dota 2</option>
+					</Select>
+					<Select value="dota 2" isDisabled>
+						<option value="dota 2">Dota 2</option>
+					</Select>
+				</div>
+			</div>
+		</PreviewComponent>
+
+		<PreviewComponent title="Switch" href="/components/switch">
+			<div class="flex flex-col gap-2">
+				<Switch>Free</Switch>
+				<Switch isLoading>Pro</Switch>
+				<Switch isDisabled>Premium</Switch>
+			</div>
+		</PreviewComponent>
+
+		<PreviewComponent title="Textarea" href="/components/textarea">
+			<div class="flex flex-col gap-2">
+				<Textarea value="lomer-ui"></Textarea>
+				<Textarea value="lomer-ui" isLoading></Textarea>
+				<Textarea value="lomer-ui" isDisabled></Textarea>
+			</div>
+		</PreviewComponent>
+	</div>
+</div>
