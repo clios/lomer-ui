@@ -165,10 +165,10 @@
 		</PreviewComponent>
 
 		<PreviewComponent title="Link" href="/components/link">
-			<div class="flex flex-col gap-2">
+			<div class="flex flex-col gap-4">
 				<Link href="#">lomer-ui</Link>
-				<Link href="#" class="no-underline">lomer-ui</Link>
 				<Link href="#" class="no-underline" caret>lomer-ui</Link>
+				<Link href="#" class="no-underline" isLoading>lomer-ui</Link>
 			</div>
 		</PreviewComponent>
 
