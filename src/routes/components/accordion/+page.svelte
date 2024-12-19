@@ -22,6 +22,8 @@
 	<OnThisPageBtn id="3" title="Examples" />
 	<OnThisPageSubBtn id="3.1" title="Multiple" />
 	<OnThisPageSubBtn id="3.2" title="Only one stays open" />
+	<OnThisPageSubBtn id="3.3" title="Loading" />
+	<OnThisPageSubBtn id="3.4" title="Disabled" />
 </OnThisPage>
 
 <div class="flex flex-col gap-2 xl:pr-80">
@@ -94,6 +96,30 @@
 			<Accordion title="Title 3" name="accordion-three" bind:value>
 				Content
 			</Accordion>
+		</div>
+	</Preview>
+
+	<!-- LOADING -->
+	<SubTitle id="3.3">Loading</SubTitle>
+	<p>Add <Prop>isLoading</Prop> property.</p>
+	<Code
+		code={`<Accordion title="Title here..." isLoading>\t\nContent\n</Accordion>`}
+	/>
+	<Preview>
+		<div class="w-full">
+			<Accordion title="Title here..." isLoading>Content</Accordion>
+		</div>
+	</Preview>
+
+	<!-- DISABLED -->
+	<SubTitle id="3.4">Disabled</SubTitle>
+	<p>Add <Prop>isDisabled</Prop> property.</p>
+	<Code
+		code={`<Accordion title="Title here..." isDisabled>\t\nContent\n</Accordion>`}
+	/>
+	<Preview>
+		<div class="w-full">
+			<Accordion title="Title here..." isDisabled>Content</Accordion>
 		</div>
 	</Preview>
 </div>
