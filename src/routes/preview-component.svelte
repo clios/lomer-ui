@@ -14,7 +14,7 @@
 		</div>
 	</Link>
 
-	<Preview class="h-60 items-center">
+	<Preview class="h-72 items-center">
 		{@render children?.()}
 	</Preview>
 </div>

@@ -83,6 +83,8 @@
 		<PreviewComponent title="Accordion" href="/components/accordion">
 			<div class="w-96">
 				<Accordion title="Open Source?">Yes!</Accordion>
+				<Accordion title="Open Source?" isLoading>Yes!</Accordion>
+				<Accordion title="Open Source?" isDisabled>Yes!</Accordion>
 			</div>
 		</PreviewComponent>
 
@@ -99,26 +101,43 @@
 		</PreviewComponent>
 
 		<PreviewComponent title="Button" href="/components/button">
-			<div class="flex w-96 justify-center gap-4">
+			<div class="flex w-96 flex-wrap justify-center gap-4">
 				<Button>Primary</Button>
 				<Button variant="secondary">Secondary</Button>
-				<Button isLoading>Button</Button>
+				<Button variant="destructive">Destructive</Button>
+				<Button variant="ghost">Ghost</Button>
+				<Button variant="outline">Outline</Button>
+				<Button>
+					<Icon icon="mdi:power" width={24} height={24} /> Power
+				</Button>
+				<Button size="icon">
+					<Icon icon="mdi:power" width={24} height={24} />
+				</Button>
+				<Button edge="sharp">Sharp</Button>
+				<Button edge="circle">Full round</Button>
+				<Button isLoading>Loading</Button>
+				<Button isDisabled>Disabled</Button>
+				<Button size="small">Small</Button>
 			</div>
 		</PreviewComponent>
 
 		<PreviewComponent title="Card Picker" href="/components/card-picker">
 			<div class="flex w-96 justify-center gap-4">
 				<CardPicker bind:value={cardValue} cardValue="card 1">
-					<Icon icon="game-icons:spiked-dragon-head" width={80} height={80} />
+					<Icon icon="game-icons:spiked-dragon-head" width={50} height={50} />
 					<p>Dragon</p>
 				</CardPicker>
 				<CardPicker bind:value={cardValue} cardValue="card 2">
-					<Icon icon="game-icons:snake-tongue" width={80} height={80} />
+					<Icon icon="game-icons:snake-tongue" width={50} height={50} />
 					<p>Serpent</p>
 				</CardPicker>
-				<CardPicker isLoading>
-					<Icon icon="game-icons:wolf-head" width={80} height={80} />
+				<CardPicker cardValue="card 2" isLoading>
+					<Icon icon="game-icons:wolf-head" width={50} height={50} />
 					<p>Wolf</p>
+				</CardPicker>
+				<CardPicker isDisabled>
+					<Icon icon="game-icons:lotus" width={50} height={50} />
+					<p>Lotus</p>
 				</CardPicker>
 			</div>
 		</PreviewComponent>
@@ -127,6 +146,8 @@
 			<div class="flex flex-col gap-4">
 				<Checkbox bind:value={checkboxValue}>Hit me!</Checkbox>
 				<Checkbox isLoading>Hit me!</Checkbox>
+				<Checkbox isDisabled>Hit me!</Checkbox>
+				<Checkbox value={true} isDisabled>Hit me!</Checkbox>
 			</div>
 		</PreviewComponent>
 
@@ -212,7 +233,9 @@
 			<div class="flex flex-col gap-2">
 				<Switch>Free</Switch>
 				<Switch isLoading>Pro</Switch>
+				<Switch value={true} isLoading>Pro</Switch>
 				<Switch isDisabled>Premium</Switch>
+				<Switch value={true} isDisabled>Premium</Switch>
 			</div>
 		</PreviewComponent>
 
