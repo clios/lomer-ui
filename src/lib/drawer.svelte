@@ -47,7 +47,7 @@
 			class={twMerge(
 				// BASE
 				'absolute z-10', // layout and positioning
-				'dark:border-zinc-700', // box model
+				'border-zinc-300 dark:border-zinc-700', // box model
 				'bg-white dark:bg-zinc-950', // background
 				'shadow-md dark:shadow-none', // shadow
 				'transition-all', // animation

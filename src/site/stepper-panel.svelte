@@ -9,7 +9,7 @@
 	class={twMerge(
 		// BASE
 		'ml-2 flex flex-col gap-2  pb-8 pl-6',
-		!final && 'border-l dark:border-zinc-700'
+		!final && 'border-l border-zinc-300 dark:border-zinc-700'
 	)}
 >
 	{@render children?.()}

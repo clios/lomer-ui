@@ -49,7 +49,7 @@
 					class={twMerge(
 						// BASE
 						'absolute right-0 z-10', // layout and positioning
-						'h-screen dark:border-zinc-700', // box model
+						'h-screen border-zinc-300 dark:border-zinc-700', // box model
 						'bg-white dark:bg-zinc-950', // background
 						'shadow-md dark:shadow-none', // shadow
 						'transition-all', // animation

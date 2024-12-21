@@ -14,6 +14,9 @@
 	import Prop from '$site/prop.svelte';
 	import Val from '$site/val.svelte';
 	import File from '$site/file.svelte';
+	import Alert from '$lib/alert.svelte';
+	import Accordion from '$lib/accordion.svelte';
+	import Icon from '@iconify/svelte';
 </script>
 
 <OnThisPage>
@@ -55,37 +58,45 @@
 		> solution.
 	</p>
 
+	<Alert class="mt-8 flex gap-2">
+		<Icon icon="mdi:terminal-line" width={24} />
+		<div class="w-full">
+			<p class="mb-2 font-semibold">Using tailwindcss v3?</p>
+			<p class="mb-2">Run this command to upgrade v3 to v4.</p>
+			<Cli code={`npx @tailwindcss/upgrade@next`} />
+			<p class="mt-2">
+				See <Link
+					class="underline"
+					target="_blank"
+					href="https://tailwindcss.com/docs/v4-beta#upgrading-from-v3"
+				>
+					Tailwind CSS Upgrading from v3
+				</Link> for more details.
+			</p>
+		</div>
+	</Alert>
+
 	<Title id="1">Using the CLI Tool</Title>
 
 	<SubTitle id="1.1">
 		<span class="font-mono">1.</span> Configure Tailwind CSS
 	</SubTitle>
 	<StepperPanel>
-		<p>
-			Add <Prop>darkMode</Prop> property with <Val>selector</Val> value to <File
-				>tailwind.config.ts</File
-			>.
-		</p>
-		<Code
-			code={`export default {` +
-				`\n\tdarkMode: 'selector'` +
-				`\n\t...` +
-				`\n} satisfies Config;`}
-			language="javascript"
-		/>
+		<p class="mt-4">Use a selector-based strategy.</p>
+		<Code code={`@variant dark (&:where(.dark, .dark *));`} language="less" />
 		<p>
 			See <Link
 				class="underline"
 				target="_blank"
-				href="https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually"
+				href="https://tailwindcss.com/docs/v4-beta#configuring-dark-mode"
 			>
-				Tailwind CSS Dark Mode
-			</Link> for details.
+				Tailwind CSS v4 Dark Mode
+			</Link> for more details.
 		</p>
 	</StepperPanel>
 
 	<SubTitle id="1.2">
-		<span class="font-mono">2.</span> Add components
+		<span class="font-mono">2.</span> That's it.
 	</SubTitle>
 	<StepperPanel final>
 		<p>
@@ -111,42 +122,29 @@
 		<span class="font-mono">1.</span> Configure Tailwind CSS
 	</SubTitle>
 	<StepperPanel>
-		<p>
-			Add <Prop>darkMode</Prop> property with <Val>selector</Val> value to <File
-				>tailwind.config.ts</File
-			>.
-		</p>
-		<p>
-			To ensure Tailwind CSS recognizes the utility classes used in lomer-ui,
-			add the library to the <Prop>content</Prop> section.
-		</p>
+		<p class="mt-4">Use a selector-based strategy.</p>
+		<p>Add additional content sources</p>
 		<Code
-			code={`export default {` +
-				`\n\tdarkMode: 'selector'` +
-				`\n\tcontent: [` +
-				`\n\t\t'./node_modules/lomer-ui/**/*.{html,js,svelte,ts}'` +
-				`\n\t\t...` +
-				`\n\t]` +
-				`\n\t...` +
-				`\n} satisfies Config;`}
-			language="javascript"
+			code={`@variant dark (&:where(.dark, .dark *));` +
+				`\n@source "../node_modules/lomer-ui/dist";`}
+			language="less"
 		/>
 		<p>
 			See <Link
 				class="underline"
 				target="_blank"
-				href="https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually"
+				href="https://tailwindcss.com/docs/v4-beta#configuring-dark-mode"
 			>
-				Tailwind CSS Dark Mode
+				Tailwind CSS v4 Dark Mode
 			</Link> for more details.
 		</p>
 		<p>
 			See <Link
 				class="underline"
 				target="_blank"
-				href="https://tailwindcss.com/docs/content-configuration"
+				href="https://tailwindcss.com/docs/v4-beta#adding-content-sources"
 			>
-				Tailwind CSS Content Configuration
+				Tailwind CSS v4 Adding Content Source
 			</Link> for more details.
 		</p>
 	</StepperPanel>

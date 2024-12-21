@@ -39,7 +39,10 @@
 </script>
 
 <!-- CONTAINER -->
-<div {id} class={twMerge('border-b dark:border-zinc-700', className)}>
+<div
+	{id}
+	class={twMerge('border-b border-zinc-300 dark:border-zinc-700', className)}
+>
 	<!-- HEADER AS TOGGLE BUTTON -->
 	<button
 		type="button"
