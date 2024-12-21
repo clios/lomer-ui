@@ -38,6 +38,7 @@
 			'appearance-none overflow-hidden', // visual
 			'focus:outline focus:outline-offset-2 focus:outline-cyan-500', // focusing
 			'disabled:cursor-default disabled:outline-0 disabled:hover:cursor-not-allowed', // disabled
+			'cursor-pointer', // cursor
 
 			// READ ONLY
 			isReadOnly && [

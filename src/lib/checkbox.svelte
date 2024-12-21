@@ -60,7 +60,7 @@
 			// BASE
 			'absolute top-0 left-0', // layout and positioning
 			'size-[24px] rounded-sm border dark:border-zinc-700', // box model
-			'shadow-xs dark:shadow-none', // shadow
+			'cursor-pointer shadow-xs dark:shadow-none', // visual
 
 			// GROUP
 			'group-focus:outline group-focus:outline-offset-2 group-focus:outline-cyan-500', // focusing

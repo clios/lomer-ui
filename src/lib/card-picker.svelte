@@ -48,11 +48,11 @@
 		'relative p-2', // positioning and padding
 		'bg-white dark:bg-zinc-950', // background
 		'rounded-sm border dark:border-zinc-700', // border
-		'shadow-xs dark:shadow-none', // visual
+		'cursor-pointer shadow-xs dark:shadow-none', // visual
 
 		// SELECTED
 		isSelected
-			? 'outline outline-1' // outline
+			? 'outline' // outline
 			: [
 					'active:outline-2 active:outline-offset-0', // active
 					'focus:outline focus:outline-offset-2 focus:outline-cyan-500', // focusing

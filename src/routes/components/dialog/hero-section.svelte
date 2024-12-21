@@ -32,7 +32,8 @@
 				'bg-zinc-50/0 dark:bg-zinc-950/0', // background
 				'active:outline-2 active:outline-offset-0', // color
 				'hover:ring-offset-1 hover:outline hover:outline-offset-2 hover:outline-cyan-500', // hovering
-				'focus:ring-offset-1 focus:outline focus:outline-offset-2 focus:outline-cyan-500' // focusing
+				'focus:ring-offset-1 focus:outline focus:outline-offset-2 focus:outline-cyan-500', // focusing
+				'cursor-pointer' // cursor
 			)}
 			onclick={() => (isOpen = false)}
 		>

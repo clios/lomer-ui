@@ -50,6 +50,7 @@
 			'flex items-center justify-between', // layout and positioning
 			'focus:underline focus:outline-hidden', // focusing
 			'hover:underline', // hovering
+			'cursor-pointer', // cursor
 
 			// LOADING
 			isLoading && 'disabled:text-zinc-500 dark:disabled:text-zinc-500',

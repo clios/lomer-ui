@@ -33,39 +33,26 @@
 <div class="p-8">
 	<div class="flex justify-between">
 		<p class="flex items-center gap-3">
-			Svelte 5 <span class="text-sm text-zinc-500"> & </span> Tailwind CSS
+			Svelte <span class="text-sm text-zinc-500"> & </span> Tailwind CSS
 		</p>
 		<p class="font-mono">v{version}</p>
 	</div>
 
-	<div class="mt-16 grid grid-cols-3">
-		<Screen class="p-8 dark:border-zinc-700"></Screen>
-		<Screen class="border-x p-8 dark:border-zinc-700"></Screen>
-		<Screen class="p-8"></Screen>
-		<Screen class="border-y p-8 dark:border-zinc-700"></Screen>
-		<div class="border p-8 dark:border-zinc-700">
-			<p class="text-center text-xl">Keeping It Simple, Sleek.</p>
-			<p class="mb-2 text-center text-6xl">lomer-ui</p>
-			<p class="mt-2 text-center text-lg">
-				Not built on any UI Library <br /> &mdash; this is the UI Library.
-			</p>
+	<div class="my-32">
+		<p class="text-center text-6xl">lomer-ui</p>
+		<p class="text-center text-xl">Keep It Simply Styled</p>
 
-			<div class="mt-8 flex justify-center gap-4">
-				<Button onclick={() => goto('/docs/installation')}>Get Started</Button>
-				<Button
-					variant="secondary"
-					onclick={() =>
-						window.open('https://github.com/clios/lomer-ui', '_blank')}
-				>
-					<Icon icon="mdi:github" width={24} height={24} />
-					GitHub</Button
-				>
-			</div>
+		<div class="mt-16 flex justify-center gap-4">
+			<Button onclick={() => goto('/docs/installation')}>Get Started</Button>
+			<Button
+				variant="secondary"
+				onclick={() =>
+					window.open('https://github.com/clios/lomer-ui', '_blank')}
+			>
+				<Icon icon="mdi:github" width={24} height={24} />
+				GitHub</Button
+			>
 		</div>
-		<Screen class="border-y p-8 dark:border-zinc-700"></Screen>
-		<Screen class="p-8"></Screen>
-		<Screen class="border-x p-8 dark:border-zinc-700"></Screen>
-		<Screen class="p-8"></Screen>
 	</div>
 
 	<div class="mt-16 flex justify-center">
@@ -93,7 +80,7 @@
 		<div
 			class="mb-8 flex w-[800px] flex-col justify-center border-b border-zinc-500 pb-1"
 		>
-			<p class="text-center text-2xl">View Your Components</p>
+			<p class="text-center text-2xl">Components</p>
 		</div>
 	</div>
 

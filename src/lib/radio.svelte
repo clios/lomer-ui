@@ -46,6 +46,7 @@
 		'relative', // positioning
 		'mt-[.3rem] pl-8 text-left', // text, padding, and margin
 		'focus:outline-hidden', // focusing
+		'cursor-pointer', // cursor
 
 		// DISABLED
 		'disabled:border-zinc-700 dark:disabled:border-zinc-700', // border

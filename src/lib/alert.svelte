@@ -44,7 +44,7 @@
 			<button
 				type="button"
 				onclick={() => (isOpen = false)}
-				class="absolute right-4 top-4"
+				class="absolute top-4 right-4 cursor-pointer"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

@@ -46,6 +46,7 @@
 			'focus:outline focus:outline-offset-2 focus:outline-cyan-500', // focusing
 			'hover:outline hover:outline-offset-2 hover:outline-cyan-500', // hovering
 			'active:outline-2 active:outline-offset-0', // active
+			'cursor-pointer', // cursor
 
 			// SWITCHED
 			isSwitched
