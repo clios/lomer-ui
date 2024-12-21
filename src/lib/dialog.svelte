@@ -24,10 +24,10 @@
 		class={twMerge(
 			// BASE
 			'grid place-content-center', // layout
-			'fixed bottom-0 left-0 right-0 top-0 z-50', // position
+			'fixed top-0 right-0 bottom-0 left-0 z-50', // position
 
 			// BACKGROUND
-			'backdrop-blur-sm', // blue
+			'backdrop-blur-xs', // blue
 			'bg-zinc-200/80 dark:bg-zinc-950/80', // color
 			'bg-[radial-gradient(#D4D4D8_1px,transparent_1px)]', // light dots
 			'dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]', // dark dots
@@ -58,13 +58,13 @@
 			<button
 				type="button"
 				class={twMerge(
-					'absolute right-4 top-4', // layout and positioning
+					'absolute top-4 right-4', // layout and positioning
 					'text-zinc-950 dark:text-zinc-50', // text
 					'rounded-full', // border
 					'bg-zinc-50/0 dark:bg-zinc-950/0', // background
 					'active:outline-2 active:outline-offset-0', // color
-					'hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500 hover:ring-offset-1', // hovering
-					'focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-cyan-500 focus:ring-offset-1' // focusing
+					'hover:ring-offset-1 hover:outline hover:outline-offset-2 hover:outline-cyan-500', // hovering
+					'focus:ring-offset-1 focus:outline focus:outline-offset-2 focus:outline-cyan-500' // focusing
 				)}
 				onclick={() => (isOpen = false)}
 			>

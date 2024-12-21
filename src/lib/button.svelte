@@ -8,7 +8,7 @@
 	type Props = {
 		children?: Snippet;
 		class?: string;
-		edge?: 'rounded' | 'circle' | 'sharp';
+		edge?: 'rounded-sm' | 'circle' | 'sharp';
 		isDisabled?: boolean;
 		isLoading?: boolean;
 		size?: 'text' | 'icon' | 'small';
@@ -19,7 +19,7 @@
 	let {
 		children,
 		class: className,
-		edge = 'rounded',
+		edge = 'rounded-sm',
 		isDisabled = false,
 		isLoading = false,
 		size = 'text',
@@ -36,9 +36,10 @@
 		'border border-cyan-500', // box model
 		'bg-zinc-950 dark:bg-zinc-50', // background
 		'text-zinc-50 dark:text-zinc-950', // text
-		'focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-cyan-500', // focusing
-		'hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500', // hovering
+		'focus:outline focus:outline-offset-2 focus:outline-cyan-500', // focusing
+		'hover:outline hover:outline-offset-2 hover:outline-cyan-500', // hovering
 		'active:outline-2 active:outline-offset-0', // active
+		'cursor-pointer', // cursor
 
 		// VARIANTS: SECONDARY
 		variant === 'secondary' && [
@@ -76,18 +77,18 @@
 		size === 'small' && 'h-6 px-2 text-sm leading-6',
 
 		// EDGES
-		edge === 'rounded' && 'rounded',
+		edge === 'rounded-sm' && 'rounded-sm',
 		edge === 'circle' && 'rounded-full',
 		edge === 'sharp' && 'rounded-none',
 
 		// DISABLED
-		'disabled:border-zinc-700 disabled:dark:border-zinc-700', // border
-		'disabled:bg-zinc-700 disabled:dark:bg-zinc-700', // background
-		'disabled:text-zinc-400 disabled:dark:text-zinc-400', // text
-		'disabled:cursor-not-allowed disabled:outline-none', // visual
+		'disabled:border-zinc-700 dark:disabled:border-zinc-700', // border
+		'disabled:bg-zinc-700 dark:disabled:bg-zinc-700', // background
+		'disabled:text-zinc-400 dark:disabled:text-zinc-400', // text
+		'disabled:cursor-not-allowed disabled:outline-hidden', // visual
 
 		// LOADING
-		isLoading && 'disabled:text-zinc-500/0 disabled:dark:text-zinc-500/0',
+		isLoading && 'disabled:text-zinc-500/0 dark:disabled:text-zinc-500/0',
 
 		className
 	)}

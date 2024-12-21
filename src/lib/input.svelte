@@ -31,19 +31,19 @@
 			'mt-[.1rem] px-2 py-1', // margin and padding
 			'bg-white dark:bg-zinc-950', // background
 			'rounded-md border dark:border-zinc-700', // border
-			'shadow-sm dark:shadow-none', // shadow
-			'focus:cursor-text focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-cyan-500', // focusing
-			'hover:cursor-text hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500', // focusing
+			'shadow-xs dark:shadow-none', // shadow
+			'focus:cursor-text focus:outline focus:outline-offset-2 focus:outline-cyan-500', // focusing
+			'hover:cursor-text hover:outline hover:outline-offset-2 hover:outline-cyan-500', // focusing
 			'disabled:cursor-default disabled:outline-0 disabled:hover:cursor-not-allowed', // disabled
 
 			// LOADING
-			isLoading && 'disabled:text-zinc-500 disabled:dark:text-zinc-500',
+			isLoading && 'disabled:text-zinc-500 dark:disabled:text-zinc-500',
 
 			// DISABLED
-			'disabled:border-zinc-700 disabled:dark:border-zinc-700', // border
-			'disabled:bg-zinc-700 disabled:dark:bg-zinc-700', // background
-			'disabled:text-zinc-400 disabled:dark:text-zinc-400', // text
-			'disabled:cursor-not-allowed disabled:outline-none', // visual
+			'disabled:border-zinc-700 dark:disabled:border-zinc-700', // border
+			'disabled:bg-zinc-700 dark:disabled:bg-zinc-700', // background
+			'disabled:text-zinc-400 dark:disabled:text-zinc-400', // text
+			'disabled:cursor-not-allowed disabled:outline-hidden', // visual
 
 			// READ ONLY
 			isReadOnly && [
@@ -61,7 +61,7 @@
 	/>
 	{#if isLoading}
 		<svg
-			class="pointer-events-none absolute right-2 top-2 text-cyan-600 dark:text-cyan-500"
+			class="pointer-events-none absolute top-2 right-2 text-cyan-600 dark:text-cyan-500"
 			width="22"
 			height="22"
 			viewBox="0 0 24 24"
@@ -87,7 +87,7 @@
 		</svg>
 	{:else if isDisabled}
 		<svg
-			class="pointer-events-none absolute right-2 top-2 text-zinc-500"
+			class="pointer-events-none absolute top-2 right-2 text-zinc-500"
 			width="22"
 			height="22"
 			viewBox="0 0 24 24"

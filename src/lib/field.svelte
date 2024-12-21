@@ -58,7 +58,7 @@
 			<!-- OPTIONAL INDICATOR -->
 			{#if optional}
 				<span
-					class="ml-1 rounded bg-zinc-100 px-1 py-[2px] text-xs text-zinc-700 dark:bg-zinc-950 dark:text-zinc-300"
+					class="ml-1 rounded-sm bg-zinc-100 px-1 py-[2px] text-xs text-zinc-700 dark:bg-zinc-950 dark:text-zinc-300"
 				>
 					Optional
 				</span>

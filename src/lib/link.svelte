@@ -25,15 +25,15 @@
 		'group', // group
 		'relative', // positioning
 		'underline', // text
-		'focus:text-cyan-500 focus:outline-none', // focusing
+		'focus:text-cyan-500 focus:outline-hidden', // focusing
 		'hover:text-cyan-500', // hovering
 		'active:outline-2 active:outline-offset-0', // active
 
 		// DISABLED
-		'disabled:border-zinc-700 disabled:dark:border-zinc-700', // border
-		'disabled:bg-zinc-700 disabled:dark:bg-zinc-700', // background
-		'disabled:text-zinc-400 disabled:dark:text-zinc-400', // text
-		'disabled:cursor-not-allowed disabled:outline-none', // visual
+		'disabled:border-zinc-700 dark:disabled:border-zinc-700', // border
+		'disabled:bg-zinc-700 dark:disabled:bg-zinc-700', // background
+		'disabled:text-zinc-400 dark:disabled:text-zinc-400', // text
+		'disabled:cursor-not-allowed disabled:outline-hidden', // visual
 
 		// LOADING
 		isLoading && '',

@@ -45,12 +45,12 @@
 		'group', // group
 		'relative', // positioning
 		'mt-[.3rem] pl-8 text-left', // text, padding, and margin
-		'focus:outline-none', // focusing
+		'focus:outline-hidden', // focusing
 
 		// DISABLED
-		'disabled:border-zinc-700 disabled:dark:border-zinc-700', // border
-		'disabled:text-zinc-400 disabled:dark:text-zinc-400', // text
-		'disabled:cursor-not-allowed disabled:outline-none', // visual
+		'disabled:border-zinc-700 dark:disabled:border-zinc-700', // border
+		'disabled:text-zinc-400 dark:disabled:text-zinc-400', // text
+		'disabled:cursor-not-allowed disabled:outline-hidden', // visual
 
 		// LOADING
 		isLoading && '',
@@ -115,7 +115,7 @@
 		<div
 			transition:fade={{ duration: 150 }}
 			class={twMerge(
-				'absolute left-1 top-1 size-4', // layout and positioning
+				'absolute top-1 left-1 size-4', // layout and positioning
 				'rounded-full border-4 border-zinc-50 dark:border-zinc-950', // border
 				'bg-zinc-950 dark:bg-zinc-50', // background
 
@@ -129,17 +129,17 @@
 	<div
 		class={twMerge(
 			// BASE
-			'pointer-events-none absolute left-1 top-1 size-4 rounded-full border border-zinc-950 dark:border-white',
-			'group-focus:outline group-focus:outline-1 group-focus:outline-offset-2 group-focus:outline-cyan-500', // focusing
-			'group-hover:outline group-hover:outline-1 group-hover:outline-offset-2 group-hover:outline-cyan-500', // hovering
+			'pointer-events-none absolute top-1 left-1 size-4 rounded-full border border-zinc-950 dark:border-white',
+			'group-focus:outline group-focus:outline-offset-2 group-focus:outline-cyan-500', // focusing
+			'group-hover:outline group-hover:outline-offset-2 group-hover:outline-cyan-500', // hovering
 			'border dark:border-zinc-700', // border
-			'shadow-sm dark:shadow-none', // shadow
+			'shadow-xs dark:shadow-none', // shadow
 
 			// LOADING
-			isLoading && 'border-none group-disabled:group-hover:outline-0',
+			isLoading && 'border-none group-hover:group-disabled:outline-0',
 
 			// DISABLED
-			isDisabled && 'border-none group-disabled:group-hover:outline-0'
+			isDisabled && 'border-none group-hover:group-disabled:outline-0'
 		)}
 	></div>
 

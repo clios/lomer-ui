@@ -47,26 +47,26 @@
 		// BASE
 		'relative p-2', // positioning and padding
 		'bg-white dark:bg-zinc-950', // background
-		'rounded border dark:border-zinc-700', // border
-		'shadow-sm dark:shadow-none', // visual
+		'rounded-sm border dark:border-zinc-700', // border
+		'shadow-xs dark:shadow-none', // visual
 
 		// SELECTED
 		isSelected
 			? 'outline outline-1' // outline
 			: [
 					'active:outline-2 active:outline-offset-0', // active
-					'focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-cyan-500', // focusing
-					'hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500' // hovering
+					'focus:outline focus:outline-offset-2 focus:outline-cyan-500', // focusing
+					'hover:outline hover:outline-offset-2 hover:outline-cyan-500' // hovering
 				],
 
 		// DISABLED
-		'disabled:border-zinc-700 disabled:dark:border-zinc-700', // border
-		'disabled:bg-zinc-700 disabled:dark:bg-zinc-700', // background
-		'disabled:text-zinc-400 disabled:dark:text-zinc-400', // text
-		'disabled:cursor-not-allowed disabled:outline-none', // visual
+		'disabled:border-zinc-700 dark:disabled:border-zinc-700', // border
+		'disabled:bg-zinc-700 dark:disabled:bg-zinc-700', // background
+		'disabled:text-zinc-400 dark:disabled:text-zinc-400', // text
+		'disabled:cursor-not-allowed disabled:outline-hidden', // visual
 
 		// LOADING
-		isLoading && 'disabled:text-zinc-950/20 disabled:dark:text-zinc-50/20',
+		isLoading && 'disabled:text-zinc-950/20 dark:disabled:text-zinc-50/20',
 
 		// READ ONLY
 		isReadOnly && [
@@ -102,7 +102,7 @@
 
 	{#if isLoading}
 		<svg
-			class="absolute bottom-1/2 right-1/2 translate-x-1/2 translate-y-1/2"
+			class="absolute right-1/2 bottom-1/2 translate-x-1/2 translate-y-1/2"
 			width="24"
 			height="24"
 			viewBox="0 0 24 24"

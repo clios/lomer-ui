@@ -7,7 +7,7 @@
 		<p class="mb-1 font-semibold">On this page</p>
 		<slot />
 
-		<div class="mt-8 rounded border p-4">
+		<div class="mt-8 rounded-sm border p-4">
 			<p class="text-xl font-semibold">Support lomer-ui</p>
 			<p class="my-2">
 				Become a sponsor and help me enhance the development experience for

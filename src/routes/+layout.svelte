@@ -17,18 +17,18 @@
 
 <ModeWatcher defaultMode="system" />
 <div class="relative h-screen overflow-y-auto dark:bg-zinc-950">
-	<div class="w-ful container relative mx-auto">
+	<div class="w-ful relative container mx-auto">
 		<aside
 			class={twMerge(
-				'fixed top-0 hidden flex-col gap-2 overflow-y-auto overflow-x-hidden lg:flex', // positioning and layout
-				'h-screen w-64 border-r pl-4 dark:border-zinc-700' // box model
+				'fixed top-0 hidden flex-col gap-2 overflow-x-hidden overflow-y-auto lg:flex', // positioning and layout
+				'h-screen w-64 border-r border-zinc-300 pl-4 dark:border-zinc-700' // box model
 			)}
 		>
-			<div class="ml-4 mt-8 flex items-center">
+			<div class="mt-8 ml-4 flex items-center">
 				<div class="relative mr-4">
 					<img class="relative size-7 min-w-7" src="/favicon.png" alt="lomer" />
 					<div
-						class="absolute top-0 size-7 rotate-45 outline outline-1 -outline-offset-2"
+						class="absolute top-0 size-7 rotate-45 outline -outline-offset-2"
 					></div>
 				</div>
 				<div>
@@ -63,7 +63,7 @@
 			<SidebarLink href="/components/switch" label="Switch" />
 			<SidebarLink href="/components/textarea" label="Textarea" />
 
-			<div class="absolute bottom-0 right-0 pb-8 pr-8">
+			<div class="absolute right-0 bottom-0 pr-8 pb-8">
 				<Link
 					href="https://github.com/clios"
 					target="_blank"
