@@ -40,11 +40,11 @@
 		class={twMerge(
 			// BASE
 			'relative flex items-center', // layout and positioning
-			'mt-[.4rem] w-[40px] min-w-[40px] max-w-[40px] rounded-full p-[2px]', // box model
-			'shadow-sm', // shadow
+			'mt-[.4rem] w-[40px] max-w-[40px] min-w-[40px] rounded-full p-[2px]', // box model
+			'shadow-xs', // shadow
 			'text-zinc-50 dark:text-zinc-950', // text
-			'focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-cyan-500', // focusing
-			'hover:outline hover:outline-1 hover:outline-offset-2 hover:outline-cyan-500', // hovering
+			'focus:outline focus:outline-offset-2 focus:outline-cyan-500', // focusing
+			'hover:outline hover:outline-offset-2 hover:outline-cyan-500', // hovering
 			'active:outline-2 active:outline-offset-0', // active
 
 			// SWITCHED
@@ -53,11 +53,11 @@
 				: 'bg-zinc-200 dark:bg-zinc-700',
 
 			// DISABLED
-			'disabled:bg-zinc-500 disabled:dark:bg-zinc-500', // background
-			'disabled:cursor-not-allowed disabled:outline-none', // visual
+			'disabled:bg-zinc-500 dark:disabled:bg-zinc-500', // background
+			'disabled:cursor-not-allowed disabled:outline-hidden', // visual
 
 			// LOADING
-			isLoading && 'disabled:text-zinc-500 disabled:dark:text-zinc-500',
+			isLoading && 'disabled:text-zinc-500 dark:disabled:text-zinc-500',
 
 			// READ ONLY
 			isReadOnly && [

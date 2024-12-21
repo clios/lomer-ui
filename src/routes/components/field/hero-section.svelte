@@ -6,7 +6,7 @@
 
 <Screen class="flex justify-center">
 	<div
-		class="flex flex-col gap-4 rounded border bg-white p-4 dark:border-zinc-700 dark:bg-zinc-950"
+		class="flex flex-col gap-4 rounded-sm border bg-white p-4 dark:border-zinc-700 dark:bg-zinc-950"
 	>
 		<Field label="Email">
 			<Input type="email" placeholder="me@example.com" />

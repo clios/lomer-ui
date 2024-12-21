@@ -35,12 +35,12 @@
 		'group', // group
 		'relative flex', // layout and positioning
 		'text-left', // text
-		'mt-[.4rem] rounded pl-8', // box model
+		'mt-[.4rem] rounded-sm pl-8', // box model
 		'disabled:cursor-not-allowed', // disabled
-		'focus:outline-none', // focusing
+		'focus:outline-hidden', // focusing
 
 		// LOADING
-		isLoading && 'disabled:text-zinc-500 disabled:dark:text-zinc-500',
+		isLoading && 'disabled:text-zinc-500 dark:disabled:text-zinc-500',
 
 		// READ ONLY
 		isReadOnly && [
@@ -58,18 +58,18 @@
 	<div
 		class={twMerge(
 			// BASE
-			'absolute left-0 top-0', // layout and positioning
-			'size-[24px] rounded border dark:border-zinc-700', // box model
-			'shadow-sm dark:shadow-none', // shadow
+			'absolute top-0 left-0', // layout and positioning
+			'size-[24px] rounded-sm border dark:border-zinc-700', // box model
+			'shadow-xs dark:shadow-none', // shadow
 
 			// GROUP
-			'group-focus:outline group-focus:outline-1 group-focus:outline-offset-2 group-focus:outline-cyan-500', // focusing
-			'group-hover:outline group-hover:outline-1 group-hover:outline-offset-2 group-hover:outline-cyan-500', // hovering
-			'group-disabled:border-zinc-700/0 group-disabled:outline-none', // disabled
+			'group-focus:outline group-focus:outline-offset-2 group-focus:outline-cyan-500', // focusing
+			'group-hover:outline group-hover:outline-offset-2 group-hover:outline-cyan-500', // hovering
+			'group-disabled:border-zinc-700/0 group-disabled:outline-hidden', // disabled
 
 			// READ ONLY
 			isReadOnly && [
-				'pointer-events-none cursor-default select-none hover:outline-0 active:outline-0 group-focus:outline-0'
+				'pointer-events-none cursor-default select-none group-focus:outline-0 hover:outline-0 active:outline-0'
 			]
 		)}
 	>
@@ -102,7 +102,7 @@
 		{:else if value}
 			<!-- CHECK MARK -->
 			<svg
-				class="relative left-1 top-1 text-teal-500 group-disabled:text-zinc-500"
+				class="relative top-1 left-1 text-teal-500 group-disabled:text-zinc-500"
 				width="14"
 				height="14"
 				viewBox="0 0 31 24"
@@ -119,7 +119,7 @@
 		{:else}
 			<!-- X MARK -->
 			<svg
-				class="absolute left-1 top-1 text-red-500 group-disabled:text-zinc-500"
+				class="absolute top-1 left-1 text-red-500 group-disabled:text-zinc-500"
 				width="14"
 				height="14"
 				viewBox="0 0 24 25"

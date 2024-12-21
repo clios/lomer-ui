@@ -31,12 +31,12 @@
 	<select
 		class={twMerge(
 			// BASE
-			'mt-[.1rem] w-full min-w-max py-1 pl-2 pr-20', // width, padding, and margin
+			'mt-[.1rem] w-full min-w-max py-1 pr-20 pl-2', // width, padding, and margin
 			'rounded-md border dark:border-zinc-700', // border
 			'bg-white dark:bg-zinc-950', // background
-			'shadow-sm dark:shadow-none', // shadow
+			'shadow-xs dark:shadow-none', // shadow
 			'appearance-none overflow-hidden', // visual
-			'focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-cyan-500', // focusing
+			'focus:outline focus:outline-offset-2 focus:outline-cyan-500', // focusing
 			'disabled:cursor-default disabled:outline-0 disabled:hover:cursor-not-allowed', // disabled
 
 			// READ ONLY
@@ -58,7 +58,7 @@
 
 	{#if isLoading}
 		<svg
-			class="pointer-events-none absolute right-2 top-2 text-cyan-500"
+			class="pointer-events-none absolute top-2 right-2 text-cyan-500"
 			width="22"
 			height="22"
 			viewBox="0 0 24 24"
@@ -84,7 +84,7 @@
 		</svg>
 	{:else if isDisabled}
 		<svg
-			class="pointer-events-none absolute right-2 top-2 text-zinc-500"
+			class="pointer-events-none absolute top-2 right-2 text-zinc-500"
 			width="20"
 			height="20"
 			viewBox="0 0 24 24"
@@ -98,7 +98,7 @@
 	{:else}
 		<!-- CHEVRON DOWN ICON -->
 		<svg
-			class="pointer-events-none absolute right-2 top-[.4rem] text-zinc-500"
+			class="pointer-events-none absolute top-[.4rem] right-2 text-zinc-500"
 			width="24"
 			height="24"
 			viewBox="0 0 24 24"

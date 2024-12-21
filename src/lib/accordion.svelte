@@ -48,15 +48,15 @@
 			'group', // group
 			'w-full px-2 py-4', // box model
 			'flex items-center justify-between', // layout and positioning
-			'focus:underline focus:outline-none', // focusing
+			'focus:underline focus:outline-hidden', // focusing
 			'hover:underline', // hovering
 
 			// LOADING
-			isLoading && 'disabled:text-zinc-500 disabled:dark:text-zinc-500',
+			isLoading && 'disabled:text-zinc-500 dark:disabled:text-zinc-500',
 
 			// DISABLED
-			'disabled:text-zinc-400 disabled:dark:text-zinc-400', // text
-			'disabled:cursor-not-allowed disabled:outline-none' // visual
+			'disabled:text-zinc-400 dark:disabled:text-zinc-400', // text
+			'disabled:cursor-not-allowed disabled:outline-hidden' // visual
 		)}
 		{onclick}
 		disabled={isDisabled}
