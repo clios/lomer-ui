@@ -9,13 +9,12 @@
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageFooter from '$site/page-footer.svelte';
 	import PageHeader from '$site/page-header.svelte';
 	import Preview from '$site/preview.svelte';
-	import Prop from '$site/prop.svelte';
 	import StepperPanel from '$site/stepper-panel.svelte';
 	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
-	import Val from '$site/val.svelte';
 	import { toggleMode, mode } from 'mode-watcher';
 </script>
 
@@ -108,4 +107,11 @@
 			</Button>
 		</Preview>
 	</StepperPanel>
+
+	<PageFooter
+		prevLabel="Installation"
+		prevLink="/docs/installation"
+		nextLabel="CLI"
+		nextLink="/docs/cli"
+	/>
 </div>

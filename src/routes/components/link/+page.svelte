@@ -1,20 +1,19 @@
 <script lang="ts">
-	import Accordion from '$lib/accordion.svelte';
-	import Link from '$lib/link.svelte';
-	import Code from '$site//code.svelte';
 	import Cli from '$site/cli.svelte';
+	import Code from '$site//code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import HeroSection from './hero-section.svelte';
+	import Link from '$lib/link.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageFooter from '$site/page-footer.svelte';
 	import PageHeader from '$site/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
-	import Screen from '$site/screen.svelte';
 	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
 	import Val from '$site/val.svelte';
-	import HeroSection from './hero-section.svelte';
 </script>
 
 <OnThisPage>
@@ -96,4 +95,11 @@
 	<Preview>
 		<Link href="#" isLoading>lomer-ui</Link>
 	</Preview>
+
+	<PageFooter
+		prevLabel="Input"
+		prevLink="/components/input"
+		nextLabel="Radio"
+		nextLink="/components/radio"
+	/>
 </div>

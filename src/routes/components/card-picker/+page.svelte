@@ -6,12 +6,13 @@
 	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
+	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageFooter from '$site/page-footer.svelte';
 	import PageHeader from '$site/page-header.svelte';
 	import Preview from '$site/preview.svelte';
-	import Title from '$site/title.svelte';
 	import Prop from '$site/prop.svelte';
-	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
 	import SubTitle from '$site/sub-title.svelte';
+	import Title from '$site/title.svelte';
 
 	let value = $state('');
 </script>
@@ -122,4 +123,11 @@
 			<p>Card 1</p>
 		</CardPicker>
 	</Preview>
+
+	<PageFooter
+		prevLabel="Button"
+		prevLink="/components/button"
+		nextLabel="Checkbox"
+		nextLink="/components/checkbox"
+	/>
 </div>

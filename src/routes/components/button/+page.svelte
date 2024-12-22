@@ -2,19 +2,20 @@
 	import Button from '$lib/button.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
+	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import HeroSection from './hero-section.svelte';
+	import Icon from '@iconify/svelte';
+	import Link from '$lib/link.svelte';
+	import OnThisPage from '$site/on-this-page.svelte';
+	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
+	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageFooter from '$site/page-footer.svelte';
 	import PageHeader from '$site//page-header.svelte';
+	import Preview from '$site/preview.svelte';
 	import Prop from '$site//prop.svelte';
 	import SubTitle from '$site//sub-title.svelte';
 	import Title from '$site//title.svelte';
 	import Val from '$site//val.svelte';
-	import Link from '$lib/link.svelte';
-	import Icon from '@iconify/svelte';
-	import HeroSection from './hero-section.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
-	import Preview from '$site/preview.svelte';
-	import OnThisPage from '$site/on-this-page.svelte';
-	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
 </script>
 
 <OnThisPage>
@@ -185,4 +186,11 @@
 	<p>Add <Prop>size</Prop> property with <Val>small</Val> value.</p>
 	<Code code={`<Button size="small">Small</Button>`} language="xml" />
 	<Preview><Button size="small">Small</Button></Preview>
+
+	<PageFooter
+		prevLabel="Alert"
+		prevLink="/components/alert"
+		nextLabel="Card Picker"
+		nextLink="/components/card-picker"
+	/>
 </div>

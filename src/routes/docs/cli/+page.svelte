@@ -1,14 +1,15 @@
 <script lang="ts">
 	import Alert from '$lib/alert.svelte';
 	import Cli from '$site/cli.svelte';
+	import Icon from '@iconify/svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageFooter from '$site/page-footer.svelte';
 	import PageHeader from '$site/page-header.svelte';
 	import StepperPanel from '$site/stepper-panel.svelte';
 	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
-	import Icon from '@iconify/svelte';
 </script>
 
 <OnThisPage>
@@ -69,4 +70,11 @@
 		</p>
 		<p>Instead, it helps you kickstart building your own custom components.</p>
 	</StepperPanel>
+
+	<PageFooter
+		prevLabel="Dark Mode"
+		prevLink="/docs/dark-mode"
+		nextLabel="Accordion"
+		nextLink="/components/accordion"
+	/>
 </div>

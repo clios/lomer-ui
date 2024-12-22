@@ -1,17 +1,18 @@
 <script lang="ts">
-	import Input from '$lib/input.svelte';
-	import Code from '$site//code.svelte';
 	import Cli from '$site/cli.svelte';
+	import Code from '$site//code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import HeroSection from './hero-section.svelte';
+	import Input from '$lib/input.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageFooter from '$site/page-footer.svelte';
 	import PageHeader from '$site/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
 	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
-	import HeroSection from './hero-section.svelte';
 
 	let value = $state('');
 </script>
@@ -87,4 +88,11 @@
 	<Preview>
 		<Input isReadOnly value="lomer-ui" />
 	</Preview>
+
+	<PageFooter
+		prevLabel="Field"
+		prevLink="/components/field"
+		nextLabel="Link"
+		nextLink="/components/link"
+	/>
 </div>

@@ -1,21 +1,18 @@
 <script lang="ts">
-	import Button from '$lib/button.svelte';
+	import Checkbox from '$lib/checkbox.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
-	import PageHeader from '$site//page-header.svelte';
-	import Prop from '$site//prop.svelte';
-	import SubTitle from '$site//sub-title.svelte';
-	import Title from '$site//title.svelte';
-	import { scrollToId } from '$site/helper.ts';
+	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import Screen from '$site/screen.svelte';
-	import Icon from '@iconify/svelte';
-	import HeroSection from './hero-section.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import PageFooter from '$site/page-footer.svelte';
+	import PageHeader from '$site//page-header.svelte';
 	import Preview from '$site/preview.svelte';
-	import Checkbox from '$lib/checkbox.svelte';
+	import Prop from '$site//prop.svelte';
+	import SubTitle from '$site//sub-title.svelte';
+	import Title from '$site//title.svelte';
 
 	let value = $state(false);
 </script>
@@ -130,4 +127,11 @@
 			</p>
 		</Checkbox>
 	</Preview>
+
+	<PageFooter
+		prevLabel="Card Picker"
+		prevLink="/components/card-picker"
+		nextLabel="Dialog"
+		nextLink="/components/dialog"
+	/>
 </div>

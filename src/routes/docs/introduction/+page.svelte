@@ -1,8 +1,10 @@
 <script>
 	import Accordion from '$lib/accordion.svelte';
 	import Icon from '@iconify/svelte';
+	import Link from '$lib/link.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
+	import PageFooter from '$site/page-footer.svelte';
 	import PageHeader from '$site/page-header.svelte';
 	import Title from '$site/title.svelte';
 </script>
@@ -71,8 +73,39 @@
 	</div>
 
 	<Title id="2">FAQ</Title>
-	<Accordion id="2.1" title="Is it free to use?">
-		<p>Absolutely! No attribution is required.</p>
-		<p>Feel free to reach me out—I’d love to hear if you wanna use it!</p>
+	<Accordion id="2.1" title="Can I contribute?">
+		<p>Yes, you can! Feel free to open a pull request.</p>
+		<p>
+			You can also reach me out if you have any suggestions or feedback. I’d
+			love to hear from you!
+		</p>
 	</Accordion>
+
+	<Accordion id="2.2" title="Is it production-ready?">
+		<p>Yes, it is! I’ve been using it in my projects.</p>
+		<p>
+			However, please note that it’s still in its early stage. I’m constantly
+			improving it.
+		</p>
+	</Accordion>
+
+	<Accordion id="2.3" title="How can I support you?">
+		<p>
+			Feel free to star the <Link
+				href="https://github.com/clios/lomer-ui"
+				target="_blank">repo</Link
+			> on GitHub.
+		</p>
+		<p>
+			You can also share it with your friends or on social media. I’d really
+			appreciate it!
+		</p>
+	</Accordion>
+
+	<Accordion id="2.4" title="Can I use it in my commercial projects?">
+		<p>Yes, you can!</p>
+		<p>Feel free to use it in your personal or commercial projects.</p>
+	</Accordion>
+
+	<PageFooter nextLabel="Installation" nextLink="/docs/installation" />
 </div>

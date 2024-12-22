@@ -8,6 +8,7 @@
 	import Icon from '@iconify/svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
+	import PageFooter from '$site/page-footer.svelte';
 	import PageHeader from '$site//page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site//prop.svelte';
@@ -63,4 +64,11 @@
 			</div>
 		</Dialog>
 	</Preview>
+
+	<PageFooter
+		prevLabel="Checkbox"
+		prevLink="/components/checkbox"
+		nextLabel="Drawer"
+		nextLink="/components/drawer"
+	/>
 </div>

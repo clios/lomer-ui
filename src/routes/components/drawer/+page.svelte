@@ -8,6 +8,7 @@
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageFooter from '$site/page-footer.svelte';
 	import PageHeader from '$site//page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site//prop.svelte';
@@ -157,4 +158,11 @@
 			<div class="sticky bottom-0 w-full">Fixed footer</div>
 		</Drawer>
 	</Preview>
+
+	<PageFooter
+		prevLabel="Dialog"
+		prevLink="/components/dialog"
+		nextLabel="Field"
+		nextLink="/components/field"
+	/>
 </div>

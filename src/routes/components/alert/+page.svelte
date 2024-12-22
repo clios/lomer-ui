@@ -9,6 +9,7 @@
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
+	import PageFooter from '$site/page-footer.svelte';
 	import PageHeader from '$site/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
@@ -106,4 +107,11 @@
 			</div>
 		</Alert>
 	</Preview>
+
+	<PageFooter
+		prevLabel="Accordion"
+		prevLink="/components/accordion"
+		nextLabel="Button"
+		nextLink="/components/button"
+	/>
 </div>
