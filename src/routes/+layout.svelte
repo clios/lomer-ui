@@ -9,6 +9,7 @@
 	import Drawer from '$lib/drawer.svelte';
 	import Button from '$lib/button.svelte';
 	import Icon from '@iconify/svelte';
+	import ScrollGradientFooter from '$site/scroll-gradient-footer.svelte';
 
 	let { children } = $props();
 	let elPage: HTMLDivElement;
@@ -61,7 +62,7 @@
 	<SidebarLink href="/components/switch" label="Switch" />
 	<SidebarLink href="/components/textarea" label="Textarea" />
 
-	<div class="my-16 mr-8 flex justify-end">
+	<div class="mx-8 mt-8 mr-8 mb-32 flex justify-end">
 		<Link
 			href="https://github.com/clios"
 			target="_blank"
@@ -82,6 +83,7 @@
 			)}
 		>
 			{@render sidebar()}
+			<ScrollGradientFooter />
 		</aside>
 		<div class="relative px-4 pb-4 lg:ml-64">
 			<div bind:this={elPage} id="page" class="pt-12 lg:pt-4"></div>
@@ -99,10 +101,16 @@
 					</Button>
 				</div>
 			</div>
-			<Drawer class="flex w-[400px] flex-col gap-2" bind:isOpen position="left">
+			<Drawer
+				class="flex w-screen flex-col gap-2 sm:w-[320px]"
+				bind:isOpen
+				position="left"
+			>
 				{@render sidebar()}
+				<ScrollGradientFooter />
 			</Drawer>
 			{@render children()}
+			<ScrollGradientFooter />
 		</div>
 	</div>
 </div>

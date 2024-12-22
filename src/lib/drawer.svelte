@@ -161,8 +161,9 @@
 					'relative',
 
 					// POSITION: LEFT & RIGHT
-					['left', 'right'].includes(position) &&
-						'h-[calc(100vh-3.8rem)] overflow-y-auto p-6',
+					['left', 'right'].includes(position) && title
+						? 'h-[calc(100vh-3.8rem)] overflow-y-auto p-6'
+						: 'h-screen overflow-y-auto p-6',
 
 					// POSITION: TOP & BOTTOM
 					['top', 'bottom'].includes(position) && 'overflow-y-auto p-6',
