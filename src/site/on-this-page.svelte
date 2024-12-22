@@ -13,7 +13,12 @@
 				Become a sponsor and help me enhance the development experience for
 				Svelte users!
 			</p>
-			<Button class="mt-4">Become a Sponsor</Button>
+			<Button
+				class="mt-4"
+				onclick={() =>
+					window.open('https://github.com/sponsors/clios', '_blank')}
+				>Become a Sponsor</Button
+			>
 		</div>
 	</aside>
 </div>
