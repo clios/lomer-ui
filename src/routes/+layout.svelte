@@ -15,10 +15,6 @@
 	let elPage: HTMLDivElement;
 	let isOpen = $state(false);
 
-	$effect(() => {
-		console.log('🚀 ~ $effect ~ isOpen:', isOpen);
-	});
-
 	afterNavigate(() => {
 		elPage.scrollIntoView();
 	});
