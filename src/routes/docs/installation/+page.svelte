@@ -20,12 +20,9 @@
 </script>
 
 <OnThisPage>
-	<OnThisPageBtn id="1" title="Using the CLI Tool" />
-	<OnThisPageSubBtn id="1.1" title="Congifure Tailwind CSS" />
-	<OnThisPageSubBtn id="1.2" title="Add components" />
-	<OnThisPageBtn id="2" title="Installing the Package" />
-	<OnThisPageSubBtn id="2.1" title="Congifure Tailwind CSS" />
-	<OnThisPageSubBtn id="2.2" title="Install lomer-ui" />
+	<OnThisPageBtn id="1" title="Setup" />
+	<OnThisPageSubBtn id="1.1" title="Dark Mode" />
+	<OnThisPageSubBtn id="1.2" title="That's it!" />
 </OnThisPage>
 
 <div class="flex flex-col gap-4 xl:pr-80">
@@ -34,29 +31,6 @@
 		sub="Docs"
 		info="Getting started with lomer-ui is simple!"
 	/>
-
-	<p class="mt-8 text-xl text-zinc-500 dark:text-zinc-400">
-		Which Option Should You <span
-			class="font-semibold text-zinc-950 underline dark:text-white">Choose</span
-		>?
-	</p>
-	<p class="text-xl text-zinc-500 dark:text-zinc-400">
-		- Use the <span class="font-semibold text-zinc-950 dark:text-white"
-			>CLI</span
-		>
-		if you want to
-		<span class="font-semibold text-zinc-950 dark:text-white"
-			>customize the code</span
-		> and have more control over your components.
-	</p>
-	<p class="text-xl text-zinc-500 dark:text-zinc-400">
-		- Install the <span class="font-semibold text-zinc-950 dark:text-white"
-			>package</span
-		>
-		if you prefer a straightforward,
-		<span class="font-semibold text-zinc-950 dark:text-white">ready-to-use</span
-		> solution.
-	</p>
 
 	<Alert class="mt-8 flex gap-2">
 		<Icon icon="mdi:terminal-line" width={24} />
@@ -76,10 +50,10 @@
 		</div>
 	</Alert>
 
-	<Title id="1">Using the CLI Tool</Title>
+	<Title id="1">Setup</Title>
 
 	<SubTitle id="1.1">
-		<span class="font-mono">1.</span> Configure Tailwind CSS
+		<span class="font-mono">1.</span> Dark Mode
 	</SubTitle>
 	<StepperPanel>
 		<p class="mt-4">Use a selector-based strategy.</p>
@@ -96,7 +70,7 @@
 	</StepperPanel>
 
 	<SubTitle id="1.2">
-		<span class="font-mono">2.</span> That's it.
+		<span class="font-mono">2.</span> That's it!
 	</SubTitle>
 	<StepperPanel final>
 		<p>
@@ -111,52 +85,6 @@
 			code={`import Button from '$lib/components/ui/button.svelte'`}
 			language="javascript"
 		/>
-		<Code code={`<Button>Button</Button>`} language="xml" />
-		<Preview>
-			<Button>Button</Button>
-		</Preview>
-	</StepperPanel>
-
-	<Title id="2">Installing the Package</Title>
-	<SubTitle id="2.1">
-		<span class="font-mono">1.</span> Configure Tailwind CSS
-	</SubTitle>
-	<StepperPanel>
-		<p class="mt-4">Use a selector-based strategy.</p>
-		<p>Add additional content sources</p>
-		<Code
-			code={`@variant dark (&:where(.dark, .dark *));` +
-				`\n@source "../node_modules/lomer-ui/dist";`}
-			language="less"
-		/>
-		<p>
-			See <Link
-				class="underline"
-				target="_blank"
-				href="https://tailwindcss.com/docs/v4-beta#configuring-dark-mode"
-			>
-				Tailwind CSS v4 Dark Mode
-			</Link> for more details.
-		</p>
-		<p>
-			See <Link
-				class="underline"
-				target="_blank"
-				href="https://tailwindcss.com/docs/v4-beta#adding-content-sources"
-			>
-				Tailwind CSS v4 Adding Content Source
-			</Link> for more details.
-		</p>
-	</StepperPanel>
-
-	<SubTitle id="2.2">
-		<span class="font-mono">2.</span> Install lomer-ui
-	</SubTitle>
-	<StepperPanel final>
-		<p>Run this command:</p>
-		<Cli code="npm install lomer-ui" />
-		<p class="mt-2">Import the components in your project.</p>
-		<Code code={`import { Button } from 'lomer-ui'`} language="javascript" />
 		<Code code={`<Button>Button</Button>`} language="xml" />
 		<Preview>
 			<Button>Button</Button>

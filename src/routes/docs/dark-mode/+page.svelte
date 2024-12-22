@@ -61,10 +61,13 @@
 			<File>+layout.svelte</File> file.
 		</p>
 		<Code
-			code={`import { ModeWatcher } from "mode-watcher";`}
+			code={`import { ModeWatcher } from "mode-watcher";\nlet { children } = $props();`}
 			language="javascript"
 		/>
-		<Code code={`<ModeWatcher />\n<slot />`} language="xml" />
+		<Code
+			code={`<ModeWatcher defaultMode="system" />\n{@render children()}`}
+			language="xml"
+		/>
 	</StepperPanel>
 
 	<SubTitle id="1.3">
@@ -74,16 +77,15 @@
 		<p>Use the toggleMode function and $mode to toggle:</p>
 		<Code
 			code={`import Button from '$lib/components/ui/button.svelte';` +
-				`\nimport Icon from '@iconify/svelte';` +
 				`\nimport { toggleMode, mode } from 'mode-watcher';`}
 			language="javascript"
 		/>
 		<Code
 			code={`<Button size="icon" onclick={toggleMode}>` +
 				`\n\t{#if $mode === 'light'}` +
-				`\n\t\t<Icon \n\t\t\ticon="line-md:moon-to-sunny-outline-loop-transition" \n\t\t\twidth={24} \n\t\t\theight={24} \n\t\t/>` +
+				`\n\t\t...` +
 				`\n\t{:else}` +
-				`\n\t\t<Icon \n\t\t\ticon="line-md:sunny-outline-to-moon-alt-loop-transition" \n\t\t\twidth={24} \n\t\t\theight={24} \n\t\t/>` +
+				`\n\t\t...` +
 				`\n\t{/if}` +
 				`\n</Button>`}
 			language="xml"

@@ -2,23 +2,22 @@
 	import Accordion from '$lib/accordion.svelte';
 	import Alert from '$lib/alert.svelte';
 	import Button from '$lib/button.svelte';
-	import Cli from '$site/cli.svelte';
-	import Icon from '@iconify/svelte';
-	import PreviewComponent from './preview-component.svelte';
-	import { goto } from '$app/navigation';
-	import { version } from '../../package.json';
 	import CardPicker from '$lib/card-picker.svelte';
 	import Checkbox from '$lib/checkbox.svelte';
+	import Cli from '$site/cli.svelte';
+	import Code from '$site/code.svelte';
 	import Dialog from '$lib/dialog.svelte';
 	import Drawer from '$lib/drawer.svelte';
 	import Field from '$lib/field.svelte';
+	import Icon from '@iconify/svelte';
 	import Input from '$lib/input.svelte';
 	import Link from '$lib/link.svelte';
-	import { Radio } from '$lib/index.js';
+	import PreviewComponent from './preview-component.svelte';
+	import Radio from '$lib/radio.svelte';
 	import Select from '$lib/select.svelte';
 	import Switch from '$lib/switch.svelte';
 	import Textarea from '$lib/textarea.svelte';
-	import Code from '$site/code.svelte';
+	import { goto } from '$app/navigation';
 
 	let cardValue = $state('');
 	let checkboxValue = $state(false);
@@ -31,19 +30,21 @@
 </script>
 
 <div class="p-8">
-	<div class="flex justify-between">
-		<p class="flex items-center gap-3">
-			Svelte <span class="text-sm text-zinc-500"> & </span> Tailwind CSS
-		</p>
-		<p class="font-mono">v{version}</p>
-	</div>
+	<p class="flex items-center gap-3">
+		Svelte <span class="text-sm text-zinc-500"> & </span> Tailwind CSS
+	</p>
 
-	<div class="my-32">
+	<div class="my-16">
 		<p class="text-center text-6xl">lomer-ui</p>
-		<p class="text-center text-xl">Keep It Simply Styled</p>
+		<p class="text-center text-2xl text-zinc-500 dark:text-zinc-400">
+			Keep It Simply Styled
+		</p>
+		<p class="mt-16 text-center text-xl">
+			Minimalist UI library for SvelteKit powered by Tailwind CSS.
+		</p>
 
 		<div class="mt-16 flex justify-center gap-4">
-			<Button onclick={() => goto('/docs/installation')}>Get Started</Button>
+			<Button onclick={() => goto('/docs/introduction')}>Get Started</Button>
 			<Button
 				variant="secondary"
 				onclick={() =>
@@ -59,28 +60,31 @@
 		<div
 			class="mb-8 flex w-[800px] flex-col justify-center border-b border-zinc-500 pb-1"
 		>
-			<p class="text-center text-2xl">Minimal Setup</p>
+			<p class="text-center text-2xl text-zinc-500 dark:text-zinc-400">
+				Minimal Setup
+			</p>
 		</div>
 	</div>
 
-	<div class="mb-32 flex flex-col items-center gap-2">
-		<p class="text-center text-xl">Add Dark Mode to your TailwindCSS.</p>
+	<div
+		class="mb-32 flex flex-col items-center gap-2 text-zinc-500 dark:text-zinc-400"
+	>
+		<p class="text-center text-xl">
+			Make sure you enabled <span
+				class="font-semibold text-zinc-950 dark:text-white">Dark Mode</span
+			> to your TailwindCSS.
+		</p>
 		<div class="w-[500px]">
 			<Code code={`@variant dark (&:where(.dark, .dark *));`} language="less" />
 		</div>
-		<p class="mt-8 text-center text-xl">
-			Done! Start build your components with CLI.
+		<p class="mt-8 text-center text-xl">That's it!</p>
+		<p class="text-center text-xl">
+			<span class="font-semibold text-zinc-950 dark:text-white">Start</span>
+			building your own components
+			<span class="font-semibold text-zinc-950 dark:text-white">with CLI</span>.
 		</p>
 		<div class="w-80">
 			<Cli code="npx lomer-ui add" />
-		</div>
-	</div>
-
-	<div class="flex justify-center">
-		<div
-			class="mb-8 flex w-[800px] flex-col justify-center border-b border-zinc-500 pb-1"
-		>
-			<p class="text-center text-2xl">Components</p>
 		</div>
 	</div>
 

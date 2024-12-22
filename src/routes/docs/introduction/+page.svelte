@@ -8,7 +8,7 @@
 </script>
 
 <OnThisPage>
-	<OnThisPageBtn id="1" title="Core Concept" />
+	<OnThisPageBtn id="1" title="Concept" />
 	<OnThisPageBtn id="2" title="FAQ" />
 </OnThisPage>
 
@@ -16,31 +16,31 @@
 	<PageHeader
 		title="Introduction"
 		sub="Docs"
-		info="Here are my thoughts on lomer-ui."
+		info="Standalone components for your next project."
 	/>
 
-	<div class="flex flex-col gap-1 text-xl text-zinc-500 dark:text-zinc-400">
+	<div
+		class="flex flex-col gap-1 rounded border border-zinc-300 p-4 text-xl text-zinc-500 dark:border-zinc-700 dark:text-zinc-400"
+	>
 		<p>
 			I want to build lomer-ui, focusing on a better <span
 				class="font-semibold text-zinc-950 dark:text-white"
 				>development experience</span
 			>.
 		</p>
-		<p class="font-semibold text-zinc-950 dark:text-white">
-			Quick Start. Minimal Configuration. Less Code. Easy to Implement.
-		</p>
-		<p>Not built on any existing UI library &mdash; it is the UI library.</p>
+		<p>Not built on any existing UI library &mdash; this is the UI library.</p>
 
 		<p class="mt-4">Comes with a CLI tool for copy-pasting.</p>
-		<p>Also available as an npm package.</p>
+		<p class="font-semibold text-zinc-950 dark:text-white">
+			Quick Start. Easy to Implement.
+		</p>
 
-		<p class="mt-4">Your feedback and support mean a lot.</p>
-		<p>Thank you for taking the time to check this out.</p>
+		<p class="mt-4">Feel free to let me know what you think.</p>
 
 		<p class="mt-4">Clios, lomer-ui dev.</p>
 	</div>
 
-	<Title id="1">Core Concept</Title>
+	<Title id="1">Concept</Title>
 	<div>
 		<p class="flex items-center gap-2 text-xl font-semibold">
 			<Icon class="inline text-zinc-500" icon="bi:x-diamond-fill" width={16} /> Less
@@ -71,24 +71,8 @@
 	</div>
 
 	<Title id="2">FAQ</Title>
-	<div>
-		<Accordion id="2.1" title="Is it free to use?">
-			<p>Yes, it is! No attribution is required.</p>
-			<p>If you do use it, feel free to reach out—I’d love to hear about it!</p>
-		</Accordion>
-		<Accordion id="2.1" title="Why copy/paste and packaged?">
-			<p>
-				Copying and pasting allows you to easily customize the code to fit your
-				style and implementation needs.
-			</p>
-			<p>
-				Installing it as a package provides a ready-to-use solution that focuses
-				on styling.
-			</p>
-			<p>
-				Both options offer flexibility, so you can choose what works best for
-				you!
-			</p>
-		</Accordion>
-	</div>
+	<Accordion id="2.1" title="Is it free to use?">
+		<p>Absolutely! No attribution is required.</p>
+		<p>Feel free to reach me out—I’d love to hear if you wanna use it!</p>
+	</Accordion>
 </div>

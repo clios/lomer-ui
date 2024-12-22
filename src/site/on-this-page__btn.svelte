@@ -6,7 +6,7 @@
 
 <button
 	onclick={() => scrollToId(id)}
-	class="text-left font-semibold text-zinc-500 hover:text-cyan-500 dark:text-zinc-400"
+	class="cursor-pointer text-left font-semibold text-zinc-500 hover:text-cyan-500 dark:text-zinc-400"
 >
 	{title}
 </button>

@@ -2,11 +2,10 @@
 	import '../app.css';
 	import CardToggleTheme from '$site/card__toggle-theme.svelte';
 	import Link from '$lib/link.svelte';
+	import SidebarLink from './sidebar-link.svelte';
 	import { ModeWatcher } from 'mode-watcher';
 	import { afterNavigate } from '$app/navigation';
 	import { twMerge } from 'tailwind-merge';
-	import SidebarLink from './sidebar-link.svelte';
-	import { version } from '../../package.json';
 
 	let elPage: HTMLDivElement;
 
@@ -31,12 +30,10 @@
 						class="absolute top-0 size-7 rotate-45 outline -outline-offset-2"
 					></div>
 				</div>
-				<div>
-					<Link href="/" class="font-mono text-xl leading-3 no-underline">
-						lomer-ui
-					</Link>
-					<p class="font-mono text-sm">v{version}</p>
-				</div>
+
+				<Link href="/" class="font-mono text-xl leading-3 no-underline">
+					lomer-ui
+				</Link>
 			</div>
 
 			<CardToggleTheme />

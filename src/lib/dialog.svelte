@@ -93,14 +93,14 @@
 								<animate
 									fill="freeze"
 									attributeName="fill-opacity"
-									begin="0.6s"
-									dur="0.5s"
+									begin="0.3s"
+									dur="0.2s"
 									values="0;1"
 								/>
 								<animate
 									fill="freeze"
 									attributeName="stroke-dashoffset"
-									dur="0.6s"
+									dur="0.3s"
 									values="64;0"
 								/>
 							</path>
@@ -113,7 +113,7 @@
 								<animate
 									fill="freeze"
 									attributeName="stroke-dashoffset"
-									begin="1.1s"
+									begin=".6s"
 									dur="0.2s"
 									values="8;0"
 								/>
