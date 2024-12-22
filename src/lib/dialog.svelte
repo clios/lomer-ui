@@ -43,7 +43,8 @@
 			class={twMerge(
 				// BASE
 				'relative z-10', // layout and positioning
-				'w-screen sm:w-[500px] ', // width
+				'text-zinc-950 dark:text-zinc-50', // text
+				'w-screen sm:w-[500px]', // width
 				'rounded-lg border border-zinc-200 p-6 dark:border-zinc-50', // border
 				'bg-white dark:bg-zinc-950', // background
 				'shadow-md dark:shadow-none', // shadow
@@ -59,7 +60,6 @@
 				type="button"
 				class={twMerge(
 					'absolute top-4 right-4', // layout and positioning
-					'text-zinc-950 dark:text-zinc-50', // text
 					'rounded-full', // border
 					'bg-zinc-50/0 dark:bg-zinc-950/0', // background
 					'active:outline-2 active:outline-offset-0', // color

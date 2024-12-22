@@ -18,7 +18,7 @@
 	import Select from '$lib/select.svelte';
 	import Switch from '$lib/switch.svelte';
 	import Textarea from '$lib/textarea.svelte';
-	import Screen from '$site/screen.svelte';
+	import Code from '$site/code.svelte';
 
 	let cardValue = $state('');
 	let checkboxValue = $state(false);
@@ -59,20 +59,20 @@
 		<div
 			class="mb-8 flex w-[800px] flex-col justify-center border-b border-zinc-500 pb-1"
 		>
-			<p class="text-center text-2xl">Choose Your Setup</p>
+			<p class="text-center text-2xl">Minimal Setup</p>
 		</div>
 	</div>
 
 	<div class="mb-32 flex flex-col items-center gap-2">
-		<p class="text-center text-xl">Build your components with the CLI,</p>
-		<div class="w-80">
-			<Cli code="npx lomer-ui add [component]" />
+		<p class="text-center text-xl">Add Dark Mode to your TailwindCSS.</p>
+		<div class="w-[500px]">
+			<Code code={`@variant dark (&:where(.dark, .dark *));`} language="less" />
 		</div>
-		<p class="mt-4 text-center text-xl">
-			<span class="text-zinc-500">Or</span> use the package to get started.
+		<p class="mt-8 text-center text-xl">
+			Done! Start build your components with CLI.
 		</p>
 		<div class="w-80">
-			<Cli code="npm install lomer-ui" />
+			<Cli code="npx lomer-ui add" />
 		</div>
 	</div>
 

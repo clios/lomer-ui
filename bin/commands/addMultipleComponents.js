@@ -28,6 +28,8 @@ const COMPONENTS = [
 
 export async function addMultipleComponents() {
 	try {
+		await checkSvelteKitApp();
+
 		const { selectedComponents } = await prompts({
 			type: 'multiselect',
 			name: 'selectedComponents',
@@ -44,7 +46,6 @@ export async function addMultipleComponents() {
 			return;
 		}
 
-		await checkSvelteKitApp();
 		await checkOrInstallTailwindCSS();
 		await checkOrInstallTailwindMerge();
 

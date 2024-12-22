@@ -35,10 +35,6 @@
 			"svelte": "./dist/index.js"
 		}
 	},
-	"peerDependencies": {
-		"svelte": "^5.0.0",
-		"tailwindcss": "^4.0.0-beta.8"
-	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20241112.0",
 		"@iconify/svelte": "^4.0.2",
