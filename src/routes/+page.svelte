@@ -30,17 +30,37 @@
 </script>
 
 <div class="p-8">
-	<p class="flex items-center gap-3">
-		Svelte <span class="text-sm text-zinc-500"> & </span> Tailwind CSS
+	<p class="flex items-end">
+		Svelte<span class="pl-1 text-sm text-cyan-500">v5</span>
+		<span class="px-2 text-sm text-zinc-500"> & </span> Tailwind CSS
+		<span class="pl-1 text-sm text-cyan-500">v4</span>
 	</p>
 
-	<div class="my-16">
-		<p class="text-center text-6xl">lomer-ui</p>
+	<div class="my-16 text-zinc-500 dark:text-zinc-400">
+		<p class="mt-16 text-center text-xl">
+			<span class="font-semibold text-zinc-950 dark:text-white">Minimalist</span
+			> UI library for SvelteKit powered by Tailwind CSS.
+		</p>
+		<p class="mt-16 text-center text-6xl text-zinc-950 dark:text-white">
+			lomer-ui
+		</p>
 		<p class="text-center text-2xl text-zinc-500 dark:text-zinc-400">
 			Keep It Simply Styled
 		</p>
 		<p class="mt-16 text-center text-xl">
-			Minimalist UI library for SvelteKit powered by Tailwind CSS.
+			A dead-simple <span class="font-semibold text-zinc-950 dark:text-white"
+				>CLI tool</span
+			>
+			to
+			<span class="font-semibold text-zinc-950 dark:text-white">instant</span>ly
+			kickstart your
+			<span class="font-semibold text-zinc-950 dark:text-white">components</span
+			>.
+		</p>
+		<p class="text-center text-xl">
+			No extra UI libraries required—just clean, standalone code <span
+				class="font-semibold text-zinc-950 dark:text-white">ready to use</span
+			>.
 		</p>
 
 		<div class="mt-16 flex justify-center gap-4">
