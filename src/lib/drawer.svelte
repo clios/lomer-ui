@@ -7,7 +7,7 @@
 		children?: Snippet;
 		class?: string;
 		isOpen: boolean;
-		title: string;
+		title?: string;
 		position?: 'left' | 'right' | 'top' | 'bottom';
 	};
 
@@ -25,7 +25,7 @@
 	<div
 		class={twMerge(
 			// BASE
-			'fixed top-0 right-0 bottom-0 left-0 z-50', // position
+			'fixed top-0 right-0 bottom-0 left-0 z-[999]', // position
 
 			// BACKGROUND
 			'backdrop-blur-xs', // blue
@@ -46,7 +46,7 @@
 			}}
 			class={twMerge(
 				// BASE
-				'absolute z-10', // layout and positioning
+				'absolute z-[999]', // layout and positioning
 				'border-zinc-300 dark:border-zinc-700', // box model
 				'bg-white dark:bg-zinc-950', // background
 				'shadow-md dark:shadow-none', // shadow
@@ -70,7 +70,7 @@
 			<button
 				type="button"
 				class={twMerge(
-					'absolute top-4 right-4', // layout and positioning
+					'absolute top-4 right-4 z-[999]', // layout and positioning
 					'text-zinc-950 dark:text-zinc-50', // text
 					'rounded-full', // border
 					'bg-zinc-50/0 dark:bg-zinc-950/0', // background
@@ -142,13 +142,15 @@
 			</button>
 
 			<!-- HEADER -->
-			<p
-				in:fade={{ delay: 200 }}
-				out:fade={{ duration: 150 }}
-				class="p-6 text-xl leading-3 font-semibold shadow-xs dark:border-b dark:border-zinc-700 dark:shadow-none"
-			>
-				{title}
-			</p>
+			{#if title}
+				<p
+					in:fade={{ delay: 200 }}
+					out:fade={{ duration: 150 }}
+					class="p-6 text-xl leading-3 font-semibold shadow-xs dark:border-b dark:border-zinc-700 dark:shadow-none"
+				>
+					{title}
+				</p>
+			{/if}
 
 			<!-- BODY -->
 			<div

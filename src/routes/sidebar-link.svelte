@@ -6,13 +6,15 @@
 	type Props = {
 		label: string;
 		href: string;
+		onclick?: () => void;
 	};
 
-	let { label, href }: Props = $props();
+	let { label, href, onclick }: Props = $props();
 </script>
 
 <Link
 	{href}
+	{onclick}
 	caret
 	class={twMerge(
 		'pl-8 no-underline',

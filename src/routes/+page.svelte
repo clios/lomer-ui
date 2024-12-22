@@ -29,12 +29,28 @@
 	let selectValue = $state('');
 </script>
 
-<div class="p-8">
-	<p class="flex items-end">
-		Svelte<span class="pl-1 text-sm text-cyan-500">v5</span>
-		<span class="px-2 text-sm text-zinc-500"> & </span> Tailwind CSS
-		<span class="pl-1 text-sm text-cyan-500">v4</span>
-	</p>
+<div class="px-8 py-4">
+	<div class="flex flex-wrap justify-between gap-x-8">
+		<p class="flex items-end">
+			Svelte<span class="mb-[1px] pl-1 text-sm text-cyan-700 dark:text-cyan-500"
+				>v5</span
+			>
+			<span class="px-2 text-sm text-zinc-500"> & </span> Tailwind CSS
+			<span class="mb-[1px] pl-1 text-sm text-cyan-700 dark:text-cyan-500"
+				>v4</span
+			>
+		</p>
+		<Link
+			class="hidden items-center no-underline sm:flex"
+			href="https://github.com/sponsors/clios"
+			target="_blank"
+			>Sponsor <Icon
+				class="inline text-cyan-700 dark:text-cyan-500"
+				icon="mdi:heart-outline"
+				width={20}
+			/></Link
+		>
+	</div>
 
 	<div class="my-16 text-zinc-500 dark:text-zinc-400">
 		<p class="mt-16 text-center text-xl">
