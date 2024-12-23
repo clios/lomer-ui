@@ -96,7 +96,7 @@
 	<PageFooter
 		prevLabel="Link"
 		prevLink="/components/link"
-		nextLabel="Select"
-		nextLink="/components/select"
+		nextLabel="Scroll Area"
+		nextLink="/components/scroll-area"
 	/>
 </div>

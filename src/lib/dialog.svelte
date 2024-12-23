@@ -24,7 +24,7 @@
 		class={twMerge(
 			// BASE
 			'grid place-content-center', // layout
-			'fixed top-0 right-0 bottom-0 left-0 z-50', // position
+			'fixed top-0 right-0 bottom-0 left-0 z-[999]', // position
 
 			// BACKGROUND
 			'backdrop-blur-xs', // blue
@@ -45,7 +45,7 @@
 				'relative z-10', // layout and positioning
 				'text-zinc-950 dark:text-zinc-50', // text
 				'w-screen sm:w-[500px]', // width
-				'rounded-lg border border-zinc-200 p-6 dark:border-zinc-50', // border
+				'border-y border-zinc-200 p-6 sm:rounded-lg sm:border dark:border-zinc-50', // border
 				'bg-white dark:bg-zinc-950', // background
 				'shadow-md dark:shadow-none', // shadow
 				'transition-all', // animation

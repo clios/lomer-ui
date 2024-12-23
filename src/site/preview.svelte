@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="mb-8 overflow-hidden rounded-sm border border-zinc-300 dark:border-zinc-700"
+	class="mb-8 overflow-hidden rounded-sm border border-zinc-300 shadow dark:border-zinc-700 dark:shadow-none"
 >
 	<p
 		class="bg-zinc-300 px-4 py-1 text-zinc-950 dark:bg-zinc-700 dark:text-zinc-50"

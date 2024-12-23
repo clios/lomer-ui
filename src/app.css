@@ -5,9 +5,6 @@
 
 @variant dark (&:where(.dark, .dark *));
 
-@theme {
-}
-
 ::selection {
 	background-color: #06b6d4 !important;
 	color: #ffffff !important;
@@ -16,8 +13,4 @@
 body {
 	font-family: 'Fira Code', Courier, monospace;
 	font-family: 'Oxygen', Courier, sans-serif;
-}
-
-::-webkit-scrollbar {
-	width: 0px;
 }

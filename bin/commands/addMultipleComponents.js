@@ -21,6 +21,7 @@ const COMPONENTS = [
 	'input',
 	'link',
 	'radio',
+	'scroll-area',
 	'select',
 	'switch',
 	'textarea'

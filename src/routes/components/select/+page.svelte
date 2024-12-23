@@ -135,8 +135,8 @@
 	</Preview>
 
 	<PageFooter
-		prevLabel="Radio"
-		prevLink="/components/radio"
+		prevLabel="Scroll Area"
+		prevLink="/components/scroll-area"
 		nextLabel="Switch"
 		nextLink="/components/switch"
 	/>

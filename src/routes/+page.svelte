@@ -18,6 +18,7 @@
 	import Switch from '$lib/switch.svelte';
 	import Textarea from '$lib/textarea.svelte';
 	import { goto } from '$app/navigation';
+	import ScrollArea from '$lib/scroll-area.svelte';
 
 	let cardValue = $state('');
 	let checkboxValue = $state(false);
@@ -29,7 +30,7 @@
 	let selectValue = $state('');
 </script>
 
-<div class="px-8 py-4">
+<div class="lg:p-4">
 	<div class="flex flex-wrap justify-between gap-x-8">
 		<p class="flex items-end">
 			Svelte<span class="mb-[1px] pl-1 text-sm text-cyan-700 dark:text-cyan-500"
@@ -110,23 +111,32 @@
 				class="font-semibold text-zinc-950 dark:text-white">Dark Mode</span
 			> to your TailwindCSS.
 		</p>
-		<div class="w-[500px]">
-			<Code code={`@variant dark (&:where(.dark, .dark *));`} language="less" />
-		</div>
+		<ScrollArea
+			class="w-[calc(100vw-2rem)] overflow-x-auto rounded sm:w-[420px]"
+		>
+			<div class="w-full">
+				<Code
+					code={`@variant dark (&:where(.dark, .dark *));`}
+					language="less"
+				/>
+			</div>
+		</ScrollArea>
 		<p class="mt-8 text-center text-xl">That's it!</p>
 		<p class="text-center text-xl">
 			<span class="font-semibold text-zinc-950 dark:text-white">Start</span>
 			building your own components
 			<span class="font-semibold text-zinc-950 dark:text-white">with CLI</span>.
 		</p>
-		<div class="w-80">
+		<div class="w-56">
 			<Cli code="npx lomer-ui add" />
 		</div>
 	</div>
 
-	<div class="grid grid-cols-3 gap-4">
+	<div
+		class="sm:flex sm:flex-col sm:items-center lg:grid lg:grid-cols-2 lg:gap-4 2xl:grid-cols-3"
+	>
 		<PreviewComponent title="Accordion" href="/components/accordion">
-			<div class="w-96">
+			<div class="w-full">
 				<Accordion title="Open Source?">Yes!</Accordion>
 				<Accordion title="Open Source?" isLoading>Yes!</Accordion>
 				<Accordion title="Open Source?" isDisabled>Yes!</Accordion>
@@ -134,7 +144,7 @@
 		</PreviewComponent>
 
 		<PreviewComponent title="Alert" href="/components/alert">
-			<div class="w-96">
+			<div class="w-full">
 				<Alert class="flex gap-2">
 					<Icon icon="mdi:terminal-line" width={24} />
 					<div>
@@ -146,7 +156,7 @@
 		</PreviewComponent>
 
 		<PreviewComponent title="Button" href="/components/button">
-			<div class="flex w-96 flex-wrap justify-center gap-4">
+			<div class="flex flex-wrap justify-center gap-4">
 				<Button>Primary</Button>
 				<Button variant="secondary">Secondary</Button>
 				<Button variant="destructive">Destructive</Button>
@@ -167,7 +177,7 @@
 		</PreviewComponent>
 
 		<PreviewComponent title="Card Picker" href="/components/card-picker">
-			<div class="flex w-96 justify-center gap-4">
+			<div class="flex flex-wrap justify-center gap-4">
 				<CardPicker bind:value={cardValue} cardValue="card 1">
 					<Icon icon="game-icons:spiked-dragon-head" width={50} height={50} />
 					<p>Dragon</p>
@@ -207,7 +217,7 @@
 		<PreviewComponent title="Drawer" href="/components/drawer">
 			<Button onclick={openDrawer}>Open drawer</Button>
 			<Drawer
-				class="w-[400px]"
+				class="w-screen sm:w-[400px]"
 				title="How does it feel?"
 				bind:isOpen={isDrawerOpen}
 			>
@@ -249,6 +259,16 @@
 					Enterprise
 				</Radio>
 			</div>
+		</PreviewComponent>
+
+		<PreviewComponent title="Scroll Area" href="/components/scroll-area">
+			<ScrollArea class="h-40 w-52 rounded border dark:border-zinc-700">
+				<p class="my-2 pl-4">Start</p>
+				{#each Array(20) as _, i}
+					<p class="my-2 pl-4">Line {i}</p>
+				{/each}
+				<p class="my-2 pl-4">End</p>
+			</ScrollArea>
 		</PreviewComponent>
 
 		<PreviewComponent title="Select" href="/components/select">
