@@ -7,6 +7,8 @@
 	import PageFooter from '$site/page-footer.svelte';
 	import PageHeader from '$site/page-header.svelte';
 	import Title from '$site/title.svelte';
+	import { twMerge } from 'tailwind-merge';
+	import Code from '$site/code.svelte';
 </script>
 
 <OnThisPage>
@@ -22,29 +24,88 @@
 	/>
 
 	<div
-		class="flex flex-col gap-1 rounded border border-zinc-300 p-4 text-xl text-zinc-500 dark:border-zinc-700 dark:text-zinc-400"
+		class={twMerge(
+			'flex flex-col gap-1', // positioning and layout
+			'rounded border border-zinc-300 p-4 dark:border-zinc-700', // box model
+			'text-zinc-500 dark:text-zinc-400' // text
+		)}
 	>
 		<p>
-			I want to build lomer-ui, focusing on a better <span
+			Focusing on a better <span
 				class="font-semibold text-zinc-950 dark:text-white"
 				>development experience</span
 			>.
 		</p>
-		<p>Not built on any existing UI library &mdash; this is the UI library.</p>
+		<p>
+			With a single command, lomer-ui provides a simple, good-looking design and
+			easy-to-customize component code.
+		</p>
+		<p>
+			Using YOUR components (copy-pasted code) should be straightforward and
+			intuitive.
+		</p>
+		<p class="mt-4 font-semibold text-zinc-950 dark:text-zinc-50">
+			What do I mean by "straightforward and intuitive"?
+		</p>
+		<p>For example, let's say you need to use a Dialog Component.</p>
+		<p>Your code might looks like this:</p>
+		<div class="text-sm">
+			<Code
+				class="mb-2"
+				code="import * as Dialog from '$lib/components/ui/dialog';"
+				language="javascript"
+			/>
+			<Code
+				code={'<Dialog.Root>' +
+					'\n\t<Dialog.Trigger>Open</Dialog.Trigger>' +
+					'\n\t<Dialog.Content>' +
+					'\n\t\t<Dialog.Header>' +
+					'\n\t\t\t<Dialog.Title>Are you sure absolutely sure?</Dialog.Title>' +
+					'\n\t\t\t<Dialog.Description>' +
+					'\n\t\t\t\tThis action cannot be undone. This will permanently delete your account' +
+					'\n\t\t\t\tand remove your data from our servers.' +
+					'\n\t\t\t</Dialog.Description>' +
+					'\n\t\t</Dialog.Header>' +
+					'\n\t</Dialog.Content>' +
+					'\n</Dialog.Root>'}
+			/>
+		</div>
+		<p class="mt-4">
+			Using Svelte offers a
+			<span class="font-semibold text-zinc-950 dark:text-zinc-50">
+				cleaner and more concise approach
+			</span>, so I want my code to look like this:
+		</p>
+		<div class="text-sm">
+			<Code
+				class="mb-2"
+				code={`import { Button, Dialog } from '$lib/components/ui'` +
+					`\nlet isOpen = $state(false)`}
+				language="javascript"
+			/>
+			<Code
+				code={`<Button onclick={() => (isOpen = true)}>Open dialog</Button>` +
+					`\n<Dialog title="Are you sure absolutely sure?" bind:isOpen>` +
+					`\n\tThis action cannot be undone. This will permanently delete your account` +
+					`\n\tand remove your data from our servers.` +
+					`\n</Dialog>`}
+			/>
+		</div>
+		<p class="mt-4">What if you need to tweak it further?</p>
+		<p>Your code. Your rules. Customize It.</p>
 
-		<p class="mt-4">Comes with a CLI tool for copy-pasting.</p>
-		<p class="font-semibold text-zinc-950 dark:text-white">
-			Quick Start. Easy to Implement.
+		<p class="mt-4">
+			Please don't get me wrong as this is just my opinionated way of coding.
 		</p>
 
-		<p class="mt-4">Feel free to let me know what you think.</p>
+		<p class="mt-4">Feel free to share your thoughts!</p>
 
 		<p class="mt-4">Clios, lomer-ui dev.</p>
 	</div>
 
 	<Title id="1">Concept</Title>
 	<div>
-		<p class="flex items-center gap-2 text-xl font-semibold">
+		<p class="flex items-center gap-2 font-semibold md:text-xl">
 			<Icon class="inline text-zinc-500" icon="bi:x-diamond-fill" width={16} /> Less
 			Code:
 		</p>
@@ -53,7 +114,7 @@
 			code to get things done.
 		</p>
 
-		<p class="flex items-center gap-2 text-xl font-semibold">
+		<p class="flex items-center gap-2 font-semibold md:text-xl">
 			<Icon class="inline text-zinc-500" icon="bi:x-diamond-fill" width={16} /> Simple
 			Design:
 		</p>
@@ -62,7 +123,7 @@
 			experience.
 		</p>
 
-		<p class="flex items-center gap-2 text-xl font-semibold">
+		<p class="flex items-center gap-2 font-semibold md:text-xl">
 			<Icon class="inline text-zinc-500" icon="bi:x-diamond-fill" width={16} /> Separation
 			of Concerns:
 		</p>
@@ -75,18 +136,14 @@
 	<Title id="2">FAQ</Title>
 	<Accordion id="2.1" title="Can I contribute?">
 		<p>Yes, you can! Feel free to open a pull request.</p>
-		<p>
-			You can also reach me out if you have any suggestions or feedback. I’d
-			love to hear from you!
-		</p>
+		<p>Reach me out for suggestions or feedback.</p>
+		<p>I’d love to hear from you!</p>
 	</Accordion>
 
 	<Accordion id="2.2" title="Is it production-ready?">
 		<p>Yes, it is! I’ve been using it in my projects.</p>
-		<p>
-			However, please note that it’s still in its early stage. I’m constantly
-			improving it.
-		</p>
+		<p>However, please note that it’s still in its early stage.</p>
+		<p>I’m constantly improving it.</p>
 	</Accordion>
 
 	<Accordion id="2.3" title="How can I support you?">
@@ -96,13 +153,11 @@
 				target="_blank">repo</Link
 			> on GitHub.
 		</p>
-		<p>
-			You can also share it with your friends or on social media. I’d really
-			appreciate it!
-		</p>
+		<p>You can also share it with your friends or on social media.</p>
+		<p>I’d really appreciate it!</p>
 	</Accordion>
 
-	<Accordion id="2.4" title="Can I use it in my commercial projects?">
+	<Accordion id="2.4" title="Can I use it in my projects?">
 		<p>Yes, you can!</p>
 		<p>Feel free to use it in your personal or commercial projects.</p>
 	</Accordion>

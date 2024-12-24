@@ -7,6 +7,6 @@
 	let className = '';
 </script>
 
-<p {id} class={twMerge('pt-4 text-xl font-semibold', className)}>
+<p {id} class={twMerge('pt-4 font-semibold md:text-xl', className)}>
 	<slot />
 </p>
