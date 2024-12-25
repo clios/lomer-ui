@@ -7,7 +7,7 @@
 	let isOpen = $state(true);
 </script>
 
-<Screen class="flex justify-center">
+<Screen class="flex w-full p-0 sm:justify-center sm:p-8">
 	<!-- DIALOG CONTAINER -->
 	<div
 		in:scale={{ duration: 200, delay: 200, start: 0.9 }}
@@ -15,8 +15,8 @@
 		class={twMerge(
 			// BASE
 			'relative z-10', // layout and positioning
-			'w-screen sm:w-[500px] ', // width
-			'rounded-lg border border-zinc-200 p-6 dark:border-zinc-50', // border
+			'w-screen sm:w-[500px]', // width
+			'border-y border-zinc-200 p-6 sm:rounded-lg sm:border dark:border-zinc-50', // border
 			'bg-white dark:bg-zinc-950', // background
 			'shadow-md dark:shadow-none', // shadow
 			'transition-all' // animation

@@ -86,7 +86,7 @@
 	<SubTitle id="3.2">Loading</SubTitle>
 	<p>Add <Prop>isLoading</Prop> property.</p>
 	<Code code={`<Switch isLoading>` + `\n\t...` + `\n</Switch>`} />
-	<Preview class="gap-8">
+	<Preview class="flex-wrap gap-8">
 		<Switch isLoading>Turn me on!</Switch>
 		<Switch value={true} isLoading>Turn me on!</Switch>
 	</Preview>
@@ -95,7 +95,7 @@
 	<SubTitle id="3.3">Disabled</SubTitle>
 	<p>Add <Prop>isDisabled</Prop> property.</p>
 	<Code code={`<Switch isDisabled>` + `\n\t...` + `\n</Switch>`} />
-	<Preview class="gap-8">
+	<Preview class="flex-wrap gap-8">
 		<Switch isDisabled>Turn me on!</Switch>
 		<Switch value={true} isDisabled>Turn me on!</Switch>
 	</Preview>
@@ -104,7 +104,7 @@
 	<SubTitle id="3.4">Read only</SubTitle>
 	<p>Add <Prop>isReadOnly</Prop> property.</p>
 	<Code code={`<Switch isReadOnly>` + `\n\t...` + `\n</Switch>`} />
-	<Preview class="gap-8">
+	<Preview class="flex-wrap gap-8">
 		<Switch isReadOnly>Turn me on!</Switch>
 		<Switch value={true} isReadOnly>Turn me on!</Switch>
 	</Preview>

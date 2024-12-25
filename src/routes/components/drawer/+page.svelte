@@ -82,7 +82,7 @@
 		> value.
 	</p>
 	<Code code={`<Drawer position="left">...</Drawer>`} language="xml" />
-	<Preview class="gap-4">
+	<Preview class="flex-wrap gap-4">
 		<Button onclick={() => (isLeftOpen = true)}>Left</Button>
 		<Drawer
 			class="w-56 p-6"

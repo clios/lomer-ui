@@ -8,21 +8,21 @@
 
 <Screen class="p-8 text-center">
 	<p class="mb-4">Choose your clan</p>
-	<div class="mb-2 flex w-full justify-center gap-4">
+	<div class="mb-2 flex w-full flex-wrap justify-center gap-4">
 		<CardPicker bind:value cardValue="dragon">
-			<Icon icon="game-icons:spiked-dragon-head" width={80} height={80} />
+			<Icon icon="game-icons:spiked-dragon-head" width={70} height={70} />
 			<p>Dragon</p>
 		</CardPicker>
 		<CardPicker bind:value cardValue="serpent">
-			<Icon icon="game-icons:snake-tongue" width={80} height={80} />
+			<Icon icon="game-icons:snake-tongue" width={70} height={70} />
 			<p>Serpent</p>
 		</CardPicker>
 		<CardPicker bind:value cardValue="wolf">
-			<Icon icon="game-icons:wolf-head" width={80} height={80} />
+			<Icon icon="game-icons:wolf-head" width={70} height={70} />
 			<p>Wolf</p>
 		</CardPicker>
 		<CardPicker bind:value cardValue="lotus">
-			<Icon icon="game-icons:lotus" width={80} height={80} />
+			<Icon icon="game-icons:lotus" width={70} height={70} />
 			<p>Lotus</p>
 		</CardPicker>
 	</div>

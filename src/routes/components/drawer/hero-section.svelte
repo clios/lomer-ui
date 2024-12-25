@@ -6,6 +6,7 @@
 	import Icon from '@iconify/svelte';
 	import Checkbox from '$lib/checkbox.svelte';
 	import { onMount } from 'svelte';
+	import ScrollArea from '$lib/scroll-area.svelte';
 
 	let isOpen = $state(false);
 
@@ -14,7 +15,7 @@
 	});
 </script>
 
-<Screen class="flex justify-center">
+<Screen class="flex w-full p-0 sm:justify-center sm:p-8">
 	<div
 		class="relative grid h-[500px] w-full place-content-center overflow-hidden rounded-xl border border-zinc-950 bg-white shadow-lg dark:border-zinc-50 dark:bg-zinc-950"
 	>
@@ -146,9 +147,9 @@
 					<div
 						in:fade={{ delay: 150 }}
 						out:fade={{ duration: 150 }}
-						class={twMerge('h-[calc(100vh-3.8rem)] overflow-y-auto')}
+						class={twMerge('h-[calc(500px-3.8rem)] overflow-y-auto')}
 					>
-						<div class="w-[350px] p-6">
+						<div class="p-6 sm:w-[350px]">
 							<p class="mb-4 text-zinc-500">You have 3 unread messages.</p>
 
 							<div class="rounded-sm border p-4 dark:border-zinc-700">
