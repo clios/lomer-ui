@@ -56,7 +56,7 @@
 	<div class="my-16 text-zinc-500 dark:text-zinc-400">
 		<p class="mt-16 text-center text-xl">
 			<span class="font-semibold text-zinc-950 dark:text-white">Minimalist</span
-			> UI library for SvelteKit powered by Tailwind CSS.
+			> UI library for Svelte powered by Tailwind CSS.
 		</p>
 		<p class="mt-16 text-center text-6xl text-zinc-950 dark:text-white">
 			lomer-ui
