@@ -168,7 +168,7 @@
 			<div
 				class="fixed top-0 right-0 left-0 z-[999] border-b border-zinc-50 bg-white/50 px-4 backdrop-blur-sm lg:hidden dark:border-zinc-900 dark:bg-zinc-950/50"
 			>
-				<div class="container mx-auto px-4 py-1">
+				<div class="container mx-auto py-1">
 					<Button
 						variant="ghost"
 						size="icon"

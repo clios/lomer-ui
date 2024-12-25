@@ -16,7 +16,7 @@
 	<OnThisPageBtn id="2" title="FAQ" />
 </OnThisPage>
 
-<div class="flex flex-col gap-4 xl:pr-80">
+<div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
 	<PageHeader
 		title="Introduction"
 		sub="Docs"
@@ -26,8 +26,7 @@
 	<div
 		class={twMerge(
 			'flex flex-col gap-1', // positioning and layout
-			'rounded border border-zinc-300 p-4 dark:border-zinc-700', // box model
-			'text-zinc-500 dark:text-zinc-400' // text
+			'text-lg text-zinc-500 dark:text-zinc-400' // text
 		)}
 	>
 		<p>

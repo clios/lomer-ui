@@ -11,5 +11,5 @@
 	>
 		{title}
 	</p>
-	<p class="text-zinc-500 dark:text-zinc-300">{info}</p>
+	<p class="text-zinc-500 dark:text-zinc-400">{info}</p>
 </div>

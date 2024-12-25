@@ -20,7 +20,7 @@
 	<OnThisPageSubBtn id="3.1" title="lomer-ui reset" />
 </OnThisPage>
 
-<div class="flex flex-col gap-4 xl:pr-80">
+<div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
 	<PageHeader title="CLI" sub="Docs" info="Quickly startup your components." />
 	<Title id="1">Overview</Title>
 	<p>

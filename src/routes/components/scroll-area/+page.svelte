@@ -17,7 +17,7 @@
 	<OnThisPageBtn id="2" title="Usage" />
 </OnThisPage>
 
-<div class="flex flex-col gap-2 xl:pr-80">
+<div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
 	<PageHeader
 		title="Scroll Area"
 		sub="Component"

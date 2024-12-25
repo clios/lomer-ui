@@ -25,7 +25,7 @@
 	<OnThisPageSubBtn id="1.3" title="That's it!" />
 </OnThisPage>
 
-<div class="flex flex-col gap-2 xl:pr-80">
+<div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
 	<PageHeader
 		title="Dark Mode"
 		sub="Docs"
