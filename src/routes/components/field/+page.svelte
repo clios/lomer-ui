@@ -28,6 +28,10 @@
 	let cardPickerValue = $state('');
 </script>
 
+<svelte:head>
+	<title>Field . lomer-ui</title>
+</svelte:head>
+
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />

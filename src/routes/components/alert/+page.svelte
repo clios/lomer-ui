@@ -20,6 +20,10 @@
 	let isClosableOpen = true;
 </script>
 
+<svelte:head>
+	<title>Alert . lomer-ui</title>
+</svelte:head>
+
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />

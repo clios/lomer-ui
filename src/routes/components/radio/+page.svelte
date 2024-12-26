@@ -17,6 +17,10 @@
 	let value = $state('free');
 </script>
 
+<svelte:head>
+	<title>Radio . lomer-ui</title>
+</svelte:head>
+
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />

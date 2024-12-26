@@ -16,6 +16,10 @@
 	import Val from '$site/val.svelte';
 </script>
 
+<svelte:head>
+	<title>Link . lomer-ui</title>
+</svelte:head>
+
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />

@@ -16,6 +16,10 @@
 	import Title from '$site/title.svelte';
 </script>
 
+<svelte:head>
+	<title>Installation . lomer-ui</title>
+</svelte:head>
+
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Setup" />
 	<OnThisPageSubBtn id="1.1" title="Dark Mode" />

@@ -18,6 +18,10 @@
 	import { toggleMode, mode } from 'mode-watcher';
 </script>
 
+<svelte:head>
+	<title>Dark Mode . lomer-ui</title>
+</svelte:head>
+
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Usage" />
 	<OnThisPageSubBtn id="1.1" title="Install mode-watcher" />

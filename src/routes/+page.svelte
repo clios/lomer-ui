@@ -30,6 +30,10 @@
 	let selectValue = $state('');
 </script>
 
+<svelte:head>
+	<title>lomer-ui</title>
+</svelte:head>
+
 <div class="lg:p-4">
 	<div class="flex flex-wrap justify-between gap-x-8">
 		<p class="flex items-end">

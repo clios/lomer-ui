@@ -12,6 +12,10 @@
 	import Title from '$site/title.svelte';
 </script>
 
+<svelte:head>
+	<title>CLI . lomer-ui</title>
+</svelte:head>
+
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Overview" />
 	<OnThisPageBtn id="2" title="Usage" />

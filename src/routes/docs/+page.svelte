@@ -3,10 +3,10 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		goto('/components/accordion');
+		goto('/docs/introduction');
 	});
 </script>
 
 <svelte:head>
-	<title>Components . lomer-ui</title>
+	<title>Docs . lomer-ui</title>
 </svelte:head>

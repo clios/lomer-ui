@@ -11,6 +11,10 @@
 	import Code from '$site/code.svelte';
 </script>
 
+<svelte:head>
+	<title>Introduction . lomer-ui</title>
+</svelte:head>
+
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Concept" />
 	<OnThisPageBtn id="2" title="FAQ" />

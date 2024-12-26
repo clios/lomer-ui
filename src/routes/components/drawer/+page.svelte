@@ -24,6 +24,10 @@
 	let isFixedFooterOpen = $state(false);
 </script>
 
+<svelte:head>
+	<title>Drawer . lomer-ui</title>
+</svelte:head>
+
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />
