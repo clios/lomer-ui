@@ -1,8 +1,10 @@
 # lomer-ui
 
-Another build your component library.
+Minimalist UI library for Svelte powered by Tailwind CSS.
 
-Fix it. Tune it. Keep it. Dead simple.
+A dead-simple CLI tool to instantly kickstart your components.
+
+No extra UI libraries required—just clean, standalone code ready to use.
 
 **Free and Open Source**.
 
