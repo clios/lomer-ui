@@ -5,11 +5,11 @@
 </script>
 
 <Screen class="flex flex-wrap justify-center gap-4 p-8">
-	<Button>Primary</Button>
-	<Button variant="secondary">Secondary</Button>
+	<Button>Default</Button>
+	<Button variant="primary">Primary</Button>
 	<Button variant="destructive">Destructive</Button>
-	<Button variant="ghost">Ghost</Button>
 	<Button variant="outline">Outline</Button>
+	<Button variant="ghost">Ghost</Button>
 	<Button>
 		<Icon icon="mdi:power" width={24} height={24} /> Power
 	</Button>

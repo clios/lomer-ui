@@ -4,10 +4,10 @@
 	import { toggleMode, mode } from 'mode-watcher';
 </script>
 
-<div class="ml-4 mt-4">
+<div class="mt-4 ml-4">
 	<p class="text-sm text-zinc-500 dark:text-zinc-400">Explore in</p>
 	<div class="mt-1 flex items-center gap-2">
-		<Button class="gap-2" variant="secondary" size="small" onclick={toggleMode}>
+		<Button class="gap-2" variant="inverted" size="small" onclick={toggleMode}>
 			{#if $mode === 'light'}
 				<Icon icon="line-md:moon-to-sunny-outline-loop-transition" />
 				Light Mode

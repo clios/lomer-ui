@@ -58,6 +58,11 @@
 		href="/docs/dark-mode"
 		label="Dark Mode"
 	/>
+	<SidebarLink
+		onclick={() => (isOpen = false)}
+		href="/docs/theming"
+		label="Theming"
+	/>
 	<SidebarLink onclick={() => (isOpen = false)} href="/docs/cli" label="CLI" />
 
 	<p class="mt-4 pl-4 font-semibold">Components</p>

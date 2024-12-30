@@ -26,10 +26,9 @@
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />
 	<OnThisPageBtn id="3" title="Examples" />
-	<OnThisPageSubBtn id="3.1" title="Secondary" />
-	<OnThisPageSubBtn id="3.2" title="Destructive" />
-	<OnThisPageSubBtn id="3.3" title="Ghost" />
-	<OnThisPageSubBtn id="3.4" title="Outline" />
+	<OnThisPageSubBtn id="3.1" title="Variants" />
+	<OnThisPageSubBtn id="3.2" title="Outline" />
+	<OnThisPageSubBtn id="3.3" title="Text" />
 	<OnThisPageSubBtn id="3.5" title="With icon" />
 	<OnThisPageSubBtn id="3.6" title="Icon only" />
 	<OnThisPageSubBtn id="3.7" title="Sharp edge" />
@@ -60,16 +59,16 @@
 		code={`import Button from '$lib/components/ui/button.svelte'`}
 		language="javascript"
 	/>
-	<Code code={`<Button>Primary</Button>`} language="xml" />
+	<Code code={`<Button>Default</Button>`} language="xml" />
 	<Preview>
-		<Button>Primary</Button>
+		<Button>Default</Button>
 	</Preview>
 
 	<!-- EXAMPLES -->
 	<Title id="3">Examples</Title>
 
-	<!-- SECONDARY -->
-	<SubTitle id="3.1">Secondary</SubTitle>
+	<!-- VARIANTS -->
+	<SubTitle id="3.1">Variants</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>secondary</Val> value.</p>
 	<Code code={`<Button variant="secondary">Button</Button>`} language="xml" />
 	<Preview><Button variant="secondary">Button</Button></Preview>

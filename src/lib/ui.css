@@ -1,0 +1,30 @@
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+	/* COLOR TONE: General background or neutral shades */
+	--color-light: var(--color-zinc-50);
+	--color-lighter: var(--color-zinc-300);
+	--color-mid: var(--color-zinc-500);
+	--color-darker: var(--color-zinc-700);
+	--color-dark: var(--color-zinc-950);
+
+	/* COLOR PALETTE: Specific brand or action colors */
+	--color-primary: var(--color-cyan-600);
+	--color-secondary: var(--color-zinc-500);
+	--color-destructive: var(--color-red-500);
+
+	/* RADIUS */
+	--radius-theme: 4px;
+}
+
+.dark {
+	--color-primary: var(--color-cyan-500);
+}
+
+html[data-theme='orange'] {
+	--color-primary: var(--color-orange-500);
+}
+
+html[data-theme='orange'].dark {
+	--color-primary: var(--color-orange-500);
+}
