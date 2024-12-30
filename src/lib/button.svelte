@@ -49,7 +49,7 @@
 		variant === 'default' && [
 			'bg-dark dark:bg-light', // background
 			'text-light dark:text-dark', // text
-			'border-primary', // border
+			'border-none', // border
 			'outline-primary' // outline
 		],
 
