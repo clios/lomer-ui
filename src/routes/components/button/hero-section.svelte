@@ -7,6 +7,7 @@
 <Screen class="flex flex-wrap justify-center gap-4 p-8">
 	<Button>Default</Button>
 	<Button variant="primary">Primary</Button>
+	<Button variant="secondary">Secondary</Button>
 	<Button variant="destructive">Destructive</Button>
 	<Button variant="outline">Outline</Button>
 	<Button variant="ghost">Ghost</Button>

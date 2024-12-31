@@ -26,16 +26,18 @@
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />
 	<OnThisPageBtn id="3" title="Examples" />
-	<OnThisPageSubBtn id="3.1" title="Variants" />
-	<OnThisPageSubBtn id="3.2" title="Outline" />
-	<OnThisPageSubBtn id="3.3" title="Text" />
-	<OnThisPageSubBtn id="3.5" title="With icon" />
-	<OnThisPageSubBtn id="3.6" title="Icon only" />
-	<OnThisPageSubBtn id="3.7" title="Sharp edge" />
-	<OnThisPageSubBtn id="3.8" title="Full round edge" />
-	<OnThisPageSubBtn id="3.9" title="Loading" />
-	<OnThisPageSubBtn id="3.10" title="Disabled" />
-	<OnThisPageSubBtn id="3.11" title="Small" />
+	<OnThisPageSubBtn id="3.1" title="Primary" />
+	<OnThisPageSubBtn id="3.2" title="Secondary" />
+	<OnThisPageSubBtn id="3.3" title="Destructive" />
+	<OnThisPageSubBtn id="3.4" title="Outline" />
+	<OnThisPageSubBtn id="3.5" title="Ghost" />
+	<OnThisPageSubBtn id="3.6" title="With icon" />
+	<OnThisPageSubBtn id="3.7" title="Icon only" />
+	<OnThisPageSubBtn id="3.8" title="Sharp edge" />
+	<OnThisPageSubBtn id="3.9" title="Full round edge" />
+	<OnThisPageSubBtn id="3.10" title="Loading" />
+	<OnThisPageSubBtn id="3.11" title="Disabled" />
+	<OnThisPageSubBtn id="3.12" title="Small" />
 </OnThisPage>
 
 <div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
@@ -67,14 +69,20 @@
 	<!-- EXAMPLES -->
 	<Title id="3">Examples</Title>
 
-	<!-- VARIANTS -->
-	<SubTitle id="3.1">Variants</SubTitle>
+	<!-- PRIMARY -->
+	<SubTitle id="3.1">Primary</SubTitle>
+	<p>Add <Prop>variant</Prop> property with <Val>primary</Val> value.</p>
+	<Code code={`<Button variant="primary">Button</Button>`} language="xml" />
+	<Preview><Button variant="primary">Button</Button></Preview>
+
+	<!-- SECONDARY -->
+	<SubTitle id="3.2">Secondary</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>secondary</Val> value.</p>
 	<Code code={`<Button variant="secondary">Button</Button>`} language="xml" />
 	<Preview><Button variant="secondary">Button</Button></Preview>
 
 	<!-- DESTRUCTIVE -->
-	<SubTitle id="3.2">Destructive</SubTitle>
+	<SubTitle id="3.3">Destructive</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>destructive</Val> value.</p>
 	<Code
 		code={`<Button variant="destructive">Destructive</Button>`}
@@ -82,20 +90,20 @@
 	/>
 	<Preview><Button variant="destructive">Destructive</Button></Preview>
 
-	<!-- GHOST -->
-	<SubTitle id="3.3">Ghost</SubTitle>
-	<p>Add <Prop>variant</Prop> property with <Val>ghost</Val> value.</p>
-	<Code code={`<Button variant="ghost">Ghost</Button>`} language="xml" />
-	<Preview><Button variant="ghost">Ghost</Button></Preview>
-
 	<!-- OUTLINE -->
 	<SubTitle id="3.4">Outline</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>outline</Val> value.</p>
 	<Code code={`<Button variant="outline">Outline</Button>`} language="xml" />
 	<Preview><Button variant="outline">Outline</Button></Preview>
 
+	<!-- GHOST -->
+	<SubTitle id="3.5">Ghost</SubTitle>
+	<p>Add <Prop>variant</Prop> property with <Val>ghost</Val> value.</p>
+	<Code code={`<Button variant="ghost">Ghost</Button>`} language="xml" />
+	<Preview><Button variant="ghost">Ghost</Button></Preview>
+
 	<!-- WITH ICON -->
-	<SubTitle id="3.5">With Icon</SubTitle>
+	<SubTitle id="3.6">With Icon</SubTitle>
 	<p>Insert any icon component or svg inside button.</p>
 	<Code
 		code={`<Button>` +
@@ -132,7 +140,7 @@
 	</Preview>
 
 	<!-- ICON ONLY -->
-	<SubTitle id="3.6">Icon only</SubTitle>
+	<SubTitle id="3.7">Icon only</SubTitle>
 	<p>
 		Let's try icon component from <Link
 			class="underline"
@@ -158,13 +166,13 @@
 	</Preview>
 
 	<!-- SHARP EDGE -->
-	<SubTitle id="3.7">Sharp edge</SubTitle>
+	<SubTitle id="3.8">Sharp edge</SubTitle>
 	<p>Add <Prop>edge</Prop> property with <Val>sharp</Val> value.</p>
 	<Code code={`<Button edge="sharp">Sharp edge</Button>`} language="xml" />
 	<Preview><Button edge="sharp">Sharp edge</Button></Preview>
 
 	<!-- FULL ROUND EDGE -->
-	<SubTitle id="3.8">Full round edge</SubTitle>
+	<SubTitle id="3.9">Full round edge</SubTitle>
 	<p>Add <Prop>edge</Prop> property with <Val>circle</Val> value.</p>
 	<Code
 		code={`<Button edge="circle">Full round edge</Button>`}
@@ -173,19 +181,19 @@
 	<Preview><Button edge="circle">Full round edge</Button></Preview>
 
 	<!-- LOADING -->
-	<SubTitle id="3.9">Loading</SubTitle>
+	<SubTitle id="3.10">Loading</SubTitle>
 	<p>Add <Prop>isLoading</Prop> property.</p>
 	<Code code={`<Button isLoading>Loading</Button>`} language="xml" />
 	<Preview><Button isLoading>Loading</Button></Preview>
 
 	<!-- DISABLED -->
-	<SubTitle id="3.10">Disabled</SubTitle>
+	<SubTitle id="3.11">Disabled</SubTitle>
 	<p>Add <Prop>isDisabled</Prop> property.</p>
 	<Code code={`<Button isDisabled>Disabled</Button>`} language="xml" />
 	<Preview><Button isDisabled>Disabled</Button></Preview>
 
 	<!-- SMALL -->
-	<SubTitle id="3.11">Small</SubTitle>
+	<SubTitle id="3.12">Small</SubTitle>
 	<p>Add <Prop>size</Prop> property with <Val>small</Val> value.</p>
 	<Code code={`<Button size="small">Small</Button>`} language="xml" />
 	<Preview><Button size="small">Small</Button></Preview>
