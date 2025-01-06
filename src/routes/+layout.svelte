@@ -1,15 +1,13 @@
 <script lang="ts">
 	import '../app.css';
 	import Button from '$lib/button.svelte';
-	import CardToggleTheme from '$site/card__toggle-theme.svelte';
 	import Drawer from '$lib/drawer.svelte';
 	import Icon from '@iconify/svelte';
-	import Link from '$lib/link.svelte';
 	import ScrollArea from '$lib/scroll-area.svelte';
-	import SidebarLink from './sidebar-link.svelte';
 	import { ModeWatcher } from 'mode-watcher';
 	import { afterNavigate } from '$app/navigation';
 	import { twMerge } from 'tailwind-merge';
+	import MainSidebar from '$site/main-sidebar.svelte';
 
 	let { children } = $props();
 	let elPage: HTMLDivElement;
@@ -20,138 +18,6 @@
 	});
 </script>
 
-<!-- SIDEBAR -->
-{#snippet sidebar()}
-	<div class="mt-4 ml-4 flex items-center lg:mt-8">
-		<div class="relative mr-4">
-			<img class="relative size-7 min-w-7" src="/favicon.png" alt="lomer" />
-			<div
-				class="absolute top-0 size-7 rotate-45 outline -outline-offset-2"
-			></div>
-		</div>
-
-		<Link
-			onclick={() => (isOpen = false)}
-			href="/"
-			class="font-mono text-xl leading-3 no-underline"
-		>
-			lomer-ui
-		</Link>
-	</div>
-
-	<CardToggleTheme />
-
-	<p class="mt-4 pl-4 font-semibold">Getting Started</p>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/docs/introduction"
-		label="Introduction"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/docs/installation"
-		label="Installation"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/docs/dark-mode"
-		label="Dark Mode"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/docs/theming"
-		label="Theming"
-	/>
-	<SidebarLink onclick={() => (isOpen = false)} href="/docs/cli" label="CLI" />
-
-	<p class="mt-4 pl-4 font-semibold">Components</p>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/accordion"
-		label="Accordion"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/alert"
-		label="Alert"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/button"
-		label="Button"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/card-picker"
-		label="Card Picker"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/checkbox"
-		label="Checkbox"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/dialog"
-		label="Dialog"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/drawer"
-		label="Drawer"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/field"
-		label="Field"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/input"
-		label="Input"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/link"
-		label="Link"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/radio"
-		label="Radio"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/scroll-area"
-		label="Scroll Area"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/select"
-		label="Select"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/switch"
-		label="Switch"
-	/>
-	<SidebarLink
-		onclick={() => (isOpen = false)}
-		href="/components/textarea"
-		label="Textarea"
-	/>
-
-	<div class="m-8 flex justify-end">
-		<Link
-			href="https://github.com/clios"
-			target="_blank"
-			class="font-mono italic no-underline"
-		>
-			- Clios
-		</Link>
-	</div>
-{/snippet}
-
 <ModeWatcher defaultMode="system" />
 <ScrollArea class="h-screen overflow-y-auto 2xl:px-8">
 	<div class="w-ful relative container mx-auto">
@@ -161,7 +27,7 @@
 				'h-screen w-64 border-r border-zinc-300 pl-4 dark:border-zinc-700' // box model
 			)}
 		>
-			{@render sidebar()}
+			<MainSidebar bind:isOpen />
 		</ScrollArea>
 		<div class="relative px-4 pb-4 lg:ml-64">
 			<div bind:this={elPage} id="page" class="pt-12 lg:pt-4"></div>
@@ -182,13 +48,14 @@
 				</div>
 			</div>
 
+			<!-- SIDEBAR FOR SMALL SCREEN -->
 			<Drawer
 				class="flex w-screen flex-col gap-2 sm:w-[320px]"
-				bind:isOpen
 				position="left"
+				bind:isOpen
 			>
 				<ScrollArea class="flex flex-col gap-2">
-					{@render sidebar()}
+					<MainSidebar bind:isOpen />
 				</ScrollArea>
 			</Drawer>
 
