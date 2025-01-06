@@ -13,7 +13,7 @@
 	let { nextLabel, prevLabel, nextLink = '', prevLink = '' }: Props = $props();
 </script>
 
-<div class="mt-16 flex justify-between">
+<div class="my-16 flex justify-between">
 	{#if prevLabel || prevLink}
 		<Button variant="ghost" onclick={() => goto(prevLink)}>
 			<Icon icon="mdi:chevron-left" width={24} />

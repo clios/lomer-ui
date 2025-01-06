@@ -40,13 +40,10 @@
 			>.
 		</p>
 		<p>
-			With a single command, lomer-ui provides a simple, good-looking design and
-			easy-to-customize component code.
+			Providing a simple, good-looking design and easy-to-customize component
+			code.
 		</p>
-		<p>
-			Using YOUR components (copy-pasted code) should be straightforward and
-			intuitive.
-		</p>
+		<p>Using YOUR components should be straightforward and intuitive.</p>
 		<p class="mt-4 font-semibold text-zinc-950 dark:text-zinc-50">
 			What do I mean by "straightforward and intuitive"?
 		</p>

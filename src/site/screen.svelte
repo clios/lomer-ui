@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 
-	export let lineColor = '#71717a30'; // Default color of the grid lines
+	export let lineColor = '#71717a10'; // Default color of the grid lines
 	export { className as class };
 
 	let className = '';

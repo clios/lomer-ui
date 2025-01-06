@@ -47,18 +47,18 @@
 				'semibold flex text-sm',
 
 				// ORIENTATION
-				orientation === 'vertical' ? 'text-left' : 'mr-2 mt-[.5rem] text-right'
+				orientation === 'vertical' ? 'text-left' : 'mt-[.5rem] mr-2 text-right'
 			)}
 		>
 			{label}
 
 			<!-- REQUIRED INDICATOR -->
-			{#if required}<span class="ml-1 text-red-500">*</span>{/if}
+			{#if required}<span class="text-destructive ml-1">*</span>{/if}
 
 			<!-- OPTIONAL INDICATOR -->
 			{#if optional}
 				<span
-					class="ml-1 rounded-sm bg-zinc-100 px-1 py-[2px] text-xs text-zinc-700 dark:bg-zinc-950 dark:text-zinc-300"
+					class="bg-muted-fg text-muted ml-1 rounded-sm px-1 py-[2px] text-xs"
 				>
 					Optional
 				</span>
@@ -73,7 +73,7 @@
 			<p
 				in:fade={{ delay: 200, duration: 200 }}
 				out:slide={{ axis: 'x', duration: 1000 }}
-				class="overflow-hidden text-nowrap text-left text-sm text-zinc-500 dark:text-zinc-300"
+				class="text-muted overflow-hidden text-left text-sm text-nowrap"
 			>
 				{helper}
 			</p>
@@ -83,7 +83,7 @@
 			<p
 				in:fade={{ delay: 200, duration: 200 }}
 				out:slide={{ axis: 'x', duration: 1000 }}
-				class="overflow-hidden text-nowrap text-left text-sm text-red-500"
+				class="text-destructive overflow-hidden text-left text-sm text-nowrap"
 			>
 				{issue}
 			</p>

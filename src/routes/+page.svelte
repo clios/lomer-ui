@@ -149,12 +149,8 @@
 
 		<PreviewComponent title="Alert" href="/components/alert">
 			<div class="w-full">
-				<Alert class="flex gap-2">
-					<Icon icon="mdi:terminal-line" width={24} />
-					<div>
-						<p class="font-semibold">Do it.</p>
-						<p>Just do it!</p>
-					</div>
+				<Alert title="Try it." class="flex gap-2">
+					<p>Just try it!</p>
 				</Alert>
 			</div>
 		</PreviewComponent>
@@ -190,11 +186,11 @@
 					<Icon icon="game-icons:snake-tongue" width={50} height={50} />
 					<p>Serpent</p>
 				</CardPicker>
-				<CardPicker cardValue="card 2" isLoading>
+				<CardPicker cardValue="card 3" isLoading>
 					<Icon icon="game-icons:wolf-head" width={50} height={50} />
 					<p>Wolf</p>
 				</CardPicker>
-				<CardPicker isDisabled>
+				<CardPicker cardValue="card 4" isDisabled>
 					<Icon icon="game-icons:lotus" width={50} height={50} />
 					<p>Lotus</p>
 				</CardPicker>
@@ -259,7 +255,7 @@
 				<Radio bind:value={radioValue} radioValue="premium" isLoading>
 					Premium
 				</Radio>
-				<Radio bind:value={radioValue} radioValue="enterprise" isDisabled>
+				<Radio value={'enterprise'} radioValue="enterprise" isDisabled>
 					Enterprise
 				</Radio>
 			</div>

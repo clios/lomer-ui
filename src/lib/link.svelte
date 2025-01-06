@@ -25,18 +25,9 @@
 		'group', // group
 		'relative', // positioning
 		'underline', // text
-		'focus:text-cyan-500 focus:outline-hidden', // focusing
-		'hover:text-cyan-500', // hovering
+		'focus:text-primary focus:outline-hidden', // focusing
+		'hover:text-primary', // hovering
 		'active:outline-2 active:outline-offset-0', // active
-
-		// DISABLED
-		'disabled:border-zinc-700 dark:disabled:border-zinc-700', // border
-		'disabled:bg-zinc-700 dark:disabled:bg-zinc-700', // background
-		'disabled:text-zinc-400 dark:disabled:text-zinc-400', // text
-		'disabled:cursor-not-allowed disabled:outline-hidden', // visual
-
-		// LOADING
-		isLoading && '',
 
 		className
 	)}
@@ -44,56 +35,69 @@
 >
 	<span class="relative">
 		{#if caret}
-			<!-- CARET ICON -->
-			<svg
-				class="absolute -left-6 hidden group-hover:block group-focus:block"
-				xmlns="http://www.w3.org/2000/svg"
-				width="16"
-				height="18"
-				viewBox="0 0 24 24"
-				><path fill="currentColor" d="m12 8l10 8l-10 8z" /></svg
-			>
+			{@render IconCaret()}
 		{/if}
 		{#if isLoading}
-			<svg
-				class="absolute right-1/2 -translate-y-4 translate-x-1/2 text-cyan-500"
-				xmlns="http://www.w3.org/2000/svg"
-				width="32"
-				height="32"
-				viewBox="0 0 24 24"
-				><circle cx="18" cy="12" r="0" fill="currentColor"
-					><animate
-						attributeName="r"
-						begin=".67"
-						calcMode="spline"
-						dur="1s"
-						keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-						repeatCount="indefinite"
-						values="0;2;0;0"
-					/></circle
-				><circle cx="12" cy="12" r="0" fill="currentColor"
-					><animate
-						attributeName="r"
-						begin=".33"
-						calcMode="spline"
-						dur="1s"
-						keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-						repeatCount="indefinite"
-						values="0;2;0;0"
-					/></circle
-				><circle cx="6" cy="12" r="0" fill="currentColor"
-					><animate
-						attributeName="r"
-						begin="0"
-						calcMode="spline"
-						dur="1s"
-						keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
-						repeatCount="indefinite"
-						values="0;2;0;0"
-					/></circle
-				></svg
-			>
+			{@render IconLoading()}
 		{/if}
 		{@render children?.()}
 	</span>
 </a>
+
+<!-- ICON CARET -->
+{#snippet IconCaret()}
+	<svg
+		class="absolute -left-6 hidden group-hover:block group-focus:block"
+		xmlns="http://www.w3.org/2000/svg"
+		width="16"
+		height="18"
+		viewBox="0 0 24 24"
+	>
+		<path fill="currentColor" d="m12 8l10 8l-10 8z" />
+	</svg>
+{/snippet}
+
+<!-- ICON LOADING -->
+{#snippet IconLoading()}
+	<svg
+		class="text-primary absolute right-1/2 -translate-y-4 translate-x-1/2"
+		xmlns="http://www.w3.org/2000/svg"
+		width="32"
+		height="32"
+		viewBox="0 0 24 24"
+	>
+		<circle cx="18" cy="12" r="0" fill="currentColor">
+			<animate
+				attributeName="r"
+				begin=".67"
+				calcMode="spline"
+				dur="1s"
+				keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+				repeatCount="indefinite"
+				values="0;2;0;0"
+			/>
+		</circle>
+		<circle cx="12" cy="12" r="0" fill="currentColor">
+			<animate
+				attributeName="r"
+				begin=".33"
+				calcMode="spline"
+				dur="1s"
+				keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+				repeatCount="indefinite"
+				values="0;2;0;0"
+			/>
+		</circle>
+		<circle cx="6" cy="12" r="0" fill="currentColor">
+			<animate
+				attributeName="r"
+				begin="0"
+				calcMode="spline"
+				dur="1s"
+				keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+				repeatCount="indefinite"
+				values="0;2;0;0"
+			/>
+		</circle>
+	</svg>
+{/snippet}

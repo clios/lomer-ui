@@ -6,7 +6,6 @@
 	import Icon from '@iconify/svelte';
 	import Link from '$lib/link.svelte';
 	import ScrollArea from '$lib/scroll-area.svelte';
-	import ScrollGradientFooter from '$site/scroll-gradient-footer.svelte';
 	import SidebarLink from './sidebar-link.svelte';
 	import { ModeWatcher } from 'mode-watcher';
 	import { afterNavigate } from '$app/navigation';
@@ -154,13 +153,11 @@
 {/snippet}
 
 <ModeWatcher defaultMode="system" />
-<ScrollArea class="h-screen overflow-y-auto 2xl:px-8 dark:bg-zinc-950">
-	<div
-		class="w-ful relative container mx-auto border-dashed border-zinc-300 2xl:border-x dark:border-zinc-700"
-	>
+<ScrollArea class="h-screen overflow-y-auto 2xl:px-8">
+	<div class="w-ful relative container mx-auto">
 		<ScrollArea
 			class={twMerge(
-				'fixed top-0 hidden flex-col gap-2 overflow-x-hidden overflow-y-auto lg:flex', // positioning and layout
+				'fixed top-0 z-10 hidden flex-col gap-2 overflow-x-hidden overflow-y-auto lg:flex', // positioning and layout
 				'h-screen w-64 border-r border-zinc-300 pl-4 dark:border-zinc-700' // box model
 			)}
 		>
@@ -171,7 +168,7 @@
 
 			<!-- NAVIGATION TOP -->
 			<div
-				class="fixed top-0 right-0 left-0 z-[999] border-b border-zinc-50 bg-white/50 px-4 backdrop-blur-sm lg:hidden dark:border-zinc-900 dark:bg-zinc-950/50"
+				class="fixed top-0 right-0 left-0 border-b border-zinc-50 bg-white/50 px-4 backdrop-blur-sm lg:hidden dark:border-zinc-900 dark:bg-zinc-950/50"
 			>
 				<div class="container mx-auto py-1">
 					<Button
@@ -184,12 +181,13 @@
 					</Button>
 				</div>
 			</div>
+
 			<Drawer
 				class="flex w-screen flex-col gap-2 sm:w-[320px]"
 				bind:isOpen
 				position="left"
 			>
-				<ScrollArea class="flex flex-col">
+				<ScrollArea class="flex flex-col gap-2">
 					{@render sidebar()}
 				</ScrollArea>
 			</Drawer>
@@ -197,6 +195,5 @@
 			<!-- CONTENT -->
 			{@render children()}
 		</div>
-		<ScrollGradientFooter />
 	</div>
 </ScrollArea>

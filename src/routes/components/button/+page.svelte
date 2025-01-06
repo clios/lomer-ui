@@ -38,6 +38,7 @@
 	<OnThisPageSubBtn id="3.10" title="Loading" />
 	<OnThisPageSubBtn id="3.11" title="Disabled" />
 	<OnThisPageSubBtn id="3.12" title="Small" />
+	<OnThisPageSubBtn id="3.13" title="Customize" />
 </OnThisPage>
 
 <div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
@@ -61,7 +62,7 @@
 		code={`import Button from '$lib/components/ui/button.svelte'`}
 		language="javascript"
 	/>
-	<Code code={`<Button>Default</Button>`} language="xml" />
+	<Code code={`<Button>Default</Button>`} />
 	<Preview>
 		<Button>Default</Button>
 	</Preview>
@@ -72,34 +73,31 @@
 	<!-- PRIMARY -->
 	<SubTitle id="3.1">Primary</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>primary</Val> value.</p>
-	<Code code={`<Button variant="primary">Button</Button>`} language="xml" />
+	<Code code={`<Button variant="primary">Button</Button>`} />
 	<Preview><Button variant="primary">Button</Button></Preview>
 
 	<!-- SECONDARY -->
 	<SubTitle id="3.2">Secondary</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>secondary</Val> value.</p>
-	<Code code={`<Button variant="secondary">Button</Button>`} language="xml" />
+	<Code code={`<Button variant="secondary">Button</Button>`} />
 	<Preview><Button variant="secondary">Button</Button></Preview>
 
 	<!-- DESTRUCTIVE -->
 	<SubTitle id="3.3">Destructive</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>destructive</Val> value.</p>
-	<Code
-		code={`<Button variant="destructive">Destructive</Button>`}
-		language="xml"
-	/>
+	<Code code={`<Button variant="destructive">Destructive</Button>`} />
 	<Preview><Button variant="destructive">Destructive</Button></Preview>
 
 	<!-- OUTLINE -->
 	<SubTitle id="3.4">Outline</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>outline</Val> value.</p>
-	<Code code={`<Button variant="outline">Outline</Button>`} language="xml" />
+	<Code code={`<Button variant="outline">Outline</Button>`} />
 	<Preview><Button variant="outline">Outline</Button></Preview>
 
 	<!-- GHOST -->
 	<SubTitle id="3.5">Ghost</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>ghost</Val> value.</p>
-	<Code code={`<Button variant="ghost">Ghost</Button>`} language="xml" />
+	<Code code={`<Button variant="ghost">Ghost</Button>`} />
 	<Preview><Button variant="ghost">Ghost</Button></Preview>
 
 	<!-- WITH ICON -->
@@ -120,7 +118,6 @@
 			`\n\t</svg>` +
 			`\n\tWith icon` +
 			`\n</Button>`}
-		language="xml"
 	/>
 	<Preview>
 		<Button>
@@ -157,7 +154,6 @@
 		code={`<Button size="icon">` +
 			`\n\t<Icon icon="mdi:power" width={24} height={24} />` +
 			`\n</Button>`}
-		language="xml"
 	/>
 	<Preview>
 		<Button size="icon">
@@ -168,35 +164,53 @@
 	<!-- SHARP EDGE -->
 	<SubTitle id="3.8">Sharp edge</SubTitle>
 	<p>Add <Prop>edge</Prop> property with <Val>sharp</Val> value.</p>
-	<Code code={`<Button edge="sharp">Sharp edge</Button>`} language="xml" />
+	<Code code={`<Button edge="sharp">Sharp edge</Button>`} />
 	<Preview><Button edge="sharp">Sharp edge</Button></Preview>
 
 	<!-- FULL ROUND EDGE -->
 	<SubTitle id="3.9">Full round edge</SubTitle>
 	<p>Add <Prop>edge</Prop> property with <Val>circle</Val> value.</p>
-	<Code
-		code={`<Button edge="circle">Full round edge</Button>`}
-		language="xml"
-	/>
+	<Code code={`<Button edge="circle">Full round edge</Button>`} />
 	<Preview><Button edge="circle">Full round edge</Button></Preview>
 
 	<!-- LOADING -->
 	<SubTitle id="3.10">Loading</SubTitle>
 	<p>Add <Prop>isLoading</Prop> property.</p>
-	<Code code={`<Button isLoading>Loading</Button>`} language="xml" />
+	<Code code={`<Button isLoading>Loading</Button>`} />
 	<Preview><Button isLoading>Loading</Button></Preview>
 
 	<!-- DISABLED -->
 	<SubTitle id="3.11">Disabled</SubTitle>
 	<p>Add <Prop>isDisabled</Prop> property.</p>
-	<Code code={`<Button isDisabled>Disabled</Button>`} language="xml" />
+	<Code code={`<Button isDisabled>Disabled</Button>`} />
 	<Preview><Button isDisabled>Disabled</Button></Preview>
 
 	<!-- SMALL -->
 	<SubTitle id="3.12">Small</SubTitle>
 	<p>Add <Prop>size</Prop> property with <Val>small</Val> value.</p>
-	<Code code={`<Button size="small">Small</Button>`} language="xml" />
+	<Code code={`<Button size="small">Small</Button>`} />
 	<Preview><Button size="small">Small</Button></Preview>
+
+	<!-- SMALL -->
+	<SubTitle id="3.13">Customize</SubTitle>
+	<Code
+		code={`<Button` +
+			`\n\tclass="bg-bg border-green-500 text-green-500 dark:shadow dark:shadow-lime-500"` +
+			`\n>` +
+			`\n\tCustom` +
+			`\n</Button>` +
+			`\n<Button class="bg-bg text-fg shadow-lg ">Custom</Button>`}
+	/>
+	<Preview>
+		<div class="flex w-full flex-wrap justify-center gap-4">
+			<Button
+				class="bg-bg border-green-500 text-green-500 dark:shadow dark:shadow-lime-500"
+			>
+				Custom
+			</Button>
+			<Button class="bg-bg text-fg shadow-lg ">Custom</Button>
+		</div>
+	</Preview>
 
 	<PageFooter
 		prevLabel="Alert"

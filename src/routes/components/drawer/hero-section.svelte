@@ -31,7 +31,7 @@
 			<div
 				class={twMerge(
 					// BASE
-					'absolute top-0 right-0 bottom-0 left-0 z-50', // position
+					'absolute top-0 right-0 bottom-0 left-0 z-1', // position
 
 					// BACKGROUND
 					'backdrop-blur-xs', // blue
@@ -49,7 +49,7 @@
 					out:slide={{ axis: 'x', duration: 150, delay: 150 }}
 					class={twMerge(
 						// BASE
-						'absolute right-0 z-10', // layout and positioning
+						'absolute right-0', // layout and positioning
 						'h-screen border-zinc-300 dark:border-zinc-700', // box model
 						'bg-white dark:bg-zinc-950', // background
 						'shadow-md dark:shadow-none', // shadow

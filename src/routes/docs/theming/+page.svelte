@@ -9,17 +9,8 @@
 	import Title from '$site/title.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import Code from '$site/code.svelte';
-
-	import { setTheme, theme } from 'mode-watcher';
+	import Val from '$site/val.svelte';
 	import Button from '$lib/button.svelte';
-
-	function cycleTheme() {
-		if ($theme === 'cyan') {
-			setTheme('orange');
-		} else {
-			setTheme('cyan');
-		}
-	}
 </script>
 
 <svelte:head>
@@ -27,16 +18,26 @@
 </svelte:head>
 
 <OnThisPage>
-	<OnThisPageBtn id="1" title="Concept" />
-	<OnThisPageBtn id="2" title="FAQ" />
+	<OnThisPageBtn id="1" title="Convention" />
+	<OnThisPageBtn id="2" title="CSS Variables" />
+	<OnThisPageBtn id="3" title="Default" />
 </OnThisPage>
 
 <div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
 	<PageHeader
 		title="Theming"
 		sub="Docs"
-		info="Adding theme to your site using mode-watcher."
+		info="Customize styles to match your vibe."
 	/>
 
-	<Button variant="primary" onclick={cycleTheme}>{$theme}'yow'</Button>
+	<Title id="1">Convention</Title>
+	<p>
+		The most common and straightforward approach is to use background and
+		foreground for color variables. To keep our code concise and clean, we
+		simplify these to <Val>bg</Val> and <Val>fg</Val>.
+	</p>
+
+	<div class="rounded-card border p-4">
+		<Button>Yo</Button>
+	</div>
 </div>

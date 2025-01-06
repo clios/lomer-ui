@@ -1,15 +1,239 @@
 @import 'tailwindcss';
-@import './lib/ui.css';
 @import 'highlight.js/styles/felipec.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
 
-::selection {
-	background-color: #06b6d4 !important;
-	color: #ffffff !important;
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--color-bg: var(--color-zinc-50);
+	--color-fg: var(--color-zinc-950);
+
+	--color-primary: var(--color-cyan-600);
+	--color-primary-fg: var(--color-zinc-50);
+
+	--color-secondary: var(--color-zinc-200);
+	--color-secondary-fg: var(--color-zinc-950);
+
+	--color-destructive: var(--color-red-500);
+	--color-destructive-fg: var(--color-zinc-50);
+
+	--color-muted: var(--color-zinc-600);
+	--color-muted-fg: var(--color-zinc-400);
+
+	--color-disabled: var(--color-zinc-500);
+	--color-disabled-fg: var(--color-zinc-800);
+
+	--color-input: var(--color-zinc-50);
+	--color-input-fg: var(--color-zinc-950);
+	--color-input-border: var(--color-zinc-500);
+	--color-input-highlight: var(--color-cyan-500);
+	--color-input-selected: var(--color-cyan-500);
+
+	--color-card: var(--color-zinc-50);
+	--color-card-fg: var(--color-zinc-950);
+	--color-card-selected: var(--color-cyan-50);
+	--color-card-selected-fg: var(--color-primary);
+
+	--color-border: var(--color-zinc-300);
+
+	--color-spinner: var(--color-cyan-500);
+
+	--radius: 4px;
+	--radius-card: calc(var(--radius) * 2);
+}
+
+.dark {
+	--color-bg: var(--color-zinc-950);
+	--color-fg: var(--color-zinc-50);
+
+	--color-primary: var(--color-cyan-500);
+	--color-primary-fg: var(--color-zinc-50);
+
+	--color-secondary: var(--color-zinc-800);
+	--color-secondary-fg: var(--color-zinc-50);
+
+	--color-destructive: var(--color-red-500);
+	--color-destructive-fg: var(--color-zinc-50);
+
+	--color-muted: var(--color-zinc-400);
+	--color-muted-fg: var(--color-zinc-600);
+
+	--color-disabled: var(--color-zinc-600);
+	--color-disabled-fg: var(--color-zinc-400);
+
+	--color-input: var(--color-zinc-950);
+	--color-input-fg: var(--color-zinc-50);
+	--color-input-border: var(--color-zinc-400);
+	--color-input-highlight: var(--color-cyan-500);
+	--color-input-selected: var(--color-cyan-500);
+
+	--color-card: var(--color-zinc-950);
+	--color-card-fg: var(--color-zinc-50);
+	--color-card-selected: var(--color-cyan-950);
+	--color-card-selected-fg: var(--color-primary);
+
+	--color-border: var(--color-zinc-700);
+
+	--color-spinner: var(--color-cyan-400);
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-bg text-fg;
+	}
+	::selection {
+		background-color: var(--color-primary) !important;
+		color: var(--color-primary-fg) !important;
+	}
 }
 
 body {
 	font-family: 'Fira Code', Courier, monospace;
 	font-family: 'Oxygen', Courier, sans-serif;
+}
+
+html[data-theme='rose'] {
+	--color-bg: var(--color-zinc-50);
+	--color-fg: var(--color-zinc-950);
+
+	--color-primary: var(--color-rose-600);
+	--color-primary-fg: var(--color-zinc-50);
+
+	--color-secondary: var(--color-zinc-200);
+	--color-secondary-fg: var(--color-zinc-950);
+
+	--color-destructive: var(--color-red-500);
+	--color-destructive-fg: var(--color-zinc-50);
+
+	--color-muted: var(--color-zinc-600);
+	--color-muted-fg: var(--color-zinc-400);
+
+	--color-disabled: var(--color-zinc-500);
+	--color-disabled-fg: var(--color-zinc-800);
+
+	--color-input: var(--color-zinc-50);
+	--color-input-fg: var(--color-zinc-950);
+	--color-input-highlight: var(--color-rose-500);
+	--color-input-selected: var(--color-rose-500);
+
+	--color-card: var(--color-zinc-50);
+	--color-card-fg: var(--color-zinc-950);
+	--color-card-selected: var(--color-rose-50);
+	--color-card-selected-fg: var(--color-primary);
+
+	--color-border: var(--color-zinc-300);
+
+	--color-spinner: var(--color-rose-500);
+
+	--radius: 4px;
+	--radius-card: calc(var(--radius) * 2);
+}
+
+html[data-theme='rose'].dark {
+	--color-bg: var(--color-zinc-950);
+	--color-fg: var(--color-zinc-50);
+
+	--color-primary: var(--color-rose-500);
+	--color-primary-fg: var(--color-zinc-50);
+
+	--color-secondary: var(--color-zinc-800);
+	--color-secondary-fg: var(--color-zinc-50);
+
+	--color-destructive: var(--color-red-500);
+	--color-destructive-fg: var(--color-zinc-50);
+
+	--color-muted: var(--color-zinc-400);
+	--color-muted-fg: var(--color-zinc-600);
+
+	--color-disabled: var(--color-zinc-600);
+	--color-disabled-fg: var(--color-zinc-400);
+
+	--color-input: var(--color-zinc-950);
+	--color-input-fg: var(--color-zinc-50);
+	--color-input-highlight: var(--color-rose-500);
+	--color-input-selected: var(--color-rose-500);
+
+	--color-card: var(--color-zinc-950);
+	--color-card-fg: var(--color-zinc-50);
+	--color-card-selected: var(--color-rose-950);
+	--color-card-selected-fg: var(--color-primary);
+
+	--color-border: var(--color-zinc-700);
+
+	--color-spinner: var(--color-rose-400);
+}
+
+html[data-theme='teal'] {
+	--color-bg: var(--color-zinc-50);
+	--color-fg: var(--color-zinc-950);
+
+	--color-primary: var(--color-teal-600);
+	--color-primary-fg: var(--color-zinc-50);
+
+	--color-secondary: var(--color-zinc-200);
+	--color-secondary-fg: var(--color-zinc-950);
+
+	--color-destructive: var(--color-red-500);
+	--color-destructive-fg: var(--color-zinc-50);
+
+	--color-muted: var(--color-zinc-600);
+	--color-muted-fg: var(--color-zinc-400);
+
+	--color-disabled: var(--color-zinc-500);
+	--color-disabled-fg: var(--color-zinc-800);
+
+	--color-input: var(--color-zinc-50);
+	--color-input-fg: var(--color-zinc-950);
+	--color-input-highlight: var(--color-teal-500);
+	--color-input-selected: var(--color-teal-500);
+
+	--color-card: var(--color-zinc-50);
+	--color-card-fg: var(--color-zinc-950);
+	--color-card-selected: var(--color-teal-50);
+	--color-card-selected-fg: var(--color-primary);
+
+	--color-border: var(--color-zinc-300);
+
+	--color-spinner: var(--color-teal-500);
+
+	--radius: 4px;
+	--radius-card: calc(var(--radius) * 2);
+}
+
+html[data-theme='teal'].dark {
+	--color-bg: var(--color-zinc-950);
+	--color-fg: var(--color-zinc-50);
+
+	--color-primary: var(--color-teal-500);
+	--color-primary-fg: var(--color-zinc-50);
+
+	--color-secondary: var(--color-zinc-800);
+	--color-secondary-fg: var(--color-zinc-50);
+
+	--color-destructive: var(--color-red-500);
+	--color-destructive-fg: var(--color-zinc-50);
+
+	--color-muted: var(--color-zinc-400);
+	--color-muted-fg: var(--color-zinc-600);
+
+	--color-disabled: var(--color-zinc-600);
+	--color-disabled-fg: var(--color-zinc-400);
+
+	--color-input: var(--color-zinc-950);
+	--color-input-fg: var(--color-zinc-50);
+	--color-input-highlight: var(--color-teal-500);
+	--color-input-selected: var(--color-teal-500);
+
+	--color-card: var(--color-zinc-950);
+	--color-card-fg: var(--color-zinc-50);
+	--color-card-selected: var(--color-teal-950);
+	--color-card-selected-fg: var(--color-primary);
+
+	--color-border: var(--color-zinc-700);
+
+	--color-spinner: var(--color-teal-400);
 }

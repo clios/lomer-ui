@@ -6,9 +6,9 @@
 </script>
 
 <div class="mt-1 flex gap-2">
-	<p>Or copy-paste the</p>
+	<p class="text-muted">Or copy-paste the</p>
 	<Button
-		variant="outline"
+		variant="secondary"
 		size="small"
 		onclick={() => window.open(link, '_blank')}
 		class="w-min whitespace-nowrap"

@@ -88,12 +88,7 @@
 	<Code code={`<Drawer position="left">...</Drawer>`} language="xml" />
 	<Preview class="flex-wrap gap-4">
 		<Button onclick={() => (isLeftOpen = true)}>Left</Button>
-		<Drawer
-			class="w-56 p-6"
-			title="Left Drawer"
-			position="left"
-			bind:isOpen={isLeftOpen}
-		>
+		<Drawer class="w-56 p-6" position="left" bind:isOpen={isLeftOpen}>
 			{#each Array(50) as _}
 				<p>Content</p>
 			{/each}
@@ -101,12 +96,7 @@
 		</Drawer>
 
 		<Button onclick={() => (isRightOpen = true)}>Right</Button>
-		<Drawer
-			class="w-56 p-6"
-			title="Right Drawer"
-			position="right"
-			bind:isOpen={isRightOpen}
-		>
+		<Drawer class="w-56 p-6" position="right" bind:isOpen={isRightOpen}>
 			{#each Array(50) as _}
 				<p>Content</p>
 			{/each}
@@ -114,12 +104,7 @@
 		</Drawer>
 
 		<Button onclick={() => (isTopOpen = true)}>Top</Button>
-		<Drawer
-			class="h-56 p-6"
-			title="Top Drawer"
-			position="top"
-			bind:isOpen={isTopOpen}
-		>
+		<Drawer class="h-56 p-6" position="top" bind:isOpen={isTopOpen}>
 			{#each Array(50) as _}
 				<p>Content</p>
 			{/each}
@@ -127,12 +112,7 @@
 		</Drawer>
 
 		<Button onclick={() => (isBottomOpen = true)}>Bottom</Button>
-		<Drawer
-			class="h-56 p-6"
-			title="Bottom Drawer"
-			position="bottom"
-			bind:isOpen={isBottomOpen}
-		>
+		<Drawer class="h-56 p-6" position="bottom" bind:isOpen={isBottomOpen}>
 			{#each Array(50) as _}
 				<p>Content</p>
 			{/each}

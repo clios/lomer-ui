@@ -28,9 +28,10 @@
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />
 	<OnThisPageBtn id="3" title="Examples" />
-	<OnThisPageSubBtn id="3.1" title="Destructive" />
-	<OnThisPageSubBtn id="3.2" title="Closable" />
-	<OnThisPageSubBtn id="3.3" title="Custom content" />
+	<OnThisPageSubBtn id="3.1" title="Title" />
+	<OnThisPageSubBtn id="3.2" title="Custom icon" />
+	<OnThisPageSubBtn id="3.3" title="Customize" />
+	<OnThisPageSubBtn id="3.4" title="Closable" />
 </OnThisPage>
 
 <div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
@@ -54,7 +55,7 @@
 		code={`import Alert from '$lib/components/ui/alert.svelte'`}
 		language="javascript"
 	/>
-	<Code code={`<Alert>Your bill is due tomorrow.</Alert>`} language="xml" />
+	<Code code={`<Alert>Your bill is due tomorrow.</Alert>`} />
 	<Preview>
 		<Alert>Your bill is due tomorrow.</Alert>
 	</Preview>
@@ -62,24 +63,71 @@
 	<!-- EXAMPLES -->
 	<Title id="3">Examples</Title>
 
-	<!-- DESTRUCTIVE -->
-	<SubTitle id="3.1">Destructive</SubTitle>
-	<p>Add <Prop>variant</Prop> property with <Val>destructive</Val> value.</p>
+	<!-- TITLE -->
+	<SubTitle id="3.1">Title</SubTitle>
+	<p>Add <Prop>title</Prop> property.</p>
+	<Code code={`<Alert title="Notice">Your bill is due tomorrow.</Alert>`} />
+	<Preview>
+		<Alert title="Notice">Your bill is due tomorrow.</Alert>
+	</Preview>
+
+	<!-- CUSTOM ICON -->
+	<SubTitle id="3.2">Custom icon</SubTitle>
+	<p>Add <Prop>icon</Prop> snippet.</p>
 	<Code
-		code={`<Alert variant="destructive">Your bill is due today.</Alert>`}
-		language="xml"
+		code={`<Alert>` +
+			`\n\t{#snippet icon()}` +
+			`\n\t\t<Icon icon="mdi:terminal-line" width="24" />` +
+			`\n\t{/snippet}` +
+			`\n\tYour bill is due today.` +
+			`\n</Alert>`}
 	/>
 	<Preview>
-		<Alert variant="destructive">Your bill is due today.</Alert>
+		<Alert>
+			{#snippet icon()}
+				<Icon icon="mdi:terminal-line" width="24" />
+			{/snippet}
+			Your bill is due today.
+		</Alert>
+	</Preview>
+
+	<!-- CUSTOMIZE -->
+	<SubTitle id="3.3">Customize</SubTitle>
+	<Code
+		code={`<Alert class="border-primary">Your bill is due today.</Alert>` +
+			`\n<Alert class="border-primary text-primary">Your bill is due today.</Alert>` +
+			`\n<Alert class="border-primary bg-primary text-primary-fg">` +
+			`\n\tYour bill is due today.` +
+			`\n</Alert>` +
+			`\n<Alert class="border-destructive animate-pulse">` +
+			`\n\tYour bill is due today.` +
+			`\n</Alert>` +
+			`\n<Alert class="text-destructive">Your bill is due today.</Alert>` +
+			`\n<Alert class="bg-destructive border-destructive">` +
+			`\n\tYour bill is due today.` +
+			`\n</Alert>`}
+	/>
+	<Preview>
+		<div class="flex w-full flex-col gap-2">
+			<Alert class="border-primary">Your bill is due today.</Alert>
+			<Alert class="border-primary text-primary">Your bill is due today.</Alert>
+			<Alert class="border-primary bg-primary text-primary-fg">
+				Your bill is due today.
+			</Alert>
+			<Alert class="border-destructive animate-pulse">
+				Your bill is due today.
+			</Alert>
+			<Alert class="text-destructive">Your bill is due today.</Alert>
+			<Alert class="bg-destructive border-destructive">
+				Your bill is due today.
+			</Alert>
+		</div>
 	</Preview>
 
 	<!-- CLOSABLE -->
-	<SubTitle id="3.2">Closable</SubTitle>
+	<SubTitle id="3.4">Closable</SubTitle>
 	<p>Add <Prop>isClosable</Prop> property.</p>
-	<Code
-		code={`<Alert isClosable>Your bill is due tomorrow.</Alert>`}
-		language="xml"
-	/>
+	<Code code={`<Alert isClosable>Your bill is due tomorrow.</Alert>`} />
 	<Preview class="flex justify-center">
 		{#if isClosableOpen}
 			<Alert class="w-full" isClosable bind:isOpen={isClosableOpen}>
@@ -88,28 +136,6 @@
 		{:else}
 			<Button onclick={() => (isClosableOpen = true)}>Open alert</Button>
 		{/if}
-	</Preview>
-
-	<!-- CUSTOM CONTENT -->
-	<SubTitle id="3.3">Custom content</SubTitle>
-	<Code
-		code={`<Alert class="flex gap-2">` +
-			`\n\t<Icon icon="mdi:terminal-line" width={24} />` +
-			`\n\t<div>` +
-			`\n\t\t<p class="font-semibold">Notice</p>` +
-			`\n\t\t<p>Your bill is due tomorrow.</p>` +
-			`\n\t</div>` +
-			`\n</Alert>`}
-		language="xml"
-	/>
-	<Preview>
-		<Alert class="flex gap-2">
-			<Icon icon="mdi:terminal-line" width={24} />
-			<div>
-				<p class="font-semibold">Notice</p>
-				<p>Your bill is due tomorrow.</p>
-			</div>
-		</Alert>
 	</Preview>
 
 	<PageFooter

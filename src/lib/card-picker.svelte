@@ -2,14 +2,11 @@
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import type { Snippet } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
-	import { draw } from 'svelte/transition';
-	import { circInOut } from 'svelte/easing';
 
 	type Props = {
 		cardValue?: string;
 		children?: Snippet;
 		class?: string;
-		indicator?: boolean;
 		isDisabled?: boolean;
 		isLoading?: boolean;
 		isReadOnly?: boolean;
@@ -21,7 +18,6 @@
 		cardValue,
 		children,
 		class: className,
-		indicator = false,
 		isDisabled = false,
 		isLoading = false,
 		isReadOnly = false,
@@ -46,32 +42,32 @@
 	class={twMerge(
 		// BASE
 		'relative p-2', // positioning and padding
-		'bg-white dark:bg-zinc-950', // background
-		'rounded-sm border dark:border-zinc-700', // border
-		'cursor-pointer shadow-xs dark:shadow-none', // visual
+		'bg-input', // background
+		'rounded-card border', // border
+		'cursor-pointer', // visual
 
 		// SELECTED
-		isSelected
-			? 'outline' // outline
+		// isSelected && !value && 'border-none',
+		isSelected && value
+			? 'outline-card-selected-fg bg-card-selected border-card-selected-fg outline' // outline
 			: [
 					'active:outline-2 active:outline-offset-0', // active
-					'focus:outline focus:outline-offset-2 focus:outline-cyan-500', // focusing
-					'hover:outline hover:outline-offset-2 hover:outline-cyan-500' // hovering
+					'focus:outline-input-highlight focus:outline focus:outline-offset-2', // focusing
+					'hover:outline-input-highlight hover:outline hover:outline-offset-2' // hovering
 				],
 
 		// DISABLED
-		'disabled:border-zinc-700 dark:disabled:border-zinc-700', // border
-		'disabled:bg-zinc-700 dark:disabled:bg-zinc-700', // background
-		'disabled:text-zinc-400 dark:disabled:text-zinc-400', // text
+		'disabled:bg-disabled-fg', // border
+		'disabled:bg-disabled', // background
+		'disabled:text-disabled-fg', // text
+		'disabled:text-disabled-fg disabled:border-disabled', // border
 		'disabled:cursor-not-allowed disabled:outline-hidden', // visual
 
 		// LOADING
-		isLoading && 'disabled:text-zinc-950/20 dark:disabled:text-zinc-50/20',
+		isLoading && 'disabled:text-disabled-fg',
 
 		// READ ONLY
-		isReadOnly && [
-			'pointer-events-none cursor-default select-none hover:outline-0 focus:outline-0 active:outline-0'
-		],
+		isReadOnly && ['pointer-events-none cursor-default outline-0 select-none'],
 
 		// STYLING
 		className
@@ -81,48 +77,29 @@
 	{onclick}
 	{...props}
 >
-	{#if isSelected && indicator}
-		<!-- CHECK MARK -->
-		<svg
-			class="absolute -top-5 right-1/2 translate-x-1/2"
-			width="14"
-			height="14"
-			viewBox="0 0 31 24"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path
-				in:draw={{ duration: 150, easing: circInOut }}
-				stroke-width="5"
-				d="M1 16L8 23L30.5 0.5"
-				stroke="#14B8A6"
-			/>
-		</svg>
-	{/if}
-
 	{#if isLoading}
-		<svg
-			class="absolute right-1/2 bottom-1/2 translate-x-1/2 translate-y-1/2"
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-		>
-			<path
-				fill="#67E8F9"
-				d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8A8 8 0 0 1 12 20Z"
-				opacity="0.5"
-			/>
-			<path fill="#67E8F9" d="M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z">
-				<animateTransform
-					attributeName="transform"
-					dur="1s"
-					from="0 12 12"
-					repeatCount="indefinite"
-					to="360 12 12"
-					type="rotate"
-				/>
-			</path>
-		</svg>
+		<div class="absolute right-1/2 bottom-1/2 translate-x-1/2 translate-y-1/2">
+			{@render IconLoading()}
+		</div>
 	{/if}
 	{@render children?.()}
 </button>
+
+<!-- ICON LOADING -->
+{#snippet IconLoading()}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		class="text-spinner animate-spin"
+		viewBox="0 0 16 16"
+		width="16"
+		height="16"
+	>
+		<rect width="16" height="16" fill="none" />
+		<path
+			fill="currentColor"
+			d={`M8 0A8 8 0 0 0 .002 7.812C.094 4.033 2.968 1 6.5 1C10.09 1 13 4.134 13 8a1.5 1.5 ` +
+				`0 0 0 3 0a8 8 0 0 0-8-8m0 16a8 8 0 0 0 7.998-7.812C15.906 11.967 13.032 15 9.5 ` +
+				`15C5.91 15 3 11.866 3 8a1.5 1.5 0 0 0-3 0a8 8 0 0 0 8 8`}
+		/>
+	</svg>
+{/snippet}
