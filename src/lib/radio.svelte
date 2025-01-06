@@ -64,30 +64,11 @@
 	{onclick}
 	{...props}
 >
-	<!-- DOT -->
-	{#if isLoading}
-		{@render IconLoading()}
-	{:else if isDisabled}
-		{@render IconDisabled()}
-	{:else if isSelected}
-		<div
-			transition:fade={{ duration: 150 }}
-			class={twMerge(
-				'absolute top-1.5 left-2 size-3', // layout and positioning
-				'rounded-full', // border
-				'bg-primary', // background
-
-				// DISABLED
-				isDisabled &&
-					'group-disabled:bg-disabled group-disabled:cursor-not-allowed'
-			)}
-		></div>
-	{/if}
-
 	<!-- OUTER CIRCLE -->
 	<div
 		class={twMerge(
 			'pointer-events-none absolute top-0.5 left-1 size-5 rounded-full', // base
+			'flex items-center justify-center', // positioning
 			'border-input-border border', // border
 			'shadow-xs dark:shadow-none', // shadow
 			'outline-primary outline-offset-2', // outline
@@ -95,7 +76,27 @@
 			'group-hover:outline', // hovering
 			'group-disabled:outline-none' // disabled
 		)}
-	></div>
+	>
+		<!-- DOT -->
+		{#if isLoading}
+			{@render IconLoading()}
+		{:else if isDisabled}
+			{@render IconDisabled()}
+		{:else if isSelected}
+			<div
+				transition:fade={{ duration: 150 }}
+				class={twMerge(
+					'size-3', // layout and positioning
+					'rounded-full', // border
+					'bg-primary', // background
+
+					// DISABLED
+					isDisabled &&
+						'group-disabled:bg-disabled group-disabled:cursor-not-allowed'
+				)}
+			></div>
+		{/if}
+	</div>
 
 	{@render children?.()}
 </button>
@@ -104,7 +105,7 @@
 {#snippet IconLoading()}
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		class="text-spinner pointer-events-none absolute top-1.5 left-2 animate-spin"
+		class="text-spinner pointer-events-none animate-spin"
 		viewBox="0 0 16 16"
 		width="12"
 		height="12"
@@ -123,7 +124,7 @@
 {#snippet IconDisabled()}
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		class="text-primary-fg bg-primary pointer-events-none absolute top-1 left-1.5 rounded-full"
+		class="text-primary-fg bg-primary pointer-events-none rounded-full"
 		width="16"
 		height="16"
 		viewBox="0 0 24 24"
