@@ -1,5 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import { circInOut } from 'svelte/easing';
+	import { draw } from 'svelte/transition';
 	import { twMerge } from 'tailwind-merge';
 
 	type Props = {
@@ -33,7 +35,14 @@
 </script>
 
 <!-- CONTAINER -->
-<div class={twMerge('flex items-start gap-4', isReadOnly && 'select-none')}>
+<div
+	class={twMerge(
+		'flex items-start gap-4',
+		isReadOnly && 'select-none',
+		// AS DROPDOWN ITEM
+		'dropdown-item-switch'
+	)}
+>
 	<!-- PILL -->
 	<button
 		type="button"
@@ -60,9 +69,7 @@
 			isLoading && 'disabled:text-disabled',
 
 			// READ ONLY
-			isReadOnly && [
-				'pointer-events-none cursor-default select-none hover:outline-0 focus:outline-0 active:outline-0'
-			],
+			isReadOnly && ['pointer-events-none cursor-default select-none'],
 
 			// STYLE
 			className
@@ -79,7 +86,7 @@
 			<div
 				class={twMerge(
 					'size-5 rounded-full transition-all',
-					isSwitched ? 'bg-bg dark:bg-fg  translate-x-4' : 'bg-border'
+					isSwitched ? 'bg-bg dark:bg-fg translate-x-4' : 'bg-border/50'
 				)}
 			></div>
 		{:else}
@@ -87,9 +94,14 @@
 			<div
 				class={twMerge(
 					'size-5 rounded-full transition-all',
-					isSwitched ? 'bg-bg dark:bg-fg  translate-x-4' : 'bg-border'
+					isSwitched && 'grid place-content-center',
+					isSwitched ? 'bg-bg dark:bg-fg translate-x-4' : 'bg-border/50'
 				)}
-			></div>
+			>
+				{#if isSwitched}
+					{@render IconCheck()}
+				{/if}
+			</div>
 		{/if}
 	</button>
 
@@ -137,6 +149,25 @@
 			fill-rule="evenodd"
 			d={`M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m-4.906-3.68L18.32 ` +
 				`7.094A8 8 0 0 1 7.094 18.32M5.68 16.906A8 8 0 0 1 16.906 5.68z`}
+		/>
+	</svg>
+{/snippet}
+
+<!-- ICON CHECK -->
+{#snippet IconCheck()}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		class="text-input-selected group-disabled:text-disabled"
+		width="10"
+		height="10"
+		viewBox="0 0 31 24"
+		fill="none"
+	>
+		<path
+			in:draw={{ duration: 150, easing: circInOut }}
+			stroke-width="5"
+			d="M1 16L8 23L30.5 0.5"
+			stroke="currentColor"
 		/>
 	</svg>
 {/snippet}

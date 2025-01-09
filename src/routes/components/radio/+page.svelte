@@ -15,6 +15,7 @@
 	import Title from '$site/title.svelte';
 
 	let value = $state('free');
+	let disabledValue = $state('x');
 </script>
 
 <svelte:head>
@@ -86,7 +87,8 @@
 	<p>Add <Prop>isDisabled</Prop> property.</p>
 	<Code code={`<Radio isDisabled>` + `\n\tRadio` + `\n</Radio>`} />
 	<Preview>
-		<Radio isDisabled>Radio</Radio>
+		<Radio isDisabled bind:value={disabledValue} radioValue="x">Radio</Radio>
+		<Radio isDisabled bind:value={disabledValue} radioValue="y">Radio</Radio>
 	</Preview>
 
 	<!-- READ ONLY -->

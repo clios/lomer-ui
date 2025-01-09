@@ -111,6 +111,9 @@
 		// LOADING
 		isLoading && 'disabled:text-disabled',
 
+		// AS DROPDOWN ITEM
+		'dropdown-item-button',
+
 		className
 	)}
 	{type}

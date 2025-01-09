@@ -86,6 +86,11 @@
 />
 <SidebarLink
 	onclick={() => (isOpen = false)}
+	href="/components/dropdown"
+	label="Dropdown"
+/>
+<SidebarLink
+	onclick={() => (isOpen = false)}
 	href="/components/field"
 	label="Field"
 />

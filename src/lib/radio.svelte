@@ -56,6 +56,9 @@
 			'pointer-events-none cursor-default select-none hover:outline-0 focus:outline-0 active:outline-0'
 		],
 
+		// AS DROPDOWN ITEM
+		'dropdown-item-radio',
+
 		// STYLING
 		className
 	)}
@@ -124,7 +127,10 @@
 {#snippet IconDisabled()}
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		class="text-primary-fg bg-primary pointer-events-none rounded-full"
+		class={twMerge(
+			'pointer-events-none rounded-full',
+			isSelected && 'bg-primary text-primary-fg'
+		)}
 		width="16"
 		height="16"
 		viewBox="0 0 24 24"

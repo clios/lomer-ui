@@ -45,6 +45,9 @@
 			'pointer-events-none cursor-default select-none hover:outline-0 focus:outline-0 active:outline-0'
 		],
 
+		// AS DROPDOWN ITEM
+		'dropdown-item-checkbox',
+
 		// STYLE
 		className
 	)}

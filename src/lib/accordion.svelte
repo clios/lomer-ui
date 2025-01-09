@@ -42,7 +42,15 @@
 </script>
 
 <!-- CONTAINER -->
-<div class={twMerge('bg-bg text-fg px-2', className)} {...props}>
+<div
+	class={twMerge(
+		'bg-bg text-fg px-2',
+		// AS DROPDOWN ITEM
+		'dropdown-item-accordion',
+		className
+	)}
+	{...props}
+>
 	<!-- HEADER AS TOGGLE BUTTON -->
 	<button
 		class={twMerge(

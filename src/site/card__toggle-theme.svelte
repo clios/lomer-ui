@@ -1,6 +1,7 @@
 <script>
 	import Button from '$lib/button.svelte';
 	import Drawer from '$lib/drawer.svelte';
+	import Dropdown from '$lib/dropdown.svelte';
 	import Icon from '@iconify/svelte';
 	import { toggleMode, mode, setTheme, theme } from 'mode-watcher';
 
@@ -20,18 +21,18 @@
 			{/if}
 		</Button>
 
-		<Button
-			class="text-primary"
-			variant="ghost"
-			size="icon"
-			edge="circle"
-			onclick={() => (isOpen = true)}
-		>
-			<Icon icon="mdi:gear" width="17" />
-		</Button>
+		<div>
+			<Button
+				class="text-primary"
+				variant="ghost"
+				size="icon"
+				edge="circle"
+				onclick={() => (isOpen = true)}
+			>
+				<Icon icon="mdi:gear" width="17" />
+			</Button>
 
-		<Drawer class="w-[320px]" title="Theme" position="left" bind:isOpen>
-			<div class="flex gap-2">
+			<Dropdown bind:isOpen>
 				<Button
 					size="small"
 					onclick={() => setTheme('')}
@@ -71,7 +72,7 @@
 					</div>
 					Teal
 				</Button>
-			</div>
-		</Drawer>
+			</Dropdown>
+		</div>
 	</div>
 </div>

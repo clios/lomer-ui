@@ -15,6 +15,7 @@
 	import SubTitle from '$site//sub-title.svelte';
 	import Title from '$site//title.svelte';
 	import Val from '$site/val.svelte';
+	import Dropdown from '$lib/dropdown.svelte';
 
 	let isOpen = $state(false);
 	let isLeftOpen = $state(false);
@@ -22,6 +23,8 @@
 	let isTopOpen = $state(false);
 	let isBottomOpen = $state(false);
 	let isFixedFooterOpen = $state(false);
+
+	let isOpenDropdown = $state(false);
 </script>
 
 <svelte:head>
@@ -71,7 +74,7 @@
 	<Preview>
 		<Button onclick={() => (isOpen = true)}>Open drawer</Button>
 		<Drawer class="w-[400px]" title="Title here" bind:isOpen>
-			Content here...
+			<div class="p-4">content</div>
 		</Drawer>
 	</Preview>
 

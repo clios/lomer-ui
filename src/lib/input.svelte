@@ -46,6 +46,9 @@
 			// READ ONLY
 			isReadOnly && 'pointer-events-none cursor-default outline-0 select-none',
 
+			// AS DROPDOWN ITEM
+			'dropdown-item-input',
+
 			// STYLING
 			className
 		)}
