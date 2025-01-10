@@ -56,7 +56,7 @@
 				type="button"
 				onclick={() => (isOpen = false)}
 				class={twMerge(
-					'absolute top-4 right-4 p-1', // layout and positioning
+					'absolute top-3 right-3 p-1', // layout and positioning
 					'rounded-full bg-none', // bg and radius
 					'outline-primary ring-offset-1 outline-offset-2 active:outline-2 active:outline-offset-0', // outline
 					'cursor-pointer hover:outline focus:outline' // hover, focus, cursor

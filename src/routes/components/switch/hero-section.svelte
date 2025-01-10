@@ -6,7 +6,7 @@
 </script>
 
 <Screen>
-	<div class="flex w-full flex-col items-center gap-4">
+	<div class="flex h-32 w-full flex-col items-center justify-center gap-4">
 		<Switch bind:value>Turn me on!</Switch>
 		<p>Value: {value}</p>
 	</div>

@@ -6,7 +6,7 @@
 	let isOpen = true;
 </script>
 
-<Screen class="flex justify-center">
+<Screen class="flex justify-center p-8">
 	{#if isOpen}
 		<Alert title="Information" isClosable bind:isOpen>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum soluta

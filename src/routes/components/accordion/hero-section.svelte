@@ -3,7 +3,7 @@
 	import Screen from '$site/screen.svelte';
 </script>
 
-<Screen>
+<Screen class="p-8">
 	<Accordion title="How's the DX?">
 		{#snippet icon()}
 			<svg

@@ -67,7 +67,7 @@
 		</p>
 		<Screen class="mt-8 grid place-content-center pb-8">
 			<p class="text-fg text-center text-6xl">lomer-ui</p>
-			<p class="text-muted text-center text-2xl">Keep It Simply Styled</p>
+			<p class="text-primary text-center text-2xl">Keep It Simply Styled</p>
 			<div class="mt-8 flex justify-center gap-4">
 				<Button onclick={() => goto('/docs/introduction')}>Get Started</Button>
 				<Button

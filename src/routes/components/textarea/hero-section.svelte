@@ -6,7 +6,7 @@
 </script>
 
 <Screen>
-	<div class="flex flex-col items-center gap-4">
+	<div class="flex h-40 flex-col items-center justify-center gap-4">
 		<Textarea bind:value />
 		<p>Value: {value || 'N/A'}</p>
 	</div>

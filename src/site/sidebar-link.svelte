@@ -24,7 +24,7 @@
 >
 	{label}
 	{#if status === 'new'}
-		<span class="text-bg dark:text-fg rounded bg-green-600 px-1 text-xs">
+		<span class="text-primary-fg dark:text-fg bg-primary rounded px-1 text-xs">
 			NEW
 		</span>
 	{/if}
