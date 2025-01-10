@@ -45,6 +45,7 @@
 	onclick={() => (isOpen = false)}
 	href="/docs/theming"
 	label="Theming"
+	status="new"
 />
 <SidebarLink onclick={() => (isOpen = false)} href="/docs/cli" label="CLI" />
 
@@ -88,6 +89,7 @@
 	onclick={() => (isOpen = false)}
 	href="/components/dropdown"
 	label="Dropdown"
+	status="new"
 />
 <SidebarLink
 	onclick={() => (isOpen = false)}

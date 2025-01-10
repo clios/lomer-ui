@@ -8,19 +8,22 @@
 	import Code from '$site/code.svelte';
 	import Dialog from '$lib/dialog.svelte';
 	import Drawer from '$lib/drawer.svelte';
+	import Dropdown from '$lib/dropdown.svelte';
 	import Field from '$lib/field.svelte';
 	import Icon from '@iconify/svelte';
 	import Input from '$lib/input.svelte';
 	import Link from '$lib/link.svelte';
 	import PreviewComponent from './preview-component.svelte';
 	import Radio from '$lib/radio.svelte';
+	import ScrollArea from '$lib/scroll-area.svelte';
 	import Select from '$lib/select.svelte';
 	import Switch from '$lib/switch.svelte';
 	import Textarea from '$lib/textarea.svelte';
 	import { goto } from '$app/navigation';
-	import ScrollArea from '$lib/scroll-area.svelte';
 	import { twMerge } from 'tailwind-merge';
-	import Dropdown from '$lib/dropdown.svelte';
+	import Syntax from '$site/syntax.svelte';
+	import Preview from '$site/preview.svelte';
+	import Screen from '$site/screen.svelte';
 
 	let cardValue = $state('');
 	let checkboxValue = $state(false);
@@ -28,8 +31,10 @@
 	const openDialog = () => (isDialogOpen = true);
 	let isDrawerOpen = $state(false);
 	const openDrawer = () => (isDrawerOpen = true);
-	let radioValue = $state('');
+	let radioVal = $state('');
 	let selectValue = $state('');
+	let isOpenDialog = $state(false);
+	let isOpenDropdown = $state(false);
 </script>
 
 <svelte:head>
@@ -39,279 +44,204 @@
 <div class="lg:p-4">
 	<div class="flex flex-wrap justify-between gap-x-8">
 		<p class="flex items-end">
-			Svelte<span class="mb-[1px] pl-1 text-sm text-cyan-700 dark:text-cyan-500"
-				>v5</span
-			>
-			<span class="px-2 text-sm text-zinc-500"> & </span> Tailwind CSS
-			<span class="mb-[1px] pl-1 text-sm text-cyan-700 dark:text-cyan-500"
-				>v4</span
-			>
+			Svelte<span class="text-primary mb-[1px] pl-1 text-sm">v5</span>
+			<span class="text-muted px-2 text-sm"> & </span> Tailwind CSS
+			<span class="text-primary mb-[1px] pl-1 text-sm">v4</span>
 		</p>
 		<Link
 			class="hidden items-center no-underline sm:flex"
 			href="https://github.com/sponsors/clios"
 			target="_blank"
 			>Sponsor <Icon
-				class="inline text-cyan-700 dark:text-cyan-500"
+				class="text-primary inline"
 				icon="mdi:heart-outline"
 				width={20}
 			/></Link
 		>
 	</div>
 
-	<div class="my-16 text-zinc-500 dark:text-zinc-400">
+	<div class="text-muted my-16">
 		<p class="mt-16 text-center text-xl">
-			<span class="font-semibold text-zinc-950 dark:text-white">Minimalist</span
-			> UI library for Svelte powered by Tailwind CSS.
+			<span class="text-fg font-semibold">Minimalist</span> UI library for Svelte
+			powered by Tailwind CSS.
 		</p>
-		<p class="mt-16 text-center text-6xl text-zinc-950 dark:text-white">
-			lomer-ui
-		</p>
-		<p class="text-center text-2xl text-zinc-500 dark:text-zinc-400">
-			Keep It Simply Styled
-		</p>
-		<p class="mt-16 text-center text-xl">
-			A dead-simple <span class="font-semibold text-zinc-950 dark:text-white"
-				>CLI tool</span
-			>
+		<Screen class="mt-8 grid place-content-center pb-8">
+			<p class="text-fg text-center text-6xl">lomer-ui</p>
+			<p class="text-muted text-center text-2xl">Keep It Simply Styled</p>
+			<div class="mt-8 flex justify-center gap-4">
+				<Button onclick={() => goto('/docs/introduction')}>Get Started</Button>
+				<Button
+					variant="secondary"
+					onclick={() =>
+						window.open('https://github.com/clios/lomer-ui', '_blank')}
+				>
+					<Icon icon="mdi:github" width={24} height={24} />
+					GitHub</Button
+				>
+			</div>
+		</Screen>
+		<p class="mt-8 text-center text-xl">
+			A dead-simple <span class="text-fg font-semibold">CLI tool</span>
 			to
-			<span class="font-semibold text-zinc-950 dark:text-white">instant</span>ly
-			kickstart your
-			<span class="font-semibold text-zinc-950 dark:text-white">components</span
-			>.
+			<span class="text-fg font-semibold">instant</span>ly kickstart your
+			<span class="text-fg font-semibold">components</span>.
 		</p>
 		<p class="text-center text-xl">
-			No extra UI libraries required—just clean, standalone code <span
-				class="font-semibold text-zinc-950 dark:text-white">ready to use</span
-			>.
+			No extra UI libraries required—just clean, standalone code
+			<span class="text-fg font-semibold">ready to use</span>.
 		</p>
-
-		<div class="mt-16 flex justify-center gap-4">
-			<Button onclick={() => goto('/docs/introduction')}>Get Started</Button>
-			<Button
-				variant="secondary"
-				onclick={() =>
-					window.open('https://github.com/clios/lomer-ui', '_blank')}
-			>
-				<Icon icon="mdi:github" width={24} height={24} />
-				GitHub</Button
-			>
-		</div>
-	</div>
-
-	<div class="mt-16 flex justify-center">
-		<div
-			class="mb-8 flex w-[800px] flex-col justify-center border-b border-zinc-500 pb-1"
-		>
-			<p class="text-center text-2xl text-zinc-500 dark:text-zinc-400">
-				Minimal Setup
-			</p>
-		</div>
 	</div>
 
 	<div
-		class="mb-32 flex flex-col items-center gap-2 text-zinc-500 dark:text-zinc-400"
+		class="text-muted mb-32 flex flex-col items-center gap-2 dark:text-zinc-400"
 	>
 		<p class="text-center text-xl">
-			Make sure you enabled <span
-				class="font-semibold text-zinc-950 dark:text-white">Dark Mode</span
-			> to your TailwindCSS.
-		</p>
-		<ScrollArea
-			class="w-[calc(100vw-2rem)] overflow-x-auto rounded sm:w-[420px]"
-		>
-			<div class="w-full">
-				<Code
-					code={`@variant dark (&:where(.dark, .dark *));`}
-					language="less"
-				/>
-			</div>
-		</ScrollArea>
-		<p class="mt-8 text-center text-xl">That's it!</p>
-		<p class="text-center text-xl">
-			<span class="font-semibold text-zinc-950 dark:text-white">Start</span>
+			<span class="text-fg font-semibold">Start</span>
 			building your own components
-			<span class="font-semibold text-zinc-950 dark:text-white">with CLI</span>.
+			<span class="text-fg font-semibold">with CLI</span>.
 		</p>
 		<div class="w-56">
-			<Cli code="npx lomer-ui add" />
+			<Cli code="npx lomer-ui init" />
 		</div>
+		<p class="text-fg text-center text-xl">That's it!</p>
 	</div>
 
-	<div
-		class="sm:flex sm:flex-col sm:items-center lg:grid lg:grid-cols-2 lg:gap-4 2xl:grid-cols-3"
-	>
-		<PreviewComponent title="Accordion" href="/components/accordion">
-			<div class="w-full">
-				<Accordion title="Open Source?">Yes!</Accordion>
-				<Accordion title="Open Source?" isLoading>Yes!</Accordion>
-				<Accordion title="Open Source?" isDisabled>Yes!</Accordion>
-			</div>
-		</PreviewComponent>
+	<p class="my-2 text-xl font-semibold">
+		DX matters.
+		<span class="text-muted font-medium">Easy to implement components.</span>
+	</p>
 
-		<PreviewComponent title="Alert" href="/components/alert">
-			<div class="w-full">
-				<Alert title="Try it." class="flex gap-2">
-					<p>Just try it!</p>
-				</Alert>
-			</div>
-		</PreviewComponent>
-
-		<PreviewComponent title="Button" href="/components/button">
-			<div class="flex flex-wrap justify-center gap-4">
-				<Button>Primary</Button>
-				<Button variant="secondary">Secondary</Button>
-				<Button variant="destructive">Destructive</Button>
-				<Button variant="ghost">Ghost</Button>
-				<Button variant="outline">Outline</Button>
-				<Button>
-					<Icon icon="mdi:power" width={24} height={24} /> Power
-				</Button>
-				<Button size="icon">
-					<Icon icon="mdi:power" width={24} height={24} />
-				</Button>
-				<Button edge="sharp">Sharp</Button>
-				<Button edge="circle">Full round</Button>
-				<Button isLoading>Loading</Button>
-				<Button isDisabled>Disabled</Button>
-				<Button size="small">Small</Button>
-			</div>
-		</PreviewComponent>
-
-		<PreviewComponent title="Card Picker" href="/components/card-picker">
-			<div class="flex flex-wrap justify-center gap-4">
-				<CardPicker bind:value={cardValue} cardValue="card 1">
-					<Icon icon="game-icons:spiked-dragon-head" width={50} height={50} />
-					<p>Dragon</p>
-				</CardPicker>
-				<CardPicker bind:value={cardValue} cardValue="card 2">
-					<Icon icon="game-icons:snake-tongue" width={50} height={50} />
-					<p>Serpent</p>
-				</CardPicker>
-				<CardPicker cardValue="card 3" isLoading>
-					<Icon icon="game-icons:wolf-head" width={50} height={50} />
-					<p>Wolf</p>
-				</CardPicker>
-				<CardPicker cardValue="card 4" isDisabled>
-					<Icon icon="game-icons:lotus" width={50} height={50} />
-					<p>Lotus</p>
-				</CardPicker>
-			</div>
-		</PreviewComponent>
-
-		<PreviewComponent title="Checkbox" href="/components/checkbox">
-			<div class="flex flex-col gap-4">
-				<Checkbox bind:value={checkboxValue}>Hit me!</Checkbox>
-				<Checkbox isLoading>Hit me!</Checkbox>
-				<Checkbox isDisabled>Hit me!</Checkbox>
-				<Checkbox value={true} isDisabled>Hit me!</Checkbox>
-			</div>
-		</PreviewComponent>
-
-		<PreviewComponent title="Dialog" href="/components/dialog">
-			<Button onclick={openDialog}>Open dialog</Button>
-			<Dialog title="How is it?" bind:isOpen={isDialogOpen}>
-				<p class="mt-2">Don't hesitate to reach me out.</p>
-				<p class="italic">clios1208@gmail.com</p>
+	<div class="lg:flex lg:flex-row-reverse">
+		<Screen class="grid grow place-content-center">
+			<Button onclick={() => (isOpenDialog = true)}>Open</Button>
+			<Dialog title="Title here" bind:isOpen={isOpenDialog}>
+				Content here...
 			</Dialog>
-		</PreviewComponent>
+		</Screen>
 
-		<PreviewComponent title="Drawer" href="/components/drawer">
-			<Button onclick={openDrawer}>Open drawer</Button>
-			<Drawer
-				class="w-screen sm:w-[400px]"
-				title="How does it feel?"
-				bind:isOpen={isDrawerOpen}
-			>
-				<p class="mt-2">Feel free to reach me out.</p>
-				<p class="italic">clios1208@gmail.com</p>
-			</Drawer>
-		</PreviewComponent>
+		<Syntax
+			class="grow"
+			code={`<script\>
+	import { Button, Dialog } from '$lib/components/ui'
+	let isOpen = $state(false)
+</script>
 
-		<PreviewComponent title="Field" href="/components/field">
-			<Field label="Username" issue="Already in used." required>
-				<Input value="NoobMaster69" />
-			</Field>
-		</PreviewComponent>
-
-		<PreviewComponent title="Input" href="/components/input">
-			<div class="flex flex-col gap-4">
-				<Input value="NoobMaster69" />
-				<Input value="NoobMaster69" isLoading />
-				<Input value="NoobMaster69" isDisabled />
-			</div>
-		</PreviewComponent>
-
-		<PreviewComponent title="Link" href="/components/link">
-			<div class="flex flex-col gap-4">
-				<Link href="#">lomer-ui</Link>
-				<Link href="#" class="no-underline" caret>lomer-ui</Link>
-				<Link href="#" class="no-underline" isLoading>lomer-ui</Link>
-			</div>
-		</PreviewComponent>
-
-		<PreviewComponent title="Radio" href="/components/radio">
-			<div class="flex flex-col">
-				<Radio bind:value={radioValue} radioValue="free">Free</Radio>
-				<Radio bind:value={radioValue} radioValue="pro">Pro</Radio>
-				<Radio bind:value={radioValue} radioValue="premium" isLoading>
-					Premium
-				</Radio>
-				<Radio value={'enterprise'} radioValue="enterprise" isDisabled>
-					Enterprise
-				</Radio>
-			</div>
-		</PreviewComponent>
-
-		<PreviewComponent title="Scroll Area" href="/components/scroll-area">
-			<ScrollArea class="h-40 w-52 rounded border dark:border-zinc-700">
-				<p class="my-2 pl-4">Start</p>
-				{#each Array(20) as _, i}
-					<p class="my-2 pl-4">Line {i}</p>
-				{/each}
-				<p class="my-2 pl-4">End</p>
-			</ScrollArea>
-		</PreviewComponent>
-
-		<PreviewComponent title="Select" href="/components/select">
-			<div class="flex flex-col gap-2">
-				<div class="flex flex-col items-center gap-4">
-					<Select bind:value={selectValue} placeholder="Select a game">
-						<optgroup label="PC">
-							<option value="dota 2">Dota 2</option>
-							<option value="manor lords">Manor Lords</option>
-						</optgroup>
-						<optgroup label="Mobile">
-							<option value="world of tanks blitz">World of Tanks Blitz</option>
-							<option value="wuthering waves">Wuthering Waves</option>
-						</optgroup>
-					</Select>
-					<Select value="dota 2" isLoading>
-						<option value="dota 2">Dota 2</option>
-					</Select>
-					<Select value="dota 2" isDisabled>
-						<option value="dota 2">Dota 2</option>
-					</Select>
-				</div>
-			</div>
-		</PreviewComponent>
-
-		<PreviewComponent title="Switch" href="/components/switch">
-			<div class="flex flex-col gap-2">
-				<Switch>Free</Switch>
-				<Switch isLoading>Pro</Switch>
-				<Switch value={true} isLoading>Pro</Switch>
-				<Switch isDisabled>Premium</Switch>
-				<Switch value={true} isDisabled>Premium</Switch>
-			</div>
-		</PreviewComponent>
-
-		<PreviewComponent title="Textarea" href="/components/textarea">
-			<div class="flex flex-col gap-2">
-				<Textarea value="lomer-ui"></Textarea>
-				<Textarea value="lomer-ui" isLoading></Textarea>
-				<Textarea value="lomer-ui" isDisabled></Textarea>
-			</div>
-		</PreviewComponent>
+<Button onclick={() => (isOpen = true)}>Open</Button>
+<Dialog title="Title here" bind:isOpen>
+	Content here...
+</Dialog>`}
+		/>
 	</div>
+
+	<p class="mt-32 text-xl font-semibold">
+		Code is yours.
+		<span class="text-muted font-medium">Easy to customize components.</span>
+	</p>
+	<p class="text-muted mb-2">
+		Take a peek at this button component's code structure.
+	</p>
+
+	<Syntax
+		expandable
+		highlightedLines={[14, 17, 20]}
+		code={`<script\ lang="ts">
+	import { twMerge } from 'tailwind-merge';
+	import type { HTMLButtonAttributes } from 'svelte/elements';
+
+	type Props = { ... } & HTMLButtonAttributes;
+	
+	let { ... }: Props = $props();
+</script>
+
+<button
+	class={twMerge(
+		'tailwindcss_here', // base
+
+		variant === 'default' && 'tailwindcss_here',
+		// add more variants here...
+		
+		size === 'default' && 'tailwindcss_here',
+		// add more sizes here...
+		
+		edge === 'default' && 'tailwindcss_here',
+		// add more edges here...
+
+		'disabled:tailwindcss_here',
+
+		isLoading && 'tailwindcss_here',
+
+		className
+	)}
+>
+	{#if isLoading}
+		<div class="tailwindcss_here">
+			{@render IconLoading()}
+		</div>
+	{/if}
+	{@render children?.()}
+</button>
+
+<!-- ICON LOADING -->
+{#snippet IconLoading()}
+	<!-- SVG ELEMENT HERE -->
+{/snippet}`}
+	/>
+
+	<p class="mt-32 mb-2 text-xl font-semibold">
+		Reusable.
+		<span class="text-muted font-medium">
+			Combine to build more complex interfaces.
+		</span>
+	</p>
+	<div class="xl:flex xl:flex-row-reverse">
+		<Screen class="grid grow place-content-center">
+			<div class="flex justify-center">
+				<Button onclick={() => (isOpenDropdown = true)}>Menu</Button>
+				<Dropdown bind:isOpen={isOpenDropdown}>
+					<Input placeholder="Use input" />
+					<Button>Use button</Button>
+					<Checkbox>Use checkbox</Checkbox>
+					<Radio bind:value={radioVal} radioValue="free">Use radio 1</Radio>
+					<Radio bind:value={radioVal} radioValue="pro">Use radio 2</Radio>
+					<Switch>Use switch</Switch>
+					<Accordion title="Use accordion">
+						<div>I don't even know if we need this one.</div>
+					</Accordion>
+					<Accordion title="Responsive btw">
+						{#each Array(50) as _}
+							<p>I don't even know if we need this one.</p>
+						{/each}
+					</Accordion>
+				</Dropdown>
+			</div>
+		</Screen>
+
+		<Syntax
+			class="grow"
+			expandable
+			highlightedLines={[2, 3, 4, 5, 7, 8]}
+			code={`<Button onclick={() => (isOpen = true)}>Menu</Button>
+<Dropdown bind:isOpen>
+	<Input placeholder="Use input" />
+	<Button>Use button</Button>
+	<Checkbox>Use checkbox</Checkbox>
+	<Radio bind:value={radioVal} radioValue="free">Use radio 1</Radio>
+	<Radio bind:value={radioVal} radioValue="pro">Use radio 2</Radio>
+	<Switch>Use switch</Switch>
+	<Accordion title="Use accordion">
+		<div>I don't even know if we need this one.</div>
+	</Accordion>
+	<Accordion title="Responsive btw">
+		{#each Array(50) as _}
+			<p>I don't even know if we need this one.</p>
+		{/each}
+	</Accordion>
+</Dropdown>`}
+		/>
+	</div>
+
+	<div class="h-60"></div>
+	<!-- 
+	<p>Dynamic.</p>
+	Can easily display loading states. -->
 </div>

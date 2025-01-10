@@ -26,7 +26,7 @@
 
 <div class="relative flex flex-col justify-center">
 	<!-- Copy Button -->
-	<div class="absolute right-2">
+	<div class="absolute top-2 right-2">
 		<Button size="icon" variant="ghost" onclick={copyToClipboard}>
 			{#if copyMessage}
 				<Icon class="text-teal-500" icon="mdi:check" />
@@ -38,9 +38,6 @@
 
 	<!-- Highlighted Code -->
 	<pre
-		class={twMerge(
-			'border border-zinc-300 dark:border-zinc-700',
-			'overflow-hidden rounded-md bg-zinc-200 px-4 py-2 dark:bg-zinc-800'
-		)}
+		class={twMerge('border', 'rounded-card bg-card overflow-hidden px-4 py-2')}
 		bind:this={pre}><p>{code}</p></pre>
 </div>

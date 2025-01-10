@@ -1,18 +1,32 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 
-	export let lineColor = '#71717a10'; // Default color of the grid lines
+	export let lineColor = '#71717a20'; // Default color of the grid lines
 	export { className as class };
 
 	let className = '';
 </script>
 
 <div
-	class={twMerge('relative p-8', className)}
+	class={twMerge('relative', className)}
 	style="
 	background-image: linear-gradient({lineColor} 1px, transparent 1px),
 	linear-gradient(90deg, {lineColor} 1px, transparent 1px);
 	background-size: 1rem 1rem;"
 >
-	<slot />
+	<div
+		class="to-bg absolute top-0 h-16 w-full bg-gradient-to-t from-transparent"
+	></div>
+	<div
+		class="to-bg absolute top-0 h-full w-16 bg-gradient-to-l from-transparent"
+	></div>
+	<div class="p-16">
+		<slot />
+	</div>
+	<div
+		class="to-bg absolute top-0 right-0 h-full w-16 bg-gradient-to-r from-transparent"
+	></div>
+	<div
+		class="to-bg absolute bottom-0 h-16 w-full bg-gradient-to-b from-transparent"
+	></div>
 </div>

@@ -55,7 +55,6 @@
 	<button
 		class={twMerge(
 			'group flex w-full items-center gap-2 p-2', // layout and positioning
-
 			'focus:text-primary focus:outline-hidden', // focusing
 			'hover:text-primary', // hovering
 			'cursor-pointer', // cursor

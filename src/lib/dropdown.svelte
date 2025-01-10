@@ -57,6 +57,16 @@
 			'overflow-auto select-none',
 			'[&_*]:transition-colors',
 
+			// FOR SCROLL
+			'overflow-auto scroll-smooth ',
+			'[&::-webkit-scrollbar]:w-1',
+			'[&::-webkit-scrollbar-track]:rounded-full',
+			'[&::-webkit-scrollbar-track]:bg-none',
+			'hover:[&::-webkit-scrollbar-track]:bg-border',
+			'[&::-webkit-scrollbar-thumb]:rounded-full',
+			'[&::-webkit-scrollbar-thumb]:bg-none',
+			'hover:[&::-webkit-scrollbar-thumb]:bg-fg/50',
+
 			// FOR BUTTON
 			'[&>.dropdown-item-button]:active:bg-popup-fg/10',
 			'[&>.dropdown-item-button]:bg-popup',
@@ -122,6 +132,7 @@
 			'[&>.dropdown-item-switch]:justify-between',
 			'[&>.dropdown-item-switch]:outline-none',
 			'[&>.dropdown-item-switch]:pl-3',
+			'[&>.dropdown-item-switch]:mb-2',
 			'[&>.dropdown-item-switch]:rounded',
 			'[&>.dropdown-item-switch]:text-popup-fg',
 
@@ -149,6 +160,7 @@
 			// FOR INPUT
 			'[&>div>.dropdown-item-input]:my-2',
 			'[&>div>.dropdown-item-input]:px-3',
+			'[&>div>.dropdown-item-input]:w-full',
 
 			className
 		)}

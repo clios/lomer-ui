@@ -4,12 +4,13 @@
 	import { twMerge } from 'tailwind-merge';
 
 	type Props = {
+		status?: 'new' | 'draft';
 		label: string;
 		href: string;
 		onclick?: () => void;
 	};
 
-	let { label, href, onclick }: Props = $props();
+	let { label, href, status, onclick }: Props = $props();
 </script>
 
 <Link
@@ -17,9 +18,14 @@
 	{onclick}
 	caret
 	class={twMerge(
-		'pl-8 no-underline',
-		$page.url.pathname === href && 'bg-zinc-100 dark:bg-zinc-800'
+		'items-center pl-8 no-underline',
+		$page.url.pathname === href && 'text-primary'
 	)}
 >
 	{label}
+	{#if status === 'new'}
+		<span class="text-bg dark:text-fg rounded bg-green-600 px-1 text-xs">
+			NEW
+		</span>
+	{/if}
 </Link>

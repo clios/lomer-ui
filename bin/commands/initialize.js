@@ -4,12 +4,7 @@ import prompts from 'prompts';
 import { checkOrInstallTailwindCSS } from '../utils/checkOrInstallTailwindCSS.js';
 import { checkOrInstallTailwindMerge } from '../utils/checkOrInstallTailwindMerge.js';
 import { checkSvelteKitApp } from '../utils/checkSvelteKitApp.js';
-import { fetchFile } from '../utils/fetchFile.js';
 import { addMultipleComponents } from './addMultipleComponents.js';
-
-const GITHUB_BASE_URL =
-	'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib';
-const DEST_DIR = path.resolve('./src/lib/components/ui');
 
 export async function initialize() {
 	await checkSvelteKitApp();
@@ -85,7 +80,7 @@ export async function initialize() {
     --color-spinner: var(--color-cyan-500);
 
     --radius: 4px;
-    --radius-card: calc(var(--radius) * 1.2);
+    --radius-card: calc(var(--radius) * 1.5);
 }
 
 .dark {
