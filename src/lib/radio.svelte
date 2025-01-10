@@ -72,7 +72,7 @@
 		class={twMerge(
 			'pointer-events-none absolute top-0.5 left-1 size-5 rounded-full', // base
 			'flex items-center justify-center', // positioning
-			'border-input-border border', // border
+			'border', // border
 			'shadow-xs dark:shadow-none', // shadow
 			'outline-primary outline-offset-2', // outline
 			'group-focus:outline', // focusing

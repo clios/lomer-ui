@@ -47,7 +47,7 @@
 				// BASE
 				'absolute', // layout and positioning
 				'border', // box model
-				'bg-bg', // background
+				'bg-popup', // background
 				'shadow-md dark:shadow-none', // shadow
 				'transition-all', // animation
 

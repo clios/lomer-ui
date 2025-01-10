@@ -61,7 +61,7 @@
 			// BASE
 			'absolute top-0 left-0', // layout and positioning
 			'size-[24px] rounded-sm border', // box model
-			'outline-input-highlight cursor-pointer outline-offset-2', // visual
+			'outline-primary cursor-pointer outline-offset-2', // visual
 
 			// GROUP
 			'group-hover:outline group-focus:outline', // focus and hover
@@ -109,7 +109,7 @@
 {#snippet IconCheck()}
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		class="text-input-selected group-disabled:text-disabled relative top-1 left-1"
+		class="text-primary group-disabled:text-disabled relative top-1 left-1"
 		width="14"
 		height="14"
 		viewBox="0 0 31 24"

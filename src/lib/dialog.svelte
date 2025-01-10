@@ -45,7 +45,7 @@
 				'relative z-10', // layout and positioning
 				'w-screen sm:w-[500px]', // width
 				'border-y p-6 sm:rounded-lg sm:border', // border
-				'bg-bg', // background
+				'bg-popup', // background
 				'shadow-md dark:shadow-none', // shadow
 				'transition-all', // animation
 

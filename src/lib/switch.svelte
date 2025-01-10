@@ -157,7 +157,7 @@
 {#snippet IconCheck()}
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		class="text-input-selected group-disabled:text-disabled"
+		class="text-primary group-disabled:text-disabled"
 		width="10"
 		height="10"
 		viewBox="0 0 31 24"

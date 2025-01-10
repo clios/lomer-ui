@@ -32,7 +32,7 @@
 		class={twMerge(
 			// BASE
 			'mt-[.1rem] w-full min-w-max py-1 pr-20 pl-2', // width, padding, and margin
-			'border-input-border rounded border', // border
+			'rounded border', // border
 			'text-input-fg bg-input', // bg and text
 			'appearance-none overflow-hidden', // visual
 			'outline-primary outline-offset-2', // outline

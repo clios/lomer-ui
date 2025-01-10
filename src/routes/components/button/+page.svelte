@@ -26,19 +26,20 @@
 	<OnThisPageBtn id="1" title="Installation" />
 	<OnThisPageBtn id="2" title="Usage" />
 	<OnThisPageBtn id="3" title="Examples" />
-	<OnThisPageSubBtn id="3.1" title="Primary" />
-	<OnThisPageSubBtn id="3.2" title="Secondary" />
-	<OnThisPageSubBtn id="3.3" title="Destructive" />
-	<OnThisPageSubBtn id="3.4" title="Outline" />
-	<OnThisPageSubBtn id="3.5" title="Ghost" />
-	<OnThisPageSubBtn id="3.6" title="With icon" />
-	<OnThisPageSubBtn id="3.7" title="Icon only" />
-	<OnThisPageSubBtn id="3.8" title="Sharp edge" />
-	<OnThisPageSubBtn id="3.9" title="Full round edge" />
-	<OnThisPageSubBtn id="3.10" title="Loading" />
-	<OnThisPageSubBtn id="3.11" title="Disabled" />
-	<OnThisPageSubBtn id="3.12" title="Small" />
-	<OnThisPageSubBtn id="3.13" title="Customize" />
+	<OnThisPageSubBtn id="3.1" title="Inverted" />
+	<OnThisPageSubBtn id="3.2" title="Primary" />
+	<OnThisPageSubBtn id="3.3" title="Secondary" />
+	<OnThisPageSubBtn id="3.4" title="Destructive" />
+	<OnThisPageSubBtn id="3.5" title="Outline" />
+	<OnThisPageSubBtn id="3.6" title="Ghost" />
+	<OnThisPageSubBtn id="3.7" title="With icon" />
+	<OnThisPageSubBtn id="3.8" title="Icon only" />
+	<OnThisPageSubBtn id="3.9" title="Sharp edge" />
+	<OnThisPageSubBtn id="3.10" title="Full round edge" />
+	<OnThisPageSubBtn id="3.11" title="Loading" />
+	<OnThisPageSubBtn id="3.12" title="Disabled" />
+	<OnThisPageSubBtn id="3.13" title="Small" />
+	<OnThisPageSubBtn id="3.14" title="Customize" />
 </OnThisPage>
 
 <div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
@@ -70,38 +71,44 @@
 	<!-- EXAMPLES -->
 	<Title id="3">Examples</Title>
 
+	<!-- INVERTED -->
+	<SubTitle id="3.1">Inverted</SubTitle>
+	<p>Add <Prop>variant</Prop> property with <Val>inverted</Val> value.</p>
+	<Code code={`<Button variant="inverted">Button</Button>`} />
+	<Preview><Button variant="inverted">Button</Button></Preview>
+
 	<!-- PRIMARY -->
-	<SubTitle id="3.1">Primary</SubTitle>
+	<SubTitle id="3.2">Primary</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>primary</Val> value.</p>
 	<Code code={`<Button variant="primary">Button</Button>`} />
 	<Preview><Button variant="primary">Button</Button></Preview>
 
 	<!-- SECONDARY -->
-	<SubTitle id="3.2">Secondary</SubTitle>
+	<SubTitle id="3.3">Secondary</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>secondary</Val> value.</p>
 	<Code code={`<Button variant="secondary">Button</Button>`} />
 	<Preview><Button variant="secondary">Button</Button></Preview>
 
 	<!-- DESTRUCTIVE -->
-	<SubTitle id="3.3">Destructive</SubTitle>
+	<SubTitle id="3.4">Destructive</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>destructive</Val> value.</p>
 	<Code code={`<Button variant="destructive">Destructive</Button>`} />
 	<Preview><Button variant="destructive">Destructive</Button></Preview>
 
 	<!-- OUTLINE -->
-	<SubTitle id="3.4">Outline</SubTitle>
+	<SubTitle id="3.5">Outline</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>outline</Val> value.</p>
 	<Code code={`<Button variant="outline">Outline</Button>`} />
 	<Preview><Button variant="outline">Outline</Button></Preview>
 
 	<!-- GHOST -->
-	<SubTitle id="3.5">Ghost</SubTitle>
+	<SubTitle id="3.6">Ghost</SubTitle>
 	<p>Add <Prop>variant</Prop> property with <Val>ghost</Val> value.</p>
 	<Code code={`<Button variant="ghost">Ghost</Button>`} />
 	<Preview><Button variant="ghost">Ghost</Button></Preview>
 
 	<!-- WITH ICON -->
-	<SubTitle id="3.6">With Icon</SubTitle>
+	<SubTitle id="3.7">With Icon</SubTitle>
 	<p>Insert any icon component or svg inside button.</p>
 	<Code
 		code={`<Button>` +
@@ -137,7 +144,7 @@
 	</Preview>
 
 	<!-- ICON ONLY -->
-	<SubTitle id="3.7">Icon only</SubTitle>
+	<SubTitle id="3.8">Icon only</SubTitle>
 	<p>
 		Let's try icon component from <Link
 			class="underline"
@@ -162,37 +169,37 @@
 	</Preview>
 
 	<!-- SHARP EDGE -->
-	<SubTitle id="3.8">Sharp edge</SubTitle>
+	<SubTitle id="3.9">Sharp edge</SubTitle>
 	<p>Add <Prop>edge</Prop> property with <Val>sharp</Val> value.</p>
 	<Code code={`<Button edge="sharp">Sharp edge</Button>`} />
 	<Preview><Button edge="sharp">Sharp edge</Button></Preview>
 
 	<!-- FULL ROUND EDGE -->
-	<SubTitle id="3.9">Full round edge</SubTitle>
+	<SubTitle id="3.10">Full round edge</SubTitle>
 	<p>Add <Prop>edge</Prop> property with <Val>circle</Val> value.</p>
 	<Code code={`<Button edge="circle">Full round edge</Button>`} />
 	<Preview><Button edge="circle">Full round edge</Button></Preview>
 
 	<!-- LOADING -->
-	<SubTitle id="3.10">Loading</SubTitle>
+	<SubTitle id="3.11">Loading</SubTitle>
 	<p>Add <Prop>isLoading</Prop> property.</p>
 	<Code code={`<Button isLoading>Loading</Button>`} />
 	<Preview><Button isLoading>Loading</Button></Preview>
 
 	<!-- DISABLED -->
-	<SubTitle id="3.11">Disabled</SubTitle>
+	<SubTitle id="3.12">Disabled</SubTitle>
 	<p>Add <Prop>isDisabled</Prop> property.</p>
 	<Code code={`<Button isDisabled>Disabled</Button>`} />
 	<Preview><Button isDisabled>Disabled</Button></Preview>
 
 	<!-- SMALL -->
-	<SubTitle id="3.12">Small</SubTitle>
+	<SubTitle id="3.13">Small</SubTitle>
 	<p>Add <Prop>size</Prop> property with <Val>small</Val> value.</p>
 	<Code code={`<Button size="small">Small</Button>`} />
 	<Preview><Button size="small">Small</Button></Preview>
 
 	<!-- SMALL -->
-	<SubTitle id="3.13">Customize</SubTitle>
+	<SubTitle id="3.14">Customize</SubTitle>
 	<Code
 		code={`<Button` +
 			`\n\tclass="bg-bg border-green-500 text-green-500 dark:shadow dark:shadow-lime-500"` +

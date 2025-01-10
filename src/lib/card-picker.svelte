@@ -43,17 +43,16 @@
 		// BASE
 		'relative p-2', // positioning and padding
 		'bg-input', // background
-		'rounded-card border', // border
+		'rounded border', // border
 		'cursor-pointer', // visual
 
 		// SELECTED
-		// isSelected && !value && 'border-none',
 		isSelected && value
-			? 'outline-card-selected-fg bg-card-selected border-card-selected-fg outline' // outline
+			? 'outline-primary bg-primary/15 border-primary outline backdrop-blur-3xl' // outline
 			: [
 					'active:outline-2 active:outline-offset-0', // active
-					'focus:outline-input-highlight focus:outline focus:outline-offset-2', // focusing
-					'hover:outline-input-highlight hover:outline hover:outline-offset-2' // hovering
+					'focus:outline-primary focus:outline focus:outline-offset-2', // focusing
+					'hover:outline-primary hover:outline hover:outline-offset-2' // hovering
 				],
 
 		// DISABLED

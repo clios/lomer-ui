@@ -30,7 +30,7 @@
 			// BASE
 			'mt-[.1rem] resize px-2 py-1', // margin and padding
 			'text-input-fg bg-input', // bg and text
-			'border-input-border rounded border', // border
+			'rounded border', // border
 			'outline-primary outline-offset-2', // outline
 			'hover:cursor-text hover:outline focus:outline', // hover and focus
 			'disabled:cursor-default disabled:outline-0 disabled:hover:cursor-not-allowed', // disabled

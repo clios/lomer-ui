@@ -26,21 +26,19 @@
 
 	--color-input: var(--color-zinc-50);
 	--color-input-fg: var(--color-zinc-950);
-	--color-input-border: var(--color-zinc-500);
-	--color-input-highlight: var(--color-cyan-500);
-	--color-input-selected: var(--color-cyan-500);
 
 	--color-card: var(--color-zinc-200);
 	--color-card-fg: var(--color-zinc-950);
-	--color-card-selected: var(--color-cyan-50);
-	--color-card-selected-fg: var(--color-primary);
+
+	--color-popup: var(--color-white);
+	--color-popup-fg: var(--color-zinc-950);
 
 	--color-border: var(--color-zinc-300);
 
 	--color-spinner: var(--color-cyan-500);
 
 	--radius: 4px;
-	--radius-card: calc(var(--radius) * 2);
+	--radius-card: calc(var(--radius) * 1.2);
 }
 
 .dark {
@@ -64,14 +62,12 @@
 
 	--color-input: var(--color-zinc-950);
 	--color-input-fg: var(--color-zinc-50);
-	--color-input-border: var(--color-zinc-400);
-	--color-input-highlight: var(--color-cyan-500);
-	--color-input-selected: var(--color-cyan-500);
 
 	--color-card: var(--color-zinc-900);
 	--color-card-fg: var(--color-zinc-50);
-	--color-card-selected: var(--color-cyan-950);
-	--color-card-selected-fg: var(--color-primary);
+
+	--color-popup: var(--color-zinc-950);
+	--color-popup-fg: var(--color-white);
 
 	--color-border: var(--color-zinc-700);
 

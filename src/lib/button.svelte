@@ -5,6 +5,7 @@
 
 	type Variant =
 		| 'default'
+		| 'inverted'
 		| 'primary'
 		| 'secondary'
 		| 'destructive'
@@ -47,6 +48,14 @@
 			'bg-fg', // background
 			'text-bg', // text
 			'border-primary', // border
+			'outline-primary' // outline
+		],
+
+		// VARIANTS: INVERTED
+		variant === 'inverted' && [
+			'bg-bg', // background
+			'text-fg', // text
+			'border', // border
 			'outline-primary' // outline
 		],
 
