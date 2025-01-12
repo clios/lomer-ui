@@ -33,6 +33,14 @@
 		<div
 			class={twMerge(
 				'rounded-card overflow-hidden text-sm',
+				'scroll-smooth ',
+				'[&::-webkit-scrollbar]:w-1',
+				'[&::-webkit-scrollbar-track]:rounded-full',
+				'[&::-webkit-scrollbar-track]:bg-none',
+				'hover:[&::-webkit-scrollbar-track]:bg-border',
+				'[&::-webkit-scrollbar-thumb]:rounded-full',
+				'[&::-webkit-scrollbar-thumb]:bg-none',
+				'hover:[&::-webkit-scrollbar-thumb]:bg-fg/50',
 
 				expandable && 'h-72',
 

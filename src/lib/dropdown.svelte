@@ -156,6 +156,7 @@
 			'[&_.dropdown-item-accordion>div]:text-popup-fg',
 			'[&_.dropdown-item-accordion]:px-0',
 			'[&_.dropdown-item-accordion]:bg-popup',
+			'[&_.dropdown-item-accordion]:bg-popup',
 
 			// FOR INPUT
 			'[&>div>.dropdown-item-input]:my-2',

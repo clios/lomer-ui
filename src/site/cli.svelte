@@ -4,6 +4,7 @@
 	import Icon from '@iconify/svelte';
 	import Button from '$lib/button.svelte';
 	import { twMerge } from 'tailwind-merge';
+	import { fade } from 'svelte/transition';
 
 	export let code = '';
 
@@ -27,11 +28,20 @@
 <div class="relative flex flex-col justify-center">
 	<!-- Copy Button -->
 	<div class="absolute top-2 right-2">
-		<Button size="icon" variant="ghost" onclick={copyToClipboard}>
+		<Button
+			class="outline-none"
+			size="icon"
+			variant="ghost"
+			onclick={copyToClipboard}
+		>
 			{#if copyMessage}
-				<Icon class="text-teal-500" icon="mdi:check" />
+				<div in:fade>
+					<Icon class="text-teal-500" icon="mdi:check" />
+				</div>
 			{:else}
-				<Icon icon="mdi:clipboard-outline" />
+				<div in:fade={{ delay: 300 }}>
+					<Icon icon="mdi:clipboard-outline" />
+				</div>
 			{/if}
 		</Button>
 	</div>

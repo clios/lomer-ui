@@ -15,18 +15,18 @@
 	background-size: 1rem 1rem;"
 >
 	<div
-		class="to-bg pointer-events-none absolute top-0 h-16 w-full bg-gradient-to-t from-transparent"
+		class="to-bg pointer-events-none absolute top-0 h-8 w-full bg-gradient-to-t from-transparent sm:h-16"
 	></div>
 	<div
-		class="to-bg pointer-events-none absolute top-0 left-0 h-full w-16 bg-gradient-to-l from-transparent"
+		class="to-bg pointer-events-none absolute top-0 left-0 h-full w-8 bg-gradient-to-l from-transparent sm:w-16"
 	></div>
 	<div class={twMerge('px-6 py-12', className)}>
 		<slot />
 	</div>
 	<div
-		class="to-bg pointer-events-none absolute top-0 right-0 h-full w-16 bg-gradient-to-r from-transparent"
+		class="to-bg pointer-events-none absolute top-0 right-0 h-full w-8 bg-gradient-to-r from-transparent sm:w-16"
 	></div>
 	<div
-		class="to-bg pointer-events-none absolute bottom-0 h-16 w-full bg-gradient-to-b from-transparent"
+		class="to-bg pointer-events-none absolute bottom-0 h-8 w-full bg-gradient-to-b from-transparent sm:h-16"
 	></div>
 </div>

@@ -102,7 +102,8 @@
 		],
 
 		// SIZES
-		size === 'default' && 'px-[14px] py-[6px] sm:px-3 sm:py-1',
+		size === 'default' &&
+			'px-[14px] py-[6px] text-sm sm:px-3 sm:py-1 sm:text-base',
 		size === 'icon' && 'p-[6px] sm:p-1',
 		size === 'small' && 'h-6 px-2 text-sm leading-6',
 

@@ -61,7 +61,7 @@
 	</div>
 
 	<div class="text-muted my-16">
-		<p class="mt-16 text-center text-xl">
+		<p class="mt-16 text-center sm:text-xl">
 			<span class="text-fg font-semibold">Minimalist</span> UI library for Svelte
 			powered by Tailwind CSS.
 		</p>
@@ -80,13 +80,13 @@
 				>
 			</div>
 		</Screen>
-		<p class="mt-8 text-center text-xl">
+		<p class="mt-8 text-center sm:text-xl">
 			A dead-simple <span class="text-fg font-semibold">CLI tool</span>
 			to
 			<span class="text-fg font-semibold">instant</span>ly kickstart your
 			<span class="text-fg font-semibold">components</span>.
 		</p>
-		<p class="text-center text-xl">
+		<p class="text-center sm:text-xl">
 			No extra UI libraries required—just clean, standalone code
 			<span class="text-fg font-semibold">ready to use</span>.
 		</p>
@@ -107,7 +107,7 @@
 	</div>
 
 	<p class="my-2 text-xl font-semibold">
-		DX matters.
+		DX matters. <br class="sm:hidden" />
 		<span class="text-muted font-medium">Easy to implement components.</span>
 	</p>
 
@@ -122,7 +122,8 @@
 		<Syntax
 			class="grow"
 			code={`<script\>
-	import { Button, Dialog } from '$lib/components/ui'
+	import Button from '$lib/components/ui/button.svelte'
+	import Dialog from '$lib/components/ui/dialog.svelte'
 	let isOpen = $state(false)
 </script>
 
@@ -143,7 +144,7 @@
 
 	<Syntax
 		expandable
-		highlightedLines={[14, 17, 20]}
+		highlightedLines={[14, 17, 20, 26]}
 		code={`<script\ lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
@@ -169,6 +170,8 @@
 		'disabled:tailwindcss_here',
 
 		isLoading && 'tailwindcss_here',
+
+		// add branding design here!
 
 		className
 	)}
@@ -196,7 +199,7 @@
 	<div class="xl:flex xl:flex-row-reverse">
 		<Screen class="grid grow place-content-center">
 			<div class="flex justify-center">
-				<Button onclick={() => (isOpenDropdown = true)}>Menu</Button>
+				<Button onclick={() => (isOpenDropdown = !isOpenDropdown)}>Menu</Button>
 				<Dropdown bind:isOpen={isOpenDropdown}>
 					<Input placeholder="Use input" />
 					<Button>Use button</Button>
@@ -220,7 +223,7 @@
 			class="grow"
 			expandable
 			highlightedLines={[2, 3, 4, 5, 7, 8]}
-			code={`<Button onclick={() => (isOpen = true)}>Menu</Button>
+			code={`<Button onclick={() => (isOpen = !isOpen)}>Menu</Button>
 <Dropdown bind:isOpen>
 	<Input placeholder="Use input" />
 	<Button>Use button</Button>
