@@ -128,7 +128,7 @@
 			'transition-transform', // animate
 			isOpen && 'rotate-180' // interaction
 		)}
-		width="14"
+		width="16"
 		height="8"
 	>
 		<path fill="currentColor" d="M7 7.5L0 0.5H14L7 7.5Z" />

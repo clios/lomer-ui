@@ -1,6 +1,5 @@
 <script>
 	import Accordion from '$lib/accordion.svelte';
-	import Icon from '@iconify/svelte';
 	import Link from '$lib/link.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
@@ -8,7 +7,7 @@
 	import PageHeader from '$site/page-header.svelte';
 	import Title from '$site/title.svelte';
 	import { twMerge } from 'tailwind-merge';
-	import Code from '$site/code.svelte';
+	import Syntax from '$site/syntax.svelte';
 </script>
 
 <svelte:head>
@@ -16,8 +15,7 @@
 </svelte:head>
 
 <OnThisPage>
-	<OnThisPageBtn id="1" title="Concept" />
-	<OnThisPageBtn id="2" title="FAQ" />
+	<OnThisPageBtn id="1" title="FAQ" />
 </OnThisPage>
 
 <div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
@@ -30,7 +28,7 @@
 	<div
 		class={twMerge(
 			'flex flex-col gap-1', // positioning and layout
-			'text-lg text-zinc-500 dark:text-zinc-400' // text
+			'text-zinc-500 dark:text-zinc-400' // text
 		)}
 	>
 		<p>
@@ -43,97 +41,55 @@
 			Providing a simple, good-looking design and easy-to-customize component
 			code.
 		</p>
-		<p>Using YOUR components should be straightforward and intuitive.</p>
+		<p class="mt-4">
+			Using your components should be straightforward and intuitive.
+		</p>
 		<p class="mt-4 font-semibold text-zinc-950 dark:text-zinc-50">
 			What do I mean by "straightforward and intuitive"?
 		</p>
 		<p>For example, let's say you need to use a Dialog Component.</p>
 		<p>Your code might looks like this:</p>
-		<div class="text-sm">
-			<Code
-				class="mb-2"
-				code="import * as Dialog from '$lib/components/ui/dialog';"
-				language="javascript"
-			/>
-			<Code
-				code={'<Dialog.Root>' +
-					'\n\t<Dialog.Trigger>Open</Dialog.Trigger>' +
-					'\n\t<Dialog.Content>' +
-					'\n\t\t<Dialog.Header>' +
-					'\n\t\t\t<Dialog.Title>Are you sure absolutely sure?</Dialog.Title>' +
-					'\n\t\t\t<Dialog.Description>' +
-					'\n\t\t\t\tThis action cannot be undone. This will permanently delete your account' +
-					'\n\t\t\t\tand remove your data from our servers.' +
-					'\n\t\t\t</Dialog.Description>' +
-					'\n\t\t</Dialog.Header>' +
-					'\n\t</Dialog.Content>' +
-					'\n</Dialog.Root>'}
-			/>
-		</div>
+		<Syntax
+			code={`<script\>
+	import * as Dialog from '$lib/components/ui/dialog';
+</script>
+
+<Dialog.Root>
+	<Dialog.Trigger>Open</Dialog.Trigger>
+	<Dialog.Content>
+		<Dialog.Header>
+			<Dialog.Title>Title here</Dialog.Title>
+			<Dialog.Description>
+				Content here...
+			</Dialog.Description>
+		</Dialog.Header>
+	</Dialog.Content>
+</Dialog.Root>`}
+		/>
 		<p class="mt-4">
 			Using Svelte offers a
 			<span class="font-semibold text-zinc-950 dark:text-zinc-50">
 				cleaner and more concise approach
-			</span>, so I want my code to look like this:
+			</span>.
 		</p>
-		<div class="text-sm">
-			<Code
-				class="mb-2"
-				code={`import { Button, Dialog } from '$lib/components/ui'` +
-					`\nlet isOpen = $state(false)`}
-				language="javascript"
-			/>
-			<Code
-				code={`<Button onclick={() => (isOpen = true)}>Open dialog</Button>` +
-					`\n<Dialog title="Are you sure absolutely sure?" bind:isOpen>` +
-					`\n\tThis action cannot be undone. This will permanently delete your account` +
-					`\n\tand remove your data from our servers.` +
-					`\n</Dialog>`}
-			/>
-		</div>
+		<Syntax
+			code={`<script\>
+	import Button from '$lib/components/ui/button.svelte'
+	import Dialog from '$lib/components/ui/dialog.svelte'
+
+	let isOpen = $state(false)
+</script>
+
+<Button onclick={() => (isOpen = true)}>Open dialog</Button>
+<Dialog title="Title here" bind:isOpen>
+	Content here...
+</Dialog>`}
+		/>
 		<p class="mt-4">What if you need to tweak it further?</p>
 		<p>Your code. Your rules. Customize It.</p>
-
-		<p class="mt-4">
-			Please don't get me wrong as this is just my opinionated way of coding.
-		</p>
-
-		<p class="mt-4">Feel free to share your thoughts!</p>
-
-		<p class="mt-4">Clios, lomer-ui dev.</p>
 	</div>
 
-	<Title id="1">Concept</Title>
-	<div>
-		<p class="flex items-center gap-2 font-semibold md:text-xl">
-			<Icon class="inline text-zinc-500" icon="bi:x-diamond-fill" width={16} /> Less
-			Code:
-		</p>
-		<p class="mb-4 ml-6">
-			Keep components simple and easy to implement. No need to write tons of
-			code to get things done.
-		</p>
-
-		<p class="flex items-center gap-2 font-semibold md:text-xl">
-			<Icon class="inline text-zinc-500" icon="bi:x-diamond-fill" width={16} /> Simple
-			Design:
-		</p>
-		<p class="mb-4 ml-6">
-			Enjoy a minimalist and straightforward design that enhances user
-			experience.
-		</p>
-
-		<p class="flex items-center gap-2 font-semibold md:text-xl">
-			<Icon class="inline text-zinc-500" icon="bi:x-diamond-fill" width={16} /> Separation
-			of Concerns:
-		</p>
-		<p class="mb-4 ml-6">
-			Each component is independent, allowing you to tweak one without affecting
-			the others.
-		</p>
-	</div>
-
-	<Title id="2">FAQ</Title>
+	<Title id="1">FAQ</Title>
 	<Accordion id="2.1" title="Can I contribute?">
 		<p>Yes, you can! Feel free to open a pull request.</p>
 		<p>Reach me out for suggestions or feedback.</p>

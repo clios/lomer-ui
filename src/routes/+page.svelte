@@ -68,7 +68,7 @@
 		<Screen class="mt-8 grid place-content-center pb-8">
 			<p class="text-fg text-center text-6xl">lomer-ui</p>
 			<p class="text-primary text-center text-2xl">Keep It Simply Styled</p>
-			<div class="mt-8 flex justify-center gap-4">
+			<div class="my-8 flex justify-center gap-4">
 				<Button onclick={() => goto('/docs/introduction')}>Get Started</Button>
 				<Button
 					variant="secondary"
@@ -108,7 +108,7 @@
 
 	<p class="my-2 text-xl font-semibold">
 		DX matters. <br class="sm:hidden" />
-		<span class="text-muted font-medium">Easy to implement components.</span>
+		<span class="text-muted font-medium">Easy component implementation.</span>
 	</p>
 
 	<div class="lg:flex lg:flex-row-reverse">
@@ -120,6 +120,7 @@
 		</Screen>
 
 		<Syntax
+			canCopy
 			class="grow"
 			code={`<script\>
 	import Button from '$lib/components/ui/button.svelte'
@@ -136,7 +137,7 @@
 
 	<p class="mt-32 text-xl font-semibold">
 		Code is yours.
-		<span class="text-muted font-medium">Easy to customize components.</span>
+		<span class="text-muted font-medium">Customize components.</span>
 	</p>
 	<p class="text-muted mb-2">
 		Take a peek at this button component's code structure.

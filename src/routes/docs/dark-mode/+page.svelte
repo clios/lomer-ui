@@ -16,6 +16,7 @@
 	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
 	import { toggleMode, mode } from 'mode-watcher';
+	import Syntax from '$site/syntax.svelte';
 </script>
 
 <svelte:head>
@@ -63,13 +64,16 @@
 			component to your root
 			<File>+layout.svelte</File> file.
 		</p>
-		<Code
-			code={`import { ModeWatcher } from "mode-watcher";\nlet { children } = $props();`}
-			language="javascript"
-		/>
-		<Code
-			code={`<ModeWatcher defaultMode="system" />\n{@render children()}`}
-			language="xml"
+		<Syntax
+			canCopy
+			highlightedLines={[1, 5]}
+			code={`<script\>
+	import { ModeWatcher } from "mode-watcher";
+	let { children } = $props();
+</script>
+
+<ModeWatcher defaultMode="system" />
+{@render children()}`}
 		/>
 	</StepperPanel>
 
@@ -78,35 +82,28 @@
 	</SubTitle>
 	<StepperPanel final>
 		<p>Use the toggleMode function and $mode to toggle:</p>
-		<Code
-			code={`import Button from '$lib/components/ui/button.svelte';` +
-				`\nimport { toggleMode, mode } from 'mode-watcher';`}
-			language="javascript"
+		<Syntax
+			canCopy
+			code={`<script\>
+	import Button from '$lib/components/ui/button.svelte';
+	import { toggleMode, mode } from 'mode-watcher';
+</script>
+
+<Button size="icon" onclick={toggleMode}>
+	{#if $mode === 'light'}
+		<Icon icon="line-md:moon-to-sunny-outline-loop-transition" />
+	{:else}
+		<Icon icon="line-md:sunny-outline-to-moon-alt-loop-transition" />
+	{/if}
+</Button>`}
 		/>
-		<Code
-			code={`<Button size="icon" onclick={toggleMode}>` +
-				`\n\t{#if $mode === 'light'}` +
-				`\n\t\t...` +
-				`\n\t{:else}` +
-				`\n\t\t...` +
-				`\n\t{/if}` +
-				`\n</Button>`}
-			language="xml"
-		/>
+
 		<Preview>
 			<Button size="icon" onclick={toggleMode}>
 				{#if $mode === 'light'}
-					<Icon
-						icon="line-md:moon-to-sunny-outline-loop-transition"
-						width={24}
-						height={24}
-					/>
+					<Icon icon="line-md:moon-to-sunny-outline-loop-transition" />
 				{:else}
-					<Icon
-						icon="line-md:sunny-outline-to-moon-alt-loop-transition"
-						width={24}
-						height={24}
-					/>
+					<Icon icon="line-md:sunny-outline-to-moon-alt-loop-transition" />
 				{/if}
 			</Button>
 		</Preview>
@@ -115,7 +112,7 @@
 	<PageFooter
 		prevLabel="Installation"
 		prevLink="/docs/installation"
-		nextLabel="CLI"
-		nextLink="/docs/cli"
+		nextLabel="Theming"
+		nextLink="/docs/theming"
 	/>
 </div>

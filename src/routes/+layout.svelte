@@ -23,13 +23,13 @@
 	<div class="w-ful relative container mx-auto">
 		<ScrollArea
 			class={twMerge(
-				'fixed top-0 z-10 hidden flex-col gap-2 overflow-x-hidden overflow-y-auto lg:flex', // positioning and layout
+				'fixed top-0 z-20 hidden flex-col gap-2 overflow-x-hidden overflow-y-auto lg:flex', // positioning and layout
 				'h-screen w-64 border-r border-zinc-300 pl-4 dark:border-zinc-700' // box model
 			)}
 		>
 			<MainSidebar bind:isOpen />
 		</ScrollArea>
-		<div class="relative px-4 pb-4 lg:ml-64">
+		<div class="relative z-10 px-4 pb-4 lg:ml-64">
 			<div bind:this={elPage} id="page" class="pt-12 lg:pt-4"></div>
 
 			<!-- NAVIGATION TOP -->

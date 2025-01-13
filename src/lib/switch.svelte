@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import { type Snippet } from 'svelte';
 	import { circInOut } from 'svelte/easing';
 	import { draw } from 'svelte/transition';
 	import { twMerge } from 'tailwind-merge';
@@ -12,6 +12,7 @@
 		isReadOnly?: boolean;
 		isSwitched?: boolean;
 		value?: boolean;
+		onswitch?: () => void;
 	};
 
 	let {
@@ -21,12 +22,14 @@
 		isLoading = false,
 		isReadOnly = false,
 		isSwitched = false,
-		value = $bindable(false)
+		value = $bindable(false),
+		onswitch
 	}: Props = $props();
 
 	function onclick() {
 		if (isReadOnly) return;
 		value = !value;
+		onswitch();
 	}
 
 	$effect(() => {

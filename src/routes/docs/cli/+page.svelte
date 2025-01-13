@@ -20,8 +20,9 @@
 	<OnThisPageBtn id="1" title="Overview" />
 	<OnThisPageBtn id="2" title="Usage" />
 	<OnThisPageBtn id="3" title="Commands" />
-	<OnThisPageSubBtn id="3.1" title="lomer-ui add" />
-	<OnThisPageSubBtn id="3.1" title="lomer-ui reset" />
+	<OnThisPageSubBtn id="3.1" title="lomer-ui init" />
+	<OnThisPageSubBtn id="3.2" title="lomer-ui add" />
+	<OnThisPageSubBtn id="3.3" title="lomer-ui reset" />
 </OnThisPage>
 
 <div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
@@ -45,7 +46,13 @@
 	<Cli code="npx lomer-ui <command> <args>" />
 
 	<Title id="3">Commands</Title>
-	<SubTitle id="3.1">lomer-ui add</SubTitle>
+	<SubTitle id="3.1">lomer-ui init</SubTitle>
+	<StepperPanel final>
+		<p>To initialize lomer-ui, use:</p>
+		<Cli code="npx lomer-ui init" />
+	</StepperPanel>
+
+	<SubTitle id="3.2">lomer-ui add</SubTitle>
 	<StepperPanel final>
 		<p>To quickly select and add multiple components, use:</p>
 		<Cli code="npx lomer-ui add" />
@@ -53,19 +60,15 @@
 		<Cli code="npx lomer-ui add [component]" />
 	</StepperPanel>
 
-	<SubTitle id="3.2">lomer-ui reset</SubTitle>
+	<SubTitle id="3.3">lomer-ui reset</SubTitle>
 	<StepperPanel final>
 		<p>To reset all existing components, use:</p>
 		<Cli code="npx lomer-ui reset" />
-		<Alert class="flex gap-2">
-			<Icon icon="mdi:terminal-line" width={24} />
-			<div>
-				<p class="font-semibold">Notice</p>
-				<p>
-					This action will replace all existing components in
-					<code>./src/lib/components/ui</code>.
-				</p>
-			</div>
+		<Alert title="Notice" class="flex gap-2">
+			<p>
+				This action will replace all existing components in
+				<code>./src/lib/components/ui</code>.
+			</p>
 		</Alert>
 		<p>You might wonder, "What about the changes I’ve made?"</p>
 		<p>
@@ -76,8 +79,8 @@
 	</StepperPanel>
 
 	<PageFooter
-		prevLabel="Dark Mode"
-		prevLink="/docs/dark-mode"
+		prevLabel="Theming"
+		prevLink="/docs/theming"
 		nextLabel="Accordion"
 		nextLink="/components/accordion"
 	/>

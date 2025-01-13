@@ -13,7 +13,7 @@
 
 <div
 	class={twMerge(
-		'relative overflow-auto scroll-smooth ',
+		'relative overflow-auto scroll-smooth',
 		'[&::-webkit-scrollbar]:w-1',
 		'[&::-webkit-scrollbar-track]:rounded-full',
 		'[&::-webkit-scrollbar-track]:bg-none',

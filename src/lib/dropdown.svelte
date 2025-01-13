@@ -52,9 +52,9 @@
 		bind:contentBoxSize
 		in:fade={{ duration: 150 }}
 		class={twMerge(
-			'fixed z-20 h-fit max-h-[calc(100vh-2rem)] rounded border p-2',
+			'fixed z-50 h-fit max-h-[calc(100vh-2rem)] rounded border p-2',
 			'bg-popup text-popup-fg flex min-w-[220px] flex-col text-nowrap',
-			'overflow-auto select-none',
+			'gap-1 overflow-auto select-none',
 			'[&_*]:transition-colors',
 
 			// FOR SCROLL
@@ -173,6 +173,7 @@
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		onclick={() => (isOpen = false)}
-		class={twMerge('fixed top-0 right-0 bottom-0 left-0 z-10')}
+		transition:fade={{ duration: 100 }}
+		class={twMerge('bg-bg/5 fixed top-0 right-0 bottom-0 left-0 z-40')}
 	></div>
 {/if}

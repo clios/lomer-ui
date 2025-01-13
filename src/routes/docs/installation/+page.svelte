@@ -22,8 +22,6 @@
 
 <OnThisPage>
 	<OnThisPageBtn id="1" title="Setup" />
-	<OnThisPageSubBtn id="1.1" title="Dark Mode" />
-	<OnThisPageSubBtn id="1.2" title="That's it!" />
 </OnThisPage>
 
 <div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
@@ -33,64 +31,28 @@
 		info="Getting started with lomer-ui is simple!"
 	/>
 
-	<Alert class="mt-8 flex gap-2">
-		<Icon icon="mdi:terminal-line" width={24} />
-		<div class="w-full">
-			<p class="mb-2 font-semibold">Using tailwindcss v3?</p>
-			<p class="mb-2">Run this command to upgrade v3 to v4.</p>
-			<Cli code={`npx @tailwindcss/upgrade@next`} />
-			<p class="mt-2">
-				See <Link
-					class="underline"
-					target="_blank"
-					href="https://tailwindcss.com/docs/v4-beta#upgrading-from-v3"
-				>
-					Tailwind CSS Upgrading from v3
-				</Link> for more details.
-			</p>
-		</div>
+	<Alert class="mt-8 flex gap-2 border" title="Using tailwindcss v3?">
+		<p class="text-muted mb-2">Run this command to upgrade v3 to v4.</p>
+		<Cli code={`npx @tailwindcss/upgrade@next`} />
+		<p class="text-muted mt-2">
+			See <Link
+				class="underline"
+				target="_blank"
+				href="https://tailwindcss.com/docs/v4-beta#upgrading-from-v3"
+			>
+				Tailwind CSS Upgrading from v3
+			</Link> for more details.
+		</p>
 	</Alert>
 
 	<Title id="1">Setup</Title>
 
-	<SubTitle id="1.1">
-		<span class="font-mono">1.</span> Dark Mode
-	</SubTitle>
-	<StepperPanel>
-		<p class="mt-4">Use a selector-based strategy.</p>
-		<Code code={`@variant dark (&:where(.dark, .dark *));`} language="less" />
-		<p>
-			See <Link
-				class="underline"
-				target="_blank"
-				href="https://tailwindcss.com/docs/v4-beta#configuring-dark-mode"
-			>
-				Tailwind CSS v4 Dark Mode
-			</Link> for more details.
-		</p>
-	</StepperPanel>
-
-	<SubTitle id="1.2">
-		<span class="font-mono">2.</span> That's it!
-	</SubTitle>
-	<StepperPanel final>
-		<p>
-			Start adding <Link class="underline" href="/components/accordion">
-				components
-			</Link>.
-		</p>
-		<Cli code="npx lomer-ui add" />
-		<p class="mt-2">Or you can also specify a component.</p>
-		<Cli code="npx lomer-ui add button" />
-		<Code
-			code={`import Button from '$lib/components/ui/button.svelte'`}
-			language="javascript"
-		/>
-		<Code code={`<Button>Button</Button>`} language="xml" />
-		<Preview>
-			<Button>Button</Button>
-		</Preview>
-	</StepperPanel>
+	<p class="mt-4">Simply run:</p>
+	<Cli code="npx lomer-ui init" />
+	<div class="text-muted">
+		<p>This will check and install automatically dependencies needed.</p>
+		<p>Only tailwind-merge will be installed as package dependency.</p>
+	</div>
 
 	<PageFooter
 		prevLabel="Introduction"

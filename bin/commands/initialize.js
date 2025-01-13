@@ -43,9 +43,7 @@ export async function initialize() {
 
 		// Create the lomer.css file
 		const lomerCssPath = path.resolve('./src/lib/components/ui/lomer.css');
-		const lomerCssContent = `@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
-@variant dark (&:where(.dark, .dark *));
+		const lomerCssContent = `@variant dark (&:where(.dark, .dark *));
 
 @theme {
     --color-bg: var(--color-zinc-50);
@@ -79,7 +77,7 @@ export async function initialize() {
 
     --color-spinner: var(--color-cyan-500);
 
-    --radius: 4px;
+    --radius: 0.25rem;
     --radius-card: calc(var(--radius) * 1.5);
 }
 
@@ -109,7 +107,7 @@ export async function initialize() {
     --color-card-fg: var(--color-zinc-50);
 
     --color-popup: var(--color-zinc-950);
-    --color-popup-fg: var(--color-white);
+    --color-popup-fg: var(--color-zinc-50);
 
     --color-border: var(--color-zinc-700);
 
@@ -127,13 +125,7 @@ export async function initialize() {
         background-color: var(--color-primary) !important;
         color: var(--color-primary-fg) !important;
     }
-}
-
-body {
-    font-family: 'Fira Code', Courier, monospace;
-    font-family: 'Oxygen', Courier, sans-serif;
-}
-`;
+}`;
 
 		await fs.mkdir(path.dirname(lomerCssPath), { recursive: true });
 		await fs.writeFile(lomerCssPath, lomerCssContent, 'utf8');
