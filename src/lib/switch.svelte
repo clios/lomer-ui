@@ -29,7 +29,7 @@
 	function onclick() {
 		if (isReadOnly) return;
 		value = !value;
-		onswitch();
+		onswitch?.();
 	}
 
 	$effect(() => {
