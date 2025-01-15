@@ -1,38 +1,20 @@
 <script>
 	import Accordion from '$lib/accordion.svelte';
-	import Alert from '$lib/alert.svelte';
 	import Button from '$lib/button.svelte';
-	import CardPicker from '$lib/card-picker.svelte';
 	import Checkbox from '$lib/checkbox.svelte';
 	import Cli from '$site/cli.svelte';
-	import Code from '$site/code.svelte';
 	import Dialog from '$lib/dialog.svelte';
-	import Drawer from '$lib/drawer.svelte';
 	import Dropdown from '$lib/dropdown.svelte';
-	import Field from '$lib/field.svelte';
 	import Icon from '@iconify/svelte';
 	import Input from '$lib/input.svelte';
 	import Link from '$lib/link.svelte';
-	import PreviewComponent from './preview-component.svelte';
 	import Radio from '$lib/radio.svelte';
-	import ScrollArea from '$lib/scroll-area.svelte';
-	import Select from '$lib/select.svelte';
-	import Switch from '$lib/switch.svelte';
-	import Textarea from '$lib/textarea.svelte';
-	import { goto } from '$app/navigation';
-	import { twMerge } from 'tailwind-merge';
-	import Syntax from '$site/syntax.svelte';
-	import Preview from '$site/preview.svelte';
 	import Screen from '$site/screen.svelte';
+	import Switch from '$lib/switch.svelte';
+	import Syntax from '$site/syntax.svelte';
+	import { goto } from '$app/navigation';
 
-	let cardValue = $state('');
-	let checkboxValue = $state(false);
-	let isDialogOpen = $state(false);
-	const openDialog = () => (isDialogOpen = true);
-	let isDrawerOpen = $state(false);
-	const openDrawer = () => (isDrawerOpen = true);
 	let radioVal = $state('');
-	let selectValue = $state('');
 	let isOpenDialog = $state(false);
 	let isOpenDropdown = $state(false);
 </script>
@@ -244,7 +226,7 @@
 		/>
 	</div>
 
-	<div class="h-60"></div>
+	<div class="h-24"></div>
 	<!-- 
 	<p>Dynamic.</p>
 	Can easily display loading states. -->

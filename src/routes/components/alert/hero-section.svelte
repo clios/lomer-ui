@@ -9,10 +9,7 @@
 <Screen class="flex justify-center p-8">
 	{#if isOpen}
 		<Alert title="Information" isClosable bind:isOpen>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum soluta
-			voluptates quaerat sint quos reiciendis blanditiis voluptatibus tempora
-			iusto necessitatibus corrupti error, nisi quisquam, dolorem aliquam harum
-			nihil debitis.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ipsam?
 		</Alert>
 	{:else}
 		<Button onclick={() => (isOpen = true)}>Open alert</Button>

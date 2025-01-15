@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 
-	export let lineColor = '#71717a20'; // Default color of the grid lines
+	export let lineColor = '#71717a30'; // Default color of the grid lines
 	export { className as class };
 
 	let className = '';
@@ -20,7 +20,7 @@
 	<div
 		class="to-bg pointer-events-none absolute top-0 left-0 h-full w-8 bg-gradient-to-l from-transparent sm:w-16"
 	></div>
-	<div class={twMerge('px-6 py-12', className)}>
+	<div class={twMerge('px-12 py-12', className)}>
 		<slot />
 	</div>
 	<div

@@ -119,7 +119,7 @@
 		'disabled:cursor-not-allowed disabled:outline-hidden', // visual
 
 		// LOADING
-		isLoading && 'disabled:text-disabled',
+		isLoading && '',
 
 		// AS DROPDOWN ITEM
 		'dropdown-item-button',

@@ -9,7 +9,6 @@
 		isClosable?: boolean;
 		isOpen?: boolean;
 		title?: string;
-		variant?: 'default' | 'destructive';
 	};
 
 	let {
@@ -18,15 +17,14 @@
 		icon,
 		isClosable = false,
 		isOpen = $bindable(true),
-		title,
-		variant = 'default'
+		title
 	}: Props = $props();
 </script>
 
 {#if isOpen}
 	<div
 		class={twMerge(
-			'bg-bg border-fg relative flex w-full items-center gap-4 rounded border p-3', // base
+			'bg-bg border-fg relative flex w-full items-center gap-3 rounded border p-3', // base
 
 			// HAS TITLE
 			'items-start',

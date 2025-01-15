@@ -13,9 +13,11 @@
 	import PageHeader from '$site/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
+	import Screen from '$site/screen.svelte';
 	import SubTitle from '$site//sub-title.svelte';
+	import Syntax from '$site/syntax.svelte';
+	import TabsPreviewCode from '$site/tabs__preview-code.svelte';
 	import Title from '$site//title.svelte';
-	import Val from '$site/val.svelte';
 
 	let isClosableOpen = true;
 </script>
@@ -51,14 +53,22 @@
 
 	<!-- USAGE -->
 	<Title id="2">Usage</Title>
-	<Code
-		code={`import Alert from '$lib/components/ui/alert.svelte'`}
-		language="javascript"
-	/>
-	<Code code={`<Alert>Your bill is due tomorrow.</Alert>`} />
-	<Preview>
-		<Alert>Your bill is due tomorrow.</Alert>
-	</Preview>
+	<TabsPreviewCode>
+		{#snippet preview()}
+			<Screen>
+				<Alert>Your bill is due tomorrow.</Alert>
+			</Screen>
+		{/snippet}
+		{#snippet code()}
+			<Syntax
+				canCopy
+				code={`<script\>` +
+					`\n\timport Alert from '$lib/components/ui/alert.svelte'` +
+					`\n</script>` +
+					`\n\n<Alert>Your bill is due tomorrow.</Alert>`}
+			/>
+		{/snippet}
+	</TabsPreviewCode>
 
 	<!-- EXAMPLES -->
 	<Title id="3">Examples</Title>
@@ -66,63 +76,88 @@
 	<!-- TITLE -->
 	<SubTitle id="3.1">Title</SubTitle>
 	<p>Add <Prop>title</Prop> property.</p>
-	<Code code={`<Alert title="Notice">Your bill is due tomorrow.</Alert>`} />
-	<Preview>
-		<Alert title="Notice">Your bill is due tomorrow.</Alert>
-	</Preview>
+	<TabsPreviewCode>
+		{#snippet preview()}
+			<Screen>
+				<Alert title="Notice">Your bill is due tomorrow.</Alert>
+			</Screen>
+		{/snippet}
+		{#snippet code()}
+			<Syntax
+				canCopy
+				code={`<Alert title="Notice">Your bill is due tomorrow.</Alert>`}
+			/>
+		{/snippet}
+	</TabsPreviewCode>
 
 	<!-- CUSTOM ICON -->
 	<SubTitle id="3.2">Custom icon</SubTitle>
 	<p>Add <Prop>icon</Prop> snippet.</p>
-	<Code
-		code={`<Alert>` +
-			`\n\t{#snippet icon()}` +
-			`\n\t\t<Icon icon="mdi:terminal-line" width="24" />` +
-			`\n\t{/snippet}` +
-			`\n\tYour bill is due today.` +
-			`\n</Alert>`}
-	/>
-	<Preview>
-		<Alert>
-			{#snippet icon()}
-				<Icon icon="mdi:terminal-line" width="24" />
-			{/snippet}
-			Your bill is due today.
-		</Alert>
-	</Preview>
+	<TabsPreviewCode>
+		{#snippet preview()}
+			<Screen>
+				<Alert>
+					{#snippet icon()}
+						<Icon icon="mdi:terminal-line" width="24" />
+					{/snippet}
+					Your bill is due today.
+				</Alert>
+			</Screen>
+		{/snippet}
+		{#snippet code()}
+			<Syntax
+				canCopy
+				code={`<Alert>` +
+					`\n\t{#snippet icon()}` +
+					`\n\t\t<Icon icon="mdi:terminal-line" width="24" />` +
+					`\n\t{/snippet}` +
+					`\n\tYour bill is due today.` +
+					`\n</Alert>`}
+			/>
+		{/snippet}
+	</TabsPreviewCode>
 
 	<!-- CUSTOMIZE -->
 	<SubTitle id="3.3">Customize</SubTitle>
-	<Code
-		code={`<Alert class="border-primary">Your bill is due today.</Alert>` +
-			`\n<Alert class="border-primary text-primary">Your bill is due today.</Alert>` +
-			`\n<Alert class="border-primary bg-primary text-primary-fg">` +
-			`\n\tYour bill is due today.` +
-			`\n</Alert>` +
-			`\n<Alert class="border-destructive animate-pulse">` +
-			`\n\tYour bill is due today.` +
-			`\n</Alert>` +
-			`\n<Alert class="text-destructive">Your bill is due today.</Alert>` +
-			`\n<Alert class="bg-destructive border-destructive">` +
-			`\n\tYour bill is due today.` +
-			`\n</Alert>`}
-	/>
-	<Preview>
-		<div class="flex w-full flex-col gap-2">
-			<Alert class="border-primary">Your bill is due today.</Alert>
-			<Alert class="border-primary text-primary">Your bill is due today.</Alert>
-			<Alert class="border-primary bg-primary text-primary-fg">
-				Your bill is due today.
-			</Alert>
-			<Alert class="border-destructive animate-pulse">
-				Your bill is due today.
-			</Alert>
-			<Alert class="text-destructive">Your bill is due today.</Alert>
-			<Alert class="bg-destructive border-destructive">
-				Your bill is due today.
-			</Alert>
-		</div>
-	</Preview>
+	<TabsPreviewCode>
+		{#snippet preview()}
+			<Screen>
+				<div class="flex w-full flex-col gap-2">
+					<Alert class="border-primary">Your bill is due today.</Alert>
+					<Alert class="border-primary text-primary"
+						>Your bill is due today.</Alert
+					>
+					<Alert class="border-primary bg-primary text-primary-fg">
+						Your bill is due today.
+					</Alert>
+					<Alert class="border-destructive animate-pulse">
+						Your bill is due today.
+					</Alert>
+					<Alert class="text-destructive">Your bill is due today.</Alert>
+					<Alert class="bg-destructive border-destructive">
+						Your bill is due today.
+					</Alert>
+				</div>
+			</Screen>
+		{/snippet}
+		{#snippet code()}
+			<Syntax
+				canCopy
+				code={`<Alert class="border-primary">Your bill is due today.</Alert>` +
+					`\n<Alert class="border-primary text-primary">Your bill is due today.</Alert>` +
+					`\n<Alert class="border-primary bg-primary text-primary-fg">` +
+					`\n\tYour bill is due today.` +
+					`\n</Alert>` +
+					`\n<Alert class="border-destructive animate-pulse">` +
+					`\n\tYour bill is due today.` +
+					`\n</Alert>` +
+					`\n<Alert class="text-destructive">Your bill is due today.</Alert>` +
+					`\n<Alert class="bg-destructive border-destructive">` +
+					`\n\tYour bill is due today.` +
+					`\n</Alert>`}
+			/>
+		{/snippet}
+	</TabsPreviewCode>
 
 	<!-- CLOSABLE -->
 	<SubTitle id="3.4">Closable</SubTitle>

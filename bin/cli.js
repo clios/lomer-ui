@@ -5,6 +5,7 @@ import { addComponent } from './commands/addComponent.js';
 import { addMultipleComponents } from './commands/addMultipleComponents.js';
 import { scanAndResetComponents } from './commands/scanAndResetComponents.js';
 import { initialize } from './commands/initialize.js';
+import { createTemplate } from './commands/createTemplate.js';
 
 const [, , command, component] = process.argv;
 
@@ -17,6 +18,10 @@ if (!command || command === '--help') {
 		addComponent(component);
 	} else {
 		addMultipleComponents();
+	}
+} else if (command === 'create') {
+	if (component) {
+		createTemplate(component);
 	}
 } else if (command === 'reset') {
 	scanAndResetComponents();

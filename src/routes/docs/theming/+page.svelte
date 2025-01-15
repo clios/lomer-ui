@@ -5,7 +5,6 @@
 	import PageHeader from '$site/page-header.svelte';
 	import Syntax from '$site/syntax.svelte';
 	import Title from '$site/title.svelte';
-	import Val from '$site/val.svelte';
 	import { HighlightAuto } from 'svelte-highlight';
 	import { Link } from '$lib/index.js';
 	import PageFooter from '$site/page-footer.svelte';
