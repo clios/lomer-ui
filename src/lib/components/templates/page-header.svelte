@@ -5,9 +5,9 @@
 </script>
 
 <div>
-	<p class="text-sm text-zinc-500 dark:text-zinc-300">{sub}</p>
+	<p class="text-muted text-sm">{sub}</p>
 	<p class="text-primary font-mono text-2xl font-semibold md:text-3xl">
 		{title}
 	</p>
-	<p class="text-zinc-500 dark:text-zinc-400">{info}</p>
+	<p class="text-muted">{info}</p>
 </div>

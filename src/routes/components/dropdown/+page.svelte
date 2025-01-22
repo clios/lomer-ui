@@ -1,23 +1,25 @@
 <script lang="ts">
+	import Accordion from '$lib/components/ui/accordion.svelte';
+	import Button from '$lib/components/ui/button.svelte';
+	import Checkbox from '$lib/components/ui/checkbox.svelte';
 	import Cli from '$site/cli.svelte';
-	import Code from '$site//code.svelte';
+	import Code from '$site/code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import Dropdown from '$lib/components/ui/dropdown.svelte';
+	import Field from '$lib/components/ui/field.svelte';
+	import Icon from '@iconify/svelte';
+	import Input from '$lib/components/ui/input.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import PageFooter from '$site/page-footer.svelte';
-	import PageHeader from '$site/page-header.svelte';
+	import PageFooter from '$lib/components/templates/page-footer.svelte';
+	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
+	import Radio from '$lib/components/ui/radio.svelte';
 	import SubTitle from '$site/sub-title.svelte';
-	import Textarea from '$lib/textarea.svelte';
+	import Switch from '$lib/components/ui/switch.svelte';
 	import Title from '$site/title.svelte';
-	import Dropdown from '$lib/dropdown.svelte';
-	import { Button, Checkbox, Field, Input, Radio } from '$lib/index.js';
-	import Icon from '@iconify/svelte';
-	import Accordion from '$lib/accordion.svelte';
-	import Alert from '$lib/alert.svelte';
-	import Switch from '$lib/switch.svelte';
 
 	let value = $state('');
 	let isOpen = $state(false);

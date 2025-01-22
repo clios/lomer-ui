@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Radio from '$lib/radio.svelte';
-	import Screen from '$site/screen.svelte';
+	import Radio from '$lib/components/ui/radio.svelte';
+	import Screen from '$lib/components/templates/screen.svelte';
 
 	let value = $state('');
 </script>

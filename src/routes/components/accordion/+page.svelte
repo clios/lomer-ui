@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Accordion from '$lib/accordion.svelte';
+	import Accordion from '$lib/components/ui/accordion.svelte';
 	import Cli from '$site/cli.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
 	import HeroSection from './hero-section.svelte';
@@ -7,10 +7,10 @@
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import PageFooter from '$site/page-footer.svelte';
-	import PageHeader from '$site/page-header.svelte';
+	import PageFooter from '$lib/components/templates/page-footer.svelte';
+	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Prop from '$site/prop.svelte';
-	import Screen from '$site/screen.svelte';
+	import Screen from '$lib/components/templates/screen.svelte';
 	import SubTitle from '$site/sub-title.svelte';
 	import Syntax from '$site/syntax.svelte';
 	import TabsPreviewCode from '$site/tabs__preview-code.svelte';

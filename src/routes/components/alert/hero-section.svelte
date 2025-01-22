@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Alert from '$lib/alert.svelte';
-	import Button from '$lib/button.svelte';
-	import Screen from '$site/screen.svelte';
+	import Alert from '$lib/components/ui/alert.svelte';
+	import Button from '$lib/components/ui/button.svelte';
+	import Screen from '$lib/components/templates/screen.svelte';
 
 	let isOpen = true;
 </script>

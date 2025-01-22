@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from '$lib/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Icon from '@iconify/svelte';
 	import felipec from 'svelte-highlight/styles/felipec';
 	import { HighlightSvelte, LineNumbers } from 'svelte-highlight';
@@ -49,18 +49,10 @@
 		<div
 			class={twMerge(
 				'rounded-card overflow-hidden text-sm',
-				'scroll-smooth ',
-				'[&::-webkit-scrollbar]:w-1',
-				'[&::-webkit-scrollbar-track]:rounded-full',
-				'[&::-webkit-scrollbar-track]:bg-none',
-				'hover:[&::-webkit-scrollbar-track]:bg-border',
-				'[&::-webkit-scrollbar-thumb]:rounded-full',
-				'[&::-webkit-scrollbar-thumb]:bg-none',
-				'hover:[&::-webkit-scrollbar-thumb]:bg-fg/50',
 
 				expandable && 'h-72',
 
-				isOpen ? 'h-72 overflow-auto' : '',
+				isOpen ? 'h-72' : '',
 
 				className
 			)}
@@ -78,45 +70,42 @@
 		</div>
 	</div>
 
-	{#if expandable}
+	<!-- {#if expandable}
 		<div
 			class={twMerge(
 				'to-bg absolute bottom-0 z-10 flex w-full justify-center bg-gradient-to-b from-transparent',
 				isOpen ? 'h-0' : 'h-72'
 			)}
+		></div>
+		<Button
+			onclick={() => (isOpen = !isOpen)}
+			class={twMerge('', isOpen ? '-bottom-12' : 'bottom-8')}
+			variant="inverted"
 		>
-			<Button
-				onclick={() => (isOpen = !isOpen)}
-				class={twMerge('absolute ', isOpen ? '-bottom-12' : 'bottom-8')}
-				variant="inverted"
-			>
-				{#if isOpen}
-					Collapse
-				{:else}
-					Expand
-				{/if}
-			</Button>
-		</div>
-	{/if}
+			{#if isOpen}
+				Collapse
+			{:else}
+				Expand
+			{/if}
+		</Button>
+	{/if} -->
 
-	{#if canCopy}
-		<div class="absolute top-1 right-1 z-10">
-			<Button
-				class="outline-none"
-				variant="ghost"
-				size="icon"
-				onclick={copyToClipboard}
-			>
-				{#if copyMessage}
-					<div in:fade class="flex items-center gap-1 text-sm">
-						<Icon class="text-teal-500" icon="mdi:check" />
-					</div>
-				{:else}
-					<div in:fade={{ delay: 300 }}>
-						<Icon icon="mdi:clipboard-outline" />
-					</div>
-				{/if}
-			</Button>
-		</div>
-	{/if}
+	<!-- {#if canCopy}
+		<Button
+			class="outline-none"
+			variant="ghost"
+			size="icon"
+			onclick={copyToClipboard}
+		>
+			{#if copyMessage}
+				<div in:fade class="flex items-center gap-1 text-sm">
+					<Icon class="text-teal-500" icon="mdi:check" />
+				</div>
+			{:else}
+				<div in:fade={{ delay: 300 }}>
+					<Icon icon="mdi:clipboard-outline" />
+				</div>
+			{/if}
+		</Button>
+	{/if} -->
 </div>

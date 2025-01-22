@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Button from '$lib/button.svelte';
-	import Screen from '$site/screen.svelte';
+	import Button from '$lib/components/ui/button.svelte';
+	import Screen from '$lib/components/templates/screen.svelte';
 	import Icon from '@iconify/svelte';
 </script>
 

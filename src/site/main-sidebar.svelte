@@ -1,7 +1,7 @@
 <script lang="ts">
-	import SidebarLink from '$site/sidebar-link.svelte';
-	import CardToggleTheme from '$site/card__toggle-theme.svelte';
-	import Link from '$lib/link.svelte';
+	import SidebarLink from '$lib/components/snippets/sidebar-link.svelte';
+
+	import Link from '$lib/components/ui/link.svelte';
 
 	let { isOpen = $bindable(false) } = $props();
 </script>
@@ -22,8 +22,6 @@
 		lomer-ui
 	</Link>
 </div>
-
-<CardToggleTheme />
 
 <p class="mt-4 pl-4 font-semibold">Getting Started</p>
 <SidebarLink

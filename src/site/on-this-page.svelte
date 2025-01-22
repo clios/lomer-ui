@@ -1,8 +1,8 @@
 <script>
-	import Button from '$lib/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 </script>
 
-<div class="sticky top-8 hidden xl:block">
+<div class="sticky top-10 hidden xl:block">
 	<aside class="absolute right-0 flex w-64 flex-col gap-2 text-left text-sm">
 		<p class="mb-1 font-semibold">On this page</p>
 		<slot />

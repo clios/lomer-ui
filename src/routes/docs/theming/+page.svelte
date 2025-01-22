@@ -2,12 +2,12 @@
 	import Icon from '@iconify/svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-	import PageHeader from '$site/page-header.svelte';
+	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Syntax from '$site/syntax.svelte';
 	import Title from '$site/title.svelte';
 	import { HighlightAuto } from 'svelte-highlight';
-	import { Link } from '$lib/index.js';
-	import PageFooter from '$site/page-footer.svelte';
+	import Link from '$lib/components/ui/link.svelte';
+	import PageFooter from '$lib/components/templates/page-footer.svelte';
 </script>
 
 <svelte:head>

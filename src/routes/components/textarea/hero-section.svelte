@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Textarea from '$lib/textarea.svelte';
-	import Screen from '$site/screen.svelte';
+	import Textarea from '$lib/components/ui/textarea.svelte';
+	import Screen from '$lib/components/templates/screen.svelte';
 
 	let value = $state('lomer-ui');
 </script>

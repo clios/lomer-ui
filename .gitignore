@@ -1,7 +1,5 @@
 node_modules
 
-/src/lib/components
-
 # Output
 .output
 .vercel

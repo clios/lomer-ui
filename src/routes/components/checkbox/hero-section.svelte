@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Checkbox from '$lib/checkbox.svelte';
-	import Screen from '$site/screen.svelte';
+	import Checkbox from '$lib/components/ui/checkbox.svelte';
+	import Screen from '$lib/components/templates/screen.svelte';
 
 	let value = $state(false);
 </script>

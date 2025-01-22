@@ -43,9 +43,9 @@
 			class={twMerge(
 				// BASE
 				'relative z-10', // layout and positioning
-				'w-screen sm:w-[500px]', // width
-				'border-y p-6 sm:rounded-lg sm:border', // border
-				'bg-popup', // background
+				'w-screen sm:w-max', // width
+				'sm:rounded-card border-y p-6 sm:border', // border
+				'bg-popup text-left', // background
 				'shadow-md dark:shadow-none', // shadow
 				'transition-all', // animation
 
@@ -55,13 +55,13 @@
 		>
 			<!-- CLOSE BUTTON -->
 			<button
-				type="button"
 				class={twMerge(
 					'absolute top-4 right-4 z-10 p-1', // layout and positioning
 					'rounded-full bg-none', // bg and radius
 					'outline-primary ring-offset-1 outline-offset-2 active:outline-2 active:outline-offset-0', // outline
 					'cursor-pointer hover:outline focus:outline' // hover, focus, cursor
 				)}
+				type="button"
 				onclick={() => (isOpen = false)}
 			>
 				{@render IconClose()}

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Select from '$lib/select.svelte';
-	import Screen from '$site/screen.svelte';
+	import Select from '$lib/components/ui/select.svelte';
+	import Screen from '$lib/components/templates/screen.svelte';
 
 	let value = $state('');
 </script>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Screen from '$site/screen.svelte';
-	import ScrollArea from '$lib/scroll-area.svelte';
+	import Screen from '$lib/components/templates/screen.svelte';
+	import ScrollArea from '$lib/components/ui/scroll-area.svelte';
 </script>
 
 <Screen class="flex justify-center">

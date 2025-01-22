@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Accordion from '$lib/accordion.svelte';
-	import Screen from '$site/screen.svelte';
+	import Accordion from '$lib/components/ui/accordion.svelte';
+	import Screen from '$lib/components/templates/screen.svelte';
 </script>
 
 <Screen class="p-8">

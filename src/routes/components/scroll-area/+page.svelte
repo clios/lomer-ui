@@ -5,10 +5,10 @@
 	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-	import PageFooter from '$site/page-footer.svelte';
-	import PageHeader from '$site//page-header.svelte';
+	import PageFooter from '$lib/components/templates/page-footer.svelte';
+	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
-	import ScrollArea from '$lib/scroll-area.svelte';
+	import ScrollArea from '$lib/components/ui/scroll-area.svelte';
 	import Title from '$site//title.svelte';
 </script>
 

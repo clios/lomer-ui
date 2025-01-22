@@ -1,7 +1,7 @@
 <script lang="ts">
-	import CardPicker from '$lib/card-picker.svelte';
+	import CardPicker from '$lib/components/ui/card-picker.svelte';
 	import Icon from '@iconify/svelte';
-	import Screen from '$site/screen.svelte';
+	import Screen from '$lib/components/templates/screen.svelte';
 
 	let value = $state('');
 </script>

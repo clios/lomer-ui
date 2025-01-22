@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Alert from '$lib/alert.svelte';
-	import Button from '$lib/button.svelte';
+	import Alert from '$lib/components/ui/alert.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
@@ -9,11 +9,11 @@
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import PageFooter from '$site/page-footer.svelte';
-	import PageHeader from '$site/page-header.svelte';
+	import PageFooter from '$lib/components/templates/page-footer.svelte';
+	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
-	import Screen from '$site/screen.svelte';
+	import Screen from '$lib/components/templates/screen.svelte';
 	import SubTitle from '$site//sub-title.svelte';
 	import Syntax from '$site/syntax.svelte';
 	import TabsPreviewCode from '$site/tabs__preview-code.svelte';

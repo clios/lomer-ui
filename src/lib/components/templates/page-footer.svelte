@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import Button from '$lib/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Icon from '@iconify/svelte';
 
 	type Props = {
@@ -13,7 +13,7 @@
 	let { nextLabel, prevLabel, nextLink = '', prevLink = '' }: Props = $props();
 </script>
 
-<div class="my-16 flex justify-between gap-2">
+<div class="flex justify-between gap-2 pt-16 xl:gap-8">
 	{#if prevLabel || prevLink}
 		<Button
 			class="flex w-full flex-col items-start"

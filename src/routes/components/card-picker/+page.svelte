@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CardPicker from '$lib/card-picker.svelte';
+	import CardPicker from '$lib/components/ui/card-picker.svelte';
 	import Cli from '$site/cli.svelte';
 	import Code from '$site/code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
@@ -7,8 +7,8 @@
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import PageFooter from '$site/page-footer.svelte';
-	import PageHeader from '$site/page-header.svelte';
+	import PageFooter from '$lib/components/templates/page-footer.svelte';
+	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
 	import SubTitle from '$site/sub-title.svelte';
