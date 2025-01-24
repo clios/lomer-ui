@@ -24,7 +24,7 @@ export async function initialize() {
 		const cssFileContent = await fs.readFile(cssFilePath, 'utf8');
 
 		// Check if the import already exists
-		if (cssFileContent.includes("@import './lib/components/ui/lomer.css'")) {
+		if (cssFileContent.includes("@import './lib/components/core/lomer.css'")) {
 			console.log('✅ The lomer.css import is already present.');
 			return;
 		}
@@ -32,17 +32,17 @@ export async function initialize() {
 		// Find the line with "@import 'tailwindcss'"
 		const updatedContent = cssFileContent.replace(
 			/@import\s+['"]tailwindcss['"]\s*;/,
-			(match) => `${match}\n@import './lib/components/ui/lomer.css';`
+			(match) => `${match}\n@import './lib/components/core/lomer.css';`
 		);
 
 		// Write back the updated content to the CSS file
 		await fs.writeFile(cssFilePath, updatedContent, 'utf8');
 		console.log(
-			`✅ Added "@import './lib/components/ui/lomer.css'" to ${cssFilePath}.`
+			`✅ Added "@import './lib/components/core/lomer.css'" to ${cssFilePath}.`
 		);
 
 		// Create the lomer.css file
-		const lomerCssPath = path.resolve('./src/lib/components/ui/lomer.css');
+		const lomerCssPath = path.resolve('./src/lib/components/core/lomer.css');
 		const lomerCssContent = `@variant dark (&:where(.dark, .dark *));
 
 @theme {

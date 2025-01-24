@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import Button from '$lib/components/ui/button.svelte';
+	import Button from '$lib/components/core/button.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { fade } from 'svelte/transition';
 

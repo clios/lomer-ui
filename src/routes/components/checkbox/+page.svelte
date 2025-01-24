@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Checkbox from '$lib/components/ui/checkbox.svelte';
+	import Checkbox from '$lib/components/core/checkbox.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
@@ -46,7 +46,7 @@
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>value</Prop> property to reflect checkbox's value.</p>
 	<Code
-		code={`import Checkbox from '$lib/components/ui/checkbox.svelte'` +
+		code={`import Checkbox from '$lib/components/core/checkbox.svelte'` +
 			`\nlet value = $state(false)`}
 		language="javascript"
 	/>

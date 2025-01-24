@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CardPicker from '$lib/components/ui/card-picker.svelte';
+	import CardPicker from '$lib/components/core/card-picker.svelte';
 	import Cli from '$site/cli.svelte';
 	import Code from '$site/code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
@@ -48,7 +48,7 @@
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>value</Prop> property to reflect card-picker's value.</p>
 	<Code
-		code={`import CardPicker from '$lib/components/ui/card-picker.svelte'` +
+		code={`import CardPicker from '$lib/components/core/card-picker.svelte'` +
 			`\nlet value = $state('');`}
 		language="javascript"
 	/>

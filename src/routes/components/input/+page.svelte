@@ -3,7 +3,7 @@
 	import Code from '$site//code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
 	import HeroSection from './hero-section.svelte';
-	import Input from '$lib/components/ui/input.svelte';
+	import Input from '$lib/components/core/input.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
@@ -49,7 +49,7 @@
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>value</Prop> property to reflect input's value.</p>
 	<Code
-		code={`import Input from '$lib/components/ui/input.svelte'` +
+		code={`import Input from '$lib/components/core/input.svelte'` +
 			`\nlet value = $state('')`}
 		language="javascript"
 	/>

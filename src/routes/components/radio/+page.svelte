@@ -10,7 +10,7 @@
 	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
-	import Radio from '$lib/components/ui/radio.svelte';
+	import Radio from '$lib/components/core/radio.svelte';
 	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
 
@@ -50,7 +50,7 @@
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>value</Prop> property to reflect radio's value.</p>
 	<Code
-		code={`import Radio from '$lib/components/ui/radio.svelte'` +
+		code={`import Radio from '$lib/components/core/radio.svelte'` +
 			`\nlet value = $state('');`}
 		language="javascript"
 	/>

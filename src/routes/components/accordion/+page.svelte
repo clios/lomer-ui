@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Accordion from '$lib/components/ui/accordion.svelte';
+	import Accordion from '$lib/components/core/accordion.svelte';
 	import Cli from '$site/cli.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
 	import HeroSection from './hero-section.svelte';
@@ -64,7 +64,7 @@
 			<Syntax
 				canCopy
 				code={`<script\>` +
-					`\n\timport Accordion from '$lib/components/ui/accordion.svelte'` +
+					`\n\timport Accordion from '$lib/components/core/accordion.svelte'` +
 					`\n</script>` +
 					`\n\n<Accordion title="Title">Content</Accordion>`}
 			/>
@@ -188,7 +188,7 @@
 			<Syntax
 				canCopy
 				code={`<script\>` +
-					`\n\timport Accordion from '$lib/components/ui/accordion.svelte'` +
+					`\n\timport Accordion from '$lib/components/core/accordion.svelte'` +
 					`\n\tlet value = $state('')` +
 					`\n</script>` +
 					`\n\n<Accordion title="Title 1" name="accordion-one" bind:value>` +

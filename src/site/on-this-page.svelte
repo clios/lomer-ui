@@ -1,5 +1,5 @@
 <script>
-	import Button from '$lib/components/ui/button.svelte';
+	import Button from '$lib/components/core/button.svelte';
 </script>
 
 <div class="sticky top-10 hidden xl:block">

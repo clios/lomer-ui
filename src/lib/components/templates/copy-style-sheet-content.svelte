@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import Button from '$lib/components/core/button.svelte';
 	import Highlight, { LineNumbers } from 'svelte-highlight';
 	import Icon from '@iconify/svelte';
 	import css from 'svelte-highlight/languages/css';

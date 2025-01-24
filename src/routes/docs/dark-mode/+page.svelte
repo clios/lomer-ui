@@ -1,8 +1,8 @@
 <script>
-	import Button from '$lib/components/ui/button.svelte';
+	import Button from '$lib/components/core/button.svelte';
 	import Component from '$site/component.svelte';
 	import Icon from '@iconify/svelte';
-	import Link from '$lib/components/ui/link.svelte';
+	import Link from '$lib/components/core/link.svelte';
 	import Screen from '$lib/components/templates/screen.svelte';
 	import { toggleMode, mode } from 'mode-watcher';
 	import PageWrapper from '$lib/components/templates/page-wrapper.svelte';
@@ -10,7 +10,7 @@
 	import PageArticle from '$lib/components/templates/page-article.svelte';
 	import CopyCommandLineContent from '$lib/components/templates/copy-command-line-content.svelte';
 	import CopySvelteContent from '$lib/components/templates/copy-svelte-content.svelte';
-	import AccordionsPreviewCode from '$lib/components/templates/accordions-preview-code.svelte';
+	import AccordionsPreviewCode from '$lib/components/accordions-preview-code.svelte';
 	import HighlightText from '$lib/components/templates/highlight-text.svelte';
 
 	const tickler = [
@@ -108,7 +108,7 @@
 				<CopySvelteContent
 					title="button-toggle-mode.svelte"
 					code={`<script\ lang="ts">` +
-						`\n\timport Button from '$lib/components/ui/button.svelte';` +
+						`\n\timport Button from '$lib/components/core/button.svelte';` +
 						`\n\timport Icon from '@iconify/svelte';` +
 						`\n\timport { toggleMode, mode } from 'mode-watcher';` +
 						`\n</script>` +

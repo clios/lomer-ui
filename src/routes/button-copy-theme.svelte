@@ -1,8 +1,7 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
-	import Dialog from '$lib/components/ui/dialog.svelte';
-	import CopyStyleSheetContent from '../templates/copy-style-sheet-content.svelte';
-	import StyleSheetSyntax from '../templates/style-sheet-syntax.svelte';
+	import Button from '$lib/components/core/button.svelte';
+	import Dialog from '$lib/components/core/dialog.svelte';
+	import CopyStyleSheetContent from '../lib/components/templates/copy-style-sheet-content.svelte';
 
 	let { primaryColor, toneColor, radiusVal } = $props();
 
@@ -12,6 +11,7 @@
 <Button onclick={() => (isOpen = !isOpen)} class="flex w-full flex-col gap-0">
 	<p>Copy theme</p>
 </Button>
+
 <Dialog title="Theme" bind:isOpen>
 	<p class="text-muted mb-2">Copy and paste it to lomer.css</p>
 

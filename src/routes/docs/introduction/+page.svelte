@@ -1,12 +1,12 @@
 <script>
 	import CopyCommandLineContent from '$lib/components/templates/copy-command-line-content.svelte';
 	import Icon from '@iconify/svelte';
-	import Link from '$lib/components/ui/link.svelte';
+	import Link from '$lib/components/core/link.svelte';
 	import PageArticle from '$lib/components/templates/page-article.svelte';
 	import PageSection from '$lib/components/templates/page-section.svelte';
 	import PageWrapper from '$lib/components/templates/page-wrapper.svelte';
 	import HighlightText from '$lib/components/templates/highlight-text.svelte';
-	import Accordion from '$lib/components/ui/accordion.svelte';
+	import Accordion from '$lib/components/core/accordion.svelte';
 	import SvelteSyntax from '$lib/components/templates/svelte-syntax.svelte';
 	import CopySvelteContent from '$lib/components/templates/copy-svelte-content.svelte';
 
@@ -83,181 +83,50 @@
 		</div>
 	</PageSection>
 
-	<PageSection id="1" title="Components">
-		<PageArticle id="1.1" title="User Interface (UI)">
-			<p>A single-file reusable component.</p>
-			<CopyCommandLineContent code="npx lomer-ui add [component]" />
-
-			<div class="bg-popup flex flex-col gap-2 rounded p-2">
-				<p>e.g. Simple button</p>
-				<CopyCommandLineContent code="npx lomer-ui add button" />
-				<p>
-					A ready-to-customize button will be generated in
-					<HighlightText>./src/lib/components/ui</HighlightText> named <HighlightText
-						>button.svelte</HighlightText
-					>.
-				</p>
-			</div>
-		</PageArticle>
-
-		<PageArticle id="1.2" title="Snippets">
-			<p>Create modular components with limitless options.</p>
-
-			<p class="mt-4 border-b">Example</p>
-			<p>You need a specific button to sign out.</p>
-			<CopyCommandLineContent code="npx lomer-ui snippet button" />
+	<PageSection title="Components">
+		<PageArticle title="Small, reusable, and ready to go.">
 			<p>
-				A ready-to-customize component will be generated in
-				<HighlightText>./src/lib/components/snippets</HighlightText> named <HighlightText
+				Basic building blocks of your app. These are the simplest pieces that
+				you can use anywhere. They’re standalone, easy to use, and don’t need
+				anything extra to work.
+			</p>
+			<p class="text-fg mt-4 border-b">Example</p>
+			<p>Simple button.</p>
+			<CopyCommandLineContent code="npx lomer-ui add button" />
+			<p>
+				A ready-to-customize button will be generated in
+				<HighlightText>./src/lib/components/ui</HighlightText> named <HighlightText
 					>button.svelte</HighlightText
 				>.
 			</p>
-			<CopySvelteContent
-				title="button.svelte"
-				code={`<script\ lang='ts'>
-	import Button from '$lib/components/ui/button.svelte';
-
-	function onclick() {
-		// do your thing...
-	}
-</script>
-
-<Button {onclick}>Button</Button>`}
-			/>
-			<p>
-				Rename it. For this sample, <HighlightText
-					>button-sign-out.svelte</HighlightText
-				>. Then customize it.
-			</p>
-			<CopySvelteContent
-				title="button-sign-out.svelte"
-				highlightedLines={[2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 15]}
-				code={`<script\ lang='ts'>
-	import Button from '$lib/components/ui/button.svelte';
-	import { signOut } from '$lib/api/auth';
-	import { goto } from '$app/navigation';
-
-	async function onclick() {
-		try {
-			await signOut()
-			goto('/');
-		} catch (error) {
-			console.log('Unexpected error, try again later');
-		} 
-	}
-</script>
-
-<Button {onclick}>Sign out</Button>`}
-			/>
-			<p>Use it.</p>
 			<SvelteSyntax
-				code={`<script\ lang='ts'>
-	import ButtonSignOut from '$lib/components/snippets/button-sign-out.svelte'
-</script>
-
-<ButtonSignOut />`}
+				highlightedLines={[8, 10, 12]}
+				code={`<script\ lang="ts">` +
+					`\n\timport { twMerge } from 'tailwind-merge';` +
+					`\n\t...` +
+					`\n</script>` +
+					`\n` +
+					`\n<button` +
+					`\n\tclass={twMerge(` +
+					`\n\t\t'tailwindcss_here', // base` +
+					`\n\t\t// You can update base design to match your branding...` +
+					`\n\t\tvariant === 'default' && 'tailwindcss_here',` +
+					`\n\t\t// You can add more variants here...` +
+					`\n\t\tsize === 'default' && 'tailwindcss_here'` +
+					`\n\t\t// You can add more sizes here...` +
+					`\n\t)}` +
+					`\n>` +
+					`\n\t{#if isLoading}` +
+					`\n\t\t{@render IconLoading()}` +
+					`\n\t{/if}` +
+					`\n\n\t{@render children?.()}` +
+					`\n</button>` +
+					`\n` +
+					`\n<!-- ICON LOADING -->` +
+					`\n{#snippet IconLoading()}` +
+					`\n\t<!-- SVG ELEMENT HERE -->` +
+					`\n{/snippet}`}
 			/>
-
-			<div class="flex">
-				<Icon class="min-h-6 min-w-6 text-amber-500" icon="mdi:bulb" />
-				<p>
-					Tip: After creating a snippet, <span class="text-fg"
-						>rename and customize</span
-					> the code as needed.
-				</p>
-			</div>
-
-			<p>
-				You can find additional snippets by exploring the component
-				documentation or browsing the <Link
-					href="https://github.com/clios/lomer-ui/tree/main/src/lib/components/snippets"
-					target="_blank">snippets reference</Link
-				>.
-			</p>
-		</PageArticle>
-		<PageArticle id="1.3" title="Templates">
-			<p>Create a predefined structure or layout.</p>
-			<p class="mt-4 border-b">Example</p>
-			<p>
-				You have an icon buttons for toolbar that the size is small, variant is
-				ghost, and no outline.
-			</p>
-			<SvelteSyntax
-				code={`<script\ lang='ts'>
-	import Button from '$lib/components/ui/button.svelte'
-</script>
-
-<div class="flex">
-	<Button class="outline-none" variant="ghost" size="small">
-		<Icon icon="mdi:plus" />
-	</Button>
-	<Button class="outline-none" variant="ghost" size="small">
-		<Icon icon="mdi:lead-pencil" />
-	</Button>
-	<Button class="outline-none" variant="ghost" size="small">
-		<Icon icon="mdi:delete" />
-	</Button>
-</div>`}
-			/>
-			<p>So, run this command:</p>
-			<CopyCommandLineContent code="npx lomer-ui template button" />
-			<p>
-				A ready-to-customize component will be generated in
-				<HighlightText>./src/lib/components/templates</HighlightText> named <HighlightText
-					>button.svelte</HighlightText
-				>.
-			</p>
-			<CopySvelteContent
-				title="button.svelte"
-				code={`<script\ lang='ts'>
-	import Button from '$lib/components/ui/button.svelte';
-	import type { Snippet } from 'svelte';
-
-	type Props = { children ?: Snippet }
-
-	let { children, ...props } = $props()
-</script>
-
-<Button {...props}>
-	{@render children?.()}
-</Button>`}
-			/>
-			<p>Then, rename it to toolbar-button.svelte and customize it.</p>
-			<CopySvelteContent
-				title="toolbar-button.svelte"
-				highlightedLines={[2, 4, 6, 9, 10]}
-				code={`<script\ lang='ts'>
-	import Button from '$lib/components/ui/button.svelte';
-	import Icon from '@iconify/svelte';
-
-	type Props = { icon ?: string }
-
-	let { icon } = $props()
-</script>
-
-<Button class="outline-none" variant="ghost" size="small">
-	<Icon {icon} />
-</Button>`}
-			/>
-			<p>Now you can use it like this.</p>
-			<SvelteSyntax
-				code={`<script\ lang='ts'>
-	import ToolbarButton from '$lib/components/templates/toolbar-button.svelte'
-</script>
-
-<div class="flex">
-	<ToolbarButton icon="mdi:plus" />
-	<ToolbarButton icon="mdi:lead-pencil" />
-	<ToolbarButton icon="mdi:delete" />
-</div>`}
-			/>
-			<p>
-				You can find additional templates by exploring the component
-				documentation or browsing the <Link
-					href="https://github.com/clios/lomer-ui/tree/main/src/lib/components/templates"
-					target="_blank">templates reference</Link
-				>.
-			</p>
 		</PageArticle>
 	</PageSection>
 

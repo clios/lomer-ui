@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Tab from '$lib/components/ui/tab.svelte';
-	import Tabs from '$lib/components/ui/tabs.svelte';
+	import Tab from '$lib/components/core/tab.svelte';
+	import Tabs from '$lib/components/core/tabs.svelte';
 	import type { Snippet } from 'svelte';
 
 	type Props = { preview?: Snippet; code?: Snippet; drag?: Snippet };

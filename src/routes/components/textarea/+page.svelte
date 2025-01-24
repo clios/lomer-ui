@@ -11,7 +11,7 @@
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
 	import SubTitle from '$site/sub-title.svelte';
-	import Textarea from '$lib/components/ui/textarea.svelte';
+	import Textarea from '$lib/components/core/textarea.svelte';
 	import Title from '$site/title.svelte';
 
 	let value = $state('');
@@ -49,7 +49,7 @@
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>value</Prop> property to reflect textarea's value.</p>
 	<Code
-		code={`import Textarea from '$lib/components/ui/textarea.svelte'` +
+		code={`import Textarea from '$lib/components/core/textarea.svelte'` +
 			`\nlet value = $state('')`}
 		language="javascript"
 	/>

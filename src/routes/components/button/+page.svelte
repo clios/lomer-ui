@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import Button from '$lib/components/core/button.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
 	import HeroSection from './hero-section.svelte';
 	import Icon from '@iconify/svelte';
-	import Link from '$lib/components/ui/link.svelte';
+	import Link from '$lib/components/core/link.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
@@ -60,7 +60,7 @@
 	<!-- USAGE -->
 	<Title id="2">Usage</Title>
 	<Code
-		code={`import Button from '$lib/components/ui/button.svelte'`}
+		code={`import Button from '$lib/components/core/button.svelte'`}
 		language="javascript"
 	/>
 	<Code code={`<Button>Default</Button>`} />

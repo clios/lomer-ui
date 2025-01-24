@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
-	import Button from '$lib/components/ui/button.svelte';
+	import Button from '$lib/components/core/button.svelte';
 	import { goto } from '$app/navigation';
 	import Icon from '@iconify/svelte';
 
@@ -19,6 +19,12 @@
 
 	function scrollToId(id: string) {
 		const element = document.getElementById(id);
+		if (!element) return;
+		element.scrollIntoView({ behavior: 'smooth' });
+	}
+
+	function scrollToTop() {
+		const element = document.getElementById('page');
 		if (!element) return;
 		element.scrollIntoView({ behavior: 'smooth' });
 	}
@@ -81,7 +87,14 @@
 		<div class="sticky xl:top-16 2xl:top-23">
 			<div class="border-b border-dotted">
 				<p class="text-muted mr-4 border-r border-dotted px-4 pb-1 text-sm">
-					Page Content
+					<Button
+						class={twMerge(
+							'hover:text-primary text-muted focus:text-primary h-min border-r p-0 text-left text-sm outline-none'
+						)}
+						variant="ghost"
+						size="small"
+						onclick={() => scrollToTop()}>Page Content</Button
+					>
 				</p>
 			</div>
 			<div

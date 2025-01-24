@@ -1,13 +1,12 @@
 <script>
-	import Button from '$lib/components/ui/button.svelte';
-	import ButtonGetStarted from '$lib/components/snippets/button-get-started.svelte';
-	import ButtonGithubRepoLink from '$lib/components/snippets/button-github-repo-link.svelte';
+	import Button from '$lib/components/core/button.svelte';
 	import CopyCommandLineContent from '$lib/components/templates/copy-command-line-content.svelte';
-	import Dialog from '$lib/components/ui/dialog.svelte';
-	import LinkSponsor from '$lib/components/snippets/link-sponsor.svelte';
+	import Dialog from '$lib/components/core/dialog.svelte';
 	import Screen from '$lib/components/templates/screen.svelte';
 	import SvelteSyntax from '$lib/components/templates/svelte-syntax.svelte';
-	import TextSvelteTailwindVersion from '$lib/components/snippets/text-svelte-tailwind-version.svelte';
+	import Link from '$lib/components/core/link.svelte';
+	import Icon from '@iconify/svelte';
+	import { goto } from '$app/navigation';
 
 	let isOpenDialog = $state(false);
 </script>
@@ -18,8 +17,22 @@
 
 <div class="mx-auto flex w-full max-w-[1200px] flex-col gap-16">
 	<section class="flex justify-between lg:text-xl">
-		<TextSvelteTailwindVersion />
-		<LinkSponsor />
+		<p class="flex items-end text-sm">
+			<span>Svelte</span>
+			<span class="text-primary mb-[1px] pl-1 text-sm">v5</span>
+			<span class="text-muted px-2 text-sm">&</span>
+			<span>Tailwind CSS</span>
+			<span class="text-primary mb-[1px] pl-1 text-sm">v4</span>
+		</p>
+
+		<Link
+			class="items-center text-sm no-underline sm:flex"
+			href="https://github.com/sponsors/clios"
+			target="_blank"
+		>
+			<span class="hidden sm:inline">Sponsor</span>
+			<Icon class="text-primary inline size-6" icon="mdi:heart-outline" />
+		</Link>
 	</section>
 
 	<section class="text-muted lg:text-xl">
@@ -36,8 +49,18 @@
 		<p class="text-primary text-center text-3xl lg:text-4xl">lomer-ui</p>
 		<p class="text-muted text-center">Keep It Simply Styled</p>
 		<div class="mt-8 flex justify-center gap-4">
-			<ButtonGetStarted />
-			<ButtonGithubRepoLink />
+			<Button class="text-nowrap" onclick={() => goto('/docs/introduction')}>
+				Get Started
+			</Button>
+
+			<Button
+				variant="secondary"
+				onclick={() =>
+					window.open('https://github.com/clios/lomer-ui', '_blank')}
+			>
+				<Icon icon="mdi:github" width={24} height={24} />
+				GitHub</Button
+			>
 		</div>
 	</Screen>
 
@@ -78,8 +101,8 @@
 		<SvelteSyntax
 			class="w-full max-w-[34rem]"
 			code={`<script\ lang="ts">` +
-				`\n\timport Button from '$lib/components/ui/button.svelte';` +
-				`\n\timport Dialog from '$lib/components/ui/dialog.svelte';` +
+				`\n\timport Button from '$lib/components/core/button.svelte';` +
+				`\n\timport Dialog from '$lib/components/core/dialog.svelte';` +
 				`\n\tlet isOpen = $state(false);` +
 				`\n</script>` +
 				`\n\n<Button onclick={() => (isOpen = true)}>Open Dialog</Button>` +

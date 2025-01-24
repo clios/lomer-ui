@@ -10,7 +10,7 @@
 	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
-	import Select from '$lib/components/ui/select.svelte';
+	import Select from '$lib/components/core/select.svelte';
 	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
 
@@ -49,7 +49,7 @@
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>value</Prop> property to reflect select's value.</p>
 	<Code
-		code={`import Select from '$lib/components/ui/select.svelte'` +
+		code={`import Select from '$lib/components/core/select.svelte'` +
 			`\nlet value = $state('');`}
 		language="javascript"
 	/>

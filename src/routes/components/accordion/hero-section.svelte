@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Accordion from '$lib/components/ui/accordion.svelte';
+	import Accordion from '$lib/components/core/accordion.svelte';
 	import Screen from '$lib/components/templates/screen.svelte';
 </script>
 

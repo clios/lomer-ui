@@ -1,8 +1,8 @@
 <script>
-	import Tab from '$lib/components/ui/tab.svelte';
+	import Tab from '$lib/components/core/tab.svelte';
 	import CopySvelteContent from '$lib/components/templates/copy-svelte-content.svelte';
 	import Screen from '$lib/components/templates/screen.svelte';
-	import Button from '$lib/components/ui/button.svelte';
+	import Button from '$lib/components/core/button.svelte';
 	import { toggleMode, mode } from 'mode-watcher';
 	import Icon from '@iconify/svelte';
 	import CopyCommandLineContent from './copy-command-line-content.svelte';

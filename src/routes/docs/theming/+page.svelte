@@ -6,7 +6,7 @@
 	import Syntax from '$site/syntax.svelte';
 	import Title from '$site/title.svelte';
 	import { HighlightAuto } from 'svelte-highlight';
-	import Link from '$lib/components/ui/link.svelte';
+	import Link from '$lib/components/core/link.svelte';
 	import PageFooter from '$lib/components/templates/page-footer.svelte';
 </script>
 
@@ -75,12 +75,12 @@
 		<Syntax
 			highlightedLines={[1]}
 			code={`@import "tailwindcss";
-@import './lib/components/ui/lomer.css';`}
+@import './lib/components/core/lomer.css';`}
 		/>
 	</div>
 
 	<div class="mb-8">
-		<p class="mb-1 text-orange-500">lib/components/ui/lomer.css</p>
+		<p class="mb-1 text-orange-500">lib/components/core/lomer.css</p>
 		<Syntax
 			canCopy
 			expandable

@@ -11,7 +11,7 @@
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site//prop.svelte';
 	import SubTitle from '$site//sub-title.svelte';
-	import Switch from '$lib/components/ui/switch.svelte';
+	import Switch from '$lib/components/core/switch.svelte';
 	import Title from '$site//title.svelte';
 
 	let value = false;
@@ -51,7 +51,7 @@
 	<p>Bruh this is just a fancy checkbox.</p>
 	<p>Bind <Prop>value</Prop> property to reflect switch's value.</p>
 	<Code
-		code={`import Switch from '$lib/components/ui/switch.svelte'` +
+		code={`import Switch from '$lib/components/core/switch.svelte'` +
 			`\nlet value = $state(false)`}
 		language="javascript"
 	/>

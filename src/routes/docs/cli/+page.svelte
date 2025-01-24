@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Alert from '$lib/components/ui/alert.svelte';
+	import Alert from '$lib/components/core/alert.svelte';
 	import Cli from '$site/cli.svelte';
 	import Icon from '@iconify/svelte';
 	import OnThisPage from '$site/on-this-page.svelte';

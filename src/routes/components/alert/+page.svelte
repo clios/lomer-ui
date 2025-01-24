@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Alert from '$lib/components/ui/alert.svelte';
-	import Button from '$lib/components/ui/button.svelte';
+	import Alert from '$lib/components/core/alert.svelte';
+	import Button from '$lib/components/core/button.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
@@ -63,7 +63,7 @@
 			<Syntax
 				canCopy
 				code={`<script\>` +
-					`\n\timport Alert from '$lib/components/ui/alert.svelte'` +
+					`\n\timport Alert from '$lib/components/core/alert.svelte'` +
 					`\n</script>` +
 					`\n\n<Alert>Your bill is due tomorrow.</Alert>`}
 			/>

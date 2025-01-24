@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
-	import ButtonToggleMode from '$lib/components/snippets/button-toggle-mode.svelte';
+	import Button from '$lib/components/core/button.svelte';
+	import ButtonToggleMode from './button-toggle-mode.svelte';
 	import Icon from '@iconify/svelte';
-	import PanelCustomizeThemePrimary from './panel-customize-theme-primary.svelte';
-	import PanelCustomizeThemeRoundness from './panel-customize-theme-roundness.svelte';
-	import PanelCustomizeThemeTone from './panel-customize-theme-tone.svelte';
+	import ThemePrimary from './theme-primary.svelte';
+	import ThemeRoundness from './theme-roundness.svelte';
+	import ThemeTone from './theme-tone.svelte';
 	import ButtonCopyTheme from './button-copy-theme.svelte';
 	import { mode } from 'mode-watcher';
 	import { scale, slide } from 'svelte/transition';
@@ -37,7 +37,6 @@
 			class="text-primary"
 			variant="ghost"
 			size="icon"
-			edge="circle"
 			onclick={() => (isOpen = !isOpen)}
 		>
 			<Icon
@@ -60,9 +59,9 @@
 				<p class="text-muted text-sm">Match your project's unique vibe.</p>
 			</div>
 
-			<PanelCustomizeThemePrimary bind:primaryColor />
-			<PanelCustomizeThemeTone bind:toneColor />
-			<PanelCustomizeThemeRoundness bind:radiusVal />
+			<ThemePrimary bind:primaryColor />
+			<ThemeTone bind:toneColor />
+			<ThemeRoundness bind:radiusVal />
 
 			<div class="mt-4 mb-1 flex gap-2 px-3">
 				<ButtonCopyTheme {primaryColor} {toneColor} {radiusVal} />

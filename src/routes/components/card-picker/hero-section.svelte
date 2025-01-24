@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CardPicker from '$lib/components/ui/card-picker.svelte';
+	import CardPicker from '$lib/components/core/card-picker.svelte';
 	import Icon from '@iconify/svelte';
 	import Screen from '$lib/components/templates/screen.svelte';
 

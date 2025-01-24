@@ -3,7 +3,7 @@
 	import Code from '$site//code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
 	import HeroSection from './hero-section.svelte';
-	import Link from '$lib/components/ui/link.svelte';
+	import Link from '$lib/components/core/link.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
@@ -48,7 +48,7 @@
 	<!-- USAGE -->
 	<Title id="2">Usage</Title>
 	<Code
-		code={`import Link from '$lib/components/ui/link.svelte'`}
+		code={`import Link from '$lib/components/core/link.svelte'`}
 		language="javascript"
 	/>
 	<Code code={`<Link href="/">lomer-ui</Link>`} />

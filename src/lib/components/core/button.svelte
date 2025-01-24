@@ -14,12 +14,12 @@
 
 	type Props = {
 		children?: Snippet;
-		class?: string;
+		class?: string | null;
 		edge?: 'default' | 'circle' | 'sharp';
 		isDisabled?: boolean;
 		isLoading?: boolean;
 		size?: 'default' | 'icon' | 'small';
-		type?: 'submit' | 'reset' | 'button';
+		type?: 'submit' | 'reset' | 'button' | null;
 		variant?: Variant;
 	} & HTMLButtonAttributes;
 
@@ -41,7 +41,7 @@
 		// BASE
 		'relative flex items-center gap-1', // layout and positioning
 		'outline-offset-2 hover:outline focus:outline active:outline-2 active:outline-offset-0', // outline
-		'cursor-pointer border', // visual
+		'w-max cursor-pointer border', // visual
 
 		// VARIANTS: DEFAULT
 		variant === 'default' && [

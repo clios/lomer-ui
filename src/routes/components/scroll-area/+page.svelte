@@ -8,7 +8,7 @@
 	import PageFooter from '$lib/components/templates/page-footer.svelte';
 	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
-	import ScrollArea from '$lib/components/ui/scroll-area.svelte';
+	import ScrollArea from '$lib/components/core/scroll-area.svelte';
 	import Title from '$site//title.svelte';
 </script>
 
@@ -38,7 +38,7 @@
 
 	<Title id="2">Usage</Title>
 	<Code
-		code={`import ScrollArea from '$lib/components/ui/scroll-area.svelte'`}
+		code={`import ScrollArea from '$lib/components/core/scroll-area.svelte'`}
 		language="javascript"
 	/>
 	<Code

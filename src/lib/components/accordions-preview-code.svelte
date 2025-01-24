@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Accordion from '../ui/accordion.svelte';
+	import Accordion from './core/accordion.svelte';
 	import type { Snippet } from 'svelte';
 
 	type Props = { preview?: Snippet; children?: Snippet };

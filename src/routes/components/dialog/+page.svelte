@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button.svelte';
+	import Button from '$lib/components/core/button.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
 	import ComponentCodeButton from '$site/component-code-button.svelte';
-	import Dialog from '$lib/components/ui/dialog.svelte';
+	import Dialog from '$lib/components/core/dialog.svelte';
 	import HeroSection from './hero-section.svelte';
 	import Icon from '@iconify/svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
@@ -44,7 +44,7 @@
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>isOpen</Prop> property to reflect dialog's open state.</p>
 	<Code
-		code={`import Dialog from '$lib/components/ui/dialog.svelte'` +
+		code={`import Dialog from '$lib/components/core/dialog.svelte'` +
 			`\nlet isOpen = $state(false)` +
 			`\nconst openDialog = () => (isOpen = true)`}
 		language="javascript"
