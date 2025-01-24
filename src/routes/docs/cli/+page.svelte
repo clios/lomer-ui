@@ -67,7 +67,7 @@
 		<Alert title="Notice" class="flex gap-2">
 			<p>
 				This action will replace all existing components in
-				<code>./src/lib/components/ui</code>.
+				<code>./src/lib/components/core</code>.
 			</p>
 		</Alert>
 		<p>You might wonder, "What about the changes I’ve made?"</p>

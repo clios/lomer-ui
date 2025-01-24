@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Link from '$lib/components/core/link.svelte';
-	import Screen from '$lib/components/templates/screen.svelte';
+	import Screen from '$lib/components/screen.svelte';
 </script>
 
 <Screen>

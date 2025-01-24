@@ -1,11 +1,9 @@
 <script>
-	import Alert from '$lib/components/core/alert.svelte';
+	import CopyCLI from '$lib/components/copy-c-l-i.svelte';
 	import Link from '$lib/components/core/link.svelte';
-	import CommandLine from '$lib/components/templates/command-line.svelte';
-	import PageWrapper from '$lib/components/templates/page-wrapper.svelte';
-	import PageSection from '$lib/components/templates/page-section.svelte';
-	import PageArticle from '$lib/components/templates/page-article.svelte';
-	import CopyCommandLineContent from '$lib/components/templates/copy-command-line-content.svelte';
+	import PageArticle from '$lib/components/page-article.svelte';
+	import PageSection from '$lib/components/page-section.svelte';
+	import PageWrapper from '$lib/components/page-wrapper.svelte';
 
 	const tickler = [
 		{
@@ -42,13 +40,13 @@
 	<PageSection id="1" title="Setup">
 		<PageArticle id="1.1" title="Install">
 			<p>Via npx.</p>
-			<CopyCommandLineContent code="npx lomer-ui init" />
+			<CopyCLI code="npx lomer-ui init" />
 			<p>This will check and install automatically dependencies needed.</p>
 			<p>Also, tailwind-merge will be installed as your package dependency.</p>
 		</PageArticle>
 
 		<PageArticle id="1.2" title="Icons (Optional)">
-			<CopyCommandLineContent code="npm install --save-dev @iconify/svelte" />
+			<CopyCLI code="npm install --save-dev @iconify/svelte" />
 			<p>
 				See more at
 				<Link

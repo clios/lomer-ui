@@ -1,17 +1,17 @@
 <script>
+	import AccordionsPreviewCode from '$lib/components/accordions-preview-code.svelte';
 	import Button from '$lib/components/core/button.svelte';
 	import Component from '$site/component.svelte';
+	import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+	import CopySvelteContent from '$lib/components/templates/copy-svelte-content.svelte';
+	import HighlightText from '$lib/components/highlight-text.svelte';
 	import Icon from '@iconify/svelte';
 	import Link from '$lib/components/core/link.svelte';
-	import Screen from '$lib/components/templates/screen.svelte';
+	import PageArticle from '$lib/components/page-article.svelte';
+	import PageSection from '$lib/components/page-section.svelte';
+	import PageWrapper from '$lib/components/page-wrapper.svelte';
+	import Screen from '$lib/components/screen.svelte';
 	import { toggleMode, mode } from 'mode-watcher';
-	import PageWrapper from '$lib/components/templates/page-wrapper.svelte';
-	import PageSection from '$lib/components/templates/page-section.svelte';
-	import PageArticle from '$lib/components/templates/page-article.svelte';
-	import CopyCommandLineContent from '$lib/components/templates/copy-command-line-content.svelte';
-	import CopySvelteContent from '$lib/components/templates/copy-svelte-content.svelte';
-	import AccordionsPreviewCode from '$lib/components/accordions-preview-code.svelte';
-	import HighlightText from '$lib/components/templates/highlight-text.svelte';
 
 	const tickler = [
 		{
@@ -52,7 +52,7 @@
 >
 	<PageSection id="1" title="Usage">
 		<PageArticle id="1.1" title="Install mode-watcher">
-			<CopyCommandLineContent code="npm install mode-watcher" />
+			<CopyCLI code="npm install mode-watcher" />
 			<p>
 				See <Link
 					class="underline"
@@ -89,7 +89,7 @@
 				> to toggle:
 			</p>
 
-			<CopyCommandLineContent code="npx lomer-ui snippet button-toggle-mode" />
+			<CopyCLI code="npx lomer-ui snippet button-toggle-mode" />
 
 			<AccordionsPreviewCode>
 				{#snippet preview()}

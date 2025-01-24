@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Field from '$lib/components/core/field.svelte';
 	import Input from '$lib/components/core/input.svelte';
-	import Screen from '$lib/components/templates/screen.svelte';
+	import Screen from '$lib/components/screen.svelte';
 </script>
 
 <Screen class="flex justify-center">

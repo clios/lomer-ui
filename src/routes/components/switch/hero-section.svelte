@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Switch from '$lib/components/core/switch.svelte';
-	import Screen from '$lib/components/templates/screen.svelte';
+	import Screen from '$lib/components/screen.svelte';
 
 	let value = $state(false);
 </script>

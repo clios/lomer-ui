@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/core/button.svelte';
-	import Screen from '$lib/components/templates/screen.svelte';
+	import Screen from '$lib/components/screen.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { scale } from 'svelte/transition';
 

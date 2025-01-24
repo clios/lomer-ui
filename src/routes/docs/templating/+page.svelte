@@ -1,11 +1,11 @@
 <script>
 	import Alert from '$lib/components/core/alert.svelte';
-	import CopyCommandLineContent from '$lib/components/templates/copy-command-line-content.svelte';
+	import CopyCLI from '$lib/components/copy-c-l-i.svelte';
 	import CopySvelteContent from '$lib/components/templates/copy-svelte-content.svelte';
-	import HighlightText from '$lib/components/templates/highlight-text.svelte';
-	import PageArticle from '$lib/components/templates/page-article.svelte';
-	import PageSection from '$lib/components/templates/page-section.svelte';
-	import PageWrapper from '$lib/components/templates/page-wrapper.svelte';
+	import HighlightText from '$lib/components/highlight-text.svelte';
+	import PageArticle from '$lib/components/page-article.svelte';
+	import PageSection from '$lib/components/page-section.svelte';
+	import PageWrapper from '$lib/components/page-wrapper.svelte';
 	import SvelteSyntax from '$lib/components/templates/svelte-syntax.svelte';
 
 	const tickler = [
@@ -70,7 +70,7 @@
 
 	<PageSection id="1" title="Usage">
 		<PageArticle id="1.1" title="CLI">
-			<CopyCommandLineContent code="npx lomer-ui template [component]" />
+			<CopyCLI code="npx lomer-ui template [component]" />
 			<p>The CLI will ask you to name the component.</p>
 			<p>Customize it. Use it. That's it.</p>
 		</PageArticle>
@@ -105,7 +105,7 @@
 		</PageArticle>
 
 		<PageArticle id="2.1" title="Creating a template">
-			<CopyCommandLineContent code="npx lomer-ui template button" />
+			<CopyCLI code="npx lomer-ui template button" />
 			<p>
 				For this example we name it <HighlightText>button-icon</HighlightText>.
 			</p>

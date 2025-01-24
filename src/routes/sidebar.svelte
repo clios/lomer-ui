@@ -1,7 +1,7 @@
 <script lang="ts">
+	import ExploreIn from './explore-in.svelte';
 	import Link from '$lib/components/core/link.svelte';
 	import SidebarItem from './sidebar-item.svelte';
-	import ExploreIn from './explore-in.svelte';
 	import { fade, slide } from 'svelte/transition';
 	import { twMerge } from 'tailwind-merge';
 
@@ -35,11 +35,6 @@
 			<SidebarItem href="/docs/theming" label="Theming" status="new" />
 			<SidebarItem href="/docs/templating" label="Templating" status="new" />
 			<SidebarItem href="/docs/cli" label="CLI" />
-
-			<p class="mt-4 pl-4 font-semibold">CLI Tool</p>
-			<SidebarItem href="/docs/introduction" label="Components" />
-			<SidebarItem href="/docs/introduction" label="Template" />
-			<SidebarItem href="/docs/introduction" label="Icon" />
 
 			<p class="mt-4 pl-4 font-semibold">Components</p>
 			<SidebarItem href="/components/accordion" label="Accordion" />

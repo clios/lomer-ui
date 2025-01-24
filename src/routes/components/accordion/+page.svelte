@@ -10,7 +10,7 @@
 	import PageFooter from '$lib/components/templates/page-footer.svelte';
 	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Prop from '$site/prop.svelte';
-	import Screen from '$lib/components/templates/screen.svelte';
+	import Screen from '$lib/components/screen.svelte';
 	import SubTitle from '$site/sub-title.svelte';
 	import Syntax from '$site/syntax.svelte';
 	import TabsPreviewCode from '$site/tabs__preview-code.svelte';

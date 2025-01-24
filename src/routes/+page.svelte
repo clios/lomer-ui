@@ -1,11 +1,11 @@
 <script>
 	import Button from '$lib/components/core/button.svelte';
-	import CopyCommandLineContent from '$lib/components/templates/copy-command-line-content.svelte';
+	import CopyCLI from '$lib/components/copy-c-l-i.svelte';
 	import Dialog from '$lib/components/core/dialog.svelte';
-	import Screen from '$lib/components/templates/screen.svelte';
-	import SvelteSyntax from '$lib/components/templates/svelte-syntax.svelte';
-	import Link from '$lib/components/core/link.svelte';
 	import Icon from '@iconify/svelte';
+	import Link from '$lib/components/core/link.svelte';
+	import Screen from '$lib/components/screen.svelte';
+	import SvelteSyntax from '$lib/components/templates/svelte-syntax.svelte';
 	import { goto } from '$app/navigation';
 
 	let isOpenDialog = $state(false);
@@ -88,7 +88,7 @@
 			<span>building your own <br class="sm:hidden" /> components</span>
 			<span class="text-fg font-semibold">with CLI</span>.
 		</p>
-		<CopyCommandLineContent code="npx lomer-ui init" />
+		<CopyCLI code="npx lomer-ui init" />
 		<p>That's it!</p>
 	</section>
 

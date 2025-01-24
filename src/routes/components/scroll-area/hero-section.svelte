@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Screen from '$lib/components/templates/screen.svelte';
+	import Screen from '$lib/components/screen.svelte';
 	import ScrollArea from '$lib/components/core/scroll-area.svelte';
 </script>
 

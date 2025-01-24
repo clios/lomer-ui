@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Input from '$lib/components/core/input.svelte';
-	import Screen from '$lib/components/templates/screen.svelte';
+	import Screen from '$lib/components/screen.svelte';
 
 	let value = $state('lomer-ui');
 </script>

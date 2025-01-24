@@ -1,11 +1,11 @@
 <script>
 	import Tab from '$lib/components/core/tab.svelte';
 	import CopySvelteContent from '$lib/components/templates/copy-svelte-content.svelte';
-	import Screen from '$lib/components/templates/screen.svelte';
+	import Screen from '$lib/components/screen.svelte';
 	import Button from '$lib/components/core/button.svelte';
 	import { toggleMode, mode } from 'mode-watcher';
 	import Icon from '@iconify/svelte';
-	import CopyCommandLineContent from './copy-command-line-content.svelte';
+	import CopyCLI from '../copy-c-l-i.svelte';
 
 	let group = $state('tab-1');
 </script>
@@ -37,7 +37,7 @@
 
 	{#if group === 'tab-3'}
 		<div class="border-dotted p-4">
-			<CopyCommandLineContent code="npx lomer-ui snippet button-toggle-mode" />
+			<CopyCLI code="npx lomer-ui snippet button-toggle-mode" />
 		</div>
 	{/if}
 </div>
