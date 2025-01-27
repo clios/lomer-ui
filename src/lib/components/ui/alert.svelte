@@ -24,7 +24,7 @@
 {#if isOpen}
 	<div
 		class={twMerge(
-			'bg-bg border-fg relative flex w-full items-center gap-3 rounded border p-3', // base
+			'bg-bg text-fg border-fg relative flex w-full items-center gap-3 rounded border p-3', // base
 
 			// HAS TITLE
 			'items-start',
