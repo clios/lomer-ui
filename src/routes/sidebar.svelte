@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ExploreIn from './explore-in.svelte';
-	import Link from '$lib/components/core/link.svelte';
+	import Link from '$lib/components/ui/link.svelte';
 	import SidebarItem from './sidebar-item.svelte';
 	import { fade, slide } from 'svelte/transition';
 	import { twMerge } from 'tailwind-merge';
@@ -13,7 +13,7 @@
 		in:slide={{ axis: 'x', duration: 150 }}
 		out:slide={{ axis: 'x', duration: 150, delay: 150 }}
 		class={twMerge(
-			'bg-bg lg:bg-bg absolute z-20 w-full max-w-60 border-r lg:relative lg:z-10'
+			'bg-bg lg:bg-bg absolute z-20 w-full max-w-60 border-r lg:relative lg:z-0'
 		)}
 	>
 		<!-- BORDER LEFT FOR SMALLEST TO LARGE SCREEN -->
@@ -33,7 +33,6 @@
 			<SidebarItem href="/docs/installation" label="Installation" />
 			<SidebarItem href="/docs/dark-mode" label="Dark Mode" />
 			<SidebarItem href="/docs/theming" label="Theming" status="new" />
-			<SidebarItem href="/docs/templating" label="Templating" status="new" />
 			<SidebarItem href="/docs/cli" label="CLI" />
 
 			<p class="mt-4 pl-4 font-semibold">Components</p>
@@ -72,11 +71,7 @@
 		onclick={() => (isOpen = false)}
 		class={twMerge(
 			'fixed top-0 right-0 bottom-0 left-0 z-10', // position
-			'backdrop-blur-xs lg:hidden', // blur
-			'bg-bg/80', // color
-			'bg-[radial-gradient(#D4D4D8_1px,transparent_1px)]', // light dots
-			'dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]', // dark dots
-			'[background-size:16px_16px]' // dot size
+			'lg:hidden' // blur
 		)}
 		in:fade={{ duration: 300 }}
 	></div>

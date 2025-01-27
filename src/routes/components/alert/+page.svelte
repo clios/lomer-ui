@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Alert from '$lib/components/core/alert.svelte';
-	import Button from '$lib/components/core/button.svelte';
+	import Alert from '$lib/components/ui/alert.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
 	import HeroSection from './hero-section.svelte';
 	import Icon from '@iconify/svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
@@ -47,7 +47,7 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add alert`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/alert.svelte"
 	/>
 
@@ -63,7 +63,7 @@
 			<Syntax
 				canCopy
 				code={`<script\>` +
-					`\n\timport Alert from '$lib/components/core/alert.svelte'` +
+					`\n\timport Alert from '$lib/components/ui/alert.svelte'` +
 					`\n</script>` +
 					`\n\n<Alert>Your bill is due tomorrow.</Alert>`}
 			/>

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Button from '$lib/components/core/button.svelte';
-	import Dialog from '$lib/components/core/dialog.svelte';
-	import CopyStyleSheetContent from '../lib/components/templates/copy-style-sheet-content.svelte';
+	import CopyCSSCode from '$lib/components/copy-c-s-s-code.svelte';
+	import Button from '$lib/components/ui/button.svelte';
+	import Drawer from '$lib/components/ui/drawer.svelte';
 
 	let { primaryColor, toneColor, radiusVal } = $props();
 
@@ -12,11 +12,10 @@
 	<p>Copy theme</p>
 </Button>
 
-<Dialog title="Theme" bind:isOpen>
+<Drawer title="Theme" position="left" bind:isOpen>
 	<p class="text-muted mb-2">Copy and paste it to lomer.css</p>
 
-	<CopyStyleSheetContent
-		class="h-96"
+	<CopyCSSCode
 		code={`@theme {
 	--color-bg: var(--color-${toneColor}-50);
 	--color-fg: var(--color-${toneColor}-950);
@@ -86,4 +85,4 @@
 	--color-spinner: var(--color-${primaryColor}-400);
 }`}
 	/>
-</Dialog>
+</Drawer>

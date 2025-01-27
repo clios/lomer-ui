@@ -1,281 +1,285 @@
 <script>
+	import CopyCSSCode from '$lib/components/copy-c-s-s-code.svelte';
+	import Highlight from 'svelte-highlight';
+	import HighlightText from '$lib/components/highlight-text.svelte';
 	import Icon from '@iconify/svelte';
-	import OnThisPage from '$site/on-this-page.svelte';
-	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-	import PageHeader from '$lib/components/templates/page-header.svelte';
-	import Syntax from '$site/syntax.svelte';
-	import Title from '$site/title.svelte';
-	import { HighlightAuto } from 'svelte-highlight';
-	import Link from '$lib/components/core/link.svelte';
-	import PageFooter from '$lib/components/templates/page-footer.svelte';
+	import Link from '$lib/components/ui/link.svelte';
+	import PageArticle from '$lib/components/page-article.svelte';
+	import PageSection from '$lib/components/page-section.svelte';
+	import PageWrapper from '$lib/components/page-wrapper.svelte';
+	import css from 'svelte-highlight/languages/css';
+	import felipec from 'svelte-highlight/styles/felipec';
+
+	const tickler = [
+		{
+			id: '1',
+			label: 'Convention'
+		},
+		{
+			id: '2',
+			label: 'CSS Variables'
+		},
+		{
+			id: '3',
+			label: 'Adding theme variables'
+		},
+		{
+			id: '4',
+			label: 'lomer.css'
+		}
+	];
 </script>
 
 <svelte:head>
 	<title>Theming . lomer-ui</title>
+	{@html felipec}
 </svelte:head>
 
-<OnThisPage>
-	<OnThisPageBtn id="1" title="Convention" />
-	<OnThisPageBtn id="2" title="lomer.css" />
-	<OnThisPageBtn id="3" title="CSS Variables" />
-	<OnThisPageBtn id="4" title="Adding theme variables" />
-</OnThisPage>
+<PageWrapper
+	{tickler}
+	title="Theming"
+	sub="Docs"
+	info="Customize styles to match your vibe."
+	prevLabel="Dark Mode"
+	prevLink="/docs/dark-mode"
+	nextLabel="CLI"
+	nextLink="/docs/cli"
+>
+	<PageSection class="lg:text-xl">
+		<div>
+			<p>Theming feature for lomer-ui is almost the same with shadcn.</p>
+		</div>
+	</PageSection>
 
-<div class="mx-auto mb-16 flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
-	<PageHeader
-		title="Theming"
-		sub="Docs"
-		info="Customize styles to match your vibe."
-	/>
+	<PageSection id="1" title="Convention">
+		<PageArticle>
+			<p>
+				The most common and straightforward approach is to use <HighlightText
+					>bg</HighlightText
+				>
+				and
+				<HighlightText>fg</HighlightText> for color variables, simplifying "background"
+				and "foreground". To keep our code clean,
+				<HighlightText>bg</HighlightText> is omitted when it's context is clear.
+			</p>
+			<div class="font-mono text-sm sm:text-base">
+				<p class="text-muted font-sans italic">e.g.</p>
+				<p class="flex items-center">
+					bg-primary<span class="pr-2 text-red-500">-bg</span> text-primary-fg <Icon
+						class="w-8 pl-3 text-red-500"
+						icon="mdi:close"
+					/>
+				</p>
+				<p class="flex items-center gap-3">
+					bg-primary text-primary-fg <Icon
+						class="text-green-500"
+						icon="mdi:check"
+					/>
+				</p>
+			</div>
+		</PageArticle>
+	</PageSection>
 
-	<p>
-		Theming feature for lomer-ui is inspired by the works of shadcn. A widely
-		used and loved by developers. So, to easily adapt lomer-ui followed most of
-		the concept behind customizing theme.
-	</p>
-
-	<Title id="1">Convention</Title>
-	<p>
-		The most common and straightforward approach is to use <span
-			class="text-mono text-primary">bg</span
+	<PageSection id="2" title="CSS Variables">
+		<PageArticle title="General background and foreground color.">
+			<Highlight
+				language={css}
+				code={`--color-bg: var(--color-zinc-50);` +
+					`\n--color-fg: var(--color-zinc-950);`}
+			/>
+		</PageArticle>
+		<PageArticle title="Main color of your design.">
+			<Highlight
+				language={css}
+				code={`--color-primary: var(--color-cyan-600);` +
+					`\n--color-primary-fg: var(--color-zinc-50);`}
+			/>
+		</PageArticle>
+		<PageArticle title="Supporting color of your design.">
+			<Highlight
+				language={css}
+				code={`--color-secondary: var(--color-zinc-200);` +
+					`\n--color-secondary-fg: var(--color-zinc-950);`}
+			/>
+		</PageArticle>
+		<PageArticle
+			title="Signals danger, warning or irreversibility action color."
 		>
-		and
-		<span class="text-mono text-primary">fg</span> for color variables,
-		simplifying "background" and "foreground". To keep our code clean,
-		<span class="text-mono text-primary">bg</span> is omitted when it's context is
-		clear.
-	</p>
-	<div class="font-mono text-sm sm:text-base">
-		<p class="text-muted font-sans italic">e.g.</p>
-		<p class="flex items-center">
-			bg-primary<span class="pr-2 text-red-500">-bg</span> text-primary-fg <Icon
-				class="w-8 pl-3 text-red-500"
-				icon="mdi:close"
+			<Highlight
+				language={css}
+				code={`--color-destructive: var(--color-red-500);` +
+					`\n--color-destructive-fg: var(--color-zinc-50);`}
 			/>
-		</p>
-		<p class="flex items-center gap-3">
-			bg-primary text-primary-fg <Icon
-				class="text-green-500"
-				icon="mdi:check"
+		</PageArticle>
+		<PageArticle title="Softer tone for supporting details color.">
+			<Highlight
+				language={css}
+				code={`--color-muted: var(--color-zinc-600);` +
+					`\n--color-muted-fg: var(--color-zinc-400);`}
 			/>
-		</p>
-	</div>
+		</PageArticle>
+		<PageArticle
+			title="Visually indicate disabled actions like disabled button."
+		>
+			<Highlight
+				language={css}
+				code={`--color-disabled: var(--color-zinc-500);` +
+					`\n--color-disabled-fg: var(--color-zinc-800);`}
+			/>
+		</PageArticle>
+		<PageArticle title="Form input elements color.">
+			<Highlight
+				language={css}
+				code={`--color-input: var(--color-zinc-50);` +
+					`\n--color-input-fg: var(--color-zinc-950);`}
+			/>
+		</PageArticle>
+		<PageArticle title="Card like components color.">
+			<Highlight
+				language={css}
+				code={`--color-card: var(--color-zinc-200);` +
+					`\n--color-card-fg: var(--color-zinc-950);`}
+			/>
+		</PageArticle>
+		<PageArticle title="Popup components color like drawer, dialog, dropdown.">
+			<Highlight
+				language={css}
+				code={`--color-popup: var(--color-white);` +
+					`\n--color-popup-fg: var(--color-zinc-950);`}
+			/>
+		</PageArticle>
+		<PageArticle title="Default border color.">
+			<Highlight
+				language={css}
+				code={`--color-border: var(--color-zinc-300);`}
+			/>
+		</PageArticle>
+		<PageArticle title="Default spinner icon color.">
+			<Highlight
+				language={css}
+				code={`--color-spinner: var(--color-cyan-500);`}
+			/>
+		</PageArticle>
+		<PageArticle title="Default border radius.">
+			<Highlight
+				language={css}
+				code={`--radius: 0.25rem;` +
+					`\n--radius-card: calc(var(--radius) * 1.5);`}
+			/>
+		</PageArticle>
+	</PageSection>
 
-	<Title id="2">lomer.css</Title>
+	<PageSection id="3" title="Adding theme variables">
+		<PageArticle>
+			<p>TailwindCSS v4 has a great way to add theme variables.</p>
+			<Link href="https://tailwindcss.com/docs/theme" target="_blank"
+				>https://tailwindcss.com/docs/theme</Link
+			>
+		</PageArticle>
+	</PageSection>
 
-	<p class="text-muted">
-		Using
-		<span class="text-primary px-1 font-mono">npx lomer-ui init</span>
-		will automatically insert lomer.css to your app.css file just below
-		<span class="text-primary px-1 font-mono">@import 'tailwindcss'</span>.
-	</p>
-
-	<div>
-		<p class="mb-1 text-orange-500">app.css</p>
-		<Syntax
-			highlightedLines={[1]}
-			code={`@import "tailwindcss";
-@import './lib/components/core/lomer.css';`}
-		/>
-	</div>
-
-	<div class="mb-8">
-		<p class="mb-1 text-orange-500">lib/components/core/lomer.css</p>
-		<Syntax
-			canCopy
-			expandable
-			code={`@variant dark (&:where(.dark, .dark *));
-
-@theme {
-    --color-bg: var(--color-zinc-50);
-    --color-fg: var(--color-zinc-950);
-
-    --color-primary: var(--color-cyan-600);
-    --color-primary-fg: var(--color-zinc-50);
-	
-    --color-secondary: var(--color-zinc-200);
-    --color-secondary-fg: var(--color-zinc-950);
-	
-    --color-destructive: var(--color-red-500);
-    --color-destructive-fg: var(--color-zinc-50);
-
-    --color-muted: var(--color-zinc-600);
-    --color-muted-fg: var(--color-zinc-400);
-	
-    --color-disabled: var(--color-zinc-500);
-    --color-disabled-fg: var(--color-zinc-800);
-
-    --color-input: var(--color-zinc-50);
-    --color-input-fg: var(--color-zinc-950);
-	
-    --color-card: var(--color-zinc-200);
-    --color-card-fg: var(--color-zinc-950);
-	
-    --color-popup: var(--color-white);
-    --color-popup-fg: var(--color-zinc-950);
-
-    --color-border: var(--color-zinc-300);
-	
-    --color-spinner: var(--color-cyan-500);
-	
-    --radius: 0.25rem;
-    --radius-card: calc(var(--radius) * 1.5);
-}
-
-.dark {
-    --color-bg: var(--color-zinc-950);
-    --color-fg: var(--color-zinc-50);
-
-    --color-primary: var(--color-cyan-500);
-    --color-primary-fg: var(--color-zinc-50);
-
-    --color-secondary: var(--color-zinc-800);
-    --color-secondary-fg: var(--color-zinc-50);
-
-    --color-destructive: var(--color-red-500);
-    --color-destructive-fg: var(--color-zinc-50);
-
-    --color-muted: var(--color-zinc-400);
-    --color-muted-fg: var(--color-zinc-600);
-
-    --color-disabled: var(--color-zinc-600);
-    --color-disabled-fg: var(--color-zinc-400);
-
-    --color-input: var(--color-zinc-950);
-    --color-input-fg: var(--color-zinc-50);
-
-    --color-card: var(--color-zinc-900);
-    --color-card-fg: var(--color-zinc-50);
-
-    --color-popup: var(--color-zinc-950);
-    --color-popup-fg: var(--color-zinc-50);
-
-    --color-border: var(--color-zinc-700);
-
-    --color-spinner: var(--color-cyan-400);
-}
-
-@layer base {
-    * {
-        @apply border-border;
-    }
-    body {
-        @apply bg-bg text-fg;
-    }
-    ::selection {
-        background-color: var(--color-primary) !important;
-        color: var(--color-primary-fg) !important;
-    }
-}`}
-		/>
-	</div>
-
-	<Title id="3">CSS Variables</Title>
-	<div>
-		<p class="mb-1">General background and foreground color.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto
-				code={`--color-bg: var(--color-zinc-50);
---color-fg: var(--color-zinc-950);`}
-			></HighlightAuto>
-		</div>
-
-		<p class="mb-1">Main color of your design.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto
-				code={`--color-primary: var(--color-cyan-600);
---color-primary-fg: var(--color-zinc-50);`}
-			></HighlightAuto>
-		</div>
-
-		<p class="mb-1">Supporting color of your design.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto
-				code={`--color-secondary: var(--color-zinc-200);
---color-secondary-fg: var(--color-zinc-950);`}
-			></HighlightAuto>
-		</div>
-
-		<p class="mb-1">Signals danger, warning or irreversibility action color.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto
-				code={`--color-destructive: var(--color-red-500);
---color-destructive-fg: var(--color-zinc-50);`}
-			></HighlightAuto>
-		</div>
-
-		<p class="mb-1">Softer tone for supporting details color.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto
-				code={`--color-muted: var(--color-zinc-600);
---color-muted-fg: var(--color-zinc-400);`}
-			></HighlightAuto>
-		</div>
-
-		<p class="mb-1">Visually indicate disabled actions like disabled button.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto
-				code={`--color-disabled: var(--color-zinc-500);
---color-disabled-fg: var(--color-zinc-800);`}
-			></HighlightAuto>
-		</div>
-
-		<p class="mb-1">Form input elements color.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto
-				code={`--color-input: var(--color-zinc-50);
---color-input-fg: var(--color-zinc-950);`}
-			></HighlightAuto>
-		</div>
-
-		<p class="mb-1">Card like components color.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto
-				code={`--color-card: var(--color-zinc-200);
---color-card-fg: var(--color-zinc-950);`}
-			></HighlightAuto>
-		</div>
-
-		<p class="mb-1">Popup components color like drawer, dialog, dropdown.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto
-				code={`--color-popup: var(--color-white);
---color-popup-fg: var(--color-zinc-950);`}
-			></HighlightAuto>
-		</div>
-
-		<p class="mb-1">Default border color.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto code={`--color-border: var(--color-zinc-300);`}
-			></HighlightAuto>
-		</div>
-
-		<p class="mb-1">Default spinner icon color.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto code={`--color-spinner: var(--color-cyan-500);`}
-			></HighlightAuto>
-		</div>
-
-		<p class="mb-1">Default border radius.</p>
-		<div class="rounded-card mb-8 overflow-hidden text-sm">
-			<HighlightAuto
-				code={`--radius: 0.25rem;
---radius-card: calc(var(--radius) * 1.5);`}
-			></HighlightAuto>
-		</div>
-	</div>
-
-	<Title id="4">Adding theme variables</Title>
-	<p>TailwindCSS v4 has a great way to add theme variables.</p>
-	<Link
-		href="https://tailwindcss.com/docs/v4-beta#css-theme-variables"
-		target="_blank">tailwindcss.com/docs/v4-beta#css-theme-variables</Link
-	>
-
-	<PageFooter
-		prevLabel="Dark Mode"
-		prevLink="/docs/dark-mode"
-		nextLabel="CLI"
-		nextLink="/docs/cli"
-	/>
-</div>
+	<PageSection id="4" title="lomer.css">
+		<PageArticle>
+			<p class="text-muted">
+				Using
+				<HighlightText>npx lomer-ui init</HighlightText>
+				will automatically import lomer.css to your app.css.
+			</p>
+			<CopyCSSCode
+				title="app.css"
+				highlightedLines={[1]}
+				code={`@import "tailwindcss";` +
+					`\n@import './lib/components/ui/lomer.css';`}
+			/>
+			<CopyCSSCode
+				title="lomer.css"
+				code={`@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');` +
+					`\n` +
+					`\n@variant dark (&:where(.dark, .dark *));` +
+					`\n	` +
+					`\n@theme {` +
+					`\n\t--color-bg: var(--color-zinc-50);` +
+					`\n\t--color-fg: var(--color-zinc-950);` +
+					`\n` +
+					`\n\t--color-primary: var(--color-cyan-600);` +
+					`\n\t--color-primary-fg: var(--color-zinc-50);` +
+					`\n` +
+					`\n\t--color-secondary: var(--color-zinc-200);` +
+					`\n\t--color-secondary-fg: var(--color-zinc-950);` +
+					`\n` +
+					`\n\t--color-destructive: var(--color-red-500);` +
+					`\n\t--color-destructive-fg: var(--color-zinc-50);` +
+					`\n` +
+					`\n\t--color-muted: var(--color-zinc-600);` +
+					`\n\t--color-muted-fg: var(--color-zinc-400);` +
+					`\n` +
+					`\n\t--color-disabled: var(--color-zinc-500);` +
+					`\n\t--color-disabled-fg: var(--color-zinc-800);` +
+					`\n` +
+					`\n\t--color-input: var(--color-zinc-50);` +
+					`\n\t--color-input-fg: var(--color-zinc-950);` +
+					`\n` +
+					`\n\t--color-card: var(--color-zinc-200);` +
+					`\n\t--color-card-fg: var(--color-zinc-950);` +
+					`\n` +
+					`\n\t--color-popup: var(--color-white);` +
+					`\n\t--color-popup-fg: var(--color-zinc-950);` +
+					`\n` +
+					`\n\t--color-border: var(--color-zinc-300);` +
+					`\n` +
+					`\n\t--color-spinner: var(--color-cyan-500);` +
+					`\n` +
+					`\n\t--radius: 0.25rem;` +
+					`\n\t--radius-card: calc(var(--radius) * 1.5);` +
+					`\n}` +
+					`\n` +
+					`\n.dark {` +
+					`\n\t--color-bg: var(--color-zinc-950);` +
+					`\n\t--color-fg: var(--color-zinc-50);` +
+					`\n` +
+					`\n\t--color-primary: var(--color-cyan-500);` +
+					`\n\t--color-primary-fg: var(--color-zinc-50);` +
+					`\n` +
+					`\n\t--color-secondary: var(--color-zinc-800);` +
+					`\n\t--color-secondary-fg: var(--color-zinc-50);` +
+					`\n` +
+					`\n\t--color-destructive: var(--color-red-500);` +
+					`\n\t--color-destructive-fg: var(--color-zinc-50);` +
+					`\n` +
+					`\n\t--color-muted: var(--color-zinc-400);` +
+					`\n\t--color-muted-fg: var(--color-zinc-600);` +
+					`\n` +
+					`\n\t--color-disabled: var(--color-zinc-600);` +
+					`\n\t--color-disabled-fg: var(--color-zinc-400);` +
+					`\n` +
+					`\n\t--color-input: var(--color-zinc-950);` +
+					`\n\t--color-input-fg: var(--color-zinc-50);` +
+					`\n` +
+					`\n\t--color-card: var(--color-zinc-900);` +
+					`\n\t--color-card-fg: var(--color-zinc-50);` +
+					`\n` +
+					`\n\t--color-popup: var(--color-zinc-950);` +
+					`\n\t--color-popup-fg: var(--color-zinc-50);` +
+					`\n` +
+					`\n\t--color-border: var(--color-zinc-700);` +
+					`\n` +
+					`\n\t--color-spinner: var(--color-cyan-400);` +
+					`\n}` +
+					`\n` +
+					`\n@layer base {` +
+					`\n\t* {` +
+					`\n\t\t@apply border-border;` +
+					`\n\t}` +
+					`\n\tbody {` +
+					`\n\t\t@apply bg-bg text-fg;` +
+					`\n\t\tfont-family: 'Oxygen', Courier, sans-serif;` +
+					`\n\t}` +
+					`\n\t::selection {` +
+					`\n\t\tbackground-color: var(--color-primary) !important;` +
+					`\n\t\tcolor: var(--color-primary-fg) !important;` +
+					`\n\t}` +
+					`\n}`}
+			/>
+		</PageArticle>
+	</PageSection>
+</PageWrapper>

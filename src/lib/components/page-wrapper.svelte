@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
-	import Button from '$lib/components/core/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import { goto } from '$app/navigation';
 	import Icon from '@iconify/svelte';
 
@@ -103,8 +103,8 @@
 				{#each tickler as t}
 					<Button
 						class={twMerge(
-							'hover:text-primary text-muted focus:text-primary h-min p-0 px-4 text-left text-sm outline-none',
-							t.sub && 'ml-4'
+							'hover:text-primary text-muted focus:text-primary h-min w-full p-0 px-4 text-left text-sm outline-none',
+							t.sub && 'ml-4 pr-8 pl-4'
 						)}
 						variant="ghost"
 						size="small"

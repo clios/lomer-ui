@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import hljs from 'highlight.js';
 	import Icon from '@iconify/svelte';
-	import Button from '$lib/components/core/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import { twMerge } from 'tailwind-merge';
 
 	export let code = ''; // The code to highlight

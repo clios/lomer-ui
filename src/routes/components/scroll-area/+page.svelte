@@ -1,14 +1,14 @@
 <script lang="ts">
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
 	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import PageFooter from '$lib/components/templates/page-footer.svelte';
 	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
-	import ScrollArea from '$lib/components/core/scroll-area.svelte';
+	import ScrollArea from '$lib/components/ui/scroll-area.svelte';
 	import Title from '$site//title.svelte';
 </script>
 
@@ -32,13 +32,13 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add scroll-area`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/scroll-area.svelte"
 	/>
 
 	<Title id="2">Usage</Title>
 	<Code
-		code={`import ScrollArea from '$lib/components/core/scroll-area.svelte'`}
+		code={`import ScrollArea from '$lib/components/ui/scroll-area.svelte'`}
 		language="javascript"
 	/>
 	<Code

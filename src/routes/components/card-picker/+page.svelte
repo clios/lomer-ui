@@ -1,8 +1,8 @@
 <script lang="ts">
-	import CardPicker from '$lib/components/core/card-picker.svelte';
+	import CardPicker from '$lib/components/ui/card-picker.svelte';
 	import Cli from '$site/cli.svelte';
 	import Code from '$site/code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
 	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
@@ -41,14 +41,14 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add card-picker`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/card-picker.svelte"
 	/>
 
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>value</Prop> property to reflect card-picker's value.</p>
 	<Code
-		code={`import CardPicker from '$lib/components/core/card-picker.svelte'` +
+		code={`import CardPicker from '$lib/components/ui/card-picker.svelte'` +
 			`\nlet value = $state('');`}
 		language="javascript"
 	/>

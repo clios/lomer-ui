@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import Button from '$lib/components/core/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Icon from '@iconify/svelte';
 
 	type Props = {

@@ -63,7 +63,7 @@
 	--color-card: var(--color-zinc-900);
 	--color-card-fg: var(--color-zinc-50);
 
-	--color-popup: var(--color-zinc-900);
+	--color-popup: var(--color-zinc-950);
 	--color-popup-fg: var(--color-zinc-50);
 
 	--color-border: var(--color-zinc-700);
@@ -77,13 +77,10 @@
 	}
 	body {
 		@apply bg-bg text-fg;
+		font-family: 'Oxygen', Courier, sans-serif;
 	}
 	::selection {
 		background-color: var(--color-primary) !important;
 		color: var(--color-primary-fg) !important;
 	}
-}
-
-body {
-	font-family: 'Oxygen', Courier, sans-serif;
 }

@@ -1,17 +1,22 @@
 <script lang="ts">
-	import Accordion from './core/accordion.svelte';
+	import Accordion from './ui/accordion.svelte';
 	import type { Snippet } from 'svelte';
 
-	type Props = { preview?: Snippet; children?: Snippet };
+	type Props = {
+		preview?: Snippet;
+		children?: Snippet;
+		expand?: boolean;
+	};
 
-	let { preview, children }: Props = $props();
+	let { preview, children, expand = false }: Props = $props();
 </script>
 
-<div class="rounded-card overflow-hidden border">
-	<Accordion class="border-b" title="Preview" isOpen>
+<div class="">
+	<div class="border-b">
+		<p class="text-fg mt-2 ml-2 font-semibold">Preview</p>
 		{@render preview?.()}
-	</Accordion>
-	<Accordion title="Code">
+	</div>
+	<Accordion title="Code" isOpen={expand}>
 		{@render children?.()}
 	</Accordion>
 </div>

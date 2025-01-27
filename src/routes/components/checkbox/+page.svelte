@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Checkbox from '$lib/components/core/checkbox.svelte';
+	import Checkbox from '$lib/components/ui/checkbox.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
 	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
@@ -38,7 +38,7 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add checkbox`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/checkbox.svelte"
 	/>
 
@@ -46,7 +46,7 @@
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>value</Prop> property to reflect checkbox's value.</p>
 	<Code
-		code={`import Checkbox from '$lib/components/core/checkbox.svelte'` +
+		code={`import Checkbox from '$lib/components/ui/checkbox.svelte'` +
 			`\nlet value = $state(false)`}
 		language="javascript"
 	/>

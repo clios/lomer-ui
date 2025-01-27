@@ -1,14 +1,14 @@
 <script>
-	import Button from '$lib/components/core/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Icon from '@iconify/svelte';
-	import Link from '$lib/components/core/link.svelte';
+	import Link from '$lib/components/ui/link.svelte';
 	import ButtonToggleSidebar from './button-toggle-sidebar.svelte';
 	import { mode, toggleMode } from 'mode-watcher';
 
 	let { isOpen = $bindable(false) } = $props();
 </script>
 
-<div class="bg-bg/50 sticky top-0 z-20 border-b backdrop-blur-sm">
+<div class="bg-bg/50 sticky top-0 z-10 border-b backdrop-blur-sm">
 	<div class="relative container mx-auto flex h-10 items-center gap-4 border-x">
 		<!-- BRANDING SECTION -->
 		<div

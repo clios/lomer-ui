@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Tab from '$lib/components/core/tab.svelte';
-	import Tabs from '$lib/components/core/tabs.svelte';
+	import Tab from '$lib/components/ui/tab.svelte';
+	import Tabs from '$lib/components/ui/tabs.svelte';
 	import type { Snippet } from 'svelte';
 
 	type Props = { preview?: Snippet; code?: Snippet; drag?: Snippet };
@@ -12,8 +12,8 @@
 
 <Tabs>
 	{#snippet trigger()}
-		<Tab bind:tabKey key="tab-1">Preview</Tab>
-		<Tab bind:tabKey key="tab-2">Code</Tab>
+		<Tab>Preview</Tab>
+		<Tab>Code</Tab>
 	{/snippet}
 	{#if tabKey === 'tab-1'}
 		{@render preview?.()}

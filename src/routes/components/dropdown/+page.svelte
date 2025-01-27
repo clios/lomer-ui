@@ -1,14 +1,14 @@
 <script lang="ts">
-	import Accordion from '$lib/components/core/accordion.svelte';
-	import Button from '$lib/components/core/button.svelte';
-	import Checkbox from '$lib/components/core/checkbox.svelte';
+	import Accordion from '$lib/components/ui/accordion.svelte';
+	import Button from '$lib/components/ui/button.svelte';
+	import Checkbox from '$lib/components/ui/checkbox.svelte';
 	import Cli from '$site/cli.svelte';
 	import Code from '$site/code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
-	import Dropdown from '$lib/components/core/dropdown.svelte';
-	import Field from '$lib/components/core/field.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
+	import Dropdown from '$lib/components/ui/dropdown.svelte';
+	import Field from '$lib/components/ui/field.svelte';
 	import Icon from '@iconify/svelte';
-	import Input from '$lib/components/core/input.svelte';
+	import Input from '$lib/components/ui/input.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
@@ -16,9 +16,9 @@
 	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
-	import Radio from '$lib/components/core/radio.svelte';
+	import Radio from '$lib/components/ui/radio.svelte';
 	import SubTitle from '$site/sub-title.svelte';
-	import Switch from '$lib/components/core/switch.svelte';
+	import Switch from '$lib/components/ui/switch.svelte';
 	import Title from '$site/title.svelte';
 
 	let value = $state('');
@@ -59,7 +59,7 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add dropdown`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/dropdown.svelte"
 	/>
 
@@ -68,7 +68,7 @@
 	<p>Specify width and height using tailwind.</p>
 	<p>Bind <Prop>isOpen</Prop> property to reflect drawer's open state.</p>
 	<Code
-		code={`import Dropdown from '$lib/components/core/dropdown.svelte'` +
+		code={`import Dropdown from '$lib/components/ui/dropdown.svelte'` +
 			`\nlet isOpen = $state(false)`}
 		language="javascript"
 	/>

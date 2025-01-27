@@ -6,6 +6,7 @@
 	type Props = {
 		children?: Snippet;
 		class?: string;
+		group?: string;
 		icon?: Snippet;
 		id?: string;
 		isDisabled?: boolean;
@@ -19,32 +20,33 @@
 	let {
 		children,
 		class: className,
+		group = $bindable(),
 		icon,
 		isDisabled = false,
 		isLoading = false,
 		isOpen = false,
 		name,
 		title,
-		value = $bindable(),
+		value,
 		...props
 	}: Props = $props();
 
 	function onclick() {
 		if (isLoading) return;
 		isOpen = !isOpen;
-		value = name;
+		group = value;
 	}
 
 	$effect(() => {
-		if (!value && !name) return;
-		isOpen = value === name;
+		if (!group && !value) return;
+		isOpen = group === value;
 	});
 </script>
 
 <!-- CONTAINER -->
 <div
 	class={twMerge(
-		'bg-bg text-fg px-2',
+		'bg-bg text-fg w-full px-2',
 		// AS DROPDOWN ITEM
 		'dropdown-item-accordion',
 		className
@@ -79,7 +81,7 @@
 	</button>
 
 	<!-- CONDITIONAL CONTENT -->
-	{#if isOpen && (!value || value === name)}
+	{#if isOpen && (!group || group === value)}
 		<div class="px-2 pb-4" transition:slide={{ duration: 150 }}>
 			{@render children?.()}
 		</div>

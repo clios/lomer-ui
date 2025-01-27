@@ -1,6 +1,7 @@
 <script lang="ts">
-	import Button from '$lib/components/core/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Icon from '@iconify/svelte';
+	import felipec from 'svelte-highlight/styles/felipec';
 	import { HighlightSvelte, LineNumbers } from 'svelte-highlight';
 	import { twMerge } from 'tailwind-merge';
 
@@ -15,7 +16,7 @@
 	let {
 		class: className,
 		code,
-		title = '',
+		title = 'Svelte Code',
 		highlightedLines,
 		startingLineNumber
 	}: Props = $props();
@@ -33,6 +34,10 @@
 
 	let copyMessage = $state('');
 </script>
+
+<svelte:head>
+	{@html felipec}
+</svelte:head>
 
 <div class={twMerge('relative flex flex-col text-sm', className)}>
 	<div

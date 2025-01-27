@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Cli from '$site/cli.svelte';
 	import Code from '$site//code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
 	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
@@ -11,7 +11,7 @@
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
 	import SubTitle from '$site/sub-title.svelte';
-	import Textarea from '$lib/components/core/textarea.svelte';
+	import Textarea from '$lib/components/ui/textarea.svelte';
 	import Title from '$site/title.svelte';
 
 	let value = $state('');
@@ -41,7 +41,7 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add textarea`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/textarea.svelte"
 	/>
 
@@ -49,7 +49,7 @@
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>value</Prop> property to reflect textarea's value.</p>
 	<Code
-		code={`import Textarea from '$lib/components/core/textarea.svelte'` +
+		code={`import Textarea from '$lib/components/ui/textarea.svelte'` +
 			`\nlet value = $state('')`}
 		language="javascript"
 	/>

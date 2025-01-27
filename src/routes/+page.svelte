@@ -1,9 +1,9 @@
 <script>
-	import Button from '$lib/components/core/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import CopyCLI from '$lib/components/copy-c-l-i.svelte';
-	import Dialog from '$lib/components/core/dialog.svelte';
+	import Dialog from '$lib/components/ui/dialog.svelte';
 	import Icon from '@iconify/svelte';
-	import Link from '$lib/components/core/link.svelte';
+	import Link from '$lib/components/ui/link.svelte';
 	import Screen from '$lib/components/screen.svelte';
 	import SvelteSyntax from '$lib/components/templates/svelte-syntax.svelte';
 	import { goto } from '$app/navigation';
@@ -45,7 +45,7 @@
 		</p>
 	</section>
 
-	<Screen class="grid place-content-center lg:text-xl">
+	<div class="grid place-content-center lg:text-xl">
 		<p class="text-primary text-center text-3xl lg:text-4xl">lomer-ui</p>
 		<p class="text-muted text-center">Keep It Simply Styled</p>
 		<div class="mt-8 flex justify-center gap-4">
@@ -62,7 +62,7 @@
 				GitHub</Button
 			>
 		</div>
-	</Screen>
+	</div>
 
 	<section class="text-muted text-center lg:text-xl">
 		<p>
@@ -101,8 +101,8 @@
 		<SvelteSyntax
 			class="w-full max-w-[34rem]"
 			code={`<script\ lang="ts">` +
-				`\n\timport Button from '$lib/components/core/button.svelte';` +
-				`\n\timport Dialog from '$lib/components/core/dialog.svelte';` +
+				`\n\timport Button from '$lib/components/ui/button.svelte';` +
+				`\n\timport Dialog from '$lib/components/ui/dialog.svelte';` +
 				`\n\tlet isOpen = $state(false);` +
 				`\n</script>` +
 				`\n\n<Button onclick={() => (isOpen = true)}>Open Dialog</Button>` +

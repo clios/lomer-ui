@@ -1,5 +1,5 @@
 <script>
-	import Button from '$lib/components/core/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Icon from '@iconify/svelte';
 
 	let { isOpen = $bindable() } = $props();

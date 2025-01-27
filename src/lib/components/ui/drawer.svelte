@@ -46,48 +46,40 @@
 			class={twMerge(
 				// BASE
 				'absolute', // layout and positioning
-				'border', // box model
+				'min-w-60 border', // box model
 				'bg-popup', // background
 				'shadow-md dark:shadow-none', // shadow
-				'transition-all', // animation
+				'overflow-auto transition-all', // animation
 
 				// POSITION: LEFT
 				position === 'left' && 'left-0 h-screen border-r', // border
 
 				// POSITION: RIGHT
-				position === 'right' && 'right-0 h-screen border-l', // border
-
-				// POSITION: TOP
-				position === 'top' && 'top-0 w-screen border-b', // border
-
-				// POSITION: BOTTOM
-				position === 'bottom' && 'bottom-0 w-screen border-t' // border
+				position === 'right' && 'right-0 h-screen border-l' // border
 			)}
 		>
-			<!-- CLOSE BUTTON -->
-			<button
-				type="button"
-				class={twMerge(
-					'absolute top-4 right-4 z-10 p-1', // layout and positioning
-					'rounded-full bg-none', // bg and radius
-					'outline-primary ring-offset-1 outline-offset-2 active:outline-2 active:outline-offset-0', // outline
-					'cursor-pointer hover:outline focus:outline' // hover, focus, cursor
-				)}
-				onclick={() => (isOpen = false)}
-			>
-				{@render IconClose()}
-			</button>
-
 			<!-- HEADER -->
-			{#if title}
-				<p
-					in:fade={{ delay: 200 }}
-					out:fade={{ duration: 150 }}
-					class="pt-5 pr-12 pb-2 pl-4 text-xl leading-3 font-semibold"
-				>
+			<div
+				in:fade={{ delay: 200 }}
+				out:fade={{ duration: 150 }}
+				class="bg-bg/50 sticky top-0 z-10 border-b p-4 backdrop-blur-xs"
+			>
+				<p class="leading-3 font-semibold">
 					{title}
 				</p>
-			{/if}
+				<button
+					type="button"
+					onclick={() => (isOpen = false)}
+					class={twMerge(
+						'absolute top-3 right-3 p-1', // layout and positioning
+						'rounded bg-none', // bg and radius
+						'outline-primary ring-offset-1 outline-offset-2 active:outline-2 active:outline-offset-0', // outline
+						'cursor-pointer hover:outline focus:outline' // hover, focus, cursor
+					)}
+				>
+					{@render IconClose()}
+				</button>
+			</div>
 
 			<!-- BODY -->
 			<div
@@ -95,18 +87,10 @@
 				out:fade={{ duration: 150 }}
 				class={twMerge(
 					// BASE
-					'relative',
+					'relative p-4',
 
 					// NO TITLE
 					!title && 'pt-5 pr-10 pl-4',
-
-					// POSITION: LEFT & RIGHT
-					['left', 'right'].includes(position) && title
-						? 'h-[calc(100vh-3.8rem)] overflow-y-auto'
-						: 'h-screen overflow-y-auto',
-
-					// POSITION: TOP & BOTTOM
-					['top', 'bottom'].includes(position) && 'overflow-y-auto',
 
 					title ? '' : '',
 

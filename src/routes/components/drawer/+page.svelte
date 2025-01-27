@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Button from '$lib/components/core/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
-	import Drawer from '$lib/components/core/drawer.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
+	import Drawer from '$lib/components/ui/drawer.svelte';
 	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
@@ -15,7 +15,7 @@
 	import SubTitle from '$site//sub-title.svelte';
 	import Title from '$site//title.svelte';
 	import Val from '$site/val.svelte';
-	import Dropdown from '$lib/components/core/dropdown.svelte';
+	import Dropdown from '$lib/components/ui/dropdown.svelte';
 
 	let isOpen = $state(false);
 	let isLeftOpen = $state(false);
@@ -50,7 +50,7 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add drawer`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/drawer.svelte"
 	/>
 
@@ -59,7 +59,7 @@
 	<p>Specify width and height using tailwind.</p>
 	<p>Bind <Prop>isOpen</Prop> property to reflect drawer's open state.</p>
 	<Code
-		code={`import Drawer from '$lib/components/core/drawer.svelte'` +
+		code={`import Drawer from '$lib/components/ui/drawer.svelte'` +
 			`\nlet isOpen = $state(false)` +
 			`\nconst openDrawer = () => (isOpen = true)`}
 		language="javascript"

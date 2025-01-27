@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Button from '$lib/components/core/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
-	import Dialog from '$lib/components/core/dialog.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
+	import Dialog from '$lib/components/ui/dialog.svelte';
 	import HeroSection from './hero-section.svelte';
 	import Icon from '@iconify/svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
@@ -37,14 +37,14 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add dialog`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/dialog.svelte"
 	/>
 
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>isOpen</Prop> property to reflect dialog's open state.</p>
 	<Code
-		code={`import Dialog from '$lib/components/core/dialog.svelte'` +
+		code={`import Dialog from '$lib/components/ui/dialog.svelte'` +
 			`\nlet isOpen = $state(false)` +
 			`\nconst openDialog = () => (isOpen = true)`}
 		language="javascript"

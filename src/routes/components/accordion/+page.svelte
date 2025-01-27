@@ -1,247 +1,159 @@
 <script lang="ts">
-	import Accordion from '$lib/components/core/accordion.svelte';
-	import Cli from '$site/cli.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
-	import HeroSection from './hero-section.svelte';
-	import Icon from '@iconify/svelte';
-	import OnThisPage from '$site/on-this-page.svelte';
-	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import PageFooter from '$lib/components/templates/page-footer.svelte';
-	import PageHeader from '$lib/components/templates/page-header.svelte';
-	import Prop from '$site/prop.svelte';
+	import Accordion from '$lib/components/ui/accordion.svelte';
+	import AccordionMultiple from './accordion-multiple.svelte';
+	import AccordionMultipleRaw from './accordion-multiple.svelte?raw';
+	import AccordionUsage from './accordion-usage.svelte';
+	import AccordionUsageRaw from './accordion-usage.svelte?raw';
+	import AccordionWithIcon from './accordion-with-icon.svelte';
+	import AccordionWithIconRaw from './accordion-with-icon.svelte?raw';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
+	import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+	import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+	import PageArticle from '$lib/components/page-article.svelte';
+	import PageSection from '$lib/components/page-section.svelte';
+	import PageWrapper from '$lib/components/page-wrapper.svelte';
 	import Screen from '$lib/components/screen.svelte';
-	import SubTitle from '$site/sub-title.svelte';
-	import Syntax from '$site/syntax.svelte';
-	import TabsPreviewCode from '$site/tabs__preview-code.svelte';
-	import Title from '$site/title.svelte';
-	import Val from '$site/val.svelte';
 
-	let value = $state('');
+	import AccordionOutline from './accordion-outline.svelte';
+	import AccordionOutlineRaw from './accordion-outline.svelte?raw';
+	import AccordionEnclosed from './accordion-enclosed.svelte';
+	import AccordionEnclosedRaw from './accordion-enclosed.svelte?raw';
+	import AccordionSingleMode from './accordion-single-mode.svelte';
+	import AccordionSingleModeRaw from './accordion-single-mode.svelte?raw';
+	import AccordionLoading from './accordion-loading.svelte';
+	import AccordionLoadingRaw from './accordion-loading.svelte?raw';
+	import AccordionDisabled from './accordion-disabled.svelte';
+	import AccordionDisabledRaw from './accordion-disabled.svelte?raw';
+
+	const tickler = [
+		{
+			id: '1',
+			label: 'Installation'
+		},
+		{
+			id: '2',
+			label: 'Usage'
+		},
+		{
+			id: '3',
+			label: 'Examples'
+		},
+		{
+			id: '3.1',
+			label: 'With icon',
+			sub: true
+		},
+		{
+			id: '3.2',
+			label: 'Multiple',
+			sub: true
+		},
+		{
+			id: '3.3',
+			label: 'Outline',
+			sub: true
+		},
+		{
+			id: '3.4',
+			label: 'Enclosed',
+			sub: true
+		},
+		{
+			id: '3.5',
+			label: 'Single mode',
+			sub: true
+		},
+		{
+			id: '3.6',
+			label: 'Loading',
+			sub: true
+		},
+		{
+			id: '3.7',
+			label: 'Disabled',
+			sub: true
+		}
+	];
 </script>
 
 <svelte:head>
 	<title>Accordion . lomer-ui</title>
 </svelte:head>
 
-<OnThisPage>
-	<OnThisPageBtn id="1" title="Installation" />
-	<OnThisPageBtn id="2" title="Usage" />
-	<OnThisPageBtn id="3" title="Examples" />
-	<OnThisPageSubBtn id="3.1" title="With icon" />
-	<OnThisPageSubBtn id="3.2" title="Multiple" />
-	<OnThisPageSubBtn id="3.3" title="Outline" />
-	<OnThisPageSubBtn id="3.4" title="Enclosed" />
-	<OnThisPageSubBtn id="3.5" title="Only one stays open" />
-	<OnThisPageSubBtn id="3.6" title="Loading" />
-	<OnThisPageSubBtn id="3.7" title="Disabled" />
-</OnThisPage>
-
-<div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
-	<PageHeader
-		title="Accordion"
-		sub="Component"
-		info="Expand and collapse content with ease."
-	/>
-	<HeroSection />
-
-	<!-- INSTALLATION -->
-	<Title id="1">Installation</Title>
-	<Cli code={`npx lomer-ui add accordion`} />
-	<ComponentCodeButton
-		link="https://github.com/clios/lomer-ui/blob/main/src/lib/accordion.svelte"
-	/>
-
-	<!-- USAGE -->
-	<Title id="2">Usage</Title>
-	<TabsPreviewCode>
-		{#snippet preview()}
-			<Screen>
-				<Accordion title="Title">Content</Accordion>
-			</Screen>
-		{/snippet}
-		{#snippet code()}
-			<Syntax
-				canCopy
-				code={`<script\>` +
-					`\n\timport Accordion from '$lib/components/core/accordion.svelte'` +
-					`\n</script>` +
-					`\n\n<Accordion title="Title">Content</Accordion>`}
+<PageWrapper
+	{tickler}
+	title="Accordion"
+	sub="Component"
+	info="Expand and collapse content with ease."
+	prevLabel="CLI"
+	prevLink="/docs/cli"
+	nextLabel="Alert"
+	nextLink="/components/alert"
+>
+	<PageSection id="1" title="Installation">
+		<PageArticle>
+			<CopyCLI code={`npx lomer-ui add accordion`} />
+			<ButtonComponentCode
+				link="https://github.com/clios/lomer-ui/blob/main/src/lib/accordion.svelte"
 			/>
-		{/snippet}
-	</TabsPreviewCode>
-
-	<!-- EXAMPLES -->
-	<Title id="3">Examples</Title>
-
-	<!-- WITH ICON -->
-	<SubTitle id="3.1">With Icon</SubTitle>
-	<p>Add <Prop>icon</Prop> snippet.</p>
-	<TabsPreviewCode>
-		{#snippet preview()}
+		</PageArticle>
+	</PageSection>
+	<PageSection id="2" title="Usage">
+		<PageArticle title="Preview">
 			<Screen>
-				<Accordion title="Title 1">
-					{#snippet icon()}
-						<Icon icon="fluent:shield-12-regular" width="24" />
-					{/snippet}
-					Content
-				</Accordion>
+				<AccordionUsage />
 			</Screen>
-		{/snippet}
-		{#snippet code()}
-			<Syntax
-				canCopy
-				code={`<Accordion title="Title 1">` +
-					`\n\t{#snippet icon()}` +
-					`\n\t\t<Icon icon="fluent:shield-12-regular" width="24" />` +
-					`\n\t{/snippet}` +
-					`\n\tContent` +
-					`\n</Accordion>`}
-			/>
-		{/snippet}
-	</TabsPreviewCode>
-
-	<!-- MULTIPLE -->
-	<SubTitle id="3.2">Multiple</SubTitle>
-	<p>Just stack them, easy.</p>
-	<TabsPreviewCode>
-		{#snippet preview()}
+			<CopySvelteCode code={AccordionUsageRaw} />
+		</PageArticle>
+	</PageSection>
+	<PageSection id="3" title="Examples">
+		<PageArticle id="3.1" title="With icon">
 			<Screen>
-				<Accordion title="Title 1">Content</Accordion>
-				<Accordion title="Title 2">Content</Accordion>
-				<Accordion title="Title 3">Content</Accordion>
+				<AccordionWithIcon />
 			</Screen>
-		{/snippet}
-		{#snippet code()}
-			<Syntax
-				canCopy
-				code={`<Accordion title="Title 1">Content</Accordion>` +
-					`\n<Accordion title="Title 2">Content</Accordion>` +
-					`\n<Accordion title="Title 3">Content</Accordion>`}
+			<CopySvelteCode
+				highlightedLines={[6, 7, 8]}
+				code={AccordionWithIconRaw}
 			/>
-		{/snippet}
-	</TabsPreviewCode>
-
-	<!-- OUTLINE -->
-	<SubTitle id="3.3">Outline</SubTitle>
-	<p>Add <Val>border-b</Val> <Prop>class</Prop>.</p>
-	<TabsPreviewCode>
-		{#snippet preview()}
+		</PageArticle>
+		<PageArticle id="3.2" title="Multiple">
+			<Screen class="flex-col">
+				<AccordionMultiple />
+			</Screen>
+			<CopySvelteCode highlightedLines={[5, 6]} code={AccordionMultipleRaw} />
+		</PageArticle>
+		<PageArticle id="3.3" title="Outline">
 			<Screen>
-				<Accordion class="border-b" title="Title 1">Content</Accordion>
+				<AccordionOutline />
 			</Screen>
-		{/snippet}
-		{#snippet code()}
-			<Syntax
-				canCopy
-				code={`<Accordion class="border-b" title="Title 1">Content</Accordion>`}
-			/>
-		{/snippet}
-	</TabsPreviewCode>
-
-	<!-- ENCLOSED -->
-	<SubTitle id="3.4">Enclosed</SubTitle>
-	<TabsPreviewCode>
-		{#snippet preview()}
+			<CopySvelteCode highlightedLines={[4]} code={AccordionOutlineRaw} />
+		</PageArticle>
+		<PageArticle id="3.4" title="Enclosed">
 			<Screen>
-				<div class="w-full overflow-hidden rounded border">
-					<Accordion class="border-b" title="Title 1">Content</Accordion>
-					<Accordion class="border-b" title="Title 2">Content</Accordion>
-					<Accordion title="Title 3">Content</Accordion>
-				</div>
+				<AccordionEnclosed />
 			</Screen>
-		{/snippet}
-		{#snippet code()}
-			<Syntax
-				canCopy
-				code={`<div class="w-full overflow-hidden rounded border">` +
-					`\n\t<Accordion class="border-b" title="Title 1">Content</Accordion>` +
-					`\n\t<Accordion class="border-b" title="Title 2">Content</Accordion>` +
-					`\n\t<Accordion title="Title 3">Content</Accordion>` +
-					`\n</div>`}
+			<CopySvelteCode highlightedLines={[4, 8]} code={AccordionEnclosedRaw} />
+		</PageArticle>
+		<PageArticle id="3.5" title="Single mode">
+			<Screen class="flex-col">
+				<AccordionSingleMode />
+			</Screen>
+			<CopySvelteCode
+				highlightedLines={[2, 5, 6, 7]}
+				code={AccordionSingleModeRaw}
 			/>
-		{/snippet}
-	</TabsPreviewCode>
-
-	<!-- ONLY ONE STAYS OPEN -->
-	<SubTitle id="3.5">Only one stays open</SubTitle>
-	<p>
-		Simply bind the <Prop>value</Prop> property, and add unique
-		<Prop>name</Prop> to your accordion.
-	</p>
-	<p>In this way you can also programatically open specific accordion.</p>
-	<TabsPreviewCode>
-		{#snippet preview()}
+		</PageArticle>
+		<PageArticle id="3.6" title="Loading">
 			<Screen>
-				<Accordion title="Title 1" name="accordion-one" bind:value>
-					Content
-				</Accordion>
-				<Accordion title="Title 2" name="accordion-two" bind:value>
-					Content
-				</Accordion>
-				<Accordion title="Title 3" name="accordion-three" bind:value>
-					Content
-				</Accordion>
+				<AccordionLoading />
 			</Screen>
-		{/snippet}
-		{#snippet code()}
-			<Syntax
-				canCopy
-				code={`<script\>` +
-					`\n\timport Accordion from '$lib/components/core/accordion.svelte'` +
-					`\n\tlet value = $state('')` +
-					`\n</script>` +
-					`\n\n<Accordion title="Title 1" name="accordion-one" bind:value>` +
-					`\n\tContent` +
-					`\n</Accordion>` +
-					`\n<Accordion title="Title 2" name="accordion-two" bind:value>` +
-					`\n\tContent` +
-					`\n</Accordion>` +
-					`\n<Accordion title="Title 3" name="accordion-three" bind:value>` +
-					`\n\tContent` +
-					`\n</Accordion>`}
-			/>
-		{/snippet}
-	</TabsPreviewCode>
-
-	<!-- LOADING -->
-	<SubTitle id="3.6">Loading</SubTitle>
-	<p>Add <Prop>isLoading</Prop> property.</p>
-	<TabsPreviewCode>
-		{#snippet preview()}
+			<CopySvelteCode highlightedLines={[4]} code={AccordionLoadingRaw} />
+		</PageArticle>
+		<PageArticle id="3.7" title="Disabled">
 			<Screen>
-				<Accordion title="Title 1" isLoading>Content</Accordion>
+				<AccordionDisabled />
 			</Screen>
-		{/snippet}
-		{#snippet code()}
-			<Syntax
-				canCopy
-				code={`<Accordion title="Title 1" isLoading>\n\tContent\n</Accordion>`}
-			/>
-		{/snippet}
-	</TabsPreviewCode>
-
-	<!-- DISABLED -->
-	<SubTitle id="3.7">Disabled</SubTitle>
-	<p>Add <Prop>isDisabled</Prop> property.</p>
-	<TabsPreviewCode>
-		{#snippet preview()}
-			<Screen>
-				<Accordion title="Title 1" isDisabled>Content</Accordion>
-			</Screen>
-		{/snippet}
-		{#snippet code()}
-			<Syntax
-				canCopy
-				code={`<Accordion title="Title 1" isDisabled>\n\tContent\n</Accordion>`}
-			/>
-		{/snippet}
-	</TabsPreviewCode>
-
-	<PageFooter
-		prevLabel="CLI"
-		prevLink="/docs/cli"
-		nextLabel="Alert"
-		nextLink="/components/alert"
-	/>
-</div>
+			<CopySvelteCode highlightedLines={[4]} code={AccordionDisabledRaw} />
+		</PageArticle>
+	</PageSection>
+</PageWrapper>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Alert from '$lib/components/core/alert.svelte';
-	import Button from '$lib/components/core/button.svelte';
+	import Alert from '$lib/components/ui/alert.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Screen from '$lib/components/screen.svelte';
 
 	let isOpen = true;

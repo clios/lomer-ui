@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Cli from '$site/cli.svelte';
 	import Code from '$site//code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
 	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
@@ -10,7 +10,7 @@
 	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
-	import Radio from '$lib/components/core/radio.svelte';
+	import Radio from '$lib/components/ui/radio.svelte';
 	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
 
@@ -42,7 +42,7 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add radio`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/radio.svelte"
 	/>
 
@@ -50,7 +50,7 @@
 	<Title id="2">Usage</Title>
 	<p>Bind <Prop>value</Prop> property to reflect radio's value.</p>
 	<Code
-		code={`import Radio from '$lib/components/core/radio.svelte'` +
+		code={`import Radio from '$lib/components/ui/radio.svelte'` +
 			`\nlet value = $state('');`}
 		language="javascript"
 	/>

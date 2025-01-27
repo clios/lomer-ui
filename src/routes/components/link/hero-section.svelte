@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Link from '$lib/components/core/link.svelte';
+	import Link from '$lib/components/ui/link.svelte';
 	import Screen from '$lib/components/screen.svelte';
 </script>
 

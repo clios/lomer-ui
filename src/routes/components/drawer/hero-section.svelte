@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Button from '$lib/components/core/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Screen from '$lib/components/screen.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { fade, slide } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
-	import Checkbox from '$lib/components/core/checkbox.svelte';
+	import Checkbox from '$lib/components/ui/checkbox.svelte';
 	import { onMount } from 'svelte';
-	import ScrollArea from '$lib/components/core/scroll-area.svelte';
+	import ScrollArea from '$lib/components/ui/scroll-area.svelte';
 
 	let isOpen = $state(false);
 

@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import './lib/components/core/lomer.css';
+@import './lib/components/ui/lomer.css';
 
 .primary-slate {
 	--color-primary: var(--color-slate-600);
