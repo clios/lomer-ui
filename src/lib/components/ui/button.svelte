@@ -41,7 +41,7 @@
 		// BASE
 		'relative flex items-center gap-1', // layout and positioning
 		'outline-offset-2 hover:outline focus:outline active:outline-2 active:outline-offset-0', // outline
-		'w-max cursor-pointer border', // visual
+		'h-min w-max cursor-pointer border', // visual
 
 		// VARIANTS: DEFAULT
 		variant === 'default' && [
@@ -117,9 +117,6 @@
 		'disabled:bg-disabled', // background
 		'disabled:text-disabled-fg', // text
 		'disabled:cursor-not-allowed disabled:outline-hidden', // visual
-
-		// LOADING
-		isLoading && '',
 
 		// AS DROPDOWN ITEM
 		'dropdown-item-button',
