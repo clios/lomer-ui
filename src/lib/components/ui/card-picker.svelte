@@ -4,36 +4,36 @@
 	import { twMerge } from 'tailwind-merge';
 
 	type Props = {
-		cardValue?: string;
+		value?: string;
 		children?: Snippet;
 		class?: string;
 		isDisabled?: boolean;
 		isLoading?: boolean;
 		isReadOnly?: boolean;
 		isSelected?: boolean;
-		value?: string;
+		group?: string;
 	} & HTMLButtonAttributes;
 
 	let {
-		cardValue,
+		value,
 		children,
 		class: className,
 		isDisabled = false,
 		isLoading = false,
 		isReadOnly = false,
 		isSelected = false,
-		value = $bindable(),
+		group = $bindable(),
 		...props
 	}: Props = $props();
 
 	function onclick() {
 		if (isReadOnly) return;
-		if (value === cardValue) return (value = '');
-		value = cardValue;
+		if (group === value) return (group = '');
+		group = value;
 	}
 
 	$effect(() => {
-		isSelected = cardValue === value;
+		isSelected = value === group;
 	});
 </script>
 
@@ -42,12 +42,12 @@
 	class={twMerge(
 		// BASE
 		'relative p-2', // positioning and padding
-		'bg-input', // background
+		'bg-input text-fg', // background
 		'rounded border', // border
 		'cursor-pointer', // visual
 
 		// SELECTED
-		isSelected && value
+		isSelected && group
 			? 'outline-primary bg-primary/15 border-primary outline backdrop-blur-3xl' // outline
 			: [
 					'active:outline-2 active:outline-offset-0', // active

@@ -31,13 +31,10 @@
 <div
 	class={twMerge(
 		// BASE
-		'flex gap-1', // layout
+		'text-fg flex gap-1', // layout
 
 		// ORIENTATION
-		orientation === 'vertical' ? 'flex-col' : 'items-start',
-
-		// STYLING
-		className
+		orientation === 'vertical' ? 'flex-col' : 'items-start'
 	)}
 >
 	{#if label}
@@ -67,7 +64,9 @@
 	{/if}
 
 	<div class="flex flex-col gap-1">
-		{@render children?.()}
+		<div class={twMerge(className)}>
+			{@render children?.()}
+		</div>
 
 		{#if helper}
 			<p
