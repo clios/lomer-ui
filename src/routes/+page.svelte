@@ -15,6 +15,14 @@
 	<title>lomer-ui</title>
 </svelte:head>
 
+<Dialog class="max-w-96" title="Hi devs," isOpen>
+	<p class="text-muted mt-4">
+		I'm currently rebuilding this project to provide a better experience.
+	</p>
+	<p class="text-muted mt-4">Will be back soon.</p>
+	<p class="text-muted mt-4">Clios, lomer-ui dev.</p>
+</Dialog>
+
 <div class="mx-auto flex w-full max-w-[1200px] flex-col gap-16">
 	<section class="flex justify-between lg:text-xl">
 		<p class="flex items-end text-sm">
@@ -88,74 +96,7 @@
 			<span>building your own <br class="sm:hidden" /> components</span>
 			<span class="text-fg font-semibold">with CLI</span>.
 		</p>
-		<CopyCLI code="npx lomer-ui init" />
+		<CopyCLI code="npx lomer-ui add" />
 		<p>That's it!</p>
-	</section>
-
-	<section class="flex flex-col items-center gap-2 text-center lg:text-xl">
-		<p class="text-muted">
-			<span class="text-fg font-semibold">DX matters too.</span>
-			<br class="sm:hidden" />
-			Quick and easy to use.
-		</p>
-		<SvelteSyntax
-			class="w-full max-w-[34rem]"
-			code={`<script\ lang="ts">` +
-				`\n\timport Button from '$lib/components/ui/button.svelte';` +
-				`\n\timport Dialog from '$lib/components/ui/dialog.svelte';` +
-				`\n\tlet isOpen = $state(false);` +
-				`\n</script>` +
-				`\n\n<Button onclick={() => (isOpen = true)}>Open Dialog</Button>` +
-				`\n<Dialog title="Title here" bind:isOpen>` +
-				`\n\tContent here...` +
-				`\n</Dialog>`}
-		/>
-		<div class="w-full max-w-[33rem]">
-			<Screen class="flex justify-center">
-				<Button onclick={() => (isOpenDialog = true)}>Open Dialog</Button>
-				<Dialog title="Title here" bind:isOpen={isOpenDialog}>
-					Content here...
-				</Dialog>
-			</Screen>
-		</div>
-	</section>
-
-	<section class="flex flex-col items-center gap-2 text-center lg:text-xl">
-		<p class="text-muted text-center">
-			<span class="text-fg font-semibold">Code is yours.</span>
-			<br class="sm:hidden" />
-			Fully customize components.
-			<br />
-			Take a peek at this basic button component's code structure.
-		</p>
-		<SvelteSyntax
-			class="w-full max-w-[36rem]"
-			highlightedLines={[8, 10, 12]}
-			code={`<script\ lang="ts">` +
-				`\n\timport { twMerge } from 'tailwind-merge';` +
-				`\n\t...` +
-				`\n</script>` +
-				`\n` +
-				`\n<button` +
-				`\n\tclass={twMerge(` +
-				`\n\t\t'tailwindcss_here', // base` +
-				`\n\t\t// You can update base design to match your branding...` +
-				`\n\t\tvariant === 'default' && 'tailwindcss_here',` +
-				`\n\t\t// You can add more variants here...` +
-				`\n\t\tsize === 'default' && 'tailwindcss_here'` +
-				`\n\t\t// You can add more sizes here...` +
-				`\n\t)}` +
-				`\n>` +
-				`\n\t{#if isLoading}` +
-				`\n\t\t{@render IconLoading()}` +
-				`\n\t{/if}` +
-				`\n\n\t{@render children?.()}` +
-				`\n</button>` +
-				`\n` +
-				`\n<!-- ICON LOADING -->` +
-				`\n{#snippet IconLoading()}` +
-				`\n\t<!-- SVG ELEMENT HERE -->` +
-				`\n{/snippet}`}
-		/>
 	</section>
 </div>
