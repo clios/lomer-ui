@@ -69,7 +69,7 @@
 	</PageSection>
 	<PageSection id="2" title="Usage">
 		<PageArticle title="Preview">
-			<Screen class="flex-col gap-8">
+			<Screen class="flex-col">
 				<CardPickerUsage />
 			</Screen>
 			<CopySvelteCode code="" />

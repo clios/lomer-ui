@@ -45,12 +45,7 @@
 	>
 		<p>{title}</p>
 
-		<Button
-			class="outline-none"
-			size="icon"
-			variant="ghost"
-			onclick={copyToClipboard}
-		>
+		<Button size="icon" variant="ghost" onclick={copyToClipboard}>
 			{#if copyMessage}
 				<Icon class="text-teal-500" icon="mdi:check" />
 			{:else}

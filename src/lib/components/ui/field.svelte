@@ -8,7 +8,7 @@
 	type Props = {
 		children?: Snippet;
 		class?: string;
-		helper?: string;
+		helper?: string | boolean | number;
 		issue?: string;
 		label?: string;
 		optional?: boolean;
@@ -68,7 +68,7 @@
 			{@render children?.()}
 		</div>
 
-		{#if helper}
+		{#if helper || helper === false || helper === 0}
 			<p
 				in:fade={{ delay: 200, duration: 200 }}
 				out:slide={{ axis: 'x', duration: 1000 }}
