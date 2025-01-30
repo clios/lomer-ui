@@ -12,10 +12,7 @@ export async function checkSvelteKitApp() {
 		)
 	);
 
-	if (exists.every(Boolean)) {
-		console.log(`SvelteKit detected.`);
-		return;
-	}
+	if (exists.every(Boolean)) return;
 
 	console.log('❌ No SvelteKit project detected.');
 	process.exit(1);

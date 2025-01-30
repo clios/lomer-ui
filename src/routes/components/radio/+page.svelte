@@ -1,20 +1,21 @@
 <script lang="ts">
 	import Cli from '$site/cli.svelte';
 	import Code from '$site//code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
 	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import PageFooter from '$site/page-footer.svelte';
-	import PageHeader from '$site/page-header.svelte';
+	import PageFooter from '$lib/components/templates/page-footer.svelte';
+	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site/prop.svelte';
-	import Radio from '$lib/radio.svelte';
+	import Radio from '$lib/components/ui/radio.svelte';
 	import SubTitle from '$site/sub-title.svelte';
 	import Title from '$site/title.svelte';
 
 	let value = $state('free');
+	let disabledValue = $state('x');
 </script>
 
 <svelte:head>
@@ -41,7 +42,7 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add radio`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/radio.svelte"
 	/>
 
@@ -86,7 +87,8 @@
 	<p>Add <Prop>isDisabled</Prop> property.</p>
 	<Code code={`<Radio isDisabled>` + `\n\tRadio` + `\n</Radio>`} />
 	<Preview>
-		<Radio isDisabled>Radio</Radio>
+		<Radio isDisabled bind:value={disabledValue} radioValue="x">Radio</Radio>
+		<Radio isDisabled bind:value={disabledValue} radioValue="y">Radio</Radio>
 	</Preview>
 
 	<!-- READ ONLY -->

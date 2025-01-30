@@ -1,15 +1,15 @@
 <script lang="ts">
-	import Button from '$lib/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
-	import Dialog from '$lib/dialog.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
+	import Dialog from '$lib/components/ui/dialog.svelte';
 	import HeroSection from './hero-section.svelte';
 	import Icon from '@iconify/svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-	import PageFooter from '$site/page-footer.svelte';
-	import PageHeader from '$site//page-header.svelte';
+	import PageFooter from '$lib/components/templates/page-footer.svelte';
+	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site//prop.svelte';
 	import Title from '$site//title.svelte';
@@ -37,7 +37,7 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add dialog`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/dialog.svelte"
 	/>
 

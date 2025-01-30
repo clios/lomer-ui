@@ -1,20 +1,21 @@
 <script lang="ts">
-	import Button from '$lib/button.svelte';
+	import Button from '$lib/components/ui/button.svelte';
 	import Cli from '$site//cli.svelte';
 	import Code from '$site//code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
-	import Drawer from '$lib/drawer.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
+	import Drawer from '$lib/components/ui/drawer.svelte';
 	import HeroSection from './hero-section.svelte';
 	import OnThisPage from '$site/on-this-page.svelte';
 	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
 	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import PageFooter from '$site/page-footer.svelte';
-	import PageHeader from '$site//page-header.svelte';
+	import PageFooter from '$lib/components/templates/page-footer.svelte';
+	import PageHeader from '$lib/components/templates/page-header.svelte';
 	import Preview from '$site/preview.svelte';
 	import Prop from '$site//prop.svelte';
 	import SubTitle from '$site//sub-title.svelte';
 	import Title from '$site//title.svelte';
 	import Val from '$site/val.svelte';
+	import Dropdown from '$lib/components/ui/dropdown.svelte';
 
 	let isOpen = $state(false);
 	let isLeftOpen = $state(false);
@@ -22,6 +23,8 @@
 	let isTopOpen = $state(false);
 	let isBottomOpen = $state(false);
 	let isFixedFooterOpen = $state(false);
+
+	let isOpenDropdown = $state(false);
 </script>
 
 <svelte:head>
@@ -47,7 +50,7 @@
 	<!-- INSTALLATION -->
 	<Title id="1">Installation</Title>
 	<Cli code={`npx lomer-ui add drawer`} />
-	<ComponentCodeButton
+	<ButtonComponentCode
 		link="https://github.com/clios/lomer-ui/blob/main/src/lib/drawer.svelte"
 	/>
 
@@ -71,7 +74,7 @@
 	<Preview>
 		<Button onclick={() => (isOpen = true)}>Open drawer</Button>
 		<Drawer class="w-[400px]" title="Title here" bind:isOpen>
-			Content here...
+			<div class="p-4">content</div>
 		</Drawer>
 	</Preview>
 
@@ -88,12 +91,7 @@
 	<Code code={`<Drawer position="left">...</Drawer>`} language="xml" />
 	<Preview class="flex-wrap gap-4">
 		<Button onclick={() => (isLeftOpen = true)}>Left</Button>
-		<Drawer
-			class="w-56 p-6"
-			title="Left Drawer"
-			position="left"
-			bind:isOpen={isLeftOpen}
-		>
+		<Drawer class="w-56 p-6" position="left" bind:isOpen={isLeftOpen}>
 			{#each Array(50) as _}
 				<p>Content</p>
 			{/each}
@@ -101,12 +99,7 @@
 		</Drawer>
 
 		<Button onclick={() => (isRightOpen = true)}>Right</Button>
-		<Drawer
-			class="w-56 p-6"
-			title="Right Drawer"
-			position="right"
-			bind:isOpen={isRightOpen}
-		>
+		<Drawer class="w-56 p-6" position="right" bind:isOpen={isRightOpen}>
 			{#each Array(50) as _}
 				<p>Content</p>
 			{/each}
@@ -114,12 +107,7 @@
 		</Drawer>
 
 		<Button onclick={() => (isTopOpen = true)}>Top</Button>
-		<Drawer
-			class="h-56 p-6"
-			title="Top Drawer"
-			position="top"
-			bind:isOpen={isTopOpen}
-		>
+		<Drawer class="h-56 p-6" position="top" bind:isOpen={isTopOpen}>
 			{#each Array(50) as _}
 				<p>Content</p>
 			{/each}
@@ -127,12 +115,7 @@
 		</Drawer>
 
 		<Button onclick={() => (isBottomOpen = true)}>Bottom</Button>
-		<Drawer
-			class="h-56 p-6"
-			title="Bottom Drawer"
-			position="bottom"
-			bind:isOpen={isBottomOpen}
-		>
+		<Drawer class="h-56 p-6" position="bottom" bind:isOpen={isBottomOpen}>
 			{#each Array(50) as _}
 				<p>Content</p>
 			{/each}

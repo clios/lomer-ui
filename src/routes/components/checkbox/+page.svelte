@@ -1,141 +1,94 @@
 <script lang="ts">
-	import Checkbox from '$lib/checkbox.svelte';
-	import Cli from '$site//cli.svelte';
-	import Code from '$site//code.svelte';
-	import ComponentCodeButton from '$site/component-code-button.svelte';
-	import HeroSection from './hero-section.svelte';
-	import OnThisPage from '$site/on-this-page.svelte';
-	import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-	import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-	import PageFooter from '$site/page-footer.svelte';
-	import PageHeader from '$site//page-header.svelte';
-	import Preview from '$site/preview.svelte';
-	import Prop from '$site//prop.svelte';
-	import SubTitle from '$site//sub-title.svelte';
-	import Title from '$site//title.svelte';
+	import ButtonComponentCode from '$lib/components/button-component-code.svelte';
+	import PageWrapper from '$lib/components/page-wrapper.svelte';
+	import PageSection from '$lib/components/page-section.svelte';
+	import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+	import PageArticle from '$lib/components/page-article.svelte';
+	import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+	import Screen from '$lib/components/screen.svelte';
+	import CheckboxUsage from './checkbox-usage.svelte';
+	import CheckboxLoading from './checkbox-loading.svelte';
+	import CheckboxDisabled from './checkbox-disabled.svelte';
+	import CheckboxUsageRaw from './checkbox-usage.svelte?raw';
+	import CheckboxLoadingRaw from './checkbox-loading.svelte?raw';
+	import CheckboxDisabledRaw from './checkbox-disabled.svelte?raw';
 
-	let value = $state(false);
+	const tickler = [
+		{
+			id: '1',
+			label: 'Installation'
+		},
+		{
+			id: '2',
+			label: 'Usage'
+		},
+		{
+			id: '3',
+			label: 'Examples'
+		},
+		{
+			id: '3.1',
+			label: 'Loading',
+			sub: true
+		},
+		{
+			id: '3.2',
+			label: 'Disabled',
+			sub: true
+		}
+	];
 </script>
 
 <svelte:head>
 	<title>Checkbox . lomer-ui</title>
 </svelte:head>
 
-<OnThisPage>
-	<OnThisPageBtn id="1" title="Installation" />
-	<OnThisPageBtn id="2" title="Usage" />
-	<OnThisPageBtn id="3" title="Examples" />
-	<OnThisPageSubBtn id="3.1" title="Content" />
-	<OnThisPageSubBtn id="3.2" title="Loading" />
-	<OnThisPageSubBtn id="3.3" title="Disabled" />
-	<OnThisPageSubBtn id="3.4" title="Read only" />
-</OnThisPage>
-
-<div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
-	<PageHeader title="Check" sub="Component" info="Toggle options on or off." />
-	<HeroSection />
-
+<PageWrapper
+	{tickler}
+	title="Check"
+	sub="Component"
+	info="Toggle options on or off."
+	prevLabel="Card Picker"
+	prevLink="/components/card-picker"
+	nextLabel="Dialog"
+	nextLink="/components/dialog"
+>
 	<!-- INSTALLATION -->
-	<Title id="1">Installation</Title>
-	<Cli code={`npx lomer-ui add checkbox`} />
-	<ComponentCodeButton
-		link="https://github.com/clios/lomer-ui/blob/main/src/lib/checkbox.svelte"
-	/>
+	<PageSection id="1" title="Installation">
+		<PageArticle>
+			<CopyCLI code={`npx lomer-ui add checkbox`} />
+			<ButtonComponentCode
+				link="https://github.com/clios/lomer-ui/blob/main/src/lib/checkbox.svelte"
+			/>
+		</PageArticle>
+	</PageSection>
 
 	<!-- USAGE -->
-	<Title id="2">Usage</Title>
-	<p>Bind <Prop>value</Prop> property to reflect checkbox's value.</p>
-	<Code
-		code={`import Checkbox from '$lib/components/ui/checkbox.svelte'` +
-			`\nlet value = $state(false)`}
-		language="javascript"
-	/>
-	<Code
-		code={`<Checkbox bind:value>Hit me!</Checkbox>` + `\n<p>Value: {value}</p>`}
-	/>
-	<Preview class="flex-col items-center gap-4">
-		<Checkbox bind:value>Hit me!</Checkbox>
-		<p>Value: {value}</p>
-	</Preview>
+	<PageSection id="2" title="Usage">
+		<PageArticle title="Preview">
+			<Screen class="flex-col">
+				<CheckboxUsage />
+			</Screen>
+			<CopySvelteCode code={CheckboxUsageRaw} />
+		</PageArticle>
+	</PageSection>
 
 	<!-- EXAMPLES -->
-	<Title id="3">Examples</Title>
+	<PageSection id="3" title="Examples">
+		<!-- LOADING -->
+		<PageArticle id="3.1" title="Loading">
+			<Screen class="flex-col">
+				<CheckboxLoading />
+			</Screen>
+			<CopySvelteCode code={CheckboxLoadingRaw} />
+		</PageArticle>
 
-	<!-- CONTENT -->
-	<SubTitle id="3.1">Content</SubTitle>
-	<Code
-		code={`<Checkbox>` +
-			`\n\t<p class="font-semibold">Terms & Conditions</p>` +
-			`\n\t<p class="text-zinc-600 dark:text-zinc-400">` +
-			`\n\t\tI Agree even without reading the terms and conditions.` +
-			`\n\t</p>` +
-			`\n</Checkbox>`}
-		language="xml"
-	/>
-	<Preview>
-		<Checkbox>
-			<p class="font-semibold">Terms & Conditions</p>
-			<p class="text-zinc-600 dark:text-zinc-400">
-				I Agree even without reading the terms and conditions.
-			</p>
-		</Checkbox>
-	</Preview>
-
-	<!-- LOADING -->
-	<SubTitle id="3.2">Loading</SubTitle>
-	<p>Add <Prop>isLoading</Prop> property.</p>
-	<Code code={`<Checkbox isLoading>` + `\n\t...` + `\n</Checkbox>`} />
-	<Preview>
-		<Checkbox isLoading>
-			<p class="font-semibold">Terms & Conditions</p>
-			<p class="text-zinc-600 dark:text-zinc-400">
-				I Agree even without reading the terms and conditions.
-			</p>
-		</Checkbox>
-	</Preview>
-
-	<!-- DISABLED -->
-	<SubTitle id="3.3">Disabled</SubTitle>
-	<p>Add <Prop>isDisabled</Prop> property.</p>
-	<Code code={`<Checkbox isDisabled>` + `\n\t...` + `\n</Checkbox>`} />
-	<Preview>
-		<Checkbox isDisabled>
-			<p class="font-semibold">Terms & Conditions</p>
-			<p class="text-zinc-600 dark:text-zinc-400">
-				I Agree even without reading the terms and conditions.
-			</p>
-		</Checkbox>
-		<Checkbox value={true} isDisabled>
-			<p class="font-semibold">Terms & Conditions</p>
-			<p class="text-zinc-600 dark:text-zinc-400">
-				I Agree even without reading the terms and conditions.
-			</p>
-		</Checkbox>
-	</Preview>
-
-	<!-- READ ONLY -->
-	<SubTitle id="3.4">Read only</SubTitle>
-	<p>Add <Prop>isReadOnly</Prop> property.</p>
-	<Code code={`<Checkbox isReadOnly>` + `\n\t...` + `\n</Checkbox>`} />
-	<Preview>
-		<Checkbox isReadOnly>
-			<p class="font-semibold">Terms & Conditions</p>
-			<p class="text-zinc-600 dark:text-zinc-400">
-				I Agree even without reading the terms and conditions.
-			</p>
-		</Checkbox>
-		<Checkbox value={true} isReadOnly>
-			<p class="font-semibold">Terms & Conditions</p>
-			<p class="text-zinc-600 dark:text-zinc-400">
-				I Agree even without reading the terms and conditions.
-			</p>
-		</Checkbox>
-	</Preview>
-
-	<PageFooter
-		prevLabel="Card Picker"
-		prevLink="/components/card-picker"
-		nextLabel="Dialog"
-		nextLink="/components/dialog"
-	/>
-</div>
+		<!-- DISABLED -->
+		<PageArticle id="3.2" title="Disabled">
+			<Screen class="flex-col">
+				<CheckboxDisabled />
+			</Screen>
+			<CopySvelteCode code={CheckboxDisabledRaw} />
+		</PageArticle>
+	</PageSection>
+</PageWrapper>

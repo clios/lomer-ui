@@ -1,15 +1,17 @@
 <script lang="ts">
-	import Button from '$lib/button.svelte';
-	import Screen from '$site/screen.svelte';
+	import Button from '$lib/components/ui/button.svelte';
+	import Screen from '$lib/components/screen.svelte';
 	import Icon from '@iconify/svelte';
 </script>
 
 <Screen class="flex flex-wrap justify-center gap-4 p-8">
-	<Button>Primary</Button>
+	<Button>Default</Button>
+	<Button variant="inverted">Inverted</Button>
+	<Button variant="primary">Primary</Button>
 	<Button variant="secondary">Secondary</Button>
 	<Button variant="destructive">Destructive</Button>
-	<Button variant="ghost">Ghost</Button>
 	<Button variant="outline">Outline</Button>
+	<Button variant="ghost">Ghost</Button>
 	<Button>
 		<Icon icon="mdi:power" width={24} height={24} /> Power
 	</Button>
