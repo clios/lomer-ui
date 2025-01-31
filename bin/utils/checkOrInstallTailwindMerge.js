@@ -9,7 +9,6 @@ export async function checkOrInstallTailwindMerge() {
 			packageJson.dependencies?.['tailwind-merge'] ||
 			packageJson.devDependencies?.['tailwind-merge']
 		) {
-			console.log(`Tailwind Merge detected.`);
 			return;
 		}
 
