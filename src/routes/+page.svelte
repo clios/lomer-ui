@@ -4,11 +4,8 @@
 	import Dialog from '$lib/components/ui/dialog.svelte';
 	import Icon from '@iconify/svelte';
 	import Link from '$lib/components/ui/link.svelte';
-	import Screen from '$lib/components/screen.svelte';
-	import SvelteSyntax from '$lib/components/templates/svelte-syntax.svelte';
 	import { goto } from '$app/navigation';
-
-	let isOpenDialog = $state(false);
+	import Screen from '$lib/components/screen.svelte';
 </script>
 
 <svelte:head>
@@ -49,7 +46,7 @@
 			<span class="text-orange-500">Svelte</span>
 			<br class="sm:hidden" />
 			<span>powered by</span>
-			<span class="text-cyan-500">Tailwind CSS</span>
+			<span class="text-cyan-500">Tailwind CSS</span>.
 		</p>
 	</section>
 
@@ -66,7 +63,7 @@
 				onclick={() =>
 					window.open('https://github.com/clios/lomer-ui', '_blank')}
 			>
-				<Icon icon="mdi:github" width={24} height={24} />
+				<Icon class="size-5" icon="mdi:github" />
 				GitHub</Button
 			>
 		</div>
@@ -98,5 +95,70 @@
 		</p>
 		<CopyCLI code="npx lomer-ui add" />
 		<p>That's it!</p>
+	</section>
+
+	<section class="border-b border-dotted"></section>
+
+	<section class="text-muted lg:text-xl">
+		<p class="text-fg text-center lg:text-2xl">
+			The Zero Configuration UI Library.
+		</p>
+	</section>
+
+	<section class="flex flex-wrap justify-center gap-8">
+		<div class="max-w-72">
+			<Screen class="flex-col items-center rounded text-center">
+				<Icon class="size-10" icon="mdi:tools" />
+				<p class="text-primary mt-2">No Setup Required</p>
+				<p class="text-muted">
+					Works immediately after installation or copying the components.
+				</p>
+			</Screen>
+		</div>
+		<div class="max-w-72">
+			<Screen class="flex-col items-center rounded text-center">
+				<Icon class="size-10" icon="ix:box-open" />
+				<p class="text-primary mt-2">Minimal or No Dependencies</p>
+				<p class="text-muted">
+					Avoids requiring third-party libraries for styling or behavior.
+				</p>
+			</Screen>
+		</div>
+		<div class="max-w-72">
+			<Screen class="flex-col items-center rounded text-center">
+				<Icon class="size-10" icon="heroicons:paint-brush-solid" />
+				<p class="text-primary mt-2">Pre-styled Components</p>
+				<p class="text-muted">
+					Comes with sensible default styles, but still allows customization.
+				</p>
+			</Screen>
+		</div>
+		<div class="max-w-72">
+			<Screen class="flex-col items-center rounded text-center">
+				<Icon class="size-10" icon="bxs:plug" />
+				<p class="text-primary mt-2">Plug-and-Play</p>
+				<p class="text-muted">
+					Components can be used directly in a project without additional setup.
+				</p>
+			</Screen>
+		</div>
+		<div class="max-w-72">
+			<Screen class="flex-col items-center rounded text-center">
+				<Icon class="size-10" icon="mingcute:settings-6-fill" />
+				<p class="text-primary mt-2">Simple API</p>
+				<p class="text-muted">
+					Uses clear, intuitive props or configurations for quick use.
+				</p>
+			</Screen>
+		</div>
+	</section>
+
+	<section class="text-muted lg:text-xl">
+		<p class="mx-auto max-w-[600px] text-center">
+			Works out of the box without requiring developers to configure settings,
+			install dependencies, or write extra setup code. The goal is to provide
+			pre-styled, ready-to-use components that integrate seamlessly into
+			projects with minimal effort.
+		</p>
 	</section>
 </div>
