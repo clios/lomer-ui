@@ -1,7 +1,12 @@
 <script lang="ts">
-	import Accordion from '$lib/components/ui/accordion.svelte';
+	import AccordionDisabled from './accordion-disabled.svelte';
+	import AccordionDisabledRaw from './accordion-disabled.svelte?raw';
+	import AccordionLoading from './accordion-loading.svelte';
+	import AccordionLoadingRaw from './accordion-loading.svelte?raw';
 	import AccordionMultiple from './accordion-multiple.svelte';
 	import AccordionMultipleRaw from './accordion-multiple.svelte?raw';
+	import AccordionSingleMode from './accordion-single-mode.svelte';
+	import AccordionSingleModeRaw from './accordion-single-mode.svelte?raw';
 	import AccordionUsage from './accordion-usage.svelte';
 	import AccordionUsageRaw from './accordion-usage.svelte?raw';
 	import AccordionWithIcon from './accordion-with-icon.svelte';
@@ -13,17 +18,6 @@
 	import PageSection from '$lib/components/page-section.svelte';
 	import PageWrapper from '$lib/components/page-wrapper.svelte';
 	import Screen from '$lib/components/screen.svelte';
-
-	import AccordionOutline from './accordion-outline.svelte';
-	import AccordionOutlineRaw from './accordion-outline.svelte?raw';
-	import AccordionEnclosed from './accordion-enclosed.svelte';
-	import AccordionEnclosedRaw from './accordion-enclosed.svelte?raw';
-	import AccordionSingleMode from './accordion-single-mode.svelte';
-	import AccordionSingleModeRaw from './accordion-single-mode.svelte?raw';
-	import AccordionLoading from './accordion-loading.svelte';
-	import AccordionLoadingRaw from './accordion-loading.svelte?raw';
-	import AccordionDisabled from './accordion-disabled.svelte';
-	import AccordionDisabledRaw from './accordion-disabled.svelte?raw';
 
 	const tickler = [
 		{
@@ -50,26 +44,16 @@
 		},
 		{
 			id: '3.3',
-			label: 'Outline',
-			sub: true
-		},
-		{
-			id: '3.4',
-			label: 'Enclosed',
-			sub: true
-		},
-		{
-			id: '3.5',
 			label: 'Single mode',
 			sub: true
 		},
 		{
-			id: '3.6',
+			id: '3.4',
 			label: 'Loading',
 			sub: true
 		},
 		{
-			id: '3.7',
+			id: '3.5',
 			label: 'Disabled',
 			sub: true
 		}
@@ -122,19 +106,7 @@
 			</Screen>
 			<CopySvelteCode highlightedLines={[5, 6]} code={AccordionMultipleRaw} />
 		</PageArticle>
-		<PageArticle id="3.3" title="Outline">
-			<Screen>
-				<AccordionOutline />
-			</Screen>
-			<CopySvelteCode highlightedLines={[4]} code={AccordionOutlineRaw} />
-		</PageArticle>
-		<PageArticle id="3.4" title="Enclosed">
-			<Screen>
-				<AccordionEnclosed />
-			</Screen>
-			<CopySvelteCode highlightedLines={[4, 8]} code={AccordionEnclosedRaw} />
-		</PageArticle>
-		<PageArticle id="3.5" title="Single mode">
+		<PageArticle id="3.3" title="Single mode">
 			<Screen class="flex-col">
 				<AccordionSingleMode />
 			</Screen>
@@ -143,13 +115,13 @@
 				code={AccordionSingleModeRaw}
 			/>
 		</PageArticle>
-		<PageArticle id="3.6" title="Loading">
+		<PageArticle id="3.4" title="Loading">
 			<Screen>
 				<AccordionLoading />
 			</Screen>
 			<CopySvelteCode highlightedLines={[4]} code={AccordionLoadingRaw} />
 		</PageArticle>
-		<PageArticle id="3.7" title="Disabled">
+		<PageArticle id="3.5" title="Disabled">
 			<Screen>
 				<AccordionDisabled />
 			</Screen>
