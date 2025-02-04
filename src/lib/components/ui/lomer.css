@@ -55,7 +55,7 @@
   --color-muted-fg: var(--color-zinc-600);
 
   --color-disabled: var(--color-zinc-700);
-  --color-disabled-fg: var(--color-zinc-600);
+  --color-disabled-fg: var(--color-zinc-500);
 
   --color-input: var(--color-zinc-950);
   --color-input-fg: var(--color-zinc-50);

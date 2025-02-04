@@ -70,9 +70,9 @@
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">
     <PageArticle>
-      <CopyCLI code={`npx lomer-ui add accordion`} />
+      <CopyCLI code={`npx lomer-ui get accordion`} />
       <ButtonComponentCode
-        link="https://github.com/clios/lomer-ui/blob/main/src/lib/accordion.svelte"
+        link="https://github.com/clios/lomer-ui/blob/main/src/lib/components/ui/accordion.svelte"
       />
     </PageArticle>
   </PageSection>
@@ -84,6 +84,7 @@
         <AccordionUsage />
       </Screen>
       <CopySvelteCode code={AccordionUsageRaw} />
+      <CopyCLI code="npx lomer-ui craft accordion-usage [name]" />
     </PageArticle>
   </PageSection>
 
@@ -106,6 +107,7 @@
         highlightedLines={[2, 5, 6, 7]}
         code={AccordionSingleModeRaw}
       />
+      <CopyCLI code="npx lomer-ui craft accordion-single-mode [name]" />
     </PageArticle>
 
     <!-- LOADING -->

@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import { slide } from 'svelte/transition';
+  import { twMerge } from 'tailwind-merge';
 
   type Props = {
     children?: Snippet;
@@ -26,7 +27,7 @@
 </script>
 
 {#if open && (!group || group === value)}
-  <div class="px-2 pb-4" transition:slide={{ duration: 150 }}>
+  <div class={twMerge(className)} transition:slide={{ duration: 150 }}>
     {@render children?.()}
   </div>
 {/if}

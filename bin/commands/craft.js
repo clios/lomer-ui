@@ -64,14 +64,16 @@ export async function craft(fileName) {
 
   // Fuse.js setup
   const fuseRecipe = new Fuse(recipeData, {
-    threshold: 0.3,
-    keys: ['name']
+    keys: ['name'],
+    includeScore: true,
+    threshold: 0.6,
+    useExtendedSearch: true
   });
 
   const { recipe } = await prompts({
     type: 'autocomplete',
     name: 'recipe',
-    message: 'Select recipe:',
+    message: 'Select or enter recipe:',
     choices: recipeData.map(({ path, display }) => ({
       title: display,
       value: path
@@ -86,7 +88,6 @@ export async function craft(fileName) {
     },
     validate: (value) => (value.trim() ? true : '❌ Please select recipe.')
   });
-  console.log('🚀 ~ craft ~ recipe:', recipe);
 
   // Normalize paths for fuzzy search & display
   const folderData = folders.map((folder) => ({
@@ -97,8 +98,10 @@ export async function craft(fileName) {
 
   // Fuse.js setup
   const fuse = new Fuse(folderData, {
-    threshold: 0.3, // Allows flexible matching
-    keys: ['name'] // Search only folder names
+    keys: ['name'],
+    includeScore: true,
+    threshold: 0.6,
+    useExtendedSearch: true
   });
 
   const response = await prompts({
@@ -145,6 +148,6 @@ export async function craft(fileName) {
     console.error(`❌ Failed to create folder: ${error.message}`);
   }
 
-  await fetchFile(srcPath, destPath);
+  await fetchFile(recipe, destPath);
   console.log(`✅ Component "${fileName}" crafted.`);
 }

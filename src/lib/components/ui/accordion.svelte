@@ -1,6 +1,8 @@
 <script lang="ts">
+  import Button from '$lib/components/ui/button.svelte';
+  import Collapsible from '$lib/components/ui/collapsible.svelte';
+  import Spinner from '$lib/components/ui/spinner.svelte';
   import type { Snippet } from 'svelte';
-  import { slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
 
   type Props = {
@@ -40,73 +42,34 @@
   });
 </script>
 
-<!-- CONTAINER -->
-<div class={twMerge('bg-bg text-fg w-full px-2', className)} {...props}>
-  <!-- HEADER AS TOGGLE BUTTON -->
-  <button
+<div class={twMerge('bg-bg text-fg w-full', className)} {...props}>
+  <!-- HEADER -->
+  <Button
     class={twMerge(
-      'group flex w-full items-center gap-2 p-2', // layout and positioning
-      'focus:text-primary focus:outline-hidden', // focusing
-      'hover:text-primary', // hovering
-      'cursor-pointer' // cursor
+      'hover:text-primary focus:text-primary w-full justify-between py-2 outline-none',
+      loading && 'hover:text-disabled-fg focus:text-disabled-fg-fg',
+      disabled && 'hover:text-disabled-fg focus:text-disabled-fg-fg'
     )}
-    {onclick}
+    variant="ghost"
     type="button"
     disabled={loading || disabled}
+    {onclick}
   >
-    <!-- TITLE -->
     <p class={twMerge('w-full text-left font-semibold')}>{title}</p>
 
+    <!-- ICON DISPLAYED -->
     {#if loading}
-      {@render IconLoading()}
-    {:else if disabled}
-      {@render IconDisabled()}
+      <Spinner />
     {:else}
       {@render IconChevron()}
     {/if}
-  </button>
+  </Button>
 
-  <!-- CONDITIONAL CONTENT -->
-  {#if open && (!group || group === value)}
-    <div class="px-2 pb-4" transition:slide={{ duration: 150 }}>
-      {@render children?.()}
-    </div>
-  {/if}
+  <!-- CONTENT -->
+  <Collapsible class="px-3 pb-4" {open} {group} {value}>
+    {@render children?.()}
+  </Collapsible>
 </div>
-
-<!-- ICON LOADING -->
-{#snippet IconLoading()}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="text-spinner animate-spin"
-    viewBox="0 0 16 16"
-    width="16"
-    height="16"
-  >
-    <rect width="16" height="16" fill="none" />
-    <path
-      fill="currentColor"
-      d="M8 0A8 8 0 0 0 .002 7.812C.094 4.033 2.968 1 6.5 1C10.09 1 13 4.134 13 8a1.5 1.5 0 0 0 3 0a8 8 0 0 0-8-8m0 16a8 8 0 0 0 7.998-7.812C15.906 11.967 13.032 15 9.5 15C5.91 15 3 11.866 3 8a1.5 1.5 0 0 0-3 0a8 8 0 0 0 8 8"
-    />
-  </svg>
-{/snippet}
-
-<!-- ICON DISABLED -->
-{#snippet IconDisabled()}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="text-disabled"
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-  >
-    <path
-      fill="currentColor"
-      fill-rule="evenodd"
-      d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m-4.906-3.68L18.32 7.094A8 8 0 0 1 7.094 18.32M5.68 16.906A8 8 0 0 1 16.906 5.68z"
-    />
-  </svg>
-{/snippet}
 
 <!-- ICON CHEVRON -->
 {#snippet IconChevron()}
