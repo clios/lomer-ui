@@ -24,6 +24,14 @@ const COMPONENTS = [
   'textarea'
 ];
 
+const COMPONENT_DEPENDENCIES = {
+  accordion: ['button'],
+  'card-picker': ['button'],
+  dialog: ['button'],
+  drawer: ['button'],
+  select: ['button']
+};
+
 async function isFileExists(filePath) {
   try {
     await fs.access(filePath);
@@ -69,7 +77,7 @@ async function setupTailwind() {
   await updateCSSFile(cssFilePath);
 }
 
-export async function add(components) {
+export async function get(components) {
   if (!Array.isArray(components) || components.length === 0) {
     console.log('❌ Please specify at least one component.');
     return;
@@ -80,8 +88,21 @@ export async function add(components) {
   const destDir = path.resolve('./src/lib/components/ui');
   const destLomer = path.join(destDir, 'lomer.css');
 
-  // Check if all components are valid
-  const invalidComponents = components.filter((c) => !COMPONENTS.includes(c));
+  // Track components to add (ensure no duplicates)
+  const toAdd = new Set();
+
+  function collectDependencies(comp) {
+    if (!toAdd.has(comp)) {
+      toAdd.add(comp);
+      const deps = COMPONENT_DEPENDENCIES[comp] || [];
+      deps.forEach(collectDependencies); // Recursively add dependencies
+    }
+  }
+
+  components.forEach(collectDependencies);
+
+  // Validate components
+  const invalidComponents = [...toAdd].filter((c) => !COMPONENTS.includes(c));
   if (invalidComponents.length > 0) {
     console.log(`❌ Invalid components: ${invalidComponents.join(', ')}`);
     return;
@@ -107,7 +128,7 @@ export async function add(components) {
     await fetchFile(`${githubBaseURL}/lomer.css`, destLomer);
   }
 
-  for (const component of components) {
+  for (const component of toAdd) {
     const srcPath = `${githubBaseURL}/${component}.svelte`;
     const destPath = path.join(destDir, `${component}.svelte`);
 
@@ -122,7 +143,7 @@ export async function add(components) {
 
       if (!replace) {
         console.log(`❌ Component "${component}" was not replaced.`);
-        continue; // Skip to the next component
+        continue;
       }
     }
 

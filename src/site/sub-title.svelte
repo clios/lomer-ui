@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { twMerge } from 'tailwind-merge';
+  import { twMerge } from 'tailwind-merge';
 
-	export let id;
-	export { className as class };
+  export let id;
+  export { className as class };
 
-	let className = '';
+  let className = '';
 </script>
 
 <p {id} class={twMerge('pt-4 font-semibold md:text-xl', className)}>
-	<slot />
+  <slot />
 </p>

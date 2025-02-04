@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Accordion from '$lib/components/ui/accordion.svelte';
-	let group = $state('');
+  import Accordion from '$lib/components/ui/accordion.svelte';
+  let group = $state('');
 </script>
 
 <Accordion title="Title 1" value="1" bind:group>Content</Accordion>

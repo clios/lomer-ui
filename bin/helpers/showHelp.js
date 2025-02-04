@@ -1,5 +1,5 @@
 export function showHelp() {
-	console.log(`
+  console.log(`
 Usage:
   lomer-ui [command] [options]
 
