@@ -31,6 +31,7 @@
     loading = false,
     size = 'default',
     variant = 'default',
+    type = 'button',
     ...props
   }: Props = $props();
 </script>
@@ -73,6 +74,7 @@
     className
   )}
   disabled={loading || disabled}
+  {type}
   {...props}
 >
   {#if loading}

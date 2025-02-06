@@ -2,6 +2,6 @@
   import Alert from '$lib/components/ui/alert.svelte';
 </script>
 
-<Alert title="Notice" isClosable>
+<Alert title="Notice" closable>
   <p>Your bill is due tomorrow.</p>
 </Alert>

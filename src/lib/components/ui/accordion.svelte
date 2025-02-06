@@ -42,6 +42,7 @@
   });
 </script>
 
+<!-- CONTAINER -->
 <div class={twMerge('bg-bg text-fg w-full', className)} {...props}>
   <!-- HEADER -->
   <Button
@@ -51,11 +52,10 @@
       disabled && 'hover:text-disabled-fg focus:text-disabled-fg-fg'
     )}
     variant="ghost"
-    type="button"
     disabled={loading || disabled}
     {onclick}
   >
-    <p class={twMerge('w-full text-left font-semibold')}>{title}</p>
+    <p class="w-full text-left font-semibold">{title}</p>
 
     <!-- ICON DISPLAYED -->
     {#if loading}
@@ -74,14 +74,16 @@
 <!-- ICON CHEVRON -->
 {#snippet IconChevron()}
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     class={twMerge(
-      'transition-transform', // animate
+      'size-6 transition-transform', // animate
       open && 'rotate-180' // interaction
     )}
-    width="16"
-    height="8"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <path fill="currentColor" d="M7 7.5L0 0.5H14L7 7.5Z" />
+    <path
+      fill="currentColor"
+      d="M18.53 9.53a.75.75 0 0 0 0-1.06H5.47a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0z"
+    />
   </svg>
 {/snippet}

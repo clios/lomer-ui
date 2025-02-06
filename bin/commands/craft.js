@@ -3,16 +3,8 @@ import path from 'path';
 import prompts from 'prompts';
 import Fuse from 'fuse.js';
 import { fetchFile } from '../utils/fetchFile.js';
-
-const RECIPES = [
-  'accordion-disabled',
-  'accordion-loading',
-  'accordion-single-mode',
-  'accordion-usage',
-  'alert-closable',
-  'alert-custom-icon',
-  'alert-usage'
-];
+import { runCommand } from '../utils/runCommand.js';
+import { RECIPES } from '../recipes.js';
 
 async function isFileExists(filePath) {
   try {
@@ -42,112 +34,101 @@ async function scanFolders(basePath) {
   return getAllFolders(basePath);
 }
 
-export async function craft(fileName) {
-  if (!fileName) {
-    console.log('❌ Please specify the component name you want to craft.');
-    return;
-  }
+export async function craft(recipe, fileName) {
+  try {
+    let hasRecipe = RECIPES.some((r) => r.name === recipe);
 
-  const githubBaseURL =
-    'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/components/recipes';
-  const srcPath = `${githubBaseURL}/${fileName}.svelte`;
+    if (!hasRecipe) {
+      console.error('❌ Recipe NOT found.');
+      console.error('e.g. npx lomer-ui craft [recipe] [describe].');
+      process.exit(1);
+    }
 
-  const baseSrcPath = path.resolve('./src');
-  const folders = await scanFolders(baseSrcPath);
+    if (!fileName) {
+      console.log('❌ Describe the component you want to craft.');
+      console.error('e.g. npx lomer-ui craft [recipe] [describe].');
+      process.exit(1);
+    }
 
-  // Normalize paths for fuzzy search & display
-  const recipeData = RECIPES.map((recipe) => ({
-    path: `${githubBaseURL}/${recipe}.svelte`, // Full path
-    display: recipe,
-    name: recipe
-  }));
+    console.log(
+      '\n\nCRAFTING SVELTE COMPONENT___________________________________\n'
+    );
 
-  // Fuse.js setup
-  const fuseRecipe = new Fuse(recipeData, {
-    keys: ['name'],
-    includeScore: true,
-    threshold: 0.6,
-    useExtendedSearch: true
-  });
+    const githubBaseURL =
+      'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/components/recipes';
+    const srcPath = `${githubBaseURL}/${recipe}.svelte`;
 
-  const { recipe } = await prompts({
-    type: 'autocomplete',
-    name: 'recipe',
-    message: 'Select or enter recipe:',
-    choices: recipeData.map(({ path, display }) => ({
-      title: display,
-      value: path
-    })),
-    suggest: (input, choices) => {
-      if (!input) return choices;
-      const results = fuseRecipe.search(input);
-      return results.map((result) => ({
-        title: result.item.display,
-        value: result.item.path
-      }));
-    },
-    validate: (value) => (value.trim() ? true : '❌ Please select recipe.')
-  });
+    const baseSrcPath = path.resolve('./src');
+    const folders = await scanFolders(baseSrcPath);
 
-  // Normalize paths for fuzzy search & display
-  const folderData = folders.map((folder) => ({
-    path: folder, // Full path
-    display: path.relative(baseSrcPath, folder), // Relative to ./src
-    name: path.basename(folder) // Last folder name for fuzzy search
-  }));
+    // Normalize paths for fuzzy search & display
+    const folderData = folders.map((folder) => ({
+      path: folder, // Full path
+      display: path.relative(baseSrcPath, folder), // Relative to ./src
+      name: path.basename(folder) // Last folder name for fuzzy search
+    }));
 
-  // Fuse.js setup
-  const fuse = new Fuse(folderData, {
-    keys: ['name'],
-    includeScore: true,
-    threshold: 0.6,
-    useExtendedSearch: true
-  });
-
-  const response = await prompts({
-    type: 'autocomplete',
-    name: 'destFolder',
-    message: 'Select or enter the destination folder:',
-    choices: folderData.map(({ path, display }) => ({
-      title: display, // Display as relative to src
-      value: path // Store full path
-    })),
-    suggest: (input, choices) => {
-      if (!input) return choices;
-      const results = fuse.search(input);
-      return results.map((result) => ({
-        title: result.item.display, // Keep src-based display
-        value: result.item.path
-      }));
-    },
-    initial: './src/lib/components',
-    validate: (value) => (value.trim() ? true : 'Folder path cannot be empty.')
-  });
-
-  const destDir = path.resolve(response.destFolder);
-  const destPath = path.join(destDir, `${fileName}.svelte`);
-
-  // Check if component already exists
-  if (await isFileExists(destPath)) {
-    const { replace } = await prompts({
-      type: 'confirm',
-      name: 'replace',
-      message: `Replace ${fileName} component?`,
-      initial: false
+    // Fuse.js setup
+    const fuse = new Fuse(folderData, {
+      keys: ['name'],
+      includeScore: true,
+      threshold: 0.6,
+      useExtendedSearch: true
     });
 
-    if (!replace) {
-      console.log(`❌ Component "${fileName}" was not replaced.`);
+    const response = await prompts({
+      type: 'autocomplete',
+      name: 'destFolder',
+      message: 'Enter or select the destination folder:',
+      choices: folderData.map(({ path, display }) => ({
+        title: display, // Display as relative to src
+        value: path // Store full path
+      })),
+      suggest: (input, choices) => {
+        if (!input) return choices;
+        const results = fuse.search(input);
+        return results.map((result) => ({
+          title: result.item.display, // Keep src-based display
+          value: result.item.path
+        }));
+      },
+      initial: './src/lib/components',
+      validate: (value) =>
+        value.trim() ? true : 'Folder path cannot be empty.'
+    });
+
+    const destDir = path.resolve(response.destFolder);
+    const destPath = path.join(destDir, `${fileName}.svelte`);
+
+    // Check if component already exists
+    if (await isFileExists(destPath)) {
+      const { replace } = await prompts({
+        type: 'confirm',
+        name: 'replace',
+        message: `Replace "${fileName}" component?`,
+        initial: false
+      });
+
+      if (!replace) {
+        console.log(`❌ Component "${fileName}" was not replaced.`);
+        process.exit(1);
+      }
     }
-  }
 
-  try {
     await fs.mkdir(destDir, { recursive: true });
-    console.log(`✅ Destination folder set: ${destDir}`);
-  } catch (error) {
-    console.error(`❌ Failed to create folder: ${error.message}`);
-  }
+    await fetchFile(srcPath, destPath);
+    console.log(`✅ Component "${fileName}" crafted.`);
 
-  await fetchFile(recipe, destPath);
-  console.log(`✅ Component "${fileName}" crafted.`);
+    console.log(
+      `\n\nDEPENDENCIES________________________________________________\n`
+    );
+    for (const r of RECIPES) {
+      if (r.name === recipe) {
+        await runCommand(`npx lomer-ui get ${r.dependencies}`);
+        break;
+      }
+    }
+  } catch (error) {
+    console.log(`Exiting...`);
+  }
 }

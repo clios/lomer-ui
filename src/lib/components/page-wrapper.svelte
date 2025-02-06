@@ -111,6 +111,22 @@
             onclick={() => scrollToId(t.id)}>{t.label}</Button
           >
         {/each}
+        <div class="relative">
+          <div
+            class="absolute -right-4 w-[calc(100%+2rem)] border-b border-dotted"
+          ></div>
+        </div>
+        <Button
+          class={twMerge(
+            'hover:text-primary text-muted focus:text-primary h-min w-full p-0 px-4 text-left text-sm outline-none'
+          )}
+          variant="ghost"
+          size="small"
+          onclick={() => scrollToTop()}
+        >
+          <Icon class="size-4" icon="mdi:arrow-top" />
+          Back to top</Button
+        >
       </div>
     </div>
   </div>

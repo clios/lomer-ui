@@ -5,12 +5,14 @@
   import AccordionLoadingRaw from './accordion-loading.svelte?raw';
   import AccordionMultiple from './accordion-multiple.svelte';
   import AccordionMultipleRaw from './accordion-multiple.svelte?raw';
+  import AccordionRaw from '$lib/components/ui/accordion.svelte?raw';
   import AccordionSingleMode from '$lib/components/recipes/accordion-single-mode.svelte';
   import AccordionSingleModeRaw from '$lib/components/recipes/accordion-single-mode.svelte?raw';
   import AccordionUsage from '$lib/components/recipes/accordion-usage.svelte';
   import AccordionUsageRaw from '$lib/components/recipes/accordion-usage.svelte?raw';
   import ButtonComponentCode from '$lib/components/button-component-code.svelte';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+  import CopyCLICraftCode from '$lib/components/copy-c-l-i-craft-code.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
@@ -49,6 +51,14 @@
       id: '3.4',
       label: 'Disabled',
       sub: true
+    },
+    {
+      id: '4',
+      label: 'Crafting Recipes'
+    },
+    {
+      id: '5',
+      label: 'Component Code'
     }
   ];
 </script>
@@ -84,7 +94,7 @@
         <AccordionUsage />
       </Screen>
       <CopySvelteCode code={AccordionUsageRaw} />
-      <CopyCLI code="npx lomer-ui craft accordion-usage [name]" />
+      <CopyCLICraftCode code="accordion-usage" />
     </PageArticle>
   </PageSection>
 
@@ -107,7 +117,7 @@
         highlightedLines={[2, 5, 6, 7]}
         code={AccordionSingleModeRaw}
       />
-      <CopyCLI code="npx lomer-ui craft accordion-single-mode [name]" />
+      <CopyCLICraftCode code="accordion-single-mode" />
     </PageArticle>
 
     <!-- LOADING -->
@@ -125,5 +135,18 @@
       </Screen>
       <CopySvelteCode highlightedLines={[4]} code={AccordionDisabledRaw} />
     </PageArticle>
+  </PageSection>
+
+  <!-- CRAFTING RECIPES -->
+  <PageSection id="4" title="Crafting Recipes">
+    <PageArticle>
+      <CopyCLI code="npx lomer-ui craft accordion-usage [name]" />
+      <CopyCLI code="npx lomer-ui craft accordion-single-mode [name]" />
+    </PageArticle>
+  </PageSection>
+
+  <!-- COMPONENT CODE -->
+  <PageSection id="5" title="Component Code">
+    <CopySvelteCode code={AccordionRaw} highlightedLines={[44, 46, 68]} />
   </PageSection>
 </PageWrapper>

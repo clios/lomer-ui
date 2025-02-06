@@ -1,36 +1,11 @@
 import fs from 'fs/promises';
 import path from 'path';
 import prompts from 'prompts';
-import { fetchFile } from '../utils/fetchFile.js';
+import { COMPONENTS } from '../components.js';
 import { checkOrInstallTailwindCSS } from '../utils/checkOrInstallTailwindCSS.js';
 import { checkOrInstallTailwindMerge } from '../utils/checkOrInstallTailwindMerge.js';
 import { checkSvelteKitApp } from '../utils/checkSvelteKitApp.js';
-
-const COMPONENTS = [
-  'accordion',
-  'alert',
-  'button',
-  'card-picker',
-  'checkbox',
-  'dialog',
-  'drawer',
-  'field',
-  'input',
-  'link',
-  'radio',
-  'scroll-area',
-  'select',
-  'switch',
-  'textarea'
-];
-
-const COMPONENT_DEPENDENCIES = {
-  accordion: ['button'],
-  'card-picker': ['button'],
-  dialog: ['button'],
-  drawer: ['button'],
-  select: ['button']
-};
+import { fetchFile } from '../utils/fetchFile.js';
 
 async function isFileExists(filePath) {
   try {
@@ -91,18 +66,20 @@ export async function get(components) {
   // Track components to add (ensure no duplicates)
   const toAdd = new Set();
 
-  function collectDependencies(comp) {
-    if (!toAdd.has(comp)) {
-      toAdd.add(comp);
-      const deps = COMPONENT_DEPENDENCIES[comp] || [];
-      deps.forEach(collectDependencies); // Recursively add dependencies
-    }
+  function collectDependencies(compName) {
+    const component = COMPONENTS.find((c) => c.name === compName);
+    if (!component || toAdd.has(compName)) return;
+
+    toAdd.add(compName);
+    component.dependencies.forEach(collectDependencies); // Recursively add dependencies
   }
 
   components.forEach(collectDependencies);
 
   // Validate components
-  const invalidComponents = [...toAdd].filter((c) => !COMPONENTS.includes(c));
+  const invalidComponents = [...toAdd].filter(
+    (c) => !COMPONENTS.some((comp) => comp.name === c)
+  );
   if (invalidComponents.length > 0) {
     console.log(`❌ Invalid components: ${invalidComponents.join(', ')}`);
     return;

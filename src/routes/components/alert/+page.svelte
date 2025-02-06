@@ -1,35 +1,20 @@
 <script lang="ts">
-  import Alert from '$lib/components/ui/alert.svelte';
-  import Button from '$lib/components/ui/button.svelte';
-  import Cli from '$site//cli.svelte';
-  import Code from '$site//code.svelte';
-  import ButtonComponentCode from '$lib/components/button-component-code.svelte';
-  import Icon from '@iconify/svelte';
-  import OnThisPage from '$site/on-this-page.svelte';
-  import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-  import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-  import PageFooter from '$lib/components/templates/page-footer.svelte';
-  import PageHeader from '$lib/components/templates/page-header.svelte';
-  import Preview from '$site/preview.svelte';
-  import Prop from '$site/prop.svelte';
-  import Screen from '$lib/components/screen.svelte';
-  import SubTitle from '$site//sub-title.svelte';
-  import Syntax from '$site/syntax.svelte';
-  import TabsPreviewCode from '$site/tabs__preview-code.svelte';
-  import Title from '$site//title.svelte';
-  import PageWrapper from '$lib/components/page-wrapper.svelte';
-  import PageSection from '$lib/components/page-section.svelte';
-  import PageArticle from '$lib/components/page-article.svelte';
+  import AlertClosable from '$lib/components/recipes/alert-closable.svelte';
+  import AlertClosableRaw from '$lib/components/recipes/alert-closable.svelte?raw';
+  import AlertCustomIcon from '$lib/components/recipes/alert-custom-icon.svelte';
+  import AlertCustomIconRaw from '$lib/components/recipes/alert-custom-icon.svelte?raw';
+  import AlertDestructive from '$lib/components/recipes/alert-destructive.svelte';
+  import AlertDestructiveRaw from '$lib/components/recipes/alert-destructive.svelte?raw';
+  import AlertRaw from '$lib/components/ui/alert.svelte?raw';
+  import AlertUsage from '$lib/components/recipes/alert-usage.svelte';
+  import AlertUsageRaw from '$lib/components/recipes/alert-usage.svelte?raw';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
-  import AlertUsage from './alert-usage.svelte';
-  import AlertUsageRaw from './alert-usage.svelte?raw';
+  import CopyCLICraftCode from '$lib/components/copy-c-l-i-craft-code.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import AlertCustomIcon from './alert-custom-icon.svelte';
-  import AlertCustomIconRaw from './alert-custom-icon.svelte?raw';
-  import AlertClosable from './alert-closable.svelte';
-  import AlertClosableRaw from './alert-closable.svelte?raw';
-
-  let isClosableOpen = true;
+  import PageArticle from '$lib/components/page-article.svelte';
+  import PageSection from '$lib/components/page-section.svelte';
+  import PageWrapper from '$lib/components/page-wrapper.svelte';
+  import Screen from '$lib/components/screen.svelte';
 
   const tickler = [
     {
@@ -53,6 +38,19 @@
       id: '3.2',
       label: 'Closable',
       sub: true
+    },
+    {
+      id: '3.3',
+      label: 'Destructive',
+      sub: true
+    },
+    {
+      id: '4',
+      label: 'Crafting Recipes'
+    },
+    {
+      id: '5',
+      label: 'Component Code'
     }
   ];
 </script>
@@ -71,23 +69,37 @@
   nextLabel="Button"
   nextLink="/components/button"
 >
+  <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">
-    <PageArticle>
-      <CopyCLI code={`npx lomer-ui add alert`} />
-      <ButtonComponentCode
-        link="https://github.com/clios/lomer-ui/blob/main/src/lib/alert.svelte"
-      />
+    <PageArticle title="Get the root component">
+      <CopyCLI code={`npx lomer-ui get alert`} />
     </PageArticle>
   </PageSection>
+
+  <!-- CRAFTING RECIPES -->
+  <PageSection id="1" title="Crafting Recipes">
+    <PageArticle title="">
+      <CopyCLI code={`npx lomer-ui craft alert-usage [name]`} />
+      <CopyCLI code={`npx lomer-ui craft alert-custom-icon [name]`} />
+      <CopyCLI code={`npx lomer-ui craft alert-closable [name]`} />
+      <CopyCLI code={`npx lomer-ui craft alert-destructive [name]`} />
+    </PageArticle>
+  </PageSection>
+
+  <!-- USAGE -->
   <PageSection id="2" title="Usage">
     <PageArticle title="Preview">
       <Screen>
         <AlertUsage />
       </Screen>
       <CopySvelteCode code={AlertUsageRaw} />
+      <CopyCLICraftCode code="alert-usage" />
     </PageArticle>
   </PageSection>
+
+  <!-- EXAMPLES -->
   <PageSection id="3" title="Examples">
+    <!-- CUSTOM ICON -->
     <PageArticle id="3.1" title="Custom icon">
       <Screen>
         <AlertCustomIcon />
@@ -97,11 +109,36 @@
         code={AlertCustomIconRaw}
       />
     </PageArticle>
+
+    <!-- CLOSABLE -->
     <PageArticle id="3.1" title="Closable">
       <Screen class="flex-col items-center gap-2">
         <AlertClosable />
       </Screen>
       <CopySvelteCode highlightedLines={[4]} code={AlertClosableRaw} />
     </PageArticle>
+
+    <!-- DESTRUCTIVE -->
+    <PageArticle id="3.3" title="Destructive">
+      <Screen class="flex-col items-center gap-2">
+        <AlertDestructive />
+      </Screen>
+      <CopySvelteCode highlightedLines={[4]} code={AlertDestructiveRaw} />
+    </PageArticle>
+  </PageSection>
+
+  <!-- CRAFTING RECIPES -->
+  <PageSection id="4" title="Crafting Recipes">
+    <PageArticle>
+      <CopyCLI code="npx lomer-ui craft alert-usage [name]" />
+    </PageArticle>
+    <PageArticle>
+      <CopyCLI code="npx lomer-ui craft alert-custom-icon [name]" />
+    </PageArticle>
+  </PageSection>
+
+  <!-- COMPONENT CODE -->
+  <PageSection id="5" title="Component Code">
+    <CopySvelteCode code={AlertRaw} highlightedLines={[27, 46, 68]} />
   </PageSection>
 </PageWrapper>
