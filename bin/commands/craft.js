@@ -5,6 +5,7 @@ import Fuse from 'fuse.js';
 import { fetchFile } from '../utils/fetchFile.js';
 import { runCommand } from '../utils/runCommand.js';
 import { RECIPES } from '../recipes.js';
+import { checkOrInstallPackage } from '../utils/checkOrInstallPackage.js';
 
 async function isFileExists(filePath) {
   try {
@@ -40,13 +41,13 @@ export async function craft(recipe, fileName) {
 
     if (!hasRecipe) {
       console.error('❌ Recipe NOT found.');
-      console.error('e.g. npx lomer-ui craft [recipe] [describe].');
+      console.error('e.g. npx lomer-ui craft [recipe] [name].');
       process.exit(1);
     }
 
     if (!fileName) {
-      console.log('❌ Describe the component you want to craft.');
-      console.error('e.g. npx lomer-ui craft [recipe] [describe].');
+      console.log('❌ Name the component you want to craft.');
+      console.error('e.g. npx lomer-ui craft [recipe] [name].');
       process.exit(1);
     }
 
@@ -119,17 +120,22 @@ export async function craft(recipe, fileName) {
     await fetchFile(srcPath, destPath);
     console.log(`✅ Component "${fileName}" crafted.`);
 
-    for (const r of RECIPES) {
-      const destDir = path.resolve('./src/lib/components/ui');
-      const destPath = path.join(destDir, `${r.dependency}.svelte`);
-      if (r.name === recipe) {
-        if (await isFileExists(destPath)) {
-          break;
-        } else {
-          await runCommand(`npx lomer-ui get ${r.dependency}`);
-          break;
-        }
+    const [r] = RECIPES.filter((r) => r.name === recipe);
+
+    // DEPENDENCIES
+    const ds = r.dependency.split(' ');
+    const dDir = path.resolve('./src/lib/components/ui');
+    for (const d of ds) {
+      const dPath = path.join(dDir, `${d}.svelte`);
+      if (!(await isFileExists(dPath))) {
+        await runCommand(`npx lomer-ui get ${d}`);
       }
+    }
+
+    // PACKAGES
+    const pkgs = r.pkg.split(' ');
+    for (const pkg of pkgs) {
+      checkOrInstallPackage(pkg);
     }
   } catch (error) {
     console.log(`Exiting...`);

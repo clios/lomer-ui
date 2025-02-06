@@ -5,7 +5,7 @@ export const COMPONENTS = [
   },
   {
     name: 'alert',
-    dependencies: ['button']
+    dependencies: ['button', 'close']
   },
   {
     name: 'button',
@@ -16,6 +16,7 @@ export const COMPONENTS = [
     dependencies: []
   },
   { name: 'checkbox', dependencies: [] },
+  { name: 'close', dependencies: [] },
   { name: 'collapsible', dependencies: [] },
   { name: 'dialog', dependencies: [] },
   { name: 'drawer', dependencies: [] },

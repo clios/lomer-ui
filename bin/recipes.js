@@ -1,3 +1,6 @@
+// NOTE: For multiple dependency or pkg.
+// e.g. 'dropdown button'
+
 export const RECIPES = [
   {
     name: 'accordion-single-mode',
@@ -14,7 +17,7 @@ export const RECIPES = [
   {
     name: 'alert-custom-icon',
     dependency: 'alert',
-    pkg: ['@iconify/svelte']
+    pkg: '@iconify/svelte'
   },
   {
     name: 'alert-usage',
