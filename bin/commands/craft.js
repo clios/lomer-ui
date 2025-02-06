@@ -119,13 +119,16 @@ export async function craft(recipe, fileName) {
     await fetchFile(srcPath, destPath);
     console.log(`✅ Component "${fileName}" crafted.`);
 
-    console.log(
-      `\n\nDEPENDENCIES________________________________________________\n`
-    );
     for (const r of RECIPES) {
+      const destDir = path.resolve('./src/lib/components/ui');
+      const destPath = path.join(destDir, `${r.dependency}.svelte`);
       if (r.name === recipe) {
-        await runCommand(`npx lomer-ui get ${r.dependencies}`);
-        break;
+        if (await isFileExists(destPath)) {
+          break;
+        } else {
+          await runCommand(`npx lomer-ui get ${r.dependency}`);
+          break;
+        }
       }
     }
   } catch (error) {

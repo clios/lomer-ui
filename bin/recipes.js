@@ -1,23 +1,23 @@
 export const RECIPES = [
   {
     name: 'accordion-single-mode',
-    dependencies: 'accordion'
+    dependency: 'accordion'
   },
   {
     name: 'accordion-usage',
-    dependencies: 'accordion'
+    dependency: 'accordion'
   },
   {
     name: 'alert-closable',
-    dependencies: 'alert'
+    dependency: 'alert'
   },
   {
     name: 'alert-custom-icon',
-    dependencies: 'alert',
+    dependency: 'alert',
     pkg: ['@iconify/svelte']
   },
   {
     name: 'alert-usage',
-    dependencies: 'alert'
+    dependency: 'alert'
   }
 ];
