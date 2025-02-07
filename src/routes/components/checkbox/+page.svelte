@@ -48,8 +48,8 @@
   title="Check"
   sub="Component"
   info="Toggle options on or off."
-  prevLabel="Card Picker"
-  prevLink="/components/card-picker"
+  prevLabel="Button"
+  prevLink="/components/button"
   nextLabel="Dialog"
   nextLink="/components/dialog"
 >

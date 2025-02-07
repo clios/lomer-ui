@@ -39,7 +39,6 @@
       <SidebarItem href="/components/accordion" label="Accordion" />
       <SidebarItem href="/components/alert" label="Alert" />
       <SidebarItem href="/components/button" label="Button" />
-      <SidebarItem href="/components/card-picker" label="Card Picker" />
       <SidebarItem href="/components/checkbox" label="Checkbox" />
       <SidebarItem href="/components/dialog" label="Dialog" />
       <SidebarItem href="/components/drawer" label="Drawer" />

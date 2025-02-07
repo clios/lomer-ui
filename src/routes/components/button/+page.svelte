@@ -82,8 +82,8 @@
   info="Click it and make actions happen."
   prevLabel="Alert"
   prevLink="/components/alert"
-  nextLabel="Card Picker"
-  nextLink="/components/card-picker"
+  nextLabel="Checkbox"
+  nextLink="/components/checkbox"
 >
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">
