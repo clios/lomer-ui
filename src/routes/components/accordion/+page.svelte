@@ -6,13 +6,11 @@
   import AccordionMultiple from './accordion-multiple.svelte';
   import AccordionMultipleRaw from './accordion-multiple.svelte?raw';
   import AccordionRaw from '$lib/components/ui/accordion.svelte?raw';
-  import AccordionSingleMode from '$lib/components/recipes/accordion-single-mode.svelte';
-  import AccordionSingleModeRaw from '$lib/components/recipes/accordion-single-mode.svelte?raw';
-  import AccordionUsage from '$lib/components/recipes/accordion-usage.svelte';
-  import AccordionUsageRaw from '$lib/components/recipes/accordion-usage.svelte?raw';
-  import ButtonComponentCode from '$lib/components/button-component-code.svelte';
+  import AccordionSingleMode from './accordion-single-mode.svelte';
+  import AccordionSingleModeRaw from './accordion-single-mode.svelte?raw';
+  import AccordionUsage from './accordion-usage.svelte';
+  import AccordionUsageRaw from './accordion-usage.svelte?raw';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
-  import CopyCLICraftCode from '$lib/components/copy-c-l-i-craft-code.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
@@ -54,10 +52,6 @@
     },
     {
       id: '4',
-      label: 'Crafting Recipes'
-    },
-    {
-      id: '5',
       label: 'Component Code'
     }
   ];
@@ -79,11 +73,10 @@
 >
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">
-    <PageArticle>
+    <PageArticle title="Get the component">
       <CopyCLI code={`npx lomer-ui get accordion`} />
-      <ButtonComponentCode
-        link="https://github.com/clios/lomer-ui/blob/main/src/lib/components/ui/accordion.svelte"
-      />
+      <p>Or just craft it quickly!</p>
+      <CopyCLI code={`npx lomer-ui craft accordion`} />
     </PageArticle>
   </PageSection>
 
@@ -94,7 +87,6 @@
         <AccordionUsage />
       </Screen>
       <CopySvelteCode code={AccordionUsageRaw} />
-      <CopyCLICraftCode code="accordion-usage" />
     </PageArticle>
   </PageSection>
 
@@ -117,7 +109,6 @@
         highlightedLines={[2, 5, 6, 7]}
         code={AccordionSingleModeRaw}
       />
-      <CopyCLICraftCode code="accordion-single-mode" />
     </PageArticle>
 
     <!-- LOADING -->
@@ -147,6 +138,6 @@
 
   <!-- COMPONENT CODE -->
   <PageSection id="5" title="Component Code">
-    <CopySvelteCode code={AccordionRaw} highlightedLines={[44, 46, 68]} />
+    <CopySvelteCode code={AccordionRaw} highlightedLines={[44, 46, 67]} />
   </PageSection>
 </PageWrapper>
