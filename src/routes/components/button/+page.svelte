@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ButtonComponentCode from '$lib/components/button-component-code.svelte';
+  import ButtonRaw from '$lib/components/ui/button.svelte?raw';
   import ButtonDisabled from './button-disabled.svelte';
   import ButtonDisabledRaw from './button-disabled.svelte?raw';
   import ButtonEdges from './button-edges.svelte';
@@ -63,6 +63,10 @@
       id: '3.6',
       label: 'Disabled',
       sub: true
+    },
+    {
+      id: '4',
+      label: 'Component Code'
     }
   ];
 </script>
@@ -81,28 +85,28 @@
   nextLabel="Card Picker"
   nextLink="/components/card-picker"
 >
+  <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">
-    <PageArticle>
-      <CopyCLI code={`npx lomer-ui add button`} />
-      <ButtonComponentCode
-        link="https://github.com/clios/lomer-ui/blob/main/src/lib/button.svelte"
-      />
+    <PageArticle title="Get the component">
+      <CopyCLI code={`npx lomer-ui get button`} />
+      <p>Or create component quickly!</p>
+      <CopyCLI code={`npx lomer-ui craft button`} />
     </PageArticle>
   </PageSection>
+
+  <!-- USAGE -->
   <PageSection id="2" title="Usage">
     <PageArticle title="Preview">
-      <Screen class="justify-center">
-        <ButtonUsage />
-      </Screen>
+      <Screen class="justify-center"><ButtonUsage /></Screen>
       <CopySvelteCode code={ButtonUsageRaw} />
     </PageArticle>
   </PageSection>
+
+  <!-- EXAMPLES -->
   <PageSection id="3" title="Examples">
     <!-- VARIANTS -->
     <PageArticle id="3.1" title="Variants">
-      <Screen class="flex-wrap justify-center gap-4">
-        <ButtonVariants />
-      </Screen>
+      <Screen class="flex-wrap justify-center gap-4"><ButtonVariants /></Screen>
       <CopySvelteCode
         highlightedLines={[5, 6, 7, 8, 9, 10]}
         code={ButtonVariantsRaw}
@@ -148,5 +152,14 @@
       </Screen>
       <CopySvelteCode highlightedLines={[4]} code={ButtonDisabledRaw} />
     </PageArticle>
+  </PageSection>
+
+  <!-- COMPONENT CODE -->
+  <PageSection id="4" title="Component Code">
+    <CopySvelteCode
+      title="alert.svelte"
+      code={ButtonRaw}
+      highlightedLines={[44, 55, 60, 65, 69]}
+    />
   </PageSection>
 </PageWrapper>
