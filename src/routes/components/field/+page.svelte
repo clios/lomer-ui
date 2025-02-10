@@ -1,6 +1,5 @@
 <script lang="ts">
   import Button from '$lib/components/ui/button.svelte';
-  import CardPicker from '$lib/components/ui/card-picker.svelte';
   import Checkbox from '$lib/components/ui/checkbox.svelte';
   import Cli from '$site//cli.svelte';
   import Code from '$site//code.svelte';
@@ -212,53 +211,6 @@
         <Button variant="secondary" edge="sharp" size="icon">
           <Icon icon="material-symbols:lab-profile" width={24} />
         </Button>
-      </div>
-    </Field>
-  </Preview>
-
-  <!-- WITH CARD PICKER -->
-  <SubTitle id="3.7">With card picker</SubTitle>
-  <Code
-    code={`<Field label="Choose your clan">` +
-      `\n\t<div class="flex gap-2">` +
-      `\n\t\t<CardPicker bind:value cardValue="dragon">` +
-      `\n\t\t\t<Icon icon="game-icons:spiked-dragon-head" width={100} height={100} />` +
-      `\n\t\t\t<p>Dragon</p>` +
-      `\n\t\t</CardPicker>` +
-      `\n\t\t<CardPicker bind:value cardValue="serpent">` +
-      `\n\t\t\t<Icon icon="game-icons:snake-tongue" width={100} height={100} />` +
-      `\n\t\t\t<p>Serpent</p>` +
-      `\n\t\t</CardPicker>` +
-      `\n\t\t<CardPicker bind:value cardValue="wolf">` +
-      `\n\t\t\t<Icon icon="game-icons:wolf-head" width={100} height={100} />` +
-      `\n\t\t\t<p>Wolf</p>` +
-      `\n\t\t</CardPicker>` +
-      `\n\t\t<CardPicker bind:value cardValue="lotus">` +
-      `\n\t\t\t<Icon icon="game-icons:lotus" width={100} height={100} />` +
-      `\n\t\t\t<p>Lotus</p>` +
-      `\n\t\t</CardPicker>` +
-      `\n\t</div>` +
-      `\n</Field>`}
-  />
-  <Preview>
-    <Field label="Choose your clan">
-      <div class="flex gap-2">
-        <CardPicker bind:value={cardPickerValue} cardValue="dragon">
-          <Icon icon="game-icons:spiked-dragon-head" width={80} height={80} />
-          <p>Dragon</p>
-        </CardPicker>
-        <CardPicker bind:value={cardPickerValue} cardValue="serpent">
-          <Icon icon="game-icons:snake-tongue" width={80} height={80} />
-          <p>Serpent</p>
-        </CardPicker>
-        <CardPicker bind:value={cardPickerValue} cardValue="wolf">
-          <Icon icon="game-icons:wolf-head" width={80} height={80} />
-          <p>Wolf</p>
-        </CardPicker>
-        <CardPicker bind:value={cardPickerValue} cardValue="lotus">
-          <Icon icon="game-icons:lotus" width={80} height={80} />
-          <p>Lotus</p>
-        </CardPicker>
       </div>
     </Field>
   </Preview>
