@@ -1,17 +1,18 @@
 <script lang="ts">
-  import ButtonComponentCode from '$lib/components/button-component-code.svelte';
-  import PageWrapper from '$lib/components/page-wrapper.svelte';
-  import PageSection from '$lib/components/page-section.svelte';
-  import CopyCLI from '$lib/components/copy-c-l-i.svelte';
-  import PageArticle from '$lib/components/page-article.svelte';
-  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import Screen from '$lib/components/screen.svelte';
-  import CheckboxUsage from './checkbox-usage.svelte';
-  import CheckboxLoading from './checkbox-loading.svelte';
   import CheckboxDisabled from './checkbox-disabled.svelte';
-  import CheckboxUsageRaw from './checkbox-usage.svelte?raw';
-  import CheckboxLoadingRaw from './checkbox-loading.svelte?raw';
   import CheckboxDisabledRaw from './checkbox-disabled.svelte?raw';
+  import CheckboxLoading from './checkbox-loading.svelte';
+  import CheckboxLoadingRaw from './checkbox-loading.svelte?raw';
+  import CheckboxRaw from '$lib/components/ui/checkbox.svelte?raw';
+  import CheckboxUsage from './checkbox-usage.svelte';
+  import CheckboxUsageRaw from './checkbox-usage.svelte?raw';
+  import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import Link from '$lib/components/ui/link.svelte';
+  import PageArticle from '$lib/components/page-article.svelte';
+  import PageSection from '$lib/components/page-section.svelte';
+  import PageWrapper from '$lib/components/page-wrapper.svelte';
+  import Screen from '$lib/components/screen.svelte';
 
   const tickler = [
     {
@@ -55,11 +56,10 @@
 >
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">
-    <PageArticle>
-      <CopyCLI code={`npx lomer-ui add checkbox`} />
-      <ButtonComponentCode
-        link="https://github.com/clios/lomer-ui/blob/main/src/lib/checkbox.svelte"
-      />
+    <PageArticle title="Get the component">
+      <CopyCLI code={`npx lomer-ui get checkbox`} />
+      <p>Or just <Link href="/docs/crafting">craft</Link> it already.</p>
+      <CopyCLI code={`npx lomer-ui craft checkbox`} />
     </PageArticle>
   </PageSection>
 

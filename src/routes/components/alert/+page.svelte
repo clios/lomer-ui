@@ -10,6 +10,7 @@
   import AlertUsageRaw from './alert-usage.svelte?raw';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import Link from '$lib/components/ui/link.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
   import PageWrapper from '$lib/components/page-wrapper.svelte';
@@ -42,10 +43,6 @@
       id: '3.3',
       label: 'Destructive',
       sub: true
-    },
-    {
-      id: '4',
-      label: 'Component Code'
     }
   ];
 </script>
@@ -68,7 +65,7 @@
   <PageSection id="1" title="Installation">
     <PageArticle title="Get the component">
       <CopyCLI code={`npx lomer-ui get alert`} />
-      <p>Or just craft it quickly!</p>
+      <p>Or just <Link href="/docs/crafting">craft</Link> it already.</p>
       <CopyCLI code={`npx lomer-ui craft alert`} />
     </PageArticle>
   </PageSection>
@@ -111,14 +108,5 @@
       </Screen>
       <CopySvelteCode highlightedLines={[4]} code={AlertDestructiveRaw} />
     </PageArticle>
-  </PageSection>
-
-  <!-- COMPONENT CODE -->
-  <PageSection id="4" title="Component Code">
-    <CopySvelteCode
-      title="alert.svelte"
-      code={AlertRaw}
-      highlightedLines={[27, 37, 40, 46]}
-    />
   </PageSection>
 </PageWrapper>

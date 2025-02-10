@@ -1,11 +1,11 @@
 <script lang="ts">
-  import ButtonRaw from '$lib/components/ui/button.svelte?raw';
   import ButtonDisabled from './button-disabled.svelte';
   import ButtonDisabledRaw from './button-disabled.svelte?raw';
   import ButtonEdges from './button-edges.svelte';
   import ButtonEdgesRaw from './button-edges.svelte?raw';
   import ButtonLoading from './button-loading.svelte';
   import ButtonLoadingRaw from './button-loading.svelte?raw';
+  import ButtonRaw from '$lib/components/ui/button.svelte?raw';
   import ButtonSizes from './button-sizes.svelte';
   import ButtonSizesRaw from './button-sizes.svelte?raw';
   import ButtonUsage from './button-usage.svelte';
@@ -16,6 +16,7 @@
   import ButtonWithIconRaw from './button-with-icon.svelte?raw';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import Link from '$lib/components/ui/link.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
   import PageWrapper from '$lib/components/page-wrapper.svelte';
@@ -63,10 +64,6 @@
       id: '3.6',
       label: 'Disabled',
       sub: true
-    },
-    {
-      id: '4',
-      label: 'Component Code'
     }
   ];
 </script>
@@ -89,7 +86,7 @@
   <PageSection id="1" title="Installation">
     <PageArticle title="Get the component">
       <CopyCLI code={`npx lomer-ui get button`} />
-      <p>Or create component quickly!</p>
+      <p>Or just <Link href="/docs/crafting">craft</Link> it already.</p>
       <CopyCLI code={`npx lomer-ui craft button`} />
     </PageArticle>
   </PageSection>
@@ -152,14 +149,5 @@
       </Screen>
       <CopySvelteCode highlightedLines={[4]} code={ButtonDisabledRaw} />
     </PageArticle>
-  </PageSection>
-
-  <!-- COMPONENT CODE -->
-  <PageSection id="4" title="Component Code">
-    <CopySvelteCode
-      title="alert.svelte"
-      code={ButtonRaw}
-      highlightedLines={[44, 55, 60, 65, 69]}
-    />
   </PageSection>
 </PageWrapper>

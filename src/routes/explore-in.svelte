@@ -9,8 +9,9 @@
   import { mode } from 'mode-watcher';
   import { scale, slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
+  import Dropdown from '$lib/components/ui/dropdown.svelte';
 
-  let { isOpen = $bindable(false) } = $props();
+  let { open = $bindable(false) } = $props();
 
   let darkMode = $state(false);
   let primaryColor = $state('cyan');
@@ -31,23 +32,48 @@
 
 <div class="px-4 pt-4">
   <p class="text-muted mb-1 text-sm">Explore in</p>
-  <div class="flex items-center gap-2">
+  <div class="flex items-center">
     <ButtonToggleMode />
     <Button
-      class="text-primary"
-      variant="ghost"
-      size="icon"
-      onclick={() => (isOpen = !isOpen)}
+      class="h-6 rounded-r text-sm"
+      variant="primary"
+      edge="sharp"
+      onclick={() => (open = !open)}
     >
+      Theme
       <Icon
-        class={twMerge('size-4 transition-transform', isOpen && 'rotate-180')}
+        class={twMerge('size-4 transition-transform', open && 'rotate-180')}
         icon="mdi:gear"
       />
     </Button>
   </div>
+  <Dropdown bind:open>
+    <div class="max flex max-w-72 flex-col py-2">
+      <div class="px-3">
+        <p class="font-semibold">Customize Theme</p>
+        <p class="text-muted text-sm">Match your project's unique vibe.</p>
+      </div>
+
+      <ThemePrimary bind:primaryColor />
+      <ThemeTone bind:toneColor />
+      <ThemeRoundness bind:radiusVal />
+
+      <div class="mt-4 mb-1 flex gap-2 px-3">
+        <ButtonCopyTheme {primaryColor} {toneColor} {radiusVal} />
+        <Button
+          onclick={resetTheme}
+          title="reset"
+          variant="inverted"
+          size="icon"
+        >
+          <Icon class="pointer-events-none size-6" icon="bx:reset" />
+        </Button>
+      </div>
+    </div>
+  </Dropdown>
 </div>
 
-{#if isOpen}
+<!-- {#if open}
   <div
     in:scale={{ duration: 150, start: 0.9 }}
     out:scale={{ duration: 150, delay: 150, start: 0.9 }}
@@ -76,4 +102,4 @@
       </div>
     </div>
   </div>
-{/if}
+{/if} -->

@@ -1,78 +1,75 @@
 <script lang="ts">
-  import Button from '$lib/components/ui/button.svelte';
-  import Cli from '$site//cli.svelte';
-  import Code from '$site//code.svelte';
-  import ButtonComponentCode from '$lib/components/button-component-code.svelte';
-  import Dialog from '$lib/components/ui/dialog.svelte';
-  import HeroSection from './hero-section.svelte';
-  import Icon from '@iconify/svelte';
-  import OnThisPage from '$site/on-this-page.svelte';
-  import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-  import PageFooter from '$lib/components/templates/page-footer.svelte';
-  import PageHeader from '$lib/components/templates/page-header.svelte';
-  import Preview from '$site/preview.svelte';
-  import Prop from '$site//prop.svelte';
-  import Title from '$site//title.svelte';
+  import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import DialogUsage from './dialog-usage.svelte';
+  import DialogUsageRaw from './dialog-usage.svelte?raw';
+  import Link from '$lib/components/ui/link.svelte';
+  import PageArticle from '$lib/components/page-article.svelte';
+  import PageSection from '$lib/components/page-section.svelte';
+  import PageWrapper from '$lib/components/page-wrapper.svelte';
+  import Screen from '$lib/components/screen.svelte';
 
-  let isOpen = $state(false);
+  const tickler = [
+    {
+      id: '1',
+      label: 'Installation'
+    },
+    {
+      id: '2',
+      label: 'Usage'
+    },
+    {
+      id: '3',
+      label: 'Examples'
+    },
+    {
+      id: '3.1',
+      label: 'Custom icon',
+      sub: true
+    },
+    {
+      id: '3.2',
+      label: 'Closable',
+      sub: true
+    },
+    {
+      id: '3.3',
+      label: 'Destructive',
+      sub: true
+    }
+  ];
 </script>
 
 <svelte:head>
   <title>Dialog . lomer-ui</title>
 </svelte:head>
 
-<OnThisPage>
-  <OnThisPageBtn id="1" title="Installation" />
-  <OnThisPageBtn id="2" title="Usage" />
-</OnThisPage>
-
-<div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
-  <PageHeader
-    title="Dialog"
-    sub="Component"
-    info="Displays a focused interface for user interaction."
-  />
-  <HeroSection />
-
+<PageWrapper
+  {tickler}
+  title="Dialog"
+  sub="Component"
+  info="Displays a focused interface for user interaction."
+  prevLabel="Checkbox"
+  prevLink="/components/checkbox"
+  nextLabel="Drawer"
+  nextLink="/components/drawer"
+>
   <!-- INSTALLATION -->
-  <Title id="1">Installation</Title>
-  <Cli code={`npx lomer-ui add dialog`} />
-  <ButtonComponentCode
-    link="https://github.com/clios/lomer-ui/blob/main/src/lib/dialog.svelte"
-  />
+  <PageSection id="1" title="Installation">
+    <PageArticle title="Get the component">
+      <CopyCLI code={`npx lomer-ui get dialog`} />
+      <p>Or just <Link href="/docs/crafting">craft</Link> it already.</p>
+      <CopyCLI code={`npx lomer-ui craft dialog`} />
+    </PageArticle>
+  </PageSection>
 
-  <Title id="2">Usage</Title>
-  <p>Bind <Prop>isOpen</Prop> property to reflect dialog's open state.</p>
-  <Code
-    code={`import Dialog from '$lib/components/ui/dialog.svelte'` +
-      `\nlet isOpen = $state(false)` +
-      `\nconst openDialog = () => (isOpen = true)`}
-    language="javascript"
-  />
-  <Code
-    code={`<Button onclick={openDialog}>Open dialog</Button>` +
-      `\n<Dialog title="Title here" bind:isOpen>` +
-      `\n\tContent here...` +
-      `\n</Dialog>`}
-    language="xml"
-  />
-  <Preview>
-    <Button onclick={() => (isOpen = true)}>
-      <Icon icon="mdi:power" width={24} height={24} /> Sign out
-    </Button>
-    <Dialog bind:isOpen title="Sign Out">
-      <p>Any unsaved changes you made wil be lost.</p>
-      <div class="mt-8 flex justify-end gap-4">
-        <Button variant="secondary">Cancel</Button>
-        <Button>Yes, sign out</Button>
-      </div>
-    </Dialog>
-  </Preview>
-
-  <PageFooter
-    prevLabel="Checkbox"
-    prevLink="/components/checkbox"
-    nextLabel="Drawer"
-    nextLink="/components/drawer"
-  />
-</div>
+  <!-- USAGE -->
+  <PageSection id="2" title="Usage">
+    <PageArticle title="Preview">
+      <Screen class="justify-center">
+        <DialogUsage />
+      </Screen>
+      <CopySvelteCode code={DialogUsageRaw} />
+    </PageArticle>
+  </PageSection>
+</PageWrapper>

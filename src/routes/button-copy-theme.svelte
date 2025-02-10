@@ -1,21 +1,21 @@
 <script lang="ts">
   import CopyCSSCode from '$lib/components/copy-c-s-s-code.svelte';
   import Button from '$lib/components/ui/button.svelte';
-  import Drawer from '$lib/components/ui/drawer.svelte';
+  import Dialog from '$lib/components/ui/dialog.svelte';
 
   let { primaryColor, toneColor, radiusVal } = $props();
 
-  let isOpen = $state(false);
+  let open = $state(false);
 </script>
 
-<Button onclick={() => (isOpen = !isOpen)} class="flex w-full flex-col gap-0">
+<Button onclick={() => (open = !open)} class="flex w-full flex-col gap-0">
   <p>Copy theme</p>
 </Button>
 
-<Drawer title="Theme" position="left" bind:isOpen>
+<Dialog title="Theme" bind:open>
   <p class="text-muted mb-2">Copy and paste it to lomer.css</p>
 
-  <CopyCSSCode
+  <!-- <CopyCSSCode
     code={`@theme {
 	--color-bg: var(--color-${toneColor}-50);
 	--color-fg: var(--color-${toneColor}-950);
@@ -84,5 +84,5 @@
 
 	--color-spinner: var(--color-${primaryColor}-400);
 }`}
-  />
-</Drawer>
+  /> -->
+</Dialog>

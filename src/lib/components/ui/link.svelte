@@ -22,7 +22,7 @@
 <a
   class={twMerge(
     // BASE
-    'group', // group
+    'group cursor-pointer', // group
     'relative', // positioning
     'underline', // text
     'focus:text-primary focus:outline-hidden', // focusing

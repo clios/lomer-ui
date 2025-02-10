@@ -12,6 +12,7 @@
   import AccordionUsageRaw from './accordion-usage.svelte?raw';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import Link from '$lib/components/ui/link.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
   import PageWrapper from '$lib/components/page-wrapper.svelte';
@@ -49,10 +50,6 @@
       id: '3.4',
       label: 'Disabled',
       sub: true
-    },
-    {
-      id: '4',
-      label: 'Component Code'
     }
   ];
 </script>
@@ -75,7 +72,7 @@
   <PageSection id="1" title="Installation">
     <PageArticle title="Get the component">
       <CopyCLI code={`npx lomer-ui get accordion`} />
-      <p>Or just craft it quickly!</p>
+      <p>Or just <Link href="/docs/crafting">craft</Link> it already.</p>
       <CopyCLI code={`npx lomer-ui craft accordion`} />
     </PageArticle>
   </PageSection>
@@ -126,18 +123,5 @@
       </Screen>
       <CopySvelteCode highlightedLines={[4]} code={AccordionDisabledRaw} />
     </PageArticle>
-  </PageSection>
-
-  <!-- CRAFTING RECIPES -->
-  <PageSection id="4" title="Crafting Recipes">
-    <PageArticle>
-      <CopyCLI code="npx lomer-ui craft accordion-usage [name]" />
-      <CopyCLI code="npx lomer-ui craft accordion-single-mode [name]" />
-    </PageArticle>
-  </PageSection>
-
-  <!-- COMPONENT CODE -->
-  <PageSection id="5" title="Component Code">
-    <CopySvelteCode code={AccordionRaw} highlightedLines={[44, 46, 67]} />
   </PageSection>
 </PageWrapper>
