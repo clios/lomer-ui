@@ -65,11 +65,11 @@
       <p>I’d love to hear from you!</p>
     </PageArticle>
 
-    <PageArticle id="1.2" title="Is it production-ready?">
+    <!-- <PageArticle id="1.2" title="Is it production-ready?">
       <p>Yes, it is! I’ve been using it in my projects.</p>
       <p>However, please note that it’s still in its early stage.</p>
       <p>I’m constantly improving it.</p>
-    </PageArticle>
+    </PageArticle> -->
 
     <PageArticle id="1.3" title="How can I support you?">
       <p>

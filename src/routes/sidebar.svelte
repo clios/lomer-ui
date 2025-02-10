@@ -30,10 +30,10 @@
 
       <p class="mt-4 pl-4 font-semibold">Getting Started</p>
       <SidebarItem href="/docs/introduction" label="Introduction" />
-      <SidebarItem href="/docs/installation" label="Installation" />
-      <SidebarItem href="/docs/dark-mode" label="Dark Mode" />
-      <SidebarItem href="/docs/theming" label="Theming" status="new" />
-      <SidebarItem href="/docs/cli" label="CLI" />
+      <!-- <SidebarItem href="/docs/installation" label="Installation" /> -->
+      <!-- <SidebarItem href="/docs/dark-mode" label="Dark Mode" /> -->
+      <!-- <SidebarItem href="/docs/theming" label="Theming" status="new" /> -->
+      <!-- <SidebarItem href="/docs/cli" label="CLI" /> -->
 
       <p class="mt-4 pl-4 font-semibold">Components</p>
       <SidebarItem href="/components/accordion" label="Accordion" />
@@ -43,14 +43,14 @@
       <SidebarItem href="/components/dialog" label="Dialog" />
       <SidebarItem href="/components/drawer" label="Drawer" />
       <SidebarItem href="/components/dropdown" label="Dropdown" status="new" />
-      <SidebarItem href="/components/field" label="Field" />
+      <!-- <SidebarItem href="/components/field" label="Field" />
       <SidebarItem href="/components/input" label="Input" />
       <SidebarItem href="/components/link" label="Link" />
       <SidebarItem href="/components/radio" label="Radio" />
       <SidebarItem href="/components/scroll-area" label="Scroll Area" />
       <SidebarItem href="/components/select" label="Select" />
       <SidebarItem href="/components/switch" label="Switch" />
-      <SidebarItem href="/components/textarea" label="Textarea" />
+      <SidebarItem href="/components/textarea" label="Textarea" /> -->
 
       <div class="m-8 flex justify-end">
         <Link
