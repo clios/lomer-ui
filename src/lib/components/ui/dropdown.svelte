@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type Snippet } from 'svelte';
-  import { slide } from 'svelte/transition';
+  import { fade, slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
   import { outsideClick } from '$lib/actions/outsideClick.svelte.ts';
 
@@ -64,13 +64,17 @@
 
 {#if open}
   <!-- BACKDROP -->
-  <div class="bg-bg/0 fixed top-0 right-0 bottom-0 left-0 z-10">
+  <div
+    in:fade={{ duration: 75 }}
+    out:fade={{ duration: 75 }}
+    class="bg-bg/80 fixed top-0 right-0 bottom-0 left-0 z-10 backdrop-blur-xs"
+  >
     <!-- CONTENT -->
     <div
       use:outsideClick={() => (open = false)}
       bind:this={contentEl}
       bind:contentBoxSize
-      transition:slide={{ axis: 'y', duration: 75 }}
+      transition:fade={{ duration: 75, delay: 76 }}
       class={twMerge(
         'bg-bg fixed h-fit max-h-[calc(100vh-2rem)] rounded border',
         'text-fg overflow-auto',

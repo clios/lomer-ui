@@ -7,9 +7,9 @@
   import ThemeTone from './theme-tone.svelte';
   import ButtonCopyTheme from './button-copy-theme.svelte';
   import { mode } from 'mode-watcher';
-  import { scale, slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
   import Dropdown from '$lib/components/ui/dropdown.svelte';
+  import Close from '$lib/components/ui/close.svelte';
 
   let { open = $bindable(false) } = $props();
 
@@ -35,7 +35,7 @@
   <div class="flex items-center">
     <ButtonToggleMode />
     <Button
-      class="h-6 rounded-r text-sm"
+      class=" h-6 rounded-r text-sm tracking-wide"
       variant="primary"
       edge="sharp"
       onclick={() => (open = !open)}
@@ -49,9 +49,20 @@
   </div>
 </div>
 <Dropdown bind:open>
-  <div class="max flex max-w-60 flex-col py-2">
+  <div class="max flex flex-col py-2">
     <div class="px-3">
-      <p class="font-semibold">Customize Theme</p>
+      <p class="font-semibold">
+        Customize Theme
+
+        <Button
+          class="absolute top-3 right-3"
+          variant="ghost"
+          size="icon"
+          onclick={() => (open = false)}
+        >
+          <Close />
+        </Button>
+      </p>
       <p class="text-muted text-sm">Match your project's unique vibe.</p>
     </div>
 
@@ -59,7 +70,7 @@
     <ThemeTone bind:toneColor />
     <ThemeRoundness bind:radiusVal />
 
-    <div class="mt-4 mb-1 flex gap-2 px-3">
+    <div class="mt-4 mb-1 flex gap-2 px-3 sm:justify-end">
       <ButtonCopyTheme {primaryColor} {toneColor} {radiusVal} />
       <Button onclick={resetTheme} title="reset" variant="inverted" size="icon">
         <Icon class="pointer-events-none size-6" icon="bx:reset" />
@@ -67,34 +78,3 @@
     </div>
   </div>
 </Dropdown>
-
-<!-- {#if open}
-  <div
-    in:scale={{ duration: 150, start: 0.9 }}
-    out:scale={{ duration: 150, delay: 150, start: 0.9 }}
-    class="mt-4 w-full max-w-60"
-  >
-    <div class="bg-fg/5 flex flex-col border-y py-2">
-      <div class="px-3">
-        <p class="font-semibold">Customize Theme</p>
-        <p class="text-muted text-sm">Match your project's unique vibe.</p>
-      </div>
-
-      <ThemePrimary bind:primaryColor />
-      <ThemeTone bind:toneColor />
-      <ThemeRoundness bind:radiusVal />
-
-      <div class="mt-4 mb-1 flex gap-2 px-3">
-        <ButtonCopyTheme {primaryColor} {toneColor} {radiusVal} />
-        <Button
-          onclick={resetTheme}
-          title="reset"
-          variant="inverted"
-          size="icon"
-        >
-          <Icon class="pointer-events-none size-6" icon="bx:reset" />
-        </Button>
-      </div>
-    </div>
-  </div>
-{/if} -->

@@ -8,7 +8,10 @@
   let open = $state(false);
 </script>
 
-<Button onclick={() => (open = !open)} class="flex w-full flex-col gap-0">
+<Button
+  onclick={() => (open = !open)}
+  class="flex w-full flex-col gap-0 sm:w-max"
+>
   <p>Copy theme</p>
 </Button>
 

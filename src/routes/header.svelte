@@ -8,7 +8,7 @@
   let { isOpen = $bindable(false) } = $props();
 </script>
 
-<div class="bg-bg/50 sticky top-0 z-10 border-b backdrop-blur-sm">
+<header class="bg-bg/50 sticky top-0 z-20 border-b backdrop-blur-sm lg:z-30">
   <div class="relative container mx-auto flex h-10 items-center gap-4 border-x">
     <!-- BRANDING SECTION -->
     <div
@@ -47,4 +47,4 @@
       {/if}
     </Button>
   </div>
-</div>
+</header>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ExploreIn from './explore-in.svelte';
+  import SectionExplore from './section-explore.svelte';
   import Link from '$lib/components/ui/link.svelte';
   import SidebarItem from './sidebar-item.svelte';
   import { fade, slide } from 'svelte/transition';
@@ -9,11 +9,11 @@
 </script>
 
 {#if isOpen}
-  <div
+  <nav
     in:slide={{ axis: 'x', duration: 150 }}
     out:slide={{ axis: 'x', duration: 150, delay: 150 }}
     class={twMerge(
-      'bg-bg lg:bg-bg absolute z-20 w-full max-w-60 border-r lg:relative lg:z-0'
+      'bg-bg lg:bg-bg absolute z-20 w-full max-w-60 border-r lg:relative'
     )}
   >
     <!-- BORDER LEFT FOR SMALLEST TO LARGE SCREEN -->
@@ -26,7 +26,7 @@
       out:fade={{ duration: 150 }}
       class="sticky top-[calc(2.5rem+1px)] flex h-[calc(100vh-2.5rem-1px)] flex-col gap-1 overflow-y-auto [&::-webkit-scrollbar]:w-0"
     >
-      <ExploreIn />
+      <SectionExplore />
 
       <p class="mt-4 pl-4 font-semibold">Getting Started</p>
       <SidebarItem href="/docs/introduction" label="Introduction" />
@@ -42,7 +42,39 @@
       <SidebarItem href="/components/checkbox" label="Checkbox" />
       <SidebarItem href="/components/dialog" label="Dialog" />
       <SidebarItem href="/components/drawer" label="Drawer" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" status="new" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
+      <SidebarItem href="/components/dropdown" label="Dropdown" />
       <!-- <SidebarItem href="/components/field" label="Field" />
       <SidebarItem href="/components/input" label="Input" />
       <SidebarItem href="/components/link" label="Link" />
@@ -62,7 +94,7 @@
         </Link>
       </div>
     </div>
-  </div>
+  </nav>
 
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -70,7 +102,7 @@
     onclick={() => (isOpen = false)}
     class={twMerge(
       'fixed top-0 right-0 bottom-0 left-0 z-10', // position
-      'lg:hidden' // blur
+      'bg-bg/20 backdrop-blur-xs lg:hidden' // blur
     )}
     in:fade={{ duration: 300 }}
   ></div>

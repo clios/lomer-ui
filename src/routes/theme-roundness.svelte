@@ -65,7 +65,7 @@
     {#each roundness as round}
       {@const variant = radiusVal == round.name ? 'default' : 'inverted'}
       <Button
-        class="w-full justify-center"
+        class="w-8 justify-center"
         edge="sharp"
         size="small"
         variant={variant as Variant}
