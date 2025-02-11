@@ -13,32 +13,17 @@
       label: 'Overview'
     },
     {
-      id: '1.1',
-      label: 'Usage',
-      sub: true
-    },
-    {
       id: '2',
       label: 'Commands'
     },
     {
       id: '2.1',
-      label: 'init',
+      label: 'get',
       sub: true
     },
     {
       id: '2.2',
-      label: 'add',
-      sub: true
-    },
-    {
-      id: '2.3',
-      label: 'update',
-      sub: true
-    },
-    {
-      id: '2.4',
-      label: 'prep',
+      label: 'craft',
       sub: true
     }
   ];
@@ -52,12 +37,13 @@
   {tickler}
   title="CLI"
   sub="Docs"
-  info="Quickly startup your components."
+  info="Simple commands to build your components."
   prevLabel="Theming"
   prevLink="/docs/theming"
   nextLabel="Accordion"
   nextLink="/components/accordion"
 >
+  <!-- OVERVIEW -->
   <PageSection id="1" title="Overview">
     <PageArticle>
       <p>
@@ -74,35 +60,22 @@
         detects and installs Tailwind Merge using npm if required.
       </p>
     </PageArticle>
-    <PageArticle id="1.1" title="Usage">
-      <p>The simplest way to run lomer-ui is using npx:</p>
-      <CopyCLI code="npx lomer-ui <command> <args>" />
-    </PageArticle>
   </PageSection>
+
+  <!-- COMMANDS -->
   <PageSection id="2" title="Commands">
-    <PageArticle id="2.1" title="init">
-      <CopyCLI code="npx lomer-ui init" />
-      <p>Check or install tailwindcss and tailwind-merge.</p>
-      <p>Creates ui folder inside components folder.</p>
-      <p>Automatically imports lomer.css in the app.css file.</p>
+    <PageArticle id="2.1" title="get">
+      <CopyCLI code="npx lomer-ui get [component/s]" />
+      <p>Get base component.</p>
+      <p class="font-mono">e.g. npx lomer-ui get button</p>
+      <p class="font-mono">e.g. npx lomer-ui get button dropdown</p>
     </PageArticle>
-    <PageArticle id="2.2" title="add">
-      <CopyCLI code="npx lomer-ui add" />
-      <p class="mb-4">Quickly select and add multiple components.</p>
-      <CopyCLI code="npx lomer-ui add [component]" />
-      <p>Add specific component.</p>
-    </PageArticle>
-    <PageArticle id="2.3" title="update">
-      <CopyCLI code="npx lomer-ui update" />
-      <p>Update all existing lomer-ui components.</p>
-      <Alert>
-        <p>This command will overwrite your lomer-ui components.</p>
-      </Alert>
-    </PageArticle>
-    <PageArticle id="2.4" title="prep">
-      <CopyCLI code="npx lomer-ui prep [component]" />
-      <p>Prepares a single file component using lomer-ui.</p>
-      <p>Ready to use. Ready to customize. Built-on-top of lomer-ui.</p>
+    <PageArticle id="2.2" title="craft">
+      <CopyCLI code="npx lomer-ui craft [component] [name]" />
+      <p>Create a component and place it anywhere in your project.</p>
+      <p>[component] - base lomer-ui component.</p>
+      <p>[name] - name of your component.</p>
+      <p class="font-mono">e.g. npx lomer-ui craft dropdown MyDropdown</p>
     </PageArticle>
   </PageSection>
 </PageWrapper>

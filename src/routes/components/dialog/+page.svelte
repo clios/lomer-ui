@@ -17,25 +17,6 @@
     {
       id: '2',
       label: 'Usage'
-    },
-    {
-      id: '3',
-      label: 'Examples'
-    },
-    {
-      id: '3.1',
-      label: 'Custom icon',
-      sub: true
-    },
-    {
-      id: '3.2',
-      label: 'Closable',
-      sub: true
-    },
-    {
-      id: '3.3',
-      label: 'Destructive',
-      sub: true
     }
   ];
 </script>

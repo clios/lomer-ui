@@ -21,7 +21,7 @@
   <Header bind:isOpen />
   <div class="container mx-auto flex w-full sm:border-x">
     <Navigation bind:isOpen />
-    <main class="relative mb-8 flex w-full flex-col gap-16 p-4 2xl:mt-8">
+    <main class="relative flex w-full flex-col gap-16 p-4 2xl:mt-8">
       {@render children()}
     </main>
   </div>

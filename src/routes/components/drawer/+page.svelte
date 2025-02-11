@@ -22,12 +22,7 @@
     },
     {
       id: '3',
-      label: 'Examples'
-    },
-    {
-      id: '3.1',
-      label: 'Left drawer',
-      sub: true
+      label: 'Left drawer'
     }
   ];
 </script>
@@ -43,8 +38,8 @@
   info="Slide-out panel for navigation or content."
   prevLabel="Dialog"
   prevLink="/components/dialog"
-  nextLabel="Field"
-  nextLink="/components/field"
+  nextLabel="Dropdown"
+  nextLink="/components/dropdown"
 >
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">
@@ -65,10 +60,10 @@
     </PageArticle>
   </PageSection>
 
-  <!-- EXAMPLES -->
-  <PageSection id="3" title="Examples">
+  <!-- LEFT DRAWER -->
+  <PageSection id="3" title="Left drawer">
     <!-- LEFT DRAWER -->
-    <PageArticle id="3.1" title="Left drawer">
+    <PageArticle title="Preview">
       <Screen class="justify-center">
         <DrawerLeft />
       </Screen>

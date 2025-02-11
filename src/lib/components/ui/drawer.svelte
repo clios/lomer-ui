@@ -28,7 +28,7 @@
     in:fade={{ duration: 150 }}
     out:fade={{ duration: 150 }}
     class={twMerge(
-      'fixed top-0 right-0 bottom-0 left-0 z-10', // position
+      'fixed top-0 right-0 bottom-0 left-0 z-[999999999]', // position
       'bg-bg/80 backdrop-blur-xs', // background
       'bg-[radial-gradient(#D4D4D8_1px,transparent_1px)]', // light dots
       'dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]', // dark dots
@@ -37,11 +37,7 @@
   >
     <!-- DRAWER CONTAINER -->
     <div
-      transition:slide={{
-        axis: ['left', 'right'].includes(placement) ? 'x' : 'y',
-        duration: 300,
-        delay: 151
-      }}
+      transition:slide={{ axis: 'x', duration: 300, delay: 151 }}
       class={twMerge(
         'bg-bg text-fg absolute', // base
         'shadow-md dark:shadow-none', // shadow

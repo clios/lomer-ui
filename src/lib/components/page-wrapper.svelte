@@ -7,7 +7,7 @@
   let {
     class: className = '',
     children,
-    tickler,
+    tickler = [],
     sub = '',
     title = '',
     info = '',
@@ -33,7 +33,7 @@
 <div class="mx-auto flex w-full gap-8">
   <section
     class={twMerge(
-      'ml-auto flex w-full flex-col gap-16 lg:mr-auto lg:max-w-[800px]',
+      'mb-16 ml-auto flex w-full flex-col gap-16 lg:mr-auto lg:max-w-[800px]',
       className
     )}
   >
@@ -81,53 +81,55 @@
     </div>
   </section>
 
-  <div
-    class="relative mr-auto hidden xl:block xl:max-w-[260px] xl:min-w-[260px]"
-  >
-    <div class="sticky xl:top-16 2xl:top-23">
-      <div class="border-b border-dotted">
-        <p class="text-muted mr-4 border-r border-dotted px-4 pb-1 text-sm">
-          <Button
-            class={twMerge(
-              'hover:text-primary text-muted focus:text-primary h-min border-r p-0 text-left text-sm outline-none'
-            )}
-            variant="ghost"
-            size="small"
-            onclick={() => scrollToTop()}>Page Content</Button
-          >
-        </p>
-      </div>
-      <div
-        class="mr-4 flex flex-col gap-2 overflow-y-auto border-r border-dotted pt-2 pr-4 pb-4 xl:h-[calc(100vh-8rem)] 2xl:h-[calc(100vh-12rem)] [&::-webkit-scrollbar]:w-0"
-      >
-        {#each tickler as t}
-          <Button
-            class={twMerge(
-              'hover:text-primary text-muted focus:text-primary h-min w-full p-0 px-4 text-left text-sm outline-none',
-              t.sub && 'ml-4 pr-8 pl-4'
-            )}
-            variant="ghost"
-            size="small"
-            onclick={() => scrollToId(t.id)}>{t.label}</Button
-          >
-        {/each}
-        <div class="relative">
-          <div
-            class="absolute -right-4 w-[calc(100%+2rem)] border-b border-dotted"
-          ></div>
+  {#if tickler.length > 0}
+    <div
+      class="relative mr-auto hidden xl:block xl:max-w-[260px] xl:min-w-[260px]"
+    >
+      <div class="sticky xl:top-16 2xl:top-23">
+        <div class="border-b border-dotted">
+          <p class="text-muted mr-4 border-r border-dotted px-4 pb-1 text-sm">
+            <Button
+              class={twMerge(
+                'hover:text-primary text-muted focus:text-primary h-min border-r p-0 text-left text-sm outline-none'
+              )}
+              variant="ghost"
+              size="small"
+              onclick={() => scrollToTop()}>Page Content</Button
+            >
+          </p>
         </div>
-        <Button
-          class={twMerge(
-            'hover:text-primary text-muted focus:text-primary h-min w-full p-0 px-4 text-left text-sm outline-none'
-          )}
-          variant="ghost"
-          size="small"
-          onclick={() => scrollToTop()}
+        <div
+          class="mr-4 flex flex-col gap-2 overflow-y-auto border-r border-dotted pt-2 pr-4 pb-4 xl:h-[calc(100vh-8rem)] 2xl:h-[calc(100vh-12rem)] [&::-webkit-scrollbar]:w-0"
         >
-          <Icon class="size-4" icon="mdi:arrow-top" />
-          Back to top</Button
-        >
+          {#each tickler as t}
+            <Button
+              class={twMerge(
+                'hover:text-primary text-muted focus:text-primary h-min w-full p-0 px-4 text-left text-sm outline-none',
+                t.sub && 'ml-4 pr-8 pl-4'
+              )}
+              variant="ghost"
+              size="small"
+              onclick={() => scrollToId(t.id)}>{t.label}</Button
+            >
+          {/each}
+          <div class="relative">
+            <div
+              class="absolute -right-4 w-[calc(100%+2rem)] border-b border-dotted"
+            ></div>
+          </div>
+          <Button
+            class={twMerge(
+              'hover:text-primary text-muted focus:text-primary h-min w-full p-0 px-4 text-left text-sm outline-none'
+            )}
+            variant="ghost"
+            size="small"
+            onclick={() => scrollToTop()}
+          >
+            <Icon class="size-4" icon="mdi:arrow-top" />
+            Back to top</Button
+          >
+        </div>
       </div>
     </div>
-  </div>
+  {/if}
 </div>

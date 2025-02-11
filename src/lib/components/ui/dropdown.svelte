@@ -8,14 +8,14 @@
     children?: Snippet;
     class?: string;
     open: boolean;
-    placement?: 'left' | 'right';
+    placement?: 'left' | 'right' | 'center';
   };
 
   let {
     children,
     class: className,
     open = $bindable(false),
-    placement = 'left'
+    placement = 'center'
   }: Props = $props();
 
   let contentEl: HTMLDivElement | null = $state(null);
@@ -50,8 +50,11 @@
 
     if (placement === 'left') {
       contentEl.style.left = triggerRect.left + 'px';
-    } else {
+    } else if (placement === 'right') {
       contentEl.style.left = triggerRect.right - contentRect.width + 'px';
+    } else {
+      contentEl.style.left =
+        triggerRect.left + (triggerRect.width - contentRect.width) / 2 + 'px';
     }
   }
 
@@ -65,19 +68,17 @@
 {#if open}
   <!-- BACKDROP -->
   <div
-    in:fade={{ duration: 75 }}
-    out:fade={{ duration: 75 }}
-    class="bg-bg/80 fixed top-0 right-0 bottom-0 left-0 z-10 backdrop-blur-xs"
+    class="bg-bg/0 pointer-events-none fixed top-0 right-0 bottom-0 left-0 z-[999999999]"
   >
     <!-- CONTENT -->
     <div
       use:outsideClick={() => (open = false)}
       bind:this={contentEl}
       bind:contentBoxSize
-      transition:fade={{ duration: 75, delay: 76 }}
+      transition:fade={{ duration: 75 }}
       class={twMerge(
         'bg-bg fixed h-fit max-h-[calc(100vh-2rem)] rounded border',
-        'text-fg overflow-auto',
+        'text-fg pointer-events-auto overflow-auto',
         className
       )}
     >

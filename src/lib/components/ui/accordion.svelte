@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Button from '$lib/components/ui/button.svelte';
-  import Collapsible from '$lib/components/ui/collapsible.svelte';
+  import IconChevron from './icon-chevron.svelte';
   import Spinner from '$lib/components/ui/spinner.svelte';
   import type { Snippet } from 'svelte';
+  import { slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
 
   type Props = {
@@ -45,45 +45,34 @@
 <!-- CONTAINER -->
 <div class={twMerge('bg-bg text-fg w-full', className)} {...props}>
   <!-- HEADER -->
-  <Button
+  <button
     class={twMerge(
-      'hover:text-primary focus:text-primary w-full justify-between py-2 outline-none',
-      loading && 'hover:text-disabled-fg focus:text-disabled-fg-fg',
-      disabled && 'hover:text-disabled-fg focus:text-disabled-fg-fg'
+      'relative flex w-full items-center gap-1 px-3 py-1', // layout and positioning
+      'focus:text-primary hover:text-primary cursor-pointer rounded outline-none', // visual
+      (loading || disabled) &&
+        'text-disabled-fg pointer-events-none cursor-not-allowed',
+      className
     )}
-    variant="ghost"
     disabled={loading || disabled}
+    type="button"
     {onclick}
   >
     <p class="w-full text-left font-semibold">{title}</p>
 
     <!-- ICON DISPLAYED -->
     {#if loading}
-      <Spinner />
+      <Spinner class="mr-0.5 size-4" />
     {:else}
-      {@render IconChevron()}
+      <IconChevron
+        class={twMerge('size-5 transition-transform', open && 'rotate-180')}
+      />
     {/if}
-  </Button>
+  </button>
 
   <!-- CONTENT -->
-  <Collapsible class="px-3 pb-4" {open} {group} {value}>
-    {@render children?.()}
-  </Collapsible>
+  {#if open && (!group || group === value)}
+    <div class="px-3 pb-4" transition:slide={{ duration: 150 }}>
+      {@render children?.()}
+    </div>
+  {/if}
 </div>
-
-<!-- ICON CHEVRON -->
-{#snippet IconChevron()}
-  <svg
-    class={twMerge(
-      'size-6 transition-transform', // animate
-      open && 'rotate-180' // interaction
-    )}
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill="currentColor"
-      d="M18.53 9.53a.75.75 0 0 0 0-1.06H5.47a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0z"
-    />
-  </svg>
-{/snippet}

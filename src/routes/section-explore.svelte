@@ -48,7 +48,7 @@
     </Button>
   </div>
 </div>
-<Dropdown bind:open>
+<Dropdown placement="left" bind:open>
   <div class="max flex flex-col py-2">
     <div class="px-3">
       <p class="font-semibold">

@@ -14,11 +14,11 @@
       label: 'Can I contribute?',
       sub: true
     },
-    {
-      id: '1.2',
-      label: 'Is it production-ready?',
-      sub: true
-    },
+    // {
+    //   id: '1.2',
+    //   label: 'Is it production-ready?',
+    //   sub: true
+    // },
     {
       id: '1.3',
       label: 'How can I support you?',
@@ -33,14 +33,14 @@
 </script>
 
 <svelte:head>
-  <title>Introduction . lomer-ui</title>
+  <title>Intro . lomer-ui</title>
 </svelte:head>
 
 <PageWrapper
   {tickler}
-  title="Introduction"
+  title="Intro"
   sub="Docs"
-  info="Standalone components for your next project."
+  info="Base components for your next project."
   nextLabel="Installation"
   prevLabel="Home"
   nextLink="/docs/installation"

@@ -66,7 +66,12 @@
 
   <!-- DESCRIPTION -->
   {#if children}
-    <div class="ml-8">
+    <div
+      class={twMerge(
+        'text-muted ml-8',
+        (loading || disabled) && 'text-disabled'
+      )}
+    >
       {@render children?.()}
     </div>
   {/if}

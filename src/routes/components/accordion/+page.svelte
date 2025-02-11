@@ -1,11 +1,4 @@
 <script lang="ts">
-  import AccordionDisabled from './accordion-disabled.svelte';
-  import AccordionDisabledRaw from './accordion-disabled.svelte?raw';
-  import AccordionLoading from './accordion-loading.svelte';
-  import AccordionLoadingRaw from './accordion-loading.svelte?raw';
-  import AccordionMultiple from './accordion-multiple.svelte';
-  import AccordionMultipleRaw from './accordion-multiple.svelte?raw';
-  import AccordionRaw from '$lib/components/ui/accordion.svelte?raw';
   import AccordionSingleMode from './accordion-single-mode.svelte';
   import AccordionSingleModeRaw from './accordion-single-mode.svelte?raw';
   import AccordionUsage from './accordion-usage.svelte';
@@ -29,27 +22,7 @@
     },
     {
       id: '3',
-      label: 'Examples'
-    },
-    {
-      id: '3.1',
-      label: 'Multiple',
-      sub: true
-    },
-    {
-      id: '3.2',
-      label: 'Single mode',
-      sub: true
-    },
-    {
-      id: '3.3',
-      label: 'Loading',
-      sub: true
-    },
-    {
-      id: '3.4',
-      label: 'Disabled',
-      sub: true
+      label: 'Single mode'
     }
   ];
 </script>
@@ -87,41 +60,13 @@
     </PageArticle>
   </PageSection>
 
-  <!-- EXAMPLES -->
-  <PageSection id="3" title="Examples">
-    <!-- MULTIPLE -->
-    <PageArticle id="3.1" title="Multiple">
-      <Screen class="flex-col">
-        <AccordionMultiple />
-      </Screen>
-      <CopySvelteCode highlightedLines={[5, 6]} code={AccordionMultipleRaw} />
-    </PageArticle>
-
-    <!-- SINGLE MODE -->
-    <PageArticle id="3.2" title="Single mode">
+  <!-- SINGLE MODE -->
+  <PageSection id="3" title="Single mode">
+    <PageArticle title="Preview">
       <Screen class="flex-col">
         <AccordionSingleMode />
       </Screen>
-      <CopySvelteCode
-        highlightedLines={[2, 5, 6, 7]}
-        code={AccordionSingleModeRaw}
-      />
-    </PageArticle>
-
-    <!-- LOADING -->
-    <PageArticle id="3.3" title="Loading">
-      <Screen>
-        <AccordionLoading />
-      </Screen>
-      <CopySvelteCode highlightedLines={[4]} code={AccordionLoadingRaw} />
-    </PageArticle>
-
-    <!-- DISABLED -->
-    <PageArticle id="3.4" title="Disabled">
-      <Screen>
-        <AccordionDisabled />
-      </Screen>
-      <CopySvelteCode highlightedLines={[4]} code={AccordionDisabledRaw} />
+      <CopySvelteCode code={AccordionSingleModeRaw} />
     </PageArticle>
   </PageSection>
 </PageWrapper>

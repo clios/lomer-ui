@@ -3,3 +3,5 @@
 </script>
 
 <Button>Button</Button>
+<Button loading>Loading</Button>
+<Button disabled>Disabled</Button>

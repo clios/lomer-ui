@@ -36,11 +36,8 @@
 
     variant === 'destructive' && 'text-destructive outline-destructive',
 
-    // LOADING
-    loading && 'text-disabled-fg pointer-events-none cursor-not-allowed',
-
-    // DISABLED
-    disabled && 'text-disabled-fg pointer-events-none cursor-not-allowed',
+    (loading || disabled) &&
+      'text-disabled-fg pointer-events-none cursor-not-allowed',
 
     className
   )}

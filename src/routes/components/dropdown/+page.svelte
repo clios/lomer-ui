@@ -20,10 +20,8 @@
   import Screen from '$lib/components/screen.svelte';
   import DropdownUsage from './dropdown-usage.svelte';
   import DropdownUsageRaw from './dropdown-usage.svelte?raw';
-  import DropdownItemUsage from './dropdown-item-usage.svelte';
-  import DropdownItemUsageRaw from './dropdown-item-usage.svelte?raw';
-
-  let open = $state(false);
+  import DropdownPlacement from './dropdown-placement.svelte';
+  import DropdownPlacementRaw from './dropdown-placement.svelte?raw';
 
   const tickler = [
     {
@@ -36,22 +34,7 @@
     },
     {
       id: '3',
-      label: 'Dropdown Item'
-    },
-    {
-      id: '3.1',
-      label: 'Item',
-      sub: true
-    },
-    {
-      id: '3.2',
-      label: 'Checkbox',
-      sub: true
-    },
-    {
-      id: '3.3',
-      label: 'Destructive',
-      sub: true
+      label: 'Placement'
     }
   ];
 </script>
@@ -82,23 +65,20 @@
   <!-- USAGE -->
   <PageSection id="2" title="Usage">
     <PageArticle title="Preview">
-      <Screen>
+      <Screen class="justify-center">
         <DropdownUsage />
       </Screen>
       <CopySvelteCode code={DropdownUsageRaw} />
     </PageArticle>
   </PageSection>
 
-  <!-- DROPDOWN ITEM -->
-  <PageSection id="2" title="Dropdown Item">
-    <PageArticle title="Usage">
-      <Screen>
-        <DropdownItemUsage />
+  <!-- PLACEMENT -->
+  <PageSection id="2" title="Placement">
+    <PageArticle title="Preview">
+      <Screen class="justify-between">
+        <DropdownPlacement />
       </Screen>
-      <CopySvelteCode
-        code={DropdownItemUsageRaw}
-        highlightedLines={[3, 10, 11, 12, 13, 14]}
-      />
+      <CopySvelteCode code={DropdownPlacementRaw} />
     </PageArticle>
   </PageSection>
 </PageWrapper>

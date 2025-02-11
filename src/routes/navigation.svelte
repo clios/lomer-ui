@@ -1,7 +1,7 @@
 <script lang="ts">
   import SectionExplore from './section-explore.svelte';
   import Link from '$lib/components/ui/link.svelte';
-  import SidebarItem from './sidebar-item.svelte';
+  import NavLink from './nav-link.svelte';
   import { fade, slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
 
@@ -28,61 +28,29 @@
     >
       <SectionExplore />
 
-      <p class="mt-4 pl-4 font-semibold">Getting Started</p>
-      <SidebarItem href="/docs/introduction" label="Introduction" />
-      <!-- <SidebarItem href="/docs/installation" label="Installation" /> -->
-      <!-- <SidebarItem href="/docs/dark-mode" label="Dark Mode" /> -->
-      <!-- <SidebarItem href="/docs/theming" label="Theming" status="new" /> -->
-      <!-- <SidebarItem href="/docs/cli" label="CLI" /> -->
+      <p class="mt-4 pl-4 font-semibold">Docs</p>
+      <NavLink href="/docs/intro" label="Intro" />
+      <NavLink href="/docs/setup" label="Setup" />
+      <NavLink href="/docs/dark-mode" label="Dark Mode" />
+      <NavLink href="/docs/theming" label="Theming" status="new" />
+      <NavLink href="/docs/cli" label="CLI" />
 
       <p class="mt-4 pl-4 font-semibold">Components</p>
-      <SidebarItem href="/components/accordion" label="Accordion" />
-      <SidebarItem href="/components/alert" label="Alert" />
-      <SidebarItem href="/components/button" label="Button" />
-      <SidebarItem href="/components/checkbox" label="Checkbox" />
-      <SidebarItem href="/components/dialog" label="Dialog" />
-      <SidebarItem href="/components/drawer" label="Drawer" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <SidebarItem href="/components/dropdown" label="Dropdown" />
-      <!-- <SidebarItem href="/components/field" label="Field" />
-      <SidebarItem href="/components/input" label="Input" />
-      <SidebarItem href="/components/link" label="Link" />
-      <SidebarItem href="/components/radio" label="Radio" />
-      <SidebarItem href="/components/scroll-area" label="Scroll Area" />
-      <SidebarItem href="/components/select" label="Select" />
-      <SidebarItem href="/components/switch" label="Switch" />
-      <SidebarItem href="/components/textarea" label="Textarea" /> -->
+      <NavLink href="/components/accordion" label="Accordion" />
+      <NavLink href="/components/alert" label="Alert" />
+      <NavLink href="/components/button" label="Button" />
+      <NavLink href="/components/checkbox" label="Checkbox" />
+      <NavLink href="/components/dialog" label="Dialog" />
+      <NavLink href="/components/drawer" label="Drawer" />
+      <NavLink href="/components/dropdown" label="Dropdown" />
+      <!-- <NavLink href="/components/field" label="Field" />
+      <NavLink href="/components/input" label="Input" />
+      <NavLink href="/components/link" label="Link" />
+      <NavLink href="/components/radio" label="Radio" />
+      <NavLink href="/components/scroll-area" label="Scroll Area" />
+      <NavLink href="/components/select" label="Select" />
+      <NavLink href="/components/switch" label="Switch" />
+      <NavLink href="/components/textarea" label="Textarea" /> -->
 
       <div class="m-8 flex justify-end">
         <Link

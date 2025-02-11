@@ -26,8 +26,8 @@
     in:fade={{ duration: 75 }}
     out:fade={{ duration: 75 }}
     class={twMerge(
-      'z-[99999] grid place-content-center', // layout
-      'fixed top-0 right-0 bottom-0 left-0 z-10', // position
+      'grid place-content-center', // layout
+      'fixed top-0 right-0 bottom-0 left-0 z-[999999999]', // position
       'bg-bg/80 backdrop-blur-xs', // background
       'bg-[radial-gradient(#D4D4D8_1px,transparent_1px)]', // light dots
       'dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]', // dark dots

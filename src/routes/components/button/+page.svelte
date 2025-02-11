@@ -1,11 +1,6 @@
 <script lang="ts">
-  import ButtonDisabled from './button-disabled.svelte';
-  import ButtonDisabledRaw from './button-disabled.svelte?raw';
   import ButtonEdges from './button-edges.svelte';
   import ButtonEdgesRaw from './button-edges.svelte?raw';
-  import ButtonLoading from './button-loading.svelte';
-  import ButtonLoadingRaw from './button-loading.svelte?raw';
-  import ButtonRaw from '$lib/components/ui/button.svelte?raw';
   import ButtonSizes from './button-sizes.svelte';
   import ButtonSizesRaw from './button-sizes.svelte?raw';
   import ButtonUsage from './button-usage.svelte';
@@ -33,37 +28,19 @@
     },
     {
       id: '3',
-      label: 'Examples'
+      label: 'Variants'
     },
     {
-      id: '3.1',
-      label: 'Variants',
-      sub: true
+      id: '4',
+      label: 'With icon'
     },
     {
-      id: '3.2',
-      label: 'With icon',
-      sub: true
+      id: '5',
+      label: 'Sizes'
     },
     {
-      id: '3.3',
-      label: 'Sizes',
-      sub: true
-    },
-    {
-      id: '3.4',
-      label: 'Edges',
-      sub: true
-    },
-    {
-      id: '3.5',
-      label: 'Loading',
-      sub: true
-    },
-    {
-      id: '3.6',
-      label: 'Disabled',
-      sub: true
+      id: '6',
+      label: 'Edges'
     }
   ];
 </script>
@@ -94,60 +71,46 @@
   <!-- USAGE -->
   <PageSection id="2" title="Usage">
     <PageArticle title="Preview">
-      <Screen class="justify-center"><ButtonUsage /></Screen>
+      <Screen class="justify-center gap-4"><ButtonUsage /></Screen>
       <CopySvelteCode code={ButtonUsageRaw} />
     </PageArticle>
   </PageSection>
 
-  <!-- EXAMPLES -->
-  <PageSection id="3" title="Examples">
-    <!-- VARIANTS -->
-    <PageArticle id="3.1" title="Variants">
+  <!-- VARIANTS -->
+  <PageSection id="3" title="Variants">
+    <PageArticle title="Preview">
       <Screen class="flex-wrap justify-center gap-4"><ButtonVariants /></Screen>
-      <CopySvelteCode
-        highlightedLines={[5, 6, 7, 8, 9, 10]}
-        code={ButtonVariantsRaw}
-      />
+      <CopySvelteCode code={ButtonVariantsRaw} />
     </PageArticle>
+  </PageSection>
 
-    <!-- WITH ICON -->
-    <PageArticle id="3.2" title="With icon">
+  <!-- WITH ICON -->
+  <PageSection id="4" title="With icon">
+    <PageArticle title="Preview">
       <Screen class="justify-center">
         <ButtonWithIcon />
       </Screen>
-      <CopySvelteCode highlightedLines={[2, 6]} code={ButtonWithIconRaw} />
+      <CopySvelteCode code={ButtonWithIconRaw} />
     </PageArticle>
+  </PageSection>
 
-    <!-- SIZES -->
-    <PageArticle id="3.3" title="Sizes">
+  <!-- SIZES -->
+  <PageSection id="5" title="Sizes">
+    <PageArticle title="Preview">
       <Screen class="flex-wrap items-center justify-center gap-4">
         <ButtonSizes />
       </Screen>
-      <CopySvelteCode highlightedLines={[6, 9]} code={ButtonSizesRaw} />
+      <CopySvelteCode code={ButtonSizesRaw} />
     </PageArticle>
+  </PageSection>
 
-    <!-- EDGES -->
-    <PageArticle id="3.4" title="Edges">
+  <!-- EDGES -->
+  <PageSection id="6" title="Edges">
+    <PageArticle title="Preview">
       <Screen class="flex-wrap items-center justify-center gap-4">
         <ButtonEdges />
       </Screen>
-      <CopySvelteCode highlightedLines={[5, 6]} code={ButtonEdgesRaw} />
-    </PageArticle>
-
-    <!-- LOADING -->
-    <PageArticle id="3.5" title="Loading">
-      <Screen class="justify-center">
-        <ButtonLoading />
-      </Screen>
-      <CopySvelteCode highlightedLines={[4]} code={ButtonLoadingRaw} />
-    </PageArticle>
-
-    <!-- DISABLED -->
-    <PageArticle id="3.6" title="Disabled">
-      <Screen class="justify-center">
-        <ButtonDisabled />
-      </Screen>
-      <CopySvelteCode highlightedLines={[4]} code={ButtonDisabledRaw} />
+      <CopySvelteCode code={ButtonEdgesRaw} />
     </PageArticle>
   </PageSection>
 </PageWrapper>

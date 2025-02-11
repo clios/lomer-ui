@@ -1,9 +1,7 @@
 <script lang="ts">
-  import CheckboxDisabled from './checkbox-disabled.svelte';
-  import CheckboxDisabledRaw from './checkbox-disabled.svelte?raw';
-  import CheckboxLoading from './checkbox-loading.svelte';
-  import CheckboxLoadingRaw from './checkbox-loading.svelte?raw';
   import CheckboxRaw from '$lib/components/ui/checkbox.svelte?raw';
+  import CheckboxForm from './checkbox-form.svelte';
+  import CheckboxFormRaw from './checkbox-form.svelte?raw';
   import CheckboxUsage from './checkbox-usage.svelte';
   import CheckboxUsageRaw from './checkbox-usage.svelte?raw';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
@@ -25,17 +23,7 @@
     },
     {
       id: '3',
-      label: 'Examples'
-    },
-    {
-      id: '3.1',
-      label: 'Loading',
-      sub: true
-    },
-    {
-      id: '3.2',
-      label: 'Disabled',
-      sub: true
+      label: 'Form'
     }
   ];
 </script>
@@ -66,29 +54,20 @@
   <!-- USAGE -->
   <PageSection id="2" title="Usage">
     <PageArticle title="Preview">
-      <Screen class="flex-col">
+      <Screen class="flex-col gap-4">
         <CheckboxUsage />
       </Screen>
       <CopySvelteCode code={CheckboxUsageRaw} />
     </PageArticle>
   </PageSection>
 
-  <!-- EXAMPLES -->
-  <PageSection id="3" title="Examples">
-    <!-- LOADING -->
-    <PageArticle id="3.1" title="Loading">
-      <Screen class="flex-col">
-        <CheckboxLoading />
+  <!-- FORM -->
+  <PageSection id="3" title="Form">
+    <PageArticle title="Preview">
+      <Screen class="flex-col gap-4">
+        <CheckboxForm />
       </Screen>
-      <CopySvelteCode code={CheckboxLoadingRaw} />
-    </PageArticle>
-
-    <!-- DISABLED -->
-    <PageArticle id="3.2" title="Disabled">
-      <Screen class="flex-col">
-        <CheckboxDisabled />
-      </Screen>
-      <CopySvelteCode code={CheckboxDisabledRaw} />
+      <CopySvelteCode code={CheckboxFormRaw} />
     </PageArticle>
   </PageSection>
 </PageWrapper>

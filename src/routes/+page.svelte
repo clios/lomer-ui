@@ -12,7 +12,7 @@
   <title>lomer-ui</title>
 </svelte:head>
 
-<Dialog class="max-w-96" title="Hi devs," isOpen>
+<Dialog class="max-w-96" title="Hi devs," open>
   <p class="text-muted mt-4">
     I'm currently rebuilding this project to provide a better experience.
   </p>
@@ -93,7 +93,7 @@
       <span>building your own <br class="sm:hidden" /> components</span>
       <span class="text-fg font-semibold">with CLI</span>.
     </p>
-    <CopyCLI code="npx lomer-ui add" />
+    <CopyCLI code="npx lomer-ui get [component/s]" />
     <p>That's it!</p>
   </section>
 
