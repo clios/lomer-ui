@@ -5,9 +5,6 @@
 <!-- Basic -->
 <Checkbox label="Label here">Helper text here</Checkbox>
 
-<!-- Loading -->
-<Checkbox label="Loading" loading>Helper text here</Checkbox>
-
 <!-- Disabled -->
-<Checkbox label="Disabled" disabled></Checkbox>
-<Checkbox label="Disabled" disabled checked></Checkbox>
+<Checkbox label="Disabled" disabled>Helper text here</Checkbox>
+<Checkbox label="Disabled" disabled checked>Helper text here</Checkbox>

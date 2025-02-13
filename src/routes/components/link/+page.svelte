@@ -1,109 +1,56 @@
 <script lang="ts">
-  import Cli from '$site/cli.svelte';
-  import Code from '$site//code.svelte';
-  import ButtonComponentCode from '$lib/components/button-component-code.svelte';
-  import HeroSection from './hero-section.svelte';
+  import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+  import PageArticle from '$lib/components/page-article.svelte';
+  import PageSection from '$lib/components/page-section.svelte';
+  import PageWrapper from '$lib/components/page-wrapper.svelte';
   import Link from '$lib/components/ui/link.svelte';
-  import OnThisPage from '$site/on-this-page.svelte';
-  import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-  import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-  import PageFooter from '$lib/components/templates/page-footer.svelte';
-  import PageHeader from '$lib/components/templates/page-header.svelte';
-  import Preview from '$site/preview.svelte';
-  import Prop from '$site/prop.svelte';
-  import SubTitle from '$site/sub-title.svelte';
-  import Title from '$site/title.svelte';
-  import Val from '$site/val.svelte';
+  import Screen from '$lib/components/screen.svelte';
+  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import LinkUsage from './link-usage.svelte';
+  import LinkUsageRaw from './link-usage.svelte?raw';
+
+  const tickler = [
+    {
+      id: '1',
+      label: 'Installation'
+    },
+    {
+      id: '2',
+      label: 'Usage'
+    }
+  ];
 </script>
 
 <svelte:head>
   <title>Link . lomer-ui</title>
 </svelte:head>
 
-<OnThisPage>
-  <OnThisPageBtn id="1" title="Installation" />
-  <OnThisPageBtn id="2" title="Usage" />
-  <OnThisPageBtn id="3" title="Examples" />
-  <OnThisPageSubBtn id="3.1" title="No underline" />
-  <OnThisPageSubBtn id="3.2" title="Caret" />
-  <OnThisPageSubBtn id="3.3" title="Multiple" />
-  <OnThisPageSubBtn id="3.4" title="Loading" />
-</OnThisPage>
-
-<div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
-  <PageHeader
-    title="Link"
-    sub="Component"
-    info="Connects users to new destinations."
-  />
-  <HeroSection />
-
+<PageWrapper
+  {tickler}
+  title="Link"
+  sub="Component"
+  info="Connects users to new destinations."
+  prevLabel="Input"
+  prevLink="/components/input"
+  nextLabel="Radio"
+  nextLink="/components/radio"
+>
   <!-- INSTALLATION -->
-  <Title id="1">Installation</Title>
-  <Cli code={`npx lomer-ui add link`} />
-  <ButtonComponentCode
-    link="https://github.com/clios/lomer-ui/blob/main/src/lib/link.svelte"
-  />
+  <PageSection id="1" title="Installation">
+    <PageArticle title="Get the component">
+      <CopyCLI code={`npx lomer-ui get link`} />
+      <p>Or just <Link href="/docs/crafting">craft</Link> it already.</p>
+      <CopyCLI code={`npx lomer-ui craft link`} />
+    </PageArticle>
+  </PageSection>
 
   <!-- USAGE -->
-  <Title id="2">Usage</Title>
-  <Code
-    code={`import Link from '$lib/components/ui/link.svelte'`}
-    language="javascript"
-  />
-  <Code code={`<Link href="/">lomer-ui</Link>`} />
-  <Preview class="justify-center">
-    <Link href="#">lomer-ui</Link>
-  </Preview>
-
-  <!-- EXAMPLES -->
-  <Title id="3">Examples</Title>
-
-  <!-- NO UNDERLINE -->
-  <SubTitle id="3.1">No underline</SubTitle>
-  <p>Add <Val>no-underline</Val> class.</p>
-  <Code code={`<Link class="no-underline" href="#">lomer-ui</Link>`} />
-  <Preview>
-    <Link class="no-underline" href="#">lomer-ui</Link>
-  </Preview>
-
-  <!-- CARET -->
-  <SubTitle id="3.2">Caret</SubTitle>
-  <p>Add <Prop>caret</Prop> property.</p>
-  <Code code={`<Link href="#" caret>lomer-ui</Link>`} />
-  <Preview>
-    <Link href="#" caret>lomer-ui</Link>
-  </Preview>
-
-  <!-- MULTIPLE -->
-  <SubTitle id="3.3">Multiple</SubTitle>
-  <Code
-    code={`<div class="flex flex-col gap-2">` +
-      `\n\t<Link href="#" class="no-underline" caret>lomer-ui</Link>` +
-      `\n\t<Link href="#" class="no-underline" caret>lomer-ui</Link>` +
-      `\n\t<Link href="#" class="no-underline" caret>lomer-ui</Link>` +
-      `\n</div>`}
-  />
-  <Preview>
-    <div class="flex flex-col gap-2">
-      <Link href="#" class="no-underline" caret>lomer-ui</Link>
-      <Link href="#" class="no-underline" caret>lomer-ui</Link>
-      <Link href="#" class="no-underline" caret>lomer-ui</Link>
-    </div>
-  </Preview>
-
-  <!-- LOADING -->
-  <SubTitle id="3.4">Loading</SubTitle>
-  <p>Add <Prop>isLoading</Prop> property.</p>
-  <Code code={`<Link href="#" isLoading>lomer-ui</Link>`} />
-  <Preview>
-    <Link href="#" isLoading>lomer-ui</Link>
-  </Preview>
-
-  <PageFooter
-    prevLabel="Input"
-    prevLink="/components/input"
-    nextLabel="Radio"
-    nextLink="/components/radio"
-  />
-</div>
+  <PageSection id="2" title="Usage">
+    <PageArticle title="Preview">
+      <Screen class="flex-col gap-4">
+        <LinkUsage />
+      </Screen>
+      <CopySvelteCode code={LinkUsageRaw} />
+    </PageArticle>
+  </PageSection>
+</PageWrapper>

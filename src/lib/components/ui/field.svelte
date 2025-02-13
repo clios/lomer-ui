@@ -54,9 +54,7 @@
 
       <!-- OPTIONAL INDICATOR -->
       {#if optional}
-        <span
-          class="bg-muted-fg text-muted ml-1 rounded-sm px-1 py-[2px] text-xs"
-        >
+        <span class="text-muted ml-1 rounded-sm px-1 py-[2px] text-xs">
           Optional
         </span>
       {/if}

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Spinner from './spinner.svelte';
   import type { HTMLInputAttributes } from 'svelte/elements';
   import type { Snippet } from 'svelte';
   import { circInOut } from 'svelte/easing';
@@ -9,7 +8,6 @@
   type Props = {
     children?: Snippet;
     class?: string;
-    loading?: boolean;
     disabled?: boolean;
     label?: string;
   } & HTMLInputAttributes;
@@ -17,7 +15,6 @@
   let {
     children,
     class: className,
-    loading = false,
     disabled = false,
     checked = $bindable(false),
     label,
@@ -26,34 +23,38 @@
 </script>
 
 <!-- CONTAINER -->
-<div class={twMerge('text-fg', (loading || disabled) && 'text-disabled')}>
+<div>
   <!-- HIDE CHECKBOX -->
   <input
     type="checkbox"
     class="hidden appearance-none"
-    disabled={loading || disabled}
+    {disabled}
     bind:checked
     {...props}
   />
 
   <!-- MIMIC CHECKBOX -->
-  <label class="flex cursor-pointer items-center">
+  <label
+    class={twMerge(
+      'text-fg flex w-fit cursor-pointer items-center',
+      disabled && 'text-disabled-fg cursor-not-allowed'
+    )}
+  >
     <!-- BOX -->
     <button
       class={twMerge(
         'mr-2 grid min-h-6 min-w-6 place-content-center', // layout and positioning
         'outline-primary outline-offset-2 hover:outline focus:outline', // outline
-        'cursor-pointer rounded border', // visual
-        (loading || disabled) && 'outline-none'
+        'rounded border disabled:cursor-not-allowed disabled:outline-none' // visual
       )}
       onclick={() => (checked = !checked)}
-      disabled={loading || disabled}
+      {disabled}
     >
       <div class="pointer-events-none">
-        {#if loading}
-          <Spinner />
-        {:else if checked}
-          {@render CheckMark()}
+        {#if checked}
+          <span class={twMerge(disabled ? 'text-disabled-fg' : 'text-primary')}>
+            {@render CheckMark()}
+          </span>
         {:else}
           {@render CrossMark()}
         {/if}
@@ -66,12 +67,7 @@
 
   <!-- DESCRIPTION -->
   {#if children}
-    <div
-      class={twMerge(
-        'text-muted ml-8',
-        (loading || disabled) && 'text-disabled'
-      )}
-    >
+    <div class={twMerge('text-muted ml-8', disabled && 'text-disabled-fg')}>
       {@render children?.()}
     </div>
   {/if}
@@ -79,7 +75,7 @@
 
 {#snippet CheckMark()}
   <svg
-    class={twMerge('size-4', disabled ? 'text-disabled' : 'text-primary')}
+    class="size-4"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 -4 32 31"
     fill="none"

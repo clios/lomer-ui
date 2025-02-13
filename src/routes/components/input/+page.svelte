@@ -2,7 +2,6 @@
   import Cli from '$site/cli.svelte';
   import Code from '$site//code.svelte';
   import ButtonComponentCode from '$lib/components/button-component-code.svelte';
-  import HeroSection from './hero-section.svelte';
   import Input from '$lib/components/ui/input.svelte';
   import OnThisPage from '$site/on-this-page.svelte';
   import OnThisPageBtn from '$site/on-this-page__btn.svelte';
@@ -13,90 +12,76 @@
   import Prop from '$site/prop.svelte';
   import SubTitle from '$site/sub-title.svelte';
   import Title from '$site/title.svelte';
+  import PageWrapper from '$lib/components/page-wrapper.svelte';
+  import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+  import PageArticle from '$lib/components/page-article.svelte';
+  import PageSection from '$lib/components/page-section.svelte';
+  import Link from '$lib/components/ui/link.svelte';
+  import Screen from '$lib/components/screen.svelte';
+  import InputUsage from './input-usage.svelte';
+  import InputUsageRaw from './input-usage.svelte?raw';
+  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import InputForm from './input-form.svelte';
+  import InputFormRaw from './input-form.svelte?raw';
 
   let value = $state('');
+
+  const tickler = [
+    {
+      id: '1',
+      label: 'Installation'
+    },
+    {
+      id: '2',
+      label: 'Usage'
+    },
+    {
+      id: '3',
+      label: 'Form'
+    }
+  ];
 </script>
 
 <svelte:head>
   <title>Input . lomer-ui</title>
 </svelte:head>
 
-<OnThisPage>
-  <OnThisPageBtn id="1" title="Installation" />
-  <OnThisPageBtn id="2" title="Usage" />
-  <OnThisPageBtn id="3" title="Examples" />
-  <OnThisPageSubBtn id="3.1" title="Loading" />
-  <OnThisPageSubBtn id="3.2" title="Disabled" />
-  <OnThisPageSubBtn id="3.3" title="Read only" />
-</OnThisPage>
-
-<div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
-  <PageHeader
-    title="Input"
-    sub="Component"
-    info="A clear and simple way to collect user data."
-  />
-  <HeroSection />
-
+<PageWrapper
+  {tickler}
+  title="Input"
+  sub="Component"
+  info="A clear and simple way to collect user data."
+  prevLabel="Field"
+  prevLink="/components/field"
+  nextLabel="Link"
+  nextLink="/components/link"
+>
   <!-- INSTALLATION -->
-  <Title id="1">Installation</Title>
-  <Cli code={`npx lomer-ui add input`} />
-  <ButtonComponentCode
-    link="https://github.com/clios/lomer-ui/blob/main/src/lib/input.svelte"
-  />
+  <PageSection id="1" title="Installation">
+    <PageArticle title="Get the component">
+      <CopyCLI code={`npx lomer-ui get input`} />
+      <p>Or just <Link href="/docs/crafting">craft</Link> it already.</p>
+      <CopyCLI code={`npx lomer-ui craft input`} />
+    </PageArticle>
+  </PageSection>
 
   <!-- USAGE -->
-  <Title id="2">Usage</Title>
-  <p>Bind <Prop>value</Prop> property to reflect input's value.</p>
-  <Code
-    code={`import Input from '$lib/components/ui/input.svelte'` +
-      `\nlet value = $state('')`}
-    language="javascript"
-  />
-  <Code
-    code={`<div class="flex flex-col items-center gap-4">` +
-      `\n\t<Input bind:value />` +
-      `\n\t<p>Value: {value || 'N/A'}</p>` +
-      `\n</div>`}
-  />
-  <Preview>
-    <div class="flex flex-col items-center gap-4">
-      <Input bind:value />
-      <p>Value: {value || 'N/A'}</p>
-    </div>
-  </Preview>
+  <PageSection id="2" title="Usage">
+    <PageArticle title="Preview">
+      <Screen class="w-min flex-col gap-4">
+        <InputUsage />
+      </Screen>
+      <CopySvelteCode code={InputUsageRaw} />
+    </PageArticle>
+  </PageSection>
 
-  <!-- EXAMPLES -->
-  <Title id="3">Examples</Title>
-
-  <!-- LOADING -->
-  <SubTitle id="3.1">Loading</SubTitle>
-  <p>Add <Prop>isLoading</Prop> property.</p>
-  <Code code={`<Input isLoading value="lomer-ui" />`} />
-  <Preview>
-    <Input isLoading value="lomer-ui" />
-  </Preview>
-
-  <!-- DISABLED -->
-  <SubTitle id="3.2">Disabled</SubTitle>
-  <p>Add <Prop>isDisabled</Prop> property.</p>
-  <Code code={`<Input isDisabled value="lomer-ui" />`} />
-  <Preview>
-    <Input isDisabled value="lomer-ui" />
-  </Preview>
-
-  <!-- READ ONLY -->
-  <SubTitle id="3.3">Read only</SubTitle>
-  <p>Add <Prop>isReadOnly</Prop> property.</p>
-  <Code code={`<Input isReadOnly value="lomer-ui" />`} />
-  <Preview>
-    <Input isReadOnly value="lomer-ui" />
-  </Preview>
-
-  <PageFooter
-    prevLabel="Field"
-    prevLink="/components/field"
-    nextLabel="Link"
-    nextLink="/components/link"
-  />
-</div>
+  <!-- FORM -->
+  <PageSection id="3" title="Form">
+    <PageArticle title="Preview">
+      <Screen class="w-min flex-col gap-4">
+        <InputForm />
+      </Screen>
+      <CopySvelteCode code={InputFormRaw} />
+    </PageArticle>
+  </PageSection>
+</PageWrapper>

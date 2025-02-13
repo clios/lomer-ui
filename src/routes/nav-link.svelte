@@ -16,9 +16,8 @@
 <Link
   {href}
   {onclick}
-  caret
   class={twMerge(
-    'items-center pl-8 no-underline outline-none',
+    'text-fg hover:text-primary focus:text-primary items-center pl-8 no-underline outline-none',
     $page.url.pathname === href && 'text-primary'
   )}
 >
