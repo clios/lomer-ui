@@ -40,6 +40,7 @@
       <NavLink href="/components/alert" label="Alert" />
       <NavLink href="/components/button" label="Button" />
       <NavLink href="/components/checkbox" label="Checkbox" />
+      <NavLink href="/components/collapsible" label="Collapsible" />
       <NavLink href="/components/dialog" label="Dialog" />
       <NavLink href="/components/drawer" label="Drawer" />
       <NavLink href="/components/dropdown" label="Dropdown" />

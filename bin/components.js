@@ -19,12 +19,12 @@ export const COMPONENTS = [
     dependencies: [],
     actions: []
   },
-  // TODO: Mirgate components
   {
     name: 'collapsible',
     dependencies: [],
     actions: []
   },
+  // TODO: Mirgate components
   {
     name: 'dialog',
     dependencies: [],
