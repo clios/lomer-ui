@@ -1,33 +1,92 @@
 export const COMPONENTS = [
   {
     name: 'accordion',
-    dependencies: ['button', 'collapsible']
+    dependencies: ['button', 'collapsible'],
+    actions: []
   },
   {
     name: 'alert',
-    dependencies: ['button', 'close']
+    dependencies: ['button', 'close'],
+    actions: []
   },
   {
     name: 'button',
-    dependencies: ['spinner']
+    dependencies: ['spinner'],
+    actions: []
   },
   {
-    name: 'card-picker',
-    dependencies: []
+    name: 'checkbox',
+    dependencies: [],
+    actions: []
   },
-  { name: 'checkbox', dependencies: [] },
-  { name: 'close', dependencies: [] },
-  { name: 'collapsible', dependencies: [] },
-  { name: 'dialog', dependencies: [] },
-  { name: 'drawer', dependencies: [] },
-  { name: 'dropdown', dependencies: ['dropdown-item'] },
-  { name: 'field', dependencies: [] },
-  { name: 'input', dependencies: [] },
-  { name: 'link', dependencies: [] },
-  { name: 'radio', dependencies: [] },
-  { name: 'scroll-area', dependencies: [] },
-  { name: 'select', dependencies: [] },
-  { name: 'spinner', dependencies: [] },
-  { name: 'switch', dependencies: [] },
-  { name: 'textarea', dependencies: [] }
+  {
+    name: 'close',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'collapsible',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'dialog',
+    dependencies: [],
+    actions: ['escapeKey', 'focusTrap']
+  },
+  {
+    name: 'drawer',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'dropdown',
+    dependencies: ['dropdown-item'],
+    actions: ['escapeKey', 'outsideClick']
+  },
+  {
+    name: 'field',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'input',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'link',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'radio',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'scroll-area',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'select',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'spinner',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'switch',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'textarea',
+    dependencies: [],
+    actions: []
+  }
 ];
