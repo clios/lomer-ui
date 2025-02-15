@@ -14,12 +14,12 @@ export const COMPONENTS = [
     dependencies: [],
     actions: []
   },
-  // TODO: Mirgate components
   {
     name: 'checkbox',
     dependencies: [],
     actions: []
   },
+  // TODO: Mirgate components
   {
     name: 'collapsible',
     dependencies: [],

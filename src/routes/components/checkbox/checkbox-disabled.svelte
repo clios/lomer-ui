@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Checkbox from '$lib/components/ui/checkbox.svelte';
+  import Checkbox from '$lib/components/base/checkbox.svelte';
 </script>
 
 <Checkbox label="Disabled checkbox" disabled>
