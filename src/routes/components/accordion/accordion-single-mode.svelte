@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Accordion from '$lib/components/ui/accordion.svelte';
+  import Accordion from '$lib/components/base/accordion.svelte';
   let group = $state('');
 </script>
 

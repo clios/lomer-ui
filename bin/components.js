@@ -1,7 +1,7 @@
 export const COMPONENTS = [
   {
     name: 'accordion',
-    dependencies: ['button', 'collapsible'],
+    dependencies: [],
     actions: []
   },
   {

@@ -124,7 +124,7 @@ export async function craft(recipe, fileName) {
 
     // DEPENDENCIES
     const ds = r.dependency.split(' ');
-    const dDir = path.resolve('./src/lib/components/ui');
+    const dDir = path.resolve('./src/lib/components/base');
     for (const d of ds) {
       const dPath = path.join(dDir, `${d}.svelte`);
       if (!(await isFileExists(dPath))) {

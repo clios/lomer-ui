@@ -20,14 +20,14 @@ async function updateCSSFile(cssFilePath) {
   try {
     const cssFileContent = await fs.readFile(cssFilePath, 'utf8');
 
-    if (cssFileContent.includes('lib/components/ui/lomer.css')) {
+    if (cssFileContent.includes('lib/components/base/lomer.css')) {
       console.log('ℹ️ lomer.css is already imported.');
       return;
     }
 
     const updatedContent = cssFileContent.replace(
       /@import\s+['"]tailwindcss(?:\/base|\/components|\/utilities)?['"]\s*;/g,
-      (match) => `${match}\n@import './lib/components/ui/lomer.css';`
+      (match) => `${match}\n@import './lib/components/base/lomer.css';`
     );
 
     await fs.writeFile(cssFilePath, updatedContent, 'utf8');
@@ -59,8 +59,8 @@ export async function get(components) {
   }
 
   const githubBaseURL =
-    'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/components/ui';
-  const destDir = path.resolve('./src/lib/components/ui');
+    'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/components/base';
+  const destDir = path.resolve('./src/lib/components/base');
   const destLomer = path.join(destDir, 'lomer.css');
 
   // Track components to add (ensure no duplicates)
