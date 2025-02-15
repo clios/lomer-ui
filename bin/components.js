@@ -26,7 +26,7 @@ export const COMPONENTS = [
   },
   {
     name: 'dialog',
-    dependencies: [],
+    dependencies: ['button'],
     actions: ['escapeKey', 'focusTrap']
   },
   // TODO: Mirgate components
