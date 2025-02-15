@@ -1,7 +1,7 @@
 <script>
   import Button from '$lib/components/base/button.svelte';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
-  import Dialog from '$lib/components/ui/dialog.svelte';
+  import Dialog from '$lib/components/base/dialog.svelte';
   import Icon from '@iconify/svelte';
   import Link from '$lib/components/ui/link.svelte';
   import { goto } from '$app/navigation';

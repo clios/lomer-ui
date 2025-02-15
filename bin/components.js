@@ -24,12 +24,12 @@ export const COMPONENTS = [
     dependencies: [],
     actions: []
   },
-  // TODO: Mirgate components
   {
     name: 'dialog',
     dependencies: [],
     actions: ['escapeKey', 'focusTrap']
   },
+  // TODO: Mirgate components
   {
     name: 'drawer',
     dependencies: [],
