@@ -46,17 +46,17 @@
       <NavLink href="/components/field" label="Field" />
       <NavLink href="/components/input" label="Input" />
       <NavLink href="/components/link" label="Link" />
-      <!-- <NavLink href="/components/radio" label="Radio" />
-      <NavLink href="/components/scroll-area" label="Scroll Area" />
+      <NavLink href="/components/radio" label="Radio" />
+      <!-- <NavLink href="/components/scroll-area" label="Scroll Area" /> -->
       <NavLink href="/components/select" label="Select" />
-      <NavLink href="/components/switch" label="Switch" />
-      <NavLink href="/components/textarea" label="Textarea" /> -->
+      <!-- <NavLink href="/components/switch" label="Switch" /> -->
+      <!-- <NavLink href="/components/textarea" label="Textarea" /> -->
 
       <div class="m-8 flex justify-end">
         <Link
           href="https://github.com/clios"
           target="_blank"
-          class="font-mono italic no-underline"
+          class="text-fg font-mono italic no-underline"
         >
           - Clios
         </Link>

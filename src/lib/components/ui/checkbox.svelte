@@ -13,11 +13,11 @@
   } & HTMLInputAttributes;
 
   let {
+    checked = $bindable(false),
     children,
     class: className,
     disabled = false,
-    checked = $bindable(false),
-    label,
+    label = '',
     ...props
   }: Props = $props();
 </script>
@@ -45,7 +45,8 @@
       class={twMerge(
         'mr-2 grid min-h-6 min-w-6 place-content-center', // layout and positioning
         'outline-primary outline-offset-2 hover:outline focus:outline', // outline
-        'rounded border disabled:cursor-not-allowed disabled:outline-none' // visual
+        'cursor-pointer rounded border', // visual
+        disabled && 'cursor-not-allowed outline-none'
       )}
       onclick={() => (checked = !checked)}
       {disabled}

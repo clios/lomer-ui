@@ -4,6 +4,8 @@
   import { twMerge } from 'tailwind-merge';
   import Button from '$lib/components/ui/button.svelte';
   import Close from '$lib/components/ui/close.svelte';
+  import { escapeKey } from '$lib/actions/escapeKey.svelte.ts';
+  import { focusTrap } from '$lib/actions/focusTrap.svelte.ts';
 
   type Props = {
     children?: Snippet;
@@ -36,6 +38,8 @@
   >
     <!-- DIALOG CONTAINER -->
     <div
+      use:focusTrap
+      use:escapeKey={() => (open = false)}
       in:scale={{ duration: 75, delay: 75, start: 0.9 }}
       out:scale={{ duration: 75, start: 0.9 }}
       class={twMerge(

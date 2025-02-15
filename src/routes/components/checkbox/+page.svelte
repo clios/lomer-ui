@@ -1,7 +1,7 @@
 <script lang="ts">
   import CheckboxRaw from '$lib/components/ui/checkbox.svelte?raw';
-  import CheckboxForm from './checkbox-form.svelte';
-  import CheckboxFormRaw from './checkbox-form.svelte?raw';
+  import CheckboxDisabled from './checkbox-disabled.svelte';
+  import CheckboxDisabledRaw from './checkbox-disabled.svelte?raw';
   import CheckboxUsage from './checkbox-usage.svelte';
   import CheckboxUsageRaw from './checkbox-usage.svelte?raw';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
@@ -23,7 +23,7 @@
     },
     {
       id: '3',
-      label: 'Form'
+      label: 'Disabled'
     }
   ];
 </script>
@@ -61,13 +61,13 @@
     </PageArticle>
   </PageSection>
 
-  <!-- FORM -->
-  <PageSection id="3" title="Form">
+  <!-- DISABLED -->
+  <PageSection id="3" title="Disabled">
     <PageArticle title="Preview">
       <Screen class="flex-col gap-4">
-        <CheckboxForm />
+        <CheckboxDisabled />
       </Screen>
-      <CopySvelteCode code={CheckboxFormRaw} />
+      <CopySvelteCode code={CheckboxDisabledRaw} />
     </PageArticle>
   </PageSection>
 </PageWrapper>

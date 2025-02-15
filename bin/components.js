@@ -20,6 +20,7 @@ export const COMPONENTS = [
   { name: 'collapsible', dependencies: [] },
   { name: 'dialog', dependencies: [] },
   { name: 'drawer', dependencies: [] },
+  { name: 'dropdown', dependencies: ['dropdown-item'] },
   { name: 'field', dependencies: [] },
   { name: 'input', dependencies: [] },
   { name: 'link', dependencies: [] },

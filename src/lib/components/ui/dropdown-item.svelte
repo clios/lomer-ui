@@ -30,8 +30,8 @@
     'relative flex cursor-pointer items-center gap-1 rounded ', // base
     'w-full py-1 pr-12 pl-3', // box model
     'outline-primary -outline-offset-1', // outline
-    'hover:bg-fg/10 hover:outline', // hover
-    'focus:bg-fg/10 focus:outline', // focus
+    'hover:outline', // hover
+    'focus:outline', // focus
     'active:outline-2 active:-outline-offset-2', // active
 
     variant === 'destructive' && 'text-destructive outline-destructive',

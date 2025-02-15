@@ -21,16 +21,20 @@
         ></div>
       </div>
 
-      <Link href="/" class="font-mono no-underline outline-none">lomer-ui</Link>
+      <Link href="/" class="text-fg font-mono no-underline outline-none">
+        lomer-ui
+      </Link>
       <ButtonToggleSidebar bind:isOpen />
     </div>
 
     <!-- LINK SECTION -->
     <div class="hidden sm:flex sm:gap-4">
-      <Link href="/docs/introduction" class="text-sm no-underline">Docs</Link>
-      <Link href="/components/accordion" class="text-sm no-underline"
-        >Components</Link
-      >
+      <Link href="/docs/introduction" class="text-fg text-sm no-underline">
+        Docs
+      </Link>
+      <Link href="/components/accordion" class="text-fg text-sm no-underline">
+        Components
+      </Link>
     </div>
 
     <!-- TOGGLE MODE -->

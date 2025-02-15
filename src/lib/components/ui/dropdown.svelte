@@ -3,6 +3,8 @@
   import { fade, slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
   import { outsideClick } from '$lib/actions/outsideClick.svelte.ts';
+  import { escapeKey } from '$lib/actions/escapeKey.svelte.ts';
+  import { focusTrap } from '$lib/actions/focusTrap.svelte.ts';
 
   type Props = {
     children?: Snippet;
@@ -67,11 +69,11 @@
 
 {#if open}
   <!-- BACKDROP -->
-  <div
-    class="bg-bg/0 pointer-events-none fixed top-0 right-0 bottom-0 left-0 z-[999999999]"
-  >
+  <div class="bg-bg/0 fixed top-0 right-0 bottom-0 left-0 z-[999999999]">
     <!-- CONTENT -->
     <div
+      use:focusTrap
+      use:escapeKey={() => (open = false)}
       use:outsideClick={() => (open = false)}
       bind:this={contentEl}
       bind:contentBoxSize

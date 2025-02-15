@@ -1,10 +1,7 @@
 <script lang="ts">
   import Checkbox from '$lib/components/ui/checkbox.svelte';
+  let checked = $state(false);
 </script>
 
-<!-- Basic -->
-<Checkbox label="Label here">Helper text here</Checkbox>
-
-<!-- Disabled -->
-<Checkbox label="Disabled" disabled>Helper text here</Checkbox>
-<Checkbox label="Disabled" disabled checked>Helper text here</Checkbox>
+<Checkbox label="Label here" bind:checked>Helper text here</Checkbox>
+<p>Checked: {checked}</p>

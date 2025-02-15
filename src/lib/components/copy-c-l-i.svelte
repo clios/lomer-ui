@@ -1,9 +1,6 @@
 <script lang="ts">
   import Button from '$lib/components/ui/button.svelte';
-  import Highlight from 'svelte-highlight';
   import Icon from '@iconify/svelte';
-  import bash from 'svelte-highlight/languages/bash';
-  import felipec from 'svelte-highlight/styles/felipec';
   import { twMerge } from 'tailwind-merge';
 
   type Props = {
@@ -28,17 +25,14 @@
   let copyMessage = $state('');
 </script>
 
-<svelte:head>
-  {@html felipec}
-</svelte:head>
-
 <div
   class={twMerge(
     'bg-fg dark:bg-bg flex h-10 w-full max-w-fit items-center gap-1 overflow-x-auto overflow-y-hidden rounded border pr-1 text-sm not-italic',
     className
   )}
 >
-  <Highlight language={bash} {code}></Highlight>
+  <pre class="bg-fg dark:bg-bg text-bg dark:text-fg px-4"><code>{code}</code
+    ></pre>
 
   <Button
     class="outline-none"

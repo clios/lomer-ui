@@ -1,17 +1,4 @@
 <script lang="ts">
-  import Cli from '$site/cli.svelte';
-  import Code from '$site//code.svelte';
-  import ButtonComponentCode from '$lib/components/button-component-code.svelte';
-  import Input from '$lib/components/ui/input.svelte';
-  import OnThisPage from '$site/on-this-page.svelte';
-  import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-  import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-  import PageFooter from '$lib/components/templates/page-footer.svelte';
-  import PageHeader from '$lib/components/templates/page-header.svelte';
-  import Preview from '$site/preview.svelte';
-  import Prop from '$site/prop.svelte';
-  import SubTitle from '$site/sub-title.svelte';
-  import Title from '$site/title.svelte';
   import PageWrapper from '$lib/components/page-wrapper.svelte';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
@@ -23,8 +10,6 @@
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import InputForm from './input-form.svelte';
   import InputFormRaw from './input-form.svelte?raw';
-
-  let value = $state('');
 
   const tickler = [
     {
