@@ -42,13 +42,20 @@ async function setupTailwind() {
   await checkOrInstallTailwindCSS();
   await checkOrInstallTailwindMerge();
 
+  const destDir = path.resolve('./src');
+  const destAppCSS = path.join(destDir, 'app.css');
+
+  if (await isFileExists(destAppCSS)) {
+    await updateCSSFile('./src/app.css');
+    return;
+  }
+
   const { cssFilePath } = await prompts({
     type: 'text',
     name: 'cssFilePath',
     message: 'Where is TailwindCSS imported? (default: ./src/app.css)',
     initial: './src/app.css'
   });
-
   await updateCSSFile(cssFilePath);
 }
 
