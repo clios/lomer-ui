@@ -1,6 +1,6 @@
 <script>
   import AccordionsPreviewCode from '$lib/components/accordions-preview-code.svelte';
-  import Button from '$lib/components/ui/button.svelte';
+  import Button from '$lib/components/base/button.svelte';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import HighlightText from '$lib/components/highlight-text.svelte';

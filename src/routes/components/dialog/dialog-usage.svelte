@@ -1,5 +1,5 @@
 <script>
-  import Button from '$lib/components/ui/button.svelte';
+  import Button from '$lib/components/base/button.svelte';
   import Dialog from '$lib/components/ui/dialog.svelte';
 
   let open = $state(false);

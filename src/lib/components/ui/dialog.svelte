@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import { fade, scale } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
-  import Button from '$lib/components/ui/button.svelte';
+  import Button from '$lib/components/base/button.svelte';
   import Close from '$lib/components/ui/close.svelte';
   import { escapeKey } from '$lib/actions/escapeKey.svelte.ts';
   import { focusTrap } from '$lib/actions/focusTrap.svelte.ts';

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  import Button from '$lib/components/ui/button.svelte';
+  import Button from '$lib/components/base/button.svelte';
   import { goto } from '$app/navigation';
   import Icon from '@iconify/svelte';
 

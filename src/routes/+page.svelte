@@ -1,5 +1,5 @@
 <script>
-  import Button from '$lib/components/ui/button.svelte';
+  import Button from '$lib/components/base/button.svelte';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import Dialog from '$lib/components/ui/dialog.svelte';
   import Icon from '@iconify/svelte';

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from '$lib/components/ui/button.svelte';
+  import Button from '$lib/components/base/button.svelte';
   import Close from '$lib/components/ui/close.svelte';
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';

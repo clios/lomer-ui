@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import Button from './button.svelte';
+  import Button from '../base/button.svelte';
   import Link from './link.svelte';
   import type { HTMLAnchorAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from '$lib/components/ui/button.svelte';
+  import Button from '$lib/components/base/button.svelte';
   import Cli from '$site/cli.svelte';
   import ButtonComponentCode from '$lib/components/button-component-code.svelte';
   import Dropdown from '$lib/components/ui/dropdown.svelte';

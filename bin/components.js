@@ -11,7 +11,7 @@ export const COMPONENTS = [
   },
   {
     name: 'button',
-    dependencies: ['spinner'],
+    dependencies: [],
     actions: []
   },
   {

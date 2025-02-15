@@ -2,7 +2,7 @@
   // @ts-nocheck
   import { onMount } from 'svelte';
   import Icon from '@iconify/svelte';
-  import Button from '$lib/components/ui/button.svelte';
+  import Button from '$lib/components/base/button.svelte';
   import { twMerge } from 'tailwind-merge';
   import { fade } from 'svelte/transition';
 

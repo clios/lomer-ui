@@ -46,7 +46,7 @@
     <PageArticle title="Get the component">
       <CopyCLI code={`npx lomer-ui get accordion`} />
       <Link
-        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/ui/accordion.svelte"
+        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/accordion.svelte"
         target="_blank"
       >
         Source code
