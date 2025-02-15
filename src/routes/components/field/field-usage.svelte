@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Field from '$lib/components/ui/field.svelte';
-  import Input from '$lib/components/ui/input.svelte';
+  import Field from '$lib/components/base/field.svelte';
+  import Input from '$lib/components/base/input.svelte';
 </script>
 
 <!-- Basic -->

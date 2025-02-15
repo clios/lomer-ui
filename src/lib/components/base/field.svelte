@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
-  import { fade, slide } from 'svelte/transition';
   import type { Snippet } from 'svelte';
+  import { fade, slide } from 'svelte/transition';
+  import { twMerge } from 'tailwind-merge';
 
   type Orientation = 'vertical' | 'horizontal';
 

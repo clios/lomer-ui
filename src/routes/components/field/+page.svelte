@@ -42,8 +42,12 @@
   <PageSection id="1" title="Installation">
     <PageArticle title="Get the component">
       <CopyCLI code={`npx lomer-ui get field`} />
-      <p>Or just <Link href="/docs/crafting">craft</Link> it already.</p>
-      <CopyCLI code={`npx lomer-ui craft field`} />
+      <Link
+        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/field.svelte"
+        target="_blank"
+      >
+        Source code
+      </Link>
     </PageArticle>
   </PageSection>
 

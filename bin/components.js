@@ -44,7 +44,6 @@ export const COMPONENTS = [
     dependencies: [],
     actions: []
   },
-  // TODO: Mirgate components
   {
     name: 'field',
     dependencies: [],
@@ -55,6 +54,7 @@ export const COMPONENTS = [
     dependencies: [],
     actions: []
   },
+  // TODO: Mirgate components
   {
     name: 'link',
     dependencies: [],
