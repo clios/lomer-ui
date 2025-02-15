@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Drawer from '$lib/components/ui/drawer.svelte';
+  import Drawer from '$lib/components/base/drawer.svelte';
   import Button from '$lib/components/base/button.svelte';
 
   let open = $state(false);
