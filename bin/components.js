@@ -6,7 +6,7 @@ export const COMPONENTS = [
   },
   {
     name: 'alert',
-    dependencies: ['button', 'close'],
+    dependencies: ['button'],
     actions: []
   },
   {
@@ -14,13 +14,9 @@ export const COMPONENTS = [
     dependencies: [],
     actions: []
   },
+  // TODO: Mirgate components
   {
     name: 'checkbox',
-    dependencies: [],
-    actions: []
-  },
-  {
-    name: 'close',
     dependencies: [],
     actions: []
   },
