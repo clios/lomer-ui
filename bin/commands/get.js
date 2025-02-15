@@ -142,20 +142,24 @@ async function getActionsForComponents(components) {
 
   function collectActions(compName) {
     const component = COMPONENTS.find((c) => c.name === compName);
-    if (!component || toAdd.has(compName)) return;
+    if (!component) return;
 
-    toAdd.add(compName);
-    component.actions.forEach(collectActions);
+    component.actions.forEach((action) => toAdd.add(action));
+    component.dependencies.forEach(collectActions);
   }
 
   components.forEach(collectActions);
 
-  // Validate components
+  // List of valid actions from all components
+  const validActions = new Set(COMPONENTS.flatMap((comp) => comp.actions));
+
+  // Validate collected actions
   const invalidActions = [...toAdd].filter(
-    (c) => !COMPONENTS.some((comp) => comp.name === c)
+    (action) => !validActions.has(action)
   );
+
   if (invalidActions.length > 0) {
-    console.log(`❌ Invalid components: ${invalidActions.join(', ')}`);
+    console.log(`❌ Invalid actions: ${invalidActions.join(', ')}`);
     return;
   }
 
