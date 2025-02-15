@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '$lib/components/base/button.svelte';
-  import Dropdown from '$lib/components/ui/dropdown.svelte';
-  import DropdownItem from '$lib/components/ui/dropdown-item.svelte';
+  import Dropdown from '$lib/components/base/dropdown.svelte';
+  import DropdownItem from '$lib/components/base/dropdown-item.svelte';
 
   let openLeft = $state(false);
   let openCenter = $state(false);

@@ -34,12 +34,17 @@ export const COMPONENTS = [
     dependencies: ['button'],
     actions: ['escapeKey', 'focusTrap']
   },
-  // TODO: Mirgate components
   {
     name: 'dropdown',
     dependencies: ['dropdown-item'],
-    actions: ['escapeKey', 'outsideClick']
+    actions: ['escapeKey', 'outsideClick', 'focusTrap']
   },
+  {
+    name: 'dropdown-item',
+    dependencies: [],
+    actions: []
+  },
+  // TODO: Mirgate components
   {
     name: 'field',
     dependencies: [],

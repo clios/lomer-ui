@@ -8,7 +8,7 @@
   import ButtonCopyTheme from './button-copy-theme.svelte';
   import { mode } from 'mode-watcher';
   import { twMerge } from 'tailwind-merge';
-  import Dropdown from '$lib/components/ui/dropdown.svelte';
+  import Dropdown from '$lib/components/base/dropdown.svelte';
   import Close from '$lib/components/ui/close.svelte';
 
   let { open = $bindable(false) } = $props();

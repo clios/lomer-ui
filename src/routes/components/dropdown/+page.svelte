@@ -2,7 +2,7 @@
   import Button from '$lib/components/base/button.svelte';
   import Cli from '$site/cli.svelte';
   import ButtonComponentCode from '$lib/components/button-component-code.svelte';
-  import Dropdown from '$lib/components/ui/dropdown.svelte';
+  import Dropdown from '$lib/components/base/dropdown.svelte';
   import OnThisPage from '$site/on-this-page.svelte';
   import OnThisPageBtn from '$site/on-this-page__btn.svelte';
   import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
@@ -57,8 +57,12 @@
   <PageSection id="1" title="Installation">
     <PageArticle title="Get the component">
       <CopyCLI code={`npx lomer-ui get dropdown`} />
-      <p>Or just <Link href="/docs/crafting">craft</Link> it already.</p>
-      <CopyCLI code={`npx lomer-ui craft dropdown`} />
+      <Link
+        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/dropdown.svelte"
+        target="_blank"
+      >
+        Source code
+      </Link>
     </PageArticle>
   </PageSection>
 

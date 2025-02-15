@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { type Snippet } from 'svelte';
-  import { fade, slide } from 'svelte/transition';
-  import { twMerge } from 'tailwind-merge';
-  import { outsideClick } from '$lib/actions/outsideClick.svelte.ts';
   import { escapeKey } from '$lib/actions/escapeKey.svelte.ts';
+  import { fade } from 'svelte/transition';
   import { focusTrap } from '$lib/actions/focusTrap.svelte.ts';
+  import { outsideClick } from '$lib/actions/outsideClick.svelte.ts';
+  import { twMerge } from 'tailwind-merge';
+  import { type Snippet } from 'svelte';
 
   type Props = {
     children?: Snippet;
