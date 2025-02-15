@@ -89,17 +89,17 @@ export async function get(components) {
 
   // Ensure lomer.css exists
   if (!(await isFileExists(destLomer))) {
-    const { confirmation } = await prompts({
-      type: 'confirm',
-      name: 'confirmation',
-      message: 'The lomer.css not found. Initialize?',
-      initial: true
-    });
+    // const { confirmation } = await prompts({
+    //   type: 'confirm',
+    //   name: 'confirmation',
+    //   message: 'Initialize?',
+    //   initial: true
+    // });
 
-    if (!confirmation) {
-      console.log('❌ Initialization canceled.');
-      return;
-    }
+    // if (!confirmation) {
+    //   console.log('❌ Initialization canceled.');
+    //   return;
+    // }
 
     await setupTailwind();
     await fetchFile(`${githubBaseURL}/lomer.css`, destLomer);
