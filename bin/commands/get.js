@@ -47,16 +47,15 @@ async function setupTailwind() {
 
   if (await isFileExists(destAppCSS)) {
     await updateCSSFile('./src/app.css');
-    return;
+  } else {
+    const { cssFilePath } = await prompts({
+      type: 'text',
+      name: 'cssFilePath',
+      message: 'Where is TailwindCSS imported? (default: ./src/app.css)',
+      initial: './src/app.css'
+    });
+    await updateCSSFile(cssFilePath);
   }
-
-  const { cssFilePath } = await prompts({
-    type: 'text',
-    name: 'cssFilePath',
-    message: 'Where is TailwindCSS imported? (default: ./src/app.css)',
-    initial: './src/app.css'
-  });
-  await updateCSSFile(cssFilePath);
 }
 
 export async function get(components) {
