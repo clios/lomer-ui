@@ -38,6 +38,7 @@
       <p class="mt-4 pl-4 font-semibold">Components</p>
       <NavLink href="/components/accordion" label="Accordion" />
       <NavLink href="/components/alert" label="Alert" />
+      <NavLink href="/components/avatar" label="Avatar" />
       <NavLink href="/components/button" label="Button" />
       <NavLink href="/components/checkbox" label="Checkbox" />
       <NavLink href="/components/collapsible" label="Collapsible" />

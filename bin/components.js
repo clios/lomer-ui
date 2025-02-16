@@ -10,6 +10,11 @@ export const COMPONENTS = [
     actions: []
   },
   {
+    name: 'avatar',
+    dependencies: [],
+    actions: []
+  },
+  {
     name: 'button',
     dependencies: [],
     actions: []
