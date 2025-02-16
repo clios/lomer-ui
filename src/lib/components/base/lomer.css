@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
-
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -31,8 +29,6 @@
   --color-popup-fg: var(--color-zinc-950);
 
   --color-border: var(--color-zinc-300);
-
-  --color-spinner: var(--color-cyan-500);
 
   --radius: 0.25rem;
   --radius-card: calc(var(--radius) * 1.5);
@@ -67,8 +63,6 @@
   --color-popup-fg: var(--color-zinc-50);
 
   --color-border: var(--color-zinc-700);
-
-  --color-spinner: var(--color-cyan-400);
 }
 
 @layer base {
