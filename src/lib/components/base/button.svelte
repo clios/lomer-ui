@@ -18,7 +18,7 @@
     disabled?: boolean;
     edge?: 'default' | 'circle' | 'sharp';
     loading?: boolean;
-    size?: 'default' | 'icon' | 'small';
+    size?: 'default' | 'icon' | 'small' | 'fit';
     variant?: Variant;
   } & HTMLButtonAttributes;
 
@@ -56,6 +56,7 @@
     size === 'default' && 'px-3 py-1 text-base',
     size === 'icon' && 'p-1',
     size === 'small' && 'h-6 px-2 text-sm leading-6',
+    size === 'fit' && 'p-0',
 
     // EDGES
     edge === 'default' && 'rounded',
