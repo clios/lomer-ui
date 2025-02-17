@@ -50,7 +50,7 @@
       <NavLink href="/components/link" label="Link" />
       <NavLink href="/components/link-button" label="Link Button" />
       <NavLink href="/components/radio" label="Radio" />
-      <!-- <NavLink href="/components/scroll-area" label="Scroll Area" /> -->
+      <NavLink href="/components/scroll-area" label="Scroll Area" />
       <NavLink href="/components/select" label="Select" />
       <!-- <NavLink href="/components/switch" label="Switch" /> -->
       <!-- <NavLink href="/components/textarea" label="Textarea" /> -->

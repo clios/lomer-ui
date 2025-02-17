@@ -2,64 +2,85 @@
   import Cli from '$site//cli.svelte';
   import Code from '$site//code.svelte';
   import ButtonComponentCode from '$lib/components/button-component-code.svelte';
-  import HeroSection from './hero-section.svelte';
   import OnThisPage from '$site/on-this-page.svelte';
   import OnThisPageBtn from '$site/on-this-page__btn.svelte';
   import PageFooter from '$lib/components/templates/page-footer.svelte';
   import PageHeader from '$lib/components/templates/page-header.svelte';
   import Preview from '$site/preview.svelte';
-  import ScrollArea from '$lib/components/ui/scroll-area.svelte';
+  import ScrollArea from '$lib/components/base/scroll-area.svelte';
   import Title from '$site//title.svelte';
+  import Link from '$lib/components/base/link.svelte';
+  import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+  import PageArticle from '$lib/components/page-article.svelte';
+  import PageSection from '$lib/components/page-section.svelte';
+  import PageWrapper from '$lib/components/page-wrapper.svelte';
+  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import Screen from '$lib/components/screen.svelte';
+  import ScrollAreaUsage from './scroll-area-usage.svelte';
+  import ScrollAreaUsageRaw from './scroll-area-usage.svelte?raw';
+  import ScrollAreaHorizontal from './scroll-area-horizontal.svelte';
+  import ScrollAreaHorizontalRaw from './scroll-area-horizontal.svelte?raw';
+
+  const tickler = [
+    {
+      id: '1',
+      label: 'Installation'
+    },
+    {
+      id: '2',
+      label: 'Usage'
+    },
+    {
+      id: '3',
+      label: 'Horizontal'
+    }
+  ];
 </script>
 
 <svelte:head>
   <title>Scroll Area . lomer-ui</title>
 </svelte:head>
 
-<OnThisPage>
-  <OnThisPageBtn id="1" title="Installation" />
-  <OnThisPageBtn id="2" title="Usage" />
-</OnThisPage>
-
-<div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
-  <PageHeader
-    title="Scroll Area"
-    sub="Component"
-    info="Navigate overflowing content smoothly."
-  />
-  <HeroSection />
-
+<PageWrapper
+  {tickler}
+  title="Scroll Area"
+  sub="Component"
+  info="Navigate overflowing content smoothly."
+  prevLabel="Radio"
+  prevLink="/components/radio"
+  nextLabel="Select"
+  nextLink="/components/select"
+>
   <!-- INSTALLATION -->
-  <Title id="1">Installation</Title>
-  <Cli code={`npx lomer-ui add scroll-area`} />
-  <ButtonComponentCode
-    link="https://github.com/clios/lomer-ui/blob/main/src/lib/scroll-area.svelte"
-  />
+  <PageSection id="1" title="Installation">
+    <PageArticle title="Get the component">
+      <CopyCLI code={`npx lomer-ui get scroll-area`} />
+      <Link
+        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/scroll-area.svelte"
+        target="_blank"
+      >
+        Source code
+      </Link>
+    </PageArticle>
+  </PageSection>
 
-  <Title id="2">Usage</Title>
-  <Code
-    code={`import ScrollArea from '$lib/components/ui/scroll-area.svelte'`}
-    language="javascript"
-  />
-  <Code
-    code={`<ScrollArea class="h-80 w-72 rounded border dark:border-zinc-700">` +
-      `\n\tContent here...` +
-      `\n</ScrollArea>`}
-  />
-  <Preview>
-    <ScrollArea class="h-80 w-72 rounded border dark:border-zinc-700">
-      <p class="my-2 pl-4">Start</p>
-      {#each Array(40) as _, i}
-        <p class="my-2 pl-4">Line {i}</p>
-      {/each}
-      <p class="my-2 pl-4">End</p>
-    </ScrollArea>
-  </Preview>
+  <!-- USAGE -->
+  <PageSection id="2" title="Usage">
+    <PageArticle title="Preview">
+      <Screen class="justify-center">
+        <ScrollAreaUsage />
+      </Screen>
+      <CopySvelteCode code={ScrollAreaUsageRaw} />
+    </PageArticle>
+  </PageSection>
 
-  <PageFooter
-    prevLabel="Radio"
-    prevLink="/components/radio"
-    nextLabel="Select"
-    nextLink="/components/select"
-  />
-</div>
+  <!-- HORIZONTAL -->
+  <PageSection id="3" title="Horizontal">
+    <PageArticle title="Preview">
+      <Screen class="justify-center">
+        <ScrollAreaHorizontal />
+      </Screen>
+      <CopySvelteCode code={ScrollAreaHorizontalRaw} />
+    </PageArticle>
+  </PageSection>
+</PageWrapper>
