@@ -84,17 +84,12 @@ export const COMPONENTS = [
     dependencies: [],
     actions: []
   },
-  // TODO: Mirgate components
-  {
-    name: 'spinner',
-    dependencies: [],
-    actions: []
-  },
   {
     name: 'switch',
     dependencies: [],
     actions: []
   },
+  // TODO: Mirgate components
   {
     name: 'textarea',
     dependencies: [],

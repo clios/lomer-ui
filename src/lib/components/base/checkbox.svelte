@@ -46,14 +46,17 @@
         'mr-2 grid min-h-6 min-w-6 place-content-center', // layout and positioning
         'outline-primary outline-offset-2 hover:outline focus:outline', // outline
         'cursor-pointer rounded border', // visual
-        disabled && 'cursor-not-allowed outline-none'
+        checked && 'bg-primary',
+        disabled && 'bg-bg cursor-not-allowed outline-none'
       )}
       onclick={() => (checked = !checked)}
       {disabled}
     >
       <div class="pointer-events-none">
         {#if checked}
-          <span class={twMerge(disabled ? 'text-disabled-fg' : 'text-primary')}>
+          <span
+            class={twMerge(disabled ? 'text-disabled-fg' : 'text-primary-fg')}
+          >
             {@render CheckMark()}
           </span>
         {:else}
@@ -76,7 +79,7 @@
 
 {#snippet CheckMark()}
   <svg
-    class="size-4"
+    class="size-3"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 -4 32 31"
     fill="none"
@@ -92,7 +95,7 @@
 
 {#snippet CrossMark()}
   <svg
-    class="size-3.5"
+    class="size-2.5"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 25"
     fill="none"
