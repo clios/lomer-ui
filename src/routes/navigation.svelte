@@ -48,6 +48,7 @@
       <NavLink href="/components/field" label="Field" />
       <NavLink href="/components/input" label="Input" />
       <NavLink href="/components/link" label="Link" />
+      <NavLink href="/components/link-button" label="Link Button" />
       <NavLink href="/components/radio" label="Radio" />
       <!-- <NavLink href="/components/scroll-area" label="Scroll Area" /> -->
       <NavLink href="/components/select" label="Select" />
