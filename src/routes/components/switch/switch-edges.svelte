@@ -3,5 +3,5 @@
 </script>
 
 <Switch label="Default switch" />
-<Switch label="Sharp switch" edge="circle" />
-<Switch label="Circle switch" edge="sharp" />
+<Switch label="Sharp switch" edge="sharp" />
+<Switch label="Circle switch" edge="circle" />
