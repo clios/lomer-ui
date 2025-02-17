@@ -1,13 +1,12 @@
 <script lang="ts">
-  import Select from '$lib/components/ui/select.svelte';
+  import Select from '$lib/components/base/select.svelte';
 </script>
 
-<Select
-  options={[
-    { group: 'Colors' },
-    { value: 'blue', label: 'Blue' },
-    { value: 'red', label: 'Red' },
-    { value: 'green', label: 'Green', disabled: true },
-    { value: 'yellow', label: 'Yellow' }
-  ]}
-/>
+<Select>
+  <optgroup label="Colors">
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green" disabled>Green</option>
+    <option value="yellow">Yellow</option>
+  </optgroup>
+</Select>

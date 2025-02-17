@@ -20,14 +20,26 @@
   }: Props = $props();
 </script>
 
-<div class="relative flex w-fit items-center rounded">
+<div class="text-input-fg bg-input relative flex w-fit items-center rounded">
   <select
     class={twMerge(
-      'text-input-fg bg-input w-fit appearance-none py-1 pr-10 pl-2', // base
+      'w-fit appearance-none py-1 pr-10 pl-2', // base
       'cursor-pointer rounded border',
       'outline-primary outline-offset-2 hover:outline focus:outline', // outline
       disabled &&
         'bg-disabled text-disabled-fg cursor-not-allowed outline-none',
+
+      '[&>option]:bg-input',
+      '[&>option]:text-input-fg',
+
+      '[&>optgroup]:bg-input',
+      '[&>optgroup]:text-primary',
+      '[&>optgroup]:text-xs',
+
+      '[&>optgroup>option]:text-input-fg',
+      '[&>optgroup>option]:text-base',
+      '[&>optgroup>option:disabled]:text-disabled-fg',
+
       className
     )}
     {disabled}
