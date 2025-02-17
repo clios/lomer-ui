@@ -61,12 +61,11 @@
 
 <div class="my-2 px-6">
   <p class="mb-1 text-sm">Roundness</p>
-  <div class="flex justify-stretch gap-1">
+  <div class="flex gap-1">
     {#each roundness as round}
       {@const variant = radiusVal == round.name ? 'default' : 'inverted'}
       <Button
         class="w-8 justify-center"
-        edge="sharp"
         size="small"
         variant={variant as Variant}
         onclick={() => setRoundness(round)}

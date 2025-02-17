@@ -28,14 +28,14 @@
     >
       <SectionExplore />
 
-      <p class="mt-4 pl-4 font-semibold">Docs</p>
+      <p class="text-muted mt-4 pl-4 text-sm">Docs</p>
       <NavLink href="/docs/intro" label="Intro" />
       <NavLink href="/docs/setup" label="Setup" />
       <NavLink href="/docs/dark-mode" label="Dark Mode" />
       <NavLink href="/docs/theming" label="Theming" status="new" />
       <NavLink href="/docs/cli" label="CLI" />
 
-      <p class="mt-4 pl-4 font-semibold">Components</p>
+      <p class="text-muted mt-4 pl-4 text-sm">Components</p>
       <NavLink href="/components/accordion" label="Accordion" />
       <NavLink href="/components/alert" label="Alert" />
       <NavLink href="/components/avatar" label="Avatar" />
