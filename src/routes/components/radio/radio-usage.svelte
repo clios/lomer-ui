@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Radio from '$lib/components/ui/radio.svelte';
+  import Radio from '$lib/components/base/radio.svelte';
 </script>
 
 <Radio label="Label here">Helper text</Radio>

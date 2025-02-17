@@ -69,12 +69,12 @@ export const COMPONENTS = [
     dependencies: ['link', 'button'],
     actions: []
   },
-  // TODO: Mirgate components
   {
     name: 'radio',
     dependencies: [],
     actions: []
   },
+  // TODO: Mirgate components
   {
     name: 'scroll-area',
     dependencies: [],

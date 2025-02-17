@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Radio from '$lib/components/ui/radio.svelte';
+  import Radio from '$lib/components/base/radio.svelte';
   let group = $state('');
 </script>
 
