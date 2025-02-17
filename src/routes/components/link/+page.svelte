@@ -3,7 +3,7 @@
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
   import PageWrapper from '$lib/components/page-wrapper.svelte';
-  import Link from '$lib/components/ui/link.svelte';
+  import Link from '$lib/components/base/link.svelte';
   import Screen from '$lib/components/screen.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import LinkUsage from './link-usage.svelte';
@@ -39,8 +39,12 @@
   <PageSection id="1" title="Installation">
     <PageArticle title="Get the component">
       <CopyCLI code={`npx lomer-ui get link`} />
-      <p>Or just <Link href="/docs/crafting">craft</Link> it already.</p>
-      <CopyCLI code={`npx lomer-ui craft link`} />
+      <Link
+        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/link.svelte"
+        target="_blank"
+      >
+        Source code
+      </Link>
     </PageArticle>
   </PageSection>
 

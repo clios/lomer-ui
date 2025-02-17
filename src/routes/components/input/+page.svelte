@@ -3,7 +3,7 @@
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
-  import Link from '$lib/components/ui/link.svelte';
+  import Link from '$lib/components/base/link.svelte';
   import Screen from '$lib/components/screen.svelte';
   import InputUsage from './input-usage.svelte';
   import InputUsageRaw from './input-usage.svelte?raw';

@@ -5,7 +5,7 @@
   import DrawerLeftRaw from './drawer-left.svelte?raw';
   import DrawerUsage from './drawer-usage.svelte';
   import DrawerUsageRaw from './drawer-usage.svelte?raw';
-  import Link from '$lib/components/ui/link.svelte';
+  import Link from '$lib/components/base/link.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
   import PageWrapper from '$lib/components/page-wrapper.svelte';

@@ -3,7 +3,7 @@
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import Dialog from '$lib/components/base/dialog.svelte';
   import Icon from '@iconify/svelte';
-  import Link from '$lib/components/ui/link.svelte';
+  import Link from '$lib/components/base/link.svelte';
   import { goto } from '$app/navigation';
   import Screen from '$lib/components/screen.svelte';
 </script>

@@ -1,7 +1,7 @@
 <script>
   import Button from '$lib/components/base/button.svelte';
   import Icon from '@iconify/svelte';
-  import Link from '$lib/components/ui/link.svelte';
+  import Link from '$lib/components/base/link.svelte';
   import ButtonToggleSidebar from './button-toggle-sidebar.svelte';
   import { mode, toggleMode } from 'mode-watcher';
 

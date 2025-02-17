@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Link from '$lib/components/ui/link.svelte';
+  import Link from '$lib/components/base/link.svelte';
   import { page } from '$app/stores';
   import { twMerge } from 'tailwind-merge';
 

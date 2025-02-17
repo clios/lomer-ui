@@ -1,6 +1,6 @@
 <script lang="ts">
   import SectionExplore from './section-explore.svelte';
-  import Link from '$lib/components/ui/link.svelte';
+  import Link from '$lib/components/base/link.svelte';
   import NavLink from './nav-link.svelte';
   import { fade, slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';

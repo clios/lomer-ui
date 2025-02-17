@@ -3,7 +3,7 @@
   import PageSection from '$lib/components/page-section.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
-  import Link from '$lib/components/ui/link.svelte';
+  import Link from '$lib/components/base/link.svelte';
   import Screen from '$lib/components/screen.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import CollapsibleUsage from './collapsible-usage.svelte';

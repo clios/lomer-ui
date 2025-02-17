@@ -15,7 +15,7 @@
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
-  import Link from '$lib/components/ui/link.svelte';
+  import Link from '$lib/components/base/link.svelte';
   import AlertUsage from '../alert/alert-usage.svelte';
   import Screen from '$lib/components/screen.svelte';
   import DropdownUsage from './dropdown-usage.svelte';
