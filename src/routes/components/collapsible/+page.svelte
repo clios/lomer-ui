@@ -53,7 +53,7 @@
   <!-- USAGE -->
   <PageSection id="2" title="Usage">
     <PageArticle title="Preview">
-      <Screen class="flex-col gap-2">
+      <Screen class="flex-col">
         <CollapsibleUsage />
       </Screen>
       <CopySvelteCode code={CollapsibleUsageRaw} />

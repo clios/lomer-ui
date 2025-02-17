@@ -4,12 +4,12 @@
   let open = $state(false);
 </script>
 
-<div class="flex gap-2">
+<div class="flex">
   <Collapsible
     class="border"
     bind:open
-    collapseClass="w-0 h-40"
-    expandClass="w-32 h-40"
+    collapseClass="w-0 h-40 mr-0"
+    expandClass="w-32 h-40 mr-2"
   >
     Content
   </Collapsible>
