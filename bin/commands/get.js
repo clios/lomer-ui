@@ -125,7 +125,7 @@ export async function get(components) {
       });
 
       if (!replace) {
-        console.log(`Component "${component}" was not updated.`);
+        // console.log(`Component "${component}" was not updated.`);
         continue;
       }
     }
