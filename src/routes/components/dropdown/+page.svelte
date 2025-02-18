@@ -1,27 +1,17 @@
 <script lang="ts">
-  import Button from '$lib/components/base/button.svelte';
-  import Cli from '$site/cli.svelte';
-  import ButtonComponentCode from '$lib/components/button-component-code.svelte';
-  import Dropdown from '$lib/components/base/dropdown.svelte';
-  import OnThisPage from '$site/on-this-page.svelte';
-  import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-  import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-  import PageFooter from '$lib/components/templates/page-footer.svelte';
-  import PageHeader from '$lib/components/templates/page-header.svelte';
-  import Preview from '$site/preview.svelte';
-  import Title from '$site/title.svelte';
-  import PageWrapper from '$lib/components/page-wrapper.svelte';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import PageArticle from '$lib/components/page-article.svelte';
-  import PageSection from '$lib/components/page-section.svelte';
-  import Link from '$lib/components/base/link.svelte';
-  import AlertUsage from '../alert/alert-usage.svelte';
-  import Screen from '$lib/components/screen.svelte';
-  import DropdownUsage from './dropdown-usage.svelte';
-  import DropdownUsageRaw from './dropdown-usage.svelte?raw';
   import DropdownPlacement from './dropdown-placement.svelte';
   import DropdownPlacementRaw from './dropdown-placement.svelte?raw';
+  import DropdownSwitch from './dropdown-switch.svelte';
+  import DropdownSwitchRaw from './dropdown-switch.svelte?raw';
+  import DropdownUsage from './dropdown-usage.svelte';
+  import DropdownUsageRaw from './dropdown-usage.svelte?raw';
+  import Link from '$lib/components/base/link.svelte';
+  import PageArticle from '$lib/components/page-article.svelte';
+  import PageSection from '$lib/components/page-section.svelte';
+  import PageWrapper from '$lib/components/page-wrapper.svelte';
+  import Screen from '$lib/components/screen.svelte';
 
   const tickler = [
     {
@@ -35,6 +25,10 @@
     {
       id: '3',
       label: 'Placement'
+    },
+    {
+      id: '4',
+      label: 'Switch'
     }
   ];
 </script>
@@ -77,12 +71,31 @@
   </PageSection>
 
   <!-- PLACEMENT -->
-  <PageSection id="2" title="Placement">
+  <PageSection id="3" title="Placement">
     <PageArticle title="Preview">
       <Screen class="justify-between">
         <DropdownPlacement />
       </Screen>
       <CopySvelteCode code={DropdownPlacementRaw} />
+    </PageArticle>
+  </PageSection>
+
+  <!-- SWITCH -->
+  <PageSection id="4" title="Switch">
+    <PageArticle title="Get the component">
+      <CopyCLI code={`npx lomer-ui get dropdown-switch`} />
+      <Link
+        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/dropdown-switch.svelte"
+        target="_blank"
+      >
+        Source code
+      </Link>
+    </PageArticle>
+    <PageArticle title="Preview">
+      <Screen class="justify-center">
+        <DropdownSwitch />
+      </Screen>
+      <CopySvelteCode code={DropdownSwitchRaw} />
     </PageArticle>
   </PageSection>
 </PageWrapper>

@@ -42,10 +42,15 @@ export const COMPONENTS = [
   {
     name: 'dropdown',
     dependencies: ['dropdown-item'],
-    actions: ['escapeKey', 'outsideClick', 'focusTrap']
+    actions: ['escapeKey', 'outsideClick', 'focusTrap', 'verticalNavigation']
   },
   {
     name: 'dropdown-item',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'dropdown-switch',
     dependencies: [],
     actions: []
   },

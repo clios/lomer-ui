@@ -5,6 +5,7 @@
   import { outsideClick } from '$lib/actions/outsideClick.svelte.ts';
   import { twMerge } from 'tailwind-merge';
   import { type Snippet } from 'svelte';
+  import { verticalNavigation } from '$lib/actions/verticalNavigation.svelte.ts';
 
   type Props = {
     children?: Snippet;
@@ -73,6 +74,7 @@
     <!-- CONTENT -->
     <div
       use:focusTrap
+      use:verticalNavigation
       use:escapeKey={() => (open = false)}
       use:outsideClick={() => (open = false)}
       bind:this={contentEl}

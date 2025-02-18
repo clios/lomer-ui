@@ -1,7 +1,6 @@
 <script lang="ts">
   import Button from '$lib/components/base/button.svelte';
   import Dropdown from '$lib/components/base/dropdown.svelte';
-  import DropdownItem from '$lib/components/base/dropdown-item.svelte';
 
   let openLeft = $state(false);
   let openCenter = $state(false);
@@ -11,23 +10,17 @@
 <!-- Left -->
 <Button onclick={() => (openLeft = true)}>Left</Button>
 <Dropdown placement="left" bind:open={openLeft}>
-  <DropdownItem>Dropdown Item 1</DropdownItem>
-  <DropdownItem>Dropdown Item 2</DropdownItem>
-  <DropdownItem>Dropdown Item 3</DropdownItem>
+  <div class="h-56 w-36">Content</div>
 </Dropdown>
 
 <!-- Center -->
 <Button onclick={() => (openCenter = true)}>Center</Button>
 <Dropdown placement="center" bind:open={openCenter}>
-  <DropdownItem>Dropdown Item 1</DropdownItem>
-  <DropdownItem>Dropdown Item 2</DropdownItem>
-  <DropdownItem>Dropdown Item 3</DropdownItem>
+  <div class="h-56 w-36">Content</div>
 </Dropdown>
 
 <!-- Right -->
 <Button onclick={() => (openRight = true)}>Right</Button>
 <Dropdown placement="right" bind:open={openRight}>
-  <DropdownItem>Dropdown Item 1</DropdownItem>
-  <DropdownItem>Dropdown Item 2</DropdownItem>
-  <DropdownItem>Dropdown Item 3</DropdownItem>
+  <div class="h-56 w-36">Content</div>
 </Dropdown>
