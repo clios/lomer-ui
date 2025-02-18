@@ -1,8 +1,9 @@
 <script lang="ts">
   import Input from '$lib/components/base/input.svelte';
-
-  let value = $state('');
 </script>
 
-<Input bind:value />
+<!-- Basic -->
+<Input />
+
+<!-- Disabled -->
 <Input disabled value="This is disabled" />

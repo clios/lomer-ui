@@ -53,7 +53,7 @@
       <NavLink href="/components/scroll-area" label="Scroll Area" />
       <NavLink href="/components/select" label="Select" />
       <NavLink href="/components/switch" label="Switch" />
-      <!-- <NavLink href="/components/textarea" label="Textarea" /> -->
+      <NavLink href="/components/textarea" label="Textarea" />
 
       <div class="m-8 flex justify-end">
         <Link

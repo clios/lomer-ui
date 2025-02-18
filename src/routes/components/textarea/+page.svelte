@@ -1,97 +1,74 @@
 <script lang="ts">
-  import Cli from '$site/cli.svelte';
-  import Code from '$site//code.svelte';
-  import ButtonComponentCode from '$lib/components/button-component-code.svelte';
-  import HeroSection from './hero-section.svelte';
-  import OnThisPage from '$site/on-this-page.svelte';
-  import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-  import OnThisPageSubBtn from '$site/on-this-page__sub-btn.svelte';
-  import PageFooter from '$lib/components/templates/page-footer.svelte';
-  import PageHeader from '$lib/components/templates/page-header.svelte';
-  import Preview from '$site/preview.svelte';
-  import Prop from '$site/prop.svelte';
-  import SubTitle from '$site/sub-title.svelte';
-  import Textarea from '$lib/components/ui/textarea.svelte';
-  import Title from '$site/title.svelte';
+  import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import Link from '$lib/components/base/link.svelte';
+  import PageArticle from '$lib/components/page-article.svelte';
+  import PageSection from '$lib/components/page-section.svelte';
+  import PageWrapper from '$lib/components/page-wrapper.svelte';
+  import Screen from '$lib/components/screen.svelte';
+  import TextareaForm from './textarea-form.svelte';
+  import TextareaFormRaw from './textarea-form.svelte?raw';
+  import TextareaUsage from './textarea-usage.svelte';
+  import TextareaUsageRaw from './textarea-usage.svelte?raw';
 
-  let value = $state('');
+  const tickler = [
+    {
+      id: '1',
+      label: 'Installation'
+    },
+    {
+      id: '2',
+      label: 'Usage'
+    },
+    {
+      id: '3',
+      label: 'Form'
+    }
+  ];
 </script>
 
 <svelte:head>
   <title>Textarea . lomer-ui</title>
 </svelte:head>
 
-<OnThisPage>
-  <OnThisPageBtn id="1" title="Installation" />
-  <OnThisPageBtn id="2" title="Usage" />
-  <OnThisPageBtn id="3" title="Examples" />
-  <OnThisPageSubBtn id="3.1" title="Loading" />
-  <OnThisPageSubBtn id="3.2" title="Disabled" />
-  <OnThisPageSubBtn id="3.3" title="Read only" />
-</OnThisPage>
-
-<div class="mx-auto flex flex-col gap-4 lg:pt-4 xl:pr-80 2xl:w-[1000px]">
-  <PageHeader
-    title="Textarea"
-    sub="Component"
-    info="Capture multi-line text with ease."
-  />
-  <HeroSection />
-
+<PageWrapper
+  {tickler}
+  title="Textarea"
+  sub="Component"
+  info="Capture multi-line text with ease."
+  prevLabel="Switch"
+  prevLink="/components/switch"
+>
   <!-- INSTALLATION -->
-  <Title id="1">Installation</Title>
-  <Cli code={`npx lomer-ui add textarea`} />
-  <ButtonComponentCode
-    link="https://github.com/clios/lomer-ui/blob/main/src/lib/textarea.svelte"
-  />
+  <PageSection id="1" title="Installation">
+    <PageArticle title="Get the component">
+      <CopyCLI code={`npx lomer-ui get textarea`} />
+      <Link
+        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/textarea.svelte"
+        target="_blank"
+      >
+        Source code
+      </Link>
+    </PageArticle>
+  </PageSection>
 
   <!-- USAGE -->
-  <Title id="2">Usage</Title>
-  <p>Bind <Prop>value</Prop> property to reflect textarea's value.</p>
-  <Code
-    code={`import Textarea from '$lib/components/ui/textarea.svelte'` +
-      `\nlet value = $state('')`}
-    language="javascript"
-  />
-  <Code
-    code={`<div class="flex flex-col items-center gap-4">` +
-      `\n\t<Textarea bind:value />` +
-      `\n\t<p>Value: {value || 'N/A'}</p>` +
-      `\n</div>`}
-  />
-  <Preview>
-    <div class="flex flex-col items-center gap-4">
-      <Textarea bind:value />
-      <p>Value: {value || 'N/A'}</p>
-    </div>
-  </Preview>
+  <PageSection id="2" title="Usage">
+    <PageArticle title="Preview">
+      <Screen class="w-min flex-col gap-4">
+        <TextareaUsage />
+      </Screen>
+      <CopySvelteCode code={TextareaUsageRaw} />
+    </PageArticle>
+  </PageSection>
 
-  <!-- EXAMPLES -->
-  <Title id="3">Examples</Title>
-
-  <!-- LOADING -->
-  <SubTitle id="3.1">Loading</SubTitle>
-  <p>Add <Prop>isLoading</Prop> property.</p>
-  <Code code={`<Textarea isLoading value="lomer-ui" />`} />
-  <Preview>
-    <Textarea isLoading value="lomer-ui" />
-  </Preview>
-
-  <!-- DISABLED -->
-  <SubTitle id="3.2">Disabled</SubTitle>
-  <p>Add <Prop>isDisabled</Prop> property.</p>
-  <Code code={`<Textarea isDisabled value="lomer-ui" />`} />
-  <Preview>
-    <Textarea isDisabled value="lomer-ui" />
-  </Preview>
-
-  <!-- READ ONLY -->
-  <SubTitle id="3.3">Read only</SubTitle>
-  <p>Add <Prop>isReadOnly</Prop> property.</p>
-  <Code code={`<Textarea isReadOnly value="lomer-ui" />`} />
-  <Preview>
-    <Textarea isReadOnly value="lomer-ui" />
-  </Preview>
-
-  <PageFooter prevLabel="Switch" prevLink="/components/switch" />
-</div>
+  <!-- FORM -->
+  <PageSection id="3" title="Form">
+    <PageArticle title="Preview">
+      <Screen class="w-min flex-col gap-4">
+        <TextareaForm />
+      </Screen>
+      <CopySvelteCode code={TextareaFormRaw} />
+    </PageArticle>
+  </PageSection>
+</PageWrapper>
