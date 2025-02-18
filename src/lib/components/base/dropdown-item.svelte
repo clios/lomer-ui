@@ -17,7 +17,7 @@
     children,
     class: className,
     disabled = false,
-    loading = false,
+    loading = $bindable(false),
     variant = 'default',
     type = 'button',
     ...props

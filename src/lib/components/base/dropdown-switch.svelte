@@ -23,7 +23,7 @@
     disabled = false,
     edge = 'default',
     label = '',
-    loading = false,
+    loading = $bindable(false),
     onchange,
     ...props
   }: Props = $props();

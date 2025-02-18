@@ -21,7 +21,7 @@
     disabled = false,
     edge = 'default',
     label = '',
-    loading = false,
+    loading = $bindable(false),
     ...props
   }: Props = $props();
 </script>

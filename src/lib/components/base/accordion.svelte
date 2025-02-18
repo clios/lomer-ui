@@ -20,7 +20,7 @@
     class: className,
     disabled = false,
     group = $bindable(),
-    loading = false,
+    loading = $bindable(false),
     name,
     open = false,
     title,

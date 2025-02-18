@@ -17,7 +17,7 @@
     class?: string;
     edge?: 'default' | 'circle' | 'sharp';
     isDisabled?: boolean;
-    isLoading?: boolean;
+    loading?: boolean;
     size?: 'default' | 'icon' | 'small';
     type?: 'submit' | 'reset' | 'button';
     variant?: Variant;
@@ -30,7 +30,7 @@
     class: className,
     edge = 'default',
     isDisabled = false,
-    isLoading = false,
+    loading = $bindable(false),
     size = 'default',
     type = 'button',
     variant = 'default',
@@ -73,7 +73,7 @@
     'disabled:cursor-not-allowed disabled:outline-hidden', // visual
 
     // LOADING
-    isLoading && '',
+    loading && '',
 
     group === value ? 'border-primary' : 'border-primary/0',
 
@@ -82,9 +82,9 @@
   {type}
   {onclick}
   {...props}
-  disabled={isLoading || isDisabled}
+  disabled={loading || isDisabled}
 >
-  {#if isLoading}
+  {#if loading}
     <div class="absolute right-1/2 bottom-1/2 translate-x-1/2 translate-y-1/2">
       {@render IconLoading()}
     </div>

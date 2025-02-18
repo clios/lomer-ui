@@ -5,7 +5,7 @@
   type Props = {
     class?: string;
     isDisabled?: boolean;
-    isLoading?: boolean;
+    loading?: boolean;
     isReadOnly?: boolean;
     value?: string;
   } & HTMLTextareaAttributes;
@@ -13,7 +13,7 @@
   let {
     class: className,
     isDisabled = false,
-    isLoading = false,
+    loading = $bindable(false),
     isReadOnly = false,
     value = $bindable(''),
     ...props
@@ -36,7 +36,7 @@
       'disabled:cursor-default disabled:outline-0 disabled:hover:cursor-not-allowed', // disabled
 
       // LOADING
-      isLoading && 'disabled:text-disabled',
+      loading && 'disabled:text-disabled',
 
       // DISABLED
       'disabled:border-disabled-fg', // border
@@ -55,7 +55,7 @@
     {onclick}
     {...props}
   ></textarea>
-  {#if isLoading}
+  {#if loading}
     {@render IconLoading()}
   {:else if isDisabled}
     {@render IconDisabled()}
