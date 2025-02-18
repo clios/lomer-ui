@@ -27,7 +27,7 @@
     class: className,
     disabled = false,
     edge = 'default',
-    loading = false,
+    loading = $bindable(false),
     size = 'default',
     variant = 'default',
     type = 'button',
