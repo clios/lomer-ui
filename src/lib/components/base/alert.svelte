@@ -58,7 +58,11 @@
 {/if}
 
 {#snippet IconInfo()}
-  <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <svg
+    class="size-6 min-w-6"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 20 20"
+  >
     <rect width="20" height="20" fill="none" />
     <path
       fill="currentColor"

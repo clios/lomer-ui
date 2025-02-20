@@ -1,67 +1,71 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /* General background and foreground color. */
   --color-bg: var(--color-zinc-50);
   --color-fg: var(--color-zinc-950);
 
+  /* Branding color of your design. */
   --color-primary: var(--color-cyan-600);
   --color-primary-fg: var(--color-zinc-50);
 
+  /* Supporting color of your design. */
   --color-secondary: var(--color-zinc-200);
   --color-secondary-fg: var(--color-zinc-950);
 
+  /* Signals danger, warning or irreversibility action color. */
   --color-destructive: var(--color-red-500);
   --color-destructive-fg: var(--color-zinc-50);
 
+  /* Softer contrast for supporting details color. */
   --color-muted: var(--color-zinc-600);
   --color-muted-fg: var(--color-zinc-400);
 
+  /* Visually indicate disabled actions. */
   --color-disabled: var(--color-zinc-200);
   --color-disabled-fg: var(--color-zinc-400);
 
+  /* Form input elements color. */
   --color-input: var(--color-zinc-50);
   --color-input-fg: var(--color-zinc-950);
 
-  --color-card: var(--color-zinc-100);
-  --color-card-fg: var(--color-zinc-950);
-
-  --color-popup: var(--color-zinc-100);
-  --color-popup-fg: var(--color-zinc-950);
-
+  /* Default border color. */
   --color-border: var(--color-zinc-300);
 
+  /* Default border radius. */
   --radius: 0.25rem;
-  --radius-card: calc(var(--radius) * 1.5);
 }
 
 .dark {
+  /* General background and foreground color. */
   --color-bg: var(--color-zinc-950);
   --color-fg: var(--color-zinc-50);
 
+  /* Branding color of your design. */
   --color-primary: var(--color-cyan-500);
   --color-primary-fg: var(--color-zinc-50);
 
+  /* Supporting color of your design. */
   --color-secondary: var(--color-zinc-800);
   --color-secondary-fg: var(--color-zinc-50);
 
+  /* Signals danger, warning or irreversibility action color. */
   --color-destructive: var(--color-red-500);
   --color-destructive-fg: var(--color-zinc-50);
 
+  /* Softer contrast for supporting details color. */
   --color-muted: var(--color-zinc-400);
   --color-muted-fg: var(--color-zinc-600);
 
+  /* Visually indicate disabled actions. */
   --color-disabled: var(--color-zinc-800);
   --color-disabled-fg: var(--color-zinc-500);
 
+  /* Form input elements color. */
   --color-input: var(--color-zinc-950);
   --color-input-fg: var(--color-zinc-50);
 
-  --color-card: var(--color-zinc-900);
-  --color-card-fg: var(--color-zinc-50);
-
-  --color-popup: var(--color-zinc-950);
-  --color-popup-fg: var(--color-zinc-50);
-
+  /* Default border color. */
   --color-border: var(--color-zinc-700);
 }
 
@@ -71,7 +75,6 @@
   }
   body {
     @apply bg-bg text-fg;
-    font-family: 'Oxygen', Courier, sans-serif;
   }
   ::selection {
     background-color: var(--color-primary) !important;

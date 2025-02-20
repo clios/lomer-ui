@@ -1,14 +1,4 @@
 <script lang="ts">
-  import Cli from '$site//cli.svelte';
-  import Code from '$site//code.svelte';
-  import ButtonComponentCode from '$lib/components/button-component-code.svelte';
-  import OnThisPage from '$site/on-this-page.svelte';
-  import OnThisPageBtn from '$site/on-this-page__btn.svelte';
-  import PageFooter from '$lib/components/templates/page-footer.svelte';
-  import PageHeader from '$lib/components/templates/page-header.svelte';
-  import Preview from '$site/preview.svelte';
-  import ScrollArea from '$lib/components/base/scroll-area.svelte';
-  import Title from '$site//title.svelte';
   import Link from '$lib/components/base/link.svelte';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
