@@ -65,7 +65,7 @@
     <p class="text-primary text-center text-3xl lg:text-4xl">lomer-ui</p>
     <p class="text-muted text-center">Keep It Simply Styled</p>
     <div class="mt-8 flex justify-center gap-4">
-      <Button class="text-nowrap" onclick={() => goto('/docs/introduction')}>
+      <Button class="text-nowrap" onclick={() => goto('/docs/intro')}>
         Get Started
       </Button>
 
