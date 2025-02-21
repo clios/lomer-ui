@@ -32,7 +32,7 @@
       <NavLink href="/docs/intro" label="Intro" />
       <NavLink href="/docs/setup" label="Setup" />
       <NavLink href="/docs/dark-mode" label="Dark Mode" />
-      <NavLink href="/docs/theming" label="Theming" status="new" />
+      <NavLink href="/docs/theming" label="Theming" />
       <NavLink href="/docs/cli" label="CLI" />
 
       <p class="text-muted mt-4 pl-4 text-sm">Components</p>

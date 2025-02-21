@@ -18,74 +18,91 @@
 <Dialog title="Theme" bind:open>
   <p class="text-muted mb-2">Copy and paste it to lomer.css</p>
 
-  <!-- <CopyCSSCode
-    code={`@theme {
-	--color-bg: var(--color-${toneColor}-50);
-	--color-fg: var(--color-${toneColor}-950);
+  <CopyCSSCode
+    class="max-h-[calc(100vh-12rem)]"
+    code={`@variant dark (&:where(.dark, .dark *));
 
-	--color-primary: var(--color-${primaryColor}-600);
-	--color-primary-fg: var(--color-${toneColor}-50);
+@theme {
+  /* General background and foreground color. */
+  --color-bg: var(--color-${toneColor}-50);
+  --color-fg: var(--color-${toneColor}-950);
 
-	--color-secondary: var(--color-${toneColor}-200);
-	--color-secondary-fg: var(--color-${toneColor}-950);
+  /* Branding color of your design. */
+  --color-primary: var(--color-${primaryColor}-600);
+  --color-primary-fg: var(--color-${toneColor}-50);
 
-	--color-destructive: var(--color-red-500);
-	--color-destructive-fg: var(--color-${toneColor}-50);
+  /* Supporting color of your design. */
+  --color-secondary: var(--color-${toneColor}-200);
+  --color-secondary-fg: var(--color-${toneColor}-950);
 
-	--color-muted: var(--color-${toneColor}-600);
-	--color-muted-fg: var(--color-${toneColor}-400);
+  /* Signals danger, warning or irreversibility action color. */
+  --color-destructive: var(--color-red-500);
+  --color-destructive-fg: var(--color-${toneColor}-50);
 
-	--color-disabled: var(--color-${toneColor}-500);
-	--color-disabled-fg: var(--color-${toneColor}-800);
+  /* Softer contrast for supporting details color. */
+  --color-muted: var(--color-${toneColor}-600);
+  --color-muted-fg: var(--color-${toneColor}-400);
 
-	--color-input: var(--color-${toneColor}-50);
-	--color-input-fg: var(--color-${toneColor}-950);
+  /* Visually indicate disabled actions. */
+  --color-disabled: var(--color-${toneColor}-200);
+  --color-disabled-fg: var(--color-${toneColor}-400);
 
-	--color-card: var(--color-${toneColor}-200);
-	--color-card-fg: var(--color-${toneColor}-950);
+  /* Form input elements color. */
+  --color-input: var(--color-${toneColor}-50);
+  --color-input-fg: var(--color-${toneColor}-950);
 
-	--color-popup: var(--color-${toneColor}-50);
-	--color-popup-fg: var(--color-${toneColor}-950);
+  /* Default border color. */
+  --color-border: var(--color-${toneColor}-300);
 
-	--color-border: var(--color-${toneColor}-300);
-
-	--color-spinner: var(--color-${primaryColor}-500);
-
-	--radius: ${radiusVal}rem;
-	--radius-card: calc(var(--radius) * 1.5);
+  /* Default border radius. */
+  --radius: ${radiusVal}rem;
 }
 
 .dark {
-	--color-bg: var(--color-${toneColor}-950);
-	--color-fg: var(--color-${toneColor}-50);
+  /* General background and foreground color. */
+  --color-bg: var(--color-${toneColor}-950);
+  --color-fg: var(--color-${toneColor}-50);
 
-	--color-primary: var(--color-${primaryColor}-500);
-	--color-primary-fg: var(--color-${toneColor}-50);
+  /* Branding color of your design. */
+  --color-primary: var(--color-${primaryColor}-500);
+  --color-primary-fg: var(--color-${toneColor}-50);
 
-	--color-secondary: var(--color-${toneColor}-800);
-	--color-secondary-fg: var(--color-${toneColor}-50);
+  /* Supporting color of your design. */
+  --color-secondary: var(--color-${toneColor}-800);
+  --color-secondary-fg: var(--color-${toneColor}-50);
 
-	--color-destructive: var(--color-red-500);
-	--color-destructive-fg: var(--color-${toneColor}-50);
+  /* Signals danger, warning or irreversibility action color. */
+  --color-destructive: var(--color-red-500);
+  --color-destructive-fg: var(--color-${toneColor}-50);
 
-	--color-muted: var(--color-${toneColor}-400);
-	--color-muted-fg: var(--color-${toneColor}-600);
+  /* Softer contrast for supporting details color. */
+  --color-muted: var(--color-${toneColor}-400);
+  --color-muted-fg: var(--color-${toneColor}-600);
 
-	--color-disabled: var(--color-${toneColor}-600);
-	--color-disabled-fg: var(--color-${toneColor}-400);
+  /* Visually indicate disabled actions. */
+  --color-disabled: var(--color-${toneColor}-800);
+  --color-disabled-fg: var(--color-${toneColor}-500);
 
-	--color-input: var(--color-${toneColor}-950);
-	--color-input-fg: var(--color-${toneColor}-50);
+  /* Form input elements color. */
+  --color-input: var(--color-${toneColor}-950);
+  --color-input-fg: var(--color-${toneColor}-50);
 
-	--color-card: var(--color-${toneColor}-900);
-	--color-card-fg: var(--color-${toneColor}-50);
+  /* Default border color. */
+  --color-border: var(--color-${toneColor}-700);
+}
 
-	--color-popup: var(--color-${toneColor}-950);
-	--color-popup-fg: var(--color-${toneColor}-50);
-
-	--color-border: var(--color-${toneColor}-700);
-
-	--color-spinner: var(--color-${primaryColor}-400);
-}`}
-  /> -->
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-bg text-fg;
+  }
+  ::selection {
+    background-color: var(--color-primary) !important;
+    color: var(--color-primary-fg) !important;
+  }
+}
+`}
+  />
 </Dialog>

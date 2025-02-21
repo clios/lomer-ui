@@ -41,7 +41,9 @@
   {@html felipec}
 </svelte:head>
 
-<div class={twMerge('relative flex flex-col text-sm', className)}>
+<div
+  class={twMerge('relative flex flex-col overflow-y-auto text-sm', className)}
+>
   <div
     class="bg-fg dark:bg-bg text-bg dark:text-fg flex justify-between rounded-t border-x border-t py-1.5 pr-1.5 pl-2.5"
   >
@@ -61,7 +63,7 @@
     </Button>
   </div>
 
-  <div class="overflow-hidden rounded-b border-x border-b">
+  <div class="overflow-auto rounded-b border-x border-b">
     <Highlight language={css} {code} let:highlighted>
       <LineNumbers
         {highlighted}
