@@ -4,6 +4,7 @@
   import Link from '$lib/components/base/link.svelte';
   import ButtonToggleSidebar from './button-toggle-sidebar.svelte';
   import { mode, toggleMode } from 'mode-watcher';
+  import IconLomerUi from '$lib/components/icons/icon-lomer-ui.svelte';
 
   let { isOpen = $bindable(false) } = $props();
 </script>
@@ -14,12 +15,7 @@
     <div
       class="relative flex h-full w-full items-center gap-2 border-r px-2 sm:max-w-60 sm:min-w-60"
     >
-      <div class="relative ml-2">
-        <img class="relative size-5 min-w-5" src="/favicon.png" alt="lomer" />
-        <div
-          class="absolute top-0 size-5 rotate-45 outline -outline-offset-2"
-        ></div>
-      </div>
+      <IconLomerUi class="max-w-6 min-w-6" />
 
       <Link href="/" class="text-fg font-mono no-underline outline-none">
         lomer-ui

@@ -31,7 +31,7 @@ async function updateCSSFile(cssFilePath) {
     );
 
     await fs.writeFile(cssFilePath, updatedContent, 'utf8');
-    console.log(`✅ Updated ${cssFilePath} to include lomer.css`);
+    // console.log(`✅ Updated ${cssFilePath}.`);
   } catch (err) {
     console.error(`❌ Failed to update ${cssFilePath}: ${err.message}`);
   }

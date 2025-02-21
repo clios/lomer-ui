@@ -1,27 +1,23 @@
 <script>
   import Button from '$lib/components/base/button.svelte';
-  import CopyCLI from '$lib/components/copy-c-l-i.svelte';
-  import Dialog from '$lib/components/base/dialog.svelte';
   import Icon from '@iconify/svelte';
-  import Link from '$lib/components/base/link.svelte';
-  import { goto } from '$app/navigation';
+  import IconSvelte from '$lib/components/icons/icon-svelte.svelte';
+  import IconTailwindcss from '$lib/components/icons/icon-tailwindcss.svelte';
+  import IconTypescript from '$lib/components/icons/icon-typescript.svelte';
+  import LinkButton from '$lib/components/base/link-button.svelte';
   import Screen from '$lib/components/screen.svelte';
+  import { goto } from '$app/navigation';
+  import IconLomerUi from '$lib/components/icons/icon-lomer-ui.svelte';
 </script>
 
 <svelte:head>
   <title>lomer-ui</title>
 </svelte:head>
 
-<Dialog class="max-w-96" title="Hi devs," open>
-  <p class="text-muted mt-4">
-    I'm currently rebuilding this project to provide a better experience.
-  </p>
-  <p class="text-muted mt-4">Will be back soon.</p>
-  <p class="text-muted mt-4">Clios, lomer-ui dev.</p>
-</Dialog>
+<div class="relative mx-auto mb-8 flex w-full max-w-[1200px] flex-col gap-16">
+  <IconLomerUi class="text-fg/1 absolute -z-10" />
 
-<div class="mx-auto flex w-full max-w-[1200px] flex-col gap-16">
-  <section class="flex justify-between lg:text-xl">
+  <section class="flex items-center justify-between lg:text-xl">
     <p class="flex items-end text-sm">
       <span>Svelte</span>
       <span class="text-primary mb-[1px] pl-1 text-sm">v5</span>
@@ -30,14 +26,24 @@
       <span class="text-primary mb-[1px] pl-1 text-sm">v4</span>
     </p>
 
-    <Link
-      class="items-center text-sm no-underline sm:flex"
-      href="https://github.com/sponsors/clios"
-      target="_blank"
-    >
-      <span class="hidden sm:inline">Sponsor</span>
-      <Icon class="text-primary inline size-6" icon="mdi:heart-outline" />
-    </Link>
+    <div class="flex items-center gap-2">
+      <LinkButton
+        variant="ghost"
+        size="icon"
+        href="https://github.com/sponsors/clios"
+        target="_blank"
+      >
+        <Icon class="text-primary inline size-6" icon="mdi:heart-outline" />
+      </LinkButton>
+      <LinkButton
+        variant="ghost"
+        size="icon"
+        href="https://ko-fi.com/clios"
+        target="_blank"
+      >
+        <Icon class="text-primary inline size-6" icon="mdi:coffee" />
+      </LinkButton>
+    </div>
   </section>
 
   <section class="text-muted lg:text-xl">
@@ -48,6 +54,11 @@
       <span>powered by</span>
       <span class="text-cyan-500">Tailwind CSS</span>.
     </p>
+    <div class="flex justify-center gap-1">
+      <IconTypescript class="text-muted" />
+      <IconSvelte class="text-muted" />
+      <IconTailwindcss class="text-muted" />
+    </div>
   </section>
 
   <div class="grid place-content-center lg:text-xl">
@@ -93,7 +104,19 @@
       <span>building your own <br class="sm:hidden" /> components</span>
       <span class="text-fg font-semibold">with CLI</span>.
     </p>
-    <CopyCLI code="npx lomer-ui get [component/s]" />
+    <div class="border-muted mx-auto h-min w-72 overflow-hidden rounded border">
+      <div
+        class="bg-muted text-bg flex w-full justify-between px-4 py-1 text-sm"
+      >
+        <p>CLI</p>
+      </div>
+      <div class="text-fg overflow-x-auto text-left text-sm">
+        <pre><code>
+{`\t$ npx lomer-ui get button
+\t✅ Component "button" added.`}
+    </code></pre>
+      </div>
+    </div>
     <p>That's it!</p>
   </section>
 
@@ -153,12 +176,14 @@
     </div>
   </section>
 
+  <section class="border-b border-dotted"></section>
+
   <section class="text-muted lg:text-xl">
-    <p class="mx-auto max-w-[600px] text-center">
-      Works out of the box without requiring developers to configure settings,
-      install dependencies, or write extra setup code. The goal is to provide
-      pre-styled, ready-to-use components that integrate seamlessly into
-      projects with minimal effort.
-    </p>
+    <p class="text-fg text-center lg:text-2xl">Coming Soon...</p>
+  </section>
+
+  <section class="text-center">
+    <p>Using CLI to craft components using recipes.</p>
+    <p>Actions. (outsideClick, focusTrap, etc...)</p>
   </section>
 </div>
