@@ -4,14 +4,31 @@
   import { twMerge } from 'tailwind-merge';
 
   type Props = {
-    status?: 'new' | 'draft';
-    label: string;
     href: string;
+    isOpen?: boolean;
+    label: string;
     onclick?: () => void;
+    status?: 'new' | 'draft';
   };
 
-  let { label, href, status, onclick }: Props = $props();
+  let {
+    href,
+    isOpen = $bindable(false),
+    label,
+
+    status
+  }: Props = $props();
+
+  let innerWidth = $state(0);
+
+  function onclick() {
+    if (innerWidth < 1024) {
+      isOpen = false;
+    }
+  }
 </script>
+
+<svelte:window bind:innerWidth />
 
 <Link
   {href}

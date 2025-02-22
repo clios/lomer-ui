@@ -29,33 +29,33 @@
       <SectionExplore />
 
       <p class="text-muted mt-4 pl-4 text-sm">Docs</p>
-      <NavLink href="/docs/intro" label="Intro" />
-      <NavLink href="/docs/setup" label="Setup" />
-      <NavLink href="/docs/dark-mode" label="Dark Mode" />
-      <NavLink href="/docs/theming" label="Theming" />
-      <NavLink href="/docs/cli" label="CLI" />
+      <NavLink bind:isOpen href="/docs/intro" label="Intro" />
+      <NavLink bind:isOpen href="/docs/setup" label="Setup" />
+      <NavLink bind:isOpen href="/docs/dark-mode" label="Dark Mode" />
+      <NavLink bind:isOpen href="/docs/theming" label="Theming" />
+      <NavLink bind:isOpen href="/docs/cli" label="CLI" />
 
       <p class="text-muted mt-4 pl-4 text-sm">Components</p>
-      <NavLink href="/components/accordion" label="Accordion" />
-      <NavLink href="/components/alert" label="Alert" />
-      <NavLink href="/components/avatar" label="Avatar" />
-      <NavLink href="/components/button" label="Button" />
-      <NavLink href="/components/checkbox" label="Checkbox" />
-      <NavLink href="/components/collapsible" label="Collapsible" />
-      <NavLink href="/components/dialog" label="Dialog" />
-      <NavLink href="/components/drawer" label="Drawer" />
-      <NavLink href="/components/dropdown" label="Dropdown" />
-      <NavLink href="/components/field" label="Field" />
-      <NavLink href="/components/input" label="Input" />
-      <NavLink href="/components/link" label="Link" />
-      <NavLink href="/components/link-button" label="Link Button" />
-      <NavLink href="/components/radio" label="Radio" />
-      <NavLink href="/components/scroll-area" label="Scroll Area" />
-      <NavLink href="/components/select" label="Select" />
-      <NavLink href="/components/switch" label="Switch" />
-      <NavLink href="/components/table" label="Table" />
-      <NavLink href="/components/tabs" label="Tabs" />
-      <NavLink href="/components/textarea" label="Textarea" />
+      <NavLink bind:isOpen href="/components/accordion" label="Accordion" />
+      <NavLink bind:isOpen href="/components/alert" label="Alert" />
+      <NavLink bind:isOpen href="/components/avatar" label="Avatar" />
+      <NavLink bind:isOpen href="/components/button" label="Button" />
+      <NavLink bind:isOpen href="/components/checkbox" label="Checkbox" />
+      <NavLink bind:isOpen href="/components/collapsible" label="Collapsible" />
+      <NavLink bind:isOpen href="/components/dialog" label="Dialog" />
+      <NavLink bind:isOpen href="/components/drawer" label="Drawer" />
+      <NavLink bind:isOpen href="/components/dropdown" label="Dropdown" />
+      <NavLink bind:isOpen href="/components/field" label="Field" />
+      <NavLink bind:isOpen href="/components/input" label="Input" />
+      <NavLink bind:isOpen href="/components/link" label="Link" />
+      <NavLink bind:isOpen href="/components/link-button" label="Link Button" />
+      <NavLink bind:isOpen href="/components/radio" label="Radio" />
+      <NavLink bind:isOpen href="/components/scroll-area" label="Scroll Area" />
+      <NavLink bind:isOpen href="/components/select" label="Select" />
+      <NavLink bind:isOpen href="/components/switch" label="Switch" />
+      <NavLink bind:isOpen href="/components/table" label="Table" />
+      <NavLink bind:isOpen href="/components/tabs" label="Tabs" />
+      <NavLink bind:isOpen href="/components/textarea" label="Textarea" />
 
       <div class="m-8 flex justify-end">
         <Link

@@ -25,9 +25,7 @@
 
     <!-- LINK SECTION -->
     <div class="hidden sm:flex sm:gap-4">
-      <Link href="/docs/introduction" class="text-fg text-sm no-underline">
-        Docs
-      </Link>
+      <Link href="/docs/intro" class="text-fg text-sm no-underline">Docs</Link>
       <Link href="/components/accordion" class="text-fg text-sm no-underline">
         Components
       </Link>
