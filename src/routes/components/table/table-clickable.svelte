@@ -15,6 +15,10 @@
     { month: 'June', expense: 559, savings: 43 },
     { month: 'July', expense: 497, savings: 76 }
   ];
+
+  function onclick() {
+    alert('You clicked a row.');
+  }
 </script>
 
 <Table>
@@ -27,7 +31,7 @@
   </TableHead>
   <TableBody zebra outline>
     {#each data as d}
-      <TableRow clickable>
+      <TableRow clickable {onclick}>
         <TableData>{d.month}</TableData>
         <TableData class="text-right font-mono">{d.expense}</TableData>
         <TableData class="text-right font-mono">{d.savings}</TableData>
