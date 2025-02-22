@@ -1,15 +1,15 @@
 <script lang="ts">
-  import Link from '$lib/components/base/link.svelte';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import Link from '$lib/components/base/link.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
   import PageWrapper from '$lib/components/page-wrapper.svelte';
-  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Screen from '$lib/components/screen.svelte';
-  import ScrollAreaUsage from './scroll-area-usage.svelte';
-  import ScrollAreaUsageRaw from './scroll-area-usage.svelte?raw';
   import ScrollAreaHorizontal from './scroll-area-horizontal.svelte';
   import ScrollAreaHorizontalRaw from './scroll-area-horizontal.svelte?raw';
+  import ScrollAreaUsage from './scroll-area-usage.svelte';
+  import ScrollAreaUsageRaw from './scroll-area-usage.svelte?raw';
 
   const tickler = [
     {

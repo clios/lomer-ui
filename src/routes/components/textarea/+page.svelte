@@ -36,8 +36,8 @@
   title="Textarea"
   sub="Component"
   info="Capture multi-line text with ease."
-  prevLabel="Switch"
-  prevLink="/components/switch"
+  prevLabel="Tabs"
+  prevLink="/components/tabs"
 >
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">

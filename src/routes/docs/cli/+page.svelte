@@ -69,10 +69,8 @@
       <p class="font-mono">e.g. npx lomer-ui get button dropdown</p>
     </PageArticle>
     <PageArticle id="2.2" title="craft">
-      <CopyCLI code="npx lomer-ui craft [component] [name]" />
+      <CopyCLI code="npx lomer-ui craft [recipe] [name_it]" />
       <p>Create a component and place it anywhere in your project.</p>
-      <p>[component] - base lomer-ui component.</p>
-      <p>[name] - name of your component.</p>
       <p class="font-mono">e.g. npx lomer-ui craft dropdown MyDropdown</p>
     </PageArticle>
   </PageSection>

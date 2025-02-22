@@ -1,4 +1,11 @@
 <script lang="ts">
+  import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import Link from '$lib/components/base/link.svelte';
+  import PageArticle from '$lib/components/page-article.svelte';
+  import PageSection from '$lib/components/page-section.svelte';
+  import PageWrapper from '$lib/components/page-wrapper.svelte';
+  import Screen from '$lib/components/screen.svelte';
   import SwitchDisabled from './switch-disabled.svelte';
   import SwitchDisabledRaw from './switch-disabled.svelte?raw';
   import SwitchEdges from './switch-edges.svelte';
@@ -7,13 +14,6 @@
   import SwitchLoadingRaw from './switch-loading.svelte?raw';
   import SwitchUsage from './switch-usage.svelte';
   import SwitchUsageRaw from './switch-usage.svelte?raw';
-  import CopyCLI from '$lib/components/copy-c-l-i.svelte';
-  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import Link from '$lib/components/base/link.svelte';
-  import PageArticle from '$lib/components/page-article.svelte';
-  import PageSection from '$lib/components/page-section.svelte';
-  import PageWrapper from '$lib/components/page-wrapper.svelte';
-  import Screen from '$lib/components/screen.svelte';
 
   const tickler = [
     {

@@ -1,13 +1,13 @@
 <script lang="ts">
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import Link from '$lib/components/base/link.svelte';
+  import LinkUsage from './link-usage.svelte';
+  import LinkUsageRaw from './link-usage.svelte?raw';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
   import PageWrapper from '$lib/components/page-wrapper.svelte';
-  import Link from '$lib/components/base/link.svelte';
   import Screen from '$lib/components/screen.svelte';
-  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import LinkUsage from './link-usage.svelte';
-  import LinkUsageRaw from './link-usage.svelte?raw';
 
   const tickler = [
     {
@@ -32,8 +32,8 @@
   info="Connects users to new destinations."
   prevLabel="Input"
   prevLink="/components/input"
-  nextLabel="Radio"
-  nextLink="/components/radio"
+  nextLabel="Link Button"
+  nextLink="/components/link-button"
 >
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">

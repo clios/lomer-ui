@@ -1,13 +1,13 @@
 <script lang="ts">
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import Link from '$lib/components/base/link.svelte';
+  import LinkButtonUsage from './link-button-usage.svelte';
+  import LinkButtonUsageRaw from './link-button-usage.svelte?raw';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
   import PageWrapper from '$lib/components/page-wrapper.svelte';
-  import Link from '$lib/components/base/link.svelte';
   import Screen from '$lib/components/screen.svelte';
-  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import LinkButtonUsage from './link-button-usage.svelte';
-  import LinkButtonUsageRaw from './link-button-usage.svelte?raw';
 
   const tickler = [
     {

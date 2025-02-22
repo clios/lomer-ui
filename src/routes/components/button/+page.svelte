@@ -54,8 +54,8 @@
   title="Button"
   sub="Component"
   info="Click it and make actions happen."
-  prevLabel="Alert"
-  prevLink="/components/alert"
+  prevLabel="Avatar"
+  prevLink="/components/avatar"
   nextLabel="Checkbox"
   nextLink="/components/checkbox"
 >

@@ -37,8 +37,9 @@
 
 <button
   class={twMerge(
-    'relative flex items-center gap-1', // layout and positioning
-    'outline-offset-2 hover:outline focus:outline active:outline-2 active:outline-offset-0', // outline
+    'relative flex items-center gap-1 transition-all', // layout and positioning
+    '-outline-offset-1 hover:outline focus:outline active:outline-2 active:outline-offset-0', // outline
+    'hover:outline-offset-2 focus:outline-offset-2 active:outline-offset-0', // outline
     'outline-primary h-min w-max cursor-pointer border', // visual
 
     // VARIANTS

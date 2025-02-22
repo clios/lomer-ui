@@ -14,18 +14,13 @@
       label: 'Can I contribute?',
       sub: true
     },
-    // {
-    //   id: '1.2',
-    //   label: 'Is it production-ready?',
-    //   sub: true
-    // },
     {
-      id: '1.3',
+      id: '1.2',
       label: 'How can I support you?',
       sub: true
     },
     {
-      id: '1.4',
+      id: '1.3',
       label: 'Can I use it in my projects?',
       sub: true
     }
@@ -41,9 +36,9 @@
   title="Intro"
   sub="Docs"
   info="Base components for your next project."
-  nextLabel="Installation"
+  nextLabel="Setup"
   prevLabel="Home"
-  nextLink="/docs/installation"
+  nextLink="/docs/setup"
   prevLink="/"
 >
   <PageSection class="gap-4 lg:text-xl">
@@ -65,13 +60,7 @@
       <p>I’d love to hear from you!</p>
     </PageArticle>
 
-    <!-- <PageArticle id="1.2" title="Is it production-ready?">
-      <p>Yes, it is! I’ve been using it in my projects.</p>
-      <p>However, please note that it’s still in its early stage.</p>
-      <p>I’m constantly improving it.</p>
-    </PageArticle> -->
-
-    <PageArticle id="1.3" title="How can I support you?">
+    <PageArticle id="1.2" title="How can I support you?">
       <p>
         Feel free to star the <Link
           href="https://github.com/clios/lomer-ui"
@@ -82,7 +71,7 @@
       <p>I’d really appreciate it!</p>
     </PageArticle>
 
-    <PageArticle id="1.4" title="Can I use it in my projects?">
+    <PageArticle id="1.3" title="Can I use it in my projects?">
       <p>Feel free to use it in your personal or commercial projects.</p>
     </PageArticle>
   </PageSection>

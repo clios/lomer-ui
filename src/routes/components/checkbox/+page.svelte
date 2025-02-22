@@ -1,6 +1,6 @@
 <script lang="ts">
-  import CheckboxDisabled from './checkbox-disabled.svelte';
-  import CheckboxDisabledRaw from './checkbox-disabled.svelte?raw';
+  import CheckboxForm from './checkbox-form.svelte';
+  import CheckboxFormRaw from './checkbox-form.svelte?raw';
   import CheckboxUsage from './checkbox-usage.svelte';
   import CheckboxUsageRaw from './checkbox-usage.svelte?raw';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
@@ -22,7 +22,7 @@
     },
     {
       id: '3',
-      label: 'Disabled'
+      label: 'Form'
     }
   ];
 </script>
@@ -38,8 +38,8 @@
   info="Toggle options on or off."
   prevLabel="Button"
   prevLink="/components/button"
-  nextLabel="Dialog"
-  nextLink="/components/dialog"
+  nextLabel="Collapsible"
+  nextLink="/components/collapsible"
 >
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">
@@ -64,13 +64,13 @@
     </PageArticle>
   </PageSection>
 
-  <!-- DISABLED -->
-  <PageSection id="3" title="Disabled">
+  <!-- FORM -->
+  <PageSection id="3" title="Form">
     <PageArticle title="Preview">
       <Screen class="flex-col gap-4">
-        <CheckboxDisabled />
+        <CheckboxForm />
       </Screen>
-      <CopySvelteCode code={CheckboxDisabledRaw} />
+      <CopySvelteCode code={CheckboxFormRaw} />
     </PageArticle>
   </PageSection>
 </PageWrapper>

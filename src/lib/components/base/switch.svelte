@@ -65,8 +65,8 @@
       <div class={twMerge('transition-all', checked ? 'w-6' : 'w-0')}></div>
       <div
         class={twMerge(
-          'pointer-events-none grid size-6 place-content-center rounded border',
-          checked ? 'bg-bg text-fg border-primary' : 'bg-fg text-bg border-fg',
+          'bg-fg text-bg pointer-events-none grid size-6 place-content-center rounded border',
+          checked ? 'border-primary' : 'border-fg',
           disabled && 'border-disabled text-disabled bg-disabled-fg',
           // EDGES
           edge === 'default' && 'rounded',

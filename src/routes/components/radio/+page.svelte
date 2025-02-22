@@ -36,8 +36,8 @@
   title="Radio"
   sub="Component"
   info="Choose one option from a group with a click!"
-  prevLabel="Link"
-  prevLink="/components/link"
+  prevLabel="Link Button"
+  prevLink="/components/link-button"
   nextLabel="Scroll Area"
   nextLink="/components/scroll-area"
 >

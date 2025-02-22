@@ -21,8 +21,8 @@
   title="Setup"
   sub="Docs"
   info="What setup? This is a zero config UI library."
-  prevLabel="Introduction"
-  prevLink="/docs/introduction"
+  prevLabel="Intro"
+  prevLink="/docs/intro"
   nextLabel="Dark Mode"
   nextLink="/docs/dark-mode"
 >

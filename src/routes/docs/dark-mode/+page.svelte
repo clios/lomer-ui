@@ -44,8 +44,8 @@
   title="Dark Mode"
   sub="Docs"
   info="Adding dark mode to your site using mode-watcher."
-  prevLabel="Installation"
-  prevLink="/docs/installation"
+  prevLabel="Setup"
+  prevLink="/docs/setup"
   nextLabel="Theming"
   nextLink="/docs/theming"
 >
@@ -69,7 +69,7 @@
       </p>
       <CopySvelteCode
         title="+layout.svelte"
-        code={`<script\>` +
+        code={`<script\ lang="ts">` +
           `\n\timport { ModeWatcher } from "mode-watcher";` +
           `\n\tlet { children } = $props();` +
           `\n</script>` +
@@ -95,7 +95,7 @@
       </Screen>
       <CopySvelteCode
         code={`<script\ lang="ts">` +
-          `\n\timport Button from '$lib/components/ui/button.svelte';` +
+          `\n\timport Button from '$lib/components/base/button.svelte';` +
           `\n\timport Icon from '@iconify/svelte';` +
           `\n\timport { toggleMode, mode } from 'mode-watcher';` +
           `\n</script>` +

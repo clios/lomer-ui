@@ -30,8 +30,8 @@
   title="Dialog"
   sub="Component"
   info="Displays a focused interface for user interaction."
-  prevLabel="Checkbox"
-  prevLink="/components/checkbox"
+  prevLabel="Collapsible"
+  prevLink="/components/collapsible"
   nextLabel="Drawer"
   nextLink="/components/drawer"
 >
