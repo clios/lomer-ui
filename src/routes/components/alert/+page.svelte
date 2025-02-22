@@ -32,8 +32,8 @@
   info="Grabs attention and delivers important information."
   prevLabel="Accordion"
   prevLink="/components/accordion"
-  nextLabel="Avatar"
-  nextLink="/components/avatar"
+  nextLabel="Button"
+  nextLink="/components/button"
 >
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">

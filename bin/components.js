@@ -94,7 +94,42 @@ export const COMPONENTS = [
     dependencies: [],
     actions: []
   },
-  // TODO: Mirgate components
+  {
+    name: 'table',
+    dependencies: [
+      'table-head',
+      'table-body',
+      'table-row',
+      'table-header',
+      'table-data'
+    ],
+    actions: []
+  },
+  {
+    name: 'table-head',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'table-body',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'table-row',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'table-header',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'table-data',
+    dependencies: [],
+    actions: []
+  },
   {
     name: 'textarea',
     dependencies: [],

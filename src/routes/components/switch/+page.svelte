@@ -50,8 +50,8 @@
   info="Toggle options on or off."
   prevLabel="Select"
   prevLink="/components/select"
-  nextLabel="Tabs"
-  nextLink="/components/tabs"
+  nextLabel="Table"
+  nextLink="/components/table"
 >
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">
