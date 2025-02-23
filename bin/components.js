@@ -131,6 +131,21 @@ export const COMPONENTS = [
     actions: []
   },
   {
+    name: 'tabs',
+    dependencies: ['tabs-item'],
+    actions: []
+  },
+  {
+    name: 'tabs-item',
+    dependencies: [],
+    actions: []
+  },
+  {
+    name: 'tabs-content',
+    dependencies: [],
+    actions: []
+  },
+  {
     name: 'textarea',
     dependencies: [],
     actions: []
