@@ -40,9 +40,18 @@
     className
   )}
 >
+  <div
+    bind:this={scrollContainer}
+    class="flex w-full gap-2 overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:h-0"
+    onscroll={checkScroll}
+  >
+    <div class="absolute bottom-0 left-0 w-full border-b"></div>
+    {@render children?.()}
+  </div>
+
   {#if canScrollLeft}
     <div
-      class="from-bg to-bg/0 via-bg pointer-events-none absolute left-0 z-20 flex h-full w-20 items-center bg-gradient-to-r"
+      class="from-bg to-bg/0 via-bg pointer-events-none absolute left-0 flex h-full w-20 items-center bg-gradient-to-r"
     >
       <Button
         class="pointer-events-auto absolute left-2"
@@ -63,17 +72,9 @@
     </div>
   {/if}
 
-  <div
-    bind:this={scrollContainer}
-    class="z-10 flex w-full gap-2 overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:h-0"
-    onscroll={checkScroll}
-  >
-    {@render children?.()}
-  </div>
-
   {#if canScrollRight}
     <div
-      class="from-bg/0 to-bg via-bg pointer-events-none absolute right-0 z-20 flex h-full w-20 items-center bg-gradient-to-r"
+      class="from-bg/0 to-bg via-bg pointer-events-none absolute right-0 flex h-full w-20 items-center bg-gradient-to-r"
     >
       <Button
         class="pointer-events-auto absolute right-2"
@@ -92,6 +93,4 @@
       >
     </div>
   {/if}
-
-  <div class="absolute bottom-0 left-0 w-full border-b"></div>
 </div>
