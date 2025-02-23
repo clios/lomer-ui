@@ -10,7 +10,7 @@
   <TabsItem bind:active value="home">Home</TabsItem>
   <TabsItem bind:active value="about">About</TabsItem>
   <TabsItem bind:active value="service">Service</TabsItem>
-  <TabsItem bind:active value="disabled" disabled>Disabled</TabsItem>
+  <TabsItem disabled>Disabled</TabsItem>
 </Tabs>
 <TabsContent {active} value="home">Home</TabsContent>
 <TabsContent {active} value="about">About</TabsContent>

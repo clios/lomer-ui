@@ -9,7 +9,7 @@
   <TabsItem bind:active value="home">Home</TabsItem>
   <TabsItem bind:active value="about">About</TabsItem>
   <TabsItem bind:active value="service">Service</TabsItem>
-  <TabsItem bind:active value="disabled" disabled>Disabled</TabsItem>
+  <TabsItem disabled>Disabled</TabsItem>
   <TabsItem bind:active value="settings">Settings</TabsItem>
   <TabsItem bind:active value="monitoring">Monitoring</TabsItem>
   <TabsItem bind:active value="profile">Profile</TabsItem>

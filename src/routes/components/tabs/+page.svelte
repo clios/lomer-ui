@@ -66,6 +66,15 @@
 
   <!-- CONTENT -->
   <PageSection id="3" title="Content">
+    <PageArticle title="Get the component">
+      <CopyCLI code={`npx lomer-ui get tabs-content`} />
+      <Link
+        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/tabs-content.svelte"
+        target="_blank"
+      >
+        Source code
+      </Link>
+    </PageArticle>
     <PageArticle title="Preview">
       <Screen class="flex-col">
         <TabsContent />
