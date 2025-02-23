@@ -102,7 +102,7 @@
       <Screen>
         <TableClickable />
       </Screen>
-      <CopySvelteCode code={TableClickableRaw} highlightedLines={[29]} />
+      <CopySvelteCode code={TableClickableRaw} highlightedLines={[33]} />
     </PageArticle>
   </PageSection>
 </PageWrapper>
