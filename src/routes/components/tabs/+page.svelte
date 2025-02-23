@@ -1,6 +1,8 @@
 <script lang="ts">
   import TabsUsage from './tabs-usage.svelte';
   import TabsUsageRaw from './tabs-usage.svelte?raw';
+  import TabsContent from './tabs-content.svelte';
+  import TabsContentRaw from './tabs-content.svelte?raw';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Link from '$lib/components/base/link.svelte';
@@ -17,6 +19,10 @@
     {
       id: '2',
       label: 'Usage'
+    },
+    {
+      id: '3',
+      label: 'Content'
     }
   ];
 </script>
@@ -55,6 +61,16 @@
         <TabsUsage />
       </Screen>
       <CopySvelteCode code={TabsUsageRaw} />
+    </PageArticle>
+  </PageSection>
+
+  <!-- CONTENT -->
+  <PageSection id="3" title="Content">
+    <PageArticle title="Preview">
+      <Screen class="flex-col">
+        <TabsContent />
+      </Screen>
+      <CopySvelteCode code={TabsContentRaw} />
     </PageArticle>
   </PageSection>
 </PageWrapper>
