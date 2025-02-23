@@ -27,9 +27,8 @@
 <tr
   class={twMerge(
     'outline-primary -outline-offset-1',
-    clickable && 'cursor-pointer hover:outline',
+    clickable && 'hover:bg-primary/15 cursor-pointer hover:outline',
     clickable && 'focus:bg-primary/15 focus:outline',
-    (clickable || highlightable) && 'hover:bg-primary/15',
     className
   )}
   tabindex={clickable ? 0 : -1}

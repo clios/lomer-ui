@@ -8,8 +8,6 @@
   import Screen from '$lib/components/screen.svelte';
   import TableClickable from './table-clickable.svelte';
   import TableClickableRaw from './table-clickable.svelte?raw';
-  import TableHighlightable from './table-highlightable.svelte';
-  import TableHighlightableRaw from './table-highlightable.svelte?raw';
   import TableOutline from './table-outline.svelte';
   import TableOutlineRaw from './table-outline.svelte?raw';
   import TableUsage from './table-usage.svelte';
@@ -36,10 +34,6 @@
     },
     {
       id: '5',
-      label: 'Highlightable'
-    },
-    {
-      id: '6',
       label: 'Clickable'
     }
   ];
@@ -102,18 +96,8 @@
     </PageArticle>
   </PageSection>
 
-  <!-- HIGHLIGHTABLE -->
-  <PageSection id="5" title="Highlightable">
-    <PageArticle title="Preview">
-      <Screen>
-        <TableHighlightable />
-      </Screen>
-      <CopySvelteCode code={TableHighlightableRaw} highlightedLines={[29]} />
-    </PageArticle>
-  </PageSection>
-
   <!-- CLICKABLE -->
-  <PageSection id="6" title="Clickable">
+  <PageSection id="5" title="Clickable">
     <PageArticle title="Preview">
       <Screen>
         <TableClickable />

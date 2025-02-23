@@ -20,10 +20,11 @@
 
 <tbody
   class={twMerge(
+    '[&_tr:hover]:bg-primary/15',
+    '[&_tr:focus]:bg-primary/15',
+    '[&_tr:nth-child(odd):hover]:bg-primary/15',
+    '[&_tr:nth-child(odd):focus]:bg-primary/15',
     zebra && '[&_tr:nth-child(odd)]:bg-fg/5',
-    zebra && '[&_tr:nth-child(odd):hover]:bg-primary/15',
-    zebra && '[&_tr:nth-child(odd):focus]:bg-primary/15',
-    zebra && '[&_tr:hover]:bg-primary/15',
     outline && '[&_tr]:border-t',
     className
   )}
