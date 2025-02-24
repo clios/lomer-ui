@@ -1,13 +1,11 @@
-# **lomer-ui** : The Zero Config UI Library for Svelte
+# **lomer-ui** : Standalone components for Svelte powered by Tailwind CSS.
 
 **Standalone components for Svelte powered by Tailwind CSS.**
 
 [![License](https://img.shields.io/github/license/clios/lomer-ui?color=brightgreen)](LICENSE)
 [![Made with Svelte](https://img.shields.io/badge/Made%20with-Svelte-orange?logo=svelte)](https://svelte.dev/)
 
----
-
-## 🚀 **The Zero Configuration UI Library.**
+## 🚀 **The Zero Config UI Library**
 
 🔥 **No extra dependencies** – Works **out-of-the-box** with **Tailwind CSS**!
 
@@ -56,13 +54,12 @@ Want to improve **lomer-ui**? I’d ❤️ your help!
 
 ## **📜 License**
 
-**Open-source** under the **MIT License**.
+**Open-source** under the **MIT License**
 
 ## **🚀 Star & Share!**
 
 If you like **lomer-ui**, consider **starring the repo ⭐** and sharing it!
 
-👉 **GitHub:** [github.com/clios/lomer-ui](https://github.com/clios/lomer-ui)  
 👉 **Docs:** [ui.lomer.dev](https://ui.lomer.dev/?utm_source=github)
 
 ### **Made with ❤️ by [@clios](https://github.com/clios)**
