@@ -42,7 +42,7 @@
 >
   <div
     bind:this={scrollContainer}
-    class="flex w-full gap-2 overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:h-0"
+    class="scroll-container flex w-full gap-2 overflow-x-auto scroll-smooth"
     onscroll={checkScroll}
   >
     <div class="absolute bottom-0 left-0 w-full border-b"></div>
@@ -51,7 +51,7 @@
 
   {#if canScrollLeft}
     <div
-      class="from-bg to-bg/0 via-bg pointer-events-none absolute left-0 flex h-full w-20 items-center bg-gradient-to-r"
+      class="from-bg to-bg/0 via-bg absolute left-0 flex h-full w-20 items-center bg-gradient-to-r"
     >
       <Button
         class="pointer-events-auto absolute left-2"
@@ -74,7 +74,7 @@
 
   {#if canScrollRight}
     <div
-      class="from-bg/0 to-bg via-bg pointer-events-none absolute right-0 flex h-full w-20 items-center bg-gradient-to-r"
+      class="from-bg/0 to-bg via-bg absolute right-0 flex h-full w-20 items-center bg-gradient-to-r"
     >
       <Button
         class="pointer-events-auto absolute right-2"
@@ -94,3 +94,9 @@
     </div>
   {/if}
 </div>
+
+<style>
+  .scroll-container::-webkit-scrollbar {
+    display: none; /* Works better across different browsers */
+  }
+</style>
