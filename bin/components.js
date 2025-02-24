@@ -137,12 +137,12 @@ export const COMPONENTS = [
   },
   {
     name: 'tabs',
-    dependencies: ['tabs-item'],
+    dependencies: ['button', 'tabs-item'],
     actions: []
   },
   {
     name: 'tabs-item',
-    dependencies: [],
+    dependencies: ['button'],
     actions: []
   },
   {

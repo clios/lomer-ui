@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { HTMLButtonAttributes } from 'svelte/elements';
   import type { Snippet } from 'svelte';
-  import { twMerge } from 'tailwind-merge';
+  import Button from '$lib/components/base/button.svelte';
 
   type Props = {
     active?: string;
@@ -21,7 +21,6 @@
   }: Props = $props();
 
   function onclick() {
-    if (disabled) return;
     if (active || value) {
       active = value;
     }
@@ -29,20 +28,12 @@
   }
 </script>
 
-<button
-  class={twMerge(
-    'text-fg relative rounded px-3 pt-1 pb-2 text-nowrap',
-    'outline-primary -outline-offset-1',
-    !disabled && 'cursor-pointer',
-    !disabled && 'hover:bg-primary/15',
-    !disabled && 'focus:bg-primary/15',
-    active === value && 'text-primary',
-    disabled && 'text-disabled-fg',
-    className
-  )}
+<Button
+  class="text-nowrap"
+  variant={active === value ? 'default' : 'secondary'}
   {onclick}
   {...props}
   {disabled}
 >
   {@render children?.()}
-</button>
+</Button>

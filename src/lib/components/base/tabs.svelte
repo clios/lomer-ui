@@ -1,7 +1,7 @@
 <script lang="ts">
+  import Button from '$lib/components/base/button.svelte';
   import { onMount, type Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import Button from '$lib/components/base/button.svelte';
 
   type Props = { children?: Snippet; class?: string };
   let { children, class: className }: Props = $props();
@@ -9,6 +9,7 @@
   let scrollContainer: HTMLDivElement;
   let canScrollLeft = $state(false);
   let canScrollRight = $state(false);
+  let innerWidth = $state(0);
 
   function checkScroll() {
     if (scrollContainer) {
@@ -32,47 +33,63 @@
   onMount(() => {
     checkScroll(); // Check scrollability on mount
   });
+
+  $effect(() => {
+    if (innerWidth) checkScroll();
+  });
 </script>
+
+<!-- Track screen size -->
+<svelte:window bind:innerWidth />
 
 <!-- CONTAINER -->
 <div
-  class={twMerge(
-    'bg-bg relative flex w-full items-center gap-2 p-2',
-    className
-  )}
+  class={twMerge('bg-bg relative flex w-full items-center gap-2', className)}
 >
   <!-- CONTENT -->
   <div
     bind:this={scrollContainer}
-    class="scroll-container flex w-full gap-2 overflow-x-auto scroll-smooth"
+    class="scroll-container flex w-full gap-2 overflow-x-auto scroll-smooth py-4 pr-12 pl-4"
     onscroll={checkScroll}
   >
     {@render children?.()}
   </div>
 
+  <!-- IF CAN SCROLL LEFT -->
   {#if canScrollLeft}
     <div
-      class="from-bg to-bg/0 via-bg absolute left-0 flex h-full w-20 items-center bg-gradient-to-r"
+      class={twMerge(
+        'absolute left-0 flex h-full w-20 items-center', // positioning and layout
+        'from-bg/0 to-bg via-bg bg-gradient-to-l' // gradient
+      )}
     >
-      <button
-        class="outline-primary active:bg-fg/20 pointer-events-auto absolute left-2 cursor-pointer rounded p-1 -outline-offset-1 hover:outline focus:outline"
+      <Button
+        class="absolute left-2"
+        variant="outline"
+        size="fit"
         onclick={scrollLeft}
       >
         {@render IconChevronLeft()}
-      </button>
+      </Button>
     </div>
   {/if}
 
+  <!-- IF CAN SCROLL RIGHT -->
   {#if canScrollRight}
     <div
-      class="from-bg/0 to-bg via-bg absolute right-0 flex h-full w-20 items-center bg-gradient-to-r"
+      class={twMerge(
+        'absolute right-0 flex h-full w-20 items-center', // positioning and layout
+        'from-bg/0 to-bg via-bg bg-gradient-to-r' // gradient
+      )}
     >
-      <button
-        class="outline-primary active:bg-fg/20 pointer-events-auto absolute right-2 cursor-pointer rounded p-1 -outline-offset-1 hover:outline focus:outline"
+      <Button
+        class="absolute right-2"
+        variant="outline"
+        size="fit"
         onclick={scrollRight}
       >
         {@render IconChevronRight()}
-      </button>
+      </Button>
     </div>
   {/if}
 </div>
@@ -92,7 +109,7 @@
 {#snippet IconChevronRight()}
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="text-fg size-5"
+    class="text-fg size-6"
     viewBox="0 0 24 24"
   >
     <path
@@ -104,6 +121,11 @@
 
 <style>
   .scroll-container::-webkit-scrollbar {
-    display: none; /* Works better across different browsers */
+    display: none;
+    height: 0;
+    width: 0;
+  }
+  .scroll-container {
+    scrollbar-width: none;
   }
 </style>
