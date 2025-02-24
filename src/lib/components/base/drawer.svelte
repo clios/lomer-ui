@@ -1,9 +1,9 @@
 <script lang="ts">
   import Button from '$lib/components/base/button.svelte';
   import type { Snippet } from 'svelte';
-  import { escapeKey } from '$lib/actions/escapeKey.svelte.ts';
+  import { escapeKey } from '$lib/actions/escape-key.svelte.ts';
   import { fade, slide } from 'svelte/transition';
-  import { focusTrap } from '$lib/actions/focusTrap.svelte.ts';
+  import { focusTrap } from '$lib/actions/focus-trap.svelte.ts';
   import { twMerge } from 'tailwind-merge';
 
   type Props = {

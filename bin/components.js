@@ -32,17 +32,22 @@ export const COMPONENTS = [
   {
     name: 'dialog',
     dependencies: ['button'],
-    actions: ['escapeKey', 'focusTrap']
+    actions: ['escape-key', 'focus-trap']
   },
   {
     name: 'drawer',
     dependencies: ['button'],
-    actions: ['escapeKey', 'focusTrap']
+    actions: ['escape-key', 'focus-trap']
   },
   {
     name: 'dropdown',
     dependencies: ['dropdown-item'],
-    actions: ['escapeKey', 'outsideClick', 'focusTrap', 'verticalNavigation']
+    actions: [
+      'escape-key',
+      'outside-click',
+      'focus-trap',
+      'vertical-navigation'
+    ]
   },
   {
     name: 'dropdown-item',

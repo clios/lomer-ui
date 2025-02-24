@@ -3,8 +3,8 @@
   import { fade, scale } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
   import Button from '$lib/components/base/button.svelte';
-  import { escapeKey } from '$lib/actions/escapeKey.svelte.ts';
-  import { focusTrap } from '$lib/actions/focusTrap.svelte.ts';
+  import { escapeKey } from '$lib/actions/escape-key.svelte.ts';
+  import { focusTrap } from '$lib/actions/focus-trap.svelte.ts';
 
   type Props = {
     children?: Snippet;
