@@ -32,15 +32,17 @@
 <button
   class={twMerge(
     'text-fg relative rounded px-3 pt-1 pb-2 text-nowrap',
+    'outline-primary -outline-offset-1',
     !disabled && 'cursor-pointer',
     !disabled && 'hover:bg-primary/15',
-    !disabled && 'focus:bg-primary/15',
+    !disabled && 'focus:bg-primary/15 focus:outline',
     active === value && 'text-primary',
     disabled && 'text-disabled-fg',
     className
   )}
   {onclick}
   {...props}
+  {disabled}
 >
   {@render children?.()}
   {#if value === active}
