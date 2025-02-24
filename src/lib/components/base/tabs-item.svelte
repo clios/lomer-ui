@@ -35,7 +35,7 @@
     'outline-primary -outline-offset-1',
     !disabled && 'cursor-pointer',
     !disabled && 'hover:bg-primary/15',
-    !disabled && 'focus:bg-primary/15 focus:outline',
+    !disabled && 'focus:bg-primary/15',
     active === value && 'text-primary',
     disabled && 'text-disabled-fg',
     className
@@ -45,7 +45,4 @@
   {disabled}
 >
   {@render children?.()}
-  {#if value === active}
-    <div class="border-primary absolute bottom-0 left-0 w-full border-b"></div>
-  {/if}
 </button>
