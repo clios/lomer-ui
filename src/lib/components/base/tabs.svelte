@@ -55,7 +55,7 @@
       class="from-bg to-bg/0 via-bg absolute left-0 flex h-full w-20 items-center bg-gradient-to-r"
     >
       <button
-        class="outline-primary pointer-events-auto absolute left-2 cursor-pointer rounded p-1 -outline-offset-1 hover:outline focus:outline"
+        class="outline-primary active:bg-fg/20 pointer-events-auto absolute left-2 cursor-pointer rounded p-1 -outline-offset-1 hover:outline focus:outline"
         onclick={scrollLeft}
       >
         {@render IconChevronLeft()}
@@ -68,7 +68,7 @@
       class="from-bg/0 to-bg via-bg absolute right-0 flex h-full w-20 items-center bg-gradient-to-r"
     >
       <button
-        class="outline-primary pointer-events-auto absolute right-2 cursor-pointer rounded p-1 -outline-offset-1 hover:outline focus:outline"
+        class="outline-primary active:bg-fg/20 pointer-events-auto absolute right-2 cursor-pointer rounded p-1 -outline-offset-1 hover:outline focus:outline"
         onclick={scrollRight}
       >
         {@render IconChevronRight()}
@@ -78,7 +78,10 @@
 </div>
 
 {#snippet IconChevronLeft()}
-  <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24"
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="text-fg size-5"
+    viewBox="0 0 24 24"
     ><path
       fill="currentColor"
       d="M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6l6 6z"
@@ -87,7 +90,11 @@
 {/snippet}
 
 {#snippet IconChevronRight()}
-  <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="text-fg size-5"
+    viewBox="0 0 24 24"
+  >
     <path
       fill="currentColor"
       d="M8.59 16.58L13.17 12L8.59 7.41L10 6l6 6l-6 6z"
