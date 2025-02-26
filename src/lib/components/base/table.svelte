@@ -11,6 +11,8 @@
   let { class: className, children, ...props }: Props = $props();
 </script>
 
-<table class={twMerge('bg-bg w-full border-collapse', className)} {...props}>
-  {@render children?.()}
-</table>
+<div class="overflow-x-auto">
+  <table class={twMerge('bg-bg w-full border-collapse', className)} {...props}>
+    {@render children?.()}
+  </table>
+</div>
