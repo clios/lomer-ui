@@ -1,7 +1,7 @@
 <script>
   import Field from '$lib/components/base/field.svelte';
   import Input from '$lib/components/base/input.svelte';
-  import { verticalNavigation } from '$lib/actions/vertical-navigation.svelte.ts';
+  import { verticalNavigation } from '$lib/actions/vertical-navigation.svelte';
 </script>
 
 <form class="flex flex-col gap-4" use:verticalNavigation>

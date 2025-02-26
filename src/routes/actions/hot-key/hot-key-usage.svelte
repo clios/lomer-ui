@@ -1,5 +1,5 @@
 <script>
-  import { hotKey } from '$lib/actions/hot-key.svelte.ts';
+  import { hotKey } from '$lib/actions/hot-key.svelte';
 </script>
 
 <!-- Basic -->

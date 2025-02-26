@@ -2,7 +2,7 @@
   import Button from '$lib/components/base/button.svelte';
   import Field from '$lib/components/base/field.svelte';
   import Input from '$lib/components/base/input.svelte';
-  import { focusTrap } from '$lib/actions/focus-trap.svelte.ts';
+  import { focusTrap } from '$lib/actions/focus-trap.svelte';
 </script>
 
 <!-- Use focusTrap to keep focus within the form -->

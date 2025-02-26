@@ -1,5 +1,5 @@
 <script>
-  import { escapeKey } from '$lib/actions/escape-key.svelte.ts';
+  import { escapeKey } from '$lib/actions/escape-key.svelte';
 </script>
 
 <div use:escapeKey={() => alert('^_^')}>

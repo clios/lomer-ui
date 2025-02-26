@@ -1,6 +1,6 @@
 <script>
-  import { outsideClick } from '$lib/actions/outside-click.svelte.ts';
   import Checkbox from '$lib/components/base/checkbox.svelte';
+  import { outsideClick } from '$lib/actions/outside-click.svelte';
 
   let checked = $state(false);
 
