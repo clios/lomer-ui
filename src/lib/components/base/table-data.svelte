@@ -11,6 +11,6 @@
   let { class: className, children, ...props }: Props = $props();
 </script>
 
-<td class={twMerge('text-fg min-w-max px-4 py-2', className)} {...props}>
+<td class={twMerge('text-fg px-4 py-2 align-top ', className)} {...props}>
   {@render children?.()}
 </td>
