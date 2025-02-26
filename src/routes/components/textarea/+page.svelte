@@ -38,6 +38,8 @@
   info="Capture multi-line text with ease."
   prevLabel="Tabs"
   prevLink="/components/tabs"
+  nextLabel="Escape Key"
+  nextLink="/actions/escape-key"
 >
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">

@@ -1,4 +1,4 @@
-const activeModals: Set<HTMLElement> = new Set();
+const activeKeyListeners: Set<HTMLElement> = new Set();
 
 export function escapeKey(
   node: HTMLElement,
@@ -6,21 +6,21 @@ export function escapeKey(
 ) {
   function handleKeydown(event: KeyboardEvent) {
     if (event.key === 'Escape') {
-      const modals = Array.from(activeModals);
-      const topmostModal = modals[modals.length - 1];
+      const elements = Array.from(activeKeyListeners);
+      const topmostElement = elements[elements.length - 1];
 
-      if (node === topmostModal) {
+      if (node === topmostElement) {
         callback(event);
       }
     }
   }
 
   $effect(() => {
-    activeModals.add(node);
+    activeKeyListeners.add(node);
     document.addEventListener('keydown', handleKeydown);
 
     return () => {
-      activeModals.delete(node);
+      activeKeyListeners.delete(node);
       document.removeEventListener('keydown', handleKeydown);
     };
   });

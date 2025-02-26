@@ -14,7 +14,7 @@ export async function fetchFile(fileUrl, destPath) {
     const fileContent = await response.text();
     await fs.writeFile(destPath, fileContent);
   } catch (error) {
-    console.error(`❌ Error downloading file: ${error.message}`);
+    console.error(`❌ File not found.`);
     throw error;
   }
 }

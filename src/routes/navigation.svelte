@@ -57,6 +57,28 @@
       <NavLink bind:isOpen href="/components/tabs" label="Tabs" />
       <NavLink bind:isOpen href="/components/textarea" label="Textarea" />
 
+      <p class="text-muted mt-4 pl-4 text-sm">
+        Actions <span class="italic">- Preview</span>
+      </p>
+      <NavLink bind:isOpen href="/actions/escape-key" label="escape-key" />
+      <NavLink bind:isOpen href="/actions/focus-trap" label="focus-trap" />
+      <NavLink bind:isOpen href="/actions/hot-key" label="hot-key" />
+      <NavLink
+        bind:isOpen
+        href="/actions/outside-click"
+        label="outside-click"
+      />
+      <NavLink
+        bind:isOpen
+        href="/actions/vertical-navigation"
+        label="vertical-navigation"
+      />
+
+      <!-- <p class="text-muted mt-4 pl-4 text-sm">Packages</p>
+      <NavLink bind:isOpen href="/packages/apexcharts" label="apexcharts" />
+      <NavLink bind:isOpen href="/packages/cropperjs" label="cropperjs" />
+      <NavLink bind:isOpen href="/packages/mapbox-gl" label="mapbox-gl" /> -->
+
       <div class="m-8 flex justify-end">
         <Link
           href="https://github.com/clios"
