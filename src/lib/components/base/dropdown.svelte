@@ -82,7 +82,7 @@
       transition:fade={{ duration: 75 }}
       class={twMerge(
         'bg-bg fixed h-fit max-h-[calc(100vh-2rem)] rounded border',
-        'text-fg pointer-events-auto overflow-auto',
+        'text-fg pointer-events-auto overflow-auto px-2 py-1',
         className
       )}
     >

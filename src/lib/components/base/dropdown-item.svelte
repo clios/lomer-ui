@@ -26,14 +26,17 @@
 
 <button
   class={twMerge(
-    'relative flex cursor-pointer items-center gap-1 rounded ', // base
+    'relative my-1 flex cursor-pointer items-center gap-1 rounded', // base
     'w-full py-1 pr-12 pl-3', // box model
     'outline-primary -outline-offset-1', // outline
-    'hover:outline', // hover
-    'focus:outline', // focus
+    'hover:bg-primary/10 hover:outline', // hover
+    'focus:bg-primary/10 focus:outline', // focus
     'active:outline-2 active:-outline-offset-2', // active
 
-    variant === 'destructive' && 'text-destructive outline-destructive',
+    variant === 'destructive' && [
+      'text-destructive outline-destructive',
+      'hover:bg-destructive/10 focus:bg-destructive/10'
+    ],
 
     (loading || disabled) &&
       'text-disabled-fg pointer-events-none cursor-not-allowed',

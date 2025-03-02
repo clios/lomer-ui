@@ -33,10 +33,10 @@
 <button
   class={twMerge(
     'relative flex w-full cursor-pointer items-center justify-between gap-4 rounded', // base
-    'w-full py-1 pr-1 pl-3', // box model
+    'my-1 w-full py-1 pr-1 pl-3', // box model
     'outline-primary -outline-offset-1', // outline
-    'hover:outline', // hover
-    'focus:outline', // focus
+    'hover:bg-primary/10 hover:outline', // hover
+    'focus:bg-primary/10 focus:outline', // focus
     'active:outline-2 active:-outline-offset-2', // active
     disabled && 'text-disabled-fg'
   )}
