@@ -154,5 +154,11 @@ export const COMPONENTS = [
     name: 'textarea',
     dependencies: [],
     actions: []
+  },
+  // WRAPPERS
+  {
+    name: 'mapbox',
+    dependencies: [],
+    actions: []
   }
 ];
