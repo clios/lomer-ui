@@ -157,7 +157,7 @@ export const COMPONENTS = [
   },
   // WRAPPERS
   {
-    name: 'mapbox',
+    name: 'map.mapbox-gl',
     dependencies: [],
     actions: []
   }

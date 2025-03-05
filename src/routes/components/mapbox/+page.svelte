@@ -65,7 +65,7 @@
 
     <!-- GET THE COMPONENT -->
     <PageArticle title="Get the component">
-      <CopyCLI code={`npx lomer-ui get mapbox`} />
+      <CopyCLI code={`npx lomer-ui get map.mapbox-gl`} />
       <p>
         Source code:
         <Link
