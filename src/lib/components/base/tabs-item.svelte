@@ -9,6 +9,7 @@
     class?: string;
     disabled?: boolean;
     value?: string;
+    onclick?: () => void;
   } & HTMLButtonAttributes;
 
   let {
@@ -17,21 +18,20 @@
     class: className,
     disabled = false,
     value = '',
+    onclick,
     ...props
   }: Props = $props();
 
-  function onclick() {
-    if (active || value) {
-      active = value;
-    }
-    onclick;
+  function handleOnClick() {
+    active = value;
+    onclick?.();
   }
 </script>
 
 <Button
   class="text-nowrap"
   variant={active === value ? 'default' : 'secondary'}
-  {onclick}
+  onclick={handleOnClick}
   {...props}
   {disabled}
 >
