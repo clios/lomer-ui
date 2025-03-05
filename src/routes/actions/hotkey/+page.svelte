@@ -1,8 +1,8 @@
 <script lang="ts">
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import HotKeyUsage from './hot-key-usage.svelte';
-  import HotKeyUsageRaw from './hot-key-usage.svelte?raw';
+  import HotkeyUsage from './hotkey-usage.svelte';
+  import HotkeyUsageRaw from './hotkey-usage.svelte?raw';
   import Link from '$lib/components/base/link.svelte';
   import PageArticle from '$lib/components/page-article.svelte';
   import PageSection from '$lib/components/page-section.svelte';
@@ -23,12 +23,12 @@
 </script>
 
 <svelte:head>
-  <title>Hot Key . lomer-ui</title>
+  <title>Hotkey . lomer-ui</title>
 </svelte:head>
 
 <PageWrapper
   {tickler}
-  title="Hot Key"
+  title="Hotkey"
   sub="Action"
   info="Triggers actions with keyboard shortcuts."
   prevLabel="Focus Trap"
@@ -39,9 +39,9 @@
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">
     <PageArticle title="Get the action">
-      <CopyCLI code={`npx lomer-ui action hot-key`} />
+      <CopyCLI code={`npx lomer-ui action hotkey`} />
       <Link
-        href="https://github.com/clios/lomer-ui/blob/main/src/lib/actions/hot-key.svelte.ts"
+        href="https://github.com/clios/lomer-ui/blob/main/src/lib/actions/hotkey.svelte.ts"
         target="_blank"
       >
         Source code
@@ -54,10 +54,10 @@
     <!-- PREVIEW -->
     <PageArticle title="Preview">
       <Screen class="flex-col justify-center gap-2">
-        <HotKeyUsage />
+        <HotkeyUsage />
       </Screen>
       <CopySvelteCode
-        code={HotKeyUsageRaw}
+        code={HotkeyUsageRaw}
         highlightedLines={[5, 13, 24, 25]}
       />
     </PageArticle>

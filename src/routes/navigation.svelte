@@ -57,12 +57,10 @@
       <NavLink bind:isOpen href="/components/tabs" label="Tabs" />
       <NavLink bind:isOpen href="/components/textarea" label="Textarea" />
 
-      <p class="text-muted mt-4 pl-4 text-sm">
-        Actions <span class="italic">- Preview</span>
-      </p>
+      <p class="text-muted mt-4 pl-4 text-sm">Actions</p>
       <NavLink bind:isOpen href="/actions/escape-key" label="escape-key" />
       <NavLink bind:isOpen href="/actions/focus-trap" label="focus-trap" />
-      <NavLink bind:isOpen href="/actions/hot-key" label="hot-key" />
+      <NavLink bind:isOpen href="/actions/hotkey" label="hotkey" />
       <NavLink
         bind:isOpen
         href="/actions/outside-click"
@@ -73,6 +71,9 @@
         href="/actions/vertical-navigation"
         label="vertical-navigation"
       />
+
+      <p class="text-muted mt-4 pl-4 text-sm">Wrappers</p>
+      <NavLink bind:isOpen href="/components/mapbox" label="Mapbox" />
 
       <!-- <p class="text-muted mt-4 pl-4 text-sm">Packages</p>
       <NavLink bind:isOpen href="/packages/apexcharts" label="apexcharts" />

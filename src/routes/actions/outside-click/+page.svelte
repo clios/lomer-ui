@@ -31,8 +31,8 @@
   title="Outside Click"
   sub="Action"
   info="Detects clicks outside a specified element."
-  prevLabel="Hot Key"
-  prevLink="/actions/hot-key"
+  prevLabel="Hotkey"
+  prevLink="/actions/hotkey"
   nextLabel="Vertical Navigation"
   nextLink="/actions/vertical-navigation"
 >

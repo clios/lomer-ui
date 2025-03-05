@@ -32,8 +32,8 @@
   info="Keeps focus within an element for accessibility."
   prevLabel="Escape Key"
   prevLink="/actions/escape-key"
-  nextLabel="Hot Key"
-  nextLink="/actions/hot-key"
+  nextLabel="Hotkey"
+  nextLink="/actions/hotkey"
 >
   <!-- INSTALLATION -->
   <PageSection id="1" title="Installation">

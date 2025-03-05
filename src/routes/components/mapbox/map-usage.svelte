@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Mapbox from '$lib/components/base/mapbox.svelte';
+  import Map from '$lib/components/base/map.mapbox.svelte';
 
   let map: mapboxgl.Map;
 </script>
 
-<Mapbox bind:map />
+<Map bind:map />
