@@ -1,5 +1,5 @@
 <script>
-  import { hotKey } from '$lib/actions/hot-key.svelte.ts';
+  import { hotkey } from '$lib/actions/hotkey.svelte.ts';
   import Button from '$lib/components/base/button.svelte';
   import Icon from '@iconify/svelte';
 
@@ -33,8 +33,8 @@
   <!-- HOT KEY -->
   <div
     class="hidden"
-    use:hotKey={{
-      key: 'b',
+    use:hotkey={{
+      code: 'KeyB',
       ctrlKey: true,
       onKeydown: () => (isOpen = !isOpen)
     }}

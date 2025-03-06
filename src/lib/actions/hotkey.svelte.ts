@@ -1,5 +1,5 @@
 type Options = {
-  key: string;
+  code: string;
   onKeydown: (event: KeyboardEvent) => void;
   ctrlKey?: boolean;
   metaKey?: boolean;
@@ -7,9 +7,9 @@ type Options = {
   altKey?: boolean;
 };
 
-export function hotKey(node: HTMLElement, options: Options) {
+export function hotkey(node: HTMLElement, options: Options) {
   const {
-    key,
+    code,
     onKeydown,
     ctrlKey = false,
     metaKey = false,
@@ -20,7 +20,7 @@ export function hotKey(node: HTMLElement, options: Options) {
   function handleKeydown(event: KeyboardEvent) {
     if (
       // This is because shift key changes the event key
-      (event.key === key || (shiftKey && event.key === key.toUpperCase())) &&
+      event.code === code &&
       event.ctrlKey == ctrlKey &&
       event.metaKey == metaKey &&
       event.shiftKey == shiftKey &&
