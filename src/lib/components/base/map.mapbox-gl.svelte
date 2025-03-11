@@ -18,10 +18,11 @@
 
   onMount(() => {
     const { Map } = mapboxgl;
+
     map = new Map({
       container: mapElement,
       accessToken: PUBLIC_MAPBOX_TOKEN,
-      style: 'mapbox://styles/mapbox/satellite-streets-v12',
+      style: 'mapbox://styles/mapbox/streets-v12',
       center: [-74.5, 40],
       zoom: 9,
       ...options
@@ -33,6 +34,6 @@
   });
 </script>
 
-<div class={twMerge('relative h-80 w-full', className)}>
+<div class={twMerge('relative h-80 w-full overflow-hidden rounded', className)}>
   <div class="absolute h-full w-full" bind:this={mapElement}></div>
 </div>

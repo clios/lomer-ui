@@ -73,7 +73,7 @@
       />
 
       <p class="text-muted mt-4 pl-4 text-sm">Wrappers</p>
-      <NavLink bind:isOpen href="/components/mapbox" label="Mapbox" />
+      <NavLink bind:isOpen href="/wrappers/mapbox" label="Mapbox" />
 
       <!-- <p class="text-muted mt-4 pl-4 text-sm">Packages</p>
       <NavLink bind:isOpen href="/packages/apexcharts" label="apexcharts" />
