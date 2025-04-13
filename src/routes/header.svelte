@@ -11,7 +11,7 @@
 </script>
 
 <header
-  class="bg-bg/50 sticky top-0 z-20 flex justify-between border-b p-2 backdrop-blur-sm lg:z-30"
+  class="bg-bg/50 sticky top-0 z-20 flex justify-between border-b border-dotted p-2 backdrop-blur-sm lg:z-30"
 >
   <div class="flex items-center gap-2">
     <ButtonToggleSidebar bind:isOpen />

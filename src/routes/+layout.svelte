@@ -7,7 +7,7 @@
   import { afterNavigate } from '$app/navigation';
 
   let { children } = $props();
-  let isOpen = $state(true);
+  let isOpen = $state(false);
   let elPage: HTMLDivElement;
 
   afterNavigate(() => {

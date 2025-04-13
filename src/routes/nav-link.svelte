@@ -13,14 +13,10 @@
 
   let { href, isOpen = $bindable(false), label, status }: Props = $props();
 
-  let innerWidth = $state(0);
-
   function onclick() {
     isOpen = false;
   }
 </script>
-
-<svelte:window bind:innerWidth />
 
 <Link
   {href}

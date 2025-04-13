@@ -24,7 +24,7 @@
   {/if}
   <div
     class={twMerge(
-      'text-muted flex w-full flex-col gap-2 pt-2 pb-4 sm:pr-14 sm:pl-4 lg:max-w-[700px] xl:max-w-[650px] 2xl:max-w-[900px]',
+      'text-muted flex w-full flex-col gap-2 pt-2 pb-4 sm:pr-14 sm:pl-4',
       className
     )}
   >

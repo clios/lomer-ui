@@ -33,7 +33,7 @@
 <div class="mx-auto flex w-full gap-8">
   <section
     class={twMerge(
-      'mb-16 ml-auto flex w-full flex-col gap-16 lg:mr-auto lg:max-w-[800px]',
+      'mb-16 ml-auto flex w-full flex-col gap-16 lg:mr-auto',
       className
     )}
   >
@@ -90,7 +90,7 @@
           <p class="text-muted mr-4 border-r border-dotted px-4 pb-1 text-sm">
             <Button
               class={twMerge(
-                'hover:text-primary text-muted focus:text-primary h-min border-r p-0 text-left text-sm outline-none'
+                'text-muted hover:text-primary focus:text-primary h-min border-r p-0 text-left text-sm outline-none'
               )}
               variant="ghost"
               size="small"
@@ -104,7 +104,7 @@
           {#each tickler as t}
             <Button
               class={twMerge(
-                'hover:text-primary text-muted focus:text-primary h-min w-full p-0 px-4 text-left text-sm outline-none',
+                'text-muted hover:text-primary focus:text-primary h-min w-full p-0 px-4 text-left text-sm outline-none',
                 t.sub && 'ml-4 pr-8 pl-4'
               )}
               variant="ghost"
@@ -119,7 +119,7 @@
           </div>
           <Button
             class={twMerge(
-              'hover:text-primary text-muted focus:text-primary h-min w-full p-0 px-4 text-left text-sm outline-none'
+              'text-muted hover:text-primary focus:text-primary h-min w-full p-0 px-4 text-left text-sm outline-none'
             )}
             variant="ghost"
             size="small"
