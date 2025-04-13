@@ -1,7 +1,7 @@
 <script lang="ts">
-  import SectionExplore from './section-explore.svelte';
   import Link from '$lib/components/base/link.svelte';
   import NavLink from './nav-link.svelte';
+  import SectionExplore from './section-explore.svelte';
   import { fade, slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
 
@@ -12,19 +12,12 @@
   <nav
     in:slide={{ axis: 'x', duration: 150 }}
     out:slide={{ axis: 'x', duration: 150, delay: 150 }}
-    class={twMerge(
-      'bg-bg lg:bg-bg absolute z-20 w-full max-w-60 border-r lg:relative'
-    )}
+    class={twMerge('bg-bg absolute top-0 z-20 border-r sm:z-40')}
   >
-    <!-- BORDER LEFT FOR SMALLEST TO LARGE SCREEN -->
-    <div
-      class="absolute -left-[1px] h-[calc(100vh-2.5rem-1px)] border-l lg:hidden"
-    ></div>
-
     <div
       in:fade={{ delay: 150 }}
       out:fade={{ duration: 150 }}
-      class="sticky top-[calc(2.5rem+1px)] flex h-[calc(100vh-2.5rem-1px)] flex-col gap-1 overflow-y-auto [&::-webkit-scrollbar]:w-0"
+      class="sticky top-[calc(3rem+1px)] flex h-screen w-screen flex-col gap-1 overflow-y-auto sm:w-80"
     >
       <SectionExplore />
 
@@ -75,7 +68,7 @@
       <p class="text-muted mt-4 pl-4 text-sm">Wrappers</p>
       <NavLink bind:isOpen href="/wrappers/mapbox" label="Mapbox" />
 
-      <!-- <p class="text-muted mt-4 pl-4 text-sm">Packages</p>
+      <!-- <p class="mt-4 pl-4 text-muted text-sm">Packages</p>
       <NavLink bind:isOpen href="/packages/apexcharts" label="apexcharts" />
       <NavLink bind:isOpen href="/packages/cropperjs" label="cropperjs" />
       <NavLink bind:isOpen href="/packages/mapbox-gl" label="mapbox-gl" /> -->
@@ -97,8 +90,8 @@
   <div
     onclick={() => (isOpen = false)}
     class={twMerge(
-      'fixed top-0 right-0 bottom-0 left-0 z-10', // position
-      'bg-bg/20 backdrop-blur-xs lg:hidden' // blur
+      'fixed top-0 right-0 bottom-0 left-0 z-10 sm:z-30', // position
+      'bg-bg/20 backdrop-blur-xs' // blur
     )}
     in:fade={{ duration: 300 }}
   ></div>

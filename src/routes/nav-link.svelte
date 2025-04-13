@@ -11,20 +11,12 @@
     status?: 'new' | 'draft';
   };
 
-  let {
-    href,
-    isOpen = $bindable(false),
-    label,
-
-    status
-  }: Props = $props();
+  let { href, isOpen = $bindable(false), label, status }: Props = $props();
 
   let innerWidth = $state(0);
 
   function onclick() {
-    if (innerWidth < 1024) {
-      isOpen = false;
-    }
+    isOpen = false;
   }
 </script>
 
@@ -41,7 +33,7 @@
   {label}
   {#if status === 'new'}
     <span
-      class="text-primary-fg dark:text-fg bg-primary rounded px-1 py-0.5 text-[.6rem]"
+      class="bg-primary text-primary-fg dark:text-fg rounded px-1 py-0.5 text-[.6rem]"
     >
       NEW
     </span>

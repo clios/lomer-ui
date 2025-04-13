@@ -40,6 +40,7 @@
     "wrangler": "^3.90.0"
   },
   "dependencies": {
+    "@fontsource-variable/nunito-sans": "^5.2.5",
     "@sveltejs/kit": "^2.0.0",
     "fuse.js": "^7.1.0",
     "highlight.js": "^11.10.0",

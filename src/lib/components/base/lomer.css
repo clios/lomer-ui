@@ -1,5 +1,3 @@
-@variant dark (&:where(.dark, .dark *));
-
 @theme {
   /* General background and foreground color. */
   --color-bg: var(--color-zinc-50);
@@ -73,9 +71,11 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-bg text-fg;
   }
+
   ::selection {
     background-color: var(--color-primary) !important;
     color: var(--color-primary-fg) !important;

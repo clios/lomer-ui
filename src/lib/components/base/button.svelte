@@ -12,7 +12,7 @@
     | 'outline'
     | 'ghost';
 
-  type Props = {
+  type Props = HTMLButtonAttributes & {
     children?: Snippet;
     class?: string | null;
     disabled?: boolean;
@@ -20,7 +20,7 @@
     loading?: boolean;
     size?: 'default' | 'icon' | 'small' | 'fit';
     variant?: Variant;
-  } & HTMLButtonAttributes;
+  };
 
   let {
     children,
@@ -30,28 +30,72 @@
     loading = $bindable(false),
     size = 'default',
     variant = 'default',
-    type = 'button',
     ...props
   }: Props = $props();
 </script>
 
 <button
   class={twMerge(
-    'relative flex items-center gap-1', // layout and positioning
-    'hover:outline focus:outline active:outline-2 active:outline-offset-0', // outline
-    'hover:outline-offset-2 focus:outline-offset-2 active:outline-offset-0', // outline
-    'outline-primary h-min w-max cursor-pointer border', // visual
+    'h-min w-max', // size
+    'relative flex items-center gap-1 hover:z-1', // layout and positioning
+    'ring-primary ring-offset-bg hover:ring-primary ring', // ring
+    '', // focus
+    'cursor-pointer transition-all', // visual
 
-    // VARIANTS
-    variant === 'default' && 'bg-fg text-bg border-primary',
-    variant === 'inverted' && 'bg-bg text-fg',
-    variant === 'primary' && 'bg-primary text-primary-fg border-primary',
-    variant === 'secondary' &&
-      'bg-secondary text-secondary-fg border-secondary',
-    variant === 'destructive' &&
-      'bg-destructive text-destructive-fg border-destructive outline-destructive',
-    variant === 'outline' && 'text-fg border-fg bg-none',
-    variant === 'ghost' && 'text-fg border-none bg-none',
+    // VARIANT: DEFAULT
+    variant === 'default' && [
+      'text-bg bg-fg', // text and background
+      'hover:ring-offset-2 focus:ring-offset-2', // hover and focus
+      'active:ring-2 active:ring-offset-0' // active
+    ],
+
+    // VARIANT: INVERTED
+    variant === 'inverted' && [
+      'text-fg bg-bg', // text and background
+      'hover:ring-offset-2 focus:ring-offset-2', // hover and focus
+      'active:ring-2 active:ring-offset-0', // active
+      'ring-border' // ring
+    ],
+
+    // VARIANT: PRIMARY
+    variant === 'primary' && [
+      'text-primary-fg bg-primary', // text and background
+      'hover:ring-offset-2 focus:ring-offset-2', // hover and focus
+      'active:ring-2 active:ring-offset-0' // active
+    ],
+
+    // VARIANT: SECONDARY
+    variant === 'secondary' && [
+      'text-secondary-fg bg-secondary', // text and background
+      'hover:ring-offset-2 focus:ring-offset-2', // hover and focus
+      'active:ring-2 active:ring-offset-0', // active
+      'ring-border' // ring
+    ],
+
+    // VARIANT: DESTRUCTIVE
+    variant === 'destructive' && [
+      'text-destructive-fg bg-destructive', // text and background
+      'hover:ring-destructive hover:ring-offset-2', // hover and focus
+      'focus:ring-destructive focus:ring-offset-2', // hover and focus
+      'active:ring-2 active:ring-offset-0', // active
+      'ring-destructive' // ring
+    ],
+
+    // VARIANT: OUTLINE
+    variant === 'outline' && [
+      'text-fg bg-none', // text and background
+      'hover:ring-offset-2 focus:ring-offset-2', // hover and focus
+      'active:ring-2 active:ring-offset-0', // active
+      'ring-fg' // ring
+    ],
+
+    // VARIANT: GHOST
+    variant === 'ghost' && [
+      'text-fg bg-none', // text and background
+      '', // focus
+      'hover:text-primary active:text-fg', // hover and active
+      'ring-0' // ring
+    ],
 
     // SIZES
     size === 'default' && 'px-3 py-1 text-base',
@@ -66,16 +110,15 @@
 
     // LOADING
     loading &&
-      'border-disabled text-disabled bg-disabled cursor-not-allowed outline-none',
+      'ring-disabled text-disabled bg-disabled cursor-not-allowed outline-none',
 
     // DISABLED
     disabled &&
-      'border-disabled text-disabled-fg bg-disabled cursor-not-allowed outline-none',
+      'ring-disabled text-disabled-fg bg-disabled cursor-not-allowed outline-none',
 
     className
   )}
   disabled={loading || disabled}
-  {type}
   {...props}
 >
   {#if loading}

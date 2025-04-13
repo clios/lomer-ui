@@ -14,16 +14,14 @@
   <title>lomer-ui</title>
 </svelte:head>
 
-<div class="relative mx-auto mb-8 flex w-full max-w-[1200px] flex-col gap-16">
-  <IconLomerUi class="text-fg/1 absolute -z-10" />
-
-  <section class="flex items-center justify-between lg:text-xl">
+<div class="relative flex flex-col gap-16 mx-auto mb-8 w-full max-w-[1200px]">
+  <section class="flex justify-between items-center lg:text-xl">
     <p class="flex items-end text-sm">
       <span>Svelte</span>
-      <span class="text-primary mb-[1px] pl-1 text-sm">v5</span>
-      <span class="text-muted px-2 text-sm">&</span>
+      <span class="mb-[1px] pl-1 text-primary text-sm">v5</span>
+      <span class="px-2 text-muted text-sm">&</span>
       <span>Tailwind CSS</span>
-      <span class="text-primary mb-[1px] pl-1 text-sm">v4</span>
+      <span class="mb-[1px] pl-1 text-primary text-sm">v4</span>
     </p>
 
     <div class="flex items-center gap-2">
@@ -33,7 +31,7 @@
         href="https://github.com/sponsors/clios"
         target="_blank"
       >
-        <Icon class="text-primary inline size-6" icon="mdi:heart-outline" />
+        <Icon class="inline size-6 text-primary" icon="mdi:heart-outline" />
       </LinkButton>
       <LinkButton
         variant="ghost"
@@ -41,7 +39,7 @@
         href="https://ko-fi.com/clios"
         target="_blank"
       >
-        <Icon class="text-primary inline size-6" icon="mdi:coffee" />
+        <Icon class="inline size-6 text-primary" icon="mdi:coffee" />
       </LinkButton>
     </div>
   </section>
@@ -61,10 +59,10 @@
     </div>
   </section>
 
-  <div class="grid place-content-center lg:text-xl">
-    <p class="text-primary text-center text-3xl lg:text-4xl">lomer-ui</p>
+  <div class="place-content-center grid lg:text-xl">
+    <p class="text-primary text-3xl lg:text-4xl text-center">lomer-ui</p>
     <p class="text-muted text-center">Keep It Simply Styled</p>
-    <div class="mt-8 flex justify-center gap-4">
+    <div class="flex justify-center gap-4 mt-8">
       <Button class="text-nowrap" onclick={() => goto('/docs/intro')}>
         Get Started
       </Button>
@@ -80,37 +78,37 @@
     </div>
   </div>
 
-  <section class="text-muted text-center lg:text-xl">
+  <section class="text-muted lg:text-xl text-center">
     <p>
-      A dead-simple <span class="text-fg font-semibold">CLI tool</span>
+      A dead-simple <span class="font-semibold text-fg">CLI tool</span>
       to
-      <span class="text-fg font-semibold">instant</span>ly
+      <span class="font-semibold text-fg">instant</span>ly
       <br class="sm:hidden" />
       kickstart your
-      <span class="text-fg font-semibold">components</span>.
+      <span class="font-semibold text-fg">components</span>.
     </p>
     <p class="mt-8 sm:mt-0">
       No extra UI libraries required.<br class="sm:hidden" /> Just clean,
       standalone code <br class="sm:hidden" />
-      <span class="text-fg font-semibold">ready to use</span>.
+      <span class="font-semibold text-fg">ready to use</span>.
     </p>
   </section>
 
   <section
-    class="text-muted flex flex-col items-center gap-2 text-center lg:text-xl"
+    class="flex flex-col items-center gap-2 text-muted lg:text-xl text-center"
   >
     <p>
-      <span class="text-fg font-semibold">Start</span>
+      <span class="font-semibold text-fg">Start</span>
       <span>building your own <br class="sm:hidden" /> components</span>
-      <span class="text-fg font-semibold">with CLI</span>.
+      <span class="font-semibold text-fg">with CLI</span>.
     </p>
-    <div class="border-muted mx-auto h-min w-72 overflow-hidden rounded border">
+    <div class="mx-auto border border-muted rounded w-72 h-min overflow-hidden">
       <div
-        class="bg-muted text-bg flex w-full justify-between px-4 py-1 text-sm"
+        class="flex justify-between bg-muted px-4 py-1 w-full text-bg text-sm"
       >
         <p>CLI</p>
       </div>
-      <div class="text-fg overflow-x-auto text-left text-sm">
+      <div class="overflow-x-auto text-fg text-sm text-left">
         <pre><code>
 {`\t$ npx lomer-ui get button
 \t✅ Component "button" added.`}
@@ -123,7 +121,7 @@
   <section class="border-b border-dotted"></section>
 
   <section class="text-muted lg:text-xl">
-    <p class="text-fg text-center lg:text-2xl">
+    <p class="text-fg lg:text-2xl text-center">
       The Zero Configuration UI Library.
     </p>
   </section>
@@ -132,7 +130,7 @@
     <div class="max-w-72">
       <Screen class="flex-col items-center rounded text-center">
         <Icon class="size-10" icon="mdi:tools" />
-        <p class="text-primary mt-2">No Setup Required</p>
+        <p class="mt-2 text-primary">No Setup Required</p>
         <p class="text-muted">
           Works immediately after installation or copying the components.
         </p>
@@ -141,7 +139,7 @@
     <div class="max-w-72">
       <Screen class="flex-col items-center rounded text-center">
         <Icon class="size-10" icon="ix:box-open" />
-        <p class="text-primary mt-2">Minimal or No Dependencies</p>
+        <p class="mt-2 text-primary">Minimal or No Dependencies</p>
         <p class="text-muted">
           Avoids requiring third-party libraries for styling or behavior.
         </p>
@@ -150,7 +148,7 @@
     <div class="max-w-72">
       <Screen class="flex-col items-center rounded text-center">
         <Icon class="size-10" icon="heroicons:paint-brush-solid" />
-        <p class="text-primary mt-2">Pre-styled Components</p>
+        <p class="mt-2 text-primary">Pre-styled Components</p>
         <p class="text-muted">
           Comes with sensible default styles, but still allows customization.
         </p>
@@ -159,7 +157,7 @@
     <div class="max-w-72">
       <Screen class="flex-col items-center rounded text-center">
         <Icon class="size-10" icon="bxs:plug" />
-        <p class="text-primary mt-2">Plug-and-Play</p>
+        <p class="mt-2 text-primary">Plug-and-Play</p>
         <p class="text-muted">
           Components can be used directly in a project without additional setup.
         </p>
@@ -168,7 +166,7 @@
     <div class="max-w-72">
       <Screen class="flex-col items-center rounded text-center">
         <Icon class="size-10" icon="mingcute:settings-6-fill" />
-        <p class="text-primary mt-2">Simple API</p>
+        <p class="mt-2 text-primary">Simple API</p>
         <p class="text-muted">
           Uses clear, intuitive props or configurations for quick use.
         </p>
@@ -179,7 +177,7 @@
   <section class="border-b border-dotted"></section>
 
   <section class="text-muted lg:text-xl">
-    <p class="text-fg text-center lg:text-2xl">Coming Soon...</p>
+    <p class="text-fg lg:text-2xl text-center">Coming Soon...</p>
   </section>
 
   <section class="text-center">
