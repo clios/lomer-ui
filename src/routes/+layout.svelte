@@ -1,12 +1,12 @@
 <script lang="ts">
   import '../app.css';
   import '@fontsource-variable/nunito-sans';
-  import Navigation from './navigation.svelte';
   import Header from './header.svelte';
+  import Icon from '@iconify/svelte';
+  import Link from '$lib/components/base/link.svelte';
+  import Navigation from './navigation.svelte';
   import { ModeWatcher } from 'mode-watcher';
   import { afterNavigate } from '$app/navigation';
-  import Link from '$lib/components/base/link.svelte';
-  import Icon from '@iconify/svelte';
 
   let { children } = $props();
   let isOpen = $state(false);
@@ -24,20 +24,19 @@
   <Header bind:isOpen />
   <Navigation bind:isOpen />
   {@render children()}
-
   <div class="container mx-auto sm:px-4">
     <div class="w-full p-4 md:p-8 lg:p-16">
       <p class="mb-4 flex items-center gap-2">
         Share treats:
         <Link
-          class="hover:text-primary text-muted transition-all"
+          class="text-muted hover:text-primary transition-all"
           href="https://github.com/sponsors/clios"
           target="_blank"
         >
-          <Icon class=" size-6" icon="mdi:heart" />
+          <Icon class="size-6" icon="mdi:heart" />
         </Link>
-        <Link class="hover:text-primary text-muted transition-all" href="https://ko-fi.com/clios" target="_blank">
-          <Icon class=" size-6" icon="raphael:coffee" />
+        <Link class="text-muted hover:text-primary transition-all" href="https://ko-fi.com/clios" target="_blank">
+          <Icon class="size-6" icon="raphael:coffee" />
         </Link>
       </p>
       <p class="text-muted italic">Copyright © 2025 - Cliemtor Fabros</p>

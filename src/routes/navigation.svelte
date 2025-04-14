@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
+  import Button from '$lib/components/base/button.svelte';
   import Link from '$lib/components/base/link.svelte';
   import NavLink from './nav-link.svelte';
   import SectionExplore from './section-explore.svelte';
@@ -6,6 +8,11 @@
   import { twMerge } from 'tailwind-merge';
 
   let { isOpen = $bindable(false) } = $props();
+
+  function handleRouting(url: string) {
+    isOpen = false;
+    goto(url);
+  }
 </script>
 
 {#if isOpen}
@@ -21,7 +28,14 @@
     >
       <SectionExplore />
 
-      <p class="text-muted mt-4 pl-4 text-sm">Docs</p>
+      <p class="text-muted mt-4 pl-4 text-sm">Getting started</p>
+      <Button onclick={() => handleRouting('/theming-structure')} class="ml-4 py-0" variant="ghost">
+        Theming structure
+      </Button>
+      <Button onclick={() => handleRouting('/dark-mode-implementation')} class="ml-4 py-0" variant="ghost">
+        Dark mode implementation
+      </Button>
+
       <NavLink bind:isOpen href="/docs/intro" label="Intro" />
       <NavLink bind:isOpen href="/docs/setup" label="Setup" />
       <NavLink bind:isOpen href="/docs/dark-mode" label="Dark Mode" />
@@ -54,16 +68,8 @@
       <NavLink bind:isOpen href="/actions/escape-key" label="escape-key" />
       <NavLink bind:isOpen href="/actions/focus-trap" label="focus-trap" />
       <NavLink bind:isOpen href="/actions/hotkey" label="hotkey" />
-      <NavLink
-        bind:isOpen
-        href="/actions/outside-click"
-        label="outside-click"
-      />
-      <NavLink
-        bind:isOpen
-        href="/actions/vertical-navigation"
-        label="vertical-navigation"
-      />
+      <NavLink bind:isOpen href="/actions/outside-click" label="outside-click" />
+      <NavLink bind:isOpen href="/actions/vertical-navigation" label="vertical-navigation" />
 
       <p class="text-muted mt-4 pl-4 text-sm">Wrappers</p>
       <NavLink bind:isOpen href="/wrappers/mapbox" label="Mapbox" />
@@ -74,11 +80,7 @@
       <NavLink bind:isOpen href="/packages/mapbox-gl" label="mapbox-gl" /> -->
 
       <div class="m-8 flex justify-end">
-        <Link
-          href="https://github.com/clios"
-          target="_blank"
-          class="text-fg font-mono italic no-underline"
-        >
+        <Link href="https://github.com/clios" target="_blank" class="text-fg font-mono italic no-underline">
           - Clios
         </Link>
       </div>
