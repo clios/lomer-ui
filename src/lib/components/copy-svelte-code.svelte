@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '$lib/components/base/button.svelte';
   import Icon from '@iconify/svelte';
-  import felipec from 'svelte-highlight/styles/felipec';
+  import githubDark from 'svelte-highlight/styles/github-dark';
   import { HighlightSvelte, LineNumbers } from 'svelte-highlight';
   import { twMerge } from 'tailwind-merge';
 
@@ -13,13 +13,7 @@
     startingLineNumber?: number;
   };
 
-  let {
-    class: className,
-    code,
-    title = 'Svelte Code',
-    highlightedLines,
-    startingLineNumber
-  }: Props = $props();
+  let { class: className, code, title = 'Svelte Code', highlightedLines, startingLineNumber }: Props = $props();
 
   async function copyToClipboard() {
     try {
@@ -36,30 +30,28 @@
 </script>
 
 <svelte:head>
-  {@html felipec}
+  {@html githubDark}
 </svelte:head>
 
-<div class={twMerge('relative flex flex-col text-sm', className)}>
-  <div
-    class="bg-fg dark:bg-bg text-bg dark:text-fg flex justify-between rounded-t border-x border-t py-1.5 pr-1.5 pl-2.5"
-  >
+<div class={twMerge('relative flex flex-col border text-sm sm:text-base', className)}>
+  <div class="bg-fg dark:bg-bg text-bg dark:text-fg flex justify-between py-1.5 pr-1.5 pl-2.5">
     <p>{title}</p>
-
-    <Button size="icon" variant="ghost" onclick={copyToClipboard}>
+    <Button class="text-bg" size="icon" variant="ghost" onclick={copyToClipboard}>
       {#if copyMessage}
-        <Icon class="text-teal-500" icon="mdi:check" />
+        <span class="text-teal-500">Copied!</span>
       {:else}
-        <Icon class="text-bg dark:text-fg" icon="mdi:clipboard-outline" />
+        <span class="text-zinc-50">Copy</span>
       {/if}
     </Button>
   </div>
 
-  <div class="overflow-hidden rounded-b border-x border-b">
+  <div class="overflow-hidden">
     <HighlightSvelte {code} let:highlighted>
       <LineNumbers
         {highlighted}
         {highlightedLines}
         {startingLineNumber}
+        wrapLines
         --line-number-color="rgba(255, 255, 255, 0.3)"
         --border-color="rgba(255, 255, 255, 0.1)"
         --highlighted-background="rgba(6, 182, 212, 0.2)"

@@ -1,32 +1,13 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
 
-  export let lineColor = '#71717a20'; // Default color of the grid lines
-  export { className as class };
-
-  let className = '';
+  let { class: className, children } = $props();
 </script>
 
 <div
-  class="relative h-full w-full overflow-hidden rounded border"
-  style="
-	background-image: linear-gradient({lineColor} 1px, transparent 1px),
-	linear-gradient(90deg, {lineColor} 1px, transparent 1px);
-	background-size: 1rem 1rem;"
+  class="dark:border-muted-fg relative h-full w-full overflow-hidden border bg-[image:repeating-linear-gradient(315deg,_var(--color-border)_0,_var(--color-border)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed shadow-md [--color-border:var(--color-fg)]/25 dark:[--color-border:var(--color-fg)]/30"
 >
-  <div
-    class="to-bg pointer-events-none absolute top-0 h-4 w-full bg-gradient-to-t from-transparent"
-  ></div>
-  <div
-    class="to-bg pointer-events-none absolute top-0 left-0 h-full w-4 bg-gradient-to-l from-transparent"
-  ></div>
   <div class={twMerge('flex p-8', className)}>
-    <slot />
+    {@render children?.()}
   </div>
-  <div
-    class="to-bg pointer-events-none absolute top-0 right-0 h-full w-4 bg-gradient-to-r from-transparent"
-  ></div>
-  <div
-    class="to-bg pointer-events-none absolute bottom-0 h-4 w-full bg-gradient-to-b from-transparent"
-  ></div>
 </div>

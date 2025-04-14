@@ -3,14 +3,7 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
 
-  type Variant =
-    | 'default'
-    | 'inverted'
-    | 'primary'
-    | 'secondary'
-    | 'destructive'
-    | 'outline'
-    | 'ghost';
+  type Variant = 'default' | 'inverted' | 'primary' | 'secondary' | 'destructive' | 'outline' | 'ghost';
 
   type Props = HTMLButtonAttributes & {
     children?: Snippet;
@@ -109,8 +102,7 @@
     edge === 'sharp' && 'rounded-none',
 
     // LOADING
-    loading &&
-      'ring-disabled text-disabled bg-disabled cursor-not-allowed outline-none',
+    loading && 'ring-disabled text-disabled bg-disabled cursor-not-allowed outline-none',
 
     // DISABLED
     disabled && [

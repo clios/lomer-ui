@@ -10,6 +10,8 @@
   import TextBlock from '$lib/components/features/text-block.svelte';
   import { goto } from '$app/navigation';
   import Title from '$lib/components/features/title.svelte';
+  import Accordion from '$lib/components/base/accordion.svelte';
+  import CardBoard from '$lib/components/card-board.svelte';
 </script>
 
 <svelte:head>
@@ -43,7 +45,7 @@
 <Section>
   <Title>Examples</Title>
 
-  <div class="flex gap-4">
+  <CardBoard class="flex gap-4">
     <Button>Default</Button>
     <Button variant="inverted">Inverted</Button>
     <Button variant="primary">Primary</Button>
@@ -51,5 +53,5 @@
     <Button variant="destructive">Destructive</Button>
     <Button variant="outline">Outline</Button>
     <Button variant="ghost">Ghost</Button>
-  </div>
+  </CardBoard>
 </Section>

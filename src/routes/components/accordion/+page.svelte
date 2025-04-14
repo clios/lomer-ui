@@ -4,11 +4,10 @@
   import AccordionPreviewRaw from './accordion-preview.svelte?raw';
   import CopyCLI from '$lib/components/copy-c-l-i.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import Link from '$lib/components/base/link.svelte';
-  import PageArticle from '$lib/components/page-article.svelte';
-  import PageSection from '$lib/components/page-section.svelte';
-  import PageWrapper from '$lib/components/page-wrapper.svelte';
-  import Screen from '$lib/components/screen.svelte';
+  import Section from '$lib/components/features/section.svelte';
+  import TextBlock from '$lib/components/features/text-block.svelte';
+  import Title from '$lib/components/features/title.svelte';
+  import CardBoard from '$lib/components/card-board.svelte';
 
   const tickler = [
     {
@@ -30,52 +29,34 @@
   <title>Accordion . lomer-ui</title>
 </svelte:head>
 
-<PageWrapper
-  title="Accordion"
-  sub="Component"
-  info="Expand and collapse content with ease."
-  prevLabel="CLI"
-  prevLink="/docs/cli"
-  nextLabel="Alert"
-  nextLink="/components/alert"
->
-  <!-- OVERVIEW -->
-  <PageSection id="1" title="Overview">
-    <PageArticle title="Preview">
-      <Screen class="flex-col">
-        <AccordionPreview />
-      </Screen>
-    </PageArticle>
-    <PageArticle title="Usage">
-      <CopySvelteCode code={AccordionPreviewRaw} />
-    </PageArticle>
-  </PageSection>
+<Section>
+  <p class="text-muted text-sm">Component</p>
+  <p class="mt-2 w-min border-t border-dotted py-2 pr-8 text-2xl text-nowrap sm:text-3xl md:text-4xl">Accordion</p>
+  <!-- <Title>Accordion</Title> -->
+  <TextBlock>Expand and collapse content with ease.</TextBlock>
+</Section>
 
-  <!-- GUIDE -->
-  <PageSection id="1" title="Guide">
-    <PageArticle title="Code the components">
-      <CopySvelteCode title="accordion.svelte" code={AccordionRaw} />
-      <CopySvelteCode title="accordion-title.svelte" code={`title`} />
-      <CopyCLI code={`npx lomer-ui get accordion`} />
-      <Link
-        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/accordion.svelte"
-        target="_blank"
-      >
-        Source code
-      </Link>
-    </PageArticle>
-  </PageSection>
+<Section>
+  <Title>Preview</Title>
+  <CardBoard class="flex-col">
+    <AccordionPreview />
+  </CardBoard>
+</Section>
 
-  <!-- SOURCE CODE -->
-  <PageSection id="1" title="Source Code">
-    <PageArticle title="Get the component">
-      <CopyCLI code={`npx lomer-ui get accordion`} />
-      <Link
-        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/accordion.svelte"
-        target="_blank"
-      >
-        Source code
-      </Link>
-    </PageArticle>
-  </PageSection>
-</PageWrapper>
+<Section>
+  <Title>Usage</Title>
+  <CopySvelteCode code={AccordionPreviewRaw} />
+</Section>
+
+<Section>
+  <Title>Guide</Title>
+  <Title level={2}>1. Create accordion.svelte</Title>
+  <CopySvelteCode title="accordion.svelte" code={AccordionRaw} />
+  <Title level={2}>2. Create accordion-title.svelte</Title>
+  <Title level={2}>3. Create accordion-content.svelte</Title>
+</Section>
+
+<Section>
+  <Title>CLI</Title>
+  <CopyCLI code={`npx lomer-ui get accordion`} />
+</Section>

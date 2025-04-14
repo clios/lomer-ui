@@ -14,9 +14,7 @@
 
 {#if level === 1}
   <div class="relative">
-    <div
-      class="absolute top-4 -left-5 hidden w-6 animate-pulse border-b border-dotted md:-left-9 md:block lg:-left-17 lg:w-14"
-    ></div>
+    <div class="absolute top-4 -left-5 hidden w-6 border-b border-dotted md:-left-9 md:block lg:-left-17 lg:w-14"></div>
     <div
       class="bg-muted ring-offset-bg ring-primary absolute top-3 -left-5 size-2 rotate-45 ring ring-offset-2 md:-left-9 lg:-left-17"
     ></div>
