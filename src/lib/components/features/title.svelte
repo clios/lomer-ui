@@ -27,15 +27,21 @@
     <div
       class="absolute top-3.5 -left-5 hidden w-4 border-b border-dotted md:-left-8 md:block lg:-left-16 lg:w-12"
     ></div>
-    <div class="bg-muted absolute top-2.5 -left-5 size-2 rotate-45 md:-left-5 lg:-left-6"></div>
+    <div class="bg-primary absolute top-2.5 -left-5 size-2 rotate-45 md:-left-5 lg:-left-6"></div>
     <h2 class={twMerge('mt-4 text-xl', className)} {...props}>
       {@render children?.()}
     </h2>
   </div>
 {:else if level === 3}
-  <h3 class={twMerge('text-2xl', className)} {...props}>
-    {@render children?.()}
-  </h3>
+  <div class="relative">
+    <div
+      class="absolute top-3.5 -left-5 hidden w-4 border-b border-dotted md:-left-8 md:block lg:-left-16 lg:w-12"
+    ></div>
+    <div class="bg-bg absolute top-2.5 -left-5 size-2 rotate-45 border bg-none md:-left-5 lg:-left-6"></div>
+    <h3 class={twMerge('mt-4 text-lg', className)} {...props}>
+      {@render children?.()}
+    </h3>
+  </div>
 {:else if level === 4}
   <h4 class={twMerge('text-xl', className)} {...props}>
     {@render children?.()}

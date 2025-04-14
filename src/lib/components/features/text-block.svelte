@@ -11,6 +11,6 @@
   let { children, class: className, ...props }: Props = $props();
 </script>
 
-<p class={twMerge('text-muted text-base sm:text-lg md:text-xl', className)} {...props}>
+<p class={twMerge('text-muted text-base', className)} {...props}>
   {@render children?.()}
 </p>

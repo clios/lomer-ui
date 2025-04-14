@@ -31,8 +31,7 @@
 
 <Section>
   <p class="text-muted text-sm">Component</p>
-  <p class="mt-2 w-min border-t border-dotted py-2 pr-8 text-2xl text-nowrap sm:text-3xl md:text-4xl">Accordion</p>
-  <!-- <Title>Accordion</Title> -->
+  <Title>Accordion</Title>
   <TextBlock>Expand and collapse content with ease.</TextBlock>
 </Section>
 
