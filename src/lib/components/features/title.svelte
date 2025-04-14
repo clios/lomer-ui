@@ -14,9 +14,9 @@
 
 {#if level === 1}
   <div class="relative">
-    <div class="absolute top-4 -left-5 hidden w-6 border-b border-dotted md:-left-9 md:block lg:-left-17 lg:w-14"></div>
+    <div class="absolute top-4 -left-5 hidden w-4 border-b border-dotted md:-left-8 md:block lg:-left-16 lg:w-12"></div>
     <div
-      class="bg-muted ring-offset-bg ring-primary absolute top-3 -left-5 size-2 rotate-45 ring ring-offset-2 md:-left-9 lg:-left-17"
+      class="bg-primary ring-offset-bg ring-border absolute top-3 -left-5 size-2 rotate-45 ring ring-offset-2 md:-left-5 lg:-left-6"
     ></div>
     <h1 class={twMerge('mb-2 text-2xl', className)} {...props}>
       {@render children?.()}
