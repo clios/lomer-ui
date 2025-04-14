@@ -113,8 +113,9 @@
       'ring-disabled text-disabled bg-disabled cursor-not-allowed outline-none',
 
     // DISABLED
-    disabled &&
-      'ring-disabled text-disabled-fg bg-disabled cursor-not-allowed outline-none',
+    disabled && [
+      'bg-disabled text-disabled-fg ring-disabled hover:ring-primary/0 hover:ring-offset-disabled cursor-not-allowed hover:ring-offset-1'
+    ],
 
     className
   )}
