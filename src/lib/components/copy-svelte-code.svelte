@@ -1,6 +1,5 @@
 <script lang="ts">
   import Button from '$lib/components/base/button.svelte';
-  import Icon from '@iconify/svelte';
   import githubDark from 'svelte-highlight/styles/github-dark';
   import { HighlightSvelte, LineNumbers } from 'svelte-highlight';
   import { twMerge } from 'tailwind-merge';

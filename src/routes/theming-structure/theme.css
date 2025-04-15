@@ -1,0 +1,77 @@
+/* Enable dark mode variant using the `.dark` class anywhere in the DOM. */
+@variant dark (&:where(.dark, .dark *));
+
+/* Theme variables - light mode by default */
+@theme {
+  /* === Color Tokens === */
+  --color-bg: var(--color-zinc-50); /* Background color */
+  --color-fg: var(--color-zinc-950); /* Foreground (text) color */
+
+  --color-primary: var(--color-cyan-600); /* Main brand/action color */
+  --color-primary-fg: var(--color-zinc-50); /* Text on primary */
+
+  --color-secondary: var(--color-zinc-200); /* Secondary UI elements */
+  --color-secondary-fg: var(--color-zinc-950); /* Text on secondary */
+
+  --color-destructive: var(--color-red-500); /* Danger/error state */
+  --color-destructive-fg: var(--color-zinc-50); /* Text on destructive */
+
+  --color-muted: var(--color-zinc-600); /* Subtle text/hints */
+  --color-muted-fg: var(--color-zinc-400); /* Extra subtle text */
+
+  --color-disabled: var(--color-zinc-200); /* Disabled background */
+  --color-disabled-fg: var(--color-zinc-400); /* Disabled text */
+
+  --color-input: var(--color-zinc-50); /* Input field background */
+  --color-input-fg: var(--color-zinc-950); /* Input text color */
+
+  --color-border: var(--color-zinc-300); /* Default border color */
+
+  /* === Radius === */
+  --radius: 0.25rem; /* Base border radius (4px) */
+}
+
+/* Theme overrides - dark mode */
+.dark {
+  /* === Color Tokens === */
+  --color-bg: var(--color-zinc-950); /* Background color */
+  --color-fg: var(--color-zinc-50); /* Foreground (text) color */
+
+  --color-primary: var(--color-cyan-500); /* Main brand/action color */
+  --color-primary-fg: var(--color-zinc-50); /* Text on primary */
+
+  --color-secondary: var(--color-zinc-800); /* Secondary UI elements */
+  --color-secondary-fg: var(--color-zinc-50); /* Text on secondary */
+
+  --color-destructive: var(--color-red-500); /* Danger/error state */
+  --color-destructive-fg: var(--color-zinc-50); /* Text on destructive */
+
+  --color-muted: var(--color-zinc-400); /* Subtle text/hints */
+  --color-muted-fg: var(--color-zinc-600); /* Extra subtle text */
+
+  --color-disabled: var(--color-zinc-800); /* Disabled background */
+  --color-disabled-fg: var(--color-zinc-500); /* Disabled text */
+
+  --color-input: var(--color-zinc-950); /* Input field background */
+  --color-input-fg: var(--color-zinc-50); /* Input text color */
+
+  --color-border: var(--color-zinc-700); /* Default border color */
+}
+
+@layer base {
+  /* Apply default border color to all elements */
+  * {
+    @apply border-border;
+  }
+
+  /* Set the base background and text color on the body element */
+  body {
+    @apply bg-bg text-fg;
+  }
+
+  /* Customize text selection (e.g., when user highlights text) */
+  ::selection {
+    background-color: var(--color-primary) !important;
+    color: var(--color-primary-fg) !important;
+  }
+}
