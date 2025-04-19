@@ -36,14 +36,14 @@
         Dark mode implementation
       </Button>
 
-      <NavLink bind:isOpen href="/docs/intro" label="Intro" />
+      <!-- <NavLink bind:isOpen href="/docs/intro" label="Intro" />
       <NavLink bind:isOpen href="/docs/setup" label="Setup" />
       <NavLink bind:isOpen href="/docs/dark-mode" label="Dark Mode" />
       <NavLink bind:isOpen href="/docs/theming" label="Theming" />
-      <NavLink bind:isOpen href="/docs/cli" label="CLI" />
+      <NavLink bind:isOpen href="/docs/cli" label="CLI" /> -->
 
       <p class="text-muted mt-4 pl-4 text-sm">Components</p>
-      <NavLink bind:isOpen href="/components/accordion" label="Accordion" />
+      <NavLink bind:isOpen href="/accordion" label="Accordion" />
       <NavLink bind:isOpen href="/components/alert" label="Alert" />
       <NavLink bind:isOpen href="/components/avatar" label="Avatar" />
       <NavLink bind:isOpen href="/components/button" label="Button" />

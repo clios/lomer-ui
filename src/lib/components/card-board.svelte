@@ -1,7 +1,13 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
 
-  let { class: className, children } = $props();
+  type Props = {
+    children?: Snippet;
+    class?: string;
+  };
+
+  let { class: className, children }: Props = $props();
 </script>
 
 <div

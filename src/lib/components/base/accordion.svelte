@@ -1,30 +1,39 @@
 <script lang="ts">
+  import type { HTMLAttributes } from 'svelte/elements';
   import type { Snippet } from 'svelte';
   import { slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
 
-  type Props = {
+  type Props = HTMLAttributes<HTMLDivElement> & {
+    // Content & Primary Info
     children?: Snippet;
-    class?: string;
+    title?: string;
+    value?: string;
+
+    // State & Behavior
     disabled?: boolean;
     group?: string;
     loading?: boolean;
-    name?: string;
     open?: boolean;
-    title?: string;
-    value?: string;
+
+    // Styling
+    class?: string;
   };
 
   let {
+    // Content & Primary Info
     children,
-    class: className,
-    disabled = false,
-    group = $bindable(),
-    loading = $bindable(false),
-    name,
-    open = false,
     title,
     value,
+
+    // State & Behavior
+    disabled = false,
+    group = $bindable(),
+    loading = false,
+    open = false,
+
+    // Styling & HTML Attributes
+    class: className,
     ...props
   }: Props = $props();
 
@@ -41,23 +50,22 @@
 </script>
 
 <!-- CONTAINER -->
-<div class={twMerge('bg-bg text-fg w-full', className)} {...props}>
-  <!-- HEADER -->
+<div class={twMerge('bg-bg w-full text-fg', className)} {...props}>
+  <!-- HEADER AS TOGGLE -->
   <button
     class={twMerge(
-      'relative flex w-full items-center gap-1 px-3 py-1', // layout and positioning
-      'focus:text-primary hover:text-primary cursor-pointer rounded outline-none', // visual
-      (loading || disabled) &&
-        'text-disabled-fg pointer-events-none cursor-not-allowed',
-      className
+      'flex items-center gap-1 px-3 py-2 w-full', // layout and positioning
+      'hover:text-primary cursor-pointer', // visual
+      (loading || disabled) && 'text-disabled-fg pointer-events-none'
     )}
     disabled={loading || disabled}
     type="button"
     {onclick}
   >
-    <p class="w-full text-left font-semibold">{title}</p>
+    <!-- TITLE -->
+    <div class="w-full font-semibold text-left">{title}</div>
 
-    <!-- ICON DISPLAYED -->
+    <!-- INDICATOR -->
     {#if loading}
       {@render IconSpinner()}
     {:else}
@@ -74,11 +82,7 @@
 </div>
 
 {#snippet IconSpinner()}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="text-primary mr-0.5 size-4 animate-spin"
-    viewBox="0 0 16 16"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" class="mr-0.5 size-4 text-primary animate-spin" viewBox="0 0 16 16">
     <path
       fill="currentColor"
       d={`M8 0A8 8 0 0 0 .002 7.812C.094 4.033 2.968 1 6.5 1C10.09 1 13 4.134 13 8a1.5 1.5 ` +
@@ -94,9 +98,6 @@
     class={twMerge('size-5 transition-transform', open && 'rotate-180')}
     viewBox="0 0 24 24"
   >
-    <path
-      fill="currentColor"
-      d="M18.53 9.53a.75.75 0 0 0 0-1.06H5.47a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0z"
-    />
+    <path fill="currentColor" d="M18.53 9.53a.75.75 0 0 0 0-1.06H5.47a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0z" />
   </svg>
 {/snippet}
