@@ -9,7 +9,7 @@
   import { afterNavigate } from '$app/navigation';
 
   let { children } = $props();
-  let isOpen = $state(false);
+  let open = $state(false);
   let elPage: HTMLDivElement;
 
   afterNavigate(() => {
@@ -21,8 +21,8 @@
 
 <div class="bg-bg w-screen h-screen overflow-auto text-fg">
   <div bind:this={elPage} id="page"></div>
-  <Header bind:isOpen />
-  <Navigation bind:isOpen />
+  <Header bind:open />
+  <Navigation bind:open />
   {@render children()}
 
   <div class="mx-auto sm:px-4 container">

@@ -3,16 +3,10 @@
   import IconMenu from '$lib/components/icons/icon-menu.svelte';
   import { hotkey } from '$lib/actions/hotkey.svelte.ts';
 
-  let { isOpen = $bindable() } = $props();
+  let { open = $bindable() } = $props();
 </script>
 
-<Button
-  size="icon"
-  variant="ghost"
-  edge="sharp"
-  title="Sidebar (Ctrl + B)"
-  onclick={() => (isOpen = !isOpen)}
->
+<Button size="icon" variant="ghost" edge="sharp" title="Sidebar (Ctrl + B)" onclick={() => (open = !open)}>
   <IconMenu />
 
   <!-- HOT KEY -->
@@ -21,7 +15,7 @@
     use:hotkey={{
       code: 'KeyB',
       ctrlKey: true,
-      onKeydown: () => (isOpen = !isOpen)
+      onKeydown: () => (open = !open)
     }}
   ></div>
 </Button>
