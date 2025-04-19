@@ -2,11 +2,11 @@
   import AlertRaw from '$lib/components/base/alert.svelte?raw';
   import CardBoard from '$lib/components/card-board.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+  import Paragraph from '$lib/components/base/paragraph.svelte';
   import Preview from './preview.svelte';
   import PreviewRaw from './preview.svelte?raw';
-  import Section from '$lib/components/features/section.svelte';
-  import TextBlock from '$lib/components/features/text-block.svelte';
-  import Title from '$lib/components/features/title.svelte';
+  import Section from '$lib/components/base/section.svelte';
+  import Title from '$lib/components/base/title.svelte';
 </script>
 
 <svelte:head>
@@ -16,7 +16,7 @@
 <Section>
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Alert</Title>
-  <TextBlock>Grabs attention and delivers important information.</TextBlock>
+  <Paragraph>Grabs attention and delivers important information.</Paragraph>
 </Section>
 
 <Section>

@@ -5,9 +5,9 @@
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import HighlightText from '$lib/components/highlight-text.svelte';
   import Link from '$lib/components/base/link.svelte';
-  import Section from '$lib/components/features/section.svelte';
-  import TextBlock from '$lib/components/features/text-block.svelte';
-  import Title from '$lib/components/features/title.svelte';
+  import Paragraph from '$lib/components/base/paragraph.svelte';
+  import Section from '$lib/components/base/section.svelte';
+  import Title from '$lib/components/base/title.svelte';
   import { toggleMode, mode } from 'mode-watcher';
 </script>
 
@@ -18,21 +18,21 @@
 <Section>
   <p class="text-muted text-xs">Set Up Your Own Foundation</p>
   <Title>Dark Mode Implementation</Title>
-  <TextBlock>Adding dark mode to your site using mode-watcher.</TextBlock>
+  <Paragraph>Adding dark mode to your site using mode-watcher.</Paragraph>
 </Section>
 
 <Section>
   <Title>Usage</Title>
   <Title level={2}>Install mode-watcher</Title>
   <CopyCLI code="npm install mode-watcher" />
-  <TextBlock>
+  <Paragraph>
     See <Link class="underline" target="_blank" href="https://mode-watcher.svecosystem.com">Mode Watcher</Link> for details.
-  </TextBlock>
+  </Paragraph>
   <Title level={2}>Add ModeWatcher component</Title>
-  <TextBlock>
+  <Paragraph>
     Add the <HighlightText>{`<ModeWatcher />`}</HighlightText>
     component to your root layout file.
-  </TextBlock>
+  </Paragraph>
   <CopySvelteCode
     title="+layout.svelte"
     code={`<script\ lang="ts">` +
@@ -44,9 +44,9 @@
       `\n{@render children()}`}
   />
   <Title level={2}>That's it!</Title>
-  <TextBlock>
+  <Paragraph>
     Use the <HighlightText>toggleMode</HighlightText> function and <HighlightText>$mode</HighlightText> to toggle:
-  </TextBlock>
+  </Paragraph>
   <CardBoard class="justify-center">
     <Button onclick={toggleMode}>
       {#if $mode === 'light'}

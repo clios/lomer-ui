@@ -111,7 +111,7 @@
   >
     <div class="top-1/2 absolute backdrop-blur-3xl -rotate-90 translate-y-1/2">
       <p class="w-8 text-muted text-sm text-nowrap tracking-widest">
-        /// <span class="text-fg">Navigate Here</span> ///
+        ||| <span class="text-fg">Navigate Here</span> |||
       </p>
     </div>
   </div>
