@@ -6,7 +6,7 @@
 
   type Props = {
     class?: string;
-    code?: string;
+    code: string;
     title?: string;
     highlightedLines?: number[];
     startingLineNumber?: number;

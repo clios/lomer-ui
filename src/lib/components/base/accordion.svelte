@@ -5,19 +5,14 @@
   import { twMerge } from 'tailwind-merge';
 
   type Props = HTMLAttributes<HTMLDivElement> & {
-    // Content & Primary Info
     children?: Snippet;
-    title?: string;
-    value?: string;
-
-    // State & Behavior
+    class?: string;
     disabled?: boolean;
     group?: string;
     loading?: boolean;
     open?: boolean;
-
-    // Styling
-    class?: string;
+    title?: string;
+    value?: string;
   };
 
   let {
@@ -37,16 +32,14 @@
     ...props
   }: Props = $props();
 
+  // Expand the accordion if open is true
+  // AND group is either not set or matches the value
+  let expand = $derived(open && (!group || group === value));
+
   function onclick() {
-    if (loading) return;
     open = !open;
     group = value;
   }
-
-  $effect(() => {
-    if (!group && !value) return;
-    open = group === value;
-  });
 </script>
 
 <!-- CONTAINER -->
@@ -74,7 +67,7 @@
   </button>
 
   <!-- CONTENT -->
-  {#if open && (!group || group === value)}
+  {#if expand}
     <div class="px-3 pb-4" transition:slide={{ duration: 150 }}>
       {@render children?.()}
     </div>
@@ -85,9 +78,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" class="mr-0.5 size-4 text-primary animate-spin" viewBox="0 0 16 16">
     <path
       fill="currentColor"
-      d={`M8 0A8 8 0 0 0 .002 7.812C.094 4.033 2.968 1 6.5 1C10.09 1 13 4.134 13 8a1.5 1.5 ` +
-        `0 0 0 3 0a8 8 0 0 0-8-8m0 16a8 8 0 0 0 7.998-7.812C15.906 11.967 13.032 15 9.5 ` +
-        `15C5.91 15 3 11.866 3 8a1.5 1.5 0 0 0-3 0a8 8 0 0 0 8 8`}
+      d="M8 0A8 8 0 0 0 .002 7.812C.094 4.033 2.968 1 6.5 1C10.09 1 13 4.134 13 8a1.5 1.5 0 0 0 3 0a8 8 0 0 0-8-8m0 16a8 8 0 0 0 7.998-7.812C15.906 11.967 13.032 15 9.5 15C5.91 15 3 11.866 3 8a1.5 1.5 0 0 0-3 0a8 8 0 0 0 8 8"
     />
   </svg>
 {/snippet}
@@ -95,7 +86,7 @@
 {#snippet IconChevron()}
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class={twMerge('size-5 transition-transform', open && 'rotate-180')}
+    class={twMerge('size-5 transition-transform', expand && 'rotate-180')}
     viewBox="0 0 24 24"
   >
     <path fill="currentColor" d="M18.53 9.53a.75.75 0 0 0 0-1.06H5.47a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0z" />

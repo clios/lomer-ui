@@ -1,5 +1,5 @@
 <script lang="ts">
-  import AccordionRaw from '$lib/components/base/accordion.svelte?raw';
+  import AlertRaw from '$lib/components/base/alert.svelte?raw';
   import CardBoard from '$lib/components/card-board.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Preview from './preview.svelte';
@@ -10,13 +10,13 @@
 </script>
 
 <svelte:head>
-  <title>Lomer UI - Accordion</title>
+  <title>Lomer UI - Alert</title>
 </svelte:head>
 
 <Section>
   <p class="text-muted text-xs">Create Your Own Component</p>
-  <Title>Accordion</Title>
-  <TextBlock>Expand and collapse content with ease.</TextBlock>
+  <Title>Alert</Title>
+  <TextBlock>Grabs attention and delivers important information.</TextBlock>
 </Section>
 
 <Section>
@@ -33,6 +33,6 @@
 
 <Section>
   <Title>Source Code</Title>
-  <Title level={2}>Create accordion component.</Title>
-  <CopySvelteCode title="accordion.svelte" code={AccordionRaw} />
+  <Title level={2}>Create alert component.</Title>
+  <CopySvelteCode title="alert.svelte" code={AlertRaw} />
 </Section>

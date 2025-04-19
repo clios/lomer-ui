@@ -8,12 +8,15 @@
   import ThemeCSS from './theme.css?raw';
 </script>
 
+<svelte:head>
+  <title>Lomer UI - Theming Structure</title>
+</svelte:head>
+
 <Section>
-  <p class="text-muted text-sm">Getting started</p>
-  <Title>Theming structure</Title>
+  <p class="text-muted text-xs">Set Up Your Own Foundation</p>
+  <Title>Theming Structure</Title>
   <TextBlock>Customize styles to match your vibe.</TextBlock>
-  <TextBlock class="text-muted-fg my-4 font-mono">///////////////////////////</TextBlock>
-  <Alert class="max-w-[800px]">
+  <Alert class="mt-4 max-w-[800px]">
     I was inspired by shadcn's beautiful theming—it's simple, intuitive, and loved by developers. To help new Svelte
     developers or those exploring a UI library, I’ve adapted some of its naming conventions.
   </Alert>
@@ -40,6 +43,7 @@
 </Section>
 
 <Section>
-  <Title>Define your theme variables</Title>
+  <Title>Source Code</Title>
+  <Title level={2}>Define your theme variables</Title>
   <CopyCSSCode title="app.css" code={ThemeCSS}></CopyCSSCode>
 </Section>

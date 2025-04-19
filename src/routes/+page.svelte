@@ -1,21 +1,15 @@
 <script>
+  import Accordion from '$lib/components/base/accordion.svelte';
+  import Alert from '$lib/components/base/alert.svelte';
   import Button from '$lib/components/base/button.svelte';
-  import Icon from '@iconify/svelte';
-  import IconSvelte from '$lib/components/icons/icon-svelte.svelte';
-  import IconTailwindcss from '$lib/components/icons/icon-tailwindcss.svelte';
-  import IconTypescript from '$lib/components/icons/icon-typescript.svelte';
-  import LinkButton from '$lib/components/base/link-button.svelte';
-  import Screen from '$lib/components/screen.svelte';
+  import CardBoard from '$lib/components/card-board.svelte';
   import Section from '$lib/components/features/section.svelte';
   import TextBlock from '$lib/components/features/text-block.svelte';
-  import { goto } from '$app/navigation';
   import Title from '$lib/components/features/title.svelte';
-  import Accordion from '$lib/components/base/accordion.svelte';
-  import CardBoard from '$lib/components/card-board.svelte';
 </script>
 
 <svelte:head>
-  <title>lomer-ui</title>
+  <title>Lomer UI</title>
 </svelte:head>
 
 <Section>
@@ -25,6 +19,10 @@
   <TextBlock>
     Open-source learning resource focused on building UI components from scratch using Svelte and Tailwind CSS.
   </TextBlock>
+  <Alert class="mt-4 border-red-500 max-w-[800px]">
+    I'm currently repurposing Lomer UI. I noticed most of the users just like to read the codes for its simplicity.
+    Making it a guide will benefit myself and developers who want to build their components from scratch.
+  </Alert>
 </Section>
 
 <Section>
@@ -45,7 +43,8 @@
 <Section>
   <Title>Examples</Title>
 
-  <CardBoard class="flex gap-4">
+  <CardBoard class="flex flex-wrap gap-4">
+    <Accordion class="w-72" title="Accordion">Content here...</Accordion>
     <Button>Default</Button>
     <Button variant="inverted">Inverted</Button>
     <Button variant="primary">Primary</Button>

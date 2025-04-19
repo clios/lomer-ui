@@ -11,9 +11,13 @@
   import { toggleMode, mode } from 'mode-watcher';
 </script>
 
+<svelte:head>
+  <title>Lomer UI - Dark Mode Implementation</title>
+</svelte:head>
+
 <Section>
-  <p class="text-muted text-sm">Getting started</p>
-  <Title>Dark mode implementation</Title>
+  <p class="text-muted text-xs">Set Up Your Own Foundation</p>
+  <Title>Dark Mode Implementation</Title>
   <TextBlock>Adding dark mode to your site using mode-watcher.</TextBlock>
 </Section>
 

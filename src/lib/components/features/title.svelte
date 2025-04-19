@@ -14,30 +14,30 @@
 
 {#if level === 1}
   <div class="relative">
-    <div class="absolute top-4 -left-5 hidden w-4 border-b border-dotted md:-left-8 md:block lg:-left-16 lg:w-12"></div>
+    <div class="hidden md:block top-4 -left-5 md:-left-8 lg:-left-16 absolute border-b border-dotted w-4 lg:w-12"></div>
     <div
-      class="bg-primary ring-muted ring-offset-bg absolute top-3 -left-5 size-2 rotate-45 ring ring-offset-2 md:-left-5 lg:-left-6"
+      class="top-3 -left-5 md:-left-5 lg:-left-6 absolute bg-primary ring ring-muted ring-offset-2 ring-offset-bg size-2 rotate-45"
     ></div>
-    <h1 class={twMerge('mb-2 text-2xl', className)} {...props}>
+    <h1 class={twMerge('text-2xl', className)} {...props}>
       {@render children?.()}
     </h1>
   </div>
 {:else if level === 2}
   <div class="relative">
     <div
-      class="absolute top-3.5 -left-5 hidden w-4 border-b border-dotted md:-left-8 md:block lg:-left-16 lg:w-12"
+      class="hidden md:block top-3.5 -left-5 md:-left-8 lg:-left-16 absolute border-b border-dotted w-4 lg:w-12"
     ></div>
-    <div class="bg-primary absolute top-2.5 -left-5 size-2 rotate-45 md:-left-5 lg:-left-6"></div>
-    <h2 class={twMerge('mt-4 text-xl', className)} {...props}>
+    <div class="top-2.5 -left-5 md:-left-5 lg:-left-6 absolute bg-primary size-2 rotate-45"></div>
+    <h2 class={twMerge('mt-8 text-xl', className)} {...props}>
       {@render children?.()}
     </h2>
   </div>
 {:else if level === 3}
   <div class="relative">
     <div
-      class="absolute top-3.5 -left-5 hidden w-4 border-b border-dotted md:-left-8 md:block lg:-left-16 lg:w-12"
+      class="hidden md:block top-3.5 -left-5 md:-left-8 lg:-left-16 absolute border-b border-dotted w-4 lg:w-12"
     ></div>
-    <div class="bg-bg absolute top-2.5 -left-5 size-2 rotate-45 border bg-none md:-left-5 lg:-left-6"></div>
+    <div class="top-2.5 -left-5 md:-left-5 lg:-left-6 absolute bg-bg bg-none border size-2 rotate-45"></div>
     <h3 class={twMerge('mt-4 text-lg', className)} {...props}>
       {@render children?.()}
     </h3>
