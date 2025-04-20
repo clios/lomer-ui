@@ -26,7 +26,7 @@
       out:fade={{ duration: 150 }}
       class="top-[calc(3rem+1px)] sticky flex flex-col gap-1 w-screen sm:w-80 h-screen overflow-y-auto"
     >
-      <!-- <SectionExplore /> -->
+      <SectionExplore />
 
       <p class="mt-4 pl-4 text-muted text-sm">Set Up Your Own Foundation</p>
 
@@ -37,6 +37,7 @@
       <NavigationButton bind:open url="/accordion">Accordion</NavigationButton>
       <NavigationButton bind:open url="/alert">Alert</NavigationButton>
       <NavigationButton bind:open url="/avatar">Avatar</NavigationButton>
+      <NavigationButton bind:open url="/button">Button</NavigationButton>
 
       <!-- <NavLink bind:open href="/components/button" label="Button" /> -->
       <!-- <NavLink bind:open href="/components/checkbox" label="Checkbox" /> -->
@@ -87,6 +88,7 @@
       'top-0 right-0 bottom-0 left-0 z-10 sm:z-30 fixed', // position
       'bg-bg/20 backdrop-blur-xs' // blur
     )}
+    onclick={() => (open = false)}
     onmousemove={() => (open = false)}
   ></div>
 {/if}

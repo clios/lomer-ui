@@ -52,5 +52,19 @@
     <Button variant="destructive">Destructive</Button>
     <Button variant="outline">Outline</Button>
     <Button variant="ghost">Ghost</Button>
+    <Button disabled>Default</Button>
+    <Button disabled variant="inverted">Inverted</Button>
+    <Button disabled variant="primary">Primary</Button>
+    <Button disabled variant="secondary">Secondary</Button>
+    <Button disabled variant="destructive">Destructive</Button>
+    <Button disabled variant="outline">Outline</Button>
+    <Button disabled variant="ghost">Ghost</Button>
+    <Button loading>Default</Button>
+    <Button loading variant="inverted">Inverted</Button>
+    <Button loading variant="primary">Primary</Button>
+    <Button loading variant="secondary">Secondary</Button>
+    <Button loading variant="destructive">Destructive</Button>
+    <Button loading variant="outline">Outline</Button>
+    <Button loading variant="ghost">Ghost</Button>
   </CardBoard>
 </Section>
