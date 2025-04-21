@@ -29,27 +29,30 @@
 
 <button
   class={twMerge(
-    'px-3 py-1 text-base', // box sizing
     'relative flex h-min w-max items-center gap-1', // layout and positioning
-    'outline-primary text-bg bg-fg border-primary rounded border transition-all', // base style
-    'focus-visible:z-1 focus-visible:outline-2 focus-visible:outline-offset-2', // focus-visible
-    'cursor-pointer hover:z-1 hover:outline-2 hover:outline-offset-2', // hover
+    'outline-primary border', // base style
+    'cursor-pointer select-none', // behaviour
+    'focus-visible:z-1 focus-visible:outline focus-visible:outline-offset-1', // focus-visible
+    'hover:z-1 hover:outline hover:outline-offset-1', // hover
     'active:outline-offset-0', // active
 
-    // // VARIANTS
-    variant === 'inverted' && 'text-fg bg-bg border-border', // base style
-    variant === 'primary' && 'text-primary-fg bg-primary border-primary', // base style
-    variant === 'secondary' && 'text-secondary-fg bg-secondary border-secondary', // base style
-    variant === 'destructive' && 'outline-destructive text-destructive-fg bg-destructive border-destructive', // base style
-    variant === 'outline' && 'text-fg bg-primary/0 border-fg', // base style
-    variant === 'ghost' && 'text-fg bg-primary/0 border-fg/0', // base style
+    // VARIANTS
+    variant === 'default' && 'text-bg bg-fg border-primary',
+    variant === 'inverted' && 'text-fg bg-bg border-border',
+    variant === 'primary' && 'text-primary-fg bg-primary border-primary',
+    variant === 'secondary' && 'text-secondary-fg bg-secondary border-secondary',
+    variant === 'destructive' && 'outline-destructive text-destructive-fg bg-destructive border-destructive',
+    variant === 'outline' && 'text-fg bg-primary/0 border-fg',
+    variant === 'ghost' && 'text-fg bg-primary/0 border-fg/0',
 
     // SIZES
+    size === 'default' && 'px-3 py-1 text-base',
     size === 'icon' && 'p-1',
     size === 'small' && 'h-6 px-2 text-sm leading-6',
     size === 'fit' && 'p-0',
 
     // EDGES
+    edge === 'default' && 'rounded',
     edge === 'circle' && 'rounded-full',
     edge === 'sharp' && 'rounded-none',
 
@@ -59,6 +62,7 @@
     // LOADING
     loading && 'bg-disabled text-disabled border-disabled cursor-default outline-none',
 
+    // OVERRIDE
     className
   )}
   disabled={disabled || loading}
@@ -73,7 +77,7 @@
 {#snippet IconSpinner()}
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="right-1/2 bottom-1/2 absolute size-4 text-primary translate-x-1/2 translate-y-1/2 animate-spin"
+    class="text-primary absolute right-1/2 bottom-1/2 size-4 translate-x-1/2 translate-y-1/2 animate-spin"
     viewBox="0 0 16 16"
   >
     <path

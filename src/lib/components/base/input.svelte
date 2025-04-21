@@ -2,29 +2,29 @@
   import type { HTMLInputAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  type Props = {
+  type Props = HTMLInputAttributes & {
     class?: string;
     disabled?: boolean;
     value?: string;
-  } & HTMLInputAttributes;
+  };
 
-  let {
-    class: className,
-    disabled = false,
-    value = $bindable(''),
-    ...props
-  }: Props = $props();
+  let { class: className, disabled, value = $bindable(''), ...props }: Props = $props();
 </script>
 
 <input
   class={twMerge(
-    'text-input-fg bg-input px-2 py-1', // base
-    'rounded border hover:cursor-text', // border
-    'outline-primary outline-offset-2 hover:outline focus:outline', // outline
+    'px-2 py-1', // box sizing
+    'text-input-fg bg-input outline-primary', // colors
+    'outline-offset-2 hover:outline focus:outline', // outline
+    'rounded border', // border
+
+    // DISABLED
     disabled && 'bg-disabled text-disabled-fg cursor-not-allowed outline-none',
+
+    // OVERRIDE
     className
   )}
-  {disabled}
   bind:value
+  {disabled}
   {...props}
 />

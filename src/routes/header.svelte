@@ -1,6 +1,6 @@
 <script>
   import Button from '$lib/components/base/button.svelte';
-  import ButtonToggleSidebar from './button-toggle-sidebar.svelte';
+  import IconMenu from '$lib/components/icons/icon-menu.svelte';
   import IconMoon from '$lib/components/icons/icon-moon.svelte';
   import IconSun from '$lib/components/icons/icon-sun.svelte';
   import Link from '$lib/components/base/link.svelte';
@@ -9,14 +9,16 @@
   let { open = $bindable(false) } = $props();
 </script>
 
-<header class="top-0 z-20 lg:z-30 sticky bg-bg/50 backdrop-blur-sm border-b border-dotted">
-  <div class="justify-between mx-auto sm:px-4 container">
-    <div class="flex justify-between p-2 sm:border-x border-dotted w-full">
+<header class="bg-bg/50 sticky top-0 z-20 border-b border-dotted backdrop-blur-sm lg:z-30">
+  <div class="container mx-auto justify-between sm:px-4">
+    <div class="flex w-full justify-between border-dotted p-2 sm:border-x">
       <div class="flex items-center gap-2">
-        <ButtonToggleSidebar bind:open />
-        <Link href="/" class="outline-none text-fg no-underline">Lomer UI</Link>
+        <Button class="xl:hidden" size="icon" variant="ghost" onclick={() => (open = !open)}>
+          <IconMenu />
+        </Button>
+        <Link href="/" class="text-fg no-underline outline-none xl:pl-4">Lomer UI</Link>
       </div>
-      <Button variant="ghost" edge="sharp" onclick={toggleMode}>
+      <Button variant="ghost" size="icon" onclick={toggleMode}>
         {#if $mode === 'light'}
           <IconSun />
         {:else}

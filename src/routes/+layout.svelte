@@ -19,15 +19,15 @@
 
 <ModeWatcher defaultMode="system" />
 
-<div class="bg-bg w-screen h-screen overflow-auto text-fg">
+<div class="bg-bg text-fg h-screen w-screen overflow-auto">
   <div bind:this={elPage} id="page"></div>
   <Header bind:open />
   <Navigation bind:open />
   {@render children()}
 
-  <div class="mx-auto sm:px-4 container">
-    <div class="p-4 md:p-8 lg:p-16 w-full">
-      <p class="flex items-center gap-2 mb-4">
+  <div class="container mx-auto sm:px-4">
+    <div class="w-full p-4 md:p-8 lg:p-16">
+      <p class="mb-4 flex items-center gap-2">
         Share treats:
         <Link
           class="text-muted hover:text-primary transition-all"

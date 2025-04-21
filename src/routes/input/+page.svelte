@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ButtonRaw from '$lib/components/base/button.svelte?raw';
+  import InputRaw from '$lib/components/base/input.svelte?raw';
   import CardBoard from '$lib/components/card-board.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Paragraph from '$lib/components/base/paragraph.svelte';
@@ -10,18 +10,18 @@
 </script>
 
 <svelte:head>
-  <title>Lomer UI - Button</title>
+  <title>Lomer UI - Accordion</title>
 </svelte:head>
 
 <Section>
   <p class="text-muted text-xs">Create Your Own Component</p>
-  <Title>Button</Title>
-  <Paragraph>Click it and make actions happen.</Paragraph>
+  <Title>Input</Title>
+  <Paragraph>A clear and simple way to collect user data.</Paragraph>
 </Section>
 
 <Section>
   <Title>Preview</Title>
-  <CardBoard class="flex-wrap gap-4">
+  <CardBoard class="flex">
     <Preview />
   </CardBoard>
 </Section>
@@ -33,6 +33,6 @@
 
 <Section>
   <Title>Source Code</Title>
-  <Title level={2}>Create button component.</Title>
-  <CopySvelteCode title="button.svelte" code={ButtonRaw} />
+  <Title level={2}>Create input component.</Title>
+  <CopySvelteCode title="input.svelte" code={InputRaw} />
 </Section>

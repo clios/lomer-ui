@@ -19,7 +19,7 @@
   <Paragraph>
     Open-source learning resource focused on building UI components from scratch using Svelte and Tailwind CSS.
   </Paragraph>
-  <Alert class="mt-4 border-red-500 max-w-[800px]">
+  <Alert class="border-primary mt-4 max-w-[800px]">
     I'm currently repurposing Lomer UI. I noticed most of the users just like to read the codes for its simplicity.
     Making it a guide will benefit myself and developers who want to build their components from scratch.
   </Alert>
