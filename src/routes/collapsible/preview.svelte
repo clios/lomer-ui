@@ -5,6 +5,4 @@
 </script>
 
 <Button onclick={() => (open = !open)}>Toggle</Button>
-<Collapsible class="border" collapseClass="mt-0" expandClass="mt-2" bind:open>
-  Content
-</Collapsible>
+<Collapsible class="border" collapseClass="mt-0" expandClass="mt-2" bind:open>Content</Collapsible>

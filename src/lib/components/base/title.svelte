@@ -28,7 +28,7 @@
       class="absolute top-3.5 -left-5 hidden w-4 border-b border-dotted md:-left-8 md:block lg:-left-16 lg:w-12"
     ></div>
     <div class="bg-primary absolute top-2.5 -left-5 hidden size-2 rotate-45 sm:block md:-left-5 lg:-left-6"></div>
-    <h2 class={twMerge('mt-8 text-xl', className)} {...props}>
+    <h2 class={twMerge('mt-4 text-xl', className)} {...props}>
       {@render children?.()}
     </h2>
   </div>

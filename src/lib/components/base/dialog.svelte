@@ -1,10 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import { fade, scale } from 'svelte/transition';
-  import { twMerge } from 'tailwind-merge';
-  import Button from '$lib/components/base/button.svelte';
   import { escapeKey } from '$lib/actions/escape-key.svelte.ts';
+  import { fade, scale } from 'svelte/transition';
   import { focusTrap } from '$lib/actions/focus-trap.svelte.ts';
+  import { twMerge } from 'tailwind-merge';
 
   type Props = {
     children?: Snippet;
@@ -13,16 +12,11 @@
     title?: string;
   };
 
-  let {
-    children,
-    class: className,
-    open = $bindable(false),
-    title = ''
-  }: Props = $props();
+  let { children, class: className, open = $bindable(false), title = '' }: Props = $props();
 </script>
 
 {#if open}
-  <!-- BACKDROP -->
+  <!-- Customize backdrop here -->
   <div
     in:fade={{ duration: 75 }}
     out:fade={{ duration: 75 }}
@@ -35,7 +29,7 @@
       '[background-size:16px_16px]' // dot size
     )}
   >
-    <!-- DIALOG CONTAINER -->
+    <!-- Customize dialog container here -->
     <div
       use:focusTrap
       use:escapeKey={() => (open = false)}
@@ -47,55 +41,26 @@
         'text-fg bg-bg text-left', // background and text
         'shadow-md dark:shadow-none', // shadow
         'sm:rounded-card border-y p-4 sm:border', // border
-
-        // STYLING
-        className
+        className // override
       )}
     >
-      <!-- CLOSE BUTTON -->
-      <Button
-        class="absolute top-3 right-3"
-        variant="ghost"
-        size="icon"
-        onclick={() => (open = false)}
-      >
+      <!-- Customize close button here -->
+      <button class="absolute top-3 right-3 cursor-pointer" onclick={() => (open = false)}>
         {@render IconClose()}
-      </Button>
+      </button>
 
-      <!-- HEADER -->
+      <!-- Customize title here -->
       {#if title}<p class="font-semibold">{title}</p>{/if}
 
-      <!-- BODY -->
+      <!-- Customize content here -->
       {@render children?.()}
     </div>
   </div>
 {/if}
 
+<!-- Customize icon for closing -->
 {#snippet IconClose()}
-  <svg
-    class="size-4"
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-  >
-    <rect width="24" height="24" fill="none" />
-    <path
-      fill="none"
-      stroke="currentColor"
-      stroke-dasharray="12"
-      stroke-dashoffset="12"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M12 12l7 7M12 12l-7 -7M12 12l-7 7M12 12l7 -7"
-    >
-      <animate
-        fill="freeze"
-        attributeName="stroke-dashoffset"
-        dur="0.3s"
-        values="12;0"
-      />
-    </path>
+  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2" d="M12 12l7 7M12 12l-7 -7M12 12l-7 7M12 12l7 -7" />
   </svg>
 {/snippet}

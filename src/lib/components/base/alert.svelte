@@ -13,43 +13,37 @@
   };
 
   let {
-    // Content & Primary Info
     children,
-    title,
-
-    // State & Behavior
+    class: className,
     closable = false,
     open = $bindable(true),
-
-    // Styling & HTML Attributes
-    class: className,
-    variant = 'default',
-    ...props
+    title,
+    variant = 'default'
   }: Props = $props();
 </script>
 
-<!-- CONTAINER -->
 {#if open}
+  <!-- Customize container here -->
   <div
     class={twMerge(
-      'relative flex h-min w-full items-start gap-3 p-3', // layout & positioning
-      ' bg-bg border-fg text-fg rounded border', // visual
+      'bg-bg border-fg text-fg relative flex h-min w-full items-start gap-3 rounded border p-3',
       variant === 'destructive' && 'border-destructive text-destructive',
       closable && 'pr-12',
       className
     )}
   >
-    <!-- ICON -->
+    <!-- Customize icon snippet below  -->
     {@render IconInfo()}
 
-    <!-- TITLE & CONTENT -->
     <div>
+      <!-- Customize title here -->
       {#if title}<p class="font-semibold">{title}</p>{/if}
+      <!-- Customize content here -->
       {@render children?.()}
     </div>
 
-    <!-- CLOSE BUTTON -->
     {#if closable}
+      <!-- Customize close button here -->
       <button class="absolute top-3 right-3 cursor-pointer" onclick={() => (open = false)}>
         {@render IconClose()}
       </button>
@@ -57,6 +51,7 @@
   </div>
 {/if}
 
+<!-- Customize alert icon -->
 {#snippet IconInfo()}
   <svg class="size-6 min-w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
     <path
@@ -66,6 +61,7 @@
   </svg>
 {/snippet}
 
+<!-- Customize icon for closing -->
 {#snippet IconClose()}
   <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
     <path fill="none" stroke="currentColor" stroke-width="2" d="M12 12l7 7M12 12l-7 -7M12 12l-7 7M12 12l7 -7" />

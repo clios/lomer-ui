@@ -3,14 +3,7 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
 
-  type Variant =
-    | 'default'
-    | 'inverted'
-    | 'primary'
-    | 'secondary'
-    | 'destructive'
-    | 'outline'
-    | 'ghost';
+  type Variant = 'default' | 'inverted' | 'primary' | 'secondary' | 'destructive' | 'outline' | 'ghost';
 
   type Props = HTMLButtonAttributes & {
     children?: Snippet;
@@ -47,10 +40,8 @@
     variant === 'default' && 'text-bg bg-fg border-primary',
     variant === 'inverted' && 'text-fg bg-bg border-border',
     variant === 'primary' && 'text-primary-fg bg-primary border-primary',
-    variant === 'secondary' &&
-      'text-secondary-fg bg-secondary border-secondary',
-    variant === 'destructive' &&
-      'outline-destructive text-destructive-fg bg-destructive border-destructive',
+    variant === 'secondary' && 'text-secondary-fg bg-secondary border-secondary',
+    variant === 'destructive' && 'outline-destructive text-destructive-fg bg-destructive border-destructive',
     variant === 'outline' && 'text-fg bg-primary/0 border-fg',
     variant === 'ghost' && 'text-fg bg-primary/0 border-fg/0',
 
@@ -66,12 +57,10 @@
     edge === 'sharp' && 'rounded-none',
 
     // DISABLED
-    disabled &&
-      'bg-disabled text-disabled-fg border-disabled cursor-default outline-none',
+    disabled && 'bg-disabled text-disabled-fg border-disabled cursor-default outline-none',
 
     // LOADING
-    loading &&
-      'bg-disabled text-disabled border-disabled cursor-default outline-none',
+    loading && 'bg-disabled text-disabled border-disabled cursor-default outline-none',
 
     // OVERRIDE
     className
@@ -80,11 +69,14 @@
   {...props}
 >
   {#if loading}
+    <!-- Customize icon snippet below -->
     {@render IconSpinner()}
   {/if}
+  <!-- Customize content here -->
   {@render children?.()}
 </button>
 
+<!-- Customize icon for loading -->
 {#snippet IconSpinner()}
   <svg
     xmlns="http://www.w3.org/2000/svg"

@@ -31,11 +31,13 @@
       <NavigationButton bind:open url="/button">Button</NavigationButton>
       <NavigationButton bind:open url="/input">Input</NavigationButton>
       <NavigationButton bind:open url="/checkbox">Checkbox</NavigationButton>
+      <NavigationButton bind:open url="/collapsible">Collapsible</NavigationButton>
+      <NavigationButton bind:open url="/dialog">Dialog</NavigationButton>
 
-      <!-- <NavLink bind:open href="/components/button" label="Button" /> -->
-      <!-- <NavLink bind:open href="/components/checkbox" label="Checkbox" /> -->
-      <!-- <NavLink bind:open href="/components/collapsible" label="Collapsible" /> -->
-      <!-- <NavLink bind:open href="/components/dialog" label="Dialog" /> -->
+      <p class="text-muted mt-4 pl-4 text-sm">Create Your Own Action</p>
+      <NavigationButton bind:open url="/escape-key">escapeKey</NavigationButton>
+      <NavigationButton bind:open url="/focus-trap">focusTrap</NavigationButton>
+
       <!-- <NavLink bind:open href="/components/drawer" label="Drawer" /> -->
       <!-- <NavLink bind:open href="/components/dropdown" label="Dropdown" /> -->
       <!-- <NavLink bind:open href="/components/field" label="Field" /> -->

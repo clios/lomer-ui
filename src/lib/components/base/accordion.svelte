@@ -35,7 +35,9 @@
   }
 </script>
 
+<!-- Customize container here -->
 <div class={twMerge('bg-bg text-fg h-min w-full', className)} {...props}>
+  <!-- Customize header here -->
   <button
     class={twMerge(
       'hover:text-primary flex w-full cursor-pointer items-center gap-1 px-3 py-2',
@@ -45,7 +47,10 @@
     type="button"
     {onclick}
   >
+    <!-- Customize title here -->
     <div class="w-full text-left font-semibold">{title}</div>
+
+    <!-- Customize icon snippets below  -->
     {#if loading}
       {@render IconSpinner()}
     {:else}
@@ -54,12 +59,14 @@
   </button>
 
   {#if expand}
+    <!-- Customize content here -->
     <div class="px-3 pb-4" transition:slide={{ duration: 150 }}>
       {@render children?.()}
     </div>
   {/if}
 </div>
 
+<!-- Customize icon for loading -->
 {#snippet IconSpinner()}
   <svg xmlns="http://www.w3.org/2000/svg" class="text-primary mr-0.5 size-4 animate-spin" viewBox="0 0 16 16">
     <path
@@ -69,6 +76,7 @@
   </svg>
 {/snippet}
 
+<!-- Customize icon for indicator -->
 {#snippet IconChevron()}
   <svg
     xmlns="http://www.w3.org/2000/svg"

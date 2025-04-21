@@ -22,25 +22,13 @@
   }: Props = $props();
 </script>
 
-<!-- CONTAINER -->
 <div>
-  <!-- HIDE CHECKBOX -->
-  <input
-    class="hidden appearance-none"
-    type="checkbox"
-    bind:checked
-    {disabled}
-    {...props}
-  />
+  <!-- Hide input checkbox -->
+  <input class="hidden appearance-none" type="checkbox" bind:checked {disabled} {...props} />
 
-  <!-- MIMIC CHECKBOX -->
-  <label
-    class={twMerge(
-      'text-fg flex w-fit cursor-pointer items-center',
-      disabled && 'text-disabled-fg cursor-not-allowed'
-    )}
-  >
-    <!-- BOX -->
+  <!-- Customize checkbox container here -->
+  <label class={twMerge('text-fg flex w-fit cursor-pointer items-center', disabled && 'text-disabled-fg')}>
+    <!-- Customize box here -->
     <button
       class={twMerge(
         'mr-2 grid min-h-6 min-w-6 place-content-center', // layout and positioning
@@ -54,22 +42,22 @@
     >
       <div class="pointer-events-none">
         {#if checked}
-          <span
-            class={twMerge(disabled ? 'text-disabled-fg' : 'text-primary-fg')}
-          >
+          <!-- Customize icon snippet below -->
+          <span class={twMerge(disabled ? 'text-disabled-fg' : 'text-primary-fg')}>
             {@render CheckMark()}
           </span>
         {:else}
+          <!-- Customize icon snippet below -->
           {@render CrossMark()}
         {/if}
       </div>
     </button>
 
-    <!-- LABEL -->
+    <!-- Customize label here -->
     {label}
   </label>
 
-  <!-- DESCRIPTION -->
+  <!-- Customize description here -->
   {#if children}
     <div class={twMerge('text-muted ml-8', disabled && 'text-disabled-fg')}>
       {@render children?.()}
@@ -77,13 +65,9 @@
   {/if}
 </div>
 
+<!-- Customize icon for check mark -->
 {#snippet CheckMark()}
-  <svg
-    class="size-3"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 -4 32 31"
-    fill="none"
-  >
+  <svg class="size-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 -4 32 31" fill="none">
     <path
       in:draw={{ duration: 150, easing: circInOut }}
       stroke-width="5"
@@ -93,19 +77,10 @@
   </svg>
 {/snippet}
 
+<!-- Customize icon for unchecked mark -->
 {#snippet CrossMark()}
-  <svg
-    class="size-2.5"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 25"
-    fill="none"
-  >
-    <path
-      in:draw={{ duration: 100, easing: circInOut }}
-      stroke-width="4"
-      d="M0.5 1L23.5 24"
-      stroke="currentColor"
-    />
+  <svg class="size-2.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none">
+    <path in:draw={{ duration: 100, easing: circInOut }} stroke-width="4" d="M0.5 1L23.5 24" stroke="currentColor" />
     <path
       in:draw={{ delay: 100, duration: 100, easing: circInOut }}
       stroke-width="4"

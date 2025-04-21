@@ -33,8 +33,8 @@
   {@html githubDark}
 </svelte:head>
 
-<div class={twMerge('relative mt-4 flex flex-col border border-dotted text-sm sm:text-base', className)}>
-  <div class="bg-fg dark:bg-bg text-bg dark:text-fg flex justify-between py-1.5 pr-1.5 pl-2.5">
+<div class={twMerge('relative mt-2 flex flex-col border border-dotted text-sm sm:text-base', className)}>
+  <div class="bg-fg dark:bg-bg text-bg dark:text-fg flex items-center justify-between py-1.5 pr-1.5 pl-2.5">
     <p>{title}</p>
     <Button class="text-bg" size="icon" variant="ghost" onclick={copyToClipboard}>
       {#if copyMessage}
