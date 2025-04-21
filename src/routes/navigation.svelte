@@ -30,6 +30,7 @@
       <NavigationButton bind:open url="/avatar">Avatar</NavigationButton>
       <NavigationButton bind:open url="/button">Button</NavigationButton>
       <NavigationButton bind:open url="/input">Input</NavigationButton>
+      <NavigationButton bind:open url="/checkbox">Checkbox</NavigationButton>
 
       <!-- <NavLink bind:open href="/components/button" label="Button" /> -->
       <!-- <NavLink bind:open href="/components/checkbox" label="Checkbox" /> -->

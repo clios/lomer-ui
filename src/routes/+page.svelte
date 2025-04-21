@@ -16,9 +16,7 @@
   <p class="text-muted text-sm">Svelte v5</p>
   <p class="text-muted text-sm">Tailwind CSS v4</p>
   <p class="my-4 text-2xl sm:text-3xl md:text-4xl">Lomer UI</p>
-  <Paragraph>
-    Open-source learning resource focused on building UI components from scratch using Svelte and Tailwind CSS.
-  </Paragraph>
+  <Paragraph>Open-source resource for crafting project-specific UI components using Svelte & Tailwind CSS.</Paragraph>
   <Alert class="border-primary mt-4 max-w-[800px]">
     I'm currently repurposing Lomer UI. I noticed most of the users just like to read the codes for its simplicity.
     Making it a guide will benefit myself and developers who want to build their components from scratch.
@@ -28,9 +26,12 @@
 <Section>
   <Title>Why not a library?</Title>
   <Paragraph>
-    I believe that for simple components, it's better to focus on teaching the code and underlying concepts rather than
-    fully relying on a library. By combining the simplicity of Svelte with the versatility of Tailwind CSS, we make
-    building UI straightforward, educational, and fully customizable.
+    I believe that for simple components, it's more valuable to focus on learning how to write the code and understand
+    the underlying concepts, rather than relying entirely on a library.
+  </Paragraph>
+  <Paragraph>
+    By combining the simplicity of Svelte with the versatility of Tailwind CSS, we can build UI components that are both
+    straightforward and fully customizable — with complete control over structure, style, and behavior.
   </Paragraph>
   <Title level={2}>More control</Title>
   <Paragraph>You’re not limited by a library’s rules. You write the code your way.</Paragraph>
@@ -45,6 +46,9 @@
 
   <CardBoard class="flex flex-wrap gap-4">
     <Accordion class="w-72" title="Accordion">Content here...</Accordion>
+    <Alert class="w-72" title="Simple Alert">
+      <p>Content here...</p>
+    </Alert>
     <Button>Default</Button>
     <Button variant="inverted">Inverted</Button>
     <Button variant="primary">Primary</Button>
@@ -52,19 +56,9 @@
     <Button variant="destructive">Destructive</Button>
     <Button variant="outline">Outline</Button>
     <Button variant="ghost">Ghost</Button>
-    <Button disabled>Default</Button>
-    <Button disabled variant="inverted">Inverted</Button>
-    <Button disabled variant="primary">Primary</Button>
-    <Button disabled variant="secondary">Secondary</Button>
-    <Button disabled variant="destructive">Destructive</Button>
-    <Button disabled variant="outline">Outline</Button>
-    <Button disabled variant="ghost">Ghost</Button>
-    <Button loading>Default</Button>
-    <Button loading variant="inverted">Inverted</Button>
-    <Button loading variant="primary">Primary</Button>
-    <Button loading variant="secondary">Secondary</Button>
-    <Button loading variant="destructive">Destructive</Button>
-    <Button loading variant="outline">Outline</Button>
-    <Button loading variant="ghost">Ghost</Button>
+    <Button disabled>Disabled</Button>
+    <Button loading>Loading</Button>
+    <Button edge="circle">Circle</Button>
+    <Button edge="sharp">Sharp</Button>
   </CardBoard>
 </Section>

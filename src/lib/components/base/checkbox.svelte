@@ -5,12 +5,12 @@
   import { draw } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
 
-  type Props = {
+  type Props = HTMLInputAttributes & {
     children?: Snippet;
     class?: string;
     disabled?: boolean;
     label?: string;
-  } & HTMLInputAttributes;
+  };
 
   let {
     checked = $bindable(false),
@@ -26,10 +26,10 @@
 <div>
   <!-- HIDE CHECKBOX -->
   <input
-    type="checkbox"
     class="hidden appearance-none"
-    {disabled}
+    type="checkbox"
     bind:checked
+    {disabled}
     {...props}
   />
 

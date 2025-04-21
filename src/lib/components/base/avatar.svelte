@@ -9,4 +9,4 @@
   let { class: className, ...props }: Props = $props();
 </script>
 
-<img class={twMerge('rounded size-7', className)} {...props} />
+<img class={twMerge('size-7 rounded', className)} {...props} />

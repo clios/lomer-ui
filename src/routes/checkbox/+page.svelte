@@ -1,5 +1,5 @@
 <script lang="ts">
-  import InputRaw from '$lib/components/base/input.svelte?raw';
+  import CheckboxRaw from '$lib/components/base/checkbox.svelte?raw';
   import CardBoard from '$lib/components/card-board.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Paragraph from '$lib/components/base/paragraph.svelte';
@@ -10,18 +10,18 @@
 </script>
 
 <svelte:head>
-  <title>Lomer UI - Input</title>
+  <title>Lomer UI - Checkbox</title>
 </svelte:head>
 
 <Section>
   <p class="text-muted text-xs">Create Your Own Component</p>
-  <Title>Input</Title>
-  <Paragraph>A clear and simple way to collect user data.</Paragraph>
+  <Title>Checkbox</Title>
+  <Paragraph>Toggle options on or off.</Paragraph>
 </Section>
 
 <Section>
   <Title>Preview</Title>
-  <CardBoard class="flex">
+  <CardBoard class="flex-col gap-4">
     <Preview />
   </CardBoard>
 </Section>
@@ -33,6 +33,6 @@
 
 <Section>
   <Title>Source Code</Title>
-  <Title level={2}>Create input component.</Title>
-  <CopySvelteCode title="input.svelte" code={InputRaw} />
+  <Title level={2}>Create checkbox component.</Title>
+  <CopySvelteCode title="checkbox.svelte" code={CheckboxRaw} />
 </Section>
