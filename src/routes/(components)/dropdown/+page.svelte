@@ -51,6 +51,12 @@
     down arrow keys.
   </Paragraph>
 
-  <Title level={2}>Create drawer component.</Title>
-  <CopySvelteCode title="drawer.svelte" code={DropdownRaw} />
+  <Title level={2}>Create dropdown component.</Title>
+  <CopySvelteCode title="dropdown.svelte" code={DropdownRaw} />
+
+  <Title level={2}>Create dropdown option component.</Title>
+  <CopySvelteCode title="dropdown-option.svelte" code={DropdownOptionRaw} />
+
+  <Title level={2}>Create dropdown switch component.</Title>
+  <CopySvelteCode title="dropdown-switch.svelte" code={DropdownSwitchRaw} />
 </Section>
