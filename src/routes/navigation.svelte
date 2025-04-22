@@ -34,11 +34,13 @@
       <NavigationButton bind:open url="/dialog">Dialog</NavigationButton>
       <NavigationButton bind:open url="/drawer">Drawer</NavigationButton>
       <NavigationButton bind:open url="/dropdown">Dropdown</NavigationButton>
+      <NavigationButton bind:open url="/field">Field</NavigationButton>
       <NavigationButton bind:open url="/input">Input</NavigationButton>
 
       <p class="mt-4 pl-4 text-muted text-sm">Create Your Own Action</p>
       <NavigationButton bind:open url="/escape-key">escapeKey</NavigationButton>
       <NavigationButton bind:open url="/focus-trap">focusTrap</NavigationButton>
+      <NavigationButton bind:open url="/hotkey">hotkey</NavigationButton>
       <NavigationButton bind:open url="/outside-click">outsideClick</NavigationButton>
       <NavigationButton bind:open url="/vertical-navigation">verticalNavigation</NavigationButton>
 
@@ -52,12 +54,6 @@
       <!-- <NavLink bind:open href="/components/table" label="Table" /> -->
       <!-- <NavLink bind:open href="/components/tabs" label="Tabs" /> -->
       <!-- <NavLink bind:open href="/components/textarea" label="Textarea" /> -->
-
-      <!-- <p class="mt-4 pl-4 text-muted text-sm">Actions</p>
-      <NavLink bind:open href="/actions/hotkey" label="hotkey" />
-
-      <p class="mt-4 pl-4 text-muted text-sm">Wrappers</p>
-      <NavLink bind:open href="/wrappers/mapbox" label="Mapbox" /> -->
 
       <!-- <p class="mt-4 pl-4 text-muted text-sm">Packages</p>
       <NavLink bind:open href="/packages/apexcharts" label="apexcharts" />
@@ -96,7 +92,7 @@
     class="relative bg-[size:10px_10px] bg-bg bg-fixed [--color-border:var(--color-fg)]/10 bg-[image:repeating-linear-gradient(315deg,_var(--color-border)_0,_var(--color-border)_1px,_transparent_0,_transparent_50%)] dark:[--color-border:var(--color-fg)]/10 dark:border-muted-fg w-full h-full"
   >
     <div class="top-1/2 absolute backdrop-blur-3xl -rotate-90 translate-y-1/2">
-      <p class="w-8 text-muted text-sm text-nowrap tracking-widest">
+      <p class="w-7 text-muted text-sm text-nowrap tracking-widest">
         ||| <span class="px-2 text-fg">Navigate Here</span> |||
       </p>
     </div>
