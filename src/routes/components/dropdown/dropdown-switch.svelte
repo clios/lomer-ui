@@ -2,7 +2,7 @@
   import Button from '$lib/components/base/button.svelte';
   import Dropdown from '$lib/components/base/dropdown.svelte';
   import DropdownSwitch from '$lib/components/base/dropdown-switch.svelte';
-  import DropdownItem from '$lib/components/base/dropdown-item.svelte';
+  import DropdownItem from '$lib/components/base/dropdown-option.svelte';
   import { toggleMode } from 'mode-watcher';
 
   let open = $state(false);

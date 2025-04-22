@@ -26,20 +26,19 @@
 
 <button
   class={twMerge(
-    'relative my-1 flex cursor-pointer items-center gap-1 rounded', // base
+    'relative flex items-center gap-1 my-1 rounded cursor-pointer', // base
     'w-full py-1 pr-12 pl-3', // box model
     'outline-primary -outline-offset-1', // outline
     'hover:bg-primary/10 hover:outline', // hover
-    'focus:bg-primary/10 focus:outline', // focus
+    'focus-visible:bg-primary/10 focus-visible:outline', // focus
     'active:outline-2 active:-outline-offset-2', // active
 
     variant === 'destructive' && [
       'text-destructive outline-destructive',
-      'hover:bg-destructive/10 focus:bg-destructive/10'
+      'hover:bg-destructive/10 focus-visible:bg-destructive/10'
     ],
 
-    (loading || disabled) &&
-      'text-disabled-fg pointer-events-none cursor-not-allowed',
+    (loading || disabled) && 'text-disabled-fg pointer-events-none cursor-not-allowed',
 
     className
   )}
@@ -55,7 +54,7 @@
 
 {#snippet IconSpinner()}
   <svg
-    class="text-primary absolute right-3 bottom-1/2 size-4 translate-y-1/2 animate-spin"
+    class="right-3 bottom-1/2 absolute size-4 text-primary translate-y-1/2 animate-spin"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
   >

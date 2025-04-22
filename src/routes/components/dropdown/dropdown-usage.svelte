@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '$lib/components/base/button.svelte';
   import Dropdown from '$lib/components/base/dropdown.svelte';
-  import DropdownItem from '$lib/components/base/dropdown-item.svelte';
+  import DropdownItem from '$lib/components/base/dropdown-option.svelte';
 
   let open = $state(false);
 </script>

@@ -29,17 +29,19 @@
       <NavigationButton bind:open url="/alert">Alert</NavigationButton>
       <NavigationButton bind:open url="/avatar">Avatar</NavigationButton>
       <NavigationButton bind:open url="/button">Button</NavigationButton>
-      <NavigationButton bind:open url="/input">Input</NavigationButton>
       <NavigationButton bind:open url="/checkbox">Checkbox</NavigationButton>
       <NavigationButton bind:open url="/collapsible">Collapsible</NavigationButton>
       <NavigationButton bind:open url="/dialog">Dialog</NavigationButton>
       <NavigationButton bind:open url="/drawer">Drawer</NavigationButton>
+      <NavigationButton bind:open url="/dropdown">Dropdown</NavigationButton>
+      <NavigationButton bind:open url="/input">Input</NavigationButton>
 
       <p class="mt-4 pl-4 text-muted text-sm">Create Your Own Action</p>
       <NavigationButton bind:open url="/escape-key">escapeKey</NavigationButton>
       <NavigationButton bind:open url="/focus-trap">focusTrap</NavigationButton>
+      <NavigationButton bind:open url="/outside-click">outsideClick</NavigationButton>
+      <NavigationButton bind:open url="/vertical-navigation">verticalNavigation</NavigationButton>
 
-      <!-- <NavLink bind:open href="/components/dropdown" label="Dropdown" /> -->
       <!-- <NavLink bind:open href="/components/field" label="Field" /> -->
       <!-- <NavLink bind:open href="/components/link" label="Link" /> -->
       <!-- <NavLink bind:open href="/components/link-button" label="Link Button" /> -->
@@ -52,11 +54,7 @@
       <!-- <NavLink bind:open href="/components/textarea" label="Textarea" /> -->
 
       <!-- <p class="mt-4 pl-4 text-muted text-sm">Actions</p>
-      <NavLink bind:open href="/actions/escape-key" label="escape-key" />
-      <NavLink bind:open href="/actions/focus-trap" label="focus-trap" />
       <NavLink bind:open href="/actions/hotkey" label="hotkey" />
-      <NavLink bind:open href="/actions/outside-click" label="outside-click" />
-      <NavLink bind:open href="/actions/vertical-navigation" label="vertical-navigation" />
 
       <p class="mt-4 pl-4 text-muted text-sm">Wrappers</p>
       <NavLink bind:open href="/wrappers/mapbox" label="Mapbox" /> -->
