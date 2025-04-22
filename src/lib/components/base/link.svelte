@@ -13,8 +13,8 @@
 
 <a
   class={twMerge(
-    'group relative w-fit cursor-pointer rounded', // base
-    'hover:text-primary', // hovering
+    'group relative rounded w-fit text-primary cursor-pointer', // base
+    'underline-offset-2 hover:underline', // hovering
     'active:text-fg', // active
     className
   )}
