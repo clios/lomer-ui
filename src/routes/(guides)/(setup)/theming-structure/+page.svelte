@@ -1,6 +1,5 @@
 <script>
   import Alert from '$lib/components/base/alert.svelte';
-  import CopyCSSCode from '$lib/components/copy-c-s-s-code.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Paragraph from '$lib/components/base/paragraph.svelte';
   import Section from '$lib/components/base/section.svelte';
@@ -45,5 +44,5 @@
 <Section>
   <Title>Source Code</Title>
   <Title level={2}>Define your theme variables</Title>
-  <CopyCSSCode title="app.css" code={ThemeCSS}></CopyCSSCode>
+  <CopySvelteCode language="css" title="app.css" code={ThemeCSS}></CopySvelteCode>
 </Section>

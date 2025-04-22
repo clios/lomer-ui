@@ -2,6 +2,6 @@
   let { children } = $props();
 </script>
 
-<span class="text-primary font-mono text-lg">
+<span class="italic">
   {@render children?.()}
 </span>

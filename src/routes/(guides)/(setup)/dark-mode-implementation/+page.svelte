@@ -26,7 +26,7 @@
   <Title level={2}>Install mode-watcher</Title>
   <CopyCLI code="npm install mode-watcher" />
   <Paragraph>
-    See <Link class="underline" target="_blank" href="https://mode-watcher.svecosystem.com">Mode Watcher</Link> for details.
+    See <Link target="_blank" href="https://mode-watcher.svecosystem.com">Mode Watcher</Link> for details.
   </Paragraph>
   <Title level={2}>Add ModeWatcher component</Title>
   <Paragraph>

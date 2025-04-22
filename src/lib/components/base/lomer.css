@@ -57,7 +57,7 @@
   --color-input-fg: var(--color-base-950);
 
   /* Default border color. */
-  --color-border: var(--color-base-300);
+  --color-border: var(--color-base-400);
 
   /* Default border radius. */
   --radius: 0.25rem;
