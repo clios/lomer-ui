@@ -36,6 +36,7 @@
       <NavigationButton bind:open url="/dropdown">Dropdown</NavigationButton>
       <NavigationButton bind:open url="/field">Field</NavigationButton>
       <NavigationButton bind:open url="/input">Input</NavigationButton>
+      <NavigationButton bind:open url="/link">Link</NavigationButton>
 
       <p class="mt-4 pl-4 text-muted text-sm">Create Your Own Action</p>
       <NavigationButton bind:open url="/escape-key">escapeKey</NavigationButton>
@@ -44,8 +45,6 @@
       <NavigationButton bind:open url="/outside-click">outsideClick</NavigationButton>
       <NavigationButton bind:open url="/vertical-navigation">verticalNavigation</NavigationButton>
 
-      <!-- <NavLink bind:open href="/components/field" label="Field" /> -->
-      <!-- <NavLink bind:open href="/components/link" label="Link" /> -->
       <!-- <NavLink bind:open href="/components/link-button" label="Link Button" /> -->
       <!-- <NavLink bind:open href="/components/radio" label="Radio" /> -->
       <!-- <NavLink bind:open href="/components/scroll-area" label="Scroll Area" /> -->
