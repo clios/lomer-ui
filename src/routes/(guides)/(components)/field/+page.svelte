@@ -17,22 +17,14 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Field</Title>
   <Paragraph>A versatile space for inputs.</Paragraph>
-</Section>
-
-<Section>
-  <Title>Preview</Title>
   <CardBoard class="flex flex-col gap-4">
     <Preview />
   </CardBoard>
-</Section>
-
-<Section>
-  <Title>Usage</Title>
-  <CopySvelteCode code={PreviewRaw} />
+  <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
   <Title>Source Code</Title>
   <Title level={2}>Create field component.</Title>
-  <CopySvelteCode title="field.svelte" code={FieldRaw} />
+  <CopySvelteCode open title="field.svelte" code={FieldRaw} />
 </Section>

@@ -17,11 +17,7 @@
     'text-input-fg bg-input outline-primary', // colors
     'outline-offset-2 hover:outline focus:outline', // outline
     'rounded border', // border
-
-    // DISABLED
     disabled && 'bg-disabled text-disabled-fg cursor-not-allowed outline-none',
-
-    // OVERRIDE
     className
   )}
   bind:value

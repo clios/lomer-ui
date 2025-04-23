@@ -20,11 +20,11 @@
   <CardBoard class="flex-col">
     <Preview />
   </CardBoard>
-  <CopySvelteCode code={PreviewRaw} />
+  <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
   <Title>Source Code</Title>
   <Title level={2}>Create accordion component.</Title>
-  <CopySvelteCode title="accordion.svelte" code={AccordionRaw} />
+  <CopySvelteCode open title="accordion.svelte" code={AccordionRaw} />
 </Section>

@@ -18,18 +18,10 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Drawer</Title>
   <Paragraph>Slide-out panel for navigation or content.</Paragraph>
-</Section>
-
-<Section>
-  <Title>Preview</Title>
   <CardBoard class="flex-col gap-4">
     <Preview />
   </CardBoard>
-</Section>
-
-<Section>
-  <Title>Usage</Title>
-  <CopySvelteCode code={PreviewRaw} />
+  <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
@@ -43,5 +35,5 @@
   </Paragraph>
 
   <Title level={2}>Create drawer component.</Title>
-  <CopySvelteCode title="drawer.svelte" code={DrawerRaw} />
+  <CopySvelteCode open title="drawer.svelte" code={DrawerRaw} />
 </Section>

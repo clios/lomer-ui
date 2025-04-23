@@ -17,22 +17,14 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Collapsible</Title>
   <Paragraph>Expand and collapse content with ease.</Paragraph>
-</Section>
-
-<Section>
-  <Title>Preview</Title>
-  <CardBoard class="flex-col gap-4">
+  <CardBoard class="flex-col">
     <Preview />
   </CardBoard>
-</Section>
-
-<Section>
-  <Title>Usage</Title>
-  <CopySvelteCode code={PreviewRaw} />
+  <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
   <Title>Source Code</Title>
   <Title level={2}>Create collapsible component.</Title>
-  <CopySvelteCode title="collapsible.svelte" code={CollapsibleRaw} />
+  <CopySvelteCode open title="collapsible.svelte" code={CollapsibleRaw} />
 </Section>

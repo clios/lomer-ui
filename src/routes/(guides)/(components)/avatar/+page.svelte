@@ -17,22 +17,14 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Avatar</Title>
   <Paragraph>Display user profiles with a touch of personality.</Paragraph>
-</Section>
-
-<Section>
-  <Title>Preview</Title>
   <CardBoard class="flex-col gap-4">
     <Preview />
   </CardBoard>
-</Section>
-
-<Section>
-  <Title>Usage</Title>
-  <CopySvelteCode code={PreviewRaw} />
+  <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
   <Title>Source Code</Title>
   <Title level={2}>Create avatar component.</Title>
-  <CopySvelteCode title="avatar.svelte" code={AvatarRaw} />
+  <CopySvelteCode open title="avatar.svelte" code={AvatarRaw} />
 </Section>

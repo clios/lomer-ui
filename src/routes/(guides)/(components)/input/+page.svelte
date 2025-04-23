@@ -17,22 +17,14 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Input</Title>
   <Paragraph>A clear and simple way to collect user data.</Paragraph>
-</Section>
-
-<Section>
-  <Title>Preview</Title>
   <CardBoard class="flex">
     <Preview />
   </CardBoard>
-</Section>
-
-<Section>
-  <Title>Usage</Title>
-  <CopySvelteCode code={PreviewRaw} />
+  <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
   <Title>Source Code</Title>
   <Title level={2}>Create input component.</Title>
-  <CopySvelteCode title="input.svelte" code={InputRaw} />
+  <CopySvelteCode open title="input.svelte" code={InputRaw} />
 </Section>

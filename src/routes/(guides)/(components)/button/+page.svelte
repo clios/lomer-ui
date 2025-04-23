@@ -17,22 +17,14 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Button</Title>
   <Paragraph>Click it and make actions happen.</Paragraph>
-</Section>
-
-<Section>
-  <Title>Preview</Title>
   <CardBoard class="flex-wrap gap-4">
     <Preview />
   </CardBoard>
-</Section>
-
-<Section>
-  <Title>Usage</Title>
-  <CopySvelteCode code={PreviewRaw} />
+  <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
   <Title>Source Code</Title>
   <Title level={2}>Create button component.</Title>
-  <CopySvelteCode title="button.svelte" code={ButtonRaw} />
+  <CopySvelteCode open title="button.svelte" code={ButtonRaw} />
 </Section>

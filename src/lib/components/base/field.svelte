@@ -28,59 +28,46 @@
   }: Props = $props();
 </script>
 
-<div
-  class={twMerge(
-    // BASE
-    'text-fg flex gap-1', // layout
-
-    // ORIENTATION
-    orientation === 'vertical' ? 'flex-col' : 'items-start'
-  )}
->
+<!-- Customize container here -->
+<div class={twMerge('flex gap-1 text-fg', orientation === 'vertical' ? 'flex-col' : 'items-start')}>
   {#if label}
+    <!-- Customize label here -->
     <p
-      class={twMerge(
-        // BASE
-        'semibold flex text-sm',
-
-        // ORIENTATION
-        orientation === 'vertical' ? 'text-left' : 'mt-[.5rem] mr-2 text-right'
-      )}
+      class={twMerge('flex text-sm semibold', orientation === 'vertical' ? 'text-left' : 'mt-[.5rem] mr-2 text-right')}
     >
       {label}
-
-      <!-- REQUIRED INDICATOR -->
-      {#if required}<span class="text-destructive ml-1">*</span>{/if}
-
-      <!-- OPTIONAL INDICATOR -->
+      <!-- Customize required field here -->
+      {#if required}<span class="ml-1 text-destructive">*</span>{/if}
+      <!-- Customize optional field here -->
       {#if optional}
-        <span class="text-muted ml-1 rounded-sm px-1 py-[2px] text-xs">
-          Optional
-        </span>
+        <span class="ml-1 px-1 py-[2px] rounded-sm text-muted text-xs"> Optional </span>
       {/if}
     </p>
   {/if}
 
   <div class="flex flex-col gap-1">
+    <!-- Customize content here -->
     <div class={twMerge(className)}>
       {@render children?.()}
     </div>
 
     {#if helper || helper === false || helper === 0}
+      <!-- Customize helper here -->
       <p
         in:fade={{ delay: 200, duration: 200 }}
         out:slide={{ axis: 'x', duration: 1000 }}
-        class="text-muted overflow-hidden text-left text-sm text-nowrap"
+        class="overflow-hidden text-muted text-sm text-left text-nowrap"
       >
         {helper}
       </p>
     {/if}
 
     {#if issue}
+      <!-- Customize issue here -->
       <p
         in:fade={{ delay: 200, duration: 200 }}
         out:slide={{ axis: 'x', duration: 1000 }}
-        class="text-destructive overflow-hidden text-left text-sm text-nowrap"
+        class="overflow-hidden text-destructive text-sm text-left text-nowrap"
       >
         {issue}
       </p>

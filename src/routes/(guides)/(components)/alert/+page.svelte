@@ -17,22 +17,14 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Alert</Title>
   <Paragraph>Grabs attention and delivers important information.</Paragraph>
-</Section>
-
-<Section>
-  <Title>Preview</Title>
-  <CardBoard class="flex-col gap-4">
+  <CardBoard>
     <Preview />
   </CardBoard>
-</Section>
-
-<Section>
-  <Title>Usage</Title>
-  <CopySvelteCode code={PreviewRaw} />
+  <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
   <Title>Source Code</Title>
   <Title level={2}>Create alert component.</Title>
-  <CopySvelteCode title="alert.svelte" code={AlertRaw} />
+  <CopySvelteCode open title="alert.svelte" code={AlertRaw} />
 </Section>

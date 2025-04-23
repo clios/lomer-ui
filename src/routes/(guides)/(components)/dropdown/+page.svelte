@@ -20,18 +20,10 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Dropdown</Title>
   <Paragraph>A compact menu for quick options.</Paragraph>
-</Section>
-
-<Section>
-  <Title>Preview</Title>
   <CardBoard class="flex-col gap-4">
     <Preview />
   </CardBoard>
-</Section>
-
-<Section>
-  <Title>Usage</Title>
-  <CopySvelteCode code={PreviewRaw} />
+  <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
