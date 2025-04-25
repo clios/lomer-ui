@@ -50,7 +50,7 @@
   {@html highlight}
 </svelte:head>
 
-<div class={twMerge('relative flex flex-col mt-2 border border-dotted text-sm sm:text-base', className)}>
+<div class={twMerge('relative flex flex-col mt-4 border border-dotted text-sm sm:text-base', className)}>
   <div class="z-10 flex justify-between items-center gap-0.5">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->

@@ -7,6 +7,7 @@
   import PreviewRaw from './preview.svelte?raw';
   import Section from '$lib/components/base/section.svelte';
   import Title from '$lib/components/base/title.svelte';
+  import CardDemo from '$lib/components/card-demo.svelte';
 </script>
 
 <svelte:head>
@@ -17,9 +18,9 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Accordion</Title>
   <Paragraph>Expand and collapse content with ease.</Paragraph>
-  <CardBoard class="flex-col">
+  <CardDemo class="flex-col max-w-72">
     <Preview />
-  </CardBoard>
+  </CardDemo>
   <CopySvelteCode open code={PreviewRaw} />
 </Section>
 

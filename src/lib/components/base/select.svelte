@@ -11,31 +11,28 @@
     value?: any;
   } & HTMLSelectAttributes;
 
-  let {
-    children,
-    class: className,
-    disabled = false,
-    value = $bindable(),
-    ...props
-  }: Props = $props();
+  let { children, class: className, disabled = false, value = $bindable(), ...props }: Props = $props();
 </script>
 
-<div class="text-input-fg bg-input relative flex w-fit items-center rounded">
+<!-- Customize container here -->
+<div class="bg-input text-input-fg relative flex w-fit items-center rounded">
   <select
     class={twMerge(
-      'w-fit appearance-none py-1 pr-10 pl-2', // base
-      'cursor-pointer rounded border',
+      'w-fit py-1 pr-10 pl-2', // box sizing
+      'cursor-pointer appearance-none rounded border', // visual
       'outline-primary outline-offset-2 hover:outline focus:outline', // outline
-      disabled &&
-        'bg-disabled text-disabled-fg cursor-not-allowed outline-none',
+      disabled && 'bg-disabled text-disabled-fg cursor-not-allowed outline-none',
 
+      // Customize option here
       '[&>option]:bg-input',
       '[&>option]:text-input-fg',
 
+      // Customize group here
       '[&>optgroup]:bg-input',
       '[&>optgroup]:text-primary',
       '[&>optgroup]:text-xs',
 
+      // Customize group option here
       '[&>optgroup>option]:text-input-fg',
       '[&>optgroup>option]:text-base',
       '[&>optgroup>option:disabled]:text-disabled-fg',
@@ -52,6 +49,7 @@
   {@render ArrowDown()}
 </div>
 
+<!-- Customize icon for indicator -->
 {#snippet ArrowDown()}
   <svg
     class="text-fg pointer-events-none absolute right-2 size-5"

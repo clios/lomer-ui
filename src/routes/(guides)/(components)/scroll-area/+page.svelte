@@ -1,5 +1,5 @@
 <script lang="ts">
-  import AlertRaw from '$lib/components/base/alert.svelte?raw';
+  import ScrollAreaRaw from '$lib/components/base/scroll-area.svelte?raw';
   import CardBoard from '$lib/components/card-board.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Paragraph from '$lib/components/base/paragraph.svelte';
@@ -11,14 +11,14 @@
 </script>
 
 <svelte:head>
-  <title>Lomer UI - Alert</title>
+  <title>Lomer UI - Scroll Area</title>
 </svelte:head>
 
 <Section>
   <p class="text-muted text-xs">Create Your Own Component</p>
-  <Title>Alert</Title>
-  <Paragraph>Grabs attention and delivers important information.</Paragraph>
-  <CardDemo>
+  <Title>Scroll Area</Title>
+  <Paragraph>Navigate overflowing content smoothly</Paragraph>
+  <CardDemo class="flex-col gap-4">
     <Preview />
   </CardDemo>
   <CopySvelteCode open code={PreviewRaw} />
@@ -26,6 +26,6 @@
 
 <Section>
   <Title>Source Code</Title>
-  <Title level={2}>Create alert component.</Title>
-  <CopySvelteCode open title="alert.svelte" code={AlertRaw} />
+  <Title level={2}>Create scroll-area component.</Title>
+  <CopySvelteCode open title="scroll-area.svelte" code={ScrollAreaRaw} />
 </Section>

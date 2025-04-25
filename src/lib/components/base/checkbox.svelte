@@ -27,11 +27,11 @@
   <input class="hidden appearance-none" type="checkbox" bind:checked {disabled} {...props} />
 
   <!-- Customize checkbox container here -->
-  <label class={twMerge('text-fg flex w-fit cursor-pointer items-center', disabled && 'text-disabled-fg')}>
+  <label class={twMerge('flex items-center w-fit text-fg cursor-pointer', disabled && 'text-disabled-fg')}>
     <!-- Customize box here -->
     <button
       class={twMerge(
-        'mr-2 grid min-h-6 min-w-6 place-content-center', // layout and positioning
+        'place-content-center grid mr-2 min-w-6 min-h-6', // layout and positioning
         'outline-primary outline-offset-2 hover:outline focus:outline', // outline
         'cursor-pointer rounded border', // visual
         checked && 'bg-primary',
@@ -57,9 +57,9 @@
     {label}
   </label>
 
-  <!-- Customize description here -->
   {#if children}
-    <div class={twMerge('text-muted ml-8', disabled && 'text-disabled-fg')}>
+    <!-- Customize description here -->
+    <div class={twMerge('ml-8 text-muted', disabled && 'text-disabled-fg')}>
       {@render children?.()}
     </div>
   {/if}
@@ -77,7 +77,7 @@
   </svg>
 {/snippet}
 
-<!-- Customize icon for unchecked mark -->
+<!-- Customize icon for cross mark -->
 {#snippet CrossMark()}
   <svg class="size-2.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none">
     <path in:draw={{ duration: 100, easing: circInOut }} stroke-width="4" d="M0.5 1L23.5 24" stroke="currentColor" />

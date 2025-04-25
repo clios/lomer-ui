@@ -8,6 +8,7 @@
   import Section from '$lib/components/base/section.svelte';
   import Title from '$lib/components/base/title.svelte';
   import Link from '$lib/components/base/link.svelte';
+  import CardDemo from '$lib/components/card-demo.svelte';
 </script>
 
 <svelte:head>
@@ -18,9 +19,9 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Drawer</Title>
   <Paragraph>Slide-out panel for navigation or content.</Paragraph>
-  <CardBoard class="flex-col gap-4">
+  <CardDemo class="flex-col gap-4">
     <Preview />
-  </CardBoard>
+  </CardDemo>
   <CopySvelteCode open code={PreviewRaw} />
 </Section>
 

@@ -1,19 +1,15 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  type Props = {
+  type Props = HTMLAttributes<HTMLDivElement> & {
     children?: Snippet;
     class?: string;
     edge?: 'default' | 'circle' | 'sharp';
   };
 
-  let {
-    children,
-    class: className,
-    edge = 'default',
-    ...props
-  }: Props = $props();
+  let { children, class: className, edge = 'default', ...props }: Props = $props();
 </script>
 
 <div

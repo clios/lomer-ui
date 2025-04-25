@@ -7,6 +7,7 @@
   import PreviewRaw from './preview.svelte?raw';
   import Section from '$lib/components/base/section.svelte';
   import Title from '$lib/components/base/title.svelte';
+  import CardDemo from '$lib/components/card-demo.svelte';
 </script>
 
 <svelte:head>
@@ -17,22 +18,14 @@
   <p class="text-muted text-xs">Create Your Own Action</p>
   <Title>Escape Key</Title>
   <Paragraph>Detects and handles the Escape key press.</Paragraph>
-</Section>
-
-<Section>
-  <Title>Preview</Title>
-  <CardBoard class="flex-col gap-4">
+  <CardDemo class="flex-col gap-4">
     <Preview />
-  </CardBoard>
-</Section>
-
-<Section>
-  <Title>Usage</Title>
-  <CopySvelteCode code={PreviewRaw} />
+  </CardDemo>
+  <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
   <Title>Source Code</Title>
   <Title level={2}>Create escape key action.</Title>
-  <CopySvelteCode title="escape-key.svelte.ts" code={EscapeKeyRaw} />
+  <CopySvelteCode open title="escape-key.svelte.ts" code={EscapeKeyRaw} />
 </Section>

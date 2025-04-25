@@ -29,7 +29,7 @@
 </script>
 
 <!-- Customize container here -->
-<div class={twMerge('flex gap-1 text-fg', orientation === 'vertical' ? 'flex-col' : 'items-start')}>
+<div class={twMerge('flex gap-1 mt-2 text-fg', orientation === 'vertical' ? 'flex-col' : 'items-start')}>
   {#if label}
     <!-- Customize label here -->
     <p

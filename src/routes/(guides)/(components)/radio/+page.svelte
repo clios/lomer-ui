@@ -1,5 +1,5 @@
 <script lang="ts">
-  import AlertRaw from '$lib/components/base/alert.svelte?raw';
+  import RadioRaw from '$lib/components/base/radio.svelte?raw';
   import CardBoard from '$lib/components/card-board.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Paragraph from '$lib/components/base/paragraph.svelte';
@@ -11,21 +11,23 @@
 </script>
 
 <svelte:head>
-  <title>Lomer UI - Alert</title>
+  <title>Lomer UI - Radio</title>
 </svelte:head>
 
 <Section>
   <p class="text-muted text-xs">Create Your Own Component</p>
-  <Title>Alert</Title>
-  <Paragraph>Grabs attention and delivers important information.</Paragraph>
-  <CardDemo>
+  <Title>Radio</Title>
+  <Paragraph>Choose one option from a group with a click!</Paragraph>
+
+  <CardDemo class="flex-col gap-4">
     <Preview />
   </CardDemo>
+
   <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
   <Title>Source Code</Title>
-  <Title level={2}>Create alert component.</Title>
-  <CopySvelteCode open title="alert.svelte" code={AlertRaw} />
+  <Title level={2}>Create radio component.</Title>
+  <CopySvelteCode open title="radio.svelte" code={RadioRaw} />
 </Section>

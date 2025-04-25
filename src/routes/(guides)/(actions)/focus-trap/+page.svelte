@@ -7,6 +7,7 @@
   import PreviewRaw from './preview.svelte?raw';
   import Section from '$lib/components/base/section.svelte';
   import Title from '$lib/components/base/title.svelte';
+  import CardDemo from '$lib/components/card-demo.svelte';
 </script>
 
 <svelte:head>
@@ -17,22 +18,14 @@
   <p class="text-muted text-xs">Create Your Own Action</p>
   <Title>Focus Trap</Title>
   <Paragraph>Keeps focus within an element for accessibility.</Paragraph>
-</Section>
-
-<Section>
-  <Title>Preview</Title>
-  <CardBoard class="max-w-72">
+  <CardDemo class="max-w-72">
     <Preview />
-  </CardBoard>
-</Section>
-
-<Section>
-  <Title>Usage</Title>
-  <CopySvelteCode code={PreviewRaw} />
+  </CardDemo>
+  <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
 <Section>
   <Title>Source Code</Title>
   <Title level={2}>Create focus trap action.</Title>
-  <CopySvelteCode title="focus-trap.svelte.ts" code={FocusTrapRaw} />
+  <CopySvelteCode open title="focus-trap.svelte.ts" code={FocusTrapRaw} />
 </Section>

@@ -7,6 +7,7 @@
   import PreviewRaw from './preview.svelte?raw';
   import Section from '$lib/components/base/section.svelte';
   import Title from '$lib/components/base/title.svelte';
+  import CardDemo from '$lib/components/card-demo.svelte';
 </script>
 
 <svelte:head>
@@ -17,9 +18,9 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Input</Title>
   <Paragraph>A clear and simple way to collect user data.</Paragraph>
-  <CardBoard class="flex">
+  <CardDemo class="flex">
     <Preview />
-  </CardBoard>
+  </CardDemo>
   <CopySvelteCode open code={PreviewRaw} />
 </Section>
 
