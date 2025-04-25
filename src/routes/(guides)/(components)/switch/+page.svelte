@@ -19,7 +19,6 @@
   <p class="text-muted text-xs">Create Your Own Component</p>
   <Title>Switch</Title>
   <Paragraph>Switch options on or off.</Paragraph>
-  <Alert class="mt-4">Will improve this soon so stay tuned!</Alert>
   <CardDemo class="flex-col gap-4">
     <Preview />
   </CardDemo>
