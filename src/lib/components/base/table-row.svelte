@@ -10,13 +10,7 @@
     onclick?: () => void;
   };
 
-  let {
-    children,
-    class: className,
-    clickable = false,
-    highlightable = false,
-    ...props
-  }: Props = $props();
+  let { children, class: className, clickable = false, highlightable = false, ...props }: Props = $props();
 
   function onclick() {
     if (!clickable) return;
@@ -28,7 +22,7 @@
   class={twMerge(
     'outline-primary -outline-offset-1',
     clickable && 'hover:bg-primary/15 cursor-pointer hover:outline',
-    clickable && 'focus:bg-primary/15 focus:outline',
+    clickable && 'focus-visible:bg-primary/15 focus-visible:outline',
     className
   )}
   tabindex={clickable ? 0 : -1}

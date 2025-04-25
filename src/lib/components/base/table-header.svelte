@@ -11,12 +11,6 @@
   let { class: className, children, ...props }: Props = $props();
 </script>
 
-<th
-  class={twMerge(
-    'text-muted min-w-max px-4 py-2 text-left font-normal text-nowrap',
-    className
-  )}
-  {...props}
->
+<th class={twMerge('px-4 py-2 min-w-max font-normal text-muted text-left text-nowrap', className)} {...props}>
   {@render children?.()}
 </th>

@@ -44,12 +44,12 @@
     down arrow keys.
   </Paragraph>
 
-  <Title level={2}>Create dropdown component.</Title>
-  <CopySvelteCode title="dropdown.svelte" code={DropdownRaw} />
+  <Title level={2}>1. Create dropdown component.</Title>
+  <CopySvelteCode open title="dropdown.svelte" code={DropdownRaw} />
 
-  <Title level={2}>Create dropdown option component.</Title>
+  <Title level={2}>2. Create dropdown option component.</Title>
   <CopySvelteCode title="dropdown-option.svelte" code={DropdownOptionRaw} />
 
-  <Title level={2}>Create dropdown switch component.</Title>
+  <Title level={2}>3. Create dropdown switch component.</Title>
   <CopySvelteCode title="dropdown-switch.svelte" code={DropdownSwitchRaw} />
 </Section>

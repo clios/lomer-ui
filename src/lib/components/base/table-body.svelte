@@ -9,13 +9,7 @@
     outline?: boolean;
   };
 
-  let {
-    children,
-    class: className,
-    outline,
-    zebra,
-    ...props
-  }: Props = $props();
+  let { children, class: className, outline, zebra, ...props }: Props = $props();
 </script>
 
 <tbody
@@ -23,7 +17,7 @@
     '[&_tr:hover]:bg-primary/15',
     '[&_tr:focus]:bg-primary/15',
     '[&_tr:nth-child(odd):hover]:bg-primary/15',
-    '[&_tr:nth-child(odd):focus]:bg-primary/15',
+    '[&_tr:nth-child(odd):focus-visible]:bg-primary/15',
     zebra && '[&_tr:nth-child(odd)]:bg-fg/5',
     outline && '[&_tr]:border-t',
     className

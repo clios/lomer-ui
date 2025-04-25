@@ -50,7 +50,7 @@
   {@html highlight}
 </svelte:head>
 
-<div class={twMerge('relative flex flex-col mt-4 border border-dotted text-sm sm:text-base', className)}>
+<div class={twMerge('relative flex flex-col mt-2 border border-dotted text-sm sm:text-base', className)}>
   <div class="z-10 flex justify-between items-center gap-0.5">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -67,12 +67,12 @@
         {title}
       </div>
       {#if open}
-        <Icon class="size-6" icon="mdi:arrow-collapse" />
+        <Icon class="size-6 text-muted" icon="mdi:arrow-collapse" />
       {:else}
-        <Icon class="size-6" icon="mdi:arrow-expand" />
+        <Icon class="size-6 text-muted" icon="mdi:arrow-expand" />
       {/if}
     </button>
-    <button class="p-2 cursor-pointer" onclick={copyToClipboard}>
+    <button class="p-2 text-muted cursor-pointer" onclick={copyToClipboard}>
       {#if copyMessage}
         <Icon class="size-6 text-green-500" icon="tabler:clipboard-check-filled" />
       {:else}
@@ -99,7 +99,7 @@
       class="z-10 flex justify-center items-center gap-2 py-2 cursor-pointer"
       onclick={() => (open = false)}
     >
-      <Icon class="size-6" icon="mdi:arrow-collapse-vertical" />
+      <Icon class="size-6 text-muted" icon="mdi:arrow-collapse-vertical" />
       Collapse
     </button>
   {/if}

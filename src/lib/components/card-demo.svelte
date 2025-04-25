@@ -3,7 +3,7 @@
   let { class: className = '', children } = $props();
 </script>
 
-<div class="mt-8">
+<div class="mt-8 mb-4">
   <div class="flex items-center">
     <p class="text-border font-mono text-nowrap">/// DEMO START ///</p>
     <div class="border-b border-dotted w-full"></div>
