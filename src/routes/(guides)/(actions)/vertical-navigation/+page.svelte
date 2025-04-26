@@ -25,7 +25,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create vertical navigation action.</Title>
+  <Title>Guide</Title>
+  <Paragraph>Create the action.</Paragraph>
   <CopySvelteCode open title="vertical-navigation.svelte.ts" code={VerticalNavigationRaw} />
 </Section>

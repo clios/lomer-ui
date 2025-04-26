@@ -25,7 +25,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create hotkey action.</Title>
+  <Title>Guide</Title>
+  <Paragraph>Create the action.</Paragraph>
   <CopySvelteCode open title="hotkey.svelte.ts" code={HotkeyRaw} />
 </Section>

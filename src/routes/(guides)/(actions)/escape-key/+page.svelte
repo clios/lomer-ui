@@ -25,7 +25,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create escape key action.</Title>
+  <Title>Guide</Title>
+  <Paragraph>Create the action.</Paragraph>
   <CopySvelteCode open title="escape-key.svelte.ts" code={EscapeKeyRaw} />
 </Section>
