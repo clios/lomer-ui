@@ -13,7 +13,7 @@
   });
 </script>
 
-<div class="bg-bg w-screen h-screen overflow-auto text-fg">
+<div class="bg-bg text-fg h-screen w-screen overflow-auto">
   <div bind:this={elPage} id="page"></div>
   <ShellHeader bind:open />
   <ShellSidebar bind:open />

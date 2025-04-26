@@ -10,7 +10,7 @@
   }
 </script>
 
-<div class="p-4 border border-dashed" use:outsideClick={handleOutsideClick}>
+<div class="border border-dashed p-4" use:outsideClick={handleOutsideClick}>
   <Checkbox bind:checked label="Enable outside click">
     {#if checked}
       Now click outside the box

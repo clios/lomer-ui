@@ -50,15 +50,15 @@
   {@html highlight}
 </svelte:head>
 
-<div class={twMerge('relative flex flex-col mt-2 border border-dotted text-sm sm:text-base', className)}>
-  <div class="z-10 flex justify-between items-center gap-0.5">
+<div class={twMerge('relative mt-2 flex flex-col border border-dotted text-sm sm:text-base', className)}>
+  <div class="z-10 flex items-center justify-between gap-0.5">
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <button
       onclick={() => (open = !open)}
-      class="group flex justify-between items-center gap-2 p-2 w-full h-full cursor-pointer"
+      class="group flex h-full w-full cursor-pointer items-center justify-between gap-2 p-2"
     >
-      <div class="flex items-center gap-2 group-hover:underline underline-offset-2">
+      <div class="flex items-center gap-2 underline-offset-2 group-hover:underline">
         {#if language === 'css'}
           <Icon class="size-6" icon="devicon:css3" />
         {:else}
@@ -67,12 +67,12 @@
         {title}
       </div>
       {#if open}
-        <Icon class="size-6 text-muted" icon="mdi:arrow-collapse" />
+        <Icon class="text-muted size-6" icon="mdi:arrow-collapse" />
       {:else}
-        <Icon class="size-6 text-muted" icon="mdi:arrow-expand" />
+        <Icon class="text-muted size-6" icon="mdi:arrow-expand" />
       {/if}
     </button>
-    <button class="p-2 text-muted cursor-pointer" onclick={copyToClipboard}>
+    <button class="text-muted cursor-pointer p-2" onclick={copyToClipboard}>
       {#if copyMessage}
         <Icon class="size-6 text-green-500" icon="tabler:clipboard-check-filled" />
       {:else}
@@ -96,10 +96,10 @@
     </div>
     <button
       transition:slide
-      class="z-10 flex justify-center items-center gap-2 py-2 cursor-pointer"
+      class="z-10 flex cursor-pointer items-center justify-center gap-2 py-2"
       onclick={() => (open = false)}
     >
-      <Icon class="size-6 text-muted" icon="mdi:arrow-collapse-vertical" />
+      <Icon class="text-muted size-6" icon="mdi:arrow-collapse-vertical" />
       Collapse
     </button>
   {/if}

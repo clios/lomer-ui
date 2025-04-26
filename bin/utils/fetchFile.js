@@ -6,9 +6,7 @@ export async function fetchFile(fileUrl, destPath) {
     const response = await fetch(fileUrl);
 
     if (!response.ok) {
-      throw new Error(
-        `Failed to fetch file: ${response.status} ${response.statusText}`
-      );
+      throw new Error(`Failed to fetch file: ${response.status} ${response.statusText}`);
     }
 
     const fileContent = await response.text();

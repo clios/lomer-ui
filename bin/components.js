@@ -42,12 +42,7 @@ export const COMPONENTS = [
   {
     name: 'dropdown',
     dependencies: ['dropdown-item'],
-    actions: [
-      'escape-key',
-      'outside-click',
-      'focus-trap',
-      'vertical-navigation'
-    ]
+    actions: ['escape-key', 'outside-click', 'focus-trap', 'vertical-navigation']
   },
   {
     name: 'dropdown-item',
@@ -101,13 +96,7 @@ export const COMPONENTS = [
   },
   {
     name: 'table',
-    dependencies: [
-      'table-head',
-      'table-body',
-      'table-row',
-      'table-header',
-      'table-data'
-    ],
+    dependencies: ['table-head', 'table-body', 'table-row', 'table-header', 'table-data'],
     actions: []
   },
   {

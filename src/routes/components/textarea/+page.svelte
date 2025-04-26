@@ -45,10 +45,7 @@
   <PageSection id="1" title="Installation">
     <PageArticle title="Get the component">
       <CopyCLI code={`npx lomer-ui get textarea`} />
-      <Link
-        href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/textarea.svelte"
-        target="_blank"
-      >
+      <Link href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/textarea.svelte" target="_blank">
         Source code
       </Link>
     </PageArticle>

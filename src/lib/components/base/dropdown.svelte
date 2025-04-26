@@ -67,7 +67,7 @@
 
 {#if open}
   <!-- Customize backdrop here -->
-  <div class="top-0 right-0 bottom-0 left-0 z-[999999999] fixed bg-bg/0">
+  <div class="bg-bg/0 fixed top-0 right-0 bottom-0 left-0 z-[999999999]">
     <!-- Customize content here -->
     <div
       use:focusTrap
@@ -78,7 +78,7 @@
       bind:contentBoxSize
       transition:fade={{ duration: 75 }}
       class={twMerge(
-        'fixed bg-bg border rounded h-fit max-h-[calc(100vh-2rem)]',
+        'bg-bg fixed h-fit max-h-[calc(100vh-2rem)] rounded border',
         'text-fg pointer-events-auto overflow-auto px-2 py-1',
         className
       )}

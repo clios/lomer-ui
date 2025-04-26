@@ -29,8 +29,8 @@
     {#each data as d}
       <TableRow clickable onclick={() => alert(d.month)}>
         <TableData>{d.month}</TableData>
-        <TableData class="font-mono text-right">{d.expense}</TableData>
-        <TableData class="font-mono text-right">{d.savings}</TableData>
+        <TableData class="text-right font-mono">{d.expense}</TableData>
+        <TableData class="text-right font-mono">{d.savings}</TableData>
       </TableRow>
     {/each}
   </TableBody>

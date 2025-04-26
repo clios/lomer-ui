@@ -64,8 +64,7 @@ export async function get(components) {
     return;
   }
 
-  const githubBaseURL =
-    'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/components/base';
+  const githubBaseURL = 'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/components/base';
   const destDir = path.resolve('./src/lib/components/base');
   const destLomer = path.join(destDir, 'lomer.css');
 
@@ -83,9 +82,7 @@ export async function get(components) {
   components.forEach(collectDependencies);
 
   // Validate components
-  const invalidComponents = [...toAdd].filter(
-    (c) => !COMPONENTS.some((comp) => comp.name === c)
-  );
+  const invalidComponents = [...toAdd].filter((c) => !COMPONENTS.some((comp) => comp.name === c));
   if (invalidComponents.length > 0) {
     console.log(`❌ Invalid components: ${invalidComponents.join(', ')}`);
     return;
@@ -139,8 +136,7 @@ export async function get(components) {
 }
 
 async function getActionsForComponents(components) {
-  const githubBaseURL =
-    'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/actions';
+  const githubBaseURL = 'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/actions';
   const destDir = path.resolve('./src/lib/actions');
 
   // Track actions to add (ensure no duplicates)
@@ -160,9 +156,7 @@ async function getActionsForComponents(components) {
   const validActions = new Set(COMPONENTS.flatMap((comp) => comp.actions));
 
   // Validate collected actions
-  const invalidActions = [...toAdd].filter(
-    (action) => !validActions.has(action)
-  );
+  const invalidActions = [...toAdd].filter((action) => !validActions.has(action));
 
   if (invalidActions.length > 0) {
     console.log(`❌ Invalid actions: ${invalidActions.join(', ')}`);

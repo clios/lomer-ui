@@ -29,18 +29,18 @@
 </script>
 
 <!-- Customize container here -->
-<div class={twMerge('flex gap-1 mt-2 text-fg', orientation === 'vertical' ? 'flex-col' : 'items-start')}>
+<div class={twMerge('text-fg mt-2 flex gap-1', orientation === 'vertical' ? 'flex-col' : 'items-start')}>
   {#if label}
     <!-- Customize label here -->
     <p
-      class={twMerge('flex text-sm semibold', orientation === 'vertical' ? 'text-left' : 'mt-[.5rem] mr-2 text-right')}
+      class={twMerge('semibold flex text-sm', orientation === 'vertical' ? 'text-left' : 'mt-[.5rem] mr-2 text-right')}
     >
       {label}
       <!-- Customize required field here -->
-      {#if required}<span class="ml-1 text-destructive">*</span>{/if}
+      {#if required}<span class="text-destructive ml-1">*</span>{/if}
       <!-- Customize optional field here -->
       {#if optional}
-        <span class="ml-1 px-1 py-[2px] rounded-sm text-muted text-xs"> Optional </span>
+        <span class="text-muted ml-1 rounded-sm px-1 py-[2px] text-xs"> Optional </span>
       {/if}
     </p>
   {/if}
@@ -56,7 +56,7 @@
       <p
         in:fade={{ delay: 200, duration: 200 }}
         out:slide={{ axis: 'x', duration: 1000 }}
-        class="overflow-hidden text-muted text-sm text-left text-nowrap"
+        class="text-muted overflow-hidden text-left text-sm text-nowrap"
       >
         {helper}
       </p>
@@ -67,7 +67,7 @@
       <p
         in:fade={{ delay: 200, duration: 200 }}
         out:slide={{ axis: 'x', duration: 1000 }}
-        class="overflow-hidden text-destructive text-sm text-left text-nowrap"
+        class="text-destructive overflow-hidden text-left text-sm text-nowrap"
       >
         {issue}
       </p>

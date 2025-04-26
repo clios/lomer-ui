@@ -5,14 +5,7 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
 
-  type Variant =
-    | 'default'
-    | 'inverted'
-    | 'primary'
-    | 'secondary'
-    | 'destructive'
-    | 'outline'
-    | 'ghost';
+  type Variant = 'default' | 'inverted' | 'primary' | 'secondary' | 'destructive' | 'outline' | 'ghost';
 
   type Props = {
     children?: Snippet;

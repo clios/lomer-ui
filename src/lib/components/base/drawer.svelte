@@ -23,7 +23,7 @@
     in:fade={{ duration: 150 }}
     out:fade={{ duration: 150 }}
     class={twMerge(
-      'top-0 right-0 bottom-0 left-0 z-[999999999] fixed', // position
+      'fixed top-0 right-0 bottom-0 left-0 z-[999999999]', // position
       'bg-bg/80 backdrop-blur-xs', // background
       'bg-[radial-gradient(#D4D4D8_1px,transparent_1px)]', // light dots
       'dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]', // dark dots
@@ -36,7 +36,7 @@
       use:escapeKey={() => (open = false)}
       transition:slide={{ axis: 'x', duration: 300, delay: 151 }}
       class={twMerge(
-        'absolute bg-bg text-fg', // base
+        'bg-bg text-fg absolute', // base
         'shadow-md dark:shadow-none', // shadow
         'overflow-auto transition-all', // animation
         placement === 'left' && 'left-0 h-screen border-r',
@@ -47,7 +47,7 @@
       <div
         in:fade={{ delay: 300 }}
         out:fade={{ duration: 150 }}
-        class="top-0 z-10 sticky flex justify-between items-center bg-bg/80 backdrop-blur-xs px-4 border-b h-10"
+        class="bg-bg/80 sticky top-0 z-10 flex h-10 items-center justify-between border-b px-4 backdrop-blur-xs"
       >
         <!-- Customize title here -->
         {#if title}
@@ -56,7 +56,7 @@
 
         <!-- Customize close button here -->
         <button
-          class="top-2 right-2 absolute p-1 rounded hover:outline outline-primary cursor-pointer"
+          class="outline-primary absolute top-2 right-2 cursor-pointer rounded p-1 hover:outline"
           onclick={() => (open = false)}
         >
           {@render IconClose()}
@@ -64,7 +64,7 @@
       </div>
 
       <!-- Customize content here -->
-      <div in:fade={{ delay: 450 }} out:fade={{ duration: 150 }} class={twMerge('relative p-4 w-72', className)}>
+      <div in:fade={{ delay: 450 }} out:fade={{ duration: 150 }} class={twMerge('relative w-72 p-4', className)}>
         {@render children?.()}
       </div>
     </div>

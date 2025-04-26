@@ -7,12 +7,7 @@
   let { class: className, ...props }: Props = $props();
 </script>
 
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  class={twMerge('max-w-6 min-w-6', className)}
-  viewBox="0 0 24 24"
-  {...props}
->
+<svg xmlns="http://www.w3.org/2000/svg" class={twMerge('max-w-6 min-w-6', className)} viewBox="0 0 24 24" {...props}>
   <path
     fill="currentColor"
     fill-rule="evenodd"

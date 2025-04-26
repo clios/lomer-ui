@@ -18,8 +18,7 @@ export async function action(actions) {
     return;
   }
 
-  const githubBaseURL =
-    'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/actions';
+  const githubBaseURL = 'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/actions';
   const destDir = path.resolve('./src/lib/actions');
 
   await fs.mkdir(destDir, { recursive: true });

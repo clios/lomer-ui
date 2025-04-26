@@ -21,7 +21,7 @@
 
 <Button
   onclick={() => handleRouting(url)}
-  class={twMerge('ml-4 py-0 w-[calc(100%-2rem)]', $page.url.pathname === url && 'text-primary')}
+  class={twMerge('ml-4 w-[calc(100%-2rem)] py-0', $page.url.pathname === url && 'text-primary')}
   variant="ghost"
 >
   {@render children?.()}

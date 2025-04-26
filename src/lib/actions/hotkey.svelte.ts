@@ -8,14 +8,7 @@ type Options = {
 };
 
 export function hotkey(node: HTMLElement, options: Options) {
-  const {
-    code,
-    onKeydown,
-    ctrlKey = false,
-    metaKey = false,
-    shiftKey = false,
-    altKey = false
-  } = options;
+  const { code, onKeydown, ctrlKey = false, metaKey = false, shiftKey = false, altKey = false } = options;
 
   function handleKeydown(event: KeyboardEvent) {
     if (

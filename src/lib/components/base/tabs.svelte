@@ -14,9 +14,7 @@
   function checkScroll() {
     if (scrollContainer) {
       canScrollLeft = scrollContainer.scrollLeft > 0;
-      canScrollRight =
-        scrollContainer.scrollWidth >
-        scrollContainer.clientWidth + scrollContainer.scrollLeft;
+      canScrollRight = scrollContainer.scrollWidth > scrollContainer.clientWidth + scrollContainer.scrollLeft;
     }
   }
 
@@ -43,9 +41,7 @@
 <svelte:window bind:innerWidth />
 
 <!-- CONTAINER -->
-<div
-  class={twMerge('bg-bg relative flex w-full items-center gap-2', className)}
->
+<div class={twMerge('bg-bg relative flex w-full items-center gap-2', className)}>
   <!-- CONTENT -->
   <div
     bind:this={scrollContainer}
@@ -63,12 +59,7 @@
         'from-bg/0 to-bg via-bg bg-gradient-to-l' // gradient
       )}
     >
-      <Button
-        class="absolute left-2"
-        variant="outline"
-        size="fit"
-        onclick={scrollLeft}
-      >
+      <Button class="absolute left-2" variant="outline" size="fit" onclick={scrollLeft}>
         {@render IconChevronLeft()}
       </Button>
     </div>
@@ -82,12 +73,7 @@
         'from-bg/0 to-bg via-bg bg-gradient-to-r' // gradient
       )}
     >
-      <Button
-        class="absolute right-2"
-        variant="outline"
-        size="fit"
-        onclick={scrollRight}
-      >
+      <Button class="absolute right-2" variant="outline" size="fit" onclick={scrollRight}>
         {@render IconChevronRight()}
       </Button>
     </div>
@@ -95,27 +81,14 @@
 </div>
 
 {#snippet IconChevronLeft()}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="text-fg size-5"
-    viewBox="0 0 24 24"
-    ><path
-      fill="currentColor"
-      d="M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6l6 6z"
-    />
+  <svg xmlns="http://www.w3.org/2000/svg" class="text-fg size-5" viewBox="0 0 24 24"
+    ><path fill="currentColor" d="M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6l6 6z" />
   </svg>
 {/snippet}
 
 {#snippet IconChevronRight()}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="text-fg size-6"
-    viewBox="0 0 24 24"
-  >
-    <path
-      fill="currentColor"
-      d="M8.59 16.58L13.17 12L8.59 7.41L10 6l6 6l-6 6z"
-    />
+  <svg xmlns="http://www.w3.org/2000/svg" class="text-fg size-6" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M8.59 16.58L13.17 12L8.59 7.41L10 6l6 6l-6 6z" />
   </svg>
 {/snippet}
 

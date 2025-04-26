@@ -7,12 +7,7 @@
     title?: string;
     children?: Snippet;
   };
-  let {
-    class: className = '',
-    id = '',
-    children,
-    title = ''
-  }: Props = $props();
+  let { class: className = '', id = '', children, title = '' }: Props = $props();
 </script>
 
 <article class="relative">
@@ -22,12 +17,7 @@
       {title}
     </p>
   {/if}
-  <div
-    class={twMerge(
-      'text-muted flex w-full flex-col gap-2 pt-2 pb-4 sm:pr-14 sm:pl-4',
-      className
-    )}
-  >
+  <div class={twMerge('text-muted flex w-full flex-col gap-2 pt-2 pb-4 sm:pr-14 sm:pl-4', className)}>
     {@render children?.()}
   </div>
 </article>

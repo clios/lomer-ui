@@ -7,12 +7,7 @@
   let { class: className, ...props }: Props = $props();
 </script>
 
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  class={twMerge('text-fg', className)}
-  viewBox="0 0 208 208"
-  {...props}
->
+<svg xmlns="http://www.w3.org/2000/svg" class={twMerge('text-fg', className)} viewBox="0 0 208 208" {...props}>
   <path
     fill-rule="evenodd"
     clip-rule="evenodd"

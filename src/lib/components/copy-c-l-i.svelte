@@ -27,11 +27,11 @@
 
 <div
   class={twMerge(
-    'flex items-center gap-1 bg-fg dark:bg-bg pr-1 border rounded w-full max-w-fit h-10 overflow-x-auto overflow-y-hidden text-sm not-italic',
+    'bg-fg dark:bg-bg flex h-10 w-full max-w-fit items-center gap-1 overflow-x-auto overflow-y-hidden rounded border pr-1 text-sm not-italic',
     className
   )}
 >
-  <pre class="bg-fg dark:bg-bg px-4 text-bg dark:text-fg"><code>{code}</code></pre>
+  <pre class="bg-fg dark:bg-bg text-bg dark:text-fg px-4"><code>{code}</code></pre>
 
   <Button class="outline-none" size="icon" variant="ghost" onclick={copyToClipboard}>
     {#if copyMessage}

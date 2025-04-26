@@ -78,10 +78,7 @@
       <p>
         Insert access token in your <HighlightText>.env</HighlightText> file.
       </p>
-      <CopyCSSCode
-        title=".env"
-        code="PUBLIC_MAPBOX_TOKEN=[your_api_key_here]"
-      />
+      <CopyCSSCode title=".env" code="PUBLIC_MAPBOX_TOKEN=[your_api_key_here]" />
     </PageArticle>
 
     <!-- GET THE COMPONENT -->
@@ -89,10 +86,7 @@
       <CopyCLI code={`npx lomer-ui get map.mapbox-gl`} />
       <p>
         Source code:
-        <Link
-          href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/mapbox.svelte"
-          target="_blank"
-        >
+        <Link href="https://github.com/clios/lomer-ui/blob/main/src/lib/components/base/mapbox.svelte" target="_blank">
           map.mapbox-gl.svelte
         </Link>
       </p>
@@ -119,10 +113,7 @@
   <PageSection id="4" title="Controls">
     <PageArticle title="Preview">
       <MapControl />
-      <CopySvelteCode
-        code={MapControlRaw}
-        highlightedLines={[2, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]}
-      />
+      <CopySvelteCode code={MapControlRaw} highlightedLines={[2, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]} />
     </PageArticle>
   </PageSection>
 
@@ -130,10 +121,7 @@
   <PageSection id="5" title="Events">
     <PageArticle title="Preview">
       <MapEvents />
-      <CopySvelteCode
-        code={MapEventsRaw}
-        highlightedLines={[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]}
-      />
+      <CopySvelteCode code={MapEventsRaw} highlightedLines={[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]} />
     </PageArticle>
   </PageSection>
 

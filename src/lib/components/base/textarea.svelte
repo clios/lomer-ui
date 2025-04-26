@@ -8,12 +8,7 @@
     value?: string;
   } & HTMLTextareaAttributes;
 
-  let {
-    class: className,
-    disabled = false,
-    value = $bindable(''),
-    ...props
-  }: Props = $props();
+  let { class: className, disabled = false, value = $bindable(''), ...props }: Props = $props();
 </script>
 
 <textarea

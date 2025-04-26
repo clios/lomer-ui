@@ -49,12 +49,7 @@
   <p class="mb-1 text-sm">Tone Color</p>
   <div class="flex flex-wrap gap-1">
     {#each tones as tone}
-      <Button
-        title={tone.name}
-        onclick={() => setTone(tone)}
-        class={`border-none ${tone.bg} text-white`}
-        size="icon"
-      >
+      <Button title={tone.name} onclick={() => setTone(tone)} class={`border-none ${tone.bg} text-white`} size="icon">
         <div class="size-4">
           {#if tone.name === toneColor}
             <Icon icon="mdi:check" />

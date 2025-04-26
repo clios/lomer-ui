@@ -6,7 +6,7 @@
 </script>
 
 <!-- Use focusTrap to keep focus within the form -->
-<form use:focusTrap class="flex flex-col gap-2 p-4 border">
+<form use:focusTrap class="flex flex-col gap-2 border p-4">
   <p>Press tab key to cycle through focusable elements.</p>
   <Field label="Email">
     <Input type="email" />
@@ -14,7 +14,7 @@
   <Field label="Password">
     <Input type="password" />
   </Field>
-  <Field class="flex justify-end mt-4">
+  <Field class="mt-4 flex justify-end">
     <Button>Sign In</Button>
   </Field>
 </form>

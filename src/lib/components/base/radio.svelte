@@ -40,12 +40,12 @@
 
   <!-- Customize radio container here -->
   <label
-    class={twMerge('flex items-center w-fit text-fg cursor-pointer', disabled && 'text-disabled-fg cursor-not-allowed')}
+    class={twMerge('text-fg flex w-fit cursor-pointer items-center', disabled && 'text-disabled-fg cursor-not-allowed')}
   >
     <!-- Customize outer circle here -->
     <button
       class={twMerge(
-        'place-content-center grid mr-2 min-w-5 min-h-5', // layout and positioning
+        'mr-2 grid min-h-5 min-w-5 place-content-center', // layout and positioning
         'outline-primary outline-offset-2 hover:outline focus:outline', // outline
         'cursor-pointer rounded-full border', // visual
         disabled && 'cursor-not-allowed outline-none'
@@ -58,7 +58,7 @@
         <div
           transition:fade={{ duration: 150 }}
           class={twMerge(
-            'bg-primary rounded-full size-3.5', // layout and positioning
+            'bg-primary size-3.5 rounded-full', // layout and positioning
             disabled && 'bg-disabled cursor-not-allowed'
           )}
         ></div>
@@ -71,7 +71,7 @@
 
   {#if children}
     <!-- Customize description here -->
-    <div class={twMerge('ml-8 text-muted', disabled && 'text-disabled-fg')}>
+    <div class={twMerge('text-muted ml-8', disabled && 'text-disabled-fg')}>
       {@render children?.()}
     </div>
   {/if}

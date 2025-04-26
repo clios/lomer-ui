@@ -12,8 +12,8 @@
 </script>
 
 <div class="border-b border-dotted">
-  <div class="mx-auto sm:px-4 container">
-    <div class="p-4 md:p-8 lg:p-16 sm:border-x sm:border-dotted w-full">
+  <div class="container mx-auto sm:px-4">
+    <div class="w-full p-4 sm:border-x sm:border-dotted md:p-8 lg:p-16">
       <section class={twMerge('relative', className)} {...props}>
         {@render children?.()}
       </section>

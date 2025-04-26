@@ -26,7 +26,7 @@
 
 <button
   class={twMerge(
-    'relative flex items-center gap-1 my-1 rounded cursor-pointer', // base
+    'relative my-1 flex cursor-pointer items-center gap-1 rounded', // base
     'w-full py-1 pr-12 pl-3', // box model
     'outline-primary -outline-offset-1', // outline
     'hover:bg-primary/10 hover:outline', // hover
@@ -54,7 +54,7 @@
 
 {#snippet IconSpinner()}
   <svg
-    class="right-3 bottom-1/2 absolute size-4 text-primary translate-y-1/2 animate-spin"
+    class="text-primary absolute right-3 bottom-1/2 size-4 translate-y-1/2 animate-spin"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
   >

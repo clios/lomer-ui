@@ -3,9 +3,9 @@
   import Icon from '@iconify/svelte';
 </script>
 
-<div class="mx-auto sm:px-4 container">
-  <div class="p-4 md:p-8 lg:p-16 w-full">
-    <p class="flex items-center gap-2 mb-4">
+<div class="container mx-auto sm:px-4">
+  <div class="w-full p-4 md:p-8 lg:p-16">
+    <p class="mb-4 flex items-center gap-2">
       Share treats:
       <Link
         class="text-muted hover:text-primary transition-all"

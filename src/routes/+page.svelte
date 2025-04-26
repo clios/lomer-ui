@@ -19,7 +19,7 @@
     <p class="text-muted text-sm">Tailwind CSS v4</p>
     <p class="my-4 text-2xl sm:text-3xl md:text-4xl">Lomer UI</p>
     <Paragraph>Open-source resource for crafting project-specific UI components using Svelte & Tailwind CSS.</Paragraph>
-    <Alert class="mt-4 border-primary max-w-[800px]">
+    <Alert class="border-primary mt-4 max-w-[800px]">
       I'm currently repurposing Lomer UI. I noticed most of the users just like to read the codes for its simplicity.
       Making it a guide will benefit myself and developers who want to build their components from scratch.
     </Alert>

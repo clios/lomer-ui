@@ -21,7 +21,7 @@
     in:fade={{ duration: 75 }}
     out:fade={{ duration: 75 }}
     class={twMerge(
-      'place-content-center grid', // layout
+      'grid place-content-center', // layout
       'fixed top-0 right-0 bottom-0 left-0 z-[999999999]', // position
       'bg-bg/80 backdrop-blur-xs', // background
       'bg-[radial-gradient(#D4D4D8_1px,transparent_1px)]', // light dots
@@ -36,7 +36,7 @@
       in:scale={{ duration: 75, delay: 75, start: 0.9 }}
       out:scale={{ duration: 75, start: 0.9 }}
       class={twMerge(
-        'z-10 relative', // layout and positioning
+        'relative z-10', // layout and positioning
         'w-screen sm:w-max sm:min-w-80', // width
         'text-fg bg-bg text-left', // background and text
         'shadow-md dark:shadow-none', // shadow
@@ -46,7 +46,7 @@
     >
       <!-- Customize close button here -->
       <button
-        class="top-2 right-2 absolute p-1 rounded hover:outline outline-primary cursor-pointer"
+        class="outline-primary absolute top-2 right-2 cursor-pointer rounded p-1 hover:outline"
         onclick={() => (open = false)}
       >
         {@render IconClose()}

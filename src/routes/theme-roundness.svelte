@@ -1,14 +1,7 @@
 <script lang="ts">
   import Button from '$lib/components/base/button.svelte';
 
-  type Variant =
-    | 'default'
-    | 'inverted'
-    | 'primary'
-    | 'secondary'
-    | 'destructive'
-    | 'outline'
-    | 'ghost';
+  type Variant = 'default' | 'inverted' | 'primary' | 'secondary' | 'destructive' | 'outline' | 'ghost';
 
   interface Round {
     name: string;
@@ -64,12 +57,7 @@
   <div class="flex gap-1">
     {#each roundness as round}
       {@const variant = radiusVal == round.name ? 'default' : 'inverted'}
-      <Button
-        class="w-8 justify-center"
-        size="small"
-        variant={variant as Variant}
-        onclick={() => setRoundness(round)}
-      >
+      <Button class="w-8 justify-center" size="small" variant={variant as Variant} onclick={() => setRoundness(round)}>
         {round.display}
       </Button>
     {/each}

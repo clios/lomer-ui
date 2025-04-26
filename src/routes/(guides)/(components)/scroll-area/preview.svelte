@@ -2,7 +2,7 @@
   import ScrollArea from '$lib/components/base/scroll-area.svelte';
 </script>
 
-<ScrollArea class="border w-40 h-52">
+<ScrollArea class="h-52 w-40 border">
   <p>Start</p>
   {#each Array(40) as _, i}
     <p>Line {i}</p>

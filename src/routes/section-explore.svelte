@@ -33,17 +33,9 @@
   <p class="text-muted mb-1 text-sm">Explore in</p>
   <div class="flex items-center">
     <ButtonToggleMode />
-    <Button
-      class=" h-6 rounded-r text-sm tracking-wide"
-      variant="primary"
-      edge="sharp"
-      onclick={() => (open = !open)}
-    >
+    <Button class=" h-6 rounded-r text-sm tracking-wide" variant="primary" edge="sharp" onclick={() => (open = !open)}>
       Theme
-      <Icon
-        class={twMerge('size-4 transition-transform', open && 'rotate-180')}
-        icon="mdi:gear"
-      />
+      <Icon class={twMerge('size-4 transition-transform', open && 'rotate-180')} icon="mdi:gear" />
     </Button>
   </div>
 </div>
@@ -53,12 +45,7 @@
       <p class="font-semibold">
         Customize Theme
 
-        <Button
-          class="absolute top-3 right-3"
-          variant="ghost"
-          size="icon"
-          onclick={() => (open = false)}
-        >
+        <Button class="absolute top-3 right-3" variant="ghost" size="icon" onclick={() => (open = false)}>
           {@render IconClose()}
         </Button>
       </p>
@@ -79,13 +66,7 @@
 </Dropdown>
 
 {#snippet IconClose()}
-  <svg
-    class="size-4"
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-  >
+  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
     <rect width="24" height="24" fill="none" />
     <path
       fill="none"
@@ -97,12 +78,7 @@
       stroke-width="2"
       d="M12 12l7 7M12 12l-7 -7M12 12l-7 7M12 12l7 -7"
     >
-      <animate
-        fill="freeze"
-        attributeName="stroke-dashoffset"
-        dur="0.3s"
-        values="12;0"
-      />
+      <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="12;0" />
     </path>
   </svg>
 {/snippet}

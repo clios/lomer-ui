@@ -51,12 +51,9 @@ export async function craft(recipe, fileName) {
       process.exit(1);
     }
 
-    console.log(
-      '\n\nCRAFTING SVELTE COMPONENT___________________________________\n'
-    );
+    console.log('\n\nCRAFTING SVELTE COMPONENT___________________________________\n');
 
-    const githubBaseURL =
-      'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/components/recipes';
+    const githubBaseURL = 'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/components/recipes';
     const srcPath = `${githubBaseURL}/${recipe}.svelte`;
 
     const baseSrcPath = path.resolve('./src');
@@ -94,8 +91,7 @@ export async function craft(recipe, fileName) {
         }));
       },
       initial: './src/lib/components',
-      validate: (value) =>
-        value.trim() ? true : 'Folder path cannot be empty.'
+      validate: (value) => (value.trim() ? true : 'Folder path cannot be empty.')
     });
 
     const destDir = path.resolve(response.destFolder);

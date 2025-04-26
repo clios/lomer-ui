@@ -1,17 +1,8 @@
 export function focusTrap(node: HTMLElement) {
-  const focusableSelectors = [
-    'a[href]',
-    'button',
-    'input',
-    'textarea',
-    'select',
-    '[tabindex]:not([tabindex="-1"])'
-  ];
+  const focusableSelectors = ['a[href]', 'button', 'input', 'textarea', 'select', '[tabindex]:not([tabindex="-1"])'];
 
   function getFocusableElements() {
-    return Array.from(
-      node.querySelectorAll<HTMLElement>(focusableSelectors.join(','))
-    ).filter(
+    return Array.from(node.querySelectorAll<HTMLElement>(focusableSelectors.join(','))).filter(
       (el) => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden')
     );
   }
