@@ -36,13 +36,12 @@
     The most common approach is to use bg and fg for color variables, simplifying "background" and "foreground". To keep
     our code clean, bg is omitted when it's context is clear.
   </Paragraph>
-  <Title level={2}>Example</Title>
-
-  <CopySvelteCode code={`<Button class="bg-primary text-primary-fg">\n\tSample styling\n</Button>`}></CopySvelteCode>
+  <CopySvelteCode open code={`<Button class="bg-primary text-primary-fg">\n\tSample styling\n</Button>`}
+  ></CopySvelteCode>
 </Section>
 
 <Section>
   <Title>Source Code</Title>
-  <Title level={2}>Define your theme variables</Title>
-  <CopySvelteCode language="css" title="app.css" code={ThemeCSS}></CopySvelteCode>
+  <Paragraph>Define your theme variables.</Paragraph>
+  <CopySvelteCode open language="css" title="app.css" code={ThemeCSS}></CopySvelteCode>
 </Section>

@@ -34,6 +34,7 @@
     component to your root layout file.
   </Paragraph>
   <CopySvelteCode
+    open
     title="+layout.svelte"
     code={`<script\ lang="ts">` +
       `\n\timport { ModeWatcher } from "mode-watcher";` +
@@ -57,6 +58,7 @@
     </Button>
   </CardBoard>
   <CopySvelteCode
+    open
     code={`<script\ lang="ts">` +
       `\n\timport Button from '$lib/components/base/button.svelte';` +
       `\n\timport { toggleMode, mode } from 'mode-watcher';` +
