@@ -27,7 +27,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create radio component.</Title>
-  <CopySvelteCode open title="radio.svelte" code={RadioRaw} />
+  <Title>Guide</Title>
+  <Paragraph>We only need one component.</Paragraph>
+  <CopySvelteCode title="radio.svelte" code={RadioRaw} />
 </Section>

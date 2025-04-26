@@ -26,7 +26,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create switch component.</Title>
-  <CopySvelteCode open title="switch.svelte" code={SwitchRaw} />
+  <Title>Guide</Title>
+  <Paragraph>We only need one component.</Paragraph>
+  <CopySvelteCode title="switch.svelte" code={SwitchRaw} />
 </Section>

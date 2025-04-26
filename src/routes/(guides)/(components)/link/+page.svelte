@@ -25,7 +25,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create link component.</Title>
-  <CopySvelteCode open title="link.svelte" code={LinkRaw} />
+  <Title>Guide</Title>
+  <Paragraph>We only need one component.</Paragraph>
+  <CopySvelteCode title="link.svelte" code={LinkRaw} />
 </Section>

@@ -25,7 +25,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create scroll-area component.</Title>
-  <CopySvelteCode open title="scroll-area.svelte" code={ScrollAreaRaw} />
+  <Title>Guide</Title>
+  <Paragraph>We only need one component.</Paragraph>
+  <CopySvelteCode title="scroll-area.svelte" code={ScrollAreaRaw} />
 </Section>

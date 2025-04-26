@@ -3,10 +3,10 @@
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
 
-  type Props = {
+  type Props = HTMLTableAttributes & {
     children?: Snippet;
     class?: string;
-  } & HTMLTableAttributes;
+  };
 
   let { class: className, children, ...props }: Props = $props();
 </script>

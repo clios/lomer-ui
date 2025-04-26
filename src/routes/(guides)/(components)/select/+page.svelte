@@ -27,7 +27,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create select component.</Title>
-  <CopySvelteCode open title="select.svelte" code={SelectRaw} />
+  <Title>Guide</Title>
+  <Paragraph>We only need one component.</Paragraph>
+  <CopySvelteCode title="select.svelte" code={SelectRaw} />
 </Section>

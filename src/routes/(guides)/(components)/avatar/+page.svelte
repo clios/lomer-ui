@@ -25,7 +25,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create avatar component.</Title>
+  <Title>Guide</Title>
+  <Paragraph>We only need one component.</Paragraph>
   <CopySvelteCode open title="avatar.svelte" code={AvatarRaw} />
 </Section>

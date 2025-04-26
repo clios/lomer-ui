@@ -25,7 +25,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create field component.</Title>
-  <CopySvelteCode open title="field.svelte" code={FieldRaw} />
+  <Title>Guide</Title>
+  <Paragraph>We only need one component.</Paragraph>
+  <CopySvelteCode title="field.svelte" code={FieldRaw} />
 </Section>

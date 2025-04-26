@@ -1,24 +1,23 @@
 <script lang="ts">
-  import ButtonRaw from '$lib/components/base/button.svelte?raw';
-  import CardBoard from '$lib/components/card-board.svelte';
+  import TextareaRaw from '$lib/components/base/textarea.svelte?raw';
+  import CardDemo from '$lib/components/card-demo.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Paragraph from '$lib/components/base/paragraph.svelte';
   import Preview from './preview.svelte';
   import PreviewRaw from './preview.svelte?raw';
   import Section from '$lib/components/base/section.svelte';
   import Title from '$lib/components/base/title.svelte';
-  import CardDemo from '$lib/components/card-demo.svelte';
 </script>
 
 <svelte:head>
-  <title>Lomer UI - Button</title>
+  <title>Lomer UI - Textarea</title>
 </svelte:head>
 
 <Section>
   <p class="text-muted text-xs">Create Your Own Component</p>
-  <Title>Button</Title>
-  <Paragraph>Click it and make actions happen.</Paragraph>
-  <CardDemo class="flex-wrap gap-4">
+  <Title>Textarea</Title>
+  <Paragraph>Capture multi-line text with ease.</Paragraph>
+  <CardDemo class="max-w-96 flex-col">
     <Preview />
   </CardDemo>
   <CopySvelteCode open code={PreviewRaw} />
@@ -27,5 +26,5 @@
 <Section>
   <Title>Guide</Title>
   <Paragraph>We only need one component.</Paragraph>
-  <CopySvelteCode title="button.svelte" code={ButtonRaw} />
+  <CopySvelteCode title="textarea.svelte" code={TextareaRaw} />
 </Section>

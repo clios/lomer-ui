@@ -3,14 +3,14 @@
   import type { HTMLTdAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  type Props = {
+  type Props = HTMLTdAttributes & {
     children?: Snippet;
     class?: string;
-  } & HTMLTdAttributes;
+  };
 
   let { class: className, children, ...props }: Props = $props();
 </script>
 
-<td class={twMerge('text-fg px-4 py-2 align-top ', className)} {...props}>
+<td class={twMerge('text-fg px-4 py-2 align-top', className)} {...props}>
   {@render children?.()}
 </td>

@@ -25,7 +25,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create checkbox component.</Title>
-  <CopySvelteCode open title="checkbox.svelte" code={CheckboxRaw} />
+  <Title>Guide</Title>
+  <Paragraph>We only need one component.</Paragraph>
+  <CopySvelteCode title="checkbox.svelte" code={CheckboxRaw} />
 </Section>

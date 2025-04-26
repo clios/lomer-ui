@@ -25,7 +25,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create input component.</Title>
-  <CopySvelteCode open title="input.svelte" code={InputRaw} />
+  <Title>Guide</Title>
+  <Paragraph>We only need one component.</Paragraph>
+  <CopySvelteCode title="input.svelte" code={InputRaw} />
 </Section>

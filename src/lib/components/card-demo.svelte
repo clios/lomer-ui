@@ -3,16 +3,18 @@
   let { class: className = '', children } = $props();
 </script>
 
-<div class="mt-8 mb-4">
+<div class="my-16">
   <div class="flex items-center">
-    <p class="text-border font-mono text-nowrap">/// DEMO START ///</p>
-    <div class="border-b border-dotted w-full"></div>
+    <div class="w-8 border-b border-dotted"></div>
+    <p class="text-border font-mono text-nowrap">/// <span class="text-muted">DEMO</span> ///</p>
+    <div class="w-full border-b border-dotted"></div>
   </div>
-  <div class={twMerge('flex my-4', className)}>
+  <div class={twMerge('my-8 flex sm:mx-4 md:mx-8', className)}>
     {@render children?.()}
   </div>
   <div class="flex items-center">
-    <div class="border-b border-dotted w-full"></div>
-    <p class="text-border font-mono text-nowrap">/// DEMO END ///</p>
+    <div class="w-full border-b border-dotted"></div>
+    <p class="text-border font-mono text-nowrap">///</p>
+    <div class="w-8 border-b border-dotted"></div>
   </div>
 </div>

@@ -26,15 +26,13 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Setup actions (optional)</Title>
+  <Title>Guide</Title>
   <Paragraph>
-    Use <Link href="/escape-key" target="_blank">escape key</Link> action to close the dialog by pressing escape key.
+    1. Create <Link href="/escape-key" target="_blank">escape key</Link> action to close the dialog by pressing escape key.
   </Paragraph>
   <Paragraph>
-    Use <Link href="/focus-trap" target="_blank">focus trap</Link> action to trap the focus inside dialog component.
+    2. Create <Link href="/focus-trap" target="_blank">focus trap</Link> action to trap the focus inside dialog component.
   </Paragraph>
-
-  <Title level={2}>Create dialog component.</Title>
-  <CopySvelteCode open title="dialog.svelte" code={DialogRaw} />
+  <Paragraph>3. Create dialog component.</Paragraph>
+  <CopySvelteCode title="dialog.svelte" code={DialogRaw} />
 </Section>

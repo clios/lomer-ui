@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  type Props = {
+  type Props = HTMLAttributes<HTMLTableRowElement> & {
     children?: Snippet;
     class?: string;
     clickable?: boolean;
@@ -10,7 +11,7 @@
     onclick?: () => void;
   };
 
-  let { children, class: className, clickable = false, highlightable = false, ...props }: Props = $props();
+  let { children, class: className, clickable, highlightable, ...props }: Props = $props();
 
   function onclick() {
     if (!clickable) return;

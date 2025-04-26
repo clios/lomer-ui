@@ -4,6 +4,7 @@
   import { slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
 
+  // We need group and value props for single mode accordion, just like input radio.
   type Props = HTMLAttributes<HTMLDivElement> & {
     children?: Snippet;
     class?: string;

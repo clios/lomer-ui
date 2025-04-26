@@ -1,6 +1,5 @@
 <script lang="ts">
   import AlertRaw from '$lib/components/base/alert.svelte?raw';
-  import CardBoard from '$lib/components/card-board.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Paragraph from '$lib/components/base/paragraph.svelte';
   import Preview from './preview.svelte';
@@ -25,7 +24,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create alert component.</Title>
-  <CopySvelteCode open title="alert.svelte" code={AlertRaw} />
+  <Title>Guide</Title>
+  <Paragraph>We only need one component.</Paragraph>
+  <CopySvelteCode title="alert.svelte" code={AlertRaw} />
 </Section>

@@ -26,15 +26,13 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Setup actions (optional)</Title>
+  <Title>Guide</Title>
   <Paragraph>
-    Use <Link href="/escape-key" target="_blank">escape key</Link> action to close the drawer by pressing escape key.
+    1. Create <Link href="/escape-key" target="_blank">escape key</Link> action to close the drawer by pressing escape key.
   </Paragraph>
   <Paragraph>
-    Use <Link href="/focus-trap" target="_blank">focus trap</Link> action to trap the focus inside drawer component.
+    2. Create <Link href="/focus-trap" target="_blank">focus trap</Link> action to trap the focus inside drawer component.
   </Paragraph>
-
-  <Title level={2}>Create drawer component.</Title>
-  <CopySvelteCode open title="drawer.svelte" code={DrawerRaw} />
+  <Paragraph>3. Create drawer component.</Paragraph>
+  <CopySvelteCode title="drawer.svelte" code={DrawerRaw} />
 </Section>

@@ -28,28 +28,25 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Setup actions (optional)</Title>
+  <Title>Guide</Title>
   <Paragraph>
-    Use <Link href="/escape-key" target="_blank">escape key</Link> action to close the dropdown by pressing escape key.
+    1. Create <Link href="/escape-key" target="_blank">escape key</Link> action to close the dropdown by pressing escape
+    key.
   </Paragraph>
   <Paragraph>
-    Use <Link href="/focus-trap" target="_blank">focus trap</Link> action to trap the focus inside dropdown component.
+    2. Create <Link href="/focus-trap" target="_blank">focus trap</Link> action to trap the focus inside dropdown component.
   </Paragraph>
   <Paragraph>
-    Use <Link href="/outside-click" target="_blank">outside click</Link> action to close dropdown component.
+    3. Create <Link href="/outside-click" target="_blank">outside click</Link> action to close dropdown component.
   </Paragraph>
   <Paragraph>
-    Use <Link href="/vertical-navigation" target="_blank">vertical navigation</Link> action to focus elements using up and
-    down arrow keys.
+    4. Create <Link href="/vertical-navigation" target="_blank">vertical navigation</Link> action to focus elements using
+    up and down arrow keys.
   </Paragraph>
-
-  <Title level={2}>1. Create dropdown component.</Title>
-  <CopySvelteCode open title="dropdown.svelte" code={DropdownRaw} />
-
-  <Title level={2}>2. Create dropdown option component.</Title>
+  <Paragraph>5. Create dropdown component.</Paragraph>
+  <CopySvelteCode title="dropdown.svelte" code={DropdownRaw} />
+  <Paragraph>6. Create dropdown option component.</Paragraph>
   <CopySvelteCode title="dropdown-option.svelte" code={DropdownOptionRaw} />
-
-  <Title level={2}>3. Create dropdown switch component.</Title>
+  <Paragraph>7. Create dropdown switch component.</Paragraph>
   <CopySvelteCode title="dropdown-switch.svelte" code={DropdownSwitchRaw} />
 </Section>

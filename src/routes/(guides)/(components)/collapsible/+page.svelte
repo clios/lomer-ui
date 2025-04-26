@@ -25,7 +25,7 @@
 </Section>
 
 <Section>
-  <Title>Source Code</Title>
-  <Title level={2}>Create collapsible component.</Title>
-  <CopySvelteCode open title="collapsible.svelte" code={CollapsibleRaw} />
+  <Title>Guide</Title>
+  <Paragraph>We only need one component.</Paragraph>
+  <CopySvelteCode title="collapsible.svelte" code={CollapsibleRaw} />
 </Section>

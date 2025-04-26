@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
-  type Props = {
+  type Props = HTMLAttributes<HTMLTableSectionElement> & {
     children?: Snippet;
     class?: string;
     zebra?: boolean;
