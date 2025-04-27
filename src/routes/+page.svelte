@@ -60,7 +60,7 @@
     <p class="text-muted text-sm">Tailwind CSS v4</p>
     <p class="my-4 text-2xl sm:text-3xl md:text-4xl">Lomer UI</p>
     <Paragraph>Open-source resource for crafting project-specific UI components using Svelte & Tailwind CSS.</Paragraph>
-    <Alert class="mt-4 max-w-96">Currently working on CLI so you can quickly test it out on your project.</Alert>
+    <Alert class="mt-4 max-w-96">Currently reworking the CLI so we can quickly create our components.</Alert>
   </Section>
 
   <Section>
@@ -99,7 +99,7 @@
         >
         <Button onclick={() => (open = !open)} variant="outline">Expand / Collapse</Button>
       </CardBoard>
-      <CardBoard>
+      <CardBoard class="gap-2">
         <Button variant="ghost" onclick={() => (open1 = true)}>Open dialog</Button>
         <Dialog bind:open={open1} title="Dialog title here">Content here...</Dialog>
         <Button variant="ghost" onclick={() => (open2 = true)}>Open drawer</Button>

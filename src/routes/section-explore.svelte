@@ -69,8 +69,8 @@
       {#if theme}
         <ButtonCopyTheme primaryColor={theme.primary} toneColor={theme.general} radiusVal={theme.radius} />
       {/if}
-      <Button onclick={resetTheme} title="reset" variant="inverted" size="icon">
-        <Icon class="size-6 pointer-events-none" icon="bx:reset" />
+      <Button class="pr-2 pl-3" onclick={resetTheme} title="reset" variant="inverted">
+        Reset <Icon class="size-6 pointer-events-none" icon="bx:reset" />
       </Button>
     </div>
   </div>
