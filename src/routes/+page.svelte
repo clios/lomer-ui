@@ -60,6 +60,7 @@
     <p class="text-muted text-sm">Tailwind CSS v4</p>
     <p class="my-4 text-2xl sm:text-3xl md:text-4xl">Lomer UI</p>
     <Paragraph>Open-source resource for crafting project-specific UI components using Svelte & Tailwind CSS.</Paragraph>
+    <Alert class="mt-4 max-w-96">Currently working on CLI so you can quickly test it out on your project.</Alert>
   </Section>
 
   <Section>
@@ -126,7 +127,8 @@
         <Radio value="radio3" label="Radio 3" bind:group></Radio>
       </CardBoard>
       <CardBoard>
-        <ScrollArea class="p-2 border w-40 h-52">
+        <ScrollArea class="p-2 ring w-40 h-52">
+          <p class="text-muted text-xs">Scroll Area</p>
           <p>Start</p>
           {#each Array(40) as _, i}
             <p>Line {i}</p>
