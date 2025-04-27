@@ -1,65 +1,76 @@
 <script lang="ts">
   import Button from '$lib/components/base/button.svelte';
   import ButtonCopyTheme from './button-copy-theme.svelte';
-  import ButtonToggleMode from './button-toggle-mode.svelte';
   import Dropdown from '$lib/components/base/dropdown.svelte';
   import Icon from '@iconify/svelte';
   import ThemePrimary from './theme-primary.svelte';
   import ThemeRoundness from './theme-roundness.svelte';
   import ThemeTone from './theme-tone.svelte';
-  import { mode } from 'mode-watcher';
   import { twMerge } from 'tailwind-merge';
+  import { onMount } from 'svelte';
 
   let { open = $bindable(false) } = $props();
 
-  let darkMode = $state(false);
-  let primaryColor = $state('cyan');
-  let toneColor = $state('zinc');
-  let radiusVal = $state('25');
+  class Theme {
+    localPrimary = localStorage.getItem('theme-primary');
+    localGeneral = localStorage.getItem('theme-general');
+    localRadius = localStorage.getItem('theme-radius');
 
-  function resetTheme() {
-    document.body.className = '';
-    primaryColor = 'cyan';
-    toneColor = 'zinc';
-    radiusVal = '25';
+    primary = $state(this.localPrimary || 'cyan');
+    general = $state(this.localGeneral || 'zinc');
+    radius = $state(this.localRadius || '25');
+
+    reset() {
+      document.body.className = '';
+      this.primary = 'cyan';
+      this.general = 'zinc';
+      this.radius = '25';
+      localStorage.setItem('theme-primary', 'cyan');
+      localStorage.setItem('theme-general', 'zinc');
+      localStorage.setItem('theme-radius', '25');
+    }
   }
 
-  $effect(() => {
-    darkMode = $mode === 'dark';
+  let theme: Theme | undefined = $state();
+
+  function resetTheme() {
+    theme?.reset();
+  }
+
+  onMount(() => {
+    theme = new Theme();
   });
 </script>
 
-<div class="px-4 pt-4">
-  <p class="text-muted mb-1 text-sm">Explore in</p>
-  <div class="flex items-center">
-    <ButtonToggleMode />
-    <Button class=" h-6 rounded-r text-sm tracking-wide" variant="primary" edge="sharp" onclick={() => (open = !open)}>
-      Theme
-      <Icon class={twMerge('size-4 transition-transform', open && 'rotate-180')} icon="mdi:gear" />
-    </Button>
-  </div>
+<div class="mx-2 px-2 pt-2">
+  <Button class="gap-2 h-6 text-sm tracking-wide" variant="secondary" onclick={() => (open = !open)}>
+    Customize Theme
+    <Icon class={twMerge('size-4 text-muted transition-transform', open && 'rotate-180')} icon="mdi:gear" />
+  </Button>
 </div>
-<Dropdown placement="left" bind:open>
-  <div class="max flex flex-col py-2">
-    <div class="px-3">
+<Dropdown class="w-72" placement="left" bind:open>
+  <div class="flex flex-col py-2 max">
+    <div class="px-2">
       <p class="font-semibold">
-        Customize Theme
-
-        <Button class="absolute top-3 right-3" variant="ghost" size="icon" onclick={() => (open = false)}>
+        <Button class="top-3 right-3 absolute" variant="ghost" size="icon" onclick={() => (open = false)}>
           {@render IconClose()}
         </Button>
       </p>
       <p class="text-muted text-sm">Match your project's unique vibe.</p>
     </div>
 
-    <ThemePrimary bind:primaryColor />
-    <ThemeTone bind:toneColor />
-    <ThemeRoundness bind:radiusVal />
+    {#if theme}
+      <ThemePrimary bind:primaryColor={theme.primary} />
+      <ThemeTone bind:toneColor={theme.general} />
+      <ThemeRoundness bind:radiusVal={theme.radius} />
+    {/if}
 
-    <div class="mt-4 mb-1 flex gap-2 px-3 sm:justify-end">
-      <ButtonCopyTheme {primaryColor} {toneColor} {radiusVal} />
+    <div class="flex sm:justify-end gap-2 mt-4 mb-1 px-3">
+      {#if theme}
+        <ButtonCopyTheme primaryColor={theme.primary} toneColor={theme.general} radiusVal={theme.radius} />
+      {/if}
       <Button onclick={resetTheme} title="reset" variant="inverted" size="icon">
-        <Icon class="pointer-events-none size-6" icon="bx:reset" />
+        <Icon class="size-6 pointer-events-none" icon="bx:reset" />
       </Button>
     </div>
   </div>

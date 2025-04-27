@@ -1,5 +1,6 @@
 <script lang="ts">
   import Button from '$lib/components/base/button.svelte';
+  import { onMount } from 'svelte';
 
   type Variant = 'default' | 'inverted' | 'primary' | 'secondary' | 'destructive' | 'outline' | 'ghost';
 
@@ -9,7 +10,7 @@
     value: number;
   }
 
-  let { radiusVal = $bindable('25') } = $props();
+  let { radiusVal = $bindable() } = $props();
 
   const roundness: Array<Round> = [
     {
@@ -49,15 +50,22 @@
 
     document.body.classList.add(className);
     radiusVal = round.name;
+
+    localStorage.setItem('theme-radius', round.name);
   }
+
+  onMount(() => {
+    let localRadius = localStorage.getItem('theme-radius') || 'zinc';
+    setRoundness({ name: localRadius, display: '', value: 0 });
+  });
 </script>
 
-<div class="my-2 px-6">
+<div class="my-2 px-2">
   <p class="mb-1 text-sm">Roundness</p>
   <div class="flex gap-1">
     {#each roundness as round}
       {@const variant = radiusVal == round.name ? 'default' : 'inverted'}
-      <Button class="w-8 justify-center" size="small" variant={variant as Variant} onclick={() => setRoundness(round)}>
+      <Button class="justify-center w-8" size="small" variant={variant as Variant} onclick={() => setRoundness(round)}>
         {round.display}
       </Button>
     {/each}

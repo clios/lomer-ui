@@ -1,13 +1,14 @@
 <script lang="ts">
   import Button from '$lib/components/base/button.svelte';
   import Icon from '@iconify/svelte';
+  import { onMount } from 'svelte';
 
   interface Color {
     name: string;
     bg: string;
   }
 
-  let { primaryColor = $bindable('cyan') } = $props();
+  let { primaryColor = $bindable() } = $props();
 
   const primaries: Array<Color> = [
     {
@@ -110,10 +111,17 @@
 
     document.body.classList.add(className);
     primaryColor = color.name;
+
+    localStorage.setItem('theme-primary', color.name);
   }
+
+  onMount(() => {
+    let localPrimary = localStorage.getItem('theme-primary') || 'cyan';
+    setPrimary({ name: localPrimary, bg: '' });
+  });
 </script>
 
-<div class="my-2 px-6">
+<div class="my-2 px-2">
   <p class="mb-1 text-sm">Primary Color</p>
   <div class="flex flex-wrap gap-1">
     {#each primaries as primary}

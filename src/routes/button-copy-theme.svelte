@@ -1,105 +1,54 @@
 <script lang="ts">
-  import CopyCSSCode from '$lib/components/copy-c-s-s-code.svelte';
   import Button from '$lib/components/base/button.svelte';
   import Dialog from '$lib/components/base/dialog.svelte';
+  import Paragraph from '$lib/components/base/paragraph.svelte';
+  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
 
   let { primaryColor, toneColor, radiusVal } = $props();
 
   let open = $state(false);
 </script>
 
-<Button onclick={() => (open = !open)} class="flex w-full flex-col gap-0 sm:w-max">
+<Button onclick={() => (open = !open)} class="flex flex-col gap-0 w-full sm:w-max">
   <p>Copy theme</p>
 </Button>
 
 <Dialog title="Theme" bind:open>
-  <p class="text-muted mb-2">Copy and paste it to lomer.css</p>
-
-  <CopyCSSCode
+  <Paragraph>Copy and paste the following code into your CSS file.</Paragraph>
+  <CopySvelteCode
+    open
+    language="css"
     class="max-h-[calc(100vh-12rem)]"
-    code={`@variant dark (&:where(.dark, .dark *));
+    code={`/* Primary shades */
+  --color-primary-50: var(--color-${primaryColor}-50);
+  --color-primary-100: var(--color-${primaryColor}-100);
+  --color-primary-200: var(--color-${primaryColor}-200);
+  --color-primary-300: var(--color-${primaryColor}-300);
+  --color-primary-400: var(--color-${primaryColor}-400);
+  --color-primary-500: var(--color-${primaryColor}-500);
+  --color-primary-600: var(--color-${primaryColor}-600);
+  --color-primary-700: var(--color-${primaryColor}-700);
+  --color-primary-800: var(--color-${primaryColor}-800);
+  --color-primary-900: var(--color-${primaryColor}-900);
+  --color-primary-950: var(--color-${primaryColor}-950);
+  --color-primary-50: var(--color-${primaryColor}-50);
 
-@theme {
-  /* General background and foreground color. */
-  --color-bg: var(--color-${toneColor}-50);
-  --color-fg: var(--color-${toneColor}-950);
-
-  /* Branding color of your design. */
-  --color-primary: var(--color-${primaryColor}-600);
-  --color-primary-fg: var(--color-${toneColor}-50);
-
-  /* Supporting color of your design. */
-  --color-secondary: var(--color-${toneColor}-200);
-  --color-secondary-fg: var(--color-${toneColor}-950);
-
-  /* Signals danger, warning or irreversibility action color. */
-  --color-destructive: var(--color-red-500);
-  --color-destructive-fg: var(--color-${toneColor}-50);
-
-  /* Softer contrast for supporting details color. */
-  --color-muted: var(--color-${toneColor}-600);
-  --color-muted-fg: var(--color-${toneColor}-400);
-
-  /* Visually indicate disabled actions. */
-  --color-disabled: var(--color-${toneColor}-200);
-  --color-disabled-fg: var(--color-${toneColor}-400);
-
-  /* Form input elements color. */
-  --color-input: var(--color-${toneColor}-50);
-  --color-input-fg: var(--color-${toneColor}-950);
-
-  /* Default border color. */
-  --color-border: var(--color-${toneColor}-300);
-
+  /* General shades */
+  --color-general-50: var(--color-${toneColor}-50);
+  --color-general-100: var(--color-${toneColor}-100);
+  --color-general-200: var(--color-${toneColor}-200);
+  --color-general-300: var(--color-${toneColor}-300);
+  --color-general-400: var(--color-${toneColor}-400);
+  --color-general-500: var(--color-${toneColor}-500);
+  --color-general-600: var(--color-${toneColor}-600);
+  --color-general-700: var(--color-${toneColor}-700);
+  --color-general-800: var(--color-${toneColor}-800);
+  --color-general-900: var(--color-${toneColor}-900);
+  --color-general-950: var(--color-${toneColor}-950);
+  
+  /* ... */
+  
   /* Default border radius. */
-  --radius: ${radiusVal}rem;
-}
-
-.dark {
-  /* General background and foreground color. */
-  --color-bg: var(--color-${toneColor}-950);
-  --color-fg: var(--color-${toneColor}-50);
-
-  /* Branding color of your design. */
-  --color-primary: var(--color-${primaryColor}-500);
-  --color-primary-fg: var(--color-${toneColor}-50);
-
-  /* Supporting color of your design. */
-  --color-secondary: var(--color-${toneColor}-800);
-  --color-secondary-fg: var(--color-${toneColor}-50);
-
-  /* Signals danger, warning or irreversibility action color. */
-  --color-destructive: var(--color-red-500);
-  --color-destructive-fg: var(--color-${toneColor}-50);
-
-  /* Softer contrast for supporting details color. */
-  --color-muted: var(--color-${toneColor}-400);
-  --color-muted-fg: var(--color-${toneColor}-600);
-
-  /* Visually indicate disabled actions. */
-  --color-disabled: var(--color-${toneColor}-800);
-  --color-disabled-fg: var(--color-${toneColor}-500);
-
-  /* Form input elements color. */
-  --color-input: var(--color-${toneColor}-950);
-  --color-input-fg: var(--color-${toneColor}-50);
-
-  /* Default border color. */
-  --color-border: var(--color-${toneColor}-700);
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-bg text-fg;
-  }
-  ::selection {
-    background-color: var(--color-primary) !important;
-    color: var(--color-primary-fg) !important;
-  }
-}
-`}
+  --radius: ${radiusVal}rem;`}
   />
 </Dialog>

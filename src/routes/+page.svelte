@@ -64,7 +64,7 @@
   </Section>
 
   <Section>
-    <Title>Create this components from scratch.</Title>
+    <Title>Create these components from scratch.</Title>
     <div class="columns-1 sm:columns-2 lg:columns-3 mt-4 w-full">
       <CardBoard>
         <Accordion title="Accordion">Content here...</Accordion>
@@ -95,8 +95,9 @@
         <Button edge="sharp">Sharp</Button>
       </CardBoard>
       <CardBoard class="flex-col">
-        <Collapsible class="ring" collapseClass="mt-0 p-0" expandClass="mb-2 p-2" bind:open>Content</Collapsible>
-        <Button onclick={() => (open = !open)} variant="ghost">Expand / Collapse</Button>
+        <Collapsible class="rounded ring" collapseClass="mt-0 p-0" expandClass="mb-2 p-2" bind:open>Content</Collapsible
+        >
+        <Button onclick={() => (open = !open)} variant="outline">Expand / Collapse</Button>
       </CardBoard>
       <CardBoard>
         <Button variant="ghost" onclick={() => (open1 = true)}>Open dialog</Button>

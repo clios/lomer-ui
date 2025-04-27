@@ -1,13 +1,14 @@
 <script lang="ts">
   import Button from '$lib/components/base/button.svelte';
   import Icon from '@iconify/svelte';
+  import { onMount } from 'svelte';
 
   interface Color {
     name: string;
     bg: string;
   }
 
-  let { toneColor = $bindable('zinc') } = $props();
+  let { toneColor = $bindable() } = $props();
 
   const tones: Array<Color> = [
     {
@@ -42,10 +43,17 @@
 
     document.body.classList.add(className);
     toneColor = color.name;
+
+    localStorage.setItem('theme-general', color.name);
   }
+
+  onMount(() => {
+    let localGeneral = localStorage.getItem('theme-general') || 'zinc';
+    setTone({ name: localGeneral, bg: '' });
+  });
 </script>
 
-<div class="my-2 px-6">
+<div class="my-2 px-2">
   <p class="mb-1 text-sm">Tone Color</p>
   <div class="flex flex-wrap gap-1">
     {#each tones as tone}

@@ -1,6 +1,7 @@
 <script lang="ts">
   import Link from '$lib/components/base/link.svelte';
   import NavigationButton from './navigation-button.svelte';
+  import SectionExplore from './section-explore.svelte';
   import { fade, slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
 
@@ -18,7 +19,17 @@
       out:fade={{ duration: 150 }}
       class="top-[calc(3rem+1px)] sticky flex flex-col gap-1 w-screen sm:w-80 h-screen overflow-y-auto"
     >
-      <!-- <SectionExplore /> -->
+      <!-- Close button -->
+      <button
+        class="top-4 right-4 absolute p-1 rounded hover:outline outline-primary cursor-pointer"
+        onclick={() => (open = false)}
+      >
+        {@render IconClose()}
+      </button>
+
+      <Link class="mt-4 ml-4 text-fg text-lg" href="/" onclick={() => (open = false)}>Lomer UI</Link>
+
+      <SectionExplore />
 
       <p class="mt-4 pl-4 text-muted text-sm">Set Up Your Own Foundation</p>
       <NavigationButton bind:open url="/theming-structure">Theming Structure</NavigationButton>
@@ -95,3 +106,9 @@
     </div>
   </div>
 </div>
+
+{#snippet IconClose()}
+  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2" d="M12 12l7 7M12 12l-7 -7M12 12l-7 7M12 12l7 -7" />
+  </svg>
+{/snippet}

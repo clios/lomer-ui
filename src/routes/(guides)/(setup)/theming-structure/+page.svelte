@@ -3,7 +3,7 @@
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Paragraph from '$lib/components/base/paragraph.svelte';
   import Section from '$lib/components/base/section.svelte';
-  import ThemeCSS from './theme.css?raw';
+  import ThemeCSS from '$lib/components/base/lomer.css?raw';
   import Title from '$lib/components/base/title.svelte';
 </script>
 
