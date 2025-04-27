@@ -11,13 +11,13 @@
     open?: boolean;
   };
 
-  let { children, class: className, collapseClass, expandClass, open = $bindable() }: Props = $props();
+  let { children, class: className, collapseClass, expandClass, open = $bindable(false) }: Props = $props();
 </script>
 
 <div
   class={twMerge(
     'box-border transition-all',
-    open ? ['h-0 w-full opacity-0', collapseClass] : ['h-20 w-full opacity-100', expandClass],
+    open ? ['h-20 w-full opacity-100', expandClass] : ['h-0 w-full opacity-0', collapseClass],
     className
   )}
 >

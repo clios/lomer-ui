@@ -7,6 +7,47 @@
   import Section from '$lib/components/base/section.svelte';
   import Title from '$lib/components/base/title.svelte';
   import Shell from './shell.svelte';
+  import Avatar from '$lib/components/base/avatar.svelte';
+  import Checkbox from '$lib/components/base/checkbox.svelte';
+  import Collapsible from '$lib/components/base/collapsible.svelte';
+  import Dialog from '$lib/components/base/dialog.svelte';
+  import Drawer from '$lib/components/base/drawer.svelte';
+  import Dropdown from '$lib/components/base/dropdown.svelte';
+  import DropdownOption from '$lib/components/base/dropdown-option.svelte';
+  import DropdownSwitch from '$lib/components/base/dropdown-switch.svelte';
+  import Field from '$lib/components/base/field.svelte';
+  import Input from '$lib/components/base/input.svelte';
+  import Radio from '$lib/components/base/radio.svelte';
+  import ScrollArea from '$lib/components/base/scroll-area.svelte';
+  import Select from '$lib/components/base/select.svelte';
+  import Switch from '$lib/components/base/switch.svelte';
+  import Table from '$lib/components/base/table.svelte';
+  import TableBody from '$lib/components/base/table-body.svelte';
+  import TableData from '$lib/components/base/table-data.svelte';
+  import TableHead from '$lib/components/base/table-head.svelte';
+  import TableHeader from '$lib/components/base/table-header.svelte';
+  import TableRow from '$lib/components/base/table-row.svelte';
+  import TabsItem from '$lib/components/base/tabs-item.svelte';
+  import Tabs from '$lib/components/base/tabs.svelte';
+  import Textarea from '$lib/components/base/textarea.svelte';
+
+  let open = $state(false);
+  let open1 = $state(false);
+  let open2 = $state(false);
+  let open3 = $state(false);
+  let group = $state('radio1');
+  let checked = $state(false);
+  let active = $state('home');
+
+  const data = [
+    { month: 'January', expense: 513, savings: 96 },
+    { month: 'February', expense: 768, savings: 32 },
+    { month: 'March', expense: 635, savings: 51 },
+    { month: 'April', expense: 678, savings: 64 },
+    { month: 'May', expense: 584, savings: 57 },
+    { month: 'June', expense: 559, savings: 43 },
+    { month: 'July', expense: 497, savings: 76 }
+  ];
 </script>
 
 <svelte:head>
@@ -19,10 +60,132 @@
     <p class="text-muted text-sm">Tailwind CSS v4</p>
     <p class="my-4 text-2xl sm:text-3xl md:text-4xl">Lomer UI</p>
     <Paragraph>Open-source resource for crafting project-specific UI components using Svelte & Tailwind CSS.</Paragraph>
-    <Alert class="border-primary mt-4 max-w-[800px]">
-      I'm currently repurposing Lomer UI. I noticed most of the users just like to read the codes for its simplicity.
-      Making it a guide will benefit myself and developers who want to build their components from scratch.
-    </Alert>
+  </Section>
+
+  <Section>
+    <Title>Create this components from scratch.</Title>
+    <div class="columns-1 sm:columns-2 lg:columns-3 mt-4 w-full">
+      <CardBoard>
+        <Accordion title="Accordion">Content here...</Accordion>
+      </CardBoard>
+      <CardBoard>
+        <Alert title="Simple Alert">
+          <p>Content here...</p>
+        </Alert>
+      </CardBoard>
+      <CardBoard>
+        <Checkbox label="Checkbox">Additional description here if needed.</Checkbox>
+      </CardBoard>
+      <CardBoard class="items-center gap-4">
+        <Avatar src="https://avatars.githubusercontent.com/u/16535340?v=4&quot" />
+        <p class="text-muted">Avatar</p>
+      </CardBoard>
+      <CardBoard class="flex-wrap gap-4">
+        <Button>Default</Button>
+        <Button variant="inverted">Inverted</Button>
+        <Button variant="primary">Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="destructive">Destructive</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button disabled>Disabled</Button>
+        <Button loading>Loading</Button>
+        <Button edge="circle">Circle</Button>
+        <Button edge="sharp">Sharp</Button>
+      </CardBoard>
+      <CardBoard class="flex-col">
+        <Collapsible class="ring" collapseClass="mt-0 p-0" expandClass="mb-2 p-2" bind:open>Content</Collapsible>
+        <Button onclick={() => (open = !open)} variant="ghost">Expand / Collapse</Button>
+      </CardBoard>
+      <CardBoard>
+        <Button variant="ghost" onclick={() => (open1 = true)}>Open dialog</Button>
+        <Dialog bind:open={open1} title="Dialog title here">Content here...</Dialog>
+        <Button variant="ghost" onclick={() => (open2 = true)}>Open drawer</Button>
+        <Drawer bind:open={open2} title="Drawer title here">Content here...</Drawer>
+      </CardBoard>
+      <CardBoard>
+        <Button onclick={() => (open3 = true)}>Dropdown</Button>
+        <Dropdown bind:open={open3} placement="left">
+          <DropdownOption>Option</DropdownOption>
+          <DropdownOption variant="destructive">Destructive option</DropdownOption>
+          <DropdownOption loading>Option is loading</DropdownOption>
+          <DropdownOption disabled>Option is disabled</DropdownOption>
+          <DropdownSwitch>Switch</DropdownSwitch>
+          <DropdownSwitch loading>Switch is loading</DropdownSwitch>
+          <DropdownSwitch disabled>Switch is disabled</DropdownSwitch>
+        </Dropdown>
+      </CardBoard>
+      <CardBoard>
+        <Field label="Field Component" helper="Additional helper here...">
+          <Input placeholder="Input text" />
+        </Field>
+      </CardBoard>
+      <CardBoard class="flex-col gap-2">
+        <Radio value="radio1" label="Radio 1" bind:group>Additional content here...</Radio>
+        <Radio value="radio2" label="Radio 2" bind:group></Radio>
+        <Radio value="radio3" label="Radio 3" bind:group></Radio>
+      </CardBoard>
+      <CardBoard>
+        <ScrollArea class="p-2 border w-40 h-52">
+          <p>Start</p>
+          {#each Array(40) as _, i}
+            <p>Line {i}</p>
+          {/each}
+          <p>End</p>
+        </ScrollArea>
+      </CardBoard>
+      <CardBoard>
+        <Select>
+          <optgroup label="Group">
+            <option value="option 1">Option 1</option>
+            <option value="option 2">Option 2</option>
+            <option value="option 3" disabled>Option 3 disabled</option>
+          </optgroup>
+        </Select>
+      </CardBoard>
+      <CardBoard>
+        <Switch label="Switch" bind:checked>Additional description here if needed.</Switch>
+      </CardBoard>
+      <CardBoard>
+        <Table class="border">
+          <TableHead>
+            <TableRow>
+              <TableHeader>Month</TableHeader>
+              <TableHeader class="text-right">Expense $</TableHeader>
+              <TableHeader class="text-right">Savings $</TableHeader>
+            </TableRow>
+          </TableHead>
+          <TableBody outline>
+            {#each data as d}
+              <TableRow clickable onclick={() => alert(d.month)}>
+                <TableData>{d.month}</TableData>
+                <TableData class="font-mono text-right">{d.expense}</TableData>
+                <TableData class="font-mono text-right">{d.savings}</TableData>
+              </TableRow>
+            {/each}
+          </TableBody>
+        </Table>
+      </CardBoard>
+      <CardBoard>
+        <Tabs>
+          <TabsItem bind:active value="home">Home</TabsItem>
+          <TabsItem bind:active value="about">About</TabsItem>
+          <TabsItem bind:active value="service">Service</TabsItem>
+          <TabsItem disabled>Disabled</TabsItem>
+          <TabsItem bind:active value="settings">Settings</TabsItem>
+          <TabsItem bind:active value="monitoring">Monitoring</TabsItem>
+          <TabsItem bind:active value="profile">Profile</TabsItem>
+          <TabsItem bind:active value="dashboard">Dashboard</TabsItem>
+          <TabsItem bind:active value="gis">GIS</TabsItem>
+          <TabsItem bind:active value="ai">AI</TabsItem>
+          <TabsItem bind:active value="map">Map</TabsItem>
+          <TabsItem bind:active value="time">Real-time</TabsItem>
+        </Tabs>
+      </CardBoard>
+      <CardBoard>
+        <Textarea placeholder="Textarea" />
+      </CardBoard>
+    </div>
   </Section>
 
   <Section>
@@ -41,27 +204,5 @@
     <Paragraph>Tailwind makes it easy to create your own look without fighting against prebuilt styles.</Paragraph>
     <Title level={2}>Better performance</Title>
     <Paragraph>No extra code—just the pieces you build and need.</Paragraph>
-  </Section>
-
-  <Section>
-    <Title>Examples</Title>
-
-    <CardBoard class="flex flex-wrap gap-4">
-      <Accordion class="w-72" title="Accordion">Content here...</Accordion>
-      <Alert class="w-72" title="Simple Alert">
-        <p>Content here...</p>
-      </Alert>
-      <Button>Default</Button>
-      <Button variant="inverted">Inverted</Button>
-      <Button variant="primary">Primary</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="destructive">Destructive</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button disabled>Disabled</Button>
-      <Button loading>Loading</Button>
-      <Button edge="circle">Circle</Button>
-      <Button edge="sharp">Sharp</Button>
-    </CardBoard>
   </Section>
 </Shell>
