@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Scroll Area</Title>
   <Paragraph>Navigate overflowing content smoothly</Paragraph>
   <CardDemo class="flex-col gap-4">

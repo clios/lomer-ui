@@ -1,7 +1,7 @@
 <script lang="ts">
+    import { escapeKey } from '$lib/actions/escape-key.svelte.ts';
   import Link from '$lib/components/base/link.svelte';
   import NavigationButton from './navigation-button.svelte';
-  import SectionExplore from './section-explore.svelte';
   import { fade, slide } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
 
@@ -10,8 +10,10 @@
 
 {#if open}
   <nav
+
     in:slide={{ axis: 'x', duration: 150 }}
     out:slide={{ axis: 'x', duration: 150, delay: 150 }}
+    use:escapeKey={()=>open = false}
     class={twMerge('top-0 z-20 sm:z-40 absolute bg-bg border-r border-dotted')}
   >
     <div
@@ -29,39 +31,45 @@
 
       <Link class="mt-4 ml-4 text-fg text-lg" href="/" onclick={() => (open = false)}>Lomer UI</Link>
 
-      <SectionExplore />
+      <p class="mt-4 ml-4 text-muted text-sm">Setup</p>
+      <div class="relative ml-6 border-l border-dotted">
+        <NavigationButton bind:open url="/theming-structure">Theming Structure</NavigationButton>
+        <NavigationButton bind:open url="/dark-mode-implementation">Dark Mode Implementation</NavigationButton>
+        <NavigationButton bind:open url="/typography-integration">Typography Integration</NavigationButton>
+        <NavigationButton bind:open url="/icon-componentization">Icon Componentization</NavigationButton>
+      </div>
 
-      <p class="mt-4 pl-4 text-muted text-sm">Set Up Your Own Foundation</p>
-      <NavigationButton bind:open url="/theming-structure">Theming Structure</NavigationButton>
-      <NavigationButton bind:open url="/dark-mode-implementation">Dark Mode Implementation</NavigationButton>
+      <p class="mt-4 ml-4 text-muted text-sm">Components</p>
+      <div class="relative ml-6 border-l border-dotted">
+        <NavigationButton bind:open url="/accordion">Accordion</NavigationButton>
+        <NavigationButton bind:open url="/alert">Alert</NavigationButton>
+        <NavigationButton bind:open url="/avatar">Avatar</NavigationButton>
+        <NavigationButton bind:open url="/button">Button</NavigationButton>
+        <NavigationButton bind:open url="/checkbox">Checkbox</NavigationButton>
+        <NavigationButton bind:open url="/collapsible">Collapsible</NavigationButton>
+        <NavigationButton bind:open url="/dialog">Dialog</NavigationButton>
+        <NavigationButton bind:open url="/drawer">Drawer</NavigationButton>
+        <NavigationButton bind:open url="/dropdown">Dropdown</NavigationButton>
+        <NavigationButton bind:open url="/field">Field</NavigationButton>
+        <NavigationButton bind:open url="/input">Input</NavigationButton>
+        <NavigationButton bind:open url="/link">Link</NavigationButton>
+        <NavigationButton bind:open url="/radio">Radio</NavigationButton>
+        <NavigationButton bind:open url="/scroll-area">Scroll Area</NavigationButton>
+        <NavigationButton bind:open url="/select">Select</NavigationButton>
+        <NavigationButton bind:open url="/switch">Switch</NavigationButton>
+        <NavigationButton bind:open url="/table">Table</NavigationButton>
+        <NavigationButton bind:open url="/tabs">Tabs</NavigationButton>
+        <NavigationButton bind:open url="/textarea">Textarea</NavigationButton>
+      </div>
 
-      <p class="mt-4 pl-4 text-muted text-sm">Create Your Own Component</p>
-      <NavigationButton bind:open url="/accordion">Accordion</NavigationButton>
-      <NavigationButton bind:open url="/alert">Alert</NavigationButton>
-      <NavigationButton bind:open url="/avatar">Avatar</NavigationButton>
-      <NavigationButton bind:open url="/button">Button</NavigationButton>
-      <NavigationButton bind:open url="/checkbox">Checkbox</NavigationButton>
-      <NavigationButton bind:open url="/collapsible">Collapsible</NavigationButton>
-      <NavigationButton bind:open url="/dialog">Dialog</NavigationButton>
-      <NavigationButton bind:open url="/drawer">Drawer</NavigationButton>
-      <NavigationButton bind:open url="/dropdown">Dropdown</NavigationButton>
-      <NavigationButton bind:open url="/field">Field</NavigationButton>
-      <NavigationButton bind:open url="/input">Input</NavigationButton>
-      <NavigationButton bind:open url="/link">Link</NavigationButton>
-      <NavigationButton bind:open url="/radio">Radio</NavigationButton>
-      <NavigationButton bind:open url="/scroll-area">Scroll Area</NavigationButton>
-      <NavigationButton bind:open url="/select">Select</NavigationButton>
-      <NavigationButton bind:open url="/switch">Switch</NavigationButton>
-      <NavigationButton bind:open url="/table">Table</NavigationButton>
-      <NavigationButton bind:open url="/tabs">Tabs</NavigationButton>
-      <NavigationButton bind:open url="/textarea">Textarea</NavigationButton>
-
-      <p class="mt-4 pl-4 text-muted text-sm">Create Your Own Action</p>
-      <NavigationButton bind:open url="/escape-key">escapeKey</NavigationButton>
-      <NavigationButton bind:open url="/focus-trap">focusTrap</NavigationButton>
-      <NavigationButton bind:open url="/hotkey">hotkey</NavigationButton>
-      <NavigationButton bind:open url="/outside-click">outsideClick</NavigationButton>
-      <NavigationButton bind:open url="/vertical-navigation">verticalNavigation</NavigationButton>
+      <p class="mt-4 ml-4 text-muted text-sm">Actions</p>
+      <div class="relative ml-6 border-l border-dotted">
+        <NavigationButton bind:open url="/escape-key">escapeKey</NavigationButton>
+        <NavigationButton bind:open url="/focus-trap">focusTrap</NavigationButton>
+        <NavigationButton bind:open url="/hotkey">hotkey</NavigationButton>
+        <NavigationButton bind:open url="/outside-click">outsideClick</NavigationButton>
+        <NavigationButton bind:open url="/vertical-navigation">verticalNavigation</NavigationButton>
+      </div>
 
       <!-- <p class="mt-4 pl-4 text-muted text-sm">Packages</p>
       <NavLink bind:open href="/packages/apexcharts" label="apexcharts" />
@@ -80,12 +88,15 @@
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div
     in:fade={{ duration: 300 }}
-    class={twMerge(
-      'top-0 right-0 bottom-0 left-0 z-10 sm:z-30 fixed', // position
-      'bg-bg/20 backdrop-blur-xs' // blur
-    )}
     onclick={() => (open = false)}
     onmousemove={() => (open = false)}
+    class={twMerge(
+      'top-0 right-0 bottom-0 left-0 z-10 sm:z-30 fixed', // position
+      'bg-bg/80 backdrop-blur-xs', // background
+      'bg-[radial-gradient(#D4D4D8_1px,transparent_1px)]', // light dots
+      'dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]', // dark dots
+      '[background-size:16px_16px]' // dot size
+    )}
   ></div>
 {/if}
 

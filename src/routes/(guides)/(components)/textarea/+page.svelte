@@ -14,10 +14,10 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Textarea</Title>
   <Paragraph>Capture multi-line text with ease.</Paragraph>
-  <CardDemo class="max-w-96 flex-col">
+  <CardDemo class="flex-col max-w-96">
     <Preview />
   </CardDemo>
   <CopySvelteCode open code={PreviewRaw} />

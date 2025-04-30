@@ -1,13 +1,9 @@
 <script>
   import Accordion from '$lib/components/base/accordion.svelte';
   import Alert from '$lib/components/base/alert.svelte';
+  import Avatar from '$lib/components/base/avatar.svelte';
   import Button from '$lib/components/base/button.svelte';
   import CardBoard from '$lib/components/card-board.svelte';
-  import Paragraph from '$lib/components/base/paragraph.svelte';
-  import Section from '$lib/components/base/section.svelte';
-  import Title from '$lib/components/base/title.svelte';
-  import Shell from './shell.svelte';
-  import Avatar from '$lib/components/base/avatar.svelte';
   import Checkbox from '$lib/components/base/checkbox.svelte';
   import Collapsible from '$lib/components/base/collapsible.svelte';
   import Dialog from '$lib/components/base/dialog.svelte';
@@ -16,10 +12,14 @@
   import DropdownOption from '$lib/components/base/dropdown-option.svelte';
   import DropdownSwitch from '$lib/components/base/dropdown-switch.svelte';
   import Field from '$lib/components/base/field.svelte';
+  import Flex from '$lib/components/base/flex.svelte';
   import Input from '$lib/components/base/input.svelte';
+  import Paragraph from '$lib/components/base/paragraph.svelte';
   import Radio from '$lib/components/base/radio.svelte';
   import ScrollArea from '$lib/components/base/scroll-area.svelte';
+  import Section from '$lib/components/base/section.svelte';
   import Select from '$lib/components/base/select.svelte';
+  import Shell from './shell.svelte';
   import Switch from '$lib/components/base/switch.svelte';
   import Table from '$lib/components/base/table.svelte';
   import TableBody from '$lib/components/base/table-body.svelte';
@@ -27,9 +27,11 @@
   import TableHead from '$lib/components/base/table-head.svelte';
   import TableHeader from '$lib/components/base/table-header.svelte';
   import TableRow from '$lib/components/base/table-row.svelte';
-  import TabsItem from '$lib/components/base/tabs-item.svelte';
   import Tabs from '$lib/components/base/tabs.svelte';
+  import TabsItem from '$lib/components/base/tabs-item.svelte';
   import Textarea from '$lib/components/base/textarea.svelte';
+  import Title from '$lib/components/base/title.svelte';
+  import Icon from '@iconify/svelte';
 
   let open = $state(false);
   let open1 = $state(false);
@@ -59,13 +61,28 @@
     <p class="text-muted text-sm">Svelte v5</p>
     <p class="text-muted text-sm">Tailwind CSS v4</p>
     <p class="my-4 text-2xl sm:text-3xl md:text-4xl">Lomer UI</p>
-    <Paragraph>Open-source resource for crafting project-specific UI components using Svelte & Tailwind CSS.</Paragraph>
-    <Alert class="mt-4 max-w-96">Currently reworking the CLI so we can quickly create our components.</Alert>
+    <Paragraph>Open-source resource for crafting project-specific UI components.</Paragraph>
+    <Flex class="my-4 flex-wrap gap-2">
+      <div class="bg-general-500 rounded">
+        <Button class="from-primary to-primary/80 text-general-50 bg-gradient-to-r pr-2 pl-3">
+          Get Started
+          <Icon class="size-6" icon="iconoir:fast-arrow-right" />
+        </Button>
+      </div>
+      <Flex class="gap-2">
+        <Button variant="secondary">Components</Button>
+        <Button variant="secondary">Actions</Button>
+        <Button variant="secondary">Blocks</Button>
+      </Flex>
+    </Flex>
+    <Alert class="max-w-96 animate-pulse border-dotted md:absolute md:top-0 md:right-0">
+      Currently reworking the CLI so we can quickly create our components.
+    </Alert>
   </Section>
 
   <Section>
     <Title>Create these components from scratch.</Title>
-    <div class="columns-1 sm:columns-2 lg:columns-3 mt-4 w-full">
+    <div class="mt-4 w-full columns-1 sm:columns-2 lg:columns-3">
       <CardBoard>
         <Accordion title="Accordion">Content here...</Accordion>
       </CardBoard>
@@ -128,7 +145,7 @@
         <Radio value="radio3" label="Radio 3" bind:group></Radio>
       </CardBoard>
       <CardBoard>
-        <ScrollArea class="p-2 ring w-40 h-52">
+        <ScrollArea class="h-52 w-40 p-2 ring">
           <p class="text-muted text-xs">Scroll Area</p>
           <p>Start</p>
           {#each Array(40) as _, i}
@@ -162,8 +179,8 @@
             {#each data as d}
               <TableRow clickable onclick={() => alert(d.month)}>
                 <TableData>{d.month}</TableData>
-                <TableData class="font-mono text-right">{d.expense}</TableData>
-                <TableData class="font-mono text-right">{d.savings}</TableData>
+                <TableData class="text-right font-mono">{d.expense}</TableData>
+                <TableData class="text-right font-mono">{d.savings}</TableData>
               </TableRow>
             {/each}
           </TableBody>

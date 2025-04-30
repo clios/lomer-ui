@@ -18,7 +18,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Dropdown</Title>
   <Paragraph>A compact menu for quick options.</Paragraph>
   <CardDemo class="flex-col gap-4">

@@ -16,7 +16,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Select</Title>
   <Paragraph>Pick an option from a select menu.</Paragraph>
   <Alert class="mt-4">Will improve this soon so stay tuned!</Alert>

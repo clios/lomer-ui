@@ -20,10 +20,10 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Table</Title>
   <Paragraph>Organize and display data in a structured grid.</Paragraph>
-  <CardDemo class="max-w-96 flex-col gap-4">
+  <CardDemo class="flex-col gap-4 max-w-96">
     <Preview />
   </CardDemo>
   <CopySvelteCode open code={PreviewRaw} />

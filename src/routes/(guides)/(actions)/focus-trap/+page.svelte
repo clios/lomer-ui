@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Action</p>
+  <p class="text-muted text-xs">Action</p>
   <Title>Focus Trap</Title>
   <Paragraph>Keeps focus within an element for accessibility.</Paragraph>
   <CardDemo class="max-w-72">

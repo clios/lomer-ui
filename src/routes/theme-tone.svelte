@@ -54,7 +54,7 @@
 </script>
 
 <div class="my-2 px-2">
-  <p class="mb-1 text-sm">Tone Color</p>
+  <p class="mb-1 text-sm">General Color</p>
   <div class="flex flex-wrap gap-1">
     {#each tones as tone}
       <Button title={tone.name} onclick={() => setTone(tone)} class={`border-none ${tone.bg} text-white`} size="icon">

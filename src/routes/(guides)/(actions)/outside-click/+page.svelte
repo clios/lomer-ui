@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Action</p>
+  <p class="text-muted text-xs">Action</p>
   <Title>Outside Click</Title>
   <Paragraph>Detects clicks outside a specified element.</Paragraph>
   <CardDemo class="flex-col gap-4">

@@ -57,7 +57,7 @@
   --color-input-fg: var(--color-general-950);
 
   /* Default border color. */
-  --color-border: var(--color-general-400);
+  --color-border: var(--color-general-300);
 
   /* Default border radius. */
   --radius: 0.25rem;
@@ -103,6 +103,7 @@
 
   body {
     @apply bg-bg text-fg;
+    font-family: 'Nunito Sans Variable', sans-serif;
   }
 
   ::selection {

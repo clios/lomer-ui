@@ -8,6 +8,7 @@
   import ThemeTone from './theme-tone.svelte';
   import { twMerge } from 'tailwind-merge';
   import { onMount } from 'svelte';
+  import IconTheme from '$lib/components/icons/icon-theme.svelte';
 
   let { open = $bindable(false) } = $props();
 
@@ -42,13 +43,10 @@
   });
 </script>
 
-<div class="mx-2 px-2 pt-2">
-  <Button class="gap-2 h-6 text-sm tracking-wide" variant="secondary" onclick={() => (open = !open)}>
-    Customize Theme
-    <Icon class={twMerge('size-4 text-muted transition-transform', open && 'rotate-180')} icon="mdi:gear" />
-  </Button>
-</div>
-<Dropdown class="w-72" placement="left" bind:open>
+<Button onclick={() => (open = !open)} variant="ghost" size="icon">
+  <IconTheme />
+</Button>
+<Dropdown class="w-72" placement="right" bind:open>
   <div class="flex flex-col py-2 max">
     <div class="px-2">
       <p class="font-semibold">
@@ -56,12 +54,12 @@
           {@render IconClose()}
         </Button>
       </p>
-      <p class="text-muted text-sm">Match your project's unique vibe.</p>
+      <p class="text-primary text-lg">Customize Theme</p>
     </div>
 
     {#if theme}
-      <ThemePrimary bind:primaryColor={theme.primary} />
       <ThemeTone bind:toneColor={theme.general} />
+      <ThemePrimary bind:primaryColor={theme.primary} />
       <ThemeRoundness bind:radiusVal={theme.radius} />
     {/if}
 

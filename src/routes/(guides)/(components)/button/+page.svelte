@@ -1,13 +1,12 @@
 <script lang="ts">
   import ButtonRaw from '$lib/components/base/button.svelte?raw';
-  import CardBoard from '$lib/components/card-board.svelte';
+  import CardDemo from '$lib/components/card-demo.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Paragraph from '$lib/components/base/paragraph.svelte';
   import Preview from './preview.svelte';
   import PreviewRaw from './preview.svelte?raw';
   import Section from '$lib/components/base/section.svelte';
   import Title from '$lib/components/base/title.svelte';
-  import CardDemo from '$lib/components/card-demo.svelte';
 </script>
 
 <svelte:head>
@@ -15,7 +14,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Button</Title>
   <Paragraph>Click it and make actions happen.</Paragraph>
   <CardDemo class="flex-wrap gap-4">

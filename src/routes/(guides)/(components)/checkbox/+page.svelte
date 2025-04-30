@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Checkbox</Title>
   <Paragraph>Toggle options on or off.</Paragraph>
   <CardDemo class="flex-col gap-4">

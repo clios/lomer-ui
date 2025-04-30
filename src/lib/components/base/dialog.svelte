@@ -40,7 +40,7 @@
         'w-screen sm:w-max sm:min-w-80', // width
         'text-fg bg-bg text-left', // background and text
         'shadow-md dark:shadow-none', // shadow
-        'sm:rounded-card border-y p-4 sm:border', // border
+        'sm:rounded border-y p-4 sm:border', // border
         className // override
       )}
     >

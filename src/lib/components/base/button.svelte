@@ -29,9 +29,9 @@
 
 <button
   class={twMerge(
-    'relative flex h-min w-max items-center gap-1', // layout and positioning
+    'relative flex items-center gap-1 w-max h-min', // layout and positioning
     'outline-primary border', // base style
-    'cursor-pointer select-none', // behaviour
+    'cursor-pointer text-nowrap select-none', // behaviour
     'focus-visible:z-1 focus-visible:outline focus-visible:outline-offset-1', // focus-visible
     'hover:z-1 hover:outline hover:outline-offset-1', // hover
     'active:outline-offset-0', // active
@@ -80,7 +80,7 @@
 {#snippet IconSpinner()}
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="text-primary absolute right-1/2 bottom-1/2 size-4 translate-x-1/2 translate-y-1/2 animate-spin"
+    class="right-1/2 bottom-1/2 absolute size-4 text-primary translate-x-1/2 translate-y-1/2 animate-spin"
     viewBox="0 0 16 16"
   >
     <path

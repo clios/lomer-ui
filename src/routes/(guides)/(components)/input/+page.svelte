@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Input</Title>
   <Paragraph>A clear and simple way to collect user data.</Paragraph>
   <CardDemo class="flex">

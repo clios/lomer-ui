@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Action</p>
+  <p class="text-muted text-xs">Action</p>
   <Title>Vertical Navigation</Title>
   <Paragraph>Enables up/down arrow key navigation.</Paragraph>
   <CardDemo class="flex-col gap-4">

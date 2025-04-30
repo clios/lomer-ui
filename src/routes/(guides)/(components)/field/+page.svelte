@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Field</Title>
   <Paragraph>A versatile space for inputs.</Paragraph>
   <CardDemo class="flex flex-col gap-4">

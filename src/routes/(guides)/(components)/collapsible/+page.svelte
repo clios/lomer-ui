@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Collapsible</Title>
   <Paragraph>Expand and collapse content with ease.</Paragraph>
   <CardDemo class="flex-col">

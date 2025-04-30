@@ -1,5 +1,7 @@
 <script lang="ts">
+  import Avatar from '$lib/components/base/avatar.svelte';
   import Button from '$lib/components/base/button.svelte';
+  import IconLomerUi from '$lib/components/icons/icon-lomer-ui.svelte';
 </script>
 
 <Button>Default</Button>
@@ -13,3 +15,14 @@
 <Button loading>Loading</Button>
 <Button edge="circle">Circle</Button>
 <Button edge="sharp">Sharp</Button>
+<Button>
+  <IconLomerUi />
+  With Icon
+</Button>
+<Button size="icon">
+  <IconLomerUi />
+</Button>
+<Button size="fit">
+  <Avatar src="https://avatars.githubusercontent.com/u/16535340?v=4&quot" />
+</Button>
+<Button size="small">Small</Button>

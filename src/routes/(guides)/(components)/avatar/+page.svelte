@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Avatar</Title>
   <Paragraph>Display user profiles with a touch of personality.</Paragraph>
   <CardDemo class="flex-col gap-4">

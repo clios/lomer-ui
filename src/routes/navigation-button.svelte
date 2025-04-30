@@ -21,8 +21,17 @@
 
 <Button
   onclick={() => handleRouting(url)}
-  class={twMerge('ml-4 w-[calc(100%-2rem)] py-0', $page.url.pathname === url && 'text-primary')}
+  class={twMerge(
+    'ml-1 px-2 py-0.5 outline-none w-[calc(100%-2rem)]',
+    'underline-offset-2 hover:underline focus-visible:underline',
+    'hover:text-primary focus-visible:text-primary',
+    $page.url.pathname === url && 'text-primary'
+  )}
   variant="ghost"
 >
+  {#if $page.url.pathname === url}
+    <div class="-left-2.5 absolute bg-primary rounded-full size-2 rotate-45 animate-ping"></div>
+    <div class="-left-2.5 absolute bg-muted rounded-full size-2 rotate-45 animate-pulse"></div>
+  {/if}
   {@render children?.()}
 </Button>

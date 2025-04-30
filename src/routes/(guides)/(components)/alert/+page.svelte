@@ -14,7 +14,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Component</p>
+  <p class="text-muted text-xs">Component</p>
   <Title>Alert</Title>
   <Paragraph>Grabs attention and delivers important information.</Paragraph>
   <CardDemo>

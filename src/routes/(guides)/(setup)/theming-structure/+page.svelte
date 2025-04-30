@@ -12,7 +12,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Set Up Your Own Foundation</p>
+  <p class="text-muted text-xs">Setup</p>
   <Title>Theming Structure</Title>
   <Paragraph>Customize styles to match your vibe.</Paragraph>
   <Alert class="mt-4 max-w-[800px]">

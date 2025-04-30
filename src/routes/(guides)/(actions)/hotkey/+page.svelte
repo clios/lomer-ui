@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Create Your Own Action</p>
+  <p class="text-muted text-xs">Action</p>
   <Title>Hotkey</Title>
   <Paragraph>Triggers actions with keyboard shortcuts.</Paragraph>
   <CardDemo class="flex flex-col gap-4">

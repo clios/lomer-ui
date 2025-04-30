@@ -3,9 +3,6 @@
 @import 'tailwindcss';
 @import './lib/components/base/lomer.css';
 
-body {
-  font-family: 'Nunito Sans Variable', sans-serif;
-}
 
 .primary-slate {
   --color-primary: var(--color-slate-600);
