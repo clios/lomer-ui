@@ -1,35 +1,47 @@
 <script lang="ts">
-  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
   import type { Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
 
   type Variant = 'default' | 'inverted' | 'primary' | 'secondary' | 'destructive' | 'outline' | 'ghost';
+  type Edge = 'default' | 'circle' | 'sharp';
+  type Size = 'default' | 'icon' | 'small' | 'fit';
 
-  type Props = HTMLButtonAttributes & {
+  type BaseProps = {
     children?: Snippet;
     class?: string;
+    edge?: Edge;
+    href?: string;
     disabled?: boolean;
-    edge?: 'default' | 'circle' | 'sharp';
     loading?: boolean;
-    size?: 'default' | 'icon' | 'small' | 'fit';
+    size?: Size;
     variant?: Variant;
   };
+
+  type AnchorProps = HTMLAnchorAttributes & BaseProps;
+  type ButtonProps = HTMLButtonAttributes & BaseProps;
+
+  // If href is "" or undefined, use ButtonProps
+  type Props<T extends AnchorProps> = T['href'] extends '' | undefined ? ButtonProps : AnchorProps;
 
   let {
     children,
     class: className,
-    disabled = false,
     edge = 'default',
-    loading = $bindable(false),
+    href,
+    loading,
+    disabled,
     size = 'default',
     variant = 'default',
     ...props
-  }: Props = $props();
+  }: Props<AnchorProps> = $props();
 </script>
 
-<button
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<svelte:element
+  this={href ? 'a' : 'button'}
   class={twMerge(
-    'relative flex items-center gap-1 w-max h-min', // layout and positioning
+    'relative flex h-min w-max items-center gap-1', // layout and positioning
     'outline-primary border', // base style
     'cursor-pointer text-nowrap select-none', // behaviour
     'focus-visible:z-1 focus-visible:outline focus-visible:outline-offset-1', // focus-visible
@@ -57,30 +69,31 @@
     edge === 'sharp' && 'rounded-none',
 
     // DISABLED
-    disabled && 'bg-disabled text-disabled-fg border-disabled cursor-default outline-none',
+    disabled && 'bg-disabled text-disabled-fg border-disabled pointer-events-none cursor-default outline-none',
 
     // LOADING
-    loading && 'bg-disabled text-disabled border-disabled cursor-default outline-none',
+    loading && 'bg-disabled text-disabled border-disabled pointer-events-none cursor-default outline-none',
 
     // OVERRIDE
     className
   )}
-  disabled={disabled || loading}
+  {href}
+  tabindex={disabled ? -1 : undefined}
+  aria-disabled={disabled ? 'true' : 'false'}
+  role={href ? 'link' : 'button'}
   {...props}
 >
-  {#if loading}
-    <!-- Customize icon snippet below -->
-    {@render IconSpinner()}
-  {/if}
+  <!-- Customize icon snippet below -->
+  {#if loading}{@render IconSpinner()}{/if}
   <!-- Customize content here -->
   {@render children?.()}
-</button>
+</svelte:element>
 
 <!-- Customize icon for loading -->
 {#snippet IconSpinner()}
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="right-1/2 bottom-1/2 absolute size-4 text-primary translate-x-1/2 translate-y-1/2 animate-spin"
+    class="text-primary absolute right-1/2 bottom-1/2 size-4 translate-x-1/2 translate-y-1/2 animate-spin"
     viewBox="0 0 16 16"
   >
     <path
