@@ -16,7 +16,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Setup</p>
+  <p class="text-muted mb-2 text-xs">Setup</p>
   <Title>Dark Mode Implementation</Title>
   <Paragraph>Adding dark mode to your site using mode-watcher.</Paragraph>
 </Section>

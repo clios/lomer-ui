@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Action</p>
+  <p class="text-muted mb-2 text-xs">Action</p>
   <Title>Escape Key</Title>
   <Paragraph>Detects and handles the Escape key press.</Paragraph>
   <CardDemo class="flex-col gap-4">

@@ -16,7 +16,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Component</p>
+  <p class="text-muted mb-2 text-xs">Component</p>
   <Title>Drawer</Title>
   <Paragraph>Slide-out panel for navigation or content.</Paragraph>
   <CardDemo class="flex-col gap-4">

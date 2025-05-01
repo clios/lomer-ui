@@ -14,7 +14,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Component</p>
+  <p class="text-muted mb-2 text-xs">Component</p>
   <Title>Button</Title>
   <Paragraph>Click it and make actions happen.</Paragraph>
   <CardDemo class="flex-wrap gap-4">

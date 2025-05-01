@@ -16,7 +16,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Component</p>
+  <p class="text-muted mb-2 text-xs">Component</p>
   <Title>Dialog</Title>
   <Paragraph>Displays a focused interface for user interaction.</Paragraph>
   <CardDemo class="flex-col gap-4">

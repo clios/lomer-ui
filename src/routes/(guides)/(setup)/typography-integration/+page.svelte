@@ -12,7 +12,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Setup</p>
+  <p class="text-muted mb-2 text-xs">Setup</p>
   <Title>Typography Integration</Title>
   <Paragraph>Seamlessly blend text styles into your design.</Paragraph>
 </Section>

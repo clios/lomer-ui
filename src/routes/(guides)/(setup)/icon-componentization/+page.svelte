@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Setup</p>
+  <p class="text-muted mb-2 text-xs">Setup</p>
   <Title>Icon Componentization</Title>
   <Paragraph>Turn icons into reusable components for easy, consistent use.</Paragraph>
 </Section>

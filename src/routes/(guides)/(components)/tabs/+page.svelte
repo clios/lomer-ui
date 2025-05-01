@@ -16,10 +16,10 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Component</p>
+  <p class="text-muted mb-2 text-xs">Component</p>
   <Title>Tabs</Title>
   <Paragraph>Switch between views with ease.</Paragraph>
-  <CardDemo class="flex-col max-w-[700px]">
+  <CardDemo class="max-w-[700px] flex-col">
     <Preview />
   </CardDemo>
   <CopySvelteCode open code={PreviewRaw} />

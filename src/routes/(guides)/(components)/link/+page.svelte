@@ -15,7 +15,7 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Component</p>
+  <p class="text-muted mb-2 text-xs">Component</p>
   <Title>Link</Title>
   <Paragraph>Navigate users to new destinations.</Paragraph>
   <CardDemo class="flex-col">

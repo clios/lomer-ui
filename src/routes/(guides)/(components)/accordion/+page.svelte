@@ -14,10 +14,10 @@
 </svelte:head>
 
 <Section>
-  <p class="text-muted text-xs">Component</p>
+  <p class="text-muted mb-2 text-xs">Component</p>
   <Title>Accordion</Title>
   <Paragraph>Expand and collapse content with ease.</Paragraph>
-  <CardDemo class="flex-col max-w-96">
+  <CardDemo class="max-w-96 flex-col">
     <Preview />
   </CardDemo>
   <CopySvelteCode open code={PreviewRaw} />
