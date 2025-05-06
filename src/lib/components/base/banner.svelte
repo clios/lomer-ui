@@ -6,7 +6,7 @@
   type Props = {
     children?: Snippet;
     class?: string;
-    open: boolean;
+    open?: boolean;
     placement?: 'top' | 'bottom';
   };
 
@@ -18,8 +18,8 @@
   <div
     transition:slide={{ duration: 150 }}
     class={twMerge(
-      'fixed right-0 left-0 z-[999999999] flex w-full items-center ', // layout and position
-      'bg-bg/10 border p-4 backdrop-blur-3xl', // background
+      'fixed right-0 left-0 z-[999999999] flex w-full items-center justify-between', // layout and position
+      'bg-bg/10 border p-2 backdrop-blur-3xl', // background
       placement === 'top' ? 'top-0' : 'bottom-0',
       className
     )}
@@ -28,7 +28,7 @@
     <div
       in:fade={{ delay: 200, duration: 300 }}
       out:fade={{ duration: 150 }}
-      class="mr-auto flex flex-wrap items-center gap-2"
+      class="flex w-full flex-wrap items-center gap-2"
     >
       {@render children?.()}
     </div>

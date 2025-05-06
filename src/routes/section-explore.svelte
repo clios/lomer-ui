@@ -6,11 +6,15 @@
   import ThemePrimary from './theme-primary.svelte';
   import ThemeRoundness from './theme-roundness.svelte';
   import ThemeTone from './theme-tone.svelte';
-  import { twMerge } from 'tailwind-merge';
   import { onMount } from 'svelte';
   import IconTheme from '$lib/components/icons/icon-theme.svelte';
 
-  let { open = $bindable(false) } = $props();
+  type Props = {
+    open?: boolean;
+    placement?: 'left' | 'right';
+  };
+
+  let { open = $bindable(false), placement = 'right' }: Props = $props();
 
   class Theme {
     localPrimary = localStorage.getItem('theme-primary');
@@ -44,13 +48,13 @@
 </script>
 
 <Button onclick={() => (open = !open)} variant="ghost" size="icon">
-  <IconTheme />
+  <IconTheme class="text-primary" />
 </Button>
-<Dropdown class="w-72" placement="right" bind:open>
-  <div class="flex flex-col py-2 max">
+<Dropdown class="w-72" {placement} bind:open>
+  <div class="max flex flex-col py-2">
     <div class="px-2">
       <p class="font-semibold">
-        <Button class="top-3 right-3 absolute" variant="ghost" size="icon" onclick={() => (open = false)}>
+        <Button class="absolute top-3 right-3" variant="ghost" size="icon" onclick={() => (open = false)}>
           {@render IconClose()}
         </Button>
       </p>
@@ -63,12 +67,12 @@
       <ThemeRoundness bind:radiusVal={theme.radius} />
     {/if}
 
-    <div class="flex sm:justify-end gap-2 mt-4 mb-1 px-3">
+    <div class="mt-4 mb-1 flex gap-2 px-3 sm:justify-end">
       {#if theme}
         <ButtonCopyTheme primaryColor={theme.primary} toneColor={theme.general} radiusVal={theme.radius} />
       {/if}
       <Button class="pr-2 pl-3" onclick={resetTheme} title="reset" variant="inverted">
-        Reset <Icon class="size-6 pointer-events-none" icon="bx:reset" />
+        Reset <Icon class="pointer-events-none size-6" icon="bx:reset" />
       </Button>
     </div>
   </div>
