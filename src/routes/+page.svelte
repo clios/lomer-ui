@@ -64,15 +64,15 @@
     <Paragraph>Open-source resource for crafting project-specific UI components.</Paragraph>
     <Flex class="my-4 flex-wrap gap-2">
       <div class="bg-general-500 rounded">
-        <Button class="from-primary to-primary/80 text-general-50 bg-gradient-to-r pr-2 pl-3">
+        <Button href="/theming-structure" class="from-primary to-primary/80 text-general-50 bg-gradient-to-r pr-2 pl-3">
           Get Started
           <Icon class="size-6" icon="iconoir:fast-arrow-right" />
         </Button>
       </div>
       <Flex class="gap-2">
-        <Button variant="secondary">Components</Button>
-        <Button variant="secondary">Actions</Button>
-        <Button variant="secondary">Blocks</Button>
+        <Button href="/accordion" variant="secondary">Components</Button>
+        <Button href="/escape-key" variant="secondary">Actions</Button>
+        <!-- <Button href="/blocks/hero-sections" variant="secondary">Blocks</Button> -->
       </Flex>
     </Flex>
     <Alert class="max-w-96 animate-pulse border-dotted md:absolute md:top-0 md:right-0">

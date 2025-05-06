@@ -65,7 +65,7 @@
       `\n</script>` +
       `\n` +
       `\n<Button onclick={toggleMode}>` +
-      `\n\t{#if $mode === 'light'}` +
+      `\n\t{#if mode.current === 'light'}` +
       `\n\t\tLight` +
       `\n\t{:else}` +
       `\n\t\tDark` +

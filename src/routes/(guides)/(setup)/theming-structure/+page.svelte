@@ -1,5 +1,4 @@
 <script>
-  import Alert from '$lib/components/base/alert.svelte';
   import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
   import Paragraph from '$lib/components/base/paragraph.svelte';
   import Section from '$lib/components/base/section.svelte';
@@ -15,10 +14,6 @@
   <p class="text-muted mb-2 text-xs">Setup</p>
   <Title>Theming Structure</Title>
   <Paragraph>Customize styles to match your vibe.</Paragraph>
-  <Alert class="mt-4 max-w-[800px]">
-    I was inspired by shadcn's beautiful theming—it's simple, intuitive, and loved by developers. To help new Svelte
-    developers or those exploring a UI library, I’ve adapted some of its naming conventions.
-  </Alert>
 </Section>
 
 <Section>
