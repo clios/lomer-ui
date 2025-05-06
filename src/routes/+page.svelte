@@ -77,7 +77,7 @@
         <!-- <Button href="/blocks/hero-sections" variant="secondary">Blocks</Button> -->
       </Flex>
     </Flex>
-    <Alert class="max-w-96 animate-pulse border-dotted md:absolute md:top-0 md:right-0">
+    <Alert class="max-w-96 animate-pulse border-dashed md:absolute md:top-0 md:right-0">
       Currently reworking the CLI so we can quickly create our components.
     </Alert>
   </Section>
