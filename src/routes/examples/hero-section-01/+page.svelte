@@ -14,7 +14,7 @@
   <div class="h-14">
     <Banner bind:open class="bg-primary/5 border-none px-4">
       <div class="flex h-10 w-full items-center gap-2">
-        <p class="text-sm">Customize Theme</p>
+        <p class="hidden text-sm sm:block">Customize Theme</p>
         <SectionExplore placement="left" />
       </div>
     </Banner>
