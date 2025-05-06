@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Button from '$lib/components/base/button.svelte';
   import type { Snippet } from 'svelte';
   import { escapeKey } from '$lib/actions/escape-key.svelte.ts';
   import { fade, slide } from 'svelte/transition';

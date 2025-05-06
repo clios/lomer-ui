@@ -43,6 +43,7 @@
         <NavigationButton bind:open url="/accordion">Accordion</NavigationButton>
         <NavigationButton bind:open url="/alert">Alert</NavigationButton>
         <NavigationButton bind:open url="/avatar">Avatar</NavigationButton>
+        <NavigationButton bind:open url="/banner">Banner</NavigationButton>
         <NavigationButton bind:open url="/button">Button</NavigationButton>
         <NavigationButton bind:open url="/checkbox">Checkbox</NavigationButton>
         <NavigationButton bind:open url="/collapsible">Collapsible</NavigationButton>
@@ -70,10 +71,10 @@
         <NavigationButton bind:open url="/vertical-navigation">verticalNavigation</NavigationButton>
       </div>
 
-      <!-- <p class="mt-4 ml-4 text-muted text-sm">Blocks</p> -->
-      <!-- <div class="relative ml-6 border-l border-dotted">
-        <NavigationButton bind:open url="/blocks/hero-sections">Hero Sections</NavigationButton>
-      </div> -->
+      <p class="text-muted mt-4 ml-4 text-sm">Blocks</p>
+      <div class="relative ml-6 border-l border-dotted">
+        <NavigationButton bind:open url="/hero-sections">Hero Sections</NavigationButton>
+      </div>
 
       <!-- <p class="mt-4 pl-4 text-muted text-sm">Packages</p>
       <NavLink bind:open href="/packages/apexcharts" label="apexcharts" />

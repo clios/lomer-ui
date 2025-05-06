@@ -2,6 +2,7 @@
   import Accordion from '$lib/components/base/accordion.svelte';
   import Alert from '$lib/components/base/alert.svelte';
   import Avatar from '$lib/components/base/avatar.svelte';
+  import Banner from '$lib/components/base/banner.svelte';
   import Button from '$lib/components/base/button.svelte';
   import CardBoard from '$lib/components/card-board.svelte';
   import Checkbox from '$lib/components/base/checkbox.svelte';
@@ -13,6 +14,7 @@
   import DropdownSwitch from '$lib/components/base/dropdown-switch.svelte';
   import Field from '$lib/components/base/field.svelte';
   import Flex from '$lib/components/base/flex.svelte';
+  import Icon from '@iconify/svelte';
   import Input from '$lib/components/base/input.svelte';
   import Paragraph from '$lib/components/base/paragraph.svelte';
   import Radio from '$lib/components/base/radio.svelte';
@@ -31,12 +33,12 @@
   import TabsItem from '$lib/components/base/tabs-item.svelte';
   import Textarea from '$lib/components/base/textarea.svelte';
   import Title from '$lib/components/base/title.svelte';
-  import Icon from '@iconify/svelte';
 
   let open = $state(false);
   let open1 = $state(false);
   let open2 = $state(false);
   let open3 = $state(false);
+  let open4 = $state(false);
   let group = $state('radio1');
   let checked = $state(false);
   let active = $state('home');
@@ -112,15 +114,18 @@
         <Button edge="sharp">Sharp</Button>
       </CardBoard>
       <CardBoard class="flex-col">
-        <Collapsible class="rounded ring" collapseClass="mt-0 p-0" expandClass="mb-2 p-2" bind:open>Content</Collapsible
-        >
+        <Collapsible class="rounded ring" collapseClass="mt-0 p-0" expandClass="mb-2 p-2" bind:open>
+          Content
+        </Collapsible>
         <Button onclick={() => (open = !open)} variant="outline">Expand / Collapse</Button>
       </CardBoard>
       <CardBoard class="gap-2">
+        <Drawer bind:open={open2} title="Drawer title here">Content here...</Drawer>
+        <Button variant="ghost" onclick={() => (open4 = true)}>Open banner</Button>
         <Button variant="ghost" onclick={() => (open1 = true)}>Open dialog</Button>
         <Dialog bind:open={open1} title="Dialog title here">Content here...</Dialog>
         <Button variant="ghost" onclick={() => (open2 = true)}>Open drawer</Button>
-        <Drawer bind:open={open2} title="Drawer title here">Content here...</Drawer>
+        <Banner bind:open={open4} class="bg-primary text-primary-fg ">Content here...</Banner>
       </CardBoard>
       <CardBoard>
         <Button onclick={() => (open3 = true)}>Dropdown</Button>

@@ -1,5 +1,9 @@
+<script lang="ts">
+  import HeroSection_01 from '$lib/blocks/hero-section-01.svelte';
+</script>
+
 <svelte:head>
   <title>Lomer UI - Hero Section 01</title>
 </svelte:head>
 
-<p>Example Hero Section 01</p>
+<HeroSection_01 />

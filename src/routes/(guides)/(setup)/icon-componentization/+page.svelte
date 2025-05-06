@@ -30,7 +30,7 @@
   </Paragraph>
 
   <Title level={2}>Create the Icon Component</Title>
-  <CopySvelteCode open title="icon-menu" code={IconMenuRaw} />
+  <CopySvelteCode open title="icon-menu.svelte" code={IconMenuRaw} />
 
   <Title level={2}>Use the Icon</Title>
   <Paragraph>We can now use it just like a simple component.</Paragraph>
