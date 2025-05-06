@@ -71,10 +71,10 @@
         <NavigationButton bind:open url="/vertical-navigation">verticalNavigation</NavigationButton>
       </div>
 
-      <p class="text-muted mt-4 ml-4 text-sm">Blocks</p>
+      <!-- <p class="text-muted mt-4 ml-4 text-sm">Blocks</p>
       <div class="relative ml-6 border-l border-dotted">
         <NavigationButton bind:open url="/hero-sections">Hero Sections</NavigationButton>
-      </div>
+      </div> -->
 
       <!-- <p class="mt-4 pl-4 text-muted text-sm">Packages</p>
       <NavLink bind:open href="/packages/apexcharts" label="apexcharts" />
