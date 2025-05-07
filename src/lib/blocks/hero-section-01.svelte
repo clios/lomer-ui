@@ -14,8 +14,8 @@
     perferendis corporis eos corrupti praesentium?
   </p>
   <div class="flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center">
-    <Button class="w-full max-w-72 justify-center sm:w-fit" variant="primary">Get Started</Button>
-    <Button class="w-full max-w-72 justify-center sm:w-fit">Contribute</Button>
+    <Button class="w-full max-w-72 justify-center sm:w-fit">Get Started</Button>
+    <Button class="w-full max-w-72 justify-center sm:w-fit" variant="secondary">Contribute</Button>
   </div>
   <div class="flex flex-col items-center gap-2">
     <p class="text-muted text-sm">SPONSORS</p>
