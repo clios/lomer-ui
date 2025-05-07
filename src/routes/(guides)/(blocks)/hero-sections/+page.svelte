@@ -23,6 +23,6 @@
 <Section>
   <Title>Hero Section 01</Title>
 
-  <CardGuide src="/examples/hero-section-01" />
+  <CardGuide src="/fullscreen/hero-section-01" />
   <CopySvelteCode title="hero-section-01.svelte" code={HeroSection_01Raw} />
 </Section>

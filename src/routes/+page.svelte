@@ -64,9 +64,9 @@
     <p class="text-muted text-sm">Tailwind CSS v4</p>
     <p class="my-4 text-2xl sm:text-3xl md:text-4xl">Lomer UI</p>
     <Paragraph>Open-source resource for crafting project-specific UI components.</Paragraph>
-    <Flex class="my-4 flex-wrap gap-2">
+    <Flex class="flex-wrap gap-2 my-4">
       <div class="bg-general-500 rounded">
-        <Button href="/theming-structure" class="from-primary to-primary/80 text-general-50 bg-gradient-to-r pr-2 pl-3">
+        <Button href="/theming-structure" class="bg-gradient-to-r from-primary to-primary/80 pr-2 pl-3 text-general-50">
           Get Started
           <Icon class="size-6" icon="iconoir:fast-arrow-right" />
         </Button>
@@ -77,14 +77,14 @@
         <!-- <Button href="/blocks/hero-sections" variant="secondary">Blocks</Button> -->
       </Flex>
     </Flex>
-    <Alert class="max-w-96 animate-pulse border-dashed md:absolute md:top-0 md:right-0">
+    <Alert class="md:top-0 md:right-0 md:absolute border-dashed max-w-96 animate-pulse">
       Currently reworking the CLI so we can quickly create our components.
     </Alert>
   </Section>
 
   <Section>
     <Title>Create these components from scratch.</Title>
-    <div class="mt-4 w-full columns-1 sm:columns-2 lg:columns-3">
+    <div class="columns-1 sm:columns-2 lg:columns-3 mt-4 w-full">
       <CardBoard>
         <Accordion title="Accordion">Content here...</Accordion>
       </CardBoard>
@@ -119,13 +119,13 @@
         </Collapsible>
         <Button onclick={() => (open = !open)} variant="outline">Expand / Collapse</Button>
       </CardBoard>
-      <CardBoard class="gap-2">
+      <CardBoard class="flex-wrap gap-2">
         <Drawer bind:open={open2} title="Drawer title here">Content here...</Drawer>
         <Button variant="ghost" onclick={() => (open4 = true)}>Open banner</Button>
         <Button variant="ghost" onclick={() => (open1 = true)}>Open dialog</Button>
         <Dialog bind:open={open1} title="Dialog title here">Content here...</Dialog>
         <Button variant="ghost" onclick={() => (open2 = true)}>Open drawer</Button>
-        <Banner bind:open={open4} class="bg-primary text-primary-fg ">Content here...</Banner>
+        <Banner bind:open={open4} class="bg-primary text-primary-fg">Content here...</Banner>
       </CardBoard>
       <CardBoard>
         <Button onclick={() => (open3 = true)}>Dropdown</Button>
@@ -150,7 +150,7 @@
         <Radio value="radio3" label="Radio 3" bind:group></Radio>
       </CardBoard>
       <CardBoard>
-        <ScrollArea class="h-52 w-40 p-2 ring">
+        <ScrollArea class="p-2 ring w-40 h-52">
           <p class="text-muted text-xs">Scroll Area</p>
           <p>Start</p>
           {#each Array(40) as _, i}
@@ -184,8 +184,8 @@
             {#each data as d}
               <TableRow clickable onclick={() => alert(d.month)}>
                 <TableData>{d.month}</TableData>
-                <TableData class="text-right font-mono">{d.expense}</TableData>
-                <TableData class="text-right font-mono">{d.savings}</TableData>
+                <TableData class="font-mono text-right">{d.expense}</TableData>
+                <TableData class="font-mono text-right">{d.savings}</TableData>
               </TableRow>
             {/each}
           </TableBody>
