@@ -1,8 +1,8 @@
 <script>
-  import Button from '$lib/components/base/button.svelte';
-  import Drawer from '$lib/components/base/drawer.svelte';
+    import Button from '$lib/components/base/button.svelte';
+    import Drawer from '$lib/components/base/drawer.svelte';
 
-  let open = $state(false);
+    let open = $state(false);
 </script>
 
 <Button onclick={() => (open = true)}>Open drawer</Button>

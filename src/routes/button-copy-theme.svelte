@@ -1,25 +1,25 @@
 <script lang="ts">
-  import Button from '$lib/components/base/button.svelte';
-  import Dialog from '$lib/components/base/dialog.svelte';
-  import Paragraph from '$lib/components/base/paragraph.svelte';
-  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+    import Button from '$lib/components/base/button.svelte';
+    import Dialog from '$lib/components/base/dialog.svelte';
+    import Paragraph from '$lib/components/base/paragraph.svelte';
+    import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
 
-  let { primaryColor, toneColor, radiusVal } = $props();
+    let { primaryColor, toneColor, radiusVal } = $props();
 
-  let open = $state(false);
+    let open = $state(false);
 </script>
 
-<Button onclick={() => (open = !open)} class="flex flex-col gap-0 w-full sm:w-max">
-  <p>Copy theme</p>
+<Button onclick={() => (open = !open)} class="flex w-full flex-col gap-0 sm:w-max">
+    <p>Copy theme</p>
 </Button>
 
 <Dialog title="Theme" bind:open>
-  <Paragraph>Copy and paste the following code into your CSS file.</Paragraph>
-  <CopySvelteCode
-    open
-    language="css"
-    class="max-h-[calc(100vh-12rem)]"
-    code={`/* Primary shades */
+    <Paragraph>Copy and paste the following code into your CSS file.</Paragraph>
+    <CopySvelteCode
+        open
+        language="css"
+        class="max-h-[calc(100vh-12rem)]"
+        code={`/* Primary shades */
   --color-primary-50: var(--color-${primaryColor}-50);
   --color-primary-100: var(--color-${primaryColor}-100);
   --color-primary-200: var(--color-${primaryColor}-200);
@@ -50,5 +50,5 @@
   
   /* Default border radius. */
   --radius: ${radiusVal}rem;`}
-  />
+    />
 </Dialog>

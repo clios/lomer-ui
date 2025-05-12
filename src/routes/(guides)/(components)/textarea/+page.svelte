@@ -1,30 +1,30 @@
 <script lang="ts">
-  import TextareaRaw from '$lib/components/base/textarea.svelte?raw';
-  import CardDemo from '$lib/components/card-demo.svelte';
-  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import Paragraph from '$lib/components/base/paragraph.svelte';
-  import Preview from './preview.svelte';
-  import PreviewRaw from './preview.svelte?raw';
-  import Section from '$lib/components/base/section.svelte';
-  import Title from '$lib/components/base/title.svelte';
+    import CardDemo from '$lib/components/card-demo.svelte';
+    import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+    import LomerSection from '$lib/components/site/lomer-section.svelte';
+    import LomerTitle from '$lib/components/site/lomer-title.svelte';
+    import Paragraph from '$lib/components/base/paragraph.svelte';
+    import Preview from './preview.svelte';
+    import PreviewRaw from './preview.svelte?raw';
+    import TextareaRaw from '$lib/components/base/textarea.svelte?raw';
 </script>
 
 <svelte:head>
-  <title>Lomer UI - Textarea</title>
+    <title>Lomer UI - Textarea</title>
 </svelte:head>
 
-<Section>
-  <p class="text-muted mb-2 text-xs">Component</p>
-  <Title>Textarea</Title>
-  <Paragraph>Capture multi-line text with ease.</Paragraph>
-  <CardDemo class="max-w-96 flex-col">
-    <Preview />
-  </CardDemo>
-  <CopySvelteCode open code={PreviewRaw} />
-</Section>
+<LomerSection>
+    <p class="text-muted mb-2 text-xs">Component</p>
+    <LomerTitle>Textarea</LomerTitle>
+    <Paragraph>Capture multi-line text with ease.</Paragraph>
+    <CardDemo class="max-w-96 flex-col">
+        <Preview />
+    </CardDemo>
+    <CopySvelteCode open code={PreviewRaw} />
+</LomerSection>
 
-<Section>
-  <Title>Guide</Title>
-  <Paragraph>We only need one component.</Paragraph>
-  <CopySvelteCode title="textarea.svelte" code={TextareaRaw} />
-</Section>
+<LomerSection>
+    <LomerTitle>Guide</LomerTitle>
+    <Paragraph>We only need one component.</Paragraph>
+    <CopySvelteCode title="textarea.svelte" code={TextareaRaw} />
+</LomerSection>

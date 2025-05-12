@@ -1,30 +1,30 @@
 <script lang="ts">
-  import AccordionRaw from '$lib/components/base/accordion.svelte?raw';
-  import CardDemo from '$lib/components/card-demo.svelte';
-  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import Paragraph from '$lib/components/base/paragraph.svelte';
-  import Preview from './preview.svelte';
-  import PreviewRaw from './preview.svelte?raw';
-  import Section from '$lib/components/base/section.svelte';
-  import Title from '$lib/components/base/title.svelte';
+    import AccordionRaw from '$lib/components/base/accordion.svelte?raw';
+    import CardDemo from '$lib/components/card-demo.svelte';
+    import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+    import LomerSection from '$lib/components/site/lomer-section.svelte';
+    import LomerTitle from '$lib/components/site/lomer-title.svelte';
+    import Paragraph from '$lib/components/base/paragraph.svelte';
+    import Preview from './preview.svelte';
+    import PreviewRaw from './preview.svelte?raw';
 </script>
 
 <svelte:head>
-  <title>Lomer UI - Accordion</title>
+    <title>Lomer UI - Accordion</title>
 </svelte:head>
 
-<Section>
-  <p class="text-muted mb-2 text-xs">Component</p>
-  <Title>Accordion</Title>
-  <Paragraph>Expand and collapse content with ease.</Paragraph>
-  <CardDemo class="max-w-96 flex-col">
-    <Preview />
-  </CardDemo>
-  <CopySvelteCode open code={PreviewRaw} />
-</Section>
+<LomerSection>
+    <p class="text-muted mb-2 text-xs">Component</p>
+    <LomerTitle>Accordion</LomerTitle>
+    <Paragraph>Expand and collapse content with ease.</Paragraph>
+    <CardDemo class="max-w-96 flex-col">
+        <Preview />
+    </CardDemo>
+    <CopySvelteCode open code={PreviewRaw} />
+</LomerSection>
 
-<Section>
-  <Title>Guide</Title>
-  <Paragraph>We only need one component.</Paragraph>
-  <CopySvelteCode title="accordion.svelte" code={AccordionRaw} />
-</Section>
+<LomerSection>
+    <LomerTitle>Guide</LomerTitle>
+    <Paragraph>We only need one component.</Paragraph>
+    <CopySvelteCode title="accordion.svelte" code={AccordionRaw} />
+</LomerSection>

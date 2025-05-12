@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Textarea from '$lib/components/base/textarea.svelte';
+    import Textarea from '$lib/components/base/textarea.svelte';
 
-  let value = $state('');
+    let value = $state('');
 </script>
 
 <Textarea bind:value />

@@ -1,42 +1,65 @@
-<script>
-  import Link from '$lib/components/base/link.svelte';
-  import Paragraph from '$lib/components/base/paragraph.svelte';
-  import { PaneGroup, Pane, PaneResizer } from 'paneforge';
+<script lang="ts">
+    import { PaneGroup, Pane, PaneResizer } from 'paneforge';
 
-  let { src } = $props();
-  let clientWidth = $state();
+    let { children } = $props();
+    let clientWidth: number = $state(0);
+
+    let containerSize = $derived(computeContainer());
+
+    function computeContainer() {
+        if (clientWidth >= 1280) {
+            return '7xl';
+        } else if (clientWidth >= 1152) {
+            return '6xl';
+        } else if (clientWidth >= 1024) {
+            return '5xl';
+        } else if (clientWidth >= 896) {
+            return '4xl';
+        } else if (clientWidth >= 768) {
+            return '3xl';
+        } else if (clientWidth >= 672) {
+            return '2xl';
+        } else if (clientWidth >= 576) {
+            return 'xl';
+        } else if (clientWidth >= 512) {
+            return 'lg';
+        } else if (clientWidth >= 448) {
+            return 'md';
+        } else if (clientWidth >= 384) {
+            return 'sm';
+        } else if (clientWidth >= 320) {
+            return 'xs';
+        } else if (clientWidth >= 288) {
+            return '2xs';
+        } else if (clientWidth >= 256) {
+            return '3xs';
+        } else {
+            return 'Below 3xs';
+        }
+    }
 </script>
 
-<div class="flex flex-wrap items-center justify-between gap-x-4">
-  <Paragraph>Open in <Link class="mr-0.5" href={src} target="_blank">new tab</Link>.</Paragraph>
-  <Paragraph class="text-xs">
-    {#if clientWidth <= 640}
-      <span class="text-teal-500">Mobile Screen {clientWidth}px</span>
-    {:else if clientWidth <= 768}
-      <span class="text-fuchsia-500">Tablet Screen {clientWidth}px</span>
-    {:else}
-      <span class="text-cyan-500">Desktop Screen {clientWidth}px</span>
-    {/if}
-  </Paragraph>
-</div>
-<div class="w-screen -translate-x-4 sm:w-full sm:translate-none">
-  <PaneGroup direction="horizontal" class="w-full border-y sm:border-x sm:border-dotted">
-    <Pane
-      defaultSize={100}
-      class="relative min-h-96 bg-[image:repeating-linear-gradient(315deg,_var(--color-border)_0,_var(--color-border)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--color-border:var(--color-fg)]/10 lg:h-[calc(100vh-10rem)] dark:[--color-border:var(--color-fg)]/5"
-    >
-      <!-- svelte-ignore a11y_missing_attribute -->
-      <iframe bind:clientWidth class="h-full w-full" {src}></iframe>
-    </Pane>
-    <PaneResizer
-      class="relative flex w-4 items-center justify-center border-l border-dotted bg-[image:repeating-linear-gradient(315deg,_var(--color-border)_0,_var(--color-border)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--color-border:var(--color-fg)]/15 xl:w-6 dark:[--color-border:var(--color-fg)]/15"
-    >
-      <div class="bg-fg z-10 h-12 w-2 rounded border"></div>
-    </PaneResizer>
-    <Pane defaultSize={0}>
-      <div
-        class="relative h-full w-full overflow-hidden bg-[image:repeating-linear-gradient(315deg,_var(--color-border)_0,_var(--color-border)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--color-border:var(--color-fg)]/15 dark:[--color-border:var(--color-fg)]/15"
-      ></div>
-    </Pane>
-  </PaneGroup>
+<div class="border-muted-fg w-full border-t">
+    <!-- <div class="w-screen -translate-x-4 sm:w-full sm:translate-none"> -->
+    <PaneGroup direction="horizontal" class="w-full">
+        <Pane defaultSize={100} class="bg-bg relative">
+            <div bind:clientWidth class="relative h-full w-full min-w-[256px]">
+                <p class="absolute top-2 right-2 z-10 text-xs text-fuchsia-500">{containerSize} - {clientWidth}px</p>
+                {@render children?.()}
+            </div>
+        </Pane>
+        <PaneResizer
+            class="group bg-muted-fg relative flex w-4 items-center justify-center border-dotted transition-all"
+        >
+            <div
+                class="bg-muted group-hover:bg-primary z-10 h-12 w-2 rounded border transition-all group-hover:h-18"
+            ></div>
+        </PaneResizer>
+        <Pane defaultSize={0}>
+            <div
+                class="bg-general-500 dark:bg-muted relative h-full w-full overflow-hidden bg-[radial-gradient(#D4D4D8_1px,transparent_1px)] [background-size:16px_16px] bg-fixed dark:bg-[radial-gradient(#27272a_1px,transparent_1px)]"
+            ></div>
+        </Pane>
+    </PaneGroup>
+    <!-- </div> -->
 </div>

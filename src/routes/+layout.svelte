@@ -1,9 +1,9 @@
 <script lang="ts">
-  import '../app.css';
-  import '@fontsource-variable/nunito-sans';
-  import { ModeWatcher } from 'mode-watcher';
+    import '../app.css';
+    import '@fontsource-variable/nunito-sans';
+    import { ModeWatcher } from 'mode-watcher';
 
-  let { children } = $props();
+    let { children } = $props();
 </script>
 
 <ModeWatcher defaultMode="system" />

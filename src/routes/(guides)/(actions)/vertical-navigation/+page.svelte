@@ -1,31 +1,30 @@
 <script lang="ts">
-  import CardBoard from '$lib/components/card-board.svelte';
-  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import VerticalNavigationRaw from '$lib/actions/vertical-navigation.svelte.ts?raw';
-  import Paragraph from '$lib/components/base/paragraph.svelte';
-  import Preview from './preview.svelte';
-  import PreviewRaw from './preview.svelte?raw';
-  import Section from '$lib/components/base/section.svelte';
-  import Title from '$lib/components/base/title.svelte';
-  import CardDemo from '$lib/components/card-demo.svelte';
+    import CardDemo from '$lib/components/card-demo.svelte';
+    import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+    import LomerSection from '$lib/components/site/lomer-section.svelte';
+    import LomerTitle from '$lib/components/site/lomer-title.svelte';
+    import Paragraph from '$lib/components/base/paragraph.svelte';
+    import Preview from './preview.svelte';
+    import PreviewRaw from './preview.svelte?raw';
+    import VerticalNavigationRaw from '$lib/actions/vertical-navigation.svelte.ts?raw';
 </script>
 
 <svelte:head>
-  <title>Lomer UI - Vertical Navigation</title>
+    <title>Lomer UI - Vertical Navigation</title>
 </svelte:head>
 
-<Section>
-  <p class="text-muted mb-2 text-xs">Action</p>
-  <Title>Vertical Navigation</Title>
-  <Paragraph>Enables up/down arrow key navigation.</Paragraph>
-  <CardDemo class="flex-col gap-4">
-    <Preview />
-  </CardDemo>
-  <CopySvelteCode open code={PreviewRaw} />
-</Section>
+<LomerSection>
+    <p class="text-muted mb-2 text-xs">Action</p>
+    <LomerTitle>Vertical Navigation</LomerTitle>
+    <Paragraph>Enables up/down arrow key navigation.</Paragraph>
+    <CardDemo class="flex-col gap-4">
+        <Preview />
+    </CardDemo>
+    <CopySvelteCode open code={PreviewRaw} />
+</LomerSection>
 
-<Section>
-  <Title>Guide</Title>
-  <Paragraph>Create the action.</Paragraph>
-  <CopySvelteCode open title="vertical-navigation.svelte.ts" code={VerticalNavigationRaw} />
-</Section>
+<LomerSection>
+    <LomerTitle>Guide</LomerTitle>
+    <Paragraph>Create the action.</Paragraph>
+    <CopySvelteCode open title="vertical-navigation.svelte.ts" code={VerticalNavigationRaw} />
+</LomerSection>

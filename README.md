@@ -19,7 +19,7 @@ Lomer UI is not a component library — it's a starting point. Build your UI fro
 
 ## Use Lomer UI if you want to
 
-- Learn by building UI from the ground up.
-- Avoid over-engineered libraries.
-- Craft highly tailored user interfaces.
-- Embrace a lightweight, maintainable codebase.
+-   Learn by building UI from the ground up.
+-   Avoid over-engineered libraries.
+-   Craft highly tailored user interfaces.
+-   Embrace a lightweight, maintainable codebase.

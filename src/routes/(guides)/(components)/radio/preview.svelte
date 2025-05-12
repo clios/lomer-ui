@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Radio from '$lib/components/base/radio.svelte';
-  let group = $state('');
+    import Radio from '$lib/components/base/radio.svelte';
+    let group = $state('');
 </script>
 
 <Radio value="radio1" label="Radio 1" bind:group>Content...</Radio>

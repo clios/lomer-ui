@@ -1,41 +1,41 @@
 <script>
-  import Link from '$lib/components/base/link.svelte';
-  import Paragraph from '$lib/components/base/paragraph.svelte';
-  import Section from '$lib/components/base/section.svelte';
-  import Title from '$lib/components/base/title.svelte';
-  import CopyCLI from '$lib/components/copy-c-l-i.svelte';
-  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+    import CopyCLI from '$lib/components/copy-c-l-i.svelte';
+    import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+    import Link from '$lib/components/base/link.svelte';
+    import LomerSection from '$lib/components/site/lomer-section.svelte';
+    import LomerTitle from '$lib/components/site/lomer-title.svelte';
+    import Paragraph from '$lib/components/base/paragraph.svelte';
 </script>
 
 <svelte:head>
-  <title>Lomer UI - Typography Integration</title>
+    <title>Lomer UI - Typography Integration</title>
 </svelte:head>
 
-<Section>
-  <p class="text-muted mb-2 text-xs">Setup</p>
-  <Title>Typography Integration</Title>
-  <Paragraph>Seamlessly blend text styles into your design.</Paragraph>
-</Section>
+<LomerSection>
+    <p class="text-muted mb-2 text-xs">Setup</p>
+    <LomerTitle>Typography Integration</LomerTitle>
+    <Paragraph>Seamlessly blend text styles into your design.</Paragraph>
+</LomerSection>
 
-<Section>
-  <Title>Guide</Title>
+<LomerSection>
+    <LomerTitle>Guide</LomerTitle>
 
-  <Title level={2}>Choose Font</Title>
-  <Paragraph>Visit <Link href="https://fontsource.org/" target="_blank">Fontsource</Link> for fonts.</Paragraph>
+    <LomerTitle level={2}>Choose Font</LomerTitle>
+    <Paragraph>Visit <Link href="https://fontsource.org/" target="_blank">Fontsource</Link> for fonts.</Paragraph>
 
-  <Title level={2}>Install Package</Title>
-  <Paragraph>
-    For this example, we will use
-    <Link href="https://fontsource.org/fonts/nunito-sans/install" target="_blank">Nunito Sans</Link>.
-  </Paragraph>
-  <CopyCLI code="npm install @fontsource-variable/nunito-sans" />
+    <LomerTitle level={2}>Install Package</LomerTitle>
+    <Paragraph>
+        For this example, we will use
+        <Link href="https://fontsource.org/fonts/nunito-sans/install" target="_blank">Nunito Sans</Link>.
+    </Paragraph>
+    <CopyCLI code="npm install @fontsource-variable/nunito-sans" />
 
-  <Title level={2}>Import the Font</Title>
-  <Paragraph>Import the font in your root layout.</Paragraph>
-  <CopySvelteCode
-    open
-    title="+layout.svelte"
-    code={`<script lang="ts"\>
+    <LomerTitle level={2}>Import the Font</LomerTitle>
+    <Paragraph>Import the font in your root layout.</Paragraph>
+    <CopySvelteCode
+        open
+        title="+layout.svelte"
+        code={`<script lang="ts"\>
   import '../app.css';
   import '@fontsource-variable/nunito-sans';
   import { ModeWatcher } from 'mode-watcher';
@@ -45,15 +45,15 @@
 
 <ModeWatcher defaultMode="system" />
 {@render children()}`}
-    highlightedLines={[2]}
-  />
+        highlightedLines={[2]}
+    />
 
-  <Title level={2}>CSS</Title>
-  <Paragraph>You can now use it in your main CSS file.</Paragraph>
-  <CopySvelteCode
-    open
-    title="app.css"
-    code={`@layer base {
+    <LomerTitle level={2}>CSS</LomerTitle>
+    <Paragraph>You can now use it in your main CSS file.</Paragraph>
+    <CopySvelteCode
+        open
+        title="app.css"
+        code={`@layer base {
   * {
     @apply border-border;
   }
@@ -68,6 +68,6 @@
     color: var(--color-primary-fg) !important;
   }
 }`}
-    highlightedLines={[7]}
-  />
-</Section>
+        highlightedLines={[7]}
+    />
+</LomerSection>

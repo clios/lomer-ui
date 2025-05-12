@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Shell from '../shell.svelte';
-  let { children } = $props();
+    import Shell from '../shell.svelte';
+    let { children } = $props();
 </script>
 
 <Shell>
-  {@render children()}
+    {@render children()}
 </Shell>

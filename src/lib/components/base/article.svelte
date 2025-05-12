@@ -3,7 +3,7 @@
     import type { Snippet } from 'svelte';
     import { twMerge } from 'tailwind-merge';
 
-    type Props = HTMLAttributes<HTMLElementTagNameMap['section']> & {
+    type Props = HTMLAttributes<HTMLElementTagNameMap['article']> & {
         children?: Snippet;
         class?: string;
     };
@@ -11,6 +11,6 @@
     let { children, class: className, ...props }: Props = $props();
 </script>
 
-<section class={twMerge('relative gap-4 p-4 @xs:gap-6 @xs:p-6', className)} {...props}>
+<article class={twMerge('gap-2 @xs:gap-4', className)} {...props}>
     {@render children?.()}
-</section>
+</article>

@@ -1,31 +1,30 @@
 <script lang="ts">
-  import CardBoard from '$lib/components/card-board.svelte';
-  import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-  import HotkeyRaw from '$lib/actions/hotkey.svelte.ts?raw';
-  import Paragraph from '$lib/components/base/paragraph.svelte';
-  import Preview from './preview.svelte';
-  import PreviewRaw from './preview.svelte?raw';
-  import Section from '$lib/components/base/section.svelte';
-  import Title from '$lib/components/base/title.svelte';
-  import CardDemo from '$lib/components/card-demo.svelte';
+    import CardDemo from '$lib/components/card-demo.svelte';
+    import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
+    import HotkeyRaw from '$lib/actions/hotkey.svelte.ts?raw';
+    import LomerSection from '$lib/components/site/lomer-section.svelte';
+    import LomerTitle from '$lib/components/site/lomer-title.svelte';
+    import Paragraph from '$lib/components/base/paragraph.svelte';
+    import Preview from './preview.svelte';
+    import PreviewRaw from './preview.svelte?raw';
 </script>
 
 <svelte:head>
-  <title>Lomer UI - Hotkey</title>
+    <title>Lomer UI - Hotkey</title>
 </svelte:head>
 
-<Section>
-  <p class="text-muted mb-2 text-xs">Action</p>
-  <Title>Hotkey</Title>
-  <Paragraph>Triggers actions with keyboard shortcuts.</Paragraph>
-  <CardDemo class="flex flex-col gap-4">
-    <Preview />
-  </CardDemo>
-  <CopySvelteCode open code={PreviewRaw} />
-</Section>
+<LomerSection>
+    <p class="text-muted mb-2 text-xs">Action</p>
+    <LomerTitle>Hotkey</LomerTitle>
+    <Paragraph>Triggers actions with keyboard shortcuts.</Paragraph>
+    <CardDemo class="flex flex-col gap-4">
+        <Preview />
+    </CardDemo>
+    <CopySvelteCode open code={PreviewRaw} />
+</LomerSection>
 
-<Section>
-  <Title>Guide</Title>
-  <Paragraph>Create the action.</Paragraph>
-  <CopySvelteCode open title="hotkey.svelte.ts" code={HotkeyRaw} />
-</Section>
+<LomerSection>
+    <LomerTitle>Guide</LomerTitle>
+    <Paragraph>Create the action.</Paragraph>
+    <CopySvelteCode open title="hotkey.svelte.ts" code={HotkeyRaw} />
+</LomerSection>
