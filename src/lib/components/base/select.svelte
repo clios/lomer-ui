@@ -15,10 +15,10 @@
 </script>
 
 <!-- Customize container here -->
-<div class="bg-input text-input-fg relative flex w-fit items-center rounded">
+<div class="bg-input text-input-fg relative flex w-full items-center rounded">
     <select
         class={twMerge(
-            'w-fit py-1 pr-10 pl-2', // box sizing
+            'w-full py-1 pr-10 pl-2', // box sizing
             'cursor-pointer appearance-none rounded border', // visual
             'outline-primary outline-offset-2 hover:outline focus:outline', // outline
             disabled && 'bg-disabled text-disabled-fg cursor-not-allowed outline-none',

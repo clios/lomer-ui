@@ -44,7 +44,9 @@
     <PaneGroup direction="horizontal" class="w-full">
         <Pane defaultSize={100} class="bg-bg relative">
             <div bind:clientWidth class="relative h-full w-full min-w-[256px]">
-                <p class="absolute top-2 right-2 z-10 text-xs text-fuchsia-500">{containerSize} - {clientWidth}px</p>
+                <p class="bg-bg/80 absolute top-2 right-2 z-10 px-1 text-xs text-fuchsia-500 backdrop-blur">
+                    {containerSize} - {clientWidth}px
+                </p>
                 {@render children?.()}
             </div>
         </Pane>

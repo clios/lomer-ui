@@ -41,7 +41,7 @@
 <svelte:element
     this={href ? 'a' : 'button'}
     class={twMerge(
-        'relative flex h-min w-max items-center gap-1', // layout and positioning
+        'relative flex h-min w-max items-center gap-2', // layout and positioning
         'outline-primary border', // base style
         'cursor-pointer text-nowrap select-none', // behaviour
         'focus-visible:z-1 focus-visible:outline focus-visible:outline-offset-1', // focus-visible

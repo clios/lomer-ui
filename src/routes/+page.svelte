@@ -33,7 +33,6 @@
     import Tabs from '$lib/components/base/tabs.svelte';
     import TabsItem from '$lib/components/base/tabs-item.svelte';
     import Textarea from '$lib/components/base/textarea.svelte';
-    import Article from '$lib/components/base/article.svelte';
 
     let open = $state(false);
     let open1 = $state(false);

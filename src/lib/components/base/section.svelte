@@ -11,6 +11,16 @@
     let { children, class: className, ...props }: Props = $props();
 </script>
 
-<section class={twMerge('relative gap-4 p-4 @xs:gap-6 @xs:p-6', className)} {...props}>
-    {@render children?.()}
-</section>
+<div class="@container">
+    <section
+        class={twMerge(
+            'flex flex-col',
+            'p-4 @sm:p-6 @2xl:p-8 @4xl:p-10',
+            'gap-4 @sm:gap-6 @2xl:gap-8 @4xl:gap-10',
+            className
+        )}
+        {...props}
+    >
+        {@render children?.()}
+    </section>
+</div>

@@ -13,7 +13,7 @@
 
 <input
     class={twMerge(
-        'px-2 py-1', // box sizing
+        'w-full px-2 py-1', // box sizing
         'text-input-fg bg-input outline-primary', // colors
         'outline-offset-2 hover:outline focus:outline', // outline
         'rounded border', // border

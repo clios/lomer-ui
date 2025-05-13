@@ -1,83 +1,44 @@
 <script>
-    import Article from '$lib/components/base/article.svelte';
     import Button from '$lib/components/base/button.svelte';
-    import Page from '$lib/components/base/page.svelte';
     import Paragraph from '$lib/components/base/paragraph.svelte';
     import Section from '$lib/components/base/section.svelte';
+    import Stack from '$lib/components/base/stack.svelte';
+    import Title from '$lib/components/base/title.svelte';
 </script>
 
-<Page>
-    <Section class="container mx-auto flex flex-col items-center">
-        <Button class="gap-2 py-0 pr-2 pl-1" variant="secondary" edge="circle">
-            <span class="bg-primary text-primary-fg my-1 rounded-full px-3 py-1 text-xs @sm:text-sm">New</span>
-            <span class="text-xs @sm:text-base">Introducing Lomer UI Blocks</span>
-            {@render IconChevronRight()}
-        </Button>
-        <h1 class="text-center text-sm leading-5 font-semibold @sm:text-xl">Tailwind CSS & Svelte</h1>
-        <Paragraph class="max-w-[600px] text-center">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi qui dolorem aperiam itaque incidunt neque
-            perferendis corporis eos corrupti praesentium?
-        </Paragraph>
-        <Article class="flex w-full flex-col items-center @2xs:flex-row @xs:justify-center">
-            <Button class="w-full max-w-72 justify-center @xs:w-fit">Get Started</Button>
-            <Button class="w-full max-w-72 justify-center @xs:w-fit" variant="secondary">Contribute</Button>
-        </Article>
-
-        <Article class="flex flex-col items-center">
-            <p class="text-muted text-xs">SPONSORS</p>
-            <div class="flex gap-8 @xs:mt-1">
-                <div class="flex flex-col items-center">
-                    {@render IconFacebook()}
-                    <p class="text-muted text-xs">Facebook</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    {@render IconAmazon()}
-                    <p class="text-muted text-xs">Amazon</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    {@render IconGoogle()}
-                    <p class="text-muted text-xs">Google</p>
-                </div>
-            </div>
-        </Article>
-    </Section>
-</Page>
-
-<!-- <section class="@container">
-  <div class="container mx-auto flex flex-col items-center gap-4 p-4 @xs:gap-6 @xs:p-6">
+<Section class="container mx-auto items-center">
     <Button class="gap-2 py-0 pr-2 pl-1" variant="secondary" edge="circle">
-      <span class="bg-primary text-primary-fg my-1 rounded-full px-3 py-1 text-xs @sm:text-sm">New</span>
-      <span class="text-xs @sm:text-base">Introducing Lomer UI Blocks</span>
-      {@render IconChevronRight()}
+        <span class="bg-primary text-primary-fg my-1 rounded-full px-3 py-1 text-xs @sm:text-sm">New</span>
+        <span class="text-xs @sm:text-base">Introducing Lomer UI Blocks</span>
+        {@render IconChevronRight()}
     </Button>
-    <h1 class="text-center text-sm leading-5 font-semibold @sm:text-xl">Tailwind CSS & Svelte</h1>
+    <Title class="text-center">Tailwind CSS & Svelte</Title>
     <Paragraph class="max-w-[600px] text-center">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi qui dolorem aperiam itaque incidunt neque
-      perferendis corporis eos corrupti praesentium?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi qui dolorem aperiam itaque incidunt neque
+        perferendis corporis eos corrupti praesentium?
     </Paragraph>
-    <div class="flex w-full flex-col items-center gap-2 @2xs:flex-row @xs:justify-center">
-      <Button class="w-full max-w-72 justify-center @xs:w-fit">Get Started</Button>
-      <Button class="w-full max-w-72 justify-center @xs:w-fit" variant="secondary">Contribute</Button>
-    </div>
-    <div class="flex flex-col items-center gap-2">
-      <p class="text-muted text-xs">SPONSORS</p>
-      <div class="flex gap-8 @xs:mt-1">
-        <div class="flex flex-col items-center">
-          {@render IconFacebook()}
-          <p class="text-muted text-xs">Facebook</p>
-        </div>
-        <div class="flex flex-col items-center">
-          {@render IconAmazon()}
-          <p class="text-muted text-xs">Amazon</p>
-        </div>
-        <div class="flex flex-col items-center">
-          {@render IconGoogle()}
-          <p class="text-muted text-xs">Google</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
+    <Stack horizontal class="gap-2">
+        <Button class="w-full max-w-72 justify-center @xs:w-fit">Get Started</Button>
+        <Button class="w-full max-w-72 justify-center @xs:w-fit" variant="secondary">Contribute</Button>
+    </Stack>
+    <Stack class="items-center gap-2">
+        <p class="text-muted text-xs">SPONSORS</p>
+        <Stack horizontal class="gap-8">
+            <Stack class="items-center">
+                {@render IconFacebook()}
+                <p class="text-muted text-xs">Facebook</p>
+            </Stack>
+            <Stack class="items-center">
+                {@render IconAmazon()}
+                <p class="text-muted text-xs">Amazon</p>
+            </Stack>
+            <Stack class="items-center">
+                {@render IconGoogle()}
+                <p class="text-muted text-xs">Google</p>
+            </Stack>
+        </Stack>
+    </Stack>
+</Section>
 
 {#snippet IconChevronRight()}
     <svg xmlns="http://www.w3.org/2000/svg" class="max-w-4 min-w-4 @xs:max-w-6 @xs:min-w-6" viewBox="0 0 24 24">

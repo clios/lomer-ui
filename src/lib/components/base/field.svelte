@@ -29,7 +29,7 @@
 </script>
 
 <!-- Customize container here -->
-<div class={twMerge('text-fg mt-2 flex gap-1', orientation === 'vertical' ? 'flex-col' : 'items-start')}>
+<div class={twMerge('text-fg flex gap-1', orientation === 'vertical' ? 'flex-col' : 'items-start')}>
     {#if label}
         <!-- Customize label here -->
         <p
@@ -50,7 +50,7 @@
 
     <div class="flex flex-col gap-1">
         <!-- Customize content here -->
-        <div class={twMerge(className)}>
+        <div class={twMerge('flex flex-col gap-1', className)}>
             {@render children?.()}
         </div>
 
