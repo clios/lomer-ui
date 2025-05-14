@@ -13,7 +13,7 @@
 
 <textarea
     class={twMerge(
-        'text-input-fg bg-input field-sizing-content min-w-52 px-2 py-1', // base
+        'text-input-fg bg-input field-sizing-content h-32 min-w-52 px-2 py-1', // base
         'rounded border hover:cursor-text', // border
         'outline-primary outline-offset-2 hover:outline focus:outline', // outline
         disabled && 'bg-disabled text-disabled-fg cursor-not-allowed outline-none',

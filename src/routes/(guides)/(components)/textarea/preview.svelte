@@ -1,6 +1,5 @@
 <script lang="ts">
     import Textarea from '$lib/components/base/textarea.svelte';
-
     let value = $state('');
 </script>
 

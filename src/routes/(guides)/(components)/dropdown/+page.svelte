@@ -20,7 +20,7 @@
     <p class="text-muted mb-2 text-xs">Component</p>
     <LomerTitle>Dropdown</LomerTitle>
     <Paragraph>A compact menu for quick options.</Paragraph>
-    <CardDemo class="flex-col gap-4">
+    <CardDemo class="flex-col items-start">
         <Preview />
     </CardDemo>
     <CopySvelteCode open code={PreviewRaw} />

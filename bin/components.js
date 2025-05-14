@@ -6,11 +6,16 @@ export const COMPONENTS = [
     },
     {
         name: 'alert',
-        dependencies: ['button'],
+        dependencies: [],
         actions: []
     },
     {
         name: 'avatar',
+        dependencies: [],
+        actions: []
+    },
+    {
+        name: 'banner',
         dependencies: [],
         actions: []
     },
@@ -31,17 +36,17 @@ export const COMPONENTS = [
     },
     {
         name: 'dialog',
-        dependencies: ['button'],
+        dependencies: [],
         actions: ['escape-key', 'focus-trap']
     },
     {
         name: 'drawer',
-        dependencies: ['button'],
+        dependencies: [],
         actions: ['escape-key', 'focus-trap']
     },
     {
         name: 'dropdown',
-        dependencies: ['dropdown-item'],
+        dependencies: ['dropdown-item', 'dropdown-switch'],
         actions: ['escape-key', 'outside-click', 'focus-trap', 'vertical-navigation']
     },
     {

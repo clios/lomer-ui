@@ -16,49 +16,11 @@ async function isFileExists(filePath) {
     }
 }
 
-async function updateCSSFile(cssFilePath) {
-    try {
-        const cssFileContent = await fs.readFile(cssFilePath, 'utf8');
-
-        if (cssFileContent.includes('lib/components/base/lomer.css')) {
-            console.log('ℹ️ lomer.css is already imported.');
-            return;
-        }
-
-        const updatedContent = cssFileContent.replace(
-            /@import\s+['"]tailwindcss(?:\/base|\/components|\/utilities)?['"]\s*;/g,
-            (match) => `${match}\n@import './lib/components/base/lomer.css';`
-        );
-
-        await fs.writeFile(cssFilePath, updatedContent, 'utf8');
-        // console.log(`✅ Updated ${cssFilePath}.`);
-    } catch (err) {
-        console.error(`❌ Failed to update ${cssFilePath}: ${err.message}`);
-    }
-}
-
-async function setupTailwind() {
+export async function get(components) {
     await checkSvelteKitApp();
     await checkOrInstallTailwindCSS();
     await checkOrInstallTailwindMerge();
 
-    const destDir = path.resolve('./src');
-    const destAppCSS = path.join(destDir, 'app.css');
-
-    if (await isFileExists(destAppCSS)) {
-        await updateCSSFile('./src/app.css');
-    } else {
-        const { cssFilePath } = await prompts({
-            type: 'text',
-            name: 'cssFilePath',
-            message: 'Where is TailwindCSS imported? (default: ./src/app.css)',
-            initial: './src/app.css'
-        });
-        await updateCSSFile(cssFilePath);
-    }
-}
-
-export async function get(components) {
     if (!Array.isArray(components) || components.length === 0) {
         console.log('❌ Please specify at least one component.');
         return;
@@ -66,7 +28,6 @@ export async function get(components) {
 
     const githubBaseURL = 'https://raw.githubusercontent.com/clios/lomer-ui/main/src/lib/components/base';
     const destDir = path.resolve('./src/lib/components/base');
-    const destLomer = path.join(destDir, 'lomer.css');
 
     // Track components to add (ensure no duplicates)
     const toAdd = new Set();
@@ -89,24 +50,6 @@ export async function get(components) {
     }
 
     await fs.mkdir(destDir, { recursive: true });
-
-    // Ensure lomer.css exists
-    if (!(await isFileExists(destLomer))) {
-        // const { confirmation } = await prompts({
-        //   type: 'confirm',
-        //   name: 'confirmation',
-        //   message: 'Initialize?',
-        //   initial: true
-        // });
-
-        // if (!confirmation) {
-        //   console.log('❌ Initialization canceled.');
-        //   return;
-        // }
-
-        await setupTailwind();
-        await fetchFile(`${githubBaseURL}/lomer.css`, destLomer);
-    }
 
     for (const component of toAdd) {
         const srcPath = `${githubBaseURL}/${component}.svelte`;

@@ -42,10 +42,10 @@
 
 <!-- CONTAINER -->
 <div class={twMerge('bg-bg relative flex w-full items-center gap-2', className)}>
-    <!-- CONTENT -->
+    <!-- Customize content here -->
     <div
         bind:this={scrollContainer}
-        class="scroll-container flex w-full gap-2 overflow-x-auto scroll-smooth py-4 pr-12 pl-4"
+        class="scroll-container flex w-full gap-2 overflow-x-auto scroll-smooth py-4 pr-12"
         onscroll={checkScroll}
     >
         {@render children?.()}

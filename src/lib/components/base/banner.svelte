@@ -19,7 +19,7 @@
         transition:slide={{ duration: 150 }}
         class={twMerge(
             'fixed right-0 left-0 z-[999999999] flex w-full items-center justify-between', // layout and position
-            'bg-bg/10 border p-2 backdrop-blur-3xl', // background
+            'bg-primary border p-2', // background
             placement === 'top' ? 'top-0' : 'bottom-0',
             className
         )}

@@ -18,7 +18,7 @@
     <p class="text-muted mb-2 text-xs">Component</p>
     <LomerTitle>Dialog</LomerTitle>
     <Paragraph>Displays a focused interface for user interaction.</Paragraph>
-    <CardDemo class="flex-col gap-4">
+    <CardDemo>
         <Preview />
     </CardDemo>
     <CopySvelteCode open code={PreviewRaw} />

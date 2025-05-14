@@ -2,7 +2,11 @@
     import type { HTMLImgAttributes } from 'svelte/elements';
     import { twMerge } from 'tailwind-merge';
 
-    let { class: className, ...props }: HTMLImgAttributes = $props();
+    type Props = HTMLImgAttributes & {
+        class?: string;
+    };
+
+    let { class: className, ...props }: Props = $props();
 </script>
 
 <img class={twMerge('size-7 rounded', className)} {...props} />

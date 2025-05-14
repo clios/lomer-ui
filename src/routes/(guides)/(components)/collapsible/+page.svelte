@@ -17,7 +17,7 @@
     <p class="text-muted mb-2 text-xs">Component</p>
     <LomerTitle>Collapsible</LomerTitle>
     <Paragraph>Expand and collapse content with ease.</Paragraph>
-    <CardDemo class="flex-col">
+    <CardDemo class="flex-col items-start">
         <Preview />
     </CardDemo>
     <CopySvelteCode open code={PreviewRaw} />

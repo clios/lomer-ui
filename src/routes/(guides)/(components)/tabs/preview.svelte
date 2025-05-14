@@ -1,21 +1,20 @@
 <script>
     import TabsItem from '$lib/components/base/tabs-item.svelte';
     import Tabs from '$lib/components/base/tabs.svelte';
-
-    let active = $state('home');
+    let group = $state('home');
 </script>
 
 <Tabs>
-    <TabsItem bind:active value="home">Home</TabsItem>
-    <TabsItem bind:active value="about">About</TabsItem>
-    <TabsItem bind:active value="service">Service</TabsItem>
+    <TabsItem bind:group value="home">Home</TabsItem>
+    <TabsItem bind:group value="about">About</TabsItem>
+    <TabsItem bind:group value="service" loading>Service</TabsItem>
     <TabsItem disabled>Disabled</TabsItem>
-    <TabsItem bind:active value="settings">Settings</TabsItem>
-    <TabsItem bind:active value="monitoring">Monitoring</TabsItem>
-    <TabsItem bind:active value="profile">Profile</TabsItem>
-    <TabsItem bind:active value="dashboard">Dashboard</TabsItem>
-    <TabsItem bind:active value="gis">GIS</TabsItem>
-    <TabsItem bind:active value="ai">AI</TabsItem>
-    <TabsItem bind:active value="map">Map</TabsItem>
-    <TabsItem bind:active value="time">Real-time</TabsItem>
+    <TabsItem bind:group value="settings">Settings</TabsItem>
+    <TabsItem bind:group value="monitoring">Monitoring</TabsItem>
+    <TabsItem bind:group value="profile">Profile</TabsItem>
+    <TabsItem bind:group value="dashboard">Dashboard</TabsItem>
+    <TabsItem bind:group value="gis">GIS</TabsItem>
+    <TabsItem bind:group value="ai">AI</TabsItem>
+    <TabsItem bind:group value="map">Map</TabsItem>
+    <TabsItem bind:group value="time">Real-time</TabsItem>
 </Tabs>
