@@ -12,10 +12,10 @@
 <div class="bg-[url(/city_bg.jpg)] bg-cover bg-center">
     <Section class="from-bg/100 to-bg/50 via-bg/80 bg-gradient-to-r">
         <Stack>
-            <Title>Every home is a destination</Title>
-            <Paragraph>
-                The best of Luxury Retreats is now Flowbite Luxe—offering the world's most extraordinary homes with the
-                highest standard of service.
+            <Title>Free your mind, get wrecked</Title>
+            <Paragraph class="@2xl:max-w-[700px]">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus perspiciatis quo a laborum inventore
+                dolores!
             </Paragraph>
         </Stack>
         <Button variant="secondary">Explore More</Button>

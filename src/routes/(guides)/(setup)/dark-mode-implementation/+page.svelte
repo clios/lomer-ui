@@ -1,5 +1,4 @@
 <script>
-    import Button from '$lib/components/base/button.svelte';
     import CardBoard from '$lib/components/card-board.svelte';
     import CopyCLI from '$lib/components/copy-c-l-i.svelte';
     import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
@@ -36,7 +35,9 @@
     <CopySvelteCode
         open
         title="+layout.svelte"
+        highlightedLines={[2, 6]}
         code={`<script\ lang="ts">` +
+            `\n\timport "../app.css";` +
             `\n\timport { ModeWatcher } from "mode-watcher";` +
             `\n\tlet { children } = $props();` +
             `\n</script>` +
@@ -49,27 +50,26 @@
         Use the <HighlightText>toggleMode</HighlightText> function and <HighlightText>$mode</HighlightText> to toggle:
     </Paragraph>
     <CardBoard class="justify-center">
-        <Button onclick={toggleMode}>
+        <button onclick={toggleMode}>
             {#if $mode === 'light'}
                 Light
             {:else}
                 Dark
             {/if}
-        </Button>
+        </button>
     </CardBoard>
     <CopySvelteCode
         open
         code={`<script\ lang="ts">` +
-            `\n\timport Button from '$lib/components/base/button.svelte';` +
             `\n\timport { toggleMode, mode } from 'mode-watcher';` +
             `\n</script>` +
             `\n` +
-            `\n<Button onclick={toggleMode}>` +
+            `\n<button onclick={toggleMode}>` +
             `\n\t{#if mode.current === 'light'}` +
             `\n\t\tLight` +
             `\n\t{:else}` +
             `\n\t\tDark` +
             `\n\t{/if}` +
-            `\n</Button>`}
+            `\n</button>`}
     />
 </LomerSection>
