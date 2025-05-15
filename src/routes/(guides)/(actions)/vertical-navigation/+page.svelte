@@ -7,6 +7,7 @@
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
     import VerticalNavigationRaw from '$lib/actions/vertical-navigation.svelte.ts?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -27,4 +28,5 @@
     <LomerTitle>Guide</LomerTitle>
     <Paragraph>Create the action.</Paragraph>
     <CopySvelteCode open title="vertical-navigation.svelte.ts" code={VerticalNavigationRaw} />
+    <CardCLI code="npx lomer-ui action vertical-navigation" />
 </LomerSection>

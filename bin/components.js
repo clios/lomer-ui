@@ -75,8 +75,8 @@ export const COMPONENTS = [
         actions: []
     },
     {
-        name: 'link-button',
-        dependencies: ['link', 'button'],
+        name: 'paragraph',
+        dependencies: [],
         actions: []
     },
     {
@@ -90,7 +90,17 @@ export const COMPONENTS = [
         actions: []
     },
     {
+        name: 'section',
+        dependencies: [],
+        actions: []
+    },
+    {
         name: 'select',
+        dependencies: [],
+        actions: []
+    },
+    {
+        name: 'stack',
         dependencies: [],
         actions: []
     },
@@ -136,7 +146,7 @@ export const COMPONENTS = [
     },
     {
         name: 'tabs-item',
-        dependencies: ['button'],
+        dependencies: [],
         actions: []
     },
     {
@@ -146,6 +156,11 @@ export const COMPONENTS = [
     },
     {
         name: 'textarea',
+        dependencies: [],
+        actions: []
+    },
+    {
+        name: 'title',
         dependencies: [],
         actions: []
     },

@@ -7,6 +7,7 @@
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
     import LomerTitle from '$lib/components/site/lomer-title.svelte';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -27,4 +28,5 @@
     <LomerTitle>Guide</LomerTitle>
     <Paragraph>Create the action.</Paragraph>
     <CopySvelteCode open title="escape-key.svelte.ts" code={EscapeKeyRaw} />
+    <CardCLI code="npx lomer-ui action escape-key" />
 </LomerSection>

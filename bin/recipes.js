@@ -1,26 +1,20 @@
-// NOTE: For multiple dependency or pkg.
-// e.g. 'dropdown button'
+// {
+//     name: 'recipe_name_here',
+//     dependency: 'alert button',
+//     pkg: '@iconify/svelte tailwind-merge'
+// }
 
 export const RECIPES = [
     {
-        name: 'accordion-single-mode',
-        dependency: 'accordion'
+        name: 'hero-section-01',
+        dependency: 'button paragraph section stack title'
     },
     {
-        name: 'accordion-usage',
-        dependency: 'accordion'
+        name: 'hero-section-02',
+        dependency: 'button paragraph section stack title'
     },
     {
-        name: 'alert-closable',
-        dependency: 'alert'
-    },
-    {
-        name: 'alert-custom-icon',
-        dependency: 'alert',
-        pkg: '@iconify/svelte'
-    },
-    {
-        name: 'alert-usage',
-        dependency: 'alert'
+        name: 'hero-section-03',
+        dependency: 'button field input paragraph section select stack title'
     }
 ];

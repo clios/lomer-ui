@@ -1,11 +1,11 @@
 <script>
     import CardGuide from '$lib/components/base/card-guide.svelte';
     import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
-    import HeroSection_01 from '$lib/blocks/hero-section-01.svelte';
+    import HeroSection_01 from '$lib/components/recipes/hero-section-01.svelte';
     import HeroSection_01Raw from '$lib/blocks/hero-section-01.svelte?raw';
-    import HeroSection_02 from '$lib/blocks/hero-section-02.svelte';
+    import HeroSection_02 from '$lib/components/recipes/hero-section-02.svelte';
     import HeroSection_02Raw from '$lib/blocks/hero-section-02.svelte?raw';
-    import HeroSection_03 from '$lib/blocks/hero-section-03.svelte';
+    import HeroSection_03 from '$lib/components/recipes/hero-section-03.svelte';
     import HeroSection_03Raw from '$lib/blocks/hero-section-03.svelte?raw';
     import LomerSection from '$lib/components/site/lomer-section.svelte';
     import LomerSectionGuide from '$lib/components/site/lomer-section-guide.svelte';

@@ -7,6 +7,7 @@
     import Paragraph from '$lib/components/base/paragraph.svelte';
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
+    import CopyCLI from '$lib/components/copy-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -27,4 +28,5 @@
     <LomerTitle>Guide</LomerTitle>
     <Paragraph>Create the action.</Paragraph>
     <CopySvelteCode open title="outside-click.svelte.ts" code={OutsideClickRaw} />
+    <CopyCLI code="npx lomer-ui action outside-click" />
 </LomerSection>
