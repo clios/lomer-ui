@@ -24,6 +24,7 @@
     <img class="size-7 rounded" src="https://avatars.githubusercontent.com/u/16535340?v=4&quot" alt="avatar" />
 </Button>
 <Button size="small">Small</Button>
+<Button href="#">This is link</Button>
 
 {#snippet IconLomerUI()}
     <svg xmlns="http://www.w3.org/2000/svg" class="max-w-6 min-w-6" viewBox="0 0 208 208">

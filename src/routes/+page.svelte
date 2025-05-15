@@ -41,7 +41,7 @@
     let open4 = $state(false);
     let group = $state('radio1');
     let checked = $state(false);
-    let active = $state('home');
+    let group1 = $state('home');
 
     const data = [
         { month: 'January', expense: 513, savings: 96 },
@@ -196,18 +196,18 @@
             </CardBoard>
             <CardBoard>
                 <Tabs>
-                    <TabsItem bind:active value="home">Home</TabsItem>
-                    <TabsItem bind:active value="about">About</TabsItem>
-                    <TabsItem bind:active value="service">Service</TabsItem>
+                    <TabsItem bind:group={group1} value="home">Home</TabsItem>
+                    <TabsItem bind:group={group1} value="about">About</TabsItem>
+                    <TabsItem bind:group={group1} value="service">Service</TabsItem>
                     <TabsItem disabled>Disabled</TabsItem>
-                    <TabsItem bind:active value="settings">Settings</TabsItem>
-                    <TabsItem bind:active value="monitoring">Monitoring</TabsItem>
-                    <TabsItem bind:active value="profile">Profile</TabsItem>
-                    <TabsItem bind:active value="dashboard">Dashboard</TabsItem>
-                    <TabsItem bind:active value="gis">GIS</TabsItem>
-                    <TabsItem bind:active value="ai">AI</TabsItem>
-                    <TabsItem bind:active value="map">Map</TabsItem>
-                    <TabsItem bind:active value="time">Real-time</TabsItem>
+                    <TabsItem bind:group={group1} value="settings">Settings</TabsItem>
+                    <TabsItem bind:group={group1} value="monitoring">Monitoring</TabsItem>
+                    <TabsItem bind:group={group1} value="profile">Profile</TabsItem>
+                    <TabsItem bind:group={group1} value="dashboard">Dashboard</TabsItem>
+                    <TabsItem bind:group={group1} value="gis">GIS</TabsItem>
+                    <TabsItem bind:group={group1} value="ai">AI</TabsItem>
+                    <TabsItem bind:group={group1} value="map">Map</TabsItem>
+                    <TabsItem bind:group={group1} value="time">Real-time</TabsItem>
                 </Tabs>
             </CardBoard>
             <CardBoard>
