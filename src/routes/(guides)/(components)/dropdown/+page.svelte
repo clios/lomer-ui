@@ -10,6 +10,7 @@
     import Paragraph from '$lib/components/base/paragraph.svelte';
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -48,4 +49,5 @@
     <CopySvelteCode title="dropdown-option.svelte" code={DropdownOptionRaw} />
     <Paragraph>7. Create dropdown switch component.</Paragraph>
     <CopySvelteCode title="dropdown-switch.svelte" code={DropdownSwitchRaw} />
+    <CardCLI code="npx lomer-ui get dropdown" />
 </LomerSection>

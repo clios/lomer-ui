@@ -7,6 +7,7 @@
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
     import SwitchRaw from '$lib/components/base/switch.svelte?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -27,4 +28,5 @@
     <LomerTitle>Guide</LomerTitle>
     <Paragraph>We only need one component.</Paragraph>
     <CopySvelteCode title="switch.svelte" code={SwitchRaw} />
+    <CardCLI code="npx lomer-ui get switch" />
 </LomerSection>

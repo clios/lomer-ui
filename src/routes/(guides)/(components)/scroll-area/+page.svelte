@@ -7,6 +7,7 @@
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
     import ScrollAreaRaw from '$lib/components/base/scroll-area.svelte?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -27,4 +28,5 @@
     <LomerTitle>Guide</LomerTitle>
     <Paragraph>We only need one component.</Paragraph>
     <CopySvelteCode title="scroll-area.svelte" code={ScrollAreaRaw} />
+    <CardCLI code="npx lomer-ui get scroll-area" />
 </LomerSection>

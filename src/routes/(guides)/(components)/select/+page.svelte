@@ -8,6 +8,7 @@
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
     import SelectRaw from '$lib/components/base/select.svelte?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -29,4 +30,5 @@
     <LomerTitle>Guide</LomerTitle>
     <Paragraph>We only need one component.</Paragraph>
     <CopySvelteCode title="select.svelte" code={SelectRaw} />
+    <CardCLI code="npx lomer-ui get select" />
 </LomerSection>

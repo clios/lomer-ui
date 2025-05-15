@@ -8,6 +8,7 @@
     import Paragraph from '$lib/components/base/paragraph.svelte';
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -35,4 +36,5 @@
     </Paragraph>
     <Paragraph>3. Create dialog component.</Paragraph>
     <CopySvelteCode title="dialog.svelte" code={DialogRaw} />
+    <CardCLI code="npx lomer-ui get dialog" />
 </LomerSection>

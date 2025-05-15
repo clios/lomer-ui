@@ -9,6 +9,7 @@
     import PreviewRaw from './preview.svelte?raw';
     import TabsItemRaw from '$lib/components/base/tabs-item.svelte?raw';
     import TabsRaw from '$lib/components/base/tabs.svelte?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -34,4 +35,5 @@
     <CopySvelteCode title="tabs.svelte" code={TabsRaw} />
     <Paragraph>3. Create tabs item component.</Paragraph>
     <CopySvelteCode title="tabs-item.svelte" code={TabsItemRaw} />
+    <CardCLI code="npx lomer-ui get tabs" />
 </LomerSection>

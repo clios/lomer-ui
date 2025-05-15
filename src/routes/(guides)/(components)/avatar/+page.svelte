@@ -1,5 +1,6 @@
 <script lang="ts">
     import AvatarRaw from '$lib/components/base/avatar.svelte?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
     import CardDemo from '$lib/components/card-demo.svelte';
     import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
     import LomerSection from '$lib/components/site/lomer-section.svelte';
@@ -27,4 +28,5 @@
     <LomerTitle>Guide</LomerTitle>
     <Paragraph>We only need one component.</Paragraph>
     <CopySvelteCode open title="avatar.svelte" code={AvatarRaw} />
+    <CardCLI code="npx lomer-ui get avatar" />
 </LomerSection>

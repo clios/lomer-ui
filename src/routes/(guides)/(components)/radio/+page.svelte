@@ -7,6 +7,7 @@
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
     import RadioRaw from '$lib/components/base/radio.svelte?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -28,4 +29,5 @@
     <LomerTitle>Guide</LomerTitle>
     <Paragraph>We only need one component.</Paragraph>
     <CopySvelteCode title="radio.svelte" code={RadioRaw} />
+    <CardCLI code="npx lomer-ui get radio" />
 </LomerSection>

@@ -7,6 +7,7 @@
     import Paragraph from '$lib/components/base/paragraph.svelte';
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -27,4 +28,5 @@
     <LomerTitle>Guide</LomerTitle>
     <Paragraph>We only need one component.</Paragraph>
     <CopySvelteCode title="collapsible.svelte" code={CollapsibleRaw} />
+    <CardCLI code="npx lomer-ui get collapsible" />
 </LomerSection>

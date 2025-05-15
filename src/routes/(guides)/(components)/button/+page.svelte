@@ -1,5 +1,6 @@
 <script lang="ts">
     import ButtonRaw from '$lib/components/base/button.svelte?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
     import CardDemo from '$lib/components/card-demo.svelte';
     import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
     import LomerSection from '$lib/components/site/lomer-section.svelte';
@@ -27,4 +28,5 @@
     <LomerTitle>Guide</LomerTitle>
     <Paragraph>We only need one component.</Paragraph>
     <CopySvelteCode title="button.svelte" code={ButtonRaw} />
+    <CardCLI code="npx lomer-ui get button" />
 </LomerSection>

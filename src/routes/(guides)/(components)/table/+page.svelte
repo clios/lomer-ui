@@ -12,6 +12,7 @@
     import TableHeaderRaw from '$lib/components/base/table-header.svelte?raw';
     import TableRaw from '$lib/components/base/table.svelte?raw';
     import TableRowRaw from '$lib/components/base/table-row.svelte?raw';
+    import CardCLI from '$lib/components/card-c-l-i.svelte';
 </script>
 
 <svelte:head>
@@ -42,4 +43,5 @@
     <CopySvelteCode title="table-header.svelte" code={TableHeaderRaw} />
     <Paragraph>6. Create table data component.</Paragraph>
     <CopySvelteCode title="table-data.svelte" code={TableDataRaw} />
+    <CardCLI code="npx lomer-ui get table" />
 </LomerSection>
