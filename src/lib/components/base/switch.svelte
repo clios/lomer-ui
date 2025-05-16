@@ -33,14 +33,14 @@
     <!-- Customize switch container here  -->
     <label
         class={twMerge(
-            'text-fg flex w-fit cursor-pointer items-center',
+            'flex items-center w-fit text-fg cursor-pointer',
             (disabled || loading) && 'text-disabled-fg cursor-not-allowed'
         )}
     >
         <!-- Customize switch outer box here -->
         <button
             class={twMerge(
-                'relative mr-2 flex max-h-6 min-h-6 max-w-12 min-w-12 items-center', // layout and positioning
+                'relative flex items-center mr-2 min-w-12 max-w-12 min-h-6 max-h-6', // layout and positioning
                 'outline-primary outline-offset-2 hover:outline focus:outline', // outline
                 'cursor-pointer rounded border-y transition-all', // visual
                 checked ? 'bg-primary border-primary border-l' : 'border-r',
@@ -50,6 +50,7 @@
                 edge === 'circle' && 'rounded-full',
                 edge === 'sharp' && 'rounded-none'
             )}
+            type="button"
             onclick={() => (checked = !checked)}
             disabled={loading || disabled}
         >
@@ -58,7 +59,7 @@
             <!-- Customize inner box here -->
             <div
                 class={twMerge(
-                    'bg-fg text-bg pointer-events-none grid size-6 place-content-center rounded border',
+                    'place-content-center grid bg-fg border rounded size-6 text-bg pointer-events-none',
                     checked ? 'border-primary' : 'border-fg',
                     disabled && 'border-disabled text-disabled bg-disabled-fg',
                     edge === 'default' && 'rounded',
@@ -85,7 +86,7 @@
 
     {#if children}
         <!-- Customize description here -->
-        <div class={twMerge('text-muted ml-14', disabled && 'text-disabled-fg')}>
+        <div class={twMerge('ml-14 text-muted', disabled && 'text-disabled-fg')}>
             {@render children?.()}
         </div>
     {/if}
@@ -123,7 +124,7 @@
 
 <!-- Customize icon for loading -->
 {#snippet IconSpinner()}
-    <svg xmlns="http://www.w3.org/2000/svg" class="text-primary size-4 animate-spin" viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-primary animate-spin" viewBox="0 0 16 16">
         <path
             fill="currentColor"
             d={`M8 0A8 8 0 0 0 .002 7.812C.094 4.033 2.968 1 6.5 1C10.09 1 13 4.134 13 8a1.5 1.5 ` +

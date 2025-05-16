@@ -27,16 +27,17 @@
     <input class="hidden appearance-none" type="checkbox" bind:checked {disabled} {...props} />
 
     <!-- Customize checkbox container here -->
-    <label class={twMerge('text-fg flex w-fit cursor-pointer items-center', disabled && 'text-disabled-fg')}>
+    <label class={twMerge('flex items-center w-fit text-fg cursor-pointer', disabled && 'text-disabled-fg')}>
         <!-- Customize box here -->
         <button
             class={twMerge(
-                'mr-2 grid min-h-6 min-w-6 place-content-center', // layout and positioning
+                'place-content-center grid mr-2 min-w-6 min-h-6', // layout and positioning
                 'outline-primary outline-offset-2 hover:outline focus:outline', // outline
                 'cursor-pointer rounded border', // visual
                 checked && 'bg-primary',
                 disabled && 'bg-bg cursor-not-allowed outline-none'
             )}
+            type="button"
             onclick={() => (checked = !checked)}
             {disabled}
         >
@@ -59,7 +60,7 @@
 
     {#if children}
         <!-- Customize description here -->
-        <div class={twMerge('text-muted ml-8', disabled && 'text-disabled-fg')}>
+        <div class={twMerge('ml-8 text-muted', disabled && 'text-disabled-fg')}>
             {@render children?.()}
         </div>
     {/if}
