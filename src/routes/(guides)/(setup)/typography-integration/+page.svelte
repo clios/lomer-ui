@@ -5,6 +5,9 @@
     import LomerSection from '$lib/components/site/lomer-section.svelte';
     import LomerTitle from '$lib/components/site/lomer-title.svelte';
     import Paragraph from '$lib/components/base/paragraph.svelte';
+    import Button from '$lib/components/base/button.svelte';
+    import Stack from '$lib/components/base/stack.svelte';
+    import IconArrowRight from '$lib/components/icons/icon-arrow-right.svelte';
 </script>
 
 <svelte:head>
@@ -12,7 +15,7 @@
 </svelte:head>
 
 <LomerSection>
-    <p class="text-muted mb-2 text-xs">Setup</p>
+    <p class="mb-2 text-muted text-xs">Setup</p>
     <LomerTitle>Typography Integration</LomerTitle>
     <Paragraph>Seamlessly blend text styles into your design.</Paragraph>
 </LomerSection>
@@ -70,4 +73,17 @@
 }`}
         highlightedLines={[7]}
     />
+</LomerSection>
+
+<LomerSection>
+    <Stack horizontal class="justify-between">
+        <!-- PREVIOUS -->
+        <Button href="/dark-mode-implementation" variant="ghost">
+            <IconArrowRight class="inline min-w-4 max-w-4 rotate-180" /> Dark Mode Implementation
+        </Button>
+        <!-- Next -->
+        <Button href="/icon-componentization" variant="ghost">
+            Icon Componentization <IconArrowRight class="inline min-w-4 max-w-4" />
+        </Button>
+    </Stack>
 </LomerSection>

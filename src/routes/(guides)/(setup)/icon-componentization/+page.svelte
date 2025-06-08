@@ -8,6 +8,9 @@
     import Paragraph from '$lib/components/base/paragraph.svelte';
     import Preview from './preview.svelte';
     import PreviewRaw from './preview.svelte?raw';
+    import Button from '$lib/components/base/button.svelte';
+    import Stack from '$lib/components/base/stack.svelte';
+    import IconArrowRight from '$lib/components/icons/icon-arrow-right.svelte';
 </script>
 
 <svelte:head>
@@ -15,7 +18,7 @@
 </svelte:head>
 
 <LomerSection>
-    <p class="text-muted mb-2 text-xs">Setup</p>
+    <p class="mb-2 text-muted text-xs">Setup</p>
     <LomerTitle>Icon Componentization</LomerTitle>
     <Paragraph>Turn icons into reusable components for easy, consistent use.</Paragraph>
 </LomerSection>
@@ -38,4 +41,17 @@
         <Preview />
     </CardDemo>
     <CopySvelteCode open code={PreviewRaw} />
+</LomerSection>
+
+<LomerSection>
+    <Stack horizontal class="justify-between">
+        <!-- PREVIOUS -->
+        <Button href="/typography-integration" variant="ghost">
+            <IconArrowRight class="inline min-w-4 max-w-4 rotate-180" /> Typography Integration
+        </Button>
+        <!-- Next -->
+        <Button href="/accordion" variant="ghost">
+            Accordion <IconArrowRight class="inline min-w-4 max-w-4" />
+        </Button>
+    </Stack>
 </LomerSection>

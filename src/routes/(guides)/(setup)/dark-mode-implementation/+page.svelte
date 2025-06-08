@@ -1,13 +1,16 @@
 <script>
+    import Button from '$lib/components/base/button.svelte';
     import CardBoard from '$lib/components/card-board.svelte';
     import CopyCLI from '$lib/components/copy-c-l-i.svelte';
     import CopySvelteCode from '$lib/components/copy-svelte-code.svelte';
     import HighlightText from '$lib/components/highlight-text.svelte';
+    import IconArrowRight from '$lib/components/icons/icon-arrow-right.svelte';
     import Link from '$lib/components/base/link.svelte';
     import LomerSection from '$lib/components/site/lomer-section.svelte';
     import LomerTitle from '$lib/components/site/lomer-title.svelte';
     import Paragraph from '$lib/components/base/paragraph.svelte';
     import { toggleMode, mode } from 'mode-watcher';
+    import Stack from '$lib/components/base/stack.svelte';
 </script>
 
 <svelte:head>
@@ -15,7 +18,7 @@
 </svelte:head>
 
 <LomerSection>
-    <p class="text-muted mb-2 text-xs">Setup</p>
+    <p class="mb-2 text-muted text-xs">Setup</p>
     <LomerTitle>Dark Mode Implementation</LomerTitle>
     <Paragraph>Adding dark mode to your site using mode-watcher.</Paragraph>
 </LomerSection>
@@ -72,4 +75,17 @@
             `\n\t{/if}` +
             `\n</button>`}
     />
+</LomerSection>
+
+<LomerSection>
+    <Stack horizontal class="justify-between">
+        <!-- PREVIOUS -->
+        <Button href="/theming-structure" variant="ghost">
+            <IconArrowRight class="inline min-w-4 max-w-4 rotate-180" /> Theming Structure
+        </Button>
+        <!-- Next -->
+        <Button href="/typography-integration" variant="ghost">
+            Typography Integration <IconArrowRight class="inline min-w-4 max-w-4" />
+        </Button>
+    </Stack>
 </LomerSection>
